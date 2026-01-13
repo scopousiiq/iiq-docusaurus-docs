@@ -1,0 +1,33 @@
+---
+id: updatefundingsourcerequest
+title: "UpdateFundingSourceRequest"
+description: "Request payload for creating or updating a funding source."
+sidebar_label: "UpdateFundingSourceRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"FundingSourceId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","FundingSourceTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","FundingSourceStatusTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Description":"string","AmountAllocated":0,"AmountUsed":0,"AmountRemaining":0,"StartDate":"2024-07-29T15:51:28.071Z","EndDate":"2024-07-29T15:51:28.071Z"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateFundingSourceRequest"}
+>
+</Heading>
+
+
+
+Request payload for creating or updating a funding source.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for creating or updating a funding source.","properties":{"FundingSourceId":{"type":"string","format":"uuid","description":"Unique identifier (required for updates, optional for creates)."},"FundingSourceTypeId":{"type":"string","format":"uuid","description":"UUID of the funding source type."},"FundingSourceStatusTypeId":{"type":"string","format":"uuid","description":"UUID of the funding source status type."},"SiteId":{"type":"string","format":"uuid","description":"UUID of the site this funding source belongs to."},"ProductId":{"type":"string","format":"uuid","description":"UUID of the product associated with this funding source."},"Name":{"type":"string","description":"Display name of the funding source."},"Description":{"type":"string","nullable":true,"description":"Detailed description of the funding source."},"AmountAllocated":{"type":"number","format":"decimal","description":"Total budget amount allocated."},"AmountUsed":{"type":"number","format":"decimal","description":"Amount spent from this funding source."},"AmountRemaining":{"type":"number","format":"decimal","description":"Remaining balance available."},"StartDate":{"type":"string","format":"date-time","nullable":true,"description":"Start date of the budget period."},"EndDate":{"type":"string","format":"date-time","nullable":true,"description":"End date of the budget period."}},"title":"UpdateFundingSourceRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

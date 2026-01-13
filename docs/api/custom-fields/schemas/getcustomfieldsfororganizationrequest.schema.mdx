@@ -1,0 +1,33 @@
+---
+id: getcustomfieldsfororganizationrequest
+title: "GetCustomFieldsForOrganizationRequest"
+description: "Request payload for retrieving custom fields applicable to an organization."
+sidebar_label: "GetCustomFieldsForOrganizationRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"EntityId":"c1d2e3f4-a5b6-7890-abcd-ef1234567890"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetCustomFieldsForOrganizationRequest"}
+>
+</Heading>
+
+
+
+Request payload for retrieving custom fields applicable to an organization.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for retrieving custom fields applicable to an organization.","properties":{"Entity":{"type":"object","description":"Full Organization object used for filter matching.","properties":{"OrganizationId":{"type":"string","format":"uuid","description":"Unique identifier of the organization."}}},"EntityId":{"type":"string","format":"uuid","description":"UUID of the organization to retrieve custom fields for."}},"example":{"EntityId":"c1d2e3f4-a5b6-7890-abcd-ef1234567890"},"title":"GetCustomFieldsForOrganizationRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

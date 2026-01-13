@@ -1,0 +1,33 @@
+---
+id: customfieldtypeupdaterequest
+title: "CustomFieldTypeUpdateRequest"
+description: "Request payload for updating an existing custom field type definition. Based on CustomFieldType model."
+sidebar_label: "CustomFieldTypeUpdateRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"Serial Number","Description":"string","EditorTypeId":0,"Scope":"Site","IsRequired":true,"IsHidden":true,"IsReadOnly":true,"DisplayOrder":0,"ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CustomFieldTypeUpdateRequest"}
+>
+</Heading>
+
+
+
+Request payload for updating an existing custom field type definition. Based on CustomFieldType model.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for updating an existing custom field type definition. Based on CustomFieldType model.","properties":{"CustomFieldTypeId":{"type":"string","format":"uuid","description":"UUID of the custom field type to update"},"Name":{"type":"string","description":"Display name for the custom field type","example":"Serial Number"},"Description":{"type":"string","nullable":true,"description":"Detailed description of the field's purpose"},"EditorTypeId":{"type":"integer","description":"Editor type for rendering (1=Text, 2=Number, 3=Date, etc.)"},"Scope":{"type":"string","enum":["Site","Product","Global"],"description":"Visibility scope"},"IsRequired":{"type":"boolean","description":"Whether the field is required by default"},"IsHidden":{"type":"boolean","description":"Whether the field is hidden from users"},"IsReadOnly":{"type":"boolean","description":"Whether the field is read-only"},"DisplayOrder":{"type":"integer","description":"Display order for the field"},"ProductId":{"type":"string","format":"uuid","nullable":true,"description":"Product this field type belongs to"}},"required":["CustomFieldTypeId"],"title":"CustomFieldTypeUpdateRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,56 @@
+---
+id: globalsearchfacetbitmask
+title: "GlobalSearchFacetBitmask"
+description: "Bitmask representing which entity types to include in the global search. Sum the values of desired entities to search multiple types simultaneously."
+sidebar_label: "GlobalSearchFacetBitmask"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: 9
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GlobalSearchFacetBitmask"}
+>
+</Heading>
+
+
+
+Bitmask representing which entity types to include in the global search. Sum the values of desired entities to search multiple types simultaneously.
+
+**Bitmask Values:**
+| Entity Type | Bit Value | Description |
+|-------------|-----------|-------------|
+| None | 0 | No entities |
+| Tickets | 1 | Help desk tickets |
+| KbArticles | 2 | Knowledge base articles |
+| Users | 4 | User accounts |
+| Assets | 8 | Hardware/software assets |
+| Locations | 16 | Schools, buildings, rooms |
+| RepairOrderNumber | 32 | Repair order tracking numbers |
+| Students | 64 | Student records |
+| Models | 128 | Device/asset models |
+| AssetFundingTypes | 256 | Asset funding classifications |
+| AssetStatusTypes | 512 | Asset status types |
+| AssetTypes | 1024 | Asset type classifications |
+
+**Examples:**
+- Search Tickets only: `1`
+- Search Tickets and Assets: `9` (1 + 8)
+- Search Tickets, KB Articles, and Assets (default): `11` (1 + 2 + 8)
+- Search Users and Students: `68` (4 + 64)
+- Search all common entities: `31` (1 + 2 + 4 + 8 + 16)
+
+<Schema
+  schema={{"type":"integer","format":"int32","description":"Bitmask representing which entity types to include in the global search. Sum the values of desired entities to search multiple types simultaneously.\n\n**Bitmask Values:**\n| Entity Type | Bit Value | Description |\n|-------------|-----------|-------------|\n| None | 0 | No entities |\n| Tickets | 1 | Help desk tickets |\n| KbArticles | 2 | Knowledge base articles |\n| Users | 4 | User accounts |\n| Assets | 8 | Hardware/software assets |\n| Locations | 16 | Schools, buildings, rooms |\n| RepairOrderNumber | 32 | Repair order tracking numbers |\n| Students | 64 | Student records |\n| Models | 128 | Device/asset models |\n| AssetFundingTypes | 256 | Asset funding classifications |\n| AssetStatusTypes | 512 | Asset status types |\n| AssetTypes | 1024 | Asset type classifications |\n\n**Examples:**\n- Search Tickets only: `1`\n- Search Tickets and Assets: `9` (1 + 8)\n- Search Tickets, KB Articles, and Assets (default): `11` (1 + 2 + 8)\n- Search Users and Students: `68` (4 + 64)\n- Search all common entities: `31` (1 + 2 + 4 + 8 + 16)","default":11,"example":9,"x-enum-bitmask":{"None":0,"Tickets":1,"KbArticles":2,"Users":4,"Assets":8,"Locations":16,"RepairOrderNumber":32,"Students":64,"Models":128,"AssetFundingTypes":256,"AssetStatusTypes":512,"AssetTypes":1024},"title":"GlobalSearchFacetBitmask"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

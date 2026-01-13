@@ -1,0 +1,33 @@
+---
+id: guiditemresponse
+title: "GuidItemResponse"
+description: "Response containing a single GUID value (e.g., job ID)."
+sidebar_label: "GuidItemResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsSuccessful":true,"StatusCode":0,"Messages":["string"]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GuidItemResponse"}
+>
+</Heading>
+
+
+
+Response containing a single GUID value (e.g., job ID).
+
+<Schema
+  schema={{"type":"object","description":"Response containing a single GUID value (e.g., job ID).","properties":{"Item":{"type":"string","format":"uuid","description":"The GUID value"},"IsSuccessful":{"type":"boolean","description":"Whether the request was successful"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Messages":{"type":"array","nullable":true,"items":{"type":"string"},"description":"Status or error messages"}},"required":["IsSuccessful","StatusCode"],"title":"GuidItemResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

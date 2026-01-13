@@ -1,0 +1,33 @@
+---
+id: bulksetcategorypopularityresponse
+title: "BulkSetCategoryPopularityResponse"
+description: ""
+sidebar_label: "BulkSetCategoryPopularityResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":"3fa85f64-5717-4562-b3fc-2c963f66afa6","UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":200,"Message":"string","ErrorKey":"string","ServerName":"string","ProcessId":0,"OperationId":"string","Properties":{},"Metadata":{},"Errors":[{"Field":"string","Message":"string","Code":"string"}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"BulkSetCategoryPopularityResponse"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"allOf":[{"type":"object","description":"Standard response envelope for single-item GET operations. The `Item` property contains the requested entity.","properties":{"Item":{"description":"The requested entity. Structure varies by endpoint."},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful GET)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Item","StatusCode"],"title":"ItemGetResponse"}],"type":"object","properties":{"Item":{"type":"string","format":"uuid"}},"title":"BulkSetCategoryPopularityResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

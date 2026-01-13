@@ -1,0 +1,33 @@
+---
+id: simpleticketrequest
+title: "SimpleTicketRequest"
+description: "Simplified ticket creation payload that resolves the requester, asset, and issue by human-friendly values."
+sidebar_label: "SimpleTicketRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ForUsername":"demo@incidentiq.com","AssetTag":"IIDHS-CHROME-000123","Issue":"Screen cracked","IssueDescription":"Student reports the screen is cracked after a drop."}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SimpleTicketRequest"}
+>
+</Heading>
+
+
+
+Simplified ticket creation payload that resolves the requester, asset, and issue by human-friendly values.
+
+<Schema
+  schema={{"type":"object","description":"Simplified ticket creation payload that resolves the requester, asset, and issue by human-friendly values.","properties":{"ForUsername":{"type":"string","description":"Requester username (often the requester's email address).","example":"demo@incidentiq.com"},"AssetTag":{"type":"string","description":"Asset tag or barcode to associate with the ticket.","nullable":true,"example":"IIDHS-CHROME-000123"},"Issue":{"type":"string","description":"Human-friendly issue name or keyword used by the server to resolve an issue type.","example":"Screen cracked"},"IssueDescription":{"type":"string","description":"Detailed description of the issue.","nullable":true,"example":"Student reports the screen is cracked after a drop."}},"required":["ForUsername","Issue"],"title":"SimpleTicketRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

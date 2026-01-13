@@ -1,0 +1,33 @@
+---
+id: ticketstatsresponse
+title: "TicketStatsResponse"
+description: "Response containing aggregated ticket statistics."
+sidebar_label: "TicketStatsResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":{"TotalCount":0,"OpenCount":0,"ClosedCount":0,"OverdueCount":0,"UnassignedCount":0,"ByStatus":[{"StatusId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","StatusName":"string","Count":0}],"BySite":[{"SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteName":"string","Count":0}]},"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","StatusCode":200}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketStatsResponse"}
+>
+</Heading>
+
+
+
+Response containing aggregated ticket statistics.
+
+<Schema
+  schema={{"type":"object","description":"Response containing aggregated ticket statistics.","properties":{"Item":{"type":"object","description":"Aggregated statistics","properties":{"TotalCount":{"type":"integer","description":"Total number of tickets matching the filter criteria"},"OpenCount":{"type":"integer","description":"Number of open tickets"},"ClosedCount":{"type":"integer","description":"Number of closed tickets"},"OverdueCount":{"type":"integer","description":"Number of overdue tickets"},"UnassignedCount":{"type":"integer","description":"Number of unassigned tickets"},"ByStatus":{"type":"array","description":"Ticket counts grouped by status","items":{"type":"object","properties":{"StatusId":{"type":"string","format":"uuid"},"StatusName":{"type":"string"},"Count":{"type":"integer"}}}},"BySite":{"type":"array","description":"Ticket counts grouped by site","items":{"type":"object","properties":{"SiteId":{"type":"string","format":"uuid"},"SiteName":{"type":"string"},"Count":{"type":"integer"}}}}}},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated user token"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the request was processed"},"StatusCode":{"type":"integer","description":"HTTP status code","example":200}},"required":["Item","StatusCode"],"title":"TicketStatsResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

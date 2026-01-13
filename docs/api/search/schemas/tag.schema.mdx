@@ -1,0 +1,33 @@
+---
+id: tag
+title: "Tag"
+description: ""
+sidebar_label: "Tag"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TagId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","TagTypeId":0,"CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","IsDeleted":true,"Scope":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Tag"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"TagId":{"type":"string","format":"uuid"},"Name":{"type":"string","description":"Tag name"},"TagTypeId":{"type":"integer"},"CreatedDate":{"type":"string","format":"date-time"},"ModifiedDate":{"type":"string","format":"date-time"},"IsDeleted":{"type":"boolean"},"Scope":{"type":"string"}},"required":["TagId","Name","TagTypeId","IsDeleted","Scope"],"title":"Tag"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

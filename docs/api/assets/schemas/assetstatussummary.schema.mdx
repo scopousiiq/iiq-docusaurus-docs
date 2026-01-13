@@ -1,0 +1,33 @@
+---
+id: assetstatussummary
+title: "AssetStatusSummary"
+description: "Summary of an asset's status information"
+sidebar_label: "AssetStatusSummary"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetStatusTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Scope":"string","Name":"string","IsRetired":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetStatusSummary"}
+>
+</Heading>
+
+
+
+Summary of an asset's status information
+
+<Schema
+  schema={{"type":"object","description":"Summary of an asset's status information","properties":{"AssetStatusTypeId":{"type":"string","format":"uuid","description":"Unique identifier of the asset status definition applied to the device."},"Scope":{"type":"string","description":"Scope that owns the status definition (for example `Global` or `Site`)."},"Name":{"type":"string","description":"Display name of the status type shown in the UI."},"IsRetired":{"type":"boolean","description":"Indicates whether this status marks the asset as retired."}},"title":"AssetStatusSummary"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

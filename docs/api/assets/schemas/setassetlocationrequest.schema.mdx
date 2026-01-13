@@ -1,0 +1,33 @@
+---
+id: setassetlocationrequest
+title: "SetAssetLocationRequest"
+description: "Request to update an asset's location"
+sidebar_label: "SetAssetLocationRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RoomId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationDetails":"string","UpdateAssetToOwnersLocation":false,"Force":false}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SetAssetLocationRequest"}
+>
+</Heading>
+
+
+
+Request to update an asset's location
+
+<Schema
+  schema={{"type":"object","description":"Request to update an asset's location","properties":{"AssetId":{"type":"string","format":"uuid","description":"UUID of the asset to update"},"LocationId":{"type":"string","format":"uuid","description":"UUID of the new location. Obtain from GET /api/v1.0/locations."},"RoomId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the room within the location"},"LocationDetails":{"type":"string","nullable":true,"description":"Free-form text describing the specific location"},"UpdateAssetToOwnersLocation":{"type":"boolean","description":"When true, update the asset to the owner's location","default":false},"Force":{"type":"boolean","description":"Force the location change even on read-only assets","default":false}},"required":["AssetId","LocationId"],"title":"SetAssetLocationRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

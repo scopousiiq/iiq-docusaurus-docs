@@ -1,0 +1,33 @@
+---
+id: ticketapproval
+title: "TicketApproval"
+description: "An approval record for a ticket in a workflow approval process. Tracks who approved/denied and what workflow step transitions result."
+sidebar_label: "TicketApproval"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","UserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TeamId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","User":{"UserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Relationship":"Owner","Name":"string","FirstName":"string","LastName":"string","Initials":"string","Email":"user@example.com","Username":"string","SchoolIdNumber":"string","LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationName":"string","PhotoId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RoleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Role":{"RoleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Portal":0,"Visibility":0,"CategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Users":0,"Scope":"string"},"IsOnline":true,"Phone":"string"},"Team":{"ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TeamId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TeamName":"string","MembersCount":0,"Tickets":0,"CreatedDate":"2024-07-29T15:51:28.071Z","IsDeleted":true},"Stage":0,"WorkflowStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","WorkflowApprovalTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","ActionDate":"2024-07-29T15:51:28.071Z","Comments":"string","ApprovedWorkflowStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AwaitingApprovalWorkflowStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","DeniedWorkflowStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketApproval"}
+>
+</Heading>
+
+
+
+An approval record for a ticket in a workflow approval process. Tracks who approved/denied and what workflow step transitions result.
+
+<Schema
+  schema={{"type":"object","description":"An approval record for a ticket in a workflow approval process. Tracks who approved/denied and what workflow step transitions result.","properties":{"TicketId":{"type":"string","format":"uuid","description":"Identifier of the ticket being approved."},"UserId":{"type":"string","format":"uuid","description":"Identifier of the user designated as approver."},"TeamId":{"type":"string","format":"uuid","description":"Identifier of the team responsible for approval (if team-based approval)."},"User":{"allOf":[{"type":"object","description":"User information with role and relationship details","properties":{"UserId":{"type":"string","format":"uuid","description":"Unique identifier for the user"},"Relationship":{"type":"string","enum":["Owner","For","Agent"],"description":"User's relationship to the ticket"},"Name":{"type":"string","description":"Full name of the user"},"FirstName":{"type":"string","description":"First name of the user"},"LastName":{"type":"string","description":"Last name of the user"},"Initials":{"type":"string","description":"User's initials"},"Email":{"type":"string","format":"email","description":"User's email address"},"Username":{"type":"string","description":"Username for authentication"},"SchoolIdNumber":{"type":"string","description":"School identification number"},"LocationId":{"type":"string","format":"uuid","description":"User's primary location ID"},"LocationName":{"type":"string","description":"Name of user's location"},"PhotoId":{"type":"string","format":"uuid","description":"User's profile photo ID"},"RoleId":{"type":"string","format":"uuid","description":"User's role ID"},"Role":{"type":"object","properties":{"RoleId":{"type":"string","format":"uuid"},"Name":{"type":"string","description":"Role name"},"Portal":{"type":"integer","description":"Portal access level"},"Visibility":{"type":"integer","description":"Visibility level"},"CategoryId":{"type":"string","format":"uuid"},"Users":{"type":"integer","description":"Number of users with this role"},"Scope":{"type":"string","description":"Role scope"}},"required":["RoleId","Portal","Visibility","CategoryId","Users","Scope"],"title":"Role"},"IsOnline":{"type":"boolean","description":"Whether the user is currently online"},"Phone":{"type":"string","description":"User's phone number"}},"required":["UserId","Relationship","Name","FirstName","LastName","Email","LocationId","RoleId","Role","IsOnline"],"title":"User"}],"description":"User object of the approver.","nullable":true,"type":"object"},"Team":{"allOf":[{"type":"object","properties":{"ProductId":{"type":"string","format":"uuid"},"TeamId":{"type":"string","format":"uuid"},"TeamName":{"type":"string","description":"Team name"},"MembersCount":{"type":"integer","description":"Number of team members"},"Tickets":{"type":"integer","description":"Number of tickets assigned to team"},"CreatedDate":{"type":"string","format":"date-time"},"IsDeleted":{"type":"boolean"}},"required":["TeamId","TeamName","MembersCount","Tickets","IsDeleted"],"title":"Team"}],"description":"Team object for team-based approvals.","nullable":true,"type":"object"},"Stage":{"type":"integer","description":"Stage number in multi-stage approval workflows."},"WorkflowStepId":{"type":"string","format":"uuid","description":"Identifier of the current workflow step requiring approval.","nullable":true},"WorkflowApprovalTypeId":{"type":"string","format":"uuid","description":"Identifier of the approval type configuration.","nullable":true},"CreatedDate":{"type":"string","format":"date-time","description":"When the approval record was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"When the approval record was last modified."},"ActionDate":{"type":"string","format":"date-time","description":"When the approval action (approve/deny) was taken."},"Comments":{"type":"string","nullable":true,"description":"Comments provided by the approver."},"ApprovedWorkflowStepId":{"type":"string","format":"uuid","description":"Workflow step the ticket transitions to if approved.","nullable":true},"AwaitingApprovalWorkflowStepId":{"type":"string","format":"uuid","description":"Workflow step where the ticket is currently waiting for approval.","nullable":true},"DeniedWorkflowStepId":{"type":"string","format":"uuid","description":"Workflow step the ticket transitions to if denied.","nullable":true}},"required":["TicketId","UserId","TeamId","Stage","CreatedDate","ModifiedDate","ActionDate"],"title":"TicketApproval"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

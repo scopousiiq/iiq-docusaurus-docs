@@ -1,0 +1,33 @@
+---
+id: assetvaluationresponse
+title: "AssetValuationResponse"
+description: "Response containing asset valuation data"
+sidebar_label: "AssetValuationResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":{"AssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsDeleted":true,"CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","UsefulLifeInMonths":0,"UsefulLifeInYears":0,"ReplacementCost":0,"SalvageValue":0,"EndOfLifeDate":"2024-07-29","CurrentValue":0,"NumberOfPeriods":0,"AnnualValueLoss":0,"Periods":[{"PeriodName":"string","StartDate":"2024-07-29","EndDate":"2024-07-29","StartingValue":0,"EndingValue":0,"Amount":0}]},"StatusCode":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetValuationResponse"}
+>
+</Heading>
+
+
+
+Response containing asset valuation data
+
+<Schema
+  schema={{"type":"object","description":"Response containing asset valuation data","properties":{"Item":{"type":"object","description":"Valuation metrics for the asset","properties":{"AssetId":{"type":"string","format":"uuid","nullable":true},"IsDeleted":{"type":"boolean","nullable":true},"CreatedDate":{"type":"string","format":"date-time","nullable":true},"ModifiedDate":{"type":"string","format":"date-time","nullable":true},"UsefulLifeInMonths":{"type":"integer","nullable":true},"UsefulLifeInYears":{"type":"integer","nullable":true},"ReplacementCost":{"type":"number","nullable":true},"SalvageValue":{"type":"number","nullable":true},"EndOfLifeDate":{"type":"string","format":"date","nullable":true},"CurrentValue":{"type":"number","nullable":true},"NumberOfPeriods":{"type":"integer","nullable":true},"AnnualValueLoss":{"type":"number","nullable":true},"Periods":{"type":"array","items":{"type":"object","description":"Period-based valuation snapshot","properties":{"PeriodName":{"type":"string"},"StartDate":{"type":"string","format":"date","nullable":true},"EndDate":{"type":"string","format":"date","nullable":true},"StartingValue":{"type":"number","nullable":true},"EndingValue":{"type":"number","nullable":true},"Amount":{"type":"number","nullable":true}},"title":"AssetValuationPeriod"}}},"title":"AssetValuation"},"StatusCode":{"type":"integer"}},"title":"AssetValuationResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

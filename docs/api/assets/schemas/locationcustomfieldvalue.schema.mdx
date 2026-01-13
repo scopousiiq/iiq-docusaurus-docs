@@ -1,0 +1,33 @@
+---
+id: locationcustomfieldvalue
+title: "LocationCustomFieldValue"
+description: "Custom field value specific to a location"
+sidebar_label: "LocationCustomFieldValue"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","EditorTypeId":0,"Value":"string","IsHidden":true,"MappedProperties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"LocationCustomFieldValue"}
+>
+</Heading>
+
+
+
+Custom field value specific to a location
+
+<Schema
+  schema={{"type":"object","description":"Custom field value specific to a location","properties":{"LocationId":{"type":"string","format":"uuid","description":"Location this custom field value belongs to"},"CustomFieldTypeId":{"type":"string","format":"uuid","description":"Reference to the custom field type definition"},"EditorTypeId":{"type":"integer","description":"Editor type for rendering the field (text, dropdown, date, etc.)"},"Value":{"type":"string","nullable":true,"description":"The custom field value as a JSON string"},"IsHidden":{"type":"boolean","description":"Whether this field is hidden from standard views"},"MappedProperties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional mapped properties for complex field types"}},"required":["CustomFieldTypeId"],"title":"LocationCustomFieldValue"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

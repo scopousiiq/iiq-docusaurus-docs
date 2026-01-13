@@ -1,0 +1,33 @@
+---
+id: getmodelissuesrequest
+title: "GetModelIssuesRequest"
+description: ""
+sidebar_label: "GetModelIssuesRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ModelIds":["d4e5f6a7-b8c9-0123-d4e5-f6a7b8c90123"]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetModelIssuesRequest"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"SiteScope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"],"default":"Aggregate"},"AppIds":{"type":"array","items":{"type":"string"},"nullable":true},"ModelIds":{"type":"array","items":{"type":"string","format":"uuid"},"nullable":true},"ModelCategoryIds":{"type":"array","items":{"type":"string","format":"uuid"},"nullable":true},"IssueCategoryIds":{"type":"array","items":{"type":"string","format":"uuid"},"nullable":true}},"example":{"ModelIds":["d4e5f6a7-b8c9-0123-d4e5-f6a7b8c90123"]},"title":"GetModelIssuesRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

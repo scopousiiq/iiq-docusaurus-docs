@@ -1,0 +1,33 @@
+---
+id: assetcheckoutrequest
+title: "AssetCheckoutRequest"
+description: "Request to check out or transfer an asset to a new owner."
+sidebar_label: "AssetCheckoutRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"OwnerId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","FromAssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","FromAssetStatusId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","FromAssetReason":"string","ToAssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TicketId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ToAssetReason":"string","Force":false,"Source":"string","UpdateAssetWithUserLocation":true,"UpdateAssetWithUserRoom":true,"SkipRulesProcessing":false,"DueDate":"2024-07-29T15:51:28.071Z","InventoryOptions":{"Quantity":0,"ToEntityId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ToEntityTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ToLocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ToLocationRoomId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"},"AssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetCheckoutRequest"}
+>
+</Heading>
+
+
+
+Request to check out or transfer an asset to a new owner.
+
+<Schema
+  schema={{"type":"object","description":"Request to check out or transfer an asset to a new owner.","allOf":[{"type":"object","description":"Request to set or transfer ownership of an asset. Supports transferring ownership from one asset to another, or assigning a new owner directly.","properties":{"OwnerId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the new owner (user). Obtain from POST /api/v1.0/users search."},"FromAssetId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the asset to transfer ownership from"},"FromAssetStatusId":{"type":"string","format":"uuid","nullable":true,"description":"Status to set on the 'from' asset after transfer"},"FromAssetReason":{"type":"string","nullable":true,"description":"Reason for removing ownership from the 'from' asset"},"ToAssetId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the asset to transfer ownership to"},"TicketId":{"type":"string","format":"uuid","nullable":true,"description":"Associated ticket UUID for the ownership change"},"ProductId":{"type":"string","format":"uuid","nullable":true,"description":"Product context for the operation"},"ToAssetReason":{"type":"string","nullable":true,"description":"Reason for assigning ownership to the target asset"},"Force":{"type":"boolean","description":"Force the ownership change even if validations would normally prevent it","default":false},"Source":{"type":"string","nullable":true,"description":"Source system or integration initiating the change"},"UpdateAssetWithUserLocation":{"type":"boolean","nullable":true,"description":"When true, update the asset's location to match the new owner's location"},"UpdateAssetWithUserRoom":{"type":"boolean","nullable":true,"description":"When true, update the asset's room to match the new owner's room"},"SkipRulesProcessing":{"type":"boolean","description":"When true, bypass rule engine processing for this change","default":false},"DueDate":{"type":"string","format":"date-time","nullable":true,"description":"Expected return date for checked-out assets"},"InventoryOptions":{"nullable":true,"description":"Inventory-related options for the ownership change","allOf":[{"type":"object","description":"Options for inventory-related operations when changing asset ownership or location.","properties":{"Quantity":{"type":"number","format":"decimal","description":"Quantity of inventory items to transfer"},"ToEntityId":{"type":"string","format":"uuid","nullable":true,"description":"Target entity UUID for the inventory transfer"},"ToEntityTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Entity type UUID of the target entity"},"ToLocationId":{"type":"string","format":"uuid","nullable":true,"description":"Target location UUID for the inventory transfer"},"ToLocationRoomId":{"type":"string","format":"uuid","nullable":true,"description":"Target room UUID within the location"}},"title":"AssetInventoryOptions"}],"type":"object"}},"title":"SetAssetOwnerRequest"},{"type":"object","properties":{"AssetId":{"type":"string","format":"uuid","description":"Identifier of the asset to check out."}},"required":["AssetId"]}],"title":"AssetCheckoutRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

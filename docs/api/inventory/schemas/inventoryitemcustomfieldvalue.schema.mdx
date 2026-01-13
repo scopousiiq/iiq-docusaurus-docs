@@ -1,0 +1,33 @@
+---
+id: inventoryitemcustomfieldvalue
+title: "InventoryItemCustomFieldValue"
+description: "Custom field value for an inventory item."
+sidebar_label: "InventoryItemCustomFieldValue"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"InventoryItemId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Value":"string","MappedProperties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"InventoryItemCustomFieldValue"}
+>
+</Heading>
+
+
+
+Custom field value for an inventory item.
+
+<Schema
+  schema={{"type":"object","description":"Custom field value for an inventory item.","properties":{"InventoryItemId":{"type":"string","format":"uuid","description":"Identifier of the inventory item."},"CustomFieldTypeId":{"type":"string","format":"uuid","description":"Identifier of the custom field type."},"Value":{"type":"string","nullable":true,"description":"The field value as a string."},"MappedProperties":{"type":"object","nullable":true,"additionalProperties":true,"description":"Additional mapped properties for the field value."}},"title":"InventoryItemCustomFieldValue"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

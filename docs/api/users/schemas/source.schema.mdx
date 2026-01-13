@@ -1,0 +1,33 @@
+---
+id: source
+title: "Source"
+description: "Data import source for users. Mirrors `Spark.Shared.Models.Source`."
+sidebar_label: "Source"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SourceId":0,"Name":"string","Key":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Source"}
+>
+</Heading>
+
+
+
+Data import source for users. Mirrors `Spark.Shared.Models.Source`.
+
+<Schema
+  schema={{"type":"object","description":"Data import source for users. Mirrors `Spark.Shared.Models.Source`.","properties":{"SourceId":{"type":"integer","description":"Unique integer identifier for the source."},"Name":{"type":"string","description":"Display name of the source (e.g., 'Manual Entry', 'SIS Import', 'MDM Sync', 'API')."},"Key":{"type":"string","description":"Machine-readable key for the source (e.g., 'manual', 'sis', 'mdm', 'api')."}},"title":"Source"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

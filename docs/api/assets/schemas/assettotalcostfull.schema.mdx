@@ -1,0 +1,33 @@
+---
+id: assettotalcostfull
+title: "AssetTotalCostFull"
+description: "Complete total cost breakdown for an asset including labor, parts, and itemized costs"
+sidebar_label: "AssetTotalCostFull"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TotalCostOfLabor":0,"TotalTimeOfLabor":0,"TotalCostOfParts":0,"TotalCostToDate":0,"Items":[{"TicketId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Date":"2024-07-29","TotalCostAmount":0,"TimeAmount":0,"LaborAmount":0,"PartsAmount":0}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetTotalCostFull"}
+>
+</Heading>
+
+
+
+Complete total cost breakdown for an asset including labor, parts, and itemized costs
+
+<Schema
+  schema={{"type":"object","description":"Complete total cost breakdown for an asset including labor, parts, and itemized costs","properties":{"AssetId":{"type":"string","format":"uuid","description":"UUID of the asset"},"TotalCostOfLabor":{"type":"number","format":"decimal","nullable":true,"description":"Total cost of labor for repairs and maintenance"},"TotalTimeOfLabor":{"type":"number","format":"decimal","nullable":true,"description":"Total time spent on labor in hours"},"TotalCostOfParts":{"type":"number","format":"decimal","nullable":true,"description":"Total cost of replacement parts"},"TotalCostToDate":{"type":"number","format":"decimal","nullable":true,"description":"Sum of labor and parts costs"},"Items":{"type":"array","nullable":true,"items":{"type":"object","description":"Individual cost item for an asset from a ticket","properties":{"TicketId":{"type":"string","format":"uuid","description":"UUID of the ticket associated with this cost"},"Date":{"type":"string","format":"date","description":"Date of the activity"},"TotalCostAmount":{"type":"number","format":"decimal","description":"Total cost for this item"},"TimeAmount":{"type":"number","format":"decimal","description":"Time spent in hours"},"LaborAmount":{"type":"number","format":"decimal","description":"Labor cost component"},"PartsAmount":{"type":"number","format":"decimal","description":"Parts cost component"}},"title":"AssetCostItem"},"description":"Itemized breakdown of costs by ticket"}},"title":"AssetTotalCostFull"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: assetinventorytransactioncheckout
+title: "AssetInventoryTransactionCheckout"
+description: "Inventory transaction details captured for each checkout or checkin action."
+sidebar_label: "AssetInventoryTransactionCheckout"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AssetInventoryActionId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AssetInventoryActionTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","OwnerTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","OwnerId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationRoomId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ParentAssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TransactionDate":"2024-07-29T15:51:28.071Z","TransactionUserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TransactionQuantity":0,"AsOfCheckedInQuantity":0,"AssetCheckoutId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CheckoutDate":"2024-07-29T15:51:28.071Z","CheckinDate":"2024-07-29T15:51:28.071Z","DueDate":"2024-07-29T15:51:28.071Z","QuantityCheckedOut":0,"AsOfCheckoutQuantityOutstanding":0,"Source":"string","Notes":"string","UnitPrice":0,"AssetFundingTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","PurchasePoNumber":"string","RemainingCheckedOutQuantity":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetInventoryTransactionCheckout"}
+>
+</Heading>
+
+
+
+Inventory transaction details captured for each checkout or checkin action.
+
+<Schema
+  schema={{"type":"object","description":"Inventory transaction details captured for each checkout or checkin action.","properties":{"SiteId":{"type":"string","format":"uuid"},"ProductId":{"type":"string","format":"uuid"},"AssetInventoryActionId":{"type":"string","format":"uuid"},"AssetInventoryActionTypeId":{"type":"string","format":"uuid"},"OwnerTypeId":{"type":"string","format":"uuid"},"OwnerId":{"type":"string","format":"uuid"},"LocationId":{"type":"string","format":"uuid","nullable":true},"LocationRoomId":{"type":"string","format":"uuid","nullable":true},"AssetId":{"type":"string","format":"uuid"},"ParentAssetId":{"type":"string","format":"uuid"},"TransactionDate":{"type":"string","format":"date-time"},"TransactionUserId":{"type":"string","format":"uuid"},"TransactionQuantity":{"type":"number"},"AsOfCheckedInQuantity":{"type":"number"},"AssetCheckoutId":{"type":"string","format":"uuid"},"CheckoutDate":{"type":"string","format":"date-time"},"CheckinDate":{"type":"string","format":"date-time","nullable":true},"DueDate":{"type":"string","format":"date-time","nullable":true},"QuantityCheckedOut":{"type":"number"},"AsOfCheckoutQuantityOutstanding":{"type":"number","nullable":true},"Source":{"type":"string","nullable":true},"Notes":{"type":"string","nullable":true},"UnitPrice":{"type":"number","nullable":true},"AssetFundingTypeId":{"type":"string","format":"uuid","nullable":true},"PurchasePoNumber":{"type":"string","nullable":true},"RemainingCheckedOutQuantity":{"type":"number","description":"Derived remaining quantity based on action type and outstanding amounts.","nullable":true}},"required":["SiteId","ProductId","AssetInventoryActionId","AssetInventoryActionTypeId","OwnerTypeId","OwnerId","AssetId","ParentAssetId","TransactionDate","TransactionUserId","TransactionQuantity","AsOfCheckedInQuantity","AssetCheckoutId","CheckoutDate","QuantityCheckedOut"],"title":"AssetInventoryTransactionCheckout"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

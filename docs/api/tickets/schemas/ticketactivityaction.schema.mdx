@@ -1,0 +1,33 @@
+---
+id: ticketactivityaction
+title: "TicketActivityAction"
+description: "Payload for logging a resolution action against a ticket."
+sidebar_label: "TicketActivityAction"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketActivityTypeId":8,"ByUserId":"a215e88e-14be-ef11-88cf-6045bdb6b1c8","ResolutionActionId":"25ad3b87-43bb-e811-af11-2818784a7157","ActivityDate":"2018-10-04T21:04:38.141Z","Notes":"Adding in Postman - SC","Effort":null,"EffortIsValid":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketActivityAction"}
+>
+</Heading>
+
+
+
+Payload for logging a resolution action against a ticket.
+
+<Schema
+  schema={{"type":"object","description":"Payload for logging a resolution action against a ticket.","properties":{"$type":{"type":"string","description":"Fully qualified CLR type emitted by the API when logging a resolution action.","example":"Spark.Shared.Models.TicketActivityAction, Spark.Shared"},"TicketActivityTypeId":{"type":"integer","enum":[8],"description":"Activity type code for resolution actions (8 = Resolution Action). Retrieve valid activity identifiers from [GET /api/v1.0/sites/{siteUrl}](/docs/api/sites/get-site-by-url).","x-obtained-from":{"operationId":"getSiteByUrl","endpoint":"GET /api/v1.0/sites/{siteUrl}","responseField":"Item.Settings.ActivityTypes"}},"ByUserId":{"type":"string","format":"uuid","description":"UUID of the technician recording the action.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/search","responseField":"Item.Users[].UserId"}},"ResolutionActionId":{"type":"string","format":"uuid","description":"Identifier of the workflow resolution action performed. Obtain by calling GET /api/v1.0/resolutions/actions and extracting Items[].ResolutionActionId.","x-obtained-from":{"operationId":"listResolutionActions","endpoint":"GET /api/v1.0/resolutions/actions","responseField":"Items[].ResolutionActionId"}},"ActivityDate":{"type":"string","format":"date-time","description":"Timestamp describing when the work occurred.","nullable":true},"Notes":{"type":"string","description":"Technician notes captured with the resolution action.","nullable":true},"Effort":{"type":"integer","nullable":true,"description":"Minutes of labor recorded for the action"},"EffortIsValid":{"type":"boolean","description":"Indicates whether the effort value should be persisted."},"IsPublic":{"type":"boolean","description":"Whether the resolution details should be visible to the requester.","nullable":true}},"required":["TicketActivityTypeId","ByUserId","ResolutionActionId"],"example":{"TicketActivityTypeId":8,"ByUserId":"a215e88e-14be-ef11-88cf-6045bdb6b1c8","ResolutionActionId":"25ad3b87-43bb-e811-af11-2818784a7157","ActivityDate":"2018-10-04T21:04:38.141Z","Notes":"Adding in Postman - SC","Effort":null,"EffortIsValid":true},"title":"TicketActivityAction"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

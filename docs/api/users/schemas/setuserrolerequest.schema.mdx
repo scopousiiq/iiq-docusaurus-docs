@@ -1,0 +1,33 @@
+---
+id: setuserrolerequest
+title: "SetUserRoleRequest"
+description: "Request to set a user's role. Mirrors `Spark.Shared.Models.Requests.SetUserRoleRequest`."
+sidebar_label: "SetUserRoleRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"RoleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","UpdateLockedState":true,"IsLocked":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SetUserRoleRequest"}
+>
+</Heading>
+
+
+
+Request to set a user's role. Mirrors `Spark.Shared.Models.Requests.SetUserRoleRequest`.
+
+<Schema
+  schema={{"type":"object","description":"Request to set a user's role. Mirrors `Spark.Shared.Models.Requests.SetUserRoleRequest`.","properties":{"RoleId":{"type":"string","format":"uuid","description":"The role identifier to assign to the user."},"UpdateLockedState":{"type":"boolean","description":"When true, the IsLocked value will be applied to the user."},"IsLocked":{"type":"boolean","description":"When UpdateLockedState is true, this determines whether the user account should be locked."}},"required":["RoleId"],"title":"SetUserRoleRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,72 @@
+---
+id: update-view-counts
+title: "Update view counts"
+description: "Recalculates per-user view counts used by the UI for badges or summary totals. Call this after large data changes or when counts appear stale to refresh the cached totals."
+sidebar_label: "Update view counts"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWN9z2zgO/lcw7MO1GdlJ+6iHncu2aTfba9NNnO3txJktQ8EWNxSpEpBTXyb/+w1IyVacXH/MvW5nUtsUiA8AgQ+gblWFZKJt2QavSnWKRjvTOc1I0GKcdIQRVhZvwITOM0FHWMHVGrhGOD+GRYhwpaslEoQI1DWNjmvgwNrRFF5q54BrS6AXjBGcjkuESrMGU2vf77qp0Q/qdduijkCsHQIHiLiISHWCM9rUWA3K537u9/Y+RIz4ubNkGWlvb+4n8D54nMJhxzV6tkaLa1AhY2ysR4Kb2ppa/Ij/oA1sROjaSjNWveKPIV4vXLiBoy+6aR2K7udTmEW7XGKEuAmUDb6EizdHM9jXrd1fPZ8e7EvAaD/r3s96L5/uV8FQlkmP8/pEfkyy6LPp3L+YwilOFsimznF3lpjgqQQasynFLhxbc41MWe8YaHggOib5R8KjZ88kuIQbr/tA9M6/s9422sGphDZiBa8tuor29krwEl1VKNZLUuWF+l3UlR1bZ9kiqctChRZjistxpUqVAUTsZYJQhfoysfbzRKxU5a0iNH32bbUUKsQKoyqfH9wVKiK1wRMm8RcHB/JxP29f9snZO0OdMUi06Jxbi7EmeEbPsk+3reuTYv8vks23ikyNjZZvvG5RlSpc/YWGVbGD8gY9RmtgsCdlv07WE3CtGaoAPjBE5C560EAtGruwBiQVeT2Foy+MviL4WROeDmpuLNfgA+iqsqJMO2ijRFFiMYVzKTmB2gSWwNlrBPT6ylm/LKCyNHwNETgnqfVLuOnTmCQMW6Xi6zlhnIVr9CPHiWWXKtQixEaznElnqweBGBWXRBuJpMZsJWsLi1HdFUpyB4lfacavAqQiYNvgA5SZbZBYN21mCKGAww/HEho5XGGCGiFmGEE8+oKmk72ycYTpu+YK4z3M0F25h4BnGFcYJ2QrBByUgdgG1kNjnbOEJviKBO6MNXf0MlRjLOsZlwnsvupfZrMPwmrcCedUKAreIZFePhod3zmnxcSSY4e7yk7aPkuszy7lX8IQMYYITa9YYiILb3H94yDvtKmtx0lEXYlUr/sa1ykXjbPouY9VelJrX0kKptikSL7XzaPe7STTtiLBhwpzJf3PU/6QHwi3fDPqx54x9uUkm0YpmpyorF76QGxNOtGTMXH9aLxmURvcBXBhCSbEiLlR9PaPinCXcLYUMJbLeF/HP9ySR4OsU5MdFXzKt7z8/bi7Mbj7lhFvcT1ZadfhyAZtI21ScaxUx6jXj8TVMjaPBmfHYelFk4Vm7WClna1yCuVkzGxsq0THbcQVek6ZtOFQWMTQgAnSUTkf8H1+TD3vx/NAkh7CIoEtREWmd/k5stISdd8igR0G6Rrtt9U4ejigPaZ+h57+v9rPxJUacp4LZAAYHLgsFFsWjeosLPj3jTHp3MWW+xj/ssRiOYUFPzg/+o4DfGDJiJBHxhym/jz0WrGjH6MkLGMOf3FwcCf/RIDRS0uTCedWXQt9joeWQqUc/57h5e6yUA1yHWQUWqJkcau5VqX66rSoCkWJQrMFXXSqVDVzS+X+foVNmFpvMtd8nprQKMEhNF20vE5brlBHjNKoVXkhDy2j0Jp8z9wt38fbzmQKyqk/3rzJHYEXu5KYKnshVfRfXg/N9dePswfJ++vHGbDMGrnqDqvGekvcV+JP8ApX6ORkYRaCS3QxGLyli9ZKIyuUFY016iqh+9Rk1FkW3wX+I3QRRNWYmZ+enx+/eiYgQyS+E+RlFn9QLh0xXCHM1WFrs8xcpfSUBp2098mYpmWZYiSHMFLe/3x6MD14oPUJbKTnce7lb1bjdlHYfWUrJNBp2k0TvV5hNdzX/MIuu2FgtB6O+5Q5/m06KHzyBE5WGGXDsJT1V7iwHqEON/m6ZklmzNbpNVYFWG9cV8l8aYLrGg+ELhcCFUAhcppEta/A6XXoUgEvMKI3SBvssiwlPOmyJcW+Dh0Y7WWG3jDmxlm5fpVlmXf+lP6DCeztnSJHiyt8zOe9vb7JLxI290M4yFHTVsVhjl6LkVL3FLOp1rEPpNwqN7LnvsJILCJ9OMau9YDnx5AGkmzGKNS/ddZcwxnryNvVJ5CYMHk6rH769OlKUy1fTRcdTP4NcuObbyhgHTqZUxl3eGCHVOYK5nPRAjD5RdKz4zpE+5/+1vpzKlz44+T89M/Zyduj97vyuajKLHF2PDv68/jVrkzO9xJGqd+7MPL8VAYgrOQkN05O4OK1dYzx3pV1kZeGz4lu7TOYwFlKbEIdTQ0mWsZoda9llm+5j118+89BS5ZMV+p8tr2GQ6IdBTqt9B/D9iS2s7u/XWqTWKTniW2ljZjtrGvbEIU97tM5cWidXda8y+mFwkZbl1lpQnn7P3eJv1DOGpTWtsWXGS5aZB3XD+Bubm52k0ZejVDiqzYQN9qPVJ2nfjR+BbRLVLfb6/Xf74/+fn/0ve+Pcr9l/ML7rdM23Y1Spt72E9KFpL30yeepOSbcVG19EvaT0mWh6kAyzajb2ytNeB7d3Z0sf+4wrvPEs9LR5nH34vKuGPr6driTHtDydrB7+Jro3iD35mim7u7+C/5zfdg=
+sidebar_class_name: "get api-method"
+info_path: docs/api/views/views-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update view counts"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/views/counts/update"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Recalculates per-user view counts used by the UI for badges or summary totals. Call this after large data changes or when counts appear stale to refresh the cached totals.
+
+**Prerequisites**
+- None. Authentication determines which user's counts are updated.
+
+**Workflow Example**
+1. Trigger recalculation: [GET /api/v1.0/views/counts/update](/docs/api/views/update-view-counts).
+2. Re-fetch view lists (for example, [GET /api/v1.0/tickets/views](/docs/api/tickets/list-ticket-views)) to see updated counts.
+
+**Minimal Required Fields**: none.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Counts updated successfully.","content":{"application/json":{"schema":{"type":"object","description":"Generic response for actions that do not return a specific entity. Extends BaseResponse with no additional properties. Used for operations like enabling, disabling, or triggering workflows.","properties":{"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Message":{"type":"string","nullable":true,"description":"Optional informational or error message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors that did not prevent the operation"}},"required":["StatusCode"],"title":"ActionResponse"},"example":{"StatusCode":200}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

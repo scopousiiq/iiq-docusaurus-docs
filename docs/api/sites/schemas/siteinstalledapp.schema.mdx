@@ -1,0 +1,33 @@
+---
+id: siteinstalledapp
+title: "SiteInstalledApp"
+description: "Application installed in the tenant environment."
+sidebar_label: "SiteInstalledApp"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AppId":"googleSso","AppInstallDate":"2024-10-16T15:09:37.567","AppIsSIS":false,"AppIsSSO":true,"AppName":"Google SSO"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SiteInstalledApp"}
+>
+</Heading>
+
+
+
+Application installed in the tenant environment.
+
+<Schema
+  schema={{"type":"object","description":"Application installed in the tenant environment.","properties":{"AppId":{"type":"string","description":"Unique identifier for the installed app.","example":"googleSso"},"AppInstallDate":{"type":"string","format":"date-time","description":"Timestamp when the app was installed.","example":"2024-10-16T15:09:37.567"},"AppIsSIS":{"type":"boolean","description":"True if the app is classified as a student information system (SIS) integration.","example":false},"AppIsSSO":{"type":"boolean","description":"True if the app supports single sign-on (SSO).","example":true},"AppName":{"type":"string","description":"Display name of the application.","example":"Google SSO"}},"required":["AppId","AppName"],"title":"SiteInstalledApp"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

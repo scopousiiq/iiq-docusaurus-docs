@@ -1,0 +1,33 @@
+---
+id: errorresponse
+title: "ErrorResponse"
+description: "Standard error payload returned by the API when a request fails."
+sidebar_label: "ErrorResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"StatusCode":401,"Message":"Attempted to perform an unauthorized operation."}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ErrorResponse"}
+>
+</Heading>
+
+
+
+Standard error payload returned by the API when a request fails.
+
+<Schema
+  schema={{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: updateeventfiledetailsrequest
+title: "UpdateEventFileDetailsRequest"
+description: "Request to update event file attachments."
+sidebar_label: "UpdateEventFileDetailsRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Files":[{"FileId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Description":"string"}],"Instance":"Single"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateEventFileDetailsRequest"}
+>
+</Heading>
+
+
+
+Request to update event file attachments.
+
+<Schema
+  schema={{"type":"object","description":"Request to update event file attachments.","properties":{"Files":{"type":"array","items":{"type":"object","description":"File metadata associated with an entity (location, room, etc.). Used for floorplans, images, and other file attachments.","properties":{"FileId":{"type":"string","format":"uuid","description":"Unique identifier for the file"},"Description":{"type":"string","nullable":true,"description":"Optional description or caption for the file"}},"required":["FileId"],"title":"EntityFileDetail"}},"Instance":{"type":"string","enum":["Single","AllFuture","AllActive"]}},"title":"UpdateEventFileDetailsRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

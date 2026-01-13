@@ -1,0 +1,33 @@
+---
+id: slaassignrequest
+title: "SlaAssignRequest"
+description: "Request payload for assigning an SLA to a single ticket. The C# endpoint accepts the full Sla model but only uses the SlaId property."
+sidebar_label: "SlaAssignRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SlaId":"33e9f623-68cd-4b69-8cc5-635d4b6e6841"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SlaAssignRequest"}
+>
+</Heading>
+
+
+
+Request payload for assigning an SLA to a single ticket. The C# endpoint accepts the full Sla model but only uses the SlaId property.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for assigning an SLA to a single ticket. The C# endpoint accepts the full Sla model but only uses the SlaId property.","properties":{"SlaId":{"type":"string","format":"uuid","description":"Identifier of the SLA to assign to the ticket. Obtain via GET /api/v1.0/slas and extract `Items[].SlaId`.","x-obtained-from":{"operationId":"listSlas","endpoint":"GET /api/v1.0/slas","responseField":"Items[].SlaId"},"example":"33e9f623-68cd-4b69-8cc5-635d4b6e6841"}},"required":["SlaId"],"example":{"SlaId":"33e9f623-68cd-4b69-8cc5-635d4b6e6841"},"title":"SlaAssignRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

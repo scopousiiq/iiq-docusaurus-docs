@@ -1,0 +1,33 @@
+---
+id: userlistresponse
+title: "UserListResponse"
+description: "Response envelope containing a list of users."
+sidebar_label: "UserListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":[{"UserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Relationship":"Owner","Name":"string","FirstName":"string","LastName":"string","Initials":"string","Email":"user@example.com","Username":"string","SchoolIdNumber":"string","LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationName":"string","PhotoId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RoleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Role":{"RoleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Portal":0,"Visibility":0,"CategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Users":0,"Scope":"string"},"IsOnline":true,"Phone":"string"}],"ItemCount":25,"Paging":{"TotalRows":54343,"PageCount":10869,"PageSize":5,"PageIndex":0},"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":200,"Message":"string","ErrorKey":"string","ServerName":"string","ProcessId":0,"OperationId":"string","Properties":{},"Metadata":{},"Errors":[{"Field":"string","Message":"string","Code":"string"}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UserListResponse"}
+>
+</Heading>
+
+
+
+Response envelope containing a list of users.
+
+<Schema
+  schema={{"type":"object","description":"Response envelope containing a list of users.","allOf":[{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"}],"properties":{"Items":{"type":"array","description":"List of user objects","items":{"type":"object","description":"User information with role and relationship details","properties":{"UserId":{"type":"string","format":"uuid","description":"Unique identifier for the user"},"Relationship":{"type":"string","enum":["Owner","For","Agent"],"description":"User's relationship to the ticket"},"Name":{"type":"string","description":"Full name of the user"},"FirstName":{"type":"string","description":"First name of the user"},"LastName":{"type":"string","description":"Last name of the user"},"Initials":{"type":"string","description":"User's initials"},"Email":{"type":"string","format":"email","description":"User's email address"},"Username":{"type":"string","description":"Username for authentication"},"SchoolIdNumber":{"type":"string","description":"School identification number"},"LocationId":{"type":"string","format":"uuid","description":"User's primary location ID"},"LocationName":{"type":"string","description":"Name of user's location"},"PhotoId":{"type":"string","format":"uuid","description":"User's profile photo ID"},"RoleId":{"type":"string","format":"uuid","description":"User's role ID"},"Role":{"type":"object","properties":{"RoleId":{"type":"string","format":"uuid"},"Name":{"type":"string","description":"Role name"},"Portal":{"type":"integer","description":"Portal access level"},"Visibility":{"type":"integer","description":"Visibility level"},"CategoryId":{"type":"string","format":"uuid"},"Users":{"type":"integer","description":"Number of users with this role"},"Scope":{"type":"string","description":"Role scope"}},"required":["RoleId","Portal","Visibility","CategoryId","Users","Scope"],"title":"Role"},"IsOnline":{"type":"boolean","description":"Whether the user is currently online"},"Phone":{"type":"string","description":"User's phone number"}},"required":["UserId","Relationship","Name","FirstName","LastName","Email","LocationId","RoleId","Role","IsOnline"],"title":"User"}}},"title":"UserListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

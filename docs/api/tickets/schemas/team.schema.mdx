@@ -1,0 +1,33 @@
+---
+id: team
+title: "Team"
+description: ""
+sidebar_label: "Team"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TeamId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TeamName":"string","MembersCount":0,"Tickets":0,"CreatedDate":"2024-07-29T15:51:28.071Z","IsDeleted":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Team"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"ProductId":{"type":"string","format":"uuid"},"TeamId":{"type":"string","format":"uuid"},"TeamName":{"type":"string","description":"Team name"},"MembersCount":{"type":"integer","description":"Number of team members"},"Tickets":{"type":"integer","description":"Number of tickets assigned to team"},"CreatedDate":{"type":"string","format":"date-time"},"IsDeleted":{"type":"boolean"}},"required":["TeamId","TeamName","MembersCount","Tickets","IsDeleted"],"title":"Team"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

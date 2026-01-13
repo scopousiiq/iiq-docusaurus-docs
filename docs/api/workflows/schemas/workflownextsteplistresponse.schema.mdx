@@ -1,0 +1,33 @@
+---
+id: workflownextsteplistresponse
+title: "WorkflowNextStepListResponse"
+description: "Envelope returned when listing next-step mappings."
+sidebar_label: "WorkflowNextStepListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":0,"Items":[{"WorkflowNextStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","WorkflowStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AllowedNextWorkflowStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsAllActionsCompleteRequired":true,"StepName":"In Progress","SourceEntityTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SourceEntityId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z"}],"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":0,"ServerName":"string","ProcessId":0,"OperationId":"string","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"WorkflowNextStepListResponse"}
+>
+</Heading>
+
+
+
+Envelope returned when listing next-step mappings.
+
+<Schema
+  schema={{"type":"object","description":"Envelope returned when listing next-step mappings.","properties":{"ItemCount":{"type":"integer","description":"Number of next-step mappings returned."},"Items":{"type":"array","description":"Collection of next-step transition mappings.","items":{"type":"object","description":"Defines an allowed transition from one workflow step to another.","properties":{"WorkflowNextStepId":{"type":"string","format":"uuid","description":"Unique identifier for this next-step mapping."},"WorkflowStepId":{"type":"string","format":"uuid","description":"Source workflow step from which this transition originates."},"AllowedNextWorkflowStepId":{"type":"string","format":"uuid","description":"Target workflow step that can be transitioned to."},"IsAllActionsCompleteRequired":{"type":"boolean","description":"If true, all step actions must be completed before this transition is allowed."},"StepName":{"type":"string","nullable":true,"description":"Display name of the target step for convenience.","example":"In Progress"},"SourceEntityTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Entity type identifier for the source system."},"SourceEntityId":{"type":"string","format":"uuid","nullable":true,"description":"Entity identifier from the source system."},"CreatedDate":{"type":"string","format":"date-time","description":"UTC timestamp when the mapping was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"UTC timestamp when the mapping was last modified."}},"required":["WorkflowNextStepId","WorkflowStepId","AllowedNextWorkflowStepId","IsAllActionsCompleteRequired"],"title":"WorkflowNextStep"}},"UserToken":{"type":"string","format":"uuid","description":"Echo of the UserToken header that authenticated the request."},"RequestDate":{"type":"string","format":"date-time","description":"Server-side timestamp indicating when the request was processed."},"ExecutionTime":{"type":"number","description":"Server processing time in milliseconds."},"StatusCode":{"type":"integer","description":"HTTP status code emitted by the service."},"ServerName":{"type":"string","description":"Name of the server instance that fulfilled the request."},"ProcessId":{"type":"integer","description":"Internal process identifier logged by the service."},"OperationId":{"type":"string","description":"Trace identifier correlating this call with server logs."},"Properties":{"type":"object","description":"Additional diagnostic metadata, if any.","additionalProperties":{"type":"string"}}},"required":["ItemCount","Items","StatusCode"],"title":"WorkflowNextStepListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

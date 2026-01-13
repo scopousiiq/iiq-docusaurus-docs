@@ -1,0 +1,33 @@
+---
+id: bulkassettypedeleterequest
+title: "BulkAssetTypeDeleteRequest"
+description: "Bulk request wrapper for deleting multiple asset types. Mirrors `BulkAssetTypeRequest<BulkDeleteAssetTypeRequest>`."
+sidebar_label: "BulkAssetTypeDeleteRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetTypeIds":["11111111-1111-4111-8111-111111111111","22222222-2222-4222-8222-222222222222"],"Request":{"AssetTypeId":"00000000-0000-0000-0000-000000000000"},"IsSelectAll":false}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"BulkAssetTypeDeleteRequest"}
+>
+</Heading>
+
+
+
+Bulk request wrapper for deleting multiple asset types. Mirrors `BulkAssetTypeRequest<BulkDeleteAssetTypeRequest>`.
+
+<Schema
+  schema={{"type":"object","description":"Bulk request wrapper for deleting multiple asset types. Mirrors `BulkAssetTypeRequest<BulkDeleteAssetTypeRequest>`.","properties":{"AssetTypeIds":{"type":"array","description":"List of asset type identifiers to delete when `IsSelectAll` is false.","items":{"type":"string","format":"uuid"}},"Request":{"description":"The delete command to apply to the selected asset types.","allOf":[{"type":"object","description":"Individual delete command for an asset type in a bulk operation. Mirrors `Spark.Shared.Models.Requests.BulkDeleteAssetTypeRequest`.","properties":{"AssetTypeId":{"type":"string","format":"uuid","description":"The unique identifier of the asset type to delete."}},"required":["AssetTypeId"],"title":"BulkDeleteAssetTypeRequest"}]},"IsSelectAll":{"type":"boolean","description":"When true, ignores `AssetTypeIds` and applies the operation to all asset types matching the `AssetTypesRequest` criteria.","default":false},"AssetTypesRequest":{"description":"Filtering criteria applied when `IsSelectAll` is true.","allOf":[{"type":"object","description":"Filtering and pagination options for retrieving asset types. Mirrors `Spark.Shared.Models.Requests.GetAssetTypesRequest`.","properties":{"FilterByProduct":{"type":"boolean","description":"When true, filters the result set to include only types applicable to the active product module.","default":true},"ProductId":{"type":"string","format":"uuid","description":"Optional product identifier to filter by."},"ResourceGroupIds":{"type":"array","description":"Optional list of resource group identifiers to filter by.","items":{"type":"string","format":"uuid"}}},"title":"GetAssetTypesRequest"}]}},"required":["Request"],"example":{"AssetTypeIds":["11111111-1111-4111-8111-111111111111","22222222-2222-4222-8222-222222222222"],"Request":{"AssetTypeId":"00000000-0000-0000-0000-000000000000"},"IsSelectAll":false},"title":"BulkAssetTypeDeleteRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

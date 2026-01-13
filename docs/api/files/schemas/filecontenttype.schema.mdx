@@ -1,0 +1,33 @@
+---
+id: filecontenttype
+title: "FileContentType"
+description: "Represents an allowed file content type for attachments. Defines the MIME types, extensions, and icons used for file uploads and display."
+sidebar_label: "FileContentType"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"FileContentTypeId":1,"Name":"PDF Document","Extension":"pdf","MimeType":"application/pdf","Icon":"fa-file-pdf","IsImage":false}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"FileContentType"}
+>
+</Heading>
+
+
+
+Represents an allowed file content type for attachments. Defines the MIME types, extensions, and icons used for file uploads and display.
+
+<Schema
+  schema={{"type":"object","description":"Represents an allowed file content type for attachments. Defines the MIME types, extensions, and icons used for file uploads and display.","properties":{"FileContentTypeId":{"type":"integer","description":"Unique identifier for the file content type"},"Name":{"type":"string","description":"Display name for the content type (e.g., 'PDF Document', 'JPEG Image')","example":"PDF Document"},"Extension":{"type":"string","nullable":true,"description":"File extension without the dot (e.g., 'pdf', 'jpg')","example":"pdf"},"MimeType":{"type":"string","description":"MIME type string (e.g., 'application/pdf', 'image/jpeg')","example":"application/pdf"},"Icon":{"type":"string","description":"Icon class or identifier for UI display","example":"fa-file-pdf"},"IsImage":{"type":"boolean","description":"Whether this content type represents an image file that can be previewed inline","example":false}},"required":["FileContentTypeId","Name","MimeType","Icon","IsImage"],"example":{"FileContentTypeId":1,"Name":"PDF Document","Extension":"pdf","MimeType":"application/pdf","Icon":"fa-file-pdf","IsImage":false},"title":"FileContentType"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

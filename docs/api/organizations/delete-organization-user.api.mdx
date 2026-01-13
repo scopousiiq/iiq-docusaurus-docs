@@ -1,0 +1,82 @@
+---
+id: delete-organization-user
+title: "Delete organization user by ID"
+description: "Deletes a single organization-user relationship by OrganizationUserId. Use this when you need to remove a specific membership link and you already know the relationship ID."
+sidebar_label: "Delete organization user by ID"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "delete api-method"
+info_path: docs/api/organizations/organizations-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete organization user by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1.0/organizations/users/{OrganizationUserId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes a single organization-user relationship by OrganizationUserId. Use this when you need to remove a specific membership link and you already know the relationship ID.
+
+**Prerequisites**
+1. **OrganizationUserId** - Use [GET /api/v1.0/organizations/users/query](/docs/api/organizations/get-organization-users-by-query-get) and extract `Items[].OrganizationUserId`.
+
+**Workflow Example**
+1. Identify the relationship ID to remove.
+2. Call [DELETE /api/v1.0/organizations/users/\{OrganizationUserId\}](/docs/api/organizations/delete-organization-user).
+
+**Minimal Required Fields**: OrganizationUserId path parameter.
+
+**Notes**: This API version is deprecated and performs a destructive action.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"OrganizationUserId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Deleted successfully.","content":{"application/json":{"schema":{"type":"object","description":"Standard response for single-item delete operations in the Organizations domain. Returns success status and any validation errors. Used by Organization, OrganizationType, and OrganizationUser delete endpoints.","properties":{"IsSuccess":{"type":"boolean","description":"Indicates whether the operation succeeded."},"Errors":{"type":"array","items":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"},"description":"Array of error messages if the operation failed."}},"title":"OrganizationsDomainDeleteResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

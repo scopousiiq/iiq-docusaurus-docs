@@ -1,0 +1,33 @@
+---
+id: alreadyexistserror
+title: "AlreadyExistsError"
+description: "Error response when attempting to create a resource that already exists. Based on C# `AlreadyExistsException` with ErrorKey 'ALREADY_EXISTS'."
+sidebar_label: "AlreadyExistsError"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"StatusCode":409,"Message":"The item you are creating already exists","ErrorKey":"ALREADY_EXISTS"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AlreadyExistsError"}
+>
+</Heading>
+
+
+
+Error response when attempting to create a resource that already exists. Based on C# `AlreadyExistsException` with ErrorKey 'ALREADY_EXISTS'.
+
+<Schema
+  schema={{"type":"object","description":"Error response when attempting to create a resource that already exists. Based on C# `AlreadyExistsException` with ErrorKey 'ALREADY_EXISTS'.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (409 Conflict)","example":409},"Message":{"type":"string","description":"Human-readable description of the conflict","example":"The item you are creating already exists"},"ErrorKey":{"type":"string","description":"Machine-readable error key","example":"ALREADY_EXISTS"}},"required":["StatusCode","Message","ErrorKey"],"title":"AlreadyExistsError"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

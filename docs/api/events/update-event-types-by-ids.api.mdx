@@ -1,0 +1,81 @@
+---
+id: update-event-types-by-ids
+title: "Update event types by IDs"
+description: "Updates multiple event types by explicit ID list. Each item should include the `EventTypeId` and the fields to change, allowing bulk renames or scope adjustments."
+sidebar_label: "Update event types by IDs"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "put api-method"
+info_path: docs/api/events/events-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update event types by IDs"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/api/v1.0/events/types/ids/update"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Updates multiple event types by explicit ID list. Each item should include the `EventTypeId` and the fields to change, allowing bulk renames or scope adjustments.
+
+**Prerequisites**
+1. **EventTypeIds** - Use [POST /api/v1.0/events/types/query](/docs/api/events/get-event-types-by-query-post) and extract `Items[].EventTypeId`.
+
+**Workflow Example**
+1. Query types: [POST /api/v1.0/events/types/query](/docs/api/events/get-event-types-by-query-post) -&gt; extract `Items[].EventTypeId`.
+2. Build `UpdateEventTypeRequest` items with `EventTypeId` and updated fields.
+3. Submit update: [PUT /api/v1.0/events/types/ids/update](/docs/api/events/update-event-types-by-ids).
+
+**Minimal Required Fields**: Each item must include `EventTypeId` plus at least one field to update.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"array","items":{"type":"object","description":"Request model for creating or updating an event type.","properties":{"EventTypeId":{"type":"string","format":"uuid","description":"Event type ID (required for updates)."},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site scope for site-specific event types."},"Scope":{"type":"string","enum":["All","System","Global","Site","App","User","Role","Team"],"description":"Visibility scope of the event type."},"Name":{"type":"string","description":"Display name of the event type."},"Icon":{"type":"string","description":"Icon identifier for the event type."}},"title":"UpdateEventTypeRequest"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Items updated.","content":{"application/json":{"schema":{"type":"object","description":"Response after updating multiple event types.","properties":{"ItemIds":{"type":"array","items":{"type":"string","format":"uuid"}},"IsSuccess":{"type":"boolean"},"Errors":{"type":"array","items":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"}}},"title":"EventTypeBatchUpdateResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

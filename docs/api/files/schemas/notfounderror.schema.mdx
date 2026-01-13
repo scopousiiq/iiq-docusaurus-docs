@@ -1,0 +1,33 @@
+---
+id: notfounderror
+title: "NotFoundError"
+description: "Error response when a requested resource is not found"
+sidebar_label: "NotFoundError"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"StatusCode":404,"Message":"The requested resource was not found","ResourceId":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"NotFoundError"}
+>
+</Heading>
+
+
+
+Error response when a requested resource is not found
+
+<Schema
+  schema={{"type":"object","description":"Error response when a requested resource is not found","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (404)","example":404},"Message":{"type":"string","description":"Human-readable description indicating the resource was not found","example":"The requested resource was not found"},"ResourceId":{"type":"string","description":"ID of the resource that was not found"}},"required":["StatusCode","Message"],"title":"NotFoundError"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

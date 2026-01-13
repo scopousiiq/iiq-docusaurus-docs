@@ -1,0 +1,33 @@
+---
+id: ticketremindersresponse
+title: "TicketRemindersResponse"
+description: "Response containing due date reminders for a ticket."
+sidebar_label: "TicketRemindersResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":[{"ReminderId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TicketId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ReminderDate":"2024-07-29T15:51:28.071Z","ReminderType":"string","OffsetDays":-1,"RecipientUserIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"IsActive":true}],"ItemCount":25,"Paging":{"TotalRows":54343,"PageCount":10869,"PageSize":5,"PageIndex":0},"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":200,"Message":"string","ErrorKey":"string","ServerName":"string","ProcessId":0,"OperationId":"string","Properties":{},"Metadata":{},"Errors":[{"Field":"string","Message":"string","Code":"string"}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketRemindersResponse"}
+>
+</Heading>
+
+
+
+Response containing due date reminders for a ticket.
+
+<Schema
+  schema={{"type":"object","description":"Response containing due date reminders for a ticket.","allOf":[{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"}],"properties":{"Items":{"type":"array","description":"Collection of reminder configurations.","items":{"type":"object","description":"A reminder configuration for ticket due dates.","properties":{"ReminderId":{"type":"string","format":"uuid","description":"Unique identifier for this reminder."},"TicketId":{"type":"string","format":"uuid","description":"Ticket this reminder is associated with."},"ReminderDate":{"type":"string","format":"date-time","description":"When the reminder should be triggered."},"ReminderType":{"type":"string","description":"Type of reminder (e.g., 'Before', 'After', 'OnDue')."},"OffsetDays":{"type":"integer","description":"Days before/after due date to trigger reminder.","example":-1},"RecipientUserIds":{"type":"array","description":"Users who should receive this reminder.","items":{"type":"string","format":"uuid"}},"IsActive":{"type":"boolean","description":"Whether this reminder is active.","example":true}},"title":"TicketReminder"}}},"title":"TicketRemindersResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

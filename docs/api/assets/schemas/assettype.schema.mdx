@@ -1,0 +1,33 @@
+---
+id: assettype
+title: "AssetType"
+description: "Full asset type definition returned by GET /api/v1.0/assets/types endpoints. Asset types categorize devices (Chromebook, iPad, Desktop, etc.) and control which fields and behaviors are available."
+sidebar_label: "AssetType"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Scope":"Global","Name":"string","Icon":"string","DefaultColumns":["string"],"SortOrder":10,"Assets":0,"EsoIsVisible":true,"AssetInventoryTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","DefaultLoanPeriodWorkdays":0,"LoanPeriodDueDate":"2024-07-29T15:51:28.071Z","IsModelFieldSupported":true,"IsAssetNameFieldSupported":true,"CategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ImageId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ResourceGroupIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","IsDeleted":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetType"}
+>
+</Heading>
+
+
+
+Full asset type definition returned by GET /api/v1.0/assets/types endpoints. Asset types categorize devices (Chromebook, iPad, Desktop, etc.) and control which fields and behaviors are available.
+
+<Schema
+  schema={{"type":"object","description":"Full asset type definition returned by GET /api/v1.0/assets/types endpoints. Asset types categorize devices (Chromebook, iPad, Desktop, etc.) and control which fields and behaviors are available.","properties":{"AssetTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the asset type"},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site identifier when the asset type is scoped to a single location. Null indicates a global or product-level type."},"Scope":{"type":"string","description":"Scope that determines where the asset type is visible","enum":["Global","Site","Product"]},"Name":{"type":"string","description":"Display name for the asset type shown in pickers and reports"},"Icon":{"type":"string","description":"Font Awesome icon class for the asset type (e.g., 'fa-laptop', 'fa-tablet')","nullable":true},"DefaultColumns":{"type":"array","items":{"type":"string"},"description":"Default column identifiers displayed in asset grid views for this type","nullable":true},"SortOrder":{"type":"integer","description":"Display order when presenting asset types in lists","example":10},"Assets":{"type":"integer","description":"Count of assets currently assigned to this type"},"EsoIsVisible":{"type":"boolean","description":"Whether the asset type is visible in external self-service ordering portals"},"AssetInventoryTypeId":{"type":"string","format":"uuid","description":"Reference to the inventory type classification (e.g., Tracked, Consumable)"},"DefaultLoanPeriodWorkdays":{"type":"integer","nullable":true,"description":"Default loan period in working days for assets of this type"},"LoanPeriodDueDate":{"type":"string","format":"date-time","nullable":true,"description":"Fixed due date for loans of this asset type, when applicable"},"IsModelFieldSupported":{"type":"boolean","description":"Whether assets of this type support the Model field"},"IsAssetNameFieldSupported":{"type":"boolean","description":"Whether assets of this type support a custom Name field"},"CategoryId":{"type":"string","format":"uuid","nullable":true,"description":"Reference to the parent category for this asset type"},"ImageId":{"type":"string","format":"uuid","nullable":true,"description":"Reference to the default image file for this asset type"},"ResourceGroupIds":{"type":"array","items":{"type":"string","format":"uuid"},"nullable":true,"description":"Resource groups associated with this asset type"},"ProductId":{"type":"string","format":"uuid","nullable":true,"description":"Product identifier when scoped to a specific product module"},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the asset type was created"},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the asset type was last modified"},"IsDeleted":{"type":"boolean","description":"Whether the asset type has been soft-deleted"}},"required":["AssetTypeId","Scope","Name","SortOrder","EsoIsVisible","AssetInventoryTypeId","IsModelFieldSupported","IsAssetNameFieldSupported","IsDeleted"],"title":"AssetType"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

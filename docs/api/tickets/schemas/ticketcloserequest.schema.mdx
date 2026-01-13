@@ -1,0 +1,33 @@
+---
+id: ticketcloserequest
+title: "TicketCloseRequest"
+description: "Payload submitted when closing a ticket. Supports optional close reason and workflow control flags."
+sidebar_label: "TicketCloseRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"CloseReasonTypeId":"c98ae44e-ada0-4ae7-ae30-817785c00002","SkipCheckingNonMandatorySteps":false,"ForceCloseRelatedTickets":false}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketCloseRequest"}
+>
+</Heading>
+
+
+
+Payload submitted when closing a ticket. Supports optional close reason and workflow control flags.
+
+<Schema
+  schema={{"type":"object","description":"Payload submitted when closing a ticket. Supports optional close reason and workflow control flags.","properties":{"CloseReasonTypeId":{"type":"string","format":"uuid","description":"Identifier for the selected close reason. Obtain by calling [GET /api/v1.0/sites/{siteUrl}](/docs/api/sites/get-site-by-url) and reading `Item.Settings.CloseReasonTypes`, or use [GET /api/v1.0/workflows/steps](/docs/api/workflows/get-workflow-steps) when inspecting workflow-specific close reasons.","nullable":true,"x-obtained-from":{"operationId":"getSiteByUrl","endpoint":"GET /api/v1.0/sites/{siteUrl}","responseField":"Item.Settings.CloseReasonTypes[].CloseReasonTypeId"}},"SkipCheckingNonMandatorySteps":{"type":"boolean","description":"When true, bypasses validation of non-mandatory workflow steps allowing immediate closure even if optional steps are incomplete.","default":false},"ForceCloseRelatedTickets":{"type":"boolean","description":"When true, automatically closes any related subtickets or linked tickets when closing the parent ticket.","default":false},"RunPostOperationsAsync":{"type":"boolean","description":"When true, runs post-closure operations (notifications, rule execution, etc.) asynchronously in the background for faster response time.","default":true}},"example":{"CloseReasonTypeId":"c98ae44e-ada0-4ae7-ae30-817785c00002","SkipCheckingNonMandatorySteps":false,"ForceCloseRelatedTickets":false},"title":"TicketCloseRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

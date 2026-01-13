@@ -1,0 +1,33 @@
+---
+id: locationroomcustomfieldvalue
+title: "LocationRoomCustomFieldValue"
+description: "Custom field value assigned to a location room. Extends the base CustomFieldValue with a room reference."
+sidebar_label: "LocationRoomCustomFieldValue"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"LocationRoomId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","EditorTypeId":0,"Value":"string","IsHidden":true,"ComplexValue":[{"Key":"string","Value":"string","DisplayValue":"string"}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"LocationRoomCustomFieldValue"}
+>
+</Heading>
+
+
+
+Custom field value assigned to a location room. Extends the base CustomFieldValue with a room reference.
+
+<Schema
+  schema={{"type":"object","description":"Custom field value assigned to a location room. Extends the base CustomFieldValue with a room reference.","properties":{"LocationRoomId":{"type":"string","format":"uuid","description":"Reference to the room this custom field value belongs to"},"CustomFieldTypeId":{"type":"string","format":"uuid","description":"Reference to the custom field type definition"},"EditorTypeId":{"type":"integer","nullable":true,"description":"Editor type identifier for rendering the field"},"Value":{"type":"string","nullable":true,"description":"The custom field value (for simple field types)"},"IsHidden":{"type":"boolean","description":"Whether this field value is hidden from display"},"ComplexValue":{"type":"array","nullable":true,"items":{"type":"object","description":"Complex editor value structure for multi-value or structured custom field editors.","properties":{"Key":{"type":"string","description":"Key identifier for the complex value entry."},"Value":{"type":"string","description":"Value associated with the key."},"DisplayValue":{"type":"string","description":"Human-readable display value."}},"additionalProperties":true,"title":"ComplexEditorValues"},"description":"Complex/multi-value field data (for advanced field types)"}},"required":["LocationRoomId","CustomFieldTypeId"],"title":"LocationRoomCustomFieldValue"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

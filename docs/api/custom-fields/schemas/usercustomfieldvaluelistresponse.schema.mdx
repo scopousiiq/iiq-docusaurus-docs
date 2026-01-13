@@ -1,0 +1,33 @@
+---
+id: usercustomfieldvaluelistresponse
+title: "UserCustomFieldValueListResponse"
+description: "Response containing a list of user custom field values."
+sidebar_label: "UserCustomFieldValueListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":[{"CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","EditorTypeId":0,"Value":"string","IsHidden":true}],"ItemCount":0,"Paging":{"TotalRows":54343,"PageCount":10869,"PageSize":5,"PageIndex":0},"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UserCustomFieldValueListResponse"}
+>
+</Heading>
+
+
+
+Response containing a list of user custom field values.
+
+<Schema
+  schema={{"type":"object","description":"Response containing a list of user custom field values.","properties":{"Items":{"type":"array","items":{"type":"object","properties":{"CustomFieldTypeId":{"type":"string","format":"uuid"},"EditorTypeId":{"type":"integer","description":"Editor type identifier describing the UI control used for the custom field. Retrieve editor types from [GET /api/v1.0/sites/{siteUrl}](/docs/api/sites/get-site-by-url).","x-obtained-from":{"operationId":"getSiteByUrl","endpoint":"GET /api/v1.0/sites/{siteUrl}","responseField":"Item.Settings.EditorTypes[].EditorTypeId"}},"Value":{"type":"string"},"IsHidden":{"type":"boolean"}},"required":["CustomFieldTypeId","EditorTypeId","Value","IsHidden"],"title":"UserCustomFieldValue"},"description":"List of user custom field values"},"ItemCount":{"type":"integer","description":"Number of items in the response"},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object"},"UserToken":{"type":"string","format":"uuid"},"RequestDate":{"type":"string","format":"date-time"},"ExecutionTime":{"type":"number","format":"double"},"StatusCode":{"type":"integer"}},"required":["Items","StatusCode"],"title":"UserCustomFieldValueListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

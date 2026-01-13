@@ -1,0 +1,33 @@
+---
+id: view
+title: "View"
+description: "A saved view or asset group filter definition."
+sidebar_label: "View"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ViewId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsDeleted":true,"SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AssetTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","UserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","ViewTypeId":"string","PageSize":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"View"}
+>
+</Heading>
+
+
+
+A saved view or asset group filter definition.
+
+<Schema
+  schema={{"type":"object","description":"A saved view or asset group filter definition.","properties":{"ViewId":{"type":"string","format":"uuid","description":"Unique identifier for this view."},"IsDeleted":{"type":"boolean","description":"Whether the view has been soft-deleted."},"SiteId":{"type":"string","format":"uuid","description":"Site this view belongs to."},"AssetTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Optional asset type filter for the view."},"ProductId":{"type":"string","format":"uuid","description":"Product/module this view belongs to."},"UserId":{"type":"string","format":"uuid","description":"Owner of this view."},"Name":{"type":"string","description":"Display name of the view."},"ViewTypeId":{"type":"string","description":"Type classification of the view."},"PageSize":{"type":"integer","description":"Default page size for results."}},"required":["ViewId","SiteId","ProductId","UserId","Name"],"title":"View"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

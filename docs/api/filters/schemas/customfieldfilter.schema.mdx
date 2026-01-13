@@ -1,0 +1,33 @@
+---
+id: customfieldfilter
+title: "CustomFieldFilter"
+description: "Extended filter definition for custom field filters with additional metadata for UI rendering and value selection."
+sidebar_label: "CustomFieldFilter"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"FilterId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsDeleted":true,"Key":"string","Name":"string","Facet":"string","Value":"string","ComplexEditorPath":"string","App":"string","Source":"string","GroupIndex":0,"Dimension":"string","NamePlural":"string","NameLower":"string","NamePluralLower":"string","NameIntro":"string","Label":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CustomFieldFilter"}
+>
+</Heading>
+
+
+
+Extended filter definition for custom field filters with additional metadata for UI rendering and value selection.
+
+<Schema
+  schema={{"type":"object","description":"Extended filter definition for custom field filters with additional metadata for UI rendering and value selection.","properties":{"FilterId":{"type":"string","format":"uuid","description":"Unique identifier for the filter."},"IsDeleted":{"type":"boolean"},"Key":{"type":"string","description":"Facet key for the filter."},"Name":{"type":"string","description":"Display name of the filter."},"Facet":{"type":"string","description":"The facet identifier."},"Value":{"type":"string","description":"Current value of the filter."},"ComplexEditorPath":{"type":"string","description":"Path to complex editor configuration."},"App":{"type":"string","description":"Application identifier if app-specific."},"Source":{"type":"string","description":"Source of the filter value."},"GroupIndex":{"type":"integer","description":"Grouping index for OR logic."},"Dimension":{"type":"string","description":"Dimension for multi-dimensional filters."},"NamePlural":{"type":"string","description":"Plural form of the filter name."},"NameLower":{"type":"string","description":"Lowercase version of the name."},"NamePluralLower":{"type":"string","description":"Lowercase plural name."},"NameIntro":{"type":"string","description":"Introductory text for the filter."},"Label":{"type":"string","description":"UI label for the filter."}},"title":"CustomFieldFilter"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

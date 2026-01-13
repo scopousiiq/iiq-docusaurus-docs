@@ -1,0 +1,33 @@
+---
+id: updateinventoryactionrequest
+title: "UpdateInventoryActionRequest"
+description: "Request body for creating or updating an inventory action. Contains all fields from the InventoryAction model."
+sidebar_label: "UpdateInventoryActionRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"InventoryActionId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","GroupKey":"3fa85f64-5717-4562-b3fc-2c963f66afa6","InventoryActionTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","InventoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RelatedEntityTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RelatedEntityId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ActionDate":"2024-07-29T15:51:28.071Z","Quantity":0,"UnitCost":0,"Description":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateInventoryActionRequest"}
+>
+</Heading>
+
+
+
+Request body for creating or updating an inventory action. Contains all fields from the InventoryAction model.
+
+<Schema
+  schema={{"type":"object","description":"Request body for creating or updating an inventory action. Contains all fields from the InventoryAction model.","properties":{"InventoryActionId":{"type":"string","format":"uuid","description":"Unique identifier of the action (required for updates, generated on create)."},"GroupKey":{"type":"string","format":"uuid","nullable":true,"description":"Optional key for grouping related actions together."},"InventoryActionTypeId":{"type":"string","format":"uuid","description":"Identifier describing the type of action."},"InventoryId":{"type":"string","format":"uuid","description":"Identifier of the stock entry to affect."},"RelatedEntityTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Identifier describing the related entity type."},"RelatedEntityId":{"type":"string","format":"uuid","nullable":true,"description":"Identifier of the related entity (e.g., ticket)."},"ActionDate":{"type":"string","format":"date-time","description":"When the action occurred."},"Quantity":{"type":"integer","description":"Quantity delta to apply (negative for consumption, positive for addition)."},"UnitCost":{"type":"number","format":"double","description":"Unit cost recorded for the transaction."},"Description":{"type":"string","nullable":true,"description":"Optional description or notes about the action."}},"title":"UpdateInventoryActionRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

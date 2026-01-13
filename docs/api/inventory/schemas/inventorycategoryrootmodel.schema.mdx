@@ -1,0 +1,33 @@
+---
+id: inventorycategoryrootmodel
+title: "InventoryCategoryRootModel"
+description: "Root model for the inventory category summary tree."
+sidebar_label: "InventoryCategoryRootModel"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"name":"string","children":[{"InventoryItemId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","categoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","name":"string","icon":"string","number":0,"message":{"type":"string","text":"string"},"children":[null]}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"InventoryCategoryRootModel"}
+>
+</Heading>
+
+
+
+Root model for the inventory category summary tree.
+
+<Schema
+  schema={{"type":"object","description":"Root model for the inventory category summary tree.","properties":{"name":{"type":"string","description":"Root node name."},"children":{"type":"array","items":{"type":"object","description":"A child node in the inventory category tree.","properties":{"InventoryItemId":{"type":"string","format":"uuid","description":"Identifier of the inventory item (leaf nodes only)."},"categoryId":{"type":"string","format":"uuid","description":"Identifier of the category."},"name":{"type":"string","description":"Display name of the category or item."},"icon":{"type":"string","nullable":true,"description":"CSS class or glyph for the icon."},"number":{"type":"integer","nullable":true,"description":"Count of items or quantity."},"message":{"allOf":[{"type":"object","description":"Alert message displayed in category summaries.","properties":{"type":{"type":"string","description":"Alert type (e.g., 'warning', 'error')."},"text":{"type":"string","description":"Alert message text."}},"title":"InventoryCategoryAlertMessage"}],"nullable":true,"type":"object","description":"Optional alert message."},"children":{"type":"array","items":"circular(InventoryCategoryChild)","description":"Nested child categories or items."}},"title":"InventoryCategoryChild"},"description":"Top-level category children."}},"title":"InventoryCategoryRootModel"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

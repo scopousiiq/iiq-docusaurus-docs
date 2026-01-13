@@ -1,0 +1,33 @@
+---
+id: assetverificationsummary
+title: "AssetVerificationSummary"
+description: "Represents an asset verification record produced by manual or automated checks."
+sidebar_label: "AssetVerificationSummary"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetVerificationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","VerifiedByUserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AssetVerificationTypeId":"web-manual","IsSuccessful":true,"Comments":"string","LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ExternalId":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetVerificationSummary"}
+>
+</Heading>
+
+
+
+Represents an asset verification record produced by manual or automated checks.
+
+<Schema
+  schema={{"type":"object","description":"Represents an asset verification record produced by manual or automated checks.","properties":{"AssetVerificationId":{"type":"string","format":"uuid","description":"Identifier assigned to the verification event."},"AssetId":{"type":"string","format":"uuid","description":"Asset that was verified.","x-obtained-from":{"operationId":"getAssetById","endpoint":"GET /api/v1.0/assets/{assetId}","responseField":"Item.AssetId"}},"CreatedDate":{"type":"string","format":"date-time","description":"UTC timestamp when the verification was created."},"VerifiedByUserId":{"type":"string","format":"uuid","description":"User that completed the verification.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/search","responseField":"Item.Users[].UserId"}},"AssetVerificationTypeId":{"type":"string","description":"Verification mode identifier such as `web-manual`.","example":"web-manual"},"IsSuccessful":{"type":"boolean","description":"Indicates whether the verification passed."},"Comments":{"type":"string","description":"Optional notes captured during verification.","nullable":true},"LocationId":{"type":"string","format":"uuid","description":"Location confirmed during verification.","x-obtained-from":{"operationId":"getAllSiteLocationsV2","endpoint":"GET /api/v1.0/locations/all","responseField":"Items[].LocationId"}},"ExternalId":{"type":"string","description":"External identifier supplied by integrated systems.","nullable":true}},"additionalProperties":false,"title":"AssetVerificationSummary"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: getcustomfieldsforuserrequest
+title: "GetCustomFieldsForUserRequest"
+description: "Request payload for retrieving custom fields applicable to a user. When an Entity or EntityId is provided, the response is filtered to only include custom fields whose filter conditions match the specified user. When neither is provided, all custom fields for the Users entity type are returned."
+sidebar_label: "GetCustomFieldsForUserRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"EntityId":"51c89694-ae9f-f011-8e61-6045bd7991ab"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetCustomFieldsForUserRequest"}
+>
+</Heading>
+
+
+
+Request payload for retrieving custom fields applicable to a user. When an Entity or EntityId is provided, the response is filtered to only include custom fields whose filter conditions match the specified user. When neither is provided, all custom fields for the Users entity type are returned.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for retrieving custom fields applicable to a user. When an Entity or EntityId is provided, the response is filtered to only include custom fields whose filter conditions match the specified user. When neither is provided, all custom fields for the Users entity type are returned.","properties":{"Entity":{"type":"object","description":"Full User object used for filter matching. When provided, the system evaluates custom field filter conditions against this object's properties (RoleId, LocationId, etc.) without requiring a database lookup.","properties":{"UserId":{"type":"string","format":"uuid","description":"Unique identifier of the user."},"RoleId":{"type":"string","format":"uuid","description":"Role identifier used for filter matching."},"LocationId":{"type":"string","format":"uuid","description":"Location identifier used for filter matching."}}},"EntityId":{"type":"string","format":"uuid","description":"UUID of the user to retrieve custom fields for. When provided without Entity, the system loads the user from the database to evaluate filter conditions.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}},"ForProductId":{"type":"string","format":"uuid","description":"Optional product UUID to override the product context from request headers. Affects which product-specific custom fields are returned."}},"example":{"EntityId":"51c89694-ae9f-f011-8e61-6045bd7991ab"},"title":"GetCustomFieldsForUserRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

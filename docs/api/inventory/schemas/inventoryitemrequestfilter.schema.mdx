@@ -1,0 +1,33 @@
+---
+id: inventoryitemrequestfilter
+title: "InventoryItemRequestFilter"
+description: ""
+sidebar_label: "InventoryItemRequestFilter"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Facet":"inventoryitem","Ids":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Values":["string"],"Value":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"InventoryItemRequestFilter"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"allOf":[{"type":"object","description":"Generic filter used across inventory search operations.","properties":{"Facet":{"type":"string","description":"Name of the facet to filter on, such as `keyword`, `InventoryItemId`, or `LocationId`."},"Ids":{"type":"array","description":"Collection of UUIDs to match when filtering facets that accept identifiers.","items":{"type":"string","format":"uuid"}},"Values":{"type":"array","description":"Collection of raw values used when filtering keyword or text facets.","items":{"type":"string"}},"Value":{"type":"string","nullable":true,"description":"Single-value fallback used by certain legacy facets."}},"required":["Facet"],"title":"InventoryRequestFilter"},{"type":"object","properties":{"Facet":{"allOf":[{"type":"string","description":"Facet keys returned by the filter service for entity type `75a1a773-e4ac-46ab-9f53-d3f6c4aa073b`, which powers parts and consumables catalog searches in Incident IQ. Call `/api/v1.0/filters/for/entitytype/{entityTypeId}` to retrieve additional keys when new filters are introduced.","enum":["customfieldaddress","customfieldassets","customfieldchangerequests","customfieldconfirmationmessage","customfielddate","customfielddaterange","customfielddatetime","customfielddetailssection","customfieldemailmessage","customfieldinformation","customfieldipaddress","customfieldlocations","customfieldmultilinetext","customfieldmultiselect","customfieldnumber","customfieldnumberrange","customfieldphone","customfieldprotectedinfo","customfieldrichtext","customfieldscheduleselector","customfieldselect","customfieldtext","customfieldusers","customfieldyesno","inventoryitem","inventoryitemcategory","inventoryitemname","inventoryitemnumber","keyword","location","qty"],"example":"inventoryitem","title":"PartSearchFacetKey"}],"description":"Facet key accepted by the parts catalog (for example, `inventoryitem`, `inventoryitemcategory`, or `qty`)."}}}],"title":"InventoryItemRequestFilter"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

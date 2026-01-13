@@ -1,0 +1,33 @@
+---
+id: filtertype
+title: "FilterType"
+description: "Details about how a filter should capture user input (for example, date range or select list)."
+sidebar_label: "FilterType"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"FilterTypeId":"9999d1ac-91aa-e711-80c2-100dffa00003","Key":"daterange","Name":"Date range","Description":"string","CreatedDate":"2019-01-20T06:22:02.46","ModifiedDate":"2019-01-20T06:22:02.46"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"FilterType"}
+>
+</Heading>
+
+
+
+Details about how a filter should capture user input (for example, date range or select list).
+
+<Schema
+  schema={{"type":"object","description":"Details about how a filter should capture user input (for example, date range or select list).","properties":{"FilterTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the filter type.","example":"9999d1ac-91aa-e711-80c2-100dffa00003"},"Key":{"type":"string","description":"Internal key describing the filter input control.","example":"daterange"},"Name":{"type":"string","description":"Display name for the filter type.","example":"Date range"},"Description":{"type":"string","description":"Optional description of the filter type."},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the filter type was created.","example":"2019-01-20T06:22:02.46"},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the filter type definition was last updated.","example":"2019-01-20T06:22:02.46"}},"required":["FilterTypeId","Key","Name"],"title":"FilterType"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

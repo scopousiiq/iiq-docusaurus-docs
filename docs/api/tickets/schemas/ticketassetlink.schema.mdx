@@ -1,0 +1,33 @@
+---
+id: ticketassetlink
+title: "TicketAssetLink"
+description: "Slim ticket asset link returned when searching by model or category."
+sidebar_label: "TicketAssetLink"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketAssetId":"7c1eab8f-1234-4e9d-8d3d-15a2e6c5a4f2","AssetId":"42f8cc6d-0efd-4a68-983b-be61e9e1c49c","ModelId":"8b7f9421-1b0a-4dd4-d7c7-498f1954f69a","CategoryId":"36c6be98-4f39-e611-bf3b-005056bb000e"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketAssetLink"}
+>
+</Heading>
+
+
+
+Slim ticket asset link returned when searching by model or category.
+
+<Schema
+  schema={{"type":"object","description":"Slim ticket asset link returned when searching by model or category.","properties":{"TicketAssetId":{"type":"string","format":"uuid","description":"Identifier for the ticket-to-asset relationship.","example":"7c1eab8f-1234-4e9d-8d3d-15a2e6c5a4f2"},"AssetId":{"type":"string","format":"uuid","description":"Identifier for the linked asset record, when the relationship references a specific device.","nullable":true,"example":"42f8cc6d-0efd-4a68-983b-be61e9e1c49c","x-obtained-from":{"operationId":"getAssetById","endpoint":"GET /api/v1.0/assets/{assetId}","responseField":"Items[].AssetId"}},"ModelId":{"type":"string","format":"uuid","description":"Asset model identifier for the linked item or placeholder.","x-obtained-from":{"operationId":"getIssuesForModels","endpoint":"POST /api/v1.0/models","responseField":"Items[].ModelId"}},"CategoryId":{"type":"string","format":"uuid","description":"Product category associated with the model.","nullable":true,"x-obtained-from":{"operationId":"getIssuesForModels","endpoint":"POST /api/v1.0/models","responseField":"Items[].Category.CategoryId"}}},"required":["TicketAssetId"],"example":{"TicketAssetId":"7c1eab8f-1234-4e9d-8d3d-15a2e6c5a4f2","AssetId":"42f8cc6d-0efd-4a68-983b-be61e9e1c49c","ModelId":"8b7f9421-1b0a-4dd4-d7c7-498f1954f69a","CategoryId":"36c6be98-4f39-e611-bf3b-005056bb000e"},"title":"TicketAssetLink"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

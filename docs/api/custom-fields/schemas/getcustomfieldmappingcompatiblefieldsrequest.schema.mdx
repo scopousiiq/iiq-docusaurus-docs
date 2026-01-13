@@ -1,0 +1,33 @@
+---
+id: getcustomfieldmappingcompatiblefieldsrequest
+title: "GetCustomFieldMappingCompatibleFieldsRequest"
+description: "Request to retrieve compatible target fields for a given source custom field. The service evaluates field compatibility based on editor types and data types to ensure valid mappings."
+sidebar_label: "GetCustomFieldMappingCompatibleFieldsRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SourceEntityTypeId":"d7bda5de-e6a2-e711-80c2-0004ffa00010","SourceCustomFieldTypeId":"e7c8b30d-d899-4193-a70b-21994d2a8089","TargetEntityTypeId":"f3a1b2c3-d4e5-6789-0abc-def123456789"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetCustomFieldMappingCompatibleFieldsRequest"}
+>
+</Heading>
+
+
+
+Request to retrieve compatible target fields for a given source custom field. The service evaluates field compatibility based on editor types and data types to ensure valid mappings.
+
+<Schema
+  schema={{"type":"object","description":"Request to retrieve compatible target fields for a given source custom field. The service evaluates field compatibility based on editor types and data types to ensure valid mappings.","required":["SourceEntityTypeId","SourceCustomFieldTypeId","TargetEntityTypeId"],"properties":{"SourceEntityTypeId":{"type":"string","format":"uuid","description":"Entity type UUID of the source entity containing the custom field.","example":"d7bda5de-e6a2-e711-80c2-0004ffa00010","x-obtained-from":{"operationId":"getCustomFieldEntityMappingEntityTypes","endpoint":"GET /api/v1.0/custom-fields/entity-mappings/entity-types","responseField":"Items[].EntityType.EntityTypeId"}},"SourceCustomFieldTypeId":{"type":"string","format":"uuid","description":"Custom field type UUID on the source entity to check compatibility for.","example":"e7c8b30d-d899-4193-a70b-21994d2a8089","x-obtained-from":{"operationId":"searchCustomFields","endpoint":"POST /api/v1.0/custom-fields","responseField":"Items[].CustomFieldTypeId"}},"TargetEntityTypeId":{"type":"string","format":"uuid","description":"Entity type UUID of the target entity to find compatible fields on.","example":"f3a1b2c3-d4e5-6789-0abc-def123456789","x-obtained-from":{"operationId":"getCustomFieldEntityMappingEntityTypes","endpoint":"GET /api/v1.0/custom-fields/entity-mappings/entity-types","responseField":"Items[].EntityType.EntityTypeId"}}},"example":{"SourceEntityTypeId":"d7bda5de-e6a2-e711-80c2-0004ffa00010","SourceCustomFieldTypeId":"e7c8b30d-d899-4193-a70b-21994d2a8089","TargetEntityTypeId":"f3a1b2c3-d4e5-6789-0abc-def123456789"},"title":"GetCustomFieldMappingCompatibleFieldsRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

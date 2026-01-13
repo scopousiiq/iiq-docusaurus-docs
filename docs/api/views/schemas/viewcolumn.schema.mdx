@@ -1,0 +1,33 @@
+---
+id: viewcolumn
+title: "ViewColumn"
+description: "Column definition describing which field should be displayed in the view grid and in what order."
+sidebar_label: "ViewColumn"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"GridColumnId":"$tickets.sla-resolution-time","ColumnIndex":1,"Options":[{"Key":"CustomFieldTypeId","Value":null},{"Key":"ComplexEditorPath","Value":null}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ViewColumn"}
+>
+</Heading>
+
+
+
+Column definition describing which field should be displayed in the view grid and in what order.
+
+<Schema
+  schema={{"type":"object","description":"Column definition describing which field should be displayed in the view grid and in what order.","properties":{"GridColumnId":{"type":"string","description":"Identifier for the column renderer (for example `$tickets.subject`).","example":"$tickets.sla-resolution-time"},"ColumnIndex":{"type":"integer","description":"Zero-based position of the column in the grid.","example":1},"Options":{"type":"array","description":"Optional configuration options consumed by the renderer.","items":{"type":"object","description":"Key/value pair attached to a grid column to configure how the renderer should behave. Keys such as `CustomFieldTypeId` or `ComplexEditorPath` instruct the UI which editor to load.","properties":{"Key":{"type":"string","description":"Option name used by the grid renderer.","example":"CustomFieldTypeId"},"Value":{"type":"string","nullable":true,"description":"Optional option value. Many system columns leave this blank.","example":null}},"required":["Key","Value"],"title":"ViewColumnOption"}}},"required":["GridColumnId","ColumnIndex"],"example":{"GridColumnId":"$tickets.sla-resolution-time","ColumnIndex":1,"Options":[{"Key":"CustomFieldTypeId","Value":null},{"Key":"ComplexEditorPath","Value":null}]},"title":"ViewColumn"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

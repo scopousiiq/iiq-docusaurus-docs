@@ -1,0 +1,90 @@
+---
+id: has-active-events
+title: "Check for active scheduled events"
+description: "Checks whether a ticket has any active scheduled events linked to it. Returns a boolean indicating if maintenance windows, recurring tasks, or other scheduled activities are currently associated with the ticket."
+sidebar_label: "Check for active scheduled events"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/tickets/tickets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Check for active scheduled events"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/tickets/active-events/{ticketId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Checks whether a ticket has any active scheduled events linked to it. Returns a boolean indicating if maintenance windows, recurring tasks, or other scheduled activities are currently associated with the ticket.
+
+**Prerequisites**
+1. **ticketId** – Use [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) to locate the ticket and extract `Items[].TicketId`.
+
+**Workflow Example**
+1. Find ticket: [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) → extract `TicketId`
+2. Check events: [GET /api/v1.0/tickets/active-events/\{ticketId\}](/docs/api/tickets/has-active-events)
+3. If `true`: Review events before modifying ticket to avoid conflicts with scheduled work
+
+**Use Cases**:
+- Validate before closing a ticket with pending scheduled work
+- Check for conflicts before reassigning
+- Display event indicator in ticket detail views
+
+**Response**: Returns `true` if active scheduled events exist, `false` otherwise.
+
+**Related Endpoints**
+- [GET /api/v1.0/tickets/\{ticketId\}](/docs/api/tickets/get-ticket) – View full ticket details
+- [GET /api/v1.0/tickets/\{ticketId\}/timeline](/docs/api/tickets/get-ticket-timeline) – View ticket activity history
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"ticketId","in":"path","required":true,"description":"UUID of the ticket.","schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Event status retrieved successfully","content":{"application/json":{"schema":{"type":"boolean"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

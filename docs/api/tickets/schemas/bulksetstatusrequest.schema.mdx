@@ -1,0 +1,33 @@
+---
+id: bulksetstatusrequest
+title: "BulkSetStatusRequest"
+description: ""
+sidebar_label: "BulkSetStatusRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ticketIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"targetStatus":"Resolved","comment":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"BulkSetStatusRequest"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","required":["ticketIds","targetStatus"],"properties":{"ticketIds":{"type":"array","items":{"type":"string","format":"uuid","x-obtained-from":{"operationId":"searchTickets","endpoint":"POST /api/v1.0/tickets","responseField":"Items[].TicketId"}},"description":"Array of ticket IDs to update. Obtain via POST /api/v1.0/tickets and read `Items[].TicketId`.","minItems":1,"maxItems":100},"targetStatus":{"type":"string","description":"Identifier of the workflow step to apply across all tickets. Use [GET /api/v1.0/workflows/steps](/docs/api/workflows/get-workflow-steps) to obtain `WorkflowStepId` values or read `Item.WorkflowStep.WorkflowStepId` from GET /api/v1.0/tickets/{ticketId}.","example":"Resolved"},"comment":{"type":"string","description":"Optional comment to add to all tickets during status change","maxLength":1000}},"title":"BulkSetStatusRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

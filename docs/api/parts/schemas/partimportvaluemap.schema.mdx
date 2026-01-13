@@ -1,0 +1,33 @@
+---
+id: partimportvaluemap
+title: "PartImportValueMap"
+description: "Maps an import file value to an internal ID."
+sidebar_label: "PartImportValueMap"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Alias":"string","ToId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"PartImportValueMap"}
+>
+</Heading>
+
+
+
+Maps an import file value to an internal ID.
+
+<Schema
+  schema={{"type":"object","description":"Maps an import file value to an internal ID.","properties":{"Alias":{"type":"string","description":"Value as it appears in the import file."},"ToId":{"type":"string","format":"uuid","description":"Internal UUID to map the value to."}},"title":"PartImportValueMap"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

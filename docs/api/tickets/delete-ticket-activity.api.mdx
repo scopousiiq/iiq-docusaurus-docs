@@ -1,0 +1,88 @@
+---
+id: delete-ticket-activity
+title: "Delete ticket activity"
+description: "Soft-deletes a ticket activity (comment, update, etc.) from the ticket timeline. The activity is marked as deleted but may be recoverable by administrators using the undelete endpoint."
+sidebar_label: "Delete ticket activity"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "delete api-method"
+info_path: docs/api/tickets/tickets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete ticket activity"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1.0/tickets/activities/{ticketActivityId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Soft-deletes a ticket activity (comment, update, etc.) from the ticket timeline. The activity is marked as deleted but may be recoverable by administrators using the undelete endpoint.
+
+**Prerequisites**
+1. **ticketActivityId** – Use [GET /api/v1.0/tickets/\{ticketId\}/timeline](/docs/api/tickets/get-ticket-timeline) to view the timeline and extract `TicketActivityId`.
+
+**Workflow Example**
+1. View timeline: [GET /api/v1.0/tickets/\{ticketId\}/timeline](/docs/api/tickets/get-ticket-timeline) → identify activity to delete
+2. Delete activity: [DELETE /api/v1.0/tickets/activities/\{ticketActivityId\}](/docs/api/tickets/delete-ticket-activity)
+3. Verify: [GET /api/v1.0/tickets/\{ticketId\}/timeline](/docs/api/tickets/get-ticket-timeline) to confirm removal
+
+**Permissions**: Typically requires ownership of the activity or administrative privileges. System-generated activities (status changes, assignments) may not be deletable.
+
+**Note**: For comments, consider editing instead of deleting to preserve audit trail.
+
+**Related Endpoints**
+- [GET /api/v1.0/tickets/\{ticketId\}/timeline](/docs/api/tickets/get-ticket-timeline) – View timeline
+- [POST /api/v1.0/tickets/\{ticketId\}/activities/\{ticketActivityId\}](/docs/api/tickets/update-ticket-activity) – Edit instead of delete
+- [POST /api/v1.0/tickets/activities/\{ticketActivityId\}/undelete](/docs/api/tickets/undelete-ticket-activity) – Restore deleted activity
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"ticketActivityId","in":"path","required":true,"description":"Unique identifier of the ticket activity to delete","schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Activity deleted successfully","content":{"application/json":{"schema":{"type":"object","description":"Response returned after successfully deleting a resource. Contains the ID of the deleted item.","properties":{"Id":{"type":"string","format":"uuid","description":"UUID of the deleted resource"},"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"}},"required":["Id","StatusCode"],"title":"ItemDeleteResponse"}}}},"401":{"description":"Unauthorized – caller is not authenticated"},"403":{"description":"Forbidden – caller lacks permission to delete this activity"},"404":{"description":"Not found – activity does not exist"}}}
+>
+  
+</StatusCodes>
+
+
+      

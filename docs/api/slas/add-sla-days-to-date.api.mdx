@@ -1,0 +1,82 @@
+---
+id: add-sla-days-to-date
+title: "Add SLA days to date"
+description: "Calculates a future date by adding a specified number of SLA business days to a starting date. This calculation respects the system's SLA calendar configuration, excluding weekends, holidays, and other non-working days."
+sidebar_label: "Add SLA days to date"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/slas/slas-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add SLA days to date"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/slas/date/{date}/add-days/{days}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Calculates a future date by adding a specified number of SLA business days to a starting date. This calculation respects the system's SLA calendar configuration, excluding weekends, holidays, and other non-working days.
+
+**Parameters**
+- **date** - Starting date in ISO 8601 format (e.g., `2025-12-19T10:00:00Z`)
+- **days** - Number of business days to add (integer)
+
+**Workflow Example**
+1. Call this endpoint: [GET /api/v1.0/slas/date/\{date\}/add-days/\{days\}](/docs/api/slas/add-sla-days-to-date)
+2. The response `Item` contains the calculated future date.
+3. Use this for SLA deadline projections and ticket due date calculations.
+
+**Use Cases**: Projecting SLA deadlines, calculating expected resolution dates, planning capacity.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Client","in":"header","required":false,"example":"WebBrowser","schema":{"type":"string"}},{"name":"ProductId","in":"header","required":false,"example":0,"schema":{"type":"integer"}},{"name":"Authorization","in":"header","required":false,"example":"{{BasicAuth}}","schema":{"type":"string"}},{"name":"SiteId","in":"header","required":false,"example":"{{SiteId}}","schema":{"type":"string"}},{"name":"date","in":"path","required":true,"schema":{"type":"string","format":"date-time"},"description":"The starting date"},{"name":"days","in":"path","required":true,"schema":{"type":"integer"},"description":"The number of days to add"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK - Request completed successfully","content":{"application/json":{"schema":{"allOf":[{"type":"object","description":"Standard response envelope for single-item GET operations. The `Item` property contains the requested entity.","properties":{"Item":{"description":"The requested entity. Structure varies by endpoint."},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful GET)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Item","StatusCode"],"title":"ItemGetResponse"},{"type":"object","properties":{"Item":{"type":"string","format":"date","nullable":true,"description":"The resulting date after adding business days"}}}]},"example":{"Item":"2025-12-25","UserToken":"00000000-0000-0000-0000-000000000000","RequestDate":"2025-12-19T10:00:00Z","ExecutionTime":15.5,"StatusCode":200}}}},"401":{"description":"Unauthorized - Authentication required or authentication credentials are invalid","content":{"application/json":{"schema":{"type":"object","description":"Error response for authentication failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (401)","example":401},"Message":{"type":"string","description":"Human-readable description of the authentication error","example":"Authentication required. Please provide valid credentials."}},"required":["StatusCode","Message"],"title":"UnauthorizedError"}}}},"429":{"description":"Too Many Requests - Rate limit exceeded","content":{"application/json":{"schema":{"type":"object","description":"Error response when rate limit is exceeded","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (429)","example":429},"Message":{"type":"string","description":"Human-readable description of the rate limit error","example":"Rate limit exceeded. Please try again later."},"RetryAfter":{"type":"integer","description":"Number of seconds to wait before retrying","example":60}},"required":["StatusCode","Message"],"title":"RateLimitError"}}}},"500":{"description":"Internal Server Error - An unexpected error occurred on the server","content":{"application/json":{"schema":{"type":"object","description":"Error response for internal server errors","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (500)","example":500},"Message":{"type":"string","description":"Human-readable description of the server error","example":"An internal server error occurred. Please try again later."},"RequestId":{"type":"string","description":"Unique request identifier for troubleshooting","example":"req_1234567890abcdef"}},"required":["StatusCode","Message"],"title":"InternalServerError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

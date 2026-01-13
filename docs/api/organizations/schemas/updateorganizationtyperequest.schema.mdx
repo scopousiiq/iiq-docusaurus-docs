@@ -1,0 +1,33 @@
+---
+id: updateorganizationtyperequest
+title: "UpdateOrganizationTypeRequest"
+description: "Request body for creating or updating an organization type."
+sidebar_label: "UpdateOrganizationTypeRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"OrganizationTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Scope":"Global","Name":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateOrganizationTypeRequest"}
+>
+</Heading>
+
+
+
+Request body for creating or updating an organization type.
+
+<Schema
+  schema={{"type":"object","description":"Request body for creating or updating an organization type.","properties":{"OrganizationTypeId":{"type":"string","format":"uuid"},"SiteId":{"type":"string","format":"uuid","nullable":true},"Scope":{"type":"string","enum":["Global","Site"]},"Name":{"type":"string"}},"title":"UpdateOrganizationTypeRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,163 @@
+# SLAs API
+
+The SLAs API provides access to Service Level Agreement definitions and tracking in IncidentIQ. Monitor response times, resolution times, and compliance rates across your help desk.
+
+## Overview
+
+SLAs (Service Level Agreements) define response and resolution time expectations for tickets. They help ensure timely service, drive accountability, and provide metrics for performance tracking and reporting.
+
+:::info
+**What you can do with the SLAs API**
+:::
+
+>
+> - **Retrieve SLA definitions** and their time-based rules
+> - **Access SLA metrics** for performance monitoring and dashboards
+> - **Understand SLA rules** applied to tickets based on priority, category, or location
+> - **Track compliance rates** for reporting and continuous improvement
+
+## Common Use Cases
+
+### SLA Monitoring Dashboards
+Build real-time dashboards showing SLA compliance rates, at-risk tickets, and breached tickets that need immediate attention.
+
+### Escalation Triggers
+Identify tickets approaching SLA deadlines for proactive escalation. Trigger notifications or reassignments before breaches occur.
+
+### Performance Reporting
+Generate weekly or monthly reports on SLA attainment for stakeholders, broken down by team, location, or category.
+
+### Capacity Planning
+Analyze SLA data to identify patterns—peak times, problem categories, or understaffed locations—to improve resource allocation.
+
+## API Sections
+
+| Section | Description |
+|---------|-------------|
+| **Definitions** | SLA rule configurations and time thresholds |
+| **Metrics** | SLA performance data and compliance statistics |
+
+## Quick Start
+
+### List SLA Definitions
+
+**cURL
+**
+
+```bash
+curl -X GET "https://your-site.incidentiq.com/api/v1.0/slas" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient"
+```
+
+**JavaScript
+**
+
+```javascript
+const response = await fetch('https://your-site.incidentiq.com/api/v1.0/slas', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_TOKEN',
+    'SiteId': 'YOUR_SITE_ID',
+    'Client': 'ApiClient'
+  }
+});
+
+const data = await response.json();
+// Returns SLA definitions with response/resolution time thresholds
+console.log(data.Items);
+```
+
+**Python
+**
+
+```python
+import requests
+
+response = requests.get(
+    'https://your-site.incidentiq.com/api/v1.0/slas',
+    headers={
+        'Authorization': 'Bearer YOUR_TOKEN',
+        'SiteId': 'YOUR_SITE_ID',
+        'Client': 'ApiClient'
+    }
+)
+
+data = response.json()
+# Returns SLA definitions with response/resolution time thresholds
+print(data['Items'])
+```
+
+
+---
+
+## Key Concepts
+
+:::info
+**SLA Time Types**
+:::
+
+>
+> SLAs typically track two time metrics:
+> - **Response Time** — How quickly an agent first responds to a ticket
+> - **Resolution Time** — How long until the ticket is fully resolved
+
+### SLA Timer States
+
+SLA timers don't run continuously—they respond to ticket status:
+
+| Timer State | When | Example Statuses |
+|-------------|------|------------------|
+| **Running** | Ticket is active and awaiting action | New, Assigned, In Progress |
+| **Paused** | Waiting on external factors | Waiting for User, Waiting for Parts |
+| **Stopped** | Ticket completed | Resolved, Closed |
+
+### Business Hours
+
+SLA timers typically only count **business hours**, not calendar time. A ticket created Friday at 4 PM with a 4-hour SLA may not breach until Monday morning, depending on your business hours configuration.
+
+:::warning
+**Business Hours Configuration**
+:::
+
+>
+> SLA calculations depend on your site's business hours settings. Ensure business hours and holidays are configured correctly for accurate SLA tracking.
+
+### SLA Rules and Matching
+
+SLAs can be configured to apply based on various criteria:
+
+- **Priority** — High-priority tickets get shorter SLA windows
+- **Category** — Hardware issues might have different SLAs than software requests
+- **Location** — Remote sites might have extended SLA windows
+- **Issue Type** — Critical issues like "System Down" get aggressive SLAs
+
+When a ticket matches multiple SLA rules, the most specific (or most restrictive) rule typically applies.
+
+### SLA Breach Levels
+
+Many organizations track multiple breach levels:
+
+- **Warning** — Approaching deadline (e.g., 75% of time elapsed)
+- **Breached** — Deadline passed
+- **Severely Breached** — Significantly past deadline (e.g., 2x the SLA time)
+
+### Checking SLA Status on Tickets
+
+Ticket responses include SLA information showing current status and time remaining:
+
+```bash
+curl -X GET "https://your-site.incidentiq.com/api/v1.0/tickets/{ticketId}" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient"
+```
+
+The response includes SLA fields like `ResponseSlaStatus`, `ResolutionSlaStatus`, and time remaining until breach.
+
+## Related APIs
+
+- [Tickets](#/Tickets) — Ticket responses include SLA status and time remaining
+- [Workflows](#/Workflows) — Workflow step status types (Open/Waiting/Closed) affect SLA timer state
+- [Analytics](#/Analytics) — Aggregate SLA compliance metrics for reporting

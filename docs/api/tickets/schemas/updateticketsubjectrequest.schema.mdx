@@ -1,0 +1,33 @@
+---
+id: updateticketsubjectrequest
+title: "UpdateTicketSubjectRequest"
+description: "Request payload for updating a ticket's subject line."
+sidebar_label: "UpdateTicketSubjectRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Subject":"Updated: Laptop not booting - Blue screen error"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateTicketSubjectRequest"}
+>
+</Heading>
+
+
+
+Request payload for updating a ticket's subject line.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for updating a ticket's subject line.","properties":{"Subject":{"type":"string","description":"The new subject/title for the ticket.","minLength":1,"maxLength":500,"example":"Updated: Laptop not booting - Blue screen error"}},"required":["Subject"],"title":"UpdateTicketSubjectRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

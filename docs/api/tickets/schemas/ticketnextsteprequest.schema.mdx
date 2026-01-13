@@ -1,0 +1,33 @@
+---
+id: ticketnextsteprequest
+title: "TicketNextStepRequest"
+description: "Request payload for creating or updating a workflow-driven ticket next step. The `TicketNextStepTypeId` references a next-step type that defines the resolution behavior."
+sidebar_label: "TicketNextStepRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketNextStepTypeId":"6fca0dae-7b8e-4ac5-9ad8-8a4b5be6f7c3","Subject":"Requestor acknowledgment required"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketNextStepRequest"}
+>
+</Heading>
+
+
+
+Request payload for creating or updating a workflow-driven ticket next step. The `TicketNextStepTypeId` references a next-step type that defines the resolution behavior.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for creating or updating a workflow-driven ticket next step. The `TicketNextStepTypeId` references a next-step type that defines the resolution behavior.","properties":{"TicketNextStepId":{"type":"string","format":"uuid","description":"Identifier for the next step. Required for updates, auto-generated for creates."},"TicketNextStepTypeId":{"type":"string","format":"uuid","description":"Identifier for the next-step type. Obtain via [GET /api/v1.0/tickets/next-step/types](/docs/api/tickets/list-ticket-next-step-types)."},"Subject":{"type":"string","description":"Display name or subject for the step.","example":"Requestor acknowledgment required","nullable":true},"ExternalId":{"type":"string","description":"Optional external reference ID for integration with external systems.","nullable":true},"AssetId":{"type":"string","format":"uuid","description":"Asset identifier to associate with the step (e.g., for part replacement steps).","nullable":true},"AssetTag":{"type":"string","description":"Asset tag to associate with the step.","nullable":true},"FilterSetId":{"type":"string","format":"uuid","description":"Optional filter set identifier for dynamic resolution conditions.","nullable":true}},"required":["TicketNextStepTypeId"],"example":{"TicketNextStepTypeId":"6fca0dae-7b8e-4ac5-9ad8-8a4b5be6f7c3","Subject":"Requestor acknowledgment required"},"title":"TicketNextStepRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

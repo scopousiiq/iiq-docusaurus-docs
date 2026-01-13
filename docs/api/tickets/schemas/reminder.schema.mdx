@@ -1,0 +1,33 @@
+---
+id: reminder
+title: "Reminder"
+description: "Reminder configuration for due date notifications."
+sidebar_label: "Reminder"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ReminderId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","EntityId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","EntityTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","PeriodCount":2,"PeriodType":0,"ReminderType":1,"ReminderDate":"2024-07-29T15:51:28.071Z"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Reminder"}
+>
+</Heading>
+
+
+
+Reminder configuration for due date notifications.
+
+<Schema
+  schema={{"type":"object","description":"Reminder configuration for due date notifications.","properties":{"ReminderId":{"type":"string","format":"uuid","description":"Unique identifier for the reminder."},"EntityId":{"type":"string","format":"uuid","description":"ID of the entity (ticket) this reminder is associated with."},"EntityTypeId":{"type":"string","format":"uuid","description":"Entity type identifier (typically ticket entity type)."},"PeriodCount":{"type":"integer","description":"Number of periods before due date to send reminder.","example":2},"PeriodType":{"type":"integer","description":"Period unit for reminder timing. 0=Days, 1=Weeks, 2=Months, 3=None.","enum":[0,1,2,3],"example":0},"ReminderType":{"type":"integer","description":"Type of reminder notification.","example":1},"ReminderDate":{"type":"string","format":"date-time","description":"Calculated date when reminder will be sent."}},"title":"Reminder"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

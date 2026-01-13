@@ -1,0 +1,33 @@
+---
+id: upsertusercustomfieldvaluesrequest
+title: "UpsertUserCustomFieldValuesRequest"
+description: "Array of user custom field values to upsert. Each item specifies a user and the custom field value to set. Multiple values for different users or different fields can be submitted in a single request."
+sidebar_label: "UpsertUserCustomFieldValuesRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: [{"UserId":"51c89694-ae9f-f011-8e61-6045bd7991ab","CustomFieldTypeId":"e7c8b30d-d899-4193-a70b-21994d2a8089","EditorTypeId":1,"Value":"Premium Protection Plan","IsHidden":false},{"UserId":"51c89694-ae9f-f011-8e61-6045bd7991ab","CustomFieldTypeId":"a1b2c3d4-5678-90ab-cdef-123456789012","EditorTypeId":6,"Value":"2025-12-31","IsHidden":false}]
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpsertUserCustomFieldValuesRequest"}
+>
+</Heading>
+
+
+
+Array of user custom field values to upsert. Each item specifies a user and the custom field value to set. Multiple values for different users or different fields can be submitted in a single request.
+
+<Schema
+  schema={{"type":"array","description":"Array of user custom field values to upsert. Each item specifies a user and the custom field value to set. Multiple values for different users or different fields can be submitted in a single request.","items":{"type":"object","properties":{"CustomFieldTypeId":{"type":"string","format":"uuid"},"EditorTypeId":{"type":"integer","description":"Editor type identifier describing the UI control used for the custom field. Retrieve editor types from [GET /api/v1.0/sites/{siteUrl}](/docs/api/sites/get-site-by-url).","x-obtained-from":{"operationId":"getSiteByUrl","endpoint":"GET /api/v1.0/sites/{siteUrl}","responseField":"Item.Settings.EditorTypes[].EditorTypeId"}},"Value":{"type":"string"},"IsHidden":{"type":"boolean"}},"required":["CustomFieldTypeId","EditorTypeId","Value","IsHidden"],"title":"UserCustomFieldValue"},"example":[{"UserId":"51c89694-ae9f-f011-8e61-6045bd7991ab","CustomFieldTypeId":"e7c8b30d-d899-4193-a70b-21994d2a8089","EditorTypeId":1,"Value":"Premium Protection Plan","IsHidden":false},{"UserId":"51c89694-ae9f-f011-8e61-6045bd7991ab","CustomFieldTypeId":"a1b2c3d4-5678-90ab-cdef-123456789012","EditorTypeId":6,"Value":"2025-12-31","IsHidden":false}],"title":"UpsertUserCustomFieldValuesRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

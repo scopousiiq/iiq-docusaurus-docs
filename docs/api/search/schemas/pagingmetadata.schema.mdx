@@ -1,0 +1,33 @@
+---
+id: pagingmetadata
+title: "PagingMetadata"
+description: "Pagination details returned with paged user search results."
+sidebar_label: "PagingMetadata"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TotalRows":54343,"PageCount":10869,"PageSize":5,"PageIndex":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"PagingMetadata"}
+>
+</Heading>
+
+
+
+Pagination details returned with paged user search results.
+
+<Schema
+  schema={{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

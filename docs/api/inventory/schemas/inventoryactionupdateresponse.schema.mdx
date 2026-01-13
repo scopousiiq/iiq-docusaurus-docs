@@ -1,0 +1,33 @@
+---
+id: inventoryactionupdateresponse
+title: "InventoryActionUpdateResponse"
+description: "Response envelope for updating a single inventory action."
+sidebar_label: "InventoryActionUpdateResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Id":0,"Uid":"3fa85f64-5717-4562-b3fc-2c963f66afa6","UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":200,"Message":"string","ErrorKey":"string","ServerName":"string","ProcessId":0,"OperationId":"string","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"InventoryActionUpdateResponse"}
+>
+</Heading>
+
+
+
+Response envelope for updating a single inventory action.
+
+<Schema
+  schema={{"type":"object","description":"Response envelope for updating a single inventory action.","allOf":[{"type":"object","description":"Response envelope returned after successfully updating a resource. Based on C# `ItemUpdateResponse<T>` from `Spark.Shared.Models.Responses`.","properties":{"Id":{"type":"integer","description":"Legacy numeric identifier (if applicable)","example":0},"Uid":{"type":"string","format":"uuid","description":"UUID of the updated resource"},"Item":{"type":"object","description":"The updated entity","nullable":true,"additionalProperties":true},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful update)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"}},"required":["StatusCode"],"title":"ItemUpdateResponse"}],"properties":{"Item":{"type":"string","format":"uuid","description":"The InventoryActionId of the updated action."}},"title":"InventoryActionUpdateResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

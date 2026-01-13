@@ -1,0 +1,33 @@
+---
+id: useroutofofficeupdateresponse
+title: "UserOutOfOfficeUpdateResponse"
+description: "Details about the out-of-office update maintenance operation. Mirrors `Spark.UserOutOfOfficeService.UpdateResponse`."
+sidebar_label: "UserOutOfOfficeUpdateResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ExecutionTime":"string","UserActions":[{"Item1":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Item2":"string"}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UserOutOfOfficeUpdateResponse"}
+>
+</Heading>
+
+
+
+Details about the out-of-office update maintenance operation. Mirrors `Spark.UserOutOfOfficeService.UpdateResponse`.
+
+<Schema
+  schema={{"type":"object","description":"Details about the out-of-office update maintenance operation. Mirrors `Spark.UserOutOfOfficeService.UpdateResponse`.","properties":{"ExecutionTime":{"type":"string","description":"Duration of the maintenance operation formatted as a TimeSpan string (e.g. `00:00:00.123`)."},"UserActions":{"type":"array","description":"List of actions performed for specific users during the update.","items":{"type":"object","properties":{"Item1":{"type":"string","format":"uuid","description":"User identifier (UserId)."},"Item2":{"type":"string","description":"Description of the action taken (e.g. 'Set Out Of Office', 'In Office - No Change')."}}}}},"title":"UserOutOfOfficeUpdateResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

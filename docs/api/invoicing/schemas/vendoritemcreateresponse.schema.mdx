@@ -1,0 +1,33 @@
+---
+id: vendoritemcreateresponse
+title: "VendorItemCreateResponse"
+description: "Response after creating a new vendor."
+sidebar_label: "VendorItemCreateResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Item":{"VendorId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsDeleted":true,"Name":"string","UtilityTypes":[{"UtilityTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ScopeId":"Global","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Units":"string","IsDeleted":true}],"Address":{"AddressId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Street1":"string","Street2":"string","City":"string","State":"string","Zip":"string","Country":"string","Latitude":0,"Longitude":0,"IsDeleted":true},"Telephone":"string"},"IsSuccess":true,"Message":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"VendorItemCreateResponse"}
+>
+</Heading>
+
+
+
+Response after creating a new vendor.
+
+<Schema
+  schema={{"type":"object","description":"Response after creating a new vendor.","properties":{"ItemId":{"type":"string","format":"uuid","description":"The ID of the newly created vendor."},"Item":{"allOf":[{"type":"object","description":"A vendor in the invoicing system. Vendors represent external suppliers or service providers that can be associated with utility invoices.","properties":{"VendorId":{"type":"string","format":"uuid","description":"Unique identifier for the vendor."},"SiteId":{"type":"string","format":"uuid","description":"The site this vendor belongs to."},"IsDeleted":{"type":"boolean","description":"Indicates if the vendor has been soft-deleted."},"Name":{"type":"string","description":"The display name of the vendor."},"UtilityTypes":{"type":"array","nullable":true,"description":"List of utility types this vendor provides.","items":{"type":"object","description":"Defines a type of utility service (electricity, water, gas, etc.) that can be tracked in invoices.","properties":{"UtilityTypeId":{"type":"string","format":"uuid","description":"Unique identifier for this utility type."},"ScopeId":{"type":"string","description":"Visibility scope for entities within the system.","enum":["System","Global","Site","Product"],"example":"Global","title":"Scopes"},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site this utility type is scoped to, if site-specific."},"ProductId":{"type":"string","format":"uuid","nullable":true,"description":"Product this utility type is associated with, if applicable."},"Name":{"type":"string","description":"Display name for the utility type (e.g., 'Electricity', 'Natural Gas')."},"Units":{"type":"string","description":"Unit of measurement for this utility type (e.g., 'kWh', 'Therms', 'Gallons')."},"IsDeleted":{"type":"boolean","description":"Indicates if the utility type has been soft-deleted."}},"required":["Name"],"title":"VendorUtilityType"}},"Address":{"allOf":[{"type":"object","description":"Physical address information for a vendor.","properties":{"AddressId":{"type":"string","format":"uuid","description":"Unique identifier for this address record."},"SiteId":{"type":"string","format":"uuid","description":"The site this address belongs to."},"Street1":{"type":"string","nullable":true,"description":"Primary street address line."},"Street2":{"type":"string","nullable":true,"description":"Secondary street address line (suite, building, etc.)."},"City":{"type":"string","nullable":true,"description":"City name."},"State":{"type":"string","nullable":true,"description":"State or province."},"Zip":{"type":"string","nullable":true,"description":"Postal or ZIP code."},"Country":{"type":"string","nullable":true,"description":"Country name or code."},"Latitude":{"type":"number","format":"double","nullable":true,"description":"Geographic latitude coordinate."},"Longitude":{"type":"number","format":"double","nullable":true,"description":"Geographic longitude coordinate."},"IsDeleted":{"type":"boolean","description":"Indicates if the address has been soft-deleted."}},"title":"VendorAddress"}],"nullable":true,"type":"object","description":"The vendor's address information."},"Telephone":{"type":"string","description":"The vendor's contact telephone number."}},"title":"Vendor"}],"nullable":true,"type":"object","description":"The created vendor object."},"IsSuccess":{"type":"boolean","description":"Indicates whether the request succeeded."},"Message":{"type":"string","nullable":true,"description":"Optional message providing additional context about the response."}},"title":"VendorItemCreateResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

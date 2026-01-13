@@ -1,0 +1,33 @@
+---
+id: surveyruleslistresponse
+title: "SurveyRulesListResponse"
+description: "List of rules linked to a survey."
+sidebar_label: "SurveyRulesListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":[{"RuleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","IsActive":true,"Description":"string"}],"Paging":{"TotalRows":54343,"PageCount":10869,"PageSize":5,"PageIndex":0},"IsSuccess":true,"Message":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SurveyRulesListResponse"}
+>
+</Heading>
+
+
+
+List of rules linked to a survey.
+
+<Schema
+  schema={{"type":"object","description":"List of rules linked to a survey.","properties":{"Item":{"type":"array","items":{"type":"object","description":"A business rule that assigns this survey to tickets. Simplified representation of Rule entity.","properties":{"RuleId":{"type":"string","format":"uuid","description":"Unique identifier for the rule."},"Name":{"type":"string","description":"Display name of the rule."},"IsActive":{"type":"boolean","description":"Whether the rule is currently active."},"Description":{"type":"string","nullable":true,"description":"Description of what the rule does."}},"title":"SurveyRule"}},"Paging":{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"},"IsSuccess":{"type":"boolean"},"Message":{"type":"string","nullable":true}},"title":"SurveyRulesListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

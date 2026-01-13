@@ -1,0 +1,33 @@
+---
+id: inventoryitembatchupdateresponse
+title: "InventoryItemBatchUpdateResponse"
+description: "Response envelope for updating multiple inventory catalog items."
+sidebar_label: "InventoryItemBatchUpdateResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Ids":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Items":[{}],"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":200,"Message":"string","ServerName":"string","ProcessId":0,"OperationId":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"InventoryItemBatchUpdateResponse"}
+>
+</Heading>
+
+
+
+Response envelope for updating multiple inventory catalog items.
+
+<Schema
+  schema={{"type":"object","description":"Response envelope for updating multiple inventory catalog items.","allOf":[{"type":"object","description":"Response envelope returned after successfully updating multiple resources in bulk. Based on C# `ListUpdateResponse<T>` from `Spark.Shared.Models.Responses`.","properties":{"Ids":{"type":"array","description":"Array of UUIDs for the updated resources","items":{"type":"string","format":"uuid"}},"Items":{"type":"array","description":"Array of updated entities (when returned)","nullable":true,"items":{"type":"object","additionalProperties":true}},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful update)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"}},"required":["StatusCode"],"title":"ListUpdateResponse"}],"properties":{"Ids":{"type":"array","description":"Array of InventoryItemIds that were updated.","items":{"type":"string","format":"uuid"}}},"title":"InventoryItemBatchUpdateResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

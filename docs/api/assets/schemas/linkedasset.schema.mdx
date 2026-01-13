@@ -1,0 +1,33 @@
+---
+id: linkedasset
+title: "LinkedAsset"
+description: "Represents a parent-child relationship between two assets. Used to link accessories, peripherals, or components to a main asset."
+sidebar_label: "LinkedAsset"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ParentAssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ChildAssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","Description":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"LinkedAsset"}
+>
+</Heading>
+
+
+
+Represents a parent-child relationship between two assets. Used to link accessories, peripherals, or components to a main asset.
+
+<Schema
+  schema={{"type":"object","description":"Represents a parent-child relationship between two assets. Used to link accessories, peripherals, or components to a main asset.","properties":{"ParentAssetId":{"type":"string","format":"uuid","description":"UUID of the parent asset in the relationship"},"ChildAssetId":{"type":"string","format":"uuid","description":"UUID of the child asset being linked"},"CreatedDate":{"type":"string","format":"date-time","description":"Date and time when the link was created"},"Description":{"type":"string","nullable":true,"description":"Optional description of the relationship"}},"required":["ParentAssetId","ChildAssetId"],"title":"LinkedAsset"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

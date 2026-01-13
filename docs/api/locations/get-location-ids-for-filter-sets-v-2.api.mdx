@@ -1,0 +1,81 @@
+---
+id: get-location-ids-for-filter-sets-v-2
+title: "Get location IDs for filter sets"
+description: "Evaluates specified filter sets against locations and returns the IDs of locations that match each filter set. This is useful for determining which locations would be affected by filter-based rules or workflows."
+sidebar_label: "Get location IDs for filter sets"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/locations/locations-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get location IDs for filter sets"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v2.0/locations/ids/for/filtersets"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Evaluates specified filter sets against locations and returns the IDs of locations that match each filter set. This is useful for determining which locations would be affected by filter-based rules or workflows.
+
+**Use Cases:**
+- Preview which locations match a filter set before applying it
+- Validate filter set configurations
+- Build dynamic location lists based on filter criteria
+
+**Performance Considerations:**
+- Processing many filter sets or locations can be resource-intensive
+- Use `OnlyReturnFirstMatch` when you only need to know if any locations match
+- Use `IdsToProcess` to limit evaluation to specific locations
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Authorization","in":"header","required":true,"schema":{"type":"string"},"description":"Bearer token for authentication","example":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."},{"name":"SiteId","in":"header","required":false,"schema":{"type":"string","format":"uuid"},"description":"Site context for the request"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","description":"Request body for retrieving entity IDs belonging to specific filter sets.","properties":{"FilterSetIds":{"type":"array","description":"List of filter set identifiers to evaluate.","items":{"type":"string","format":"uuid"}},"IdsToProcess":{"type":"array","description":"Optional subset of entity IDs to restrict the evaluation to.","items":{"type":"string","format":"uuid"},"nullable":true},"IgnoreFilterSetsWithNoConditions":{"type":"boolean","description":"If true, filter sets without conditions are skipped.","default":false},"OnlyReturnFirstMatch":{"type":"boolean","description":"If true, stops after the first matching filter set.","default":false}},"title":"GetIdsForFilterSetRequest"},"example":{"FilterSetIds":["aaa32d8d-486f-ed11-ade6-cc60c8b5ca80","bbb32d8d-486f-ed11-ade6-cc60c8b5ca80"],"IdsToProcess":[],"IgnoreFilterSetsWithNoConditions":true,"OnlyReturnFirstMatch":false}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Filter set evaluation completed successfully","content":{"application/json":{"schema":{"type":"object","description":"Response envelope for filter set matching operations","properties":{"ItemCount":{"type":"integer","description":"Number of filter set results returned"},"Items":{"type":"array","items":{"type":"object","description":"Result entry mapping a filter set to the entity IDs that match its conditions.","properties":{"FilterSetId":{"type":"string","format":"uuid","description":"Filter set identifier."},"MatchedIds":{"type":"array","description":"List of entity identifiers that matched the filter set.","items":{"type":"string","format":"uuid"}}},"title":"IdsForFilterSetsResponse"},"description":"Array of filter set matching results"},"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"}},"required":["Items"],"title":"IdsForFilterSetsListResponse"},"example":{"ItemCount":2,"Items":[{"FilterSetId":"aaa32d8d-486f-ed11-ade6-cc60c8b5ca80","MatchedIds":["aa632d8d-486f-ed11-ade6-cc60c8b5ca80","bb632d8d-486f-ed11-ade6-cc60c8b5ca80"]},{"FilterSetId":"bbb32d8d-486f-ed11-ade6-cc60c8b5ca80","MatchedIds":["cc632d8d-486f-ed11-ade6-cc60c8b5ca80"]}],"StatusCode":200,"RequestDate":"2025-01-01T00:00:00Z"}}}},"400":{"description":"Invalid request - filter set not found or invalid parameters","content":{"application/json":{"schema":{"type":"object","description":"Detailed validation error information for bad request responses","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (400)","example":400},"Message":{"type":"string","description":"Human-readable description of the validation error","example":"Invalid request data"},"Errors":{"type":"object","description":"Field-specific validation errors","additionalProperties":{"type":"array","items":{"type":"string"}},"example":{"Subject":["Subject is required"],"IssueId":["IssueId must be a valid UUID"]}}},"required":["StatusCode","Message"],"title":"ValidationError"}}}},"401":{"description":"Authentication required","content":{"application/json":{"schema":{"type":"object","description":"Error response for authentication failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (401)","example":401},"Message":{"type":"string","description":"Human-readable description of the authentication error","example":"Authentication required. Please provide valid credentials."}},"required":["StatusCode","Message"],"title":"UnauthorizedError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

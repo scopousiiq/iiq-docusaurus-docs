@@ -1,0 +1,79 @@
+---
+id: update-organization-types-by-query
+title: "Update organization types by query"
+description: "Batch-updates organization types that match the supplied filter criteria. Use this when you need to apply the same change (such as renaming or scope adjustments) across multiple types."
+sidebar_label: "Update organization types by query"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "put api-method"
+info_path: docs/api/organizations/organizations-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update organization types by query"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/api/v1.0/organizations/types/query/update"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Batch-updates organization types that match the supplied filter criteria. Use this when you need to apply the same change (such as renaming or scope adjustments) across multiple types.
+
+**Workflow Example**
+1. Build a filter set that targets the types you want to update.
+2. Provide the Update payload and call [PUT /api/v1.0/organizations/types/query/update](/docs/api/organizations/update-organization-types-by-query).
+
+**Minimal Required Fields**: Update payload; Filters recommended to scope the update set.
+
+**Notes**: This API version is deprecated.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","description":"Request body for batch-updating organization types by query.","properties":{"Update":{"type":"object","description":"Represents a type/category for organizations (event venues).","properties":{"OrganizationTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the organization type."},"CreatedDate":{"type":"string","format":"date-time","description":"Date and time the organization type was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"Date and time the organization type was last modified."},"IsDeleted":{"type":"boolean","description":"Indicates if the organization type has been soft-deleted."},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the site this organization type belongs to. Null for global types."},"Scope":{"type":"string","enum":["Global","Site"],"description":"Scope of the organization type - Global or Site-specific."},"Name":{"type":"string","description":"Display name of the organization type."}},"title":"OrganizationType"},"Filters":{"type":"array","items":{"type":"object","description":"Filter condition for search/list operations. Based on C# `DataFilter` from `Spark.Shared.Models.DataFramework`. Supports both simple filters and nested filter groups.","properties":{"Facet":{"type":"string","description":"Field name or facet to filter on (e.g., 'Status', 'LocationId', 'CreatedDate')"},"Ids":{"type":"array","nullable":true,"items":{"type":"string","format":"uuid"},"description":"Array of UUIDs to filter by (for ID-based facets)"},"Values":{"type":"array","nullable":true,"items":{"type":"string"},"description":"Array of string values to filter by"},"Op":{"allOf":[{"type":"string","description":"Filter operations for DataFilter queries. Based on C# `DataFilterOperations` enum from `Spark.Shared.Enums`.","enum":["None","Equal","Greater","Less","GreaterOrEqual","LessOrEqual","StartsWith","EndsWith","Contains","NotEqual","NotGreater","NotLess","NotGreaterOrEqual","NotLessOrEqual"],"x-enum-descriptions":{"None":"No operation specified","Equal":"Equals (eq)","Greater":"Greater than (gt)","Less":"Less than (lt)","GreaterOrEqual":"Greater than or equal (ge)","LessOrEqual":"Less than or equal (le)","StartsWith":"String starts with","EndsWith":"String ends with","Contains":"String contains","NotEqual":"Not equal (ne)","NotGreater":"Not greater than (ng)","NotLess":"Not less than (nl)","NotGreaterOrEqual":"Not greater than or equal (nge)","NotLessOrEqual":"Not less than or equal (nle)"},"title":"DataFilterOperations"}],"description":"Filter operation to apply"},"CustomFieldTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Custom field type ID (when filtering on custom fields)"},"ComplexEditorPath":{"type":"string","nullable":true,"description":"JSON path for filtering within complex editor values"},"Items":{"type":"array","nullable":true,"items":"circular(DataFilter)","description":"Nested filter conditions for complex AND/OR queries"}},"required":["Facet"],"title":"DataFilter"}},"SortOrder":{"type":"integer"},"SortField":{"type":"string"}},"title":"UpdateOrganizationTypesRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Items updated.","content":{"application/json":{"schema":{"type":"object","description":"Standard response for batch update operations in the Organizations domain. Returns an array of updated item UUIDs, success status, and any validation errors. Used by Organization, OrganizationType, and OrganizationUser batch update endpoints.","properties":{"Items":{"type":"array","items":{"type":"string","format":"uuid"},"description":"Array of UUIDs for the updated items."},"IsSuccess":{"type":"boolean","description":"Indicates whether the operation succeeded."},"Errors":{"type":"array","items":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"},"description":"Array of error messages if the operation failed."}},"title":"OrganizationsDomainBatchUpdateResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

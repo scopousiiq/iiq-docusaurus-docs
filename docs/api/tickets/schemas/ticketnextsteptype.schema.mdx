@@ -1,0 +1,33 @@
+---
+id: ticketnextsteptype
+title: "TicketNextStepType"
+description: "Metadata describing a next-step type that can be attached to tickets."
+sidebar_label: "TicketNextStepType"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketNextStepTypeId":"22222222-2222-4222-8222-222222222222","Name":"Requestor acknowledgment","Icon":"check","CanBeForceResolved":true,"CanBeUserResolved":false,"RequiredToCloseTicket":false}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketNextStepType"}
+>
+</Heading>
+
+
+
+Metadata describing a next-step type that can be attached to tickets.
+
+<Schema
+  schema={{"type":"object","description":"Metadata describing a next-step type that can be attached to tickets.","properties":{"TicketNextStepTypeId":{"type":"string","format":"uuid","description":"Identifier for the next-step type.","example":"22222222-2222-4222-8222-222222222222"},"Name":{"type":"string","description":"Display name for the next-step type.","example":"Requestor acknowledgment"},"Icon":{"type":"string","description":"Optional icon key used by the UI.","nullable":true,"example":"check"},"CanBeForceResolved":{"type":"boolean","description":"Whether the next step can be force resolved.","example":true},"CanBeUserResolved":{"type":"boolean","description":"Whether the next step can be resolved by a non-agent user.","example":false},"RequiredToCloseTicket":{"type":"boolean","description":"Whether this next-step type is required before closing tickets.","example":false}},"required":["TicketNextStepTypeId","Name","CanBeForceResolved","CanBeUserResolved","RequiredToCloseTicket"],"title":"TicketNextStepType"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

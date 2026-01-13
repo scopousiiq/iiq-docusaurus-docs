@@ -1,0 +1,33 @@
+---
+id: ticketcopyrequest
+title: "TicketCopyRequest"
+description: "Options for duplicating a ticket. Based on C# CopyTicketOptions model. Controls what information from the source ticket should be copied and allows customization of the new ticket."
+sidebar_label: "TicketCopyRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"CopyRequestor":true,"CopyPriority":true,"CopyAssignedTo":true,"CopyCustomFieldValues":true,"SendEmails":false,"RunRules":false,"CreateWorkpackage":false,"Quantity":1}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketCopyRequest"}
+>
+</Heading>
+
+
+
+Options for duplicating a ticket. Based on C# CopyTicketOptions model. Controls what information from the source ticket should be copied and allows customization of the new ticket.
+
+<Schema
+  schema={{"type":"object","description":"Options for duplicating a ticket. Based on C# CopyTicketOptions model. Controls what information from the source ticket should be copied and allows customization of the new ticket.","properties":{"CopyRequestor":{"type":"boolean","description":"When true, the duplicate ticket keeps the original requestor (`ForId`).","default":true},"CopyPriority":{"type":"boolean","description":"When true, the duplicate ticket inherits the priority from the source ticket.","default":true},"CopyAssignedTo":{"type":"boolean","description":"When true, the duplicate ticket remains assigned to the same agent.","default":true},"CopyCustomFieldValues":{"type":"boolean","description":"When true, copies custom field values from the source ticket to the duplicate.","default":true},"RunRules":{"type":"boolean","description":"Set to true to execute automation rules against the duplicated ticket.","default":false},"SendEmails":{"type":"boolean","description":"Set to true to trigger ticket notification emails after the copy is created.","default":false},"CreateWorkpackage":{"type":"boolean","description":"When true, creates a new work package and associates the duplicated ticket(s) with it.","default":false},"WorkpackageName":{"type":"string","description":"Name for the new work package. Only used when CreateWorkpackage is true.","nullable":true},"Quantity":{"type":"integer","description":"Number of duplicate tickets to create from the source ticket.","minimum":1,"default":1},"NewSubject":{"type":"string","description":"Optional new subject for the duplicated ticket(s). If not provided, the source ticket's subject is used.","nullable":true},"NewIssueId":{"type":"string","format":"uuid","description":"Optional new issue type ID for the duplicated ticket(s). If not provided, the source ticket's issue is used.","nullable":true}},"example":{"CopyRequestor":true,"CopyPriority":true,"CopyAssignedTo":true,"CopyCustomFieldValues":true,"SendEmails":false,"RunRules":false,"CreateWorkpackage":false,"Quantity":1},"title":"TicketCopyRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

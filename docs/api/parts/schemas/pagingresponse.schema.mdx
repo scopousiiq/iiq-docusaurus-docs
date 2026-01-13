@@ -1,0 +1,33 @@
+---
+id: pagingresponse
+title: "PagingResponse"
+description: "Pagination metadata for list responses."
+sidebar_label: "PagingResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"PageIndex":0,"PageSize":0,"TotalCount":0,"TotalPages":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"PagingResponse"}
+>
+</Heading>
+
+
+
+Pagination metadata for list responses.
+
+<Schema
+  schema={{"type":"object","description":"Pagination metadata for list responses.","properties":{"PageIndex":{"type":"integer","description":"Current page index (zero-based)."},"PageSize":{"type":"integer","description":"Number of items per page."},"TotalCount":{"type":"integer","description":"Total number of items available."},"TotalPages":{"type":"integer","description":"Total number of pages available."}},"title":"PagingResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

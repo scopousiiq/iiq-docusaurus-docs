@@ -1,0 +1,33 @@
+---
+id: schedulevalidationrequest
+title: "ScheduleValidationRequest"
+description: "Request to validate event schedule availability."
+sidebar_label: "ScheduleValidationRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"LocationRoomIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"LocationIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"StartDateTime":"2024-07-29T15:51:28.071Z","EndDateTime":"2024-07-29T15:51:28.071Z","SetupMinutes":0,"BreakdownMinutes":0,"RequestedEventId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SkipAvailabilityCheck":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ScheduleValidationRequest"}
+>
+</Heading>
+
+
+
+Request to validate event schedule availability.
+
+<Schema
+  schema={{"type":"object","description":"Request to validate event schedule availability.","properties":{"LocationRoomIds":{"type":"array","items":{"type":"string","format":"uuid"}},"LocationIds":{"type":"array","items":{"type":"string","format":"uuid"}},"StartDateTime":{"type":"string","format":"date-time"},"EndDateTime":{"type":"string","format":"date-time"},"SetupMinutes":{"type":"integer"},"BreakdownMinutes":{"type":"integer"},"RequestedEventId":{"type":"string","format":"uuid","nullable":true},"SkipAvailabilityCheck":{"type":"boolean"}},"title":"ScheduleValidationRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: sendticketforapprovalrequest
+title: "SendTicketForApprovalRequest"
+description: "Request payload for sending a ticket to an approval workflow or changing the approver assignment."
+sidebar_label: "SendTicketForApprovalRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","NewApproverUserId":"2899c843-6030-ed11-ae83-14cb6572af81"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SendTicketForApprovalRequest"}
+>
+</Heading>
+
+
+
+Request payload for sending a ticket to an approval workflow or changing the approver assignment.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for sending a ticket to an approval workflow or changing the approver assignment.","properties":{"TicketId":{"type":"string","format":"uuid","description":"Identifier of the ticket requiring approval. Should match the TicketId in the URL path.","example":"a1b2c3d4-e5f6-7890-abcd-ef1234567890"},"ApproverUserId":{"type":"string","format":"uuid","description":"Current approver user ID (when changing approvers).","nullable":true,"example":"c64a05b1-6a2d-ea11-a601-0003ffe41fe2","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/search","responseField":"Item.Users[].UserId"}},"NewApproverUserId":{"type":"string","format":"uuid","description":"New approver user ID to assign for this ticket.","nullable":true,"example":"2899c843-6030-ed11-ae83-14cb6572af81","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/search","responseField":"Item.Users[].UserId"}},"ApproverTeamId":{"type":"string","format":"uuid","description":"Current approver team ID (when changing team approvers).","nullable":true,"example":"9d2d1481-3a23-4c1d-8f89-7c6e81cb4364"},"NewApproverTeamId":{"type":"string","format":"uuid","description":"New approver team ID to assign for this ticket.","nullable":true,"example":"e4b5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d"}},"example":{"TicketId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","NewApproverUserId":"2899c843-6030-ed11-ae83-14cb6572af81"},"title":"SendTicketForApprovalRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

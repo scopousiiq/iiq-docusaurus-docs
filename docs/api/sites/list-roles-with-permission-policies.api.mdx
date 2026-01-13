@@ -1,0 +1,78 @@
+---
+id: list-roles-with-permission-policies
+title: "List roles with permission policies"
+description: "Retrieves all roles along with their associated permission policy definitions, returning each role's metadata plus the full policy list that drives authorization behavior. Use this for permission audits, admin role management screens, or when you need to map which actions are allowed for a given role without making separate policy calls."
+sidebar_label: "List roles with permission policies"
+hide_title: true
+hide_table_of_contents: true
+api: eJztGm1v47b5rzxgB7Q1JEd2nFziD8Oy3LWXtddL89LrlgQNLT222UikjqScuLkA/Q/bL+wv2R5Ssl7su0uwK1BgC5DElsjn/Z28ZypHza1Q8ihhY5YKY09UiuaNsPNj1JkwRih5rFIRCzQsYAmaWIucdrAxO0GrBS7QAE9T0LQTeKrkDG6FnYOdo9DAjVGx4BYTyFcgISeYS0hwKqQgcCYAjbbQUsgZII/nDt7nBjK0POGWQ54WhmDCtEjTCgCRDHbOLSRaOEoKO1da/OK4ggnO+UIo3Ydzg2DnwsBU6SYhvEiENQHwJBPS4YSMSz7DDKUFE2tEok1puJ2jhKUqQCImYBVkPIfbuYjnwGPHAnCNJAp1i4nDw2EmFliCJZmowkLGb4hHgznX3GLFSczT1PQv5aXs9d4ofTNN1S28uONZnmKvdykHfTgkMV98/eIMtnguthaDfrRlhEWz5WS/RRjCmrcwLxV39cVWomLjNvn1JLbQbQrft+lLYjFVPAFcoF56HrhMQFgD1aL+pRz24ZjPEDSaIrXGq/76T1bl11vXfzI3Ir9eiU6DRcmlhTk3wCHlmjYS4JhbnqpZ/1JuV7rC0iAwgWuyyqPk2uG/XrfMi6trcDZiFeQqL1KSq9fo+RHpDu9ypa1XNmikL5WsXwkpMp7CCb4thMYEvhKYJqbXG4NUEvssYJbPDBtfsFOS3diJjV0F7C4U4m1IkmXje6Z0gpqNd4YBMxiXHuLXPgSMdJ2hRU2A7pnkGbIxIymxgAla+rZAvVxzsVf8TmRFBrLIJqhBTUs3s6qUDtFn4jlmnIiwy5zgCmlxhtpBm/IitWw8iKLo4SGoUZNmPoz7u3WctMl7EJ8J6XzssQREDw9XAdNociUNOpENo4j+dYKKw+WsqBsvBJraJkwRx2gMBYMl0RAraVFaAsjzPBWxo27rZ0NQ79dJVJOfMbZrTJ9aLhOuE6goBZQLTFWOTb4x8ZFnFT9NHw6VtFxQFJDAteZLkpywmBkfumqRrWIa0Z1rAmKFF8kRrW9Q6QCtEXlQgUdphW2JZbJ0ruM02odTq4vYFhphwTWtmywBZZIrIS0hFyW6h4fAoT5UhRfhBj1uNg3PoJAOa1xoTWFzJbsvUpQzO6eFjjMvmC9ZwNBHNjYe7jwE7JhkM3O6S9PXU+cjH9bTcS3NBC0XaUMG3nj4DBMoDGowyDUlFB+h1oV+pixPT9SteQTnbm3LHW8N8AUXKZ9QgIy1Mj4fEgEO2YrVndH2aNtzi4+VdBefg9pASEbZFL1XfBPrINrb3S+xnopf8Enq1RgrnTRkm6NzAmwzVoI/kgnePQL+P1CrcMINJiBoC2FqMpH7hFKiLI2rMqoWZoppzApLn0srelU6F6N4I4vUyYmNrS4weLpRCRmnRUIJ2zpNkL4DT2BMKgxcTmoSTuH+3KA+UzcoG8IwVpONB2yqdMYtG7OiEAlbp7Hj64Wdk5vHLuoY9PFQJPRsKlATOspdaOxzbvGDCBNuMbQiw3UzExkay7Pc52qS98HxEeRaUZClesdpwKEhjC/uMC5oL21s4PSG2sKpCuJtLc6iXqAOjUgQsAIGRBvpOxNpKgzGSiYufZ5abgtzqJLHWO/Ls7NjMG4HxCpB+MIuc0H11RKGUeRcps4eLpC3I1IUPQTsFRpD2twgzw8r7LX7wFMQ0gvBf8tKeCQ8rZX+BpdPh/2Kx3MhMdTIE+f+SKDgBpeOqzgVKG0pVPdmzmWSEmQSohP5dzzbyFTH6uoUCpJk6Grs95rDsX9BXcRH1XMkLWqSSAmtYcuOiUTwmVTGitip/nWzRXmqvM40j7GLIFUziJXWmDq4Jf2NfNANEjxJhNdic53H9xHnXe1s9DE1DGdmZbR6NN6uDB4+RsQ3uAwXPC2wQQMX2qxMcVPB0QUpOoXJeyLoARXN4ZSqeVjwVCTehLwx+j5NJCAV2RIuKGSSJa3KKJhqlUGsyBGtV3A7Vbvi/Ol2QEZfJZkpgVh1qE0qhTEFsg/7fifUFBmXtTc2XlbYNoHvxLH/zvcpwjHKgrpsYKhTqRi4qpPjqZraH1bEOL0TLW0c37qidgpGTe2a/swaGl+ttsJzAyMB+xrtSZm3Cdsqxq4q3Yt75ps7NmbxIIl2no14OByOtkPcHQxCvr89CfloB3cj3N0bJpywCevXTya7Mca4F+JoOgpxh9Y/29sPo2gn2tmdTKIoosRD8H3UYwfUEwpjNbeKItOx0panbDwM2A/CiIlIhV2y8SBgz4XJU7587bu6QRSwI3MQW7FYaWfDgIS46TxeOkr5YDKMtxMicrobPtvbj0I+iZMQp4Ph9mhnl56wgJVUfkUDDkcqHLg0xQL2vKWnQ+8hZZPrGRILhFyLhUhxRrHliuqfurBu1GdRsxikxjDwZSY9NI5797UsUQcBe8nNscaFUIU5dn4x5alB9/w7vLONZ+3ah23j4Nn02fZOOHm2Pw2n0WAQTkZ7ozCKhsPR3s72XjR6xjr1CxtGw51wMAij0dkwGkeD8WC3vx/t/4OtlR3Dnf6zdnEwJGaaiY6ZnOub0I09wt14b5Ts7e/t74a3yc9vf2atzDXoJBv2Y779vdx/Y1knQTzQT8BG0WC9fT2X1QTqP83Yb7/+0w2kyvqNPKlyn0/YsjpfrnsuN3hqI51ykRbaTfDa4fS/rKtG0aBVOY2iwaeNnh0+XBhqImxWxy3pwnGK3JBDqAVVQy6WQazRlQI8Nf21YNaQRbApgDY1W4ZPbwbD/XUzOFMKXnG5hNK0jbMFN+9LRSYs4F2MmPyeduAK+QZGYVZIP7kdDPfbdjDc/7R20BTcmg2cbJBqpX+rl8BnXEigmaDu+27J6uXB1FJgf0IrXLYjNAa75cLCBKdKuzZVLz1XK5J2o6caF/HwLbHQtKydTfOxVfnsoxx4rbtII6GQeJdjTJ2irw5U7FrT3znciIom42kqy4VPbGU7UdSysp2P9WlPtbIm9e0oIzezWIv3w/bmQsDm/qWbPcTbYtVZdRsXq10vbeZK2Y7FkbH9VNcSVFzg9MkhrrItb1q1KbrKzaKkqsZXOTfUvTYn4AFzLcbHJuFUk2Ro54ry6wzJunJu52zMnnakQUNnR6Qnp9ApG7O5tbkZb20lmKm+kLEX39t+rDI3DDIYF9oVeBf3bIJco6b8wcYX9LKsKumz76Ppc3PbKTmIt+Tm5pVOCX01DKfvfhELyg9fVRORv705W1P8396cgaWiyXdAjTqV7PPP8Bz9EFrDmVKpa90qguvWLRc0VChn+nPkicNeDvzLqrmL+O90KkOgmsb2xfn50fMvCUkliUciOfTL11qXwlC8hEt2kAu/5pI566QZiYNedSmkexo9kUGhNn7/oB/1ozWon8Fq9aW+lPR7Nsf6YZX8DXBXRbsDDOI0VnIqZkUpXJrfGbTkUW6QfVQaztH3fahOOEsJ1QOdwJ+JBB1YFRw/FTRLYzErg1i/ovGzz+D1AvVC4G31yJPcwk2nVBoNdcju4EzpGZflsebnprlQSGO5jDts/fbrv2piSlqts98WbQ2W+tCWnjDUTmRci3QJFDZDJdNlUEqVJqK1WNtScCMG6RLxKj3MqnOSiufxeEzI3XEnzQXoZDXmEhJV9+YrYugAdDwe+51/dn8ghF6vrZ8WFb1eY3a70i+xnmucokYZo6khuc6X3roBupdYr+cPqP0Mell5Sr3Jd2f+BLMOUrTP4fEHu9wYMZN0nNxAdzjH+KZSwhx5aue9nmfcf4PYragOaxpbv0br2XXq7PXg8PTUiXmiuXTcxkoaYSzKeFlv+0HgLSSYp2rpjrbnwlillyWtU5EikIu3hWgaRnuoskxJdzh7yA02Xn0GR7WG6RysBkAL2kpaqaJhNjQCLtNr01bKUVm67DdxUTsf/tUdHnj504vva6152dfaIESFTFCTmySV0aYUUP1tADL2xkFeE9dLr4tXSgqrKGPTC5LAZiU5cEXuptjZao8jiKdUB8lZC/yrIrUiJCsHYkB4odbyqkTlJtY5xmIqYidFFywyt9sJtdZrK84QZ6c+Ba/U9a56Au+gMVSAd+5lWP3Un9w3v7PXe+6PRXo9eAcfcL6gEwmdqcIKyknpXe9gk9t1D39NvfGw4+HvShOoCkWyYBPU1lyiXzf7GuS5paGPKOl5+X69NhT6riHj7wsR38Cp5do2VUteelieCjkFn5YCqRZdX19PuJnTx7jQKYQ/At3suFxVMRRvnHY7pUy3UMqWW5WwLxlcXhJEgPAlZdvmZZgx/NXVIfD31+cnP529/ubFd931vkYY+xWnR2cvfjp63l3j0/cYGpm8ZKfLvmN7soTzk28/OdP39O9cpw9/HJadKTvL/uTcOrf4I3LqXbUeef5OrL+3DfjjyKQMHC6vf3IhCMNTscA/BreNwq3JNJxTN7mpUKOy8rrNyfUqtlKZWRikg9hOkPXFkamvg718cfAcfPPoz/HEbG5vkf76gG3KEyYlP7f+lt5qSjFRyRJyrk07BcMJHQJSJXF8tLLdEC5oht26Nkf3SIz/G/JcfAkhuDX+yp+r8Aid84lGzeimCmXJ6FJ7p1L0pXirLCKA/gYipU2titncX1w8OD763JRuR9taubDOVY67ctrDY9e6lc1Zo2eo28nTIqfbcCzo9NDGqtwJuNtIBwwzLlLfCobGb/9Lt9sOWCpipFOfGj/N0LVAy91dsza629vbrg9Y1Jk/csqVsRmXDVAuAm0sFiB/z23V+3r+9f+Lq/+/uPq/cXHVz2ws3tmtPOXC3XVwjndfjt0uyItp1jJwAxYnZBaU07qAvXf8dhWwuTI0ImP393STi2qxB3rs75LShC0Rhiatyeq48L3++KhbrhuZ8XPI8h5tOYFkjO65Ph774++5foiE8j5tTcMVfdHCH+hfXD0E1bSsnp9S85Lbxq61uXxrXvr1izP28PBvFXC+nQ==
+sidebar_class_name: "get api-method"
+info_path: docs/api/sites/sites-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List roles with permission policies"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/sites/roles/with-permission-policies"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves all roles along with their associated permission policy definitions, returning each role's metadata plus the full policy list that drives authorization behavior. Use this for permission audits, admin role management screens, or when you need to map which actions are allowed for a given role without making separate policy calls.
+
+**Workflow Example**
+1. Call [GET /api/v1.0/sites/roles/with-permission-policies](/docs/api/sites/list-roles-with-permission-policies) to load every role and its policies.
+2. Page results with `$top`/`$skip` when your tenant has a large role catalog.
+3. Use the returned `RoleId` and `PermissionPolicies[]` data to populate admin UI or export audit reports.
+
+**Minimal Required Fields**: none.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"$top","in":"query","description":"Maximum number of roles to return.","schema":{"type":"integer","default":1000}},{"name":"$skip","in":"query","description":"Number of roles to skip for pagination.","schema":{"type":"integer","default":0}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Roles with permission policies returned successfully.","content":{"application/json":{"schema":{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"},"example":{"Items":[{"RoleId":"c1d0574a-2243-e611-a93b-a45e60e682da","SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","RoleName":"Administrator","Portal":2,"Visibility":1,"DisplayOrder":10,"IsActive":true,"PermissionPolicies":[{"PermissionPolicyId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","Name":"Full Admin Access","Description":"Complete administrative privileges"}]}],"Paging":{"PageIndex":0,"PageSize":1000,"TotalPages":1,"TotalCount":1,"HasPreviousPage":false,"HasNextPage":false},"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2025-11-04T20:01:16.909Z","ExecutionTime":25.7,"StatusCode":200,"ServerName":"spark-sites-6c84d89896-wdjqj","ProcessId":1,"OperationId":"Xp3Qn9Wt","Properties":{}}}}},"401":{"description":"Unauthorized – authentication required.","content":{"application/json":{"schema":{"type":"object","description":"Error response for authentication failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (401)","example":401},"Message":{"type":"string","description":"Human-readable description of the authentication error","example":"Authentication required. Please provide valid credentials."}},"required":["StatusCode","Message"],"title":"UnauthorizedError"}}}},"429":{"description":"Too Many Requests – rate limit exceeded.","content":{"application/json":{"schema":{"type":"object","description":"Error response when rate limit is exceeded","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (429)","example":429},"Message":{"type":"string","description":"Human-readable description of the rate limit error","example":"Rate limit exceeded. Please try again later."},"RetryAfter":{"type":"integer","description":"Number of seconds to wait before retrying","example":60}},"required":["StatusCode","Message"],"title":"RateLimitError"}}}},"500":{"description":"Internal Server Error – an unexpected error occurred.","content":{"application/json":{"schema":{"type":"object","description":"Error response for internal server errors","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (500)","example":500},"Message":{"type":"string","description":"Human-readable description of the server error","example":"An internal server error occurred. Please try again later."},"RequestId":{"type":"string","description":"Unique request identifier for troubleshooting","example":"req_1234567890abcdef"}},"required":["StatusCode","Message"],"title":"InternalServerError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

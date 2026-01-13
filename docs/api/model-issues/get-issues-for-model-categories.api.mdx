@@ -1,0 +1,81 @@
+---
+id: get-issues-for-model-categories
+title: "Get issues for model categories"
+description: "Retrieves issues for multiple model categories in one request, useful for admin bulk audits or when building cached issue lists per category."
+sidebar_label: "Get issues for model categories"
+hide_title: true
+hide_table_of_contents: true
+api: eJztGtty27byVzDIS6Ih5VvsJHroHMe5qalr17Lb02N5GghcSahBgAFAO6qjf+8sAIoUpThyMp05D81MEgrE3hd7A+9oBpYbUTihFe3RM3BGwA1YIqwtwZKxNiQvpROFBJLrDCThzMFEG4GbFNEKiIGPJViXkNLCuJQeiGW5UGRUymvCykw4S7Qht1PANSEzoSaEMz6FLFAiUlhnSQGmwj/rDtVQdTqnBhC/sMKB7XSGaqdLOp2juKmf2U6HpOTCArl8+/qcbLFCbN3sdLe3aj639HjL826vHm9lmlu/qfEeiad+R1qvPiFMZYRrKYE78qHvILeXV92a8gdyw2QJNjL6mzbXY6lvyetPLC8kRF5/Etatas6jnmptgbgpoBYtcZoAYmQOukO12yWXpyeDpkTBJltjbbbazDYFC+/i5gm4+JiOtVkj5K1wU8LIh4tSZMjrB6LHpKHe7lDtdb1+kVEDttAKf2iSs2JhLNJ/5QVoGDOq5VgokTNJztCIBjLyRoBEq/WaVMjj6ERkpLPZky5NqC7AMPTLfkZ7dAKu78V4o80xCnG0kIEm1LGJpb1L6t+QsLFngRk+FWpCrxL6KRXiY4o6or07aoFHj683JVSbDAztPd2eJ7RghuXgwCDeO6pYDrRHD4tCzgbCwa/CipGQws1oQgUi+liCwR+WTyFnSMTNCoQZaS2BKZrQDMaslI72nClhPr9KaBT6pc5mCMG1cqAcPrKikIJ7+bf+tMjq3SpqZgzzDKBvNtatM0GisTY5c7RHy1JkdJ5QJ5zEHZW16Xw+nyMfwaweye72Nv63HBmCTomJASIjtuQcrB2XUiILG7O+jHbgmMqYyWrHwuABKiu0UM7TK43CaMG8V6FzelaIHv0J3FnvmhkZzfzrhAR7Jv6AeWffWrho8M0oAZM1FfQ2JuXJ2Js66jDg91a7n2FQNyB1ETgv2EQo5iCL3FY+bLvkSCvHhMKzT7zhUBZvOVLI0lagQiuSg2MZcwwZKwwicSLYpt+ydOUBy0weVuhBOYGgUY9BUXiOvbd2ycCZkrvSALlhPi6NZgu1dBuOhT6CpI90GWwcyQvlYAJmhYGfy3wEphZQKE+Vl8aAcrXuHktQEzf1VvUbvTxPaEIhBFHa292fJ/QUdTPxzrWhnU5rbWbgmJANHfiQV7AJZJixTPQZ5KqUwRuWlX6uHZNn+tZuILnfS9RCfqNvLWE3TEg2kkAYN9pawqT0DHhiC1H3n+493QvSwqaabtPzWBsE0Smbqg+Gb1Ld2X5+8CJSHYi/4EHmNcC1yRq6xQyOPCwLFtH3VQafNsD/PzA6HTE82AJBkFJTCCRQk4zOVTnVEuXteSPoBS86joeLYgBWpfR6CjE5ebhTCcVl6csZ5y2B9k4CgxxNGCJRk3EMwxcWzLm+BvX1oL3KY+usl26Kx5z7qGPBWmRPZLg2FmCQ3FlIM6+Yg3sJZsxB6kQOq24mcrCO5UWo4VDfh6d9UhiNSQCyaAFPBim+/gS8RFgEbNAMjrpEU5co20qcBXMDJrUiAwIVMoK8ob1zIaWwwLXKLJIbOOZKe6SzTbz33fn5KbEegnCdAXnsZoXgTMoZ2d3e9kemzm4+kC9HpG0sEI7BWrTmGn3eb7AT/8AkESooIfzKIz5UnjHavIfZw3EfM6xlIDXAMn/8AVGRa5h5qbgUoFxUqn8zZSqTiBmV6FX+M8vXCtXyujrHE4U6dFPmvuwOp+EFVnJfNU9fOTCokYit4cteiEywidLWCe5Nf9IsEx+qr3PDOLQJSD0hXBsD0uON/DfyQTtIsCwTwYrNfYHeVw7vAnKR80kj93g3i9FqY7ptHcy/xsR7mKW+k2nwwISxC1dcV3C0UbZL0C9E0EOitErHDEPlDZMiCy4UnNH7UCYyojT6EtxgyPTtUWVjMjY6J1zjQXTBwMup2jcXD/cDdPoqyYwRRagR8GeDS19A0vvPfivUlDlT9WlsvKyorUPfimPfd/YxwtFQ44cGzPdJUYCrOjkO9Nj9umDG2x15WabxUyzBrR67FfvZFTKhWl0Kzw2KiOwtuLOYt+k8WfWezarfLzpfCxwVvD5MrDRK2ORtsrVtlRAsspK7b4QecF2stT6oMkelvpV6xCQNLNKEnoKxGANoEl+dKN+RHU4mBiaY8q+wekfZz2fFpvIv9v9D/KxPMyi/Nu4kNOIrqaLiqx4cbC5LBfOl/LZiiGVKXK+t1e6Heogs/5Cem7OSTfW1BLOxvl4r/Jm9nL2qxhwrI5AK93ec4e84l570g2LAP3gUH2KKDfceFsV3KPawKNbR+Ra9ocuc3IAxYpM8hkljUVsv+KATrScSUj9Hpm0mKN/LnsL++CBlz0bP0xfbO7spLqW4hku4Qtuc0KOp0TmMtL4m75jJbpmBME1qjsYOi6Imtlo9tdit/JFWlFP+IttOd3b3AjOeQVzClW+WI3pi7XA1BrYz2l2ApM+ev9hOcSmtMOMKbTgSDcvsWYp8pchXiktpIMiR4l5TH/cqI6HV2PubDuWyLh8s1EOV38jMFJf2D56h0tko5RmMA9y+R85GuPJFzVeJlAY2o/ZSNFeKS2mlZFyhVbajLw32/GTADQA6dSM/7KxNU7RyU7ouvkYLVIaKNpr7yfLSIlZadZkVRr7wyYHCWUEYcF9ju9mckifU9wSbTMuRXg5uqlEjhbY+uDA3pT260eUFTs197xlYKY2kPTp1rrC9ra0Mct0Viocm7WOX69xPbizw0uD8HUFGwAwYHIXQ3iW+jI6Bz6Hpxecm2AAH0iHyNYEXHozkq2m+T2F+E03iw5vKr3/87Xyl6v/xt3PivKV9u3KIIUxYF1uYH8grCBNjQ861lr7Psu20xgqBE4B4uTAFlnnq8R4iOn6b8O+6NARRNVvaxxcX/VdPkEiliQ2JHIXtK31Gibc0QIb0sBBhz5D60h+H/Wf1jcbr6mRf0r0xe74/Pnia7j/beZY+3T/YTUd7Y57u8hcHe+ODAzZmB9ga4EjE89eMPfE+BwdO6JVgbGBkp7vd3V5h7xFpAw3NUOHf8ymsvCM5U35iir0Ys1ZzEaw0AncLgHO+G8Hj1We4tsOd8XbUN6yc4W5ioNAGR3Bx4pp3K7qPHhHMQTcCbqulJTYyGAsF5HYq+BS7/5HESfg6tLYALsaCL3PVJYekkdlyMZk6MmU3aKIQasiRYfwasiH1Egyx5R9pvMU4Ftbi8PI9zOyQIg84pCaFwTIVx0OWDOkpQ1/9keUL+HOtwJCf9G13SCuZer0ems9fhaJeZrr0QmS6bqbb6sc70l6vFxD84P8hKel0BmEi37jJbBoHr3xHs3ipqk2wRg18pNVYTPBSI6g0GguvpWadDt5SrtdjjeEdTsVw0DgFIxxTHDqdcJYL5ue40R20adzp1uDH3qeIr/TDoU8rip1OvIbKWVEINbENJ0F3HIRQu1j+XK2Qz+RVY3rw2b9Mqz/1k/8VICs1CjXpdMhn8kZUd2JrVEoWQIfLiv5MjgwwB+FGLUjWRCKFum5A95d09pnUxgjbGzolppSwBLrQVyDcX6PAlvoCdFTgL6Xg12TgmHH16iPyFlzlcv7LhOCF1Y4PHz6MmJ3iIy+NJOl/CX5HMFwkoJkucQ7toJWF6tS2dOF+l4dKaz6kZDhEtISk7zBalm6qjfjLy9MjL30eIb+fXJz9cX7y/vXP7f0hxvfCjkH//PUf/VftPSH89kgjEkeZGmo5w0EmZOhfC79KyWVQSfPDgShB/FyAFeIJSeNtq49RYuGaKbk8tBbcEjjzK/G/CtxvWwqfsyKclXhpzLjPSDHn9KOK+780suSgLDAI0qRVGlinC4nRrl0fJBRyJmTIcKkN4P9pFxEJlYIDlkQ1fRykGgGO+bv8ZXK3t7dtF3Bg8jD2wrInZ6qBCt2u+RVN6xOQduJq3P7/+xnOv5/h/N98hhNLRQef3FYhmfBTHH8w7mKRf4mnDCuzHV+OBTFD70cTulLsXyV0ij1C75Le3eEl74WR8zkuh09osJ7PhPXNDu2NmbSQxPZk/ec3sU+hvi3A7xhCg3mJs5ZY09YdzlE4ZCl2cA3YlW9WcBgdiXIOhbt3b7P/QWfBNiF+0pP7WT417JYm/t8e9d82udB53YW1OyqZmpT+ToEGnPjnb9JNtIU=
+sidebar_class_name: "post api-method"
+info_path: docs/api/model-issues/model-issues-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get issues for model categories"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/issues/for/model-categories"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves issues for multiple model categories in one request, useful for admin bulk audits or when building cached issue lists per category.
+
+**Prerequisites**
+1. **CategoryIds** - Use [GET /api/v1.0/categories/of/models](/docs/api/categories/list-model-categories) and collect `Items[].CategoryId` values.
+
+**Workflow Example**
+1. List model categories and choose the ones to evaluate.
+2. [POST /api/v1.0/issues/for/model-categories](/docs/api/model-issues/get-issues-for-model-categories) with a `UuidList` of CategoryIds.
+3. Use the response to map category IDs to issue lists.
+
+**Minimal Required Fields**: CategoryIds (request body).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"ApplySiteVisibility","in":"query","schema":{"type":"boolean","default":true}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"array","items":{"type":"string","format":"uuid"},"title":"UuidList"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Issues retrieved successfully","content":{"application/json":{"schema":{"description":"Standard response for endpoints returning a list of Issue objects. Used by list, search, and model/category issue retrieval endpoints.","allOf":[{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"},{"type":"object","properties":{"Items":{"type":"array","items":{"type":"object","properties":{"IssueId":{"type":"string","format":"uuid"},"SiteId":{"type":"string","format":"uuid","nullable":true},"ProductId":{"type":"string","format":"uuid","nullable":true},"Scope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"IssueTypeId":{"type":"string","format":"uuid"},"IssueTypeScope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"Name":{"type":"string"},"SortOrder":{"type":"integer"},"IssueCategoryId":{"type":"string","format":"uuid"},"IssueCategoryName":{"type":"string","nullable":true},"IssueCategoryIcon":{"type":"string","nullable":true},"IssueCategorySortOrder":{"type":"integer"},"IssueCategoryScope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"ModelCategoryId":{"type":"string","format":"uuid"},"ModelCategoryName":{"type":"string","nullable":true},"EnabledByDefault":{"type":"boolean"},"Models":{"type":"array","items":{"type":"object","properties":{"SiteId":{"type":"string","format":"uuid","nullable":true},"ModelIssueId":{"type":"string","format":"uuid"},"Scope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"IssueId":{"type":"string","format":"uuid"},"ModelId":{"type":"string","format":"uuid"},"Apps":{"type":"array","items":{"type":"object","properties":{"AppId":{"type":"string"},"ModelIssueId":{"type":"string","format":"uuid"},"NameOverride":{"type":"string","nullable":true}},"example":{"AppId":"google-admin","ModelIssueId":"c3d4e5f6-a7b8-9012-c3d4-e5f6a7b89012","NameOverride":"Chromebook Hardware Issue"},"title":"AppModelIssue"},"nullable":true}},"example":{"SiteId":"e5f6a7b8-c9d0-1234-e5f6-a7b8c9d01234","ModelIssueId":"c3d4e5f6-a7b8-9012-c3d4-e5f6a7b89012","Scope":"Global","IssueId":"a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890","ModelId":"d4e5f6a7-b8c9-0123-d4e5-f6a7b8c90123"},"title":"ModelIssue"},"nullable":true},"WorkflowId":{"type":"string","format":"uuid","nullable":true}},"example":{"IssueId":"a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890","SiteId":"e5f6a7b8-c9d0-1234-e5f6-a7b8c9d01234","ProductId":"12345678-90ab-cdef-1234-567890abcdef","Scope":"Global","IssueTypeId":"b2c3d4e5-f6a7-8901-b2c3-d4e5f6a78901","Name":"Broken Screen","SortOrder":1,"IssueCategoryName":"Hardware","EnabledByDefault":true},"title":"Issue"}}}}],"title":"IssueListResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

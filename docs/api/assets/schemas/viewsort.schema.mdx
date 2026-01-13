@@ -1,0 +1,33 @@
+---
+id: viewsort
+title: "ViewSort"
+description: "Sort configuration applied to a saved view."
+sidebar_label: "ViewSort"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Field":"TicketClosedDate","Name":"Closed Date","Direction":"Ascending"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ViewSort"}
+>
+</Heading>
+
+
+
+Sort configuration applied to a saved view.
+
+<Schema
+  schema={{"type":"object","description":"Sort configuration applied to a saved view.","properties":{"Field":{"type":"string","description":"Internal field name used by the API when ordering results.","example":"TicketClosedDate"},"Name":{"type":"string","description":"Human-readable label shown to users for the sorted column.","example":"Closed Date"},"Direction":{"type":"string","description":"Direction applied to the sort.","enum":["Ascending","Descending"],"example":"Ascending"}},"required":["Field","Name","Direction"],"title":"ViewSort"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

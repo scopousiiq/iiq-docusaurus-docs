@@ -1,0 +1,33 @@
+---
+id: ticketpermission
+title: "TicketPermission"
+description: "Permission snapshot for a user on a ticket."
+sidebar_label: "TicketPermission"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketId":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8","ProductId":"88df910c-91aa-e711-80c2-0004ffa00010","UserId":"bcaf8610-0a3d-4f08-b1ff-1d951f63d901","CanCancel":false,"CanView":true,"CanWork":true,"CanResolve":false,"Rights":["string"]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketPermission"}
+>
+</Heading>
+
+
+
+Permission snapshot for a user on a ticket.
+
+<Schema
+  schema={{"type":"object","description":"Permission snapshot for a user on a ticket.","properties":{"TicketId":{"type":"string","format":"uuid","description":"Ticket identifier.","example":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8"},"ProductId":{"type":"string","format":"uuid","description":"Product identifier used when evaluating permissions.","example":"88df910c-91aa-e711-80c2-0004ffa00010"},"UserId":{"type":"string","format":"uuid","description":"User identifier the permissions apply to.","example":"bcaf8610-0a3d-4f08-b1ff-1d951f63d901"},"CanCancel":{"type":"boolean","description":"Whether the user can cancel the ticket.","example":false},"CanView":{"type":"boolean","description":"Whether the user can view the ticket.","example":true},"CanWork":{"type":"boolean","description":"Whether the user can work the ticket.","example":true},"CanResolve":{"type":"boolean","description":"Whether the user can resolve the ticket.","example":false},"Rights":{"type":"array","description":"Effective rights strings granted to the user for this ticket.","items":{"type":"string"},"nullable":true}},"required":["TicketId","ProductId","UserId","CanCancel","CanView","CanWork","CanResolve"],"title":"TicketPermission"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

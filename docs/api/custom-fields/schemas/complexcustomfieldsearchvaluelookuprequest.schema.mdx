@@ -1,0 +1,33 @@
+---
+id: complexcustomfieldsearchvaluelookuprequest
+title: "ComplexCustomFieldSearchValueLookupRequest"
+description: "Request payload for looking up which site owns a record based on a complex custom field searchable value. Used by integrations to perform cross-site lookups without prior knowledge of the site ID."
+sidebar_label: "ComplexCustomFieldSearchValueLookupRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TableName":"AssetCustomFields","PropertyName":"DeviceId","Value":"ABC123XYZ789","CustomFieldTypeId":"c8f4d52a-3b1e-4c9d-b7f6-8e2a5d9c1f3b"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ComplexCustomFieldSearchValueLookupRequest"}
+>
+</Heading>
+
+
+
+Request payload for looking up which site owns a record based on a complex custom field searchable value. Used by integrations to perform cross-site lookups without prior knowledge of the site ID.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for looking up which site owns a record based on a complex custom field searchable value. Used by integrations to perform cross-site lookups without prior knowledge of the site ID.","required":["TableName","PropertyName","Value"],"properties":{"TableName":{"type":"string","description":"Database table name where the custom field values are stored. Common values: 'AssetCustomFields', 'TicketCustomFields', 'UserCustomFields'.","example":"AssetCustomFields"},"PropertyName":{"type":"string","description":"Property or column name being searched within the custom field value. This is typically a property within a complex editor's JSON value.","example":"DeviceId"},"Value":{"type":"string","description":"The searchable value to look up. The system will find which site contains a custom field with this value.","example":"ABC123XYZ789"},"CustomFieldTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Optional UUID of the custom field type to narrow the search. When provided, only searches within this specific field type.","example":"c8f4d52a-3b1e-4c9d-b7f6-8e2a5d9c1f3b"},"CustomFieldComplexEditorNamespace":{"type":"string","nullable":true,"description":"Optional namespace identifier for complex editor types. Used to further narrow the search to specific complex editor implementations.","example":"GoogleDevices"}},"example":{"TableName":"AssetCustomFields","PropertyName":"DeviceId","Value":"ABC123XYZ789","CustomFieldTypeId":"c8f4d52a-3b1e-4c9d-b7f6-8e2a5d9c1f3b"},"title":"ComplexCustomFieldSearchValueLookupRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

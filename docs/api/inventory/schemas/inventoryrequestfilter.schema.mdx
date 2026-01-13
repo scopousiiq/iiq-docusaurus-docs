@@ -1,0 +1,33 @@
+---
+id: inventoryrequestfilter
+title: "InventoryRequestFilter"
+description: "Generic filter used across inventory search operations."
+sidebar_label: "InventoryRequestFilter"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Facet":"string","Ids":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Values":["string"],"Value":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"InventoryRequestFilter"}
+>
+</Heading>
+
+
+
+Generic filter used across inventory search operations.
+
+<Schema
+  schema={{"type":"object","description":"Generic filter used across inventory search operations.","properties":{"Facet":{"type":"string","description":"Name of the facet to filter on, such as `keyword`, `InventoryItemId`, or `LocationId`."},"Ids":{"type":"array","description":"Collection of UUIDs to match when filtering facets that accept identifiers.","items":{"type":"string","format":"uuid"}},"Values":{"type":"array","description":"Collection of raw values used when filtering keyword or text facets.","items":{"type":"string"}},"Value":{"type":"string","nullable":true,"description":"Single-value fallback used by certain legacy facets."}},"required":["Facet"],"title":"InventoryRequestFilter"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

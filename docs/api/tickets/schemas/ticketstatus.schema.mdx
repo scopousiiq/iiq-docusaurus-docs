@@ -1,0 +1,33 @@
+---
+id: ticketstatus
+title: "TicketStatus"
+description: "Ticket status definition representing a workflow state. Maps workflow steps to user-friendly status labels."
+sidebar_label: "TicketStatus"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketStatusTypeId":"c7932b63-7bf4-49f9-a2a3-ea739e7e0002","StatusId":"c7932b63-7bf4-49f9-a2a3-ea739e7e0002","StatusName":"In Progress","WorkflowId":"0f6db4fb-4b4f-ec11-9820-0003ffe402cf","WorkflowName":"In Progress","WorkflowStepId":"a63d07c9-554f-ec11-9820-0003ffe402cf","StepName":"In Progress","StepDescription":"string","IsClosed":false,"IsReadonly":false,"IsDeleted":false,"IsRequestorInputNeeded":false,"Color":"#FFBA1A","DisplayOrder":100}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketStatus"}
+>
+</Heading>
+
+
+
+Ticket status definition representing a workflow state. Maps workflow steps to user-friendly status labels.
+
+<Schema
+  schema={{"type":"object","description":"Ticket status definition representing a workflow state. Maps workflow steps to user-friendly status labels.","properties":{"TicketStatusTypeId":{"type":"string","format":"uuid","description":"Internal status type identifier.","example":"c7932b63-7bf4-49f9-a2a3-ea739e7e0002"},"StatusId":{"type":"string","format":"uuid","description":"Alias for TicketStatusTypeId. Unique identifier for this status.","example":"c7932b63-7bf4-49f9-a2a3-ea739e7e0002"},"StatusName":{"type":"string","description":"Display name for the status shown in UI.","example":"In Progress"},"WorkflowId":{"type":"string","format":"uuid","description":"Identifier of the workflow this status belongs to.","example":"0f6db4fb-4b4f-ec11-9820-0003ffe402cf"},"WorkflowName":{"type":"string","description":"Name of the workflow this status belongs to.","example":"In Progress"},"WorkflowStepId":{"type":"string","format":"uuid","description":"Identifier of the specific workflow step.","example":"a63d07c9-554f-ec11-9820-0003ffe402cf"},"StepName":{"type":"string","description":"Name of the workflow step.","example":"In Progress"},"StepDescription":{"type":"string","description":"Optional description of what this workflow step represents.","nullable":true},"IsClosed":{"type":"boolean","description":"Whether this status represents a closed/resolved state.","example":false},"IsReadonly":{"type":"boolean","description":"Whether tickets in this status are read-only.","example":false},"IsDeleted":{"type":"boolean","description":"Whether this status has been soft-deleted.","example":false},"IsRequestorInputNeeded":{"type":"boolean","description":"Whether this status indicates waiting for requestor input.","example":false},"Color":{"type":"string","description":"Hex color code for UI display.","example":"#FFBA1A"},"DisplayOrder":{"type":"integer","description":"Sort order for displaying statuses in lists.","example":100}},"required":["WorkflowStepId","WorkflowId","StepName","StatusName"],"title":"TicketStatus"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

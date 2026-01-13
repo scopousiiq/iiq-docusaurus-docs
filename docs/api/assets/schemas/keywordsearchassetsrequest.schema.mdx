@@ -1,0 +1,33 @@
+---
+id: keywordsearchassetsrequest
+title: "KeywordSearchAssetsRequest"
+description: "Request body for keyword-based asset search. Unlike filter-based search (POST /assets), this endpoint searches across text fields using a query string with control over which fields to search."
+sidebar_label: "KeywordSearchAssetsRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Query":"string","UniqueByName":false,"SkipCustomFieldLoading":false,"SearchManufacturerName":false,"SearchModelName":false,"SearchAssetTag":false,"SearchSerial":false,"SearchAssetName":false,"SearchRoom":false,"SearchOwner":false,"SearchRoomLocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SearchRoomLocationRoomId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SearchOnlineSystemsOnly":false,"AvailableModelsOnly":false,"AssetTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AssetTypeIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"ExcludeAssetTypeIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IncludeChildAssets":false,"IncludeParentAssets":true,"ShowNotDeleted":true,"ShowDeleted":false,"FilterByViewPermission":true,"IncludeFavoritedAssets":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"KeywordSearchAssetsRequest"}
+>
+</Heading>
+
+
+
+Request body for keyword-based asset search. Unlike filter-based search (POST /assets), this endpoint searches across text fields using a query string with control over which fields to search.
+
+<Schema
+  schema={{"type":"object","description":"Request body for keyword-based asset search. Unlike filter-based search (POST /assets), this endpoint searches across text fields using a query string with control over which fields to search.","properties":{"Query":{"type":"string","description":"The search query string to match against asset fields"},"UniqueByName":{"type":"boolean","description":"When true, returns only unique assets by name","default":false},"SkipCustomFieldLoading":{"type":"boolean","description":"When true, skips loading custom field values for performance","default":false},"SearchManufacturerName":{"type":"boolean","description":"Include manufacturer name in search","default":false},"SearchModelName":{"type":"boolean","description":"Include model name in search","default":false},"SearchAssetTag":{"type":"boolean","description":"Include asset tag in search","default":false},"SearchSerial":{"type":"boolean","description":"Include serial number in search","default":false},"SearchAssetName":{"type":"boolean","description":"Include asset name in search","default":false},"SearchRoom":{"type":"boolean","description":"Search within a specific room location. When true, increases page size limit to 500.","default":false},"SearchOwner":{"type":"boolean","description":"Include owner name in search","default":false},"SearchRoomLocationId":{"type":"string","format":"uuid","description":"Location ID to restrict room search"},"SearchRoomLocationRoomId":{"type":"string","format":"uuid","nullable":true,"description":"Specific room ID within the location"},"SearchOnlineSystemsOnly":{"type":"boolean","description":"When true, only returns assets with online/active status","default":false},"AvailableModelsOnly":{"type":"boolean","description":"When true, only returns assets with available models","default":false},"AssetTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Filter by specific asset type"},"AssetTypeIds":{"type":"array","items":{"type":"string","format":"uuid"},"description":"Filter by multiple asset types"},"ExcludeAssetTypeIds":{"type":"array","items":{"type":"string","format":"uuid"},"description":"Exclude specific asset types from results"},"ProductId":{"type":"string","format":"uuid","nullable":true,"description":"Filter by product"},"IncludeChildAssets":{"type":"boolean","description":"Include child/linked assets in results","default":false},"IncludeParentAssets":{"type":"boolean","description":"Include parent assets in results","default":true},"ShowNotDeleted":{"type":"boolean","description":"Include non-deleted assets","default":true},"ShowDeleted":{"type":"boolean","description":"Include deleted assets","default":false},"FilterByViewPermission":{"type":"boolean","description":"Apply view permission filtering","default":true},"IncludeFavoritedAssets":{"type":"boolean","description":"Include favorited assets in results","default":true}},"title":"KeywordSearchAssetsRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

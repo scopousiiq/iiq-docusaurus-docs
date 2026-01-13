@@ -1,0 +1,106 @@
+# Manufacturers API
+
+The Manufacturers API provides access to device manufacturer management in IncidentIQ. Manage the manufacturers of assets and devices tracked in your inventory.
+
+## Overview
+
+Manufacturers in IncidentIQ represent the companies that produce devices and equipment—Apple, Dell, HP, Lenovo, and other hardware manufacturers. Manufacturers are linked to products and assets for inventory categorization.
+
+:::info
+**What you can do with the Manufacturers API**
+:::
+
+>
+> - **List and search manufacturers** in your catalog
+> - **Access global manufacturers** from the shared IncidentIQ database
+> - **Create custom manufacturers** for specialized equipment
+> - **Control site visibility** for multi-site deployments
+> - **Bulk delete** manufacturers when cleaning up records
+
+## Common Use Cases
+
+### Manufacturer Catalog
+Maintain a catalog of device manufacturers for asset categorization.
+
+### Global vs. Local Manufacturers
+Use global manufacturers from IncidentIQ's shared database, or create site-specific manufacturers for specialized equipment.
+
+### Multi-Site Management
+Control which manufacturers are visible at each site in multi-site deployments.
+
+### Catalog Cleanup
+Bulk delete unused or duplicate manufacturer records.
+
+## API Sections
+
+| Section | Description |
+|---------|-------------|
+| **Listing** | List and search manufacturers (local and global) |
+| **Details** | Retrieve individual manufacturer information |
+| **Managing** | Create, update, and delete manufacturer records |
+| **Site Visibility** | Control which sites can see specific manufacturers |
+| **Bulk** | Bulk delete manufacturers |
+
+## Quick Start
+
+### List Manufacturers
+
+```bash
+curl -X GET "https://your-site.incidentiq.com/api/v1.0/assets/manufacturers" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient"
+```
+
+### Search Manufacturers
+
+```bash
+curl -X POST "https://your-site.incidentiq.com/api/v1.0/assets/manufacturers" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Paging": {"PageSize": 25, "PageIndex": 0}
+  }'
+```
+
+### List Global Manufacturers
+
+```bash
+curl -X GET "https://your-site.incidentiq.com/api/v1.0/assets/manufacturers/global" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient"
+```
+
+### Create a Manufacturer
+
+```json http
+{
+  "method": "POST",
+  "url": "https://your-site.incidentiq.com/api/v1.0/assets/manufacturers/new",
+  "headers": {
+    "Authorization": "Bearer YOUR_TOKEN",
+    "SiteId": "YOUR_SITE_ID",
+    "Client": "ApiClient",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "Name": "Custom Device Co."
+  }
+}
+```
+
+### Add Manufacturer to Site
+
+```bash
+curl -X POST "https://your-site.incidentiq.com/api/v1.0/assets/manufacturers/{ManufacturerId}/site" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient"
+```
+
+## Related APIs
+
+- [Assets](#/Assets) - Assets are linked to manufacturers through product/model definitions

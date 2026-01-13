@@ -1,0 +1,33 @@
+---
+id: ticketactivitycomment
+title: "TicketActivityComment"
+description: "Payload for creating a public comment or internal note activity."
+sidebar_label: "TicketActivityComment"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketActivityTypeId":6,"ByUserId":"a215e88e-14be-ef11-88cf-6045bdb6b1c8","Comments":"Ticket update shared with requester.","IsPublic":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketActivityComment"}
+>
+</Heading>
+
+
+
+Payload for creating a public comment or internal note activity.
+
+<Schema
+  schema={{"type":"object","description":"Payload for creating a public comment or internal note activity.","properties":{"$type":{"type":"string","description":"Fully qualified CLR type emitted by the API when logging a comment.","example":"Spark.Shared.Models.TicketActivityComment, Spark.Shared"},"TicketActivityTypeId":{"type":"integer","enum":[6],"description":"Activity type code for ticket comments (6 = Comment/Internal Note). Retrieve valid activity identifiers from [GET /api/v1.0/sites/{siteUrl}](/docs/api/sites/get-site-by-url).","x-obtained-from":{"operationId":"getSiteByUrl","endpoint":"GET /api/v1.0/sites/{siteUrl}","responseField":"Item.Settings.ActivityTypes"}},"ByUserId":{"type":"string","format":"uuid","description":"UUID of the user authoring the comment.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/search","responseField":"Item.Users[].UserId"}},"Comments":{"type":"string","description":"HTML-formatted comment body to post to the ticket."},"IsPublic":{"type":"boolean","description":"Override for comment visibility (true = requester can view).","nullable":true},"ExternalId":{"type":"string","description":"Optional external identifier for the comment when injected by integrations.","nullable":true}},"required":["TicketActivityTypeId","ByUserId","Comments"],"example":{"TicketActivityTypeId":6,"ByUserId":"a215e88e-14be-ef11-88cf-6045bdb6b1c8","Comments":"Ticket update shared with requester.","IsPublic":true},"title":"TicketActivityComment"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

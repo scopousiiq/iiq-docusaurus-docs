@@ -1,0 +1,33 @@
+---
+id: activity
+title: "Activity"
+description: "User-related activity record. Mirrors `Spark.Shared.Models.Activity` returned by `GET /api/v1.0/users/{UserId}/activities`."
+sidebar_label: "Activity"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ActivityDate":"2024-07-29T15:51:28.071Z","UserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","UserDetails":"string","ItemId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ActivityId":"string","ActivityType":0,"Subject":"string","Details":"string","IsPublic":true,"Attachments":[{"FileId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","Name":"screenshot.png","FileName":"screenshot.png","Url":"/api/v1.0/files/a1b2c3d4-e5f6-7890-abcd-ef1234567890","FileType":6,"MimeType":"image/png","Size":245760,"CreatedDate":"2025-12-09T14:30:00.000Z","CreatedById":"51c89694-ae9f-f011-8e61-6045bd7991ab","IsPrivateInternal":false,"IsDeleted":false}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Activity"}
+>
+</Heading>
+
+
+
+User-related activity record. Mirrors `Spark.Shared.Models.Activity` returned by `GET /api/v1.0/users/{UserId}/activities`.
+
+<Schema
+  schema={{"type":"object","description":"User-related activity record. Mirrors `Spark.Shared.Models.Activity` returned by `GET /api/v1.0/users/{UserId}/activities`.","properties":{"ActivityDate":{"type":"string","format":"date-time","description":"Timestamp when the activity occurred."},"UserId":{"type":"string","format":"uuid","description":"User associated with the activity."},"UserDetails":{"type":"string","nullable":true,"description":"Display name or details for the user who performed the activity."},"ItemId":{"type":"string","format":"uuid","description":"Identifier of the related item (user, ticket, asset, etc.)."},"ActivityId":{"type":"string","description":"Activity identifier."},"ActivityType":{"type":"integer","description":"Activity type code from `Spark.Shared.Enums.ActivityTypes`."},"Subject":{"type":"string","nullable":true,"description":"Short subject for the activity."},"Details":{"type":"string","nullable":true,"description":"Long-form details describing the activity."},"IsPublic":{"type":"boolean","description":"When true, the activity is visible to public portal users."},"Attachments":{"type":"array","nullable":true,"description":"Files attached to the activity entry.","items":{"type":"object","description":"Represents a file stored in the IncidentIQ system. Files can be attached to tickets, assets, users, and other entities.","properties":{"FileId":{"type":"string","format":"uuid","description":"Unique identifier for the file"},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site/district identifier the file belongs to"},"Name":{"type":"string","description":"Display name for the file","example":"screenshot.png"},"FileName":{"type":"string","description":"Physical filename as stored on the server","example":"screenshot.png"},"Url":{"type":"string","description":"URL path to access or download the file","example":"/api/v1.0/files/a1b2c3d4-e5f6-7890-abcd-ef1234567890"},"FileType":{"description":"Classification of the file type","allOf":[{"type":"integer","description":"File type classification enum from Spark.Shared.Enums.FileTypes. Determines how the file is categorized and handled by the system.","oneOf":[{"enum":[0],"title":"Other","description":"Default file type for uncategorized files"},{"enum":[1],"title":"Photo","description":"User profile photo or avatar image"},{"enum":[2],"title":"Logo","description":"Organization or location logo"},{"enum":[3],"title":"Floorplan","description":"Location floorplan or layout image"},{"enum":[4],"title":"Icon","description":"Small icon or pictogram"},{"enum":[5],"title":"AssetImage","description":"Image associated with an asset"},{"enum":[6],"title":"TicketAttachment","description":"File attached to a ticket"},{"enum":[7],"title":"KnowledgeBaseAttachment","description":"File attached to a knowledge base article"},{"enum":[8],"title":"Import","description":"Data import file (CSV, Excel, etc.)"},{"enum":[9],"title":"Export","description":"Data export file"},{"enum":[10],"title":"Report","description":"Generated report file"},{"enum":[11],"title":"CustomFieldFile","description":"File uploaded via a custom field"},{"enum":[12],"title":"Signature","description":"Electronic signature image"},{"enum":[13],"title":"FormSubmissionAttachment","description":"File attached to a form submission"}],"default":0,"example":6,"title":"FileType"}]},"MimeType":{"type":"string","description":"MIME type of the file content","example":"image/png"},"Size":{"type":"integer","description":"File size in bytes","example":245760},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the file was uploaded"},"CreatedById":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the user who uploaded the file"},"IsPrivateInternal":{"type":"boolean","description":"When true, the file is only visible to internal/agent users","default":false},"IsDeleted":{"type":"boolean","description":"Whether the file has been soft-deleted","default":false},"ModifiedDate":{"type":"string","format":"date-time","nullable":true,"description":"Timestamp when the file metadata was last modified"},"ExpirationDate":{"type":"string","format":"date-time","nullable":true,"description":"Optional expiration date after which the file should be deleted"}},"required":["FileId","FileName","FileType","MimeType","Size","CreatedDate"],"example":{"FileId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","Name":"screenshot.png","FileName":"screenshot.png","Url":"/api/v1.0/files/a1b2c3d4-e5f6-7890-abcd-ef1234567890","FileType":6,"MimeType":"image/png","Size":245760,"CreatedDate":"2025-12-09T14:30:00.000Z","CreatedById":"51c89694-ae9f-f011-8e61-6045bd7991ab","IsPrivateInternal":false,"IsDeleted":false},"title":"File"}}},"title":"Activity"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

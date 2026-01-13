@@ -1,0 +1,80 @@
+---
+id: delete-event-types-by-ids
+title: "Delete event types by IDs"
+description: "Deletes multiple event types by explicit ID list. Use this for deterministic cleanup when you already know the exact set of types to remove."
+sidebar_label: "Delete event types by IDs"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "delete api-method"
+info_path: docs/api/events/events-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete event types by IDs"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1.0/events/types/ids"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes multiple event types by explicit ID list. Use this for deterministic cleanup when you already know the exact set of types to remove.
+
+**Prerequisites**
+1. **EventTypeIds** - Use [POST /api/v1.0/events/types/query](/docs/api/events/get-event-types-by-query-post) and extract `Items[].EventTypeId`.
+
+**Workflow Example**
+1. Query types: [POST /api/v1.0/events/types/query](/docs/api/events/get-event-types-by-query-post) -&gt; extract `Items[].EventTypeId`.
+2. Delete types: [DELETE /api/v1.0/events/types/ids](/docs/api/events/delete-event-types-by-ids) with the ID array.
+
+**Minimal Required Fields**: Array of EventTypeId values.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"array","items":{"type":"string","format":"uuid"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Items deleted.","content":{"application/json":{"schema":{"type":"object","description":"Standard response for event and event type delete operations. Returns success status and any validation errors.","properties":{"IsSuccess":{"type":"boolean"},"Errors":{"type":"array","items":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"}}},"title":"EventsDeleteResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

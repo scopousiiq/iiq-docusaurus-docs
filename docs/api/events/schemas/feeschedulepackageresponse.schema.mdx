@@ -1,0 +1,33 @@
+---
+id: feeschedulepackageresponse
+title: "FeeSchedulePackageResponse"
+description: "Response containing fee package information."
+sidebar_label: "FeeSchedulePackageResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":{"EventId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TotalFees":0,"FeeItems":[{}]},"IsSuccess":true,"Errors":[{"StatusCode":401,"Message":"Attempted to perform an unauthorized operation."}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"FeeSchedulePackageResponse"}
+>
+</Heading>
+
+
+
+Response containing fee package information.
+
+<Schema
+  schema={{"type":"object","description":"Response containing fee package information.","properties":{"Item":{"type":"object","description":"Fee package information for an event.","properties":{"EventId":{"type":"string","format":"uuid"},"TotalFees":{"type":"number"},"FeeItems":{"type":"array","items":{"type":"object"}}},"title":"FeeSchedulePackage"},"IsSuccess":{"type":"boolean"},"Errors":{"type":"array","items":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"}}},"title":"FeeSchedulePackageResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

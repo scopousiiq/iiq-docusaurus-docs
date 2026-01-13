@@ -1,0 +1,33 @@
+---
+id: validationerror
+title: "ValidationError"
+description: "Detailed validation error information for bad request responses"
+sidebar_label: "ValidationError"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"StatusCode":400,"Message":"Invalid request data","Errors":{"Subject":["Subject is required"],"IssueId":["IssueId must be a valid UUID"]}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ValidationError"}
+>
+</Heading>
+
+
+
+Detailed validation error information for bad request responses
+
+<Schema
+  schema={{"type":"object","description":"Detailed validation error information for bad request responses","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (400)","example":400},"Message":{"type":"string","description":"Human-readable description of the validation error","example":"Invalid request data"},"Errors":{"type":"object","description":"Field-specific validation errors","additionalProperties":{"type":"array","items":{"type":"string"}},"example":{"Subject":["Subject is required"],"IssueId":["IssueId must be a valid UUID"]}}},"required":["StatusCode","Message"],"title":"ValidationError"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

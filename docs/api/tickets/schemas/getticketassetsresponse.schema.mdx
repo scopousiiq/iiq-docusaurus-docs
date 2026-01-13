@@ -1,0 +1,33 @@
+---
+id: getticketassetsresponse
+title: "GetTicketAssetsResponse"
+description: "ListGetResponse envelope containing ticket asset links filtered by model or category."
+sidebar_label: "GetTicketAssetsResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":2,"Items":[{"TicketAssetId":"7c1eab8f-1234-4e9d-8d3d-15a2e6c5a4f2","AssetId":"42f8cc6d-0efd-4a68-983b-be61e9e1c49c","ModelId":"8b7f9421-1b0a-4dd4-d7c7-498f1954f69a","CategoryId":"36c6be98-4f39-e611-bf3b-005056bb000e"},{"TicketAssetId":"4b9b3e0d-5a6a-4b2a-9a1c-4f2dcb6e5b9a","AssetId":null,"ModelId":"d20688ee-81f3-42f8-a0f3-2324e4e95e68","CategoryId":"36c6be98-4f39-e611-bf3b-005056bb000e"}],"UserToken":"5c61a623-ef84-f011-b484-002248538047","RequestDate":"2025-10-21T18:15:42.123Z","ExecutionTime":47.6123,"StatusCode":200,"ServerName":"spark-tickets-0000000000-xxxx","ProcessId":1,"OperationId":"getTicketAssetsByModel","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetTicketAssetsResponse"}
+>
+</Heading>
+
+
+
+ListGetResponse envelope containing ticket asset links filtered by model or category.
+
+<Schema
+  schema={{"type":"object","description":"ListGetResponse envelope containing ticket asset links filtered by model or category.","allOf":[{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"}],"properties":{"Items":{"type":"array","description":"Ticket asset relationships that match the supplied model or category filters.","items":{"type":"object","description":"Slim ticket asset link returned when searching by model or category.","properties":{"TicketAssetId":{"type":"string","format":"uuid","description":"Identifier for the ticket-to-asset relationship.","example":"7c1eab8f-1234-4e9d-8d3d-15a2e6c5a4f2"},"AssetId":{"type":"string","format":"uuid","description":"Identifier for the linked asset record, when the relationship references a specific device.","nullable":true,"example":"42f8cc6d-0efd-4a68-983b-be61e9e1c49c","x-obtained-from":{"operationId":"getAssetById","endpoint":"GET /api/v1.0/assets/{assetId}","responseField":"Items[].AssetId"}},"ModelId":{"type":"string","format":"uuid","description":"Asset model identifier for the linked item or placeholder.","x-obtained-from":{"operationId":"getIssuesForModels","endpoint":"POST /api/v1.0/models","responseField":"Items[].ModelId"}},"CategoryId":{"type":"string","format":"uuid","description":"Product category associated with the model.","nullable":true,"x-obtained-from":{"operationId":"getIssuesForModels","endpoint":"POST /api/v1.0/models","responseField":"Items[].Category.CategoryId"}}},"required":["TicketAssetId"],"example":{"TicketAssetId":"7c1eab8f-1234-4e9d-8d3d-15a2e6c5a4f2","AssetId":"42f8cc6d-0efd-4a68-983b-be61e9e1c49c","ModelId":"8b7f9421-1b0a-4dd4-d7c7-498f1954f69a","CategoryId":"36c6be98-4f39-e611-bf3b-005056bb000e"},"title":"TicketAssetLink"}}},"example":{"ItemCount":2,"Items":[{"TicketAssetId":"7c1eab8f-1234-4e9d-8d3d-15a2e6c5a4f2","AssetId":"42f8cc6d-0efd-4a68-983b-be61e9e1c49c","ModelId":"8b7f9421-1b0a-4dd4-d7c7-498f1954f69a","CategoryId":"36c6be98-4f39-e611-bf3b-005056bb000e"},{"TicketAssetId":"4b9b3e0d-5a6a-4b2a-9a1c-4f2dcb6e5b9a","AssetId":null,"ModelId":"d20688ee-81f3-42f8-a0f3-2324e4e95e68","CategoryId":"36c6be98-4f39-e611-bf3b-005056bb000e"}],"UserToken":"5c61a623-ef84-f011-b484-002248538047","RequestDate":"2025-10-21T18:15:42.123Z","ExecutionTime":47.6123,"StatusCode":200,"ServerName":"spark-tickets-0000000000-xxxx","ProcessId":1,"OperationId":"getTicketAssetsByModel","Properties":{}},"title":"GetTicketAssetsResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

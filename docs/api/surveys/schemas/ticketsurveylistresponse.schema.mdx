@@ -1,0 +1,33 @@
+---
+id: ticketsurveylistresponse
+title: "TicketSurveyListResponse"
+description: "Paginated list of pending ticket surveys."
+sidebar_label: "TicketSurveyListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":[{"TicketId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SurveyId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","UserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z"}],"Paging":{"TotalRows":54343,"PageCount":10869,"PageSize":5,"PageIndex":0},"IsSuccess":true,"Message":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketSurveyListResponse"}
+>
+</Heading>
+
+
+
+Paginated list of pending ticket surveys.
+
+<Schema
+  schema={{"type":"object","description":"Paginated list of pending ticket surveys.","properties":{"Item":{"type":"array","items":{"type":"object","description":"A pending survey assignment linking a survey to a ticket and user.","properties":{"TicketId":{"type":"string","format":"uuid","description":"Ticket this survey was assigned for."},"SurveyId":{"type":"string","format":"uuid","description":"The survey that was assigned."},"UserId":{"type":"string","format":"uuid","description":"User who should complete the survey."},"CreatedDate":{"type":"string","format":"date-time","description":"When the survey was assigned to the ticket."}},"title":"TicketSurvey"}},"Paging":{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"},"IsSuccess":{"type":"boolean"},"Message":{"type":"string","nullable":true}},"title":"TicketSurveyListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

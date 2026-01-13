@@ -1,0 +1,86 @@
+---
+id: migrate-location-v-2
+title: "Migrate location entities"
+description: "Migrates assets, tickets, users, and/or parts from one location to other locations. Use this before deleting or decommissioning a location to reassign associated entities."
+sidebar_label: "Migrate location entities"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/locations/locations-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Migrate location entities"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v2.0/locations/migrate"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Migrates assets, tickets, users, and/or parts from one location to other locations. Use this before deleting or decommissioning a location to reassign associated entities.
+
+**Migration Behavior:**
+- Each entity type (assets, tickets, users, parts) can be migrated to a different destination location
+- Only include destination fields for entity types you want to migrate
+- Omitted or null destination fields mean those entities will not be migrated
+
+**Workflow:**
+1. Identify the source location to decommission
+2. Select destination locations for each entity type
+3. Call this endpoint to perform the migration
+4. Verify migration success
+5. Delete the source location if desired
+
+**Related Endpoints:**
+- [DELETE /api/v2.0/locations/\{LocationId\}/delete](/docs/api/locations/delete-location-v-2) - Delete location after migration
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Authorization","in":"header","required":true,"schema":{"type":"string"},"description":"Bearer token for authentication","example":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."},{"name":"SiteId","in":"header","required":false,"schema":{"type":"string","format":"uuid"},"description":"Site context for the request"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","description":"Request payload for migrating assets, tickets, users, and parts from one location to another. Used when decommissioning or consolidating locations.","properties":{"LocationId":{"type":"string","format":"uuid","description":"The source location ID from which entities will be migrated"},"NewAssetLocationId":{"type":"string","format":"uuid","nullable":true,"description":"Target location ID for migrating assets. If null, assets will not be migrated."},"NewTicketLocationId":{"type":"string","format":"uuid","nullable":true,"description":"Target location ID for migrating tickets. If null, tickets will not be migrated."},"NewUserLocationId":{"type":"string","format":"uuid","nullable":true,"description":"Target location ID for migrating users. If null, users will not be migrated."},"NewPartLocationId":{"type":"string","format":"uuid","nullable":true,"description":"Target location ID for migrating parts/inventory. If null, parts will not be migrated."}},"required":["LocationId"],"title":"MigrateLocationRequest"},"example":{"LocationId":"aa632d8d-486f-ed11-ade6-cc60c8b5ca80","NewAssetLocationId":"bb632d8d-486f-ed11-ade6-cc60c8b5ca80","NewTicketLocationId":"bb632d8d-486f-ed11-ade6-cc60c8b5ca80","NewUserLocationId":"cc632d8d-486f-ed11-ade6-cc60c8b5ca80","NewPartLocationId":"bb632d8d-486f-ed11-ade6-cc60c8b5ca80"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Migration completed successfully","content":{"application/json":{"schema":{"type":"object","description":"Generic response for actions that do not return a specific entity. Extends BaseResponse with no additional properties. Used for operations like enabling, disabling, or triggering workflows.","properties":{"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Message":{"type":"string","nullable":true,"description":"Optional informational or error message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors that did not prevent the operation"}},"required":["StatusCode"],"title":"ActionResponse"},"example":{"IsSuccessful":true,"Message":"Location was changed.","StatusCode":200,"RequestDate":"2025-01-01T00:00:00Z"}}}},"400":{"description":"Invalid request - source or destination location not found","content":{"application/json":{"schema":{"type":"object","description":"Detailed validation error information for bad request responses","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (400)","example":400},"Message":{"type":"string","description":"Human-readable description of the validation error","example":"Invalid request data"},"Errors":{"type":"object","description":"Field-specific validation errors","additionalProperties":{"type":"array","items":{"type":"string"}},"example":{"Subject":["Subject is required"],"IssueId":["IssueId must be a valid UUID"]}}},"required":["StatusCode","Message"],"title":"ValidationError"}}}},"401":{"description":"Authentication required","content":{"application/json":{"schema":{"type":"object","description":"Error response for authentication failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (401)","example":401},"Message":{"type":"string","description":"Human-readable description of the authentication error","example":"Authentication required. Please provide valid credentials."}},"required":["StatusCode","Message"],"title":"UnauthorizedError"}}}},"403":{"description":"Insufficient permissions to migrate locations","content":{"application/json":{"schema":{"type":"object","description":"Error response for authorization/permission failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (403)","example":403},"Message":{"type":"string","description":"Human-readable description of the authorization error","example":"You do not have permission to perform this action"}},"required":["StatusCode","Message"],"title":"ForbiddenError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

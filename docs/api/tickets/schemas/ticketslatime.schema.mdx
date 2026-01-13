@@ -1,0 +1,33 @@
+---
+id: ticketslatime
+title: "TicketSlaTime"
+description: "Aggregated runtime details for a specific SLA metric logged against a ticket."
+sidebar_label: "TicketSlaTime"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketId":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8","MetricId":"f5ac4064-94de-4d59-90fb-91801f4dd2c5","MetricTypeId":"17c1fe13-9c75-459d-88a2-0c8739f7cd4c","Name":"Resolution Time","LogRecords":2,"LogMinutes":275,"IsRunning":false}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketSlaTime"}
+>
+</Heading>
+
+
+
+Aggregated runtime details for a specific SLA metric logged against a ticket.
+
+<Schema
+  schema={{"type":"object","description":"Aggregated runtime details for a specific SLA metric logged against a ticket.","properties":{"TicketId":{"type":"string","format":"uuid","description":"Identifier for the ticket these SLA measurements belong to.","x-obtained-from":{"operationId":"searchTickets","endpoint":"POST /api/v1.0/tickets","responseField":"Items[].TicketId"},"example":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8"},"MetricId":{"type":"string","format":"uuid","description":"SLA metric identifier (response time, resolution time, etc.) tracked for the ticket.","x-obtained-from":{"operationId":"listSlas","endpoint":"GET /api/v1.0/slas","responseField":"Items[].Metrics[].MetricId"},"example":"f5ac4064-94de-4d59-90fb-91801f4dd2c5"},"MetricTypeId":{"type":"string","format":"uuid","description":"Metric type identifier (for example, Incident IQ response time or resolution time definitions).","x-obtained-from":{"operationId":"listSlas","endpoint":"GET /api/v1.0/slas","responseField":"Items[].Metrics[].MetricTypeId"},"example":"17c1fe13-9c75-459d-88a2-0c8739f7cd4c"},"Name":{"type":"string","description":"Display name of the SLA metric.","example":"Resolution Time"},"LogRecords":{"type":"integer","description":"Number of metric log entries recorded for this ticket.","example":2},"LogMinutes":{"type":"integer","description":"Total minutes accumulated across all log records.","example":275},"IsRunning":{"type":"boolean","description":"Indicates whether the metric timer is still running on the ticket.","example":false}},"required":["TicketId","MetricId","MetricTypeId","Name","LogRecords","LogMinutes","IsRunning"],"example":{"TicketId":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8","MetricId":"f5ac4064-94de-4d59-90fb-91801f4dd2c5","MetricTypeId":"17c1fe13-9c75-459d-88a2-0c8739f7cd4c","Name":"Resolution Time","LogRecords":2,"LogMinutes":275,"IsRunning":false},"title":"TicketSlaTime"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

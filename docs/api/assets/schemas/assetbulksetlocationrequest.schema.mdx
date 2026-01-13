@@ -1,0 +1,33 @@
+---
+id: assetbulksetlocationrequest
+title: "AssetBulkSetLocationRequest"
+description: ""
+sidebar_label: "AssetBulkSetLocationRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Request":{"LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RoomId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationDetails":"string"}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetBulkSetLocationRequest"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"AssetIds":{"type":"array","items":{"type":"string","format":"uuid"}},"Request":{"type":"object","properties":{"LocationId":{"type":"string","format":"uuid"},"RoomId":{"type":"string","format":"uuid","nullable":true},"LocationDetails":{"type":"string","description":"Optional free-form description of the location"}},"required":["LocationId"]}},"required":["AssetIds","Request"],"title":"AssetBulkSetLocationRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

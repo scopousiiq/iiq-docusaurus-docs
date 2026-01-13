@@ -1,0 +1,33 @@
+---
+id: eventtypebatchcreateresponse
+title: "EventTypeBatchCreateResponse"
+description: "Response after creating multiple event types."
+sidebar_label: "EventTypeBatchCreateResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":[{"EventTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","IsDeleted":true,"SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Scope":"All","Name":"string","Icon":"string"}],"IsSuccess":true,"Errors":[{"StatusCode":401,"Message":"Attempted to perform an unauthorized operation."}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"EventTypeBatchCreateResponse"}
+>
+</Heading>
+
+
+
+Response after creating multiple event types.
+
+<Schema
+  schema={{"type":"object","description":"Response after creating multiple event types.","properties":{"Items":{"type":"array","items":{"type":"object","description":"Event type/category for categorizing events.","properties":{"EventTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the event type."},"CreatedDate":{"type":"string","format":"date-time","description":"Date when the event type was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"Date when the event type was last modified."},"IsDeleted":{"type":"boolean","description":"Indicates if the event type is deleted (soft delete)."},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site scope for site-specific event types."},"Scope":{"type":"string","enum":["All","System","Global","Site","App","User","Role","Team"],"description":"Visibility scope of the event type."},"Name":{"type":"string","description":"Display name of the event type."},"Icon":{"type":"string","description":"Icon identifier for the event type."}},"title":"EventType"}},"IsSuccess":{"type":"boolean"},"Errors":{"type":"array","items":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"}}},"title":"EventTypeBatchCreateResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

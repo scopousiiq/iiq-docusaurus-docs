@@ -1,0 +1,33 @@
+---
+id: simpleusergetresponse
+title: "SimpleUserGetResponse"
+description: "Response containing a single simplified user."
+sidebar_label: "SimpleUserGetResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":{"UserId":"51c89694-ae9f-f011-8e61-6045bd7991ab","SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","Name":"iiQ User","FirstName":"iiQ","LastName":"User","Email":"demo@incidentiq.com","Username":"demo@incidentiq.com","LocationId":"cc7dede9-f5f5-e622-b89a-116167cc111f","LocationName":"IncidentIQ Demo High School","RoleId":"d4e5f6a7-8901-2345-6789-0abcdef12345","RoleName":"Student","IsOnline":false,"IsEmailVerified":true},"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":200,"Message":"string","ErrorKey":"string","ServerName":"string","ProcessId":0,"OperationId":"string","Properties":{},"Metadata":{},"Errors":[{"Field":"string","Message":"string","Code":"string"}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SimpleUserGetResponse"}
+>
+</Heading>
+
+
+
+Response containing a single simplified user.
+
+<Schema
+  schema={{"type":"object","description":"Response containing a single simplified user.","allOf":[{"type":"object","description":"Standard response envelope for single-item GET operations. The `Item` property contains the requested entity.","properties":{"Item":{"description":"The requested entity. Structure varies by endpoint."},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful GET)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Item","StatusCode"],"title":"ItemGetResponse"}],"properties":{"Item":{"type":"object","description":"Simplified user object containing essential identification information. Maps to C# `Spark.Shared.Models.SimpleUser`.","properties":{"UserId":{"type":"string","format":"uuid","description":"Unique identifier for the user."},"SiteId":{"type":"string","format":"uuid","description":"Site identifier the user belongs to."},"Name":{"type":"string","description":"Full name of the user (computed from FirstName + LastName)."},"FullName":{"type":"string","description":"Full name of the user (computed from FirstName + LastName)."},"Initials":{"type":"string","description":"User initials (computed from first letter of FirstName and LastName)."},"FirstName":{"type":"string","description":"First name of the user."},"LastName":{"type":"string","description":"Last name of the user."},"Email":{"type":"string","format":"email","description":"Email address of the user."},"Username":{"type":"string","description":"Username for authentication."},"SchoolIdNumber":{"type":"string","description":"School identification number."},"Grade":{"type":"string","description":"Grade level of the user (for students)."},"Homeroom":{"type":"string","description":"Homeroom assignment (for students)."},"LocationId":{"type":"string","format":"uuid","description":"Primary location/school ID for the user."},"LocationName":{"type":"string","description":"Name of the user's primary location."},"Location":{"type":"object","description":"Simplified location object.","properties":{"LocationId":{"type":"string","format":"uuid"},"Name":{"type":"string"}}},"PhotoId":{"type":"string","format":"uuid","nullable":true,"description":"Profile photo file identifier."},"RoleId":{"type":"string","format":"uuid","description":"Role identifier for the user."},"RoleName":{"type":"string","description":"Human-readable role name."},"Role":{"type":"object","description":"Simplified role object.","properties":{"RoleId":{"type":"string","format":"uuid"},"Name":{"type":"string"}}},"IsOnline":{"type":"boolean","description":"Whether the user is currently online."},"IsOnlineLastUpdated":{"type":"string","format":"date-time","nullable":true,"description":"Timestamp when online status was last updated."},"AuthenticatedBy":{"type":"string","description":"Authentication provider (e.g., 'Local', 'SAML', 'Google')."},"IsEmailVerified":{"type":"boolean","description":"Whether the user's email address has been verified."},"UserStatusId":{"type":"string","format":"uuid","nullable":true,"description":"User status type identifier (e.g., active, shell user)."},"ProfilePicturePath":{"type":"string","description":"URL path to the user's profile picture."}},"example":{"UserId":"51c89694-ae9f-f011-8e61-6045bd7991ab","SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","Name":"iiQ User","FirstName":"iiQ","LastName":"User","Email":"demo@incidentiq.com","Username":"demo@incidentiq.com","LocationId":"cc7dede9-f5f5-e622-b89a-116167cc111f","LocationName":"IncidentIQ Demo High School","RoleId":"d4e5f6a7-8901-2345-6789-0abcdef12345","RoleName":"Student","IsOnline":false,"IsEmailVerified":true},"title":"SimpleUser"}},"title":"SimpleUserGetResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

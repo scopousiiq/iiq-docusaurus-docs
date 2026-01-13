@@ -1,0 +1,33 @@
+---
+id: customfieldcreaterequest
+title: "CustomFieldCreateRequest"
+description: "Request payload for creating a new custom field instance. This creates the relationship between a custom field type and an entity type (Assets, Tickets, Users, etc.), making the field available for that entity type."
+sidebar_label: "CustomFieldCreateRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"CustomFieldTypeId":"e7c8b30d-d899-4193-a70b-21994d2a8089","EntityTypeId":"d7bda5de-e6a2-e711-80c2-0004ffa00010","IsRequired":false,"IsReadOnly":false,"IsHidden":false,"DisplayOrder":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CustomFieldCreateRequest"}
+>
+</Heading>
+
+
+
+Request payload for creating a new custom field instance. This creates the relationship between a custom field type and an entity type (Assets, Tickets, Users, etc.), making the field available for that entity type.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for creating a new custom field instance. This creates the relationship between a custom field type and an entity type (Assets, Tickets, Users, etc.), making the field available for that entity type.","required":["CustomFieldTypeId","EntityTypeId"],"properties":{"CustomFieldTypeId":{"type":"string","format":"uuid","description":"UUID of the custom field type to apply. Obtain from [POST /api/v1.0/custom-fields/types](/docs/api/custom-fields/search-custom-field-types) or create via [POST /api/v1.0/custom-fields/types/new](/docs/api/custom-fields/create-custom-field-type).","x-obtained-from":{"operationId":"searchCustomFieldTypes","endpoint":"POST /api/v1.0/custom-fields/types","responseField":"Items[].CustomFieldTypeId"}},"EntityTypeId":{"type":"string","format":"uuid","description":"UUID of the entity type to apply the custom field to. Standard entity types include Assets (d7bda5de-e6a2-e711-80c2-0004ffa00010), Tickets (7eceb87e-e6a2-e711-80c2-0004ffa00010), Users (8eceb87e-e6a2-e711-80c2-0004ffa00010), etc."},"IsRequired":{"type":"boolean","description":"When true, users must provide a value for this custom field on the target entity type.","default":false,"example":false},"IsReadOnly":{"type":"boolean","description":"When true, users cannot modify the custom field value after it has been set.","default":false,"example":false},"IsHidden":{"type":"boolean","description":"When true, the custom field is hidden from standard UI views.","default":false,"example":false},"DisplayOrder":{"type":"integer","description":"Ordering applied when rendering this field relative to others on the same entity type.","default":0,"example":0},"FilterSetId":{"type":"string","format":"uuid","nullable":true,"description":"Optional filter set ID that controls when this field is displayed. When set, the field only appears on entities that match the filter conditions."}},"example":{"CustomFieldTypeId":"e7c8b30d-d899-4193-a70b-21994d2a8089","EntityTypeId":"d7bda5de-e6a2-e711-80c2-0004ffa00010","IsRequired":false,"IsReadOnly":false,"IsHidden":false,"DisplayOrder":0},"title":"CustomFieldCreateRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

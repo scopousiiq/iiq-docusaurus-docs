@@ -1,0 +1,33 @@
+---
+id: userview
+title: "UserView"
+description: ""
+sidebar_label: "UserView"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ViewId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Description":"string","OwnerId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UserView"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"ViewId":{"type":"string","format":"uuid"},"Name":{"type":"string"},"Description":{"type":"string"},"OwnerId":{"type":"string","format":"uuid"}},"title":"UserView"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

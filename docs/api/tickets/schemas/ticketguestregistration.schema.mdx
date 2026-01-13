@@ -1,0 +1,33 @@
+---
+id: ticketguestregistration
+title: "TicketGuestRegistration"
+description: "Guest requester registration payload used when creating ticket requesters on the fly."
+sidebar_label: "TicketGuestRegistration"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Email":"demo@incidentiq.com","FirstName":"iiQ","LastName":"User","LocationId":"31d1574a-2243-e611-a93b-a45e60e682da","LocationUnknown":false}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketGuestRegistration"}
+>
+</Heading>
+
+
+
+Guest requester registration payload used when creating ticket requesters on the fly.
+
+<Schema
+  schema={{"type":"object","description":"Guest requester registration payload used when creating ticket requesters on the fly.","properties":{"Email":{"type":"string","format":"email","description":"Guest requester's email address.","example":"demo@incidentiq.com"},"FirstName":{"type":"string","description":"Guest requester's first name.","example":"iiQ"},"LastName":{"type":"string","description":"Guest requester's last name.","example":"User"},"LocationId":{"type":"string","format":"uuid","description":"Location identifier associated with the guest requester.","example":"31d1574a-2243-e611-a93b-a45e60e682da"},"LocationUnknown":{"type":"boolean","description":"When true, the guest requester did not supply a known location.","example":false}},"required":["Email","FirstName","LastName","LocationId","LocationUnknown"],"title":"TicketGuestRegistration"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

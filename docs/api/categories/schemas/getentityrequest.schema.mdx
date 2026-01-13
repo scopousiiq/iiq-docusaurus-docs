@@ -1,0 +1,33 @@
+---
+id: getentityrequest
+title: "GetEntityRequest"
+description: "Generic entity query request"
+sidebar_label: "GetEntityRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Filters":[{"Facet":"string","FacetName":"string","Name":"string","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Value":"string","Negative":false,"CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ComplexEditorPath":"string","Children":[null],"AggregateOperation":"and"}],"FilterByProduct":true,"ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetEntityRequest"}
+>
+</Heading>
+
+
+
+Generic entity query request
+
+<Schema
+  schema={{"type":"object","description":"Generic entity query request","properties":{"Filters":{"type":"array","items":{"type":"object","description":"Filter criteria for category queries","properties":{"Facet":{"type":"string"},"FacetName":{"type":"string","nullable":true},"Name":{"type":"string","nullable":true},"Id":{"type":"string","format":"uuid","description":"Filter value ID"},"Value":{"type":"string","nullable":true},"Negative":{"type":"boolean","default":false},"CustomFieldTypeId":{"type":"string","format":"uuid","nullable":true},"ComplexEditorPath":{"type":"string","nullable":true},"Children":{"type":"array","items":"circular(CategoryFilter)","nullable":true},"AggregateOperation":{"type":"string","nullable":true,"enum":["and","or"]}},"title":"CategoryFilter"},"nullable":true},"FilterByProduct":{"type":"boolean","default":true},"ProductId":{"type":"string","format":"uuid","nullable":true}},"title":"GetEntityRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: getassetchangesrequest
+title: "GetAssetChangesRequest"
+description: "Request parameters for querying asset change history"
+sidebar_label: "GetAssetChangesRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ChangeTypes":["string"],"FromDate":"2024-07-29T15:51:28.071Z","ToDate":"2024-07-29T15:51:28.071Z"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetAssetChangesRequest"}
+>
+</Heading>
+
+
+
+Request parameters for querying asset change history
+
+<Schema
+  schema={{"type":"object","description":"Request parameters for querying asset change history","properties":{"AssetId":{"type":"string","format":"uuid","nullable":true,"description":"Filter by specific asset"},"ChangeTypes":{"type":"array","items":{"type":"string"},"nullable":true,"description":"Filter by change types"},"FromDate":{"type":"string","format":"date-time","nullable":true,"description":"Start date for the query range"},"ToDate":{"type":"string","format":"date-time","nullable":true,"description":"End date for the query range"}},"title":"GetAssetChangesRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

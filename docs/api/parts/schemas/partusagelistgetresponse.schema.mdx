@@ -1,0 +1,33 @@
+---
+id: partusagelistgetresponse
+title: "PartUsageListGetResponse"
+description: "Response wrapper for retrieving part usage data."
+sidebar_label: "PartUsageListGetResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":[{"TicketId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TicketNumber":0,"Subject":"string","ActivityDate":"2024-07-29T15:51:28.071Z","TicketActivityPartId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TicketActivityId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","PartId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","PartName":"string","SupplierName":"string","PartSupplierId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Qty":0,"CostEach":0,"TotalCost":0,"Notes":"string","PurchaseOrderId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","PoNumber":"string","PoIsApproved":true,"PoIsClosed":true,"PoClosedDate":"2024-07-29T15:51:28.071Z","PoBudget":0,"PoNotes":"string","TotalEffort":0}],"Paging":{"PageIndex":0,"PageSize":0,"TotalCount":0,"TotalPages":0},"Success":true,"Errors":["string"]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"PartUsageListGetResponse"}
+>
+</Heading>
+
+
+
+Response wrapper for retrieving part usage data.
+
+<Schema
+  schema={{"type":"object","description":"Response wrapper for retrieving part usage data.","properties":{"Items":{"type":"array","items":{"type":"object","description":"Represents part usage data associated with a ticket. Extends ticket data with part activity information.","properties":{"TicketId":{"type":"string","format":"uuid","description":"UUID of the associated ticket."},"TicketNumber":{"type":"integer","description":"Human-readable ticket number."},"Subject":{"type":"string","description":"Ticket subject line."},"ActivityDate":{"type":"string","format":"date-time","description":"Date and time of the part usage activity."},"TicketActivityPartId":{"type":"string","format":"uuid","description":"Unique identifier for the ticket activity part record."},"TicketActivityId":{"type":"string","format":"uuid","description":"UUID of the parent ticket activity."},"PartId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the part used."},"PartName":{"type":"string","description":"Display name of the part used."},"SupplierName":{"type":"string","description":"Name of the part supplier."},"PartSupplierId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the part supplier."},"Qty":{"type":"integer","nullable":true,"description":"Quantity of parts used."},"CostEach":{"type":"number","format":"decimal","description":"Cost per unit."},"TotalCost":{"type":"number","format":"decimal","description":"Total cost (Qty * CostEach)."},"Notes":{"type":"string","nullable":true,"description":"Additional notes about the part usage."},"PurchaseOrderId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the associated purchase order."},"PoNumber":{"type":"string","nullable":true,"description":"Purchase order number."},"PoIsApproved":{"type":"boolean","nullable":true,"description":"Whether the associated PO is approved."},"PoIsClosed":{"type":"boolean","nullable":true,"description":"Whether the associated PO is closed."},"PoClosedDate":{"type":"string","format":"date-time","nullable":true,"description":"Date the associated PO was closed."},"PoBudget":{"type":"number","format":"decimal","nullable":true,"description":"Budget of the associated PO."},"PoNotes":{"type":"string","nullable":true,"description":"Notes from the associated PO."},"TotalEffort":{"type":"number","format":"decimal","description":"Total effort hours associated with this activity."}},"title":"PartUsage"},"description":"List of part usage records."},"Paging":{"type":"object","description":"Pagination metadata for list responses.","properties":{"PageIndex":{"type":"integer","description":"Current page index (zero-based)."},"PageSize":{"type":"integer","description":"Number of items per page."},"TotalCount":{"type":"integer","description":"Total number of items available."},"TotalPages":{"type":"integer","description":"Total number of pages available."}},"title":"PagingResponse"},"Success":{"type":"boolean","description":"Indicates if the operation was successful."},"Errors":{"type":"array","items":{"type":"string"},"description":"List of error messages, if any."}},"title":"PartUsageListGetResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: customfieldupdaterequest
+title: "CustomFieldUpdateRequest"
+description: "Request payload for updating an existing custom field definition."
+sidebar_label: "CustomFieldUpdateRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"CustomFieldId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","EntityTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsRequired":true,"IsReadOnly":true,"DisplayOrder":0,"FilterSetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CustomFieldUpdateRequest"}
+>
+</Heading>
+
+
+
+Request payload for updating an existing custom field definition.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for updating an existing custom field definition.","properties":{"CustomFieldId":{"type":"string","format":"uuid","description":"UUID of the custom field to update"},"CustomFieldTypeId":{"type":"string","format":"uuid","description":"Reference to the custom field type definition"},"EntityTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Entity type this field applies to"},"IsRequired":{"type":"boolean","description":"Whether this field is required for the entity"},"IsReadOnly":{"type":"boolean","description":"Whether this field is read-only"},"DisplayOrder":{"type":"integer","description":"Order in which this field should be displayed"},"FilterSetId":{"type":"string","format":"uuid","nullable":true,"description":"Filter set that controls when this field is shown"}},"required":["CustomFieldId"],"title":"CustomFieldUpdateRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

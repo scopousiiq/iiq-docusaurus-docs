@@ -1,0 +1,33 @@
+---
+id: ticketbulksetinforequest
+title: "TicketBulkSetInfoRequest"
+description: ""
+sidebar_label: "TicketBulkSetInfoRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Request":{"Values":[{"Key":"custom-field:9f0c8306-4f2b-4af8-8f87-0e3918e0d3ab","Value":"string"}]}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketBulkSetInfoRequest"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"TicketIds":{"type":"array","items":{"type":"string","format":"uuid","x-obtained-from":{"operationId":"searchTickets","endpoint":"POST /api/v1.0/tickets","responseField":"Items[].TicketId"}},"description":"Array of ticket UUIDs that should receive the updates. Obtain via POST /api/v1.0/tickets and extract `Items[].TicketId`."},"Request":{"type":"object","properties":{"Values":{"type":"array","items":{"type":"object","properties":{"Key":{"type":"string","description":"Custom field identifier (e.g., custom-field:{id}). Obtain allowed identifiers from [GET /api/v1.0/tickets/{ticketId}](/docs/api/tickets/get-ticket) `Item.CustomFieldValues[].CustomFieldId` or [GET /api/v1.0/custom-fields](/docs/api/custom-fields/search-custom-fields).","example":"custom-field:9f0c8306-4f2b-4af8-8f87-0e3918e0d3ab"},"Value":{"type":"string","nullable":true,"description":"Value to assign to the custom field"}},"required":["Key"],"title":"TicketBulkSetInfoValue"},"minItems":1,"description":"Collection of custom field updates to apply to each ticket."}},"required":["Values"]}},"required":["TicketIds","Request"],"title":"TicketBulkSetInfoRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

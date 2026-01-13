@@ -1,0 +1,33 @@
+---
+id: assetfundingtype
+title: "AssetFundingType"
+description: "Funding source metadata used to categorize asset purchases."
+sidebar_label: "AssetFundingType"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetFundingTypeId":"7fd06453-7a59-4660-af98-886f2518f014","SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","Scope":"Global","Name":"ESSER"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetFundingType"}
+>
+</Heading>
+
+
+
+Funding source metadata used to categorize asset purchases.
+
+<Schema
+  schema={{"type":"object","description":"Funding source metadata used to categorize asset purchases.","properties":{"AssetFundingTypeId":{"type":"string","format":"uuid","description":"Identifier of the funding type.","example":"7fd06453-7a59-4660-af98-886f2518f014"},"SiteId":{"type":"string","format":"uuid","description":"Site identifier when the funding type is scoped to a specific site. Null for globally available types.","nullable":true,"example":"bb6cece8-e4f4-e511-a789-005056bb000e"},"Scope":{"type":"string","description":"Scope of the funding type (`Global` or `Site`).","example":"Global"},"Name":{"type":"string","description":"Display label for the funding source.","example":"ESSER"}},"required":["AssetFundingTypeId","Scope","Name"],"title":"AssetFundingType"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

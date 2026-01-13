@@ -1,0 +1,33 @@
+---
+id: gradestat
+title: "GradeStat"
+description: "Statistics about user counts per grade level. Mirrors `Spark.Shared.Models.GradeStat`."
+sidebar_label: "GradeStat"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Grade":"string","Users":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GradeStat"}
+>
+</Heading>
+
+
+
+Statistics about user counts per grade level. Mirrors `Spark.Shared.Models.GradeStat`.
+
+<Schema
+  schema={{"type":"object","description":"Statistics about user counts per grade level. Mirrors `Spark.Shared.Models.GradeStat`.","properties":{"Grade":{"type":"string","description":"Grade level identifier (e.g., '9', '10', '11', '12', 'K', 'Staff')"},"Users":{"type":"integer","description":"Number of users at this grade level"}},"title":"GradeStat"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

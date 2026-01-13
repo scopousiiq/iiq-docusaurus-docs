@@ -1,0 +1,33 @@
+---
+id: updateorganizationtypesrequest
+title: "UpdateOrganizationTypesRequest"
+description: "Request body for batch-updating organization types by query."
+sidebar_label: "UpdateOrganizationTypesRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Update":{"OrganizationTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","IsDeleted":true,"SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Scope":"Global","Name":"string"},"Filters":[{"Facet":"string","Ids":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Values":["string"],"Op":"None","CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ComplexEditorPath":"string","Items":[null]}],"SortOrder":0,"SortField":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateOrganizationTypesRequest"}
+>
+</Heading>
+
+
+
+Request body for batch-updating organization types by query.
+
+<Schema
+  schema={{"type":"object","description":"Request body for batch-updating organization types by query.","properties":{"Update":{"type":"object","description":"Represents a type/category for organizations (event venues).","properties":{"OrganizationTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the organization type."},"CreatedDate":{"type":"string","format":"date-time","description":"Date and time the organization type was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"Date and time the organization type was last modified."},"IsDeleted":{"type":"boolean","description":"Indicates if the organization type has been soft-deleted."},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the site this organization type belongs to. Null for global types."},"Scope":{"type":"string","enum":["Global","Site"],"description":"Scope of the organization type - Global or Site-specific."},"Name":{"type":"string","description":"Display name of the organization type."}},"title":"OrganizationType"},"Filters":{"type":"array","items":{"type":"object","description":"Filter condition for search/list operations. Based on C# `DataFilter` from `Spark.Shared.Models.DataFramework`. Supports both simple filters and nested filter groups.","properties":{"Facet":{"type":"string","description":"Field name or facet to filter on (e.g., 'Status', 'LocationId', 'CreatedDate')"},"Ids":{"type":"array","nullable":true,"items":{"type":"string","format":"uuid"},"description":"Array of UUIDs to filter by (for ID-based facets)"},"Values":{"type":"array","nullable":true,"items":{"type":"string"},"description":"Array of string values to filter by"},"Op":{"allOf":[{"type":"string","description":"Filter operations for DataFilter queries. Based on C# `DataFilterOperations` enum from `Spark.Shared.Enums`.","enum":["None","Equal","Greater","Less","GreaterOrEqual","LessOrEqual","StartsWith","EndsWith","Contains","NotEqual","NotGreater","NotLess","NotGreaterOrEqual","NotLessOrEqual"],"x-enum-descriptions":{"None":"No operation specified","Equal":"Equals (eq)","Greater":"Greater than (gt)","Less":"Less than (lt)","GreaterOrEqual":"Greater than or equal (ge)","LessOrEqual":"Less than or equal (le)","StartsWith":"String starts with","EndsWith":"String ends with","Contains":"String contains","NotEqual":"Not equal (ne)","NotGreater":"Not greater than (ng)","NotLess":"Not less than (nl)","NotGreaterOrEqual":"Not greater than or equal (nge)","NotLessOrEqual":"Not less than or equal (nle)"},"title":"DataFilterOperations"}],"description":"Filter operation to apply"},"CustomFieldTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Custom field type ID (when filtering on custom fields)"},"ComplexEditorPath":{"type":"string","nullable":true,"description":"JSON path for filtering within complex editor values"},"Items":{"type":"array","nullable":true,"items":"circular(DataFilter)","description":"Nested filter conditions for complex AND/OR queries"}},"required":["Facet"],"title":"DataFilter"}},"SortOrder":{"type":"integer"},"SortField":{"type":"string"}},"title":"UpdateOrganizationTypesRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

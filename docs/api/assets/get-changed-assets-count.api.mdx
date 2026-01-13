@@ -1,0 +1,67 @@
+---
+id: get-changed-assets-count
+title: "Get count of changed assets"
+description: "Returns the number of assets that have been modified since last processing. Use this to efficiently detect if any changes exist before calling the full changed assets endpoint."
+sidebar_label: "Get count of changed assets"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/assets/assets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get count of changed assets"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/assets/changed-count"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the number of assets that have been modified since last processing. Use this to efficiently detect if any changes exist before calling the full changed assets endpoint.
+
+**Use Cases:**
+- Quick polling check before running expensive sync operations
+- Dashboard metrics showing pending sync items
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Count returned successfully","content":{"application/json":{"schema":{"type":"object","description":"Count returned successfully","properties":{"Item":{"type":"integer","description":"Number of changed assets"},"StatusCode":{"type":"integer"}},"title":"AssetChangedCountResponse"},"example":{"Item":42,"StatusCode":200,"RequestDate":"2025-01-01T00:00:00Z"}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

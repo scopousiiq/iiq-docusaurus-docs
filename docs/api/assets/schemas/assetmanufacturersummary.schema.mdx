@@ -1,0 +1,33 @@
+---
+id: assetmanufacturersummary
+title: "AssetManufacturerSummary"
+description: "Manufacturer details for the associated model"
+sidebar_label: "AssetManufacturerSummary"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ManufacturerId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Scope":"string","Name":"string","EsoIsVisible":true,"Icon":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetManufacturerSummary"}
+>
+</Heading>
+
+
+
+Manufacturer details for the associated model
+
+<Schema
+  schema={{"type":"object","description":"Manufacturer details for the associated model","properties":{"ManufacturerId":{"type":"string","format":"uuid","nullable":true},"Scope":{"type":"string","nullable":true},"Name":{"type":"string"},"EsoIsVisible":{"type":"boolean","nullable":true},"Icon":{"type":"string","nullable":true}},"title":"AssetManufacturerSummary"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

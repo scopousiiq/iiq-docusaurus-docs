@@ -1,0 +1,80 @@
+---
+id: get-location-room-status-type-by-id
+title: "Get room status type by ID"
+description: "Retrieves a single room status type by ID (for example, Active or Under Maintenance). Use this when you need to resolve a status type reference to a display name."
+sidebar_label: "Get room status type by ID"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/locations/locations-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get room status type by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v2.0/locations/rooms/status-types/{statusTypeId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves a single room status type by ID (for example, Active or Under Maintenance). Use this when you need to resolve a status type reference to a display name.
+
+**Prerequisites**
+1. **statusTypeId** - Use [GET /api/v2.0/locations/rooms/status-types](/docs/api/locations/get-all-location-room-status-types) and extract `Items[].LocationRoomStatusTypeId`.
+
+**Workflow Example**
+1. List status types and capture the ID.
+2. Get the specific type: [GET /api/v2.0/locations/rooms/status-types/\{statusTypeId\}](/docs/api/locations/get-location-room-status-type-by-id).
+
+**Minimal Required Fields**: statusTypeId (path).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"statusTypeId","in":"path","required":true,"schema":{"type":"string","format":"uuid"},"description":"The unique identifier of the status type"},{"name":"Authorization","in":"header","required":true,"schema":{"type":"string"},"description":"Bearer token for authentication"},{"name":"SiteId","in":"header","required":false,"schema":{"type":"string","format":"uuid"},"description":"Site context for the request"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status type retrieved successfully","content":{"application/json":{"schema":{"type":"object","description":"Response containing a single room status type.","properties":{"Item":{"allOf":[{"type":"object","description":"Status type for location rooms (e.g., Active, Inactive, Under Maintenance)","properties":{"LocationRoomStatusTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the status type"},"Name":{"type":"string","description":"Display name for the status type"}},"required":["LocationRoomStatusTypeId","Name"],"title":"LocationRoomStatusType"}],"type":"object","description":"The status type data"},"IsSuccessful":{"type":"boolean","description":"Whether the request was successful"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Messages":{"type":"array","nullable":true,"items":{"type":"string"},"description":"Status or error messages"}},"required":["IsSuccessful","StatusCode"],"title":"LocationRoomStatusTypeItemResponse"},"example":{"Item":{"LocationRoomStatusTypeId":"22222222-2222-2222-2222-222222222222","Name":"Active"},"IsSuccessful":true,"StatusCode":200}}}},"401":{"description":"Unauthorized"},"404":{"description":"Status type not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

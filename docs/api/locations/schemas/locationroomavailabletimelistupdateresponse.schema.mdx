@@ -1,0 +1,33 @@
+---
+id: locationroomavailabletimelistupdateresponse
+title: "LocationRoomAvailableTimeListUpdateResponse"
+description: "Response from updating room availability times."
+sidebar_label: "LocationRoomAvailableTimeListUpdateResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":[{"LocationRoomAvailableTimeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationRoomId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Weekday":0,"WeekdayName":"string","IsClosed":true,"LocalStartTime":"08:00:00","LocalEndTime":"17:00:00","IsDeleted":true,"CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z"}],"IsSuccessful":true,"StatusCode":0,"Messages":["string"]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"LocationRoomAvailableTimeListUpdateResponse"}
+>
+</Heading>
+
+
+
+Response from updating room availability times.
+
+<Schema
+  schema={{"type":"object","description":"Response from updating room availability times.","properties":{"Items":{"type":"array","items":{"type":"object","description":"Defines a room's availability window for a specific day of the week","properties":{"LocationRoomAvailableTimeId":{"type":"string","format":"uuid","description":"Unique identifier for this availability record"},"LocationRoomId":{"type":"string","format":"uuid","description":"Reference to the parent room"},"Weekday":{"type":"integer","minimum":0,"maximum":6,"description":"Day of the week (0=Sunday, 1=Monday, ..., 6=Saturday)"},"WeekdayName":{"type":"string","nullable":true,"description":"Human-readable day name (e.g., 'Monday')"},"IsClosed":{"type":"boolean","description":"Whether the room is closed/unavailable on this day"},"LocalStartTime":{"type":"string","nullable":true,"description":"Start time of availability window in local time (HH:mm:ss format)","example":"08:00:00"},"LocalEndTime":{"type":"string","nullable":true,"description":"End time of availability window in local time (HH:mm:ss format)","example":"17:00:00"},"IsDeleted":{"type":"boolean","description":"Whether this availability record has been soft-deleted"},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when this record was created"},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when this record was last modified"}},"required":["LocationRoomAvailableTimeId","LocationRoomId","Weekday","IsClosed","IsDeleted","CreatedDate","ModifiedDate"],"title":"LocationRoomAvailableTime"},"description":"Updated availability times"},"IsSuccessful":{"type":"boolean","description":"Whether the request was successful"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Messages":{"type":"array","nullable":true,"items":{"type":"string"},"description":"Status or error messages"}},"required":["IsSuccessful","StatusCode"],"title":"LocationRoomAvailableTimeListUpdateResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

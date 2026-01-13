@@ -1,0 +1,33 @@
+---
+id: bulkassetcheckoutupdateresponse
+title: "BulkAssetCheckoutUpdateResponse"
+description: "ListUpdateResponse envelope containing identifiers affected by a bulk checkout update."
+sidebar_label: "BulkAssetCheckoutUpdateResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Message":"string","StatusCode":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"BulkAssetCheckoutUpdateResponse"}
+>
+</Heading>
+
+
+
+ListUpdateResponse envelope containing identifiers affected by a bulk checkout update.
+
+<Schema
+  schema={{"type":"object","description":"ListUpdateResponse envelope containing identifiers affected by a bulk checkout update.","properties":{"Items":{"type":"array","items":{"type":"string","format":"uuid"}},"Message":{"type":"string","nullable":true},"StatusCode":{"type":"integer","nullable":true}},"required":["Items"],"title":"BulkAssetCheckoutUpdateResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

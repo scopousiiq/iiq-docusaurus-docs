@@ -1,0 +1,33 @@
+---
+id: guidlistresponse
+title: "GuidListResponse"
+description: "Response containing a list of GUIDs."
+sidebar_label: "GuidListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Paging":{"TotalRows":54343,"PageCount":10869,"PageSize":5,"PageIndex":0},"IsSuccess":true,"Errors":[{"StatusCode":401,"Message":"Attempted to perform an unauthorized operation."}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GuidListResponse"}
+>
+</Heading>
+
+
+
+Response containing a list of GUIDs.
+
+<Schema
+  schema={{"type":"object","description":"Response containing a list of GUIDs.","properties":{"Items":{"type":"array","items":{"type":"string","format":"uuid"}},"Paging":{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"},"IsSuccess":{"type":"boolean"},"Errors":{"type":"array","items":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"}}},"title":"GuidListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

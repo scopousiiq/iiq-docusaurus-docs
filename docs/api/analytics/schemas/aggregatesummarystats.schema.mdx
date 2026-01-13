@@ -1,0 +1,33 @@
+---
+id: aggregatesummarystats
+title: "AggregateSummaryStats"
+description: "Aggregated summary statistics for a user (requestor), showing ticket counts and device associations. Used for user profile dashboards and self-service portals."
+sidebar_label: "AggregateSummaryStats"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"OpenTickets":3,"TotalTickets":42,"ClosedTickets":35,"AssignedTickets":5,"WaitingOnRequestorTickets":2,"Devices":2,"CreatedForMeTickets":28,"CreatedForOthersTickets":14}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AggregateSummaryStats"}
+>
+</Heading>
+
+
+
+Aggregated summary statistics for a user (requestor), showing ticket counts and device associations. Used for user profile dashboards and self-service portals.
+
+<Schema
+  schema={{"type":"object","description":"Aggregated summary statistics for a user (requestor), showing ticket counts and device associations. Used for user profile dashboards and self-service portals.","properties":{"OpenTickets":{"type":"integer","description":"Number of tickets currently open for this user.","example":3},"TotalTickets":{"type":"integer","description":"Total number of tickets associated with this user.","example":42},"ClosedTickets":{"type":"integer","description":"Number of tickets that have been closed.","example":35},"AssignedTickets":{"type":"integer","description":"Number of tickets currently assigned to this user as an agent.","example":5},"WaitingOnRequestorTickets":{"type":"integer","description":"Number of tickets in waiting-on-requestor status.","example":2},"Devices":{"type":"integer","description":"Number of devices assigned to this user.","example":2},"CreatedForMeTickets":{"type":"integer","description":"Number of tickets created for this user (user is the requestor).","example":28},"CreatedForOthersTickets":{"type":"integer","description":"Number of tickets this user created on behalf of others.","example":14}},"example":{"OpenTickets":3,"TotalTickets":42,"ClosedTickets":35,"AssignedTickets":5,"WaitingOnRequestorTickets":2,"Devices":2,"CreatedForMeTickets":28,"CreatedForOthersTickets":14},"title":"AggregateSummaryStats"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

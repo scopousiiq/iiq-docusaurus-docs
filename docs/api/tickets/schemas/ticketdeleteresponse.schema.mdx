@@ -1,0 +1,33 @@
+---
+id: ticketdeleteresponse
+title: "TicketDeleteResponse"
+description: "Response returned when a ticket is successfully deleted."
+sidebar_label: "TicketDeleteResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Uid":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8","Item":{"TicketId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsDeleted":true},"IsSuccess":true,"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","StatusCode":200}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketDeleteResponse"}
+>
+</Heading>
+
+
+
+Response returned when a ticket is successfully deleted.
+
+<Schema
+  schema={{"type":"object","description":"Response returned when a ticket is successfully deleted.","properties":{"Uid":{"type":"string","format":"uuid","description":"UUID of the deleted ticket","example":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8"},"Item":{"type":"object","description":"Minimal ticket data confirming deletion","properties":{"TicketId":{"type":"string","format":"uuid","description":"UUID of the deleted ticket"},"IsDeleted":{"type":"boolean","description":"Always true for deleted tickets"}},"required":["TicketId","IsDeleted"]},"IsSuccess":{"type":"boolean","description":"Indicates whether the operation succeeded","example":true},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated user token"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the request was processed"},"StatusCode":{"type":"integer","description":"HTTP status code mirrored in the response body","example":200}},"required":["Uid","IsSuccess","StatusCode"],"title":"TicketDeleteResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

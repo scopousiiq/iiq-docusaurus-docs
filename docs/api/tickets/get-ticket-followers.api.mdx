@@ -1,0 +1,76 @@
+---
+id: get-ticket-followers
+title: "Get ticket followers"
+description: "Retrieves the list of users following a ticket. Followers receive notifications about ticket updates."
+sidebar_label: "Get ticket followers"
+hide_title: true
+hide_table_of_contents: true
+api: eJztW+9yGzeSfxUU8oGyaihRsmR7ebVXp8hywsS2FJGKb1dUxeBMk0Q0A4wBjGSuzKp7h3vDe5K7bgAzQ1KxqdzVfVp/sMgZoLvR/UOj/4APXJdghJNaDTLe5zNwI5negnuj81zfg7E84U7MLO9fc//G9lNdFJWSKU3jNwn/3JXyUzfTqeX9B24hpRd9vjow4dpkYHj/qLdMeAY2NbIMIy/BGQl3YJmbA8uldUxPWWXBWDYlUaSaMcEcibDHavGYgRTkHTClnZwGVpaJia5cGM2qMhMO7N5YjdXu7iXkwkHGzlRWaqmc3d0dqy67vjgfjti+KOX+3cFeb9/PtfsP/sMgW+5PI9N9FGz/Af8fZMubnX1cOk2Ns0SWdf3nbpzVxeHP2H/9x3+ykyxjglbH4lsS4fXZ27PR2f+ZEAYKfQdfkeOSBjwqylO04UAU+w/4/xO0gcPb2sDvTNhaCgReKYwowOGX/vUDV6IA3udRBJ5widgphZvzhBv4VEkDGe87U8E6wK6U/FQBkxkoxAkYxBdizVPjCbfpHAqBAHaLEvlYZ6Sa8YRPtSmE431eVTLjy+UNMrOlVhYI8Ie9Hv5ZZdhGqMd2xmyVpmDttMrzBU94qpUD5XCuKMs8gHf/d4sEHjYF0pPfIUVR1/eOl4UhPSEV7pStdhFPuMjz8ykp9+s8hk6oTJiMxYUzUHeQ6xLYVBtWiplUtKs80+hT7B479UJZJhQTxogFiiQdFJaVeWXjVKkVK8CJTDiBgpUGiTjpNTzA8S1NEKENIU8iebQxTkXVV0ZBxiYLUsmnCsxijw2dqVJXGWB3wuC4yYJBcAfIXAZ2y2VCrE915c0U2EvlYAZmQ4D3VTHxyPILlIq4ppUxoFyju50c1MzNcSCtzCvmGU84fBZFmQPvHx4vE36BupkRPra000WjzQyckHlLB/fSzVHdkPn9bkGYdI5SVbmzm0ofaSfyS31vt1g5jWWqXr/R95aJOyFzMcmBidRoa5nIcxKAmNVLPT56fvTcrxa21fQ6P6LaYoigbKveG77N9aD36sVfAteh/Ac8ybwGUm2ylm5LoE0AqwsL5Acqg89b0P87GN2dCAsZkzgluqi4CGTQsAzgiqBa4dxD5Drp8HNA0buwuTi6L1XlpKfoK58MKqnSvMrI05Al0N6JFzBFEyZMqGxFcL5M+JUFM9K3oL7tZTdlXNvrlZvjNk/J61iwFsVr3Duyu4RPFVj3Wjj4KkOMDrpOFrAJM1mAdaIo2f0cvL5PLgasNBr9OGTBAsQGOZ59hrTCuTixxdMDdYWnrnBtG34WzB2YrpUZMIjEGMqG9i5knksLqVaZRXZDJ1xlT3W2DXp/HI0umKUZLNUZsB23KGUq8nzBDns92jLNAUWOfNUj9TBsewfWojUf0efXDXZOH0TOpPJK8N+KQA+VZ4w2P8Pi6bTfiXQuFXQNiIy2PyApdgsLWlWaS1AuKJXezIXKcqSMSiSVvxfFo4taQ11zTDOFOnRz4f4YDhf+BUbW3zTPQDkwqJFArR2q4CIyKWZKWydTMv15O2x/qr5GRqSwziDXM5ZqYzA8xmFe/tZ5sO4kRJZJb8X2OM/vG5u3nlmf+ax19hDMgrfamu+6DpbfEuJnWHTvRF5BSwYhja2h+FjAsU5SrgUmf+BBT5jSqjsV6CrvRC4zDyEPRsJQJjNMYVhp4A5dJiKpDqPY1OiCpRo3ovMGXj2q30jI/wQOEPTxkJkiCR8j4NeWlNLaCvjX9/6aq6kKoZrd2HoZuT1Gfs2P/e/2Pno4jqdgkxZc1wu4aQ7HoZ66X2thyO58Izt9GyJpq6duw352g42PVlfcc4sjEvsBXIza6Tz+M9Huqc5zn2k3Qf79XDNhoBXsNylOO7D9BlzfSSULkfsw0cc6DIoJZFmIO3xeXYpFrkVmN+B4RTnpFqkUntHe3di5LL8NLF+BYKY1Cc+sOSaO5/cKTMLeaJMwbdiJtXKmIGsfYZzGINvt3P2bKs9ZJm2ZiwWj7HOZ8DfSWPdH81exukz4W/GEwQMlnRT5I95scxc0i5In5LIKIfOvqhxoRAjD1FYKCFlzFSbsl0aqVJYYegdtvNXpV46hr8d0relbq+hS5/AneeFUnLiuyT/OrVZRvS3rreGFBGtFXmjjRL5FoOAHMkGRGsvhDsiov0orJzKXbrEFjWZwQ+BUOJhps9hyiQiibTLDJmkKLsqfMNIyg/bAACzV5bbasjR23eEGy9RKXNHGysqi3JFryy8TPNAZr6IAt6U9V7lUbRknWucg1CNRXEYpCbpicHPwWSj5UWljPpQvmPYE1xcSHGcAUNzUrR3bEqYluneLOGhYFYUwC75sJ4BrFd3m5Gl5kYd2oeMwiWfQdePMefriSPSOJwfdF+Iw64I4OOiKF72Dbq/Xez6dwtHBFA6j6H0u5S/sJCukqpeBzz7tCXz2b+hGKPz8tJfqgq94VZzK256TRzqN4/oaqcZcU5FbWCatNWQvjycHL9LD7svJc+hOJ4eH3cnLg8PuwcHBUa83PT7s9Z6vrgGntpaQQaGfKH2g0BL+cSLrct+sJMz8ORy8nL58ftydvPzLtDvtHRx0J0evjrq93uHh0avj5696Ry/5WtLLD3uHx11a3+jgqP+81+/1/s438tSD470XL1fTycNebzU14rYU5jaUcW33xavsxfHx8aujV935rZuUfCXbOVgSAI96B5uF0SslKjfXRv4DMqr/Ygrq9wcGwKKd2HMicrRJ5L12bKor5SmEeCTT4GnAZ4kJGOHbgcLSgMfyLWaX7XZFwikF2LZtgTYpwM116JVQjdrNeZ9vVyrHMjPp1ItTGYTU3LnS9vf3ERV7a6hAhhbSypBfv37gExAGDFY/eP8aX0pHhxJ+9nkufm5PG2IZ2Z9g7cm1K0P2sfxNro0G8SR8eBMd/08fRhvu7qcPI+YQnz5DoX0qrQtZy7+y1+CLxIaNtM4ptYoCN9FtKTHpD8X8OYiMuIetMvTD1xn/TVeGIal2FrtzdTV4/QyZRE1syeTUD98Igyvr2ATYmJ+U0o8Zc4IV1jCI+oqHtVgcQkiBsZ7CwV5vr7dB9zvWGo9NqdEc2o8wF76TGVhK+QzMEcLYp/FHvtNsEFAy+KVjA/ox2LcL66DYY6cGhIMkVHiT0ADzNblCKKzSzSEvMTG7DdMtMp0ZUWBlhopCSavId6/N7TTX98wZoSxl3zZhgkLsApSzCYoaPiEX4ZxI5/SA2m7ffcfO78DcSbinBQeemKtQhVMbSkRX1oU7RaYQJC6okJgLh5HIHjsT6TzuewOlAYu8mIjlFypp4CJRHhZ3FWUGgjmB68a0WwFkpNEJ4NrSW8hIfgNW53eQkfD9fh8Njs3DDzhpoSuWCsUy3eTLLfNhPxF7aLu7Q19hR4JTmTswu7u1uieLUIyLegRIWB7C4YSlIWYhidPKOiwAGOnASOGJeyNHeru7Gwb0exI9INWVPDhsgprBP6iJymlfiWOmysF6wleEltqp+orv7m4LDlHw0kiNLiaJElIRIUKgQYen+84j7zEsoV40o2Zk1I+bG13N5qhswzKYSiqzh0pboPgjlvGArfhrpHUnRQuPSjsIMq00iT2ND9rcejPaaoLACMJMDIhblul7FQovn2vRpEJhaTVUcSglpChSv98PWD/VRaEVxg7sVJC4+Pg79iPuute467DcN/N+cqyGC5U2wJCZNP4sIiuSbLUVB6Phu3ob2ISBshWGy15P1ERFBcfekzRYUZqCMVidRB/M7ucyx00l62ahYFaqGUbXujKprwiZys33otgnHieQBZh7B0Oir6KwRlQLgIVW0mnT+CeUGqMpVgqDwThBcaBHLAPa7yIH43yigE38QqiKysYOT06FbGvBTj3sLqHUBj3gWH1fyTxjmbDziRbYovEVWkzkI6Cx0icVMyByqvqjEsUEy8ERxj9fDLw3wGcTWOj/iTMmlcxdl+YhM1vL8CHi+aTeTWM1MnI2A9PYTaT+YoLvIwRtGUAvZktIEZXNzrAOSpvUlQ1C7QJlmYoUkxoJpLQMSKulMM4rkfw8WdRa8ovUpYoOGE+WoQcWAfJL/Ma+ICbrEt2XsfrSjf+aT/QNZ0W/JtVsd5d9Yb9gb61eE8HVezvfEQqtI78BrbcTC4R+lXAfycQrINj7kncyQ6Ov+iB/fsVibZSlmhTSuUgl4FHB/ZpEiABf47RViRaMBK6C0mj6O53J6aIucNX5/6Merl2GspGcrztFev5b49Q0EzPvlXCreqt9qqCCen6EE00fOmFcwqzTJZ6waipNkcTDyQvReNGaS6B02naLXpose9wvhqCgjlNbyo0usVZta3z0mKRiuSHA91V+SzMvwKC7at0LYNjur3Iny7zlPBzTKoU4PfYAvOgh9vGG8Y6qOYFkXIi3MB0X/mRBYoT+XyqZ3nqF+ntA6dXlW/yL3z5+/DgRdj5WaWVy1v13RtdfxnVojs61i+HmWny+EfWPORuPx4qx7o8YNoZEh9bcZ99TQM3+dn51+dvo/Oez96ujfajb9++Hg9HZb4PXqyN8DNpnrXB05bW/T9IdLUros/UrJc3YjHUe8ANjY/7G79Qx77Nr/4yxhzF/I1Jw+HAcskKkiYngmCdszH/FpClMwlaUGvObpZ9+k0TSvu+Mgx7GdZsdvx4eJ/6174zjox7NXnbIFN4+P4k7MSSn1LLS7+JO2PAw1cq2LlX8lYl7IR2bgkvnO50nm66TMNKKz+/6rIMY6NBqfL5g+yyorbNi2E6fdTZM2wlq6Hir4pi2XevX3o74ujZq865lTxyxbtEO6YxGT3S26LOfhufv93z5TE4XO0HaYOK2gRnZt886q8btJMxbts+uO2jWzg1bM6s3ap89sGhRb8/amn3W83OWz8Zq+exf0HDeUuS1o5Xqawu4kB0choN0Dnu5nu3QLSAqQeGbGhIXCzfXqgWHMjyQBXn0EPvT6dbCRXy8V2rrdoJy/wQ+/MwAhr8+RG0+CQ9bYOJbuNgeGxEdjOGjFYkDKDotVARsdAgbncfA0fHo6DTwWDaTb9rieZh0+uyhE3HS8UDp1EjpxG3PEDDP0GgBImvgGCvsOzhCxXWHYNG5eVbjYqy63W6Mxn4AF4PU1z5qeNS//3D2p9x7q6jz/+7p6/VS4BvOYvYe7sN6Q6Z6L4yiSBhvuvrKMqP2sPW75gMGoCnF7627gAkltQUWPELxgX18o80g+8h26gp200vEYt1Um2cJ+zjA9u0g++jP349NP+jjHuU/OIlq7vQ+vqZEmeIhPcE0xHdV2eA1Rqshj0J3b7ViaKWxIvCOQ/XNn0zooMc88S8qk/unTzcqaQNqSmGD+4MrnGUr9vV8HrFxffR5A/txq0auh0Sz9lfLS8371gb3ozYP9Mb/jzmeACsik/n8zKvh2eVvWBxr0Q928wMGw+HV2fqIxpR+0Nvz05PR4Pz9+rhhRZ2SMEiUTpfMpgYIZ1RSWWfbyjZijFGhgVhmdFniLVKikkQyoTQcOrFSzfbC2sdq2doWLF7tRmz5Gsz1CWZCtn0pmXIjG/50RSmfsS57K9Wtz5oIlAEZic8CMeXDmyFEkLDcpkdtLf9/TU3rW1aV9c1bE7dNUxOh3UBGGvOQVBD5GP6vsIiJoW0+RVanmBTM8Crrava4lht44iFd9u6gzcAnN10vx+q3yChUb9ppEKPaOcXyMfxFLvUeb3OIlS3bfIqUL7E+ARj4x1c+VGjpjW5Kf3ZjFW5Ni5SKu6F821QNWwXnoc/yeLJWZcdcKpezuVsvtSehQU7F4m5IEte7NMuE5zIF7J41/PEakpHgsPG2zu7+/n7d/zgwhb80gvFIIVSLFB5fYc3tpsFK/fihuTj+z99N/PN3E4/8biI0PXDL7Je5kHSZj3D5EPpV1whybFUcUH8iMOQJ77d+XdGQvEn4XFtsLfGHB7yhfGXy5RIf08Vq337Cu/T+XsX1A8+kxc9ZaGZ+BcI7MUx5xr79I41HVxZ7PGrR9PM4T0K3r17Q8maZxNZP0wzEwkLpWhM3foqx0vT74WzEl8v/BtMjddI=
+sidebar_class_name: "get api-method"
+info_path: docs/api/tickets/tickets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get ticket followers"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/tickets/{ticketId}/followers"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves the list of users following a ticket. Followers receive notifications about ticket updates.
+
+**Related Endpoints**
+- [POST /api/v1.0/tickets/\{ticketId\}/followers/user/\{userId\}](/docs/api/tickets/add-ticket-follower-user) – Add a user follower
+- [DELETE /api/v1.0/tickets/\{ticketId\}/followers/user/\{userId\}](/docs/api/tickets/remove-ticket-follower-user) – Remove a user follower
+- [POST /api/v1.0/tickets/\{ticketId\}/followers/team/\{teamId\}](/docs/api/tickets/add-ticket-follower-team) – Add a team as followers
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"ticketId","in":"path","required":true,"description":"Unique identifier of the ticket","schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Followers retrieved successfully","content":{"application/json":{"schema":{"type":"object","description":"Response containing the list of users following a ticket.","allOf":[{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"}],"properties":{"Items":{"type":"array","description":"Collection of users who are following the ticket.","items":{"type":"object","description":"Minimal user record embedded in ticket payloads","properties":{"UserId":{"type":"string","format":"uuid"},"Relationship":{"type":"string","description":"Ticket relationship such as Owner, For, or Assigned","example":"Owner"},"Name":{"type":"string","description":"Full display name"},"FirstName":{"type":"string","nullable":true},"LastName":{"type":"string","nullable":true},"Initials":{"type":"string","nullable":true,"example":"iA"},"Email":{"type":"string","format":"email"},"Username":{"type":"string","description":"Unique username/principal name"},"LocationId":{"type":"string","format":"uuid","nullable":true},"LocationName":{"type":"string","nullable":true},"RoleId":{"type":"string","format":"uuid","nullable":true},"Role":{"nullable":true,"allOf":[{"type":"object","properties":{"RoleId":{"type":"string","format":"uuid"},"Name":{"type":"string","description":"Role name"},"Portal":{"type":"integer","description":"Portal access level"},"Visibility":{"type":"integer","description":"Visibility level"},"CategoryId":{"type":"string","format":"uuid"},"Users":{"type":"integer","description":"Number of users with this role"},"Scope":{"type":"string","description":"Role scope"}},"required":["RoleId","Portal","Visibility","CategoryId","Users","Scope"],"title":"Role"}],"type":"object"},"IsOnline":{"type":"boolean","description":"Indicates whether the user is currently online"}},"required":["UserId","Name","Email","Username","IsOnline"],"title":"TicketUserSummary"}}},"title":"TicketFollowersResponse"},"example":{"ItemCount":2,"Items":[{"UserId":"c64a05b1-6a2d-ea11-a601-0003ffe41fe2","Name":"iiQ Admin","Email":"iiq.admin@incidentiq.com","FirstName":"iiQ","LastName":"Admin","Username":"iiq.admin@incidentiq.com","IsOnline":false},{"UserId":"d75b16c2-7b3e-fb22-b712-111400f52003","Name":"iiQ User","Email":"demo@incidentiq.com","FirstName":"iiQ","LastName":"User","Username":"demo@incidentiq.com","IsOnline":false}],"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2025-12-11T14:30:00Z","ExecutionTime":15.67,"StatusCode":200,"ServerName":"spark-tickets-68d6555848-hktbp","ProcessId":1}}}},"401":{"description":"Unauthorized – caller is not authenticated"},"404":{"description":"Not found – ticket does not exist"}}}
+>
+  
+</StatusCodes>
+
+
+      

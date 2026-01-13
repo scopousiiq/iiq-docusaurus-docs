@@ -1,0 +1,33 @@
+---
+id: ticketsource
+title: "TicketSource"
+description: "A ticket source type indicating how a ticket was created."
+sidebar_label: "TicketSource"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SourceId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"Web Portal","Description":"string","IsSystem":true,"IsActive":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketSource"}
+>
+</Heading>
+
+
+
+A ticket source type indicating how a ticket was created.
+
+<Schema
+  schema={{"type":"object","description":"A ticket source type indicating how a ticket was created.","properties":{"SourceId":{"type":"string","format":"uuid","description":"Unique identifier for this source type."},"Name":{"type":"string","description":"Display name for the source.","example":"Web Portal"},"Description":{"type":"string","description":"Description of this source type.","nullable":true},"IsSystem":{"type":"boolean","description":"Whether this is a system-defined source.","example":true},"IsActive":{"type":"boolean","description":"Whether this source is currently active.","example":true}},"required":["SourceId","Name"],"title":"TicketSource"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: workflowstepsresponse
+title: "WorkflowStepsResponse"
+description: "Envelope returned when listing workflow steps."
+sidebar_label: "WorkflowStepsResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":0,"Items":[{"WorkflowId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","WorkflowStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","StepName":"string","StepDescription":"string","IsClosed":true,"IsDeleted":true,"StatusId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CommandName":"string","CommandSortOrder":0,"CommandMore":true,"DisplayOrder":0,"SourceEntityId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","OriginId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","OriginSource":"string","Color":"string"}],"Paging":{"TotalRows":54343,"PageCount":10869,"PageSize":5,"PageIndex":0},"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":0,"ServerName":"string","ProcessId":0,"OperationId":"string","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"WorkflowStepsResponse"}
+>
+</Heading>
+
+
+
+Envelope returned when listing workflow steps.
+
+<Schema
+  schema={{"type":"object","description":"Envelope returned when listing workflow steps.","properties":{"ItemCount":{"type":"integer","description":"Total number of workflow steps returned in this response."},"Items":{"type":"array","description":"Collection of workflow steps that match the supplied filters.","items":{"type":"object","description":"Represents a single workflow step (status) that tickets can transition into.","properties":{"WorkflowId":{"type":"string","format":"uuid","description":"Identifier of the workflow that owns this step."},"WorkflowStepId":{"type":"string","format":"uuid","description":"Unique identifier of the workflow step."},"StepName":{"type":"string","description":"Human-readable name of the workflow step."},"StepDescription":{"type":"string","description":"Optional description that explains when this step should be used."},"IsClosed":{"type":"boolean","description":"Indicates whether tickets in this step are considered closed."},"IsDeleted":{"type":"boolean","description":"Flag used internally to hide deprecated workflow steps."},"StatusId":{"type":"string","format":"uuid","description":"Legacy workflow status identifier associated with the step."},"CommandName":{"type":"string","description":"Optional workflow command name associated with this step."},"CommandSortOrder":{"type":"integer","description":"Ordering of the command within the workflow menu."},"CommandMore":{"type":"boolean","description":"Indicates whether the command should surface in the overflow menu."},"DisplayOrder":{"type":"integer","description":"Ordering of the step in UI pickers."},"SourceEntityId":{"type":"string","format":"uuid","description":"Identifier of the originating workflow entity."},"CreatedDate":{"type":"string","format":"date-time","description":"UTC timestamp when the step was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"UTC timestamp for the last update to the step."},"OriginId":{"type":"string","format":"uuid","description":"Identifier of the source record if the step originated elsewhere."},"OriginSource":{"type":"string","description":"Describes the origin system for migrated workflow steps."},"Color":{"type":"string","description":"Hex color code used to render the step in the UI."}},"required":["WorkflowId","WorkflowStepId","StepName","IsClosed","IsDeleted","StatusId","DisplayOrder"],"title":"WorkflowStepSummary"}},"Paging":{"description":"Paging details for the workflow step list.","allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}]},"UserToken":{"type":"string","format":"uuid","description":"Echo of the UserToken associated with the request."},"RequestDate":{"type":"string","format":"date-time","description":"Server timestamp indicating when the request was processed."},"ExecutionTime":{"type":"number","description":"Time in milliseconds that the API spent processing the request."},"StatusCode":{"type":"integer","description":"HTTP status code returned by the service."},"ServerName":{"type":"string","description":"Server instance that handled the request."},"ProcessId":{"type":"integer","description":"Internal process identifier used for diagnostics."},"OperationId":{"type":"string","description":"Trace identifier for correlating server-side logs."},"Properties":{"type":"object","additionalProperties":{"type":"string"},"description":"Additional diagnostic metadata returned by the service."}},"required":["ItemCount","Items","Paging","StatusCode"],"title":"WorkflowStepsResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

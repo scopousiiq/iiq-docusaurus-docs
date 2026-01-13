@@ -1,0 +1,33 @@
+---
+id: assignticketsubtaskgrouprequest
+title: "AssignTicketSubtaskGroupRequest"
+description: "Request payload assigning a set of subtasks to a subtask group."
+sidebar_label: "AssignTicketSubtaskGroupRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SubtaskGroupId":"33333333-3333-4333-8333-333333333333","SubtaskIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssignTicketSubtaskGroupRequest"}
+>
+</Heading>
+
+
+
+Request payload assigning a set of subtasks to a subtask group.
+
+<Schema
+  schema={{"type":"object","description":"Request payload assigning a set of subtasks to a subtask group.","properties":{"SubtaskGroupId":{"type":"string","format":"uuid","description":"Identifier of the subtask group.","example":"33333333-3333-4333-8333-333333333333"},"SubtaskIds":{"type":"array","description":"Subtask identifiers to assign to the group.","items":{"type":"string","format":"uuid"},"minItems":1}},"required":["SubtaskGroupId","SubtaskIds"],"title":"AssignTicketSubtaskGroupRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

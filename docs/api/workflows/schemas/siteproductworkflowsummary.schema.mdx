@@ -1,0 +1,33 @@
+---
+id: siteproductworkflowsummary
+title: "SiteProductWorkflowSummary"
+description: "Describes the workflow assigned to a specific product at a site."
+sidebar_label: "SiteProductWorkflowSummary"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"WorkflowId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","PromptLocations":true,"PromptUsers":true,"PromptSystems":true,"InitialStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ApprovalTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SiteProductWorkflowSummary"}
+>
+</Heading>
+
+
+
+Describes the workflow assigned to a specific product at a site.
+
+<Schema
+  schema={{"type":"object","description":"Describes the workflow assigned to a specific product at a site.","properties":{"WorkflowId":{"type":"string","format":"uuid","description":"Identifier of the workflow configured for the product at the site."},"SiteId":{"type":"string","format":"uuid","description":"Identifier of the site that owns the workflow-product pairing."},"ProductId":{"type":"string","format":"uuid","description":"Identifier of the licensed product whose tickets use this workflow."},"Name":{"type":"string","description":"Display name of the workflow."},"PromptLocations":{"type":"boolean","description":"Indicates whether the workflow requires the requester to choose a location."},"PromptUsers":{"type":"boolean","description":"Indicates whether the workflow prompts for affected users."},"PromptSystems":{"type":"boolean","description":"Indicates whether the workflow prompts for associated systems or assets."},"InitialStepId":{"type":"string","format":"uuid","description":"Identifier of the initial workflow step used when new tickets are created."},"ApprovalTypeId":{"type":"string","format":"uuid","description":"Identifier of the approval template applied to this workflow, when approvals are required.","nullable":true},"CreatedDate":{"type":"string","format":"date-time","description":"UTC timestamp when the workflow-product pairing was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"UTC timestamp of the last update to the workflow-product pairing."}},"required":["WorkflowId","SiteId","ProductId","Name","PromptLocations","PromptUsers","PromptSystems","InitialStepId","CreatedDate","ModifiedDate"],"title":"SiteProductWorkflowSummary"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

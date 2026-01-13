@@ -1,0 +1,33 @@
+---
+id: addressitemresponse
+title: "AddressItemResponse"
+description: "Response envelope for single address retrieval operations"
+sidebar_label: "AddressItemResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":{"AddressId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Street1":"string","Street2":"string","City":"string","State":"string","Zip":"string","Country":"string","Latitude":0,"Longitude":0,"IsDeleted":true,"CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z"},"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":0,"ServerName":"string","ProcessId":0,"OperationId":"string","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AddressItemResponse"}
+>
+</Heading>
+
+
+
+Response envelope for single address retrieval operations
+
+<Schema
+  schema={{"type":"object","description":"Response envelope for single address retrieval operations","properties":{"Item":{"description":"The requested address","allOf":[{"type":"object","description":"Physical mailing address","properties":{"AddressId":{"type":"string","format":"uuid","description":"Unique identifier for the address"},"SiteId":{"type":"string","format":"uuid","description":"Site this address belongs to"},"Street1":{"type":"string","nullable":true,"description":"Primary street address line"},"Street2":{"type":"string","nullable":true,"description":"Secondary address line (suite, building, etc.)"},"City":{"type":"string","nullable":true,"description":"City name"},"State":{"type":"string","nullable":true,"description":"State or province code"},"Zip":{"type":"string","nullable":true,"description":"Postal/ZIP code"},"Country":{"type":"string","nullable":true,"description":"Country name or code"},"Latitude":{"type":"number","format":"double","nullable":true,"description":"Geographic latitude coordinate"},"Longitude":{"type":"number","format":"double","nullable":true,"description":"Geographic longitude coordinate"},"IsDeleted":{"type":"boolean","description":"Whether the address has been soft-deleted"},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the address was created"},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the address was last modified"}},"required":["AddressId"],"title":"Address"}]},"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"description":"Additional metadata"}},"required":["Item","StatusCode"],"title":"AddressItemResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

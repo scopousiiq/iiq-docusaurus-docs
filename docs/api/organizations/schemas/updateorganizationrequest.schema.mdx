@@ -1,0 +1,33 @@
+---
+id: updateorganizationrequest
+title: "UpdateOrganizationRequest"
+description: "Request body for creating or updating an organization."
+sidebar_label: "UpdateOrganizationRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"OrganizationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","OrganizationTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","OrganizationStatusTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AddressId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Phone":"string","OrganizationUrl":"string","ContactName":"string","ContactEmail":"string","AdditionalContactName":"string","AdditionalContactEmail":"string","Description":"string","ImageId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","InsuranceFileId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","InsuranceCarrier":"string","InsurancePolicyNumber":"string","InsuranceEffectiveDate":"2024-07-29T15:51:28.071Z","InsuranceExpirationDate":"2024-07-29T15:51:28.071Z"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateOrganizationRequest"}
+>
+</Heading>
+
+
+
+Request body for creating or updating an organization.
+
+<Schema
+  schema={{"type":"object","description":"Request body for creating or updating an organization.","properties":{"OrganizationId":{"type":"string","format":"uuid"},"SiteId":{"type":"string","format":"uuid"},"OrganizationTypeId":{"type":"string","format":"uuid","nullable":true},"OrganizationStatusTypeId":{"type":"string","format":"uuid","nullable":true},"AddressId":{"type":"string","format":"uuid","nullable":true},"Name":{"type":"string"},"Phone":{"type":"string","nullable":true},"OrganizationUrl":{"type":"string","nullable":true},"ContactName":{"type":"string","nullable":true},"ContactEmail":{"type":"string","nullable":true},"AdditionalContactName":{"type":"string","nullable":true},"AdditionalContactEmail":{"type":"string","nullable":true},"Description":{"type":"string","nullable":true},"ImageId":{"type":"string","format":"uuid","nullable":true},"InsuranceFileId":{"type":"string","format":"uuid","nullable":true},"InsuranceCarrier":{"type":"string","nullable":true},"InsurancePolicyNumber":{"type":"string","nullable":true},"InsuranceEffectiveDate":{"type":"string","format":"date-time","nullable":true},"InsuranceExpirationDate":{"type":"string","format":"date-time","nullable":true}},"title":"UpdateOrganizationRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: iteminuseerror
+title: "ItemInUseError"
+description: "Error response when attempting to delete or modify a resource that is in use. Based on C# `ItemInUseException` with ErrorKey 'IN_USE'."
+sidebar_label: "ItemInUseError"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"StatusCode":409,"Message":"The item you are trying to delete is in use","ErrorKey":"IN_USE"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ItemInUseError"}
+>
+</Heading>
+
+
+
+Error response when attempting to delete or modify a resource that is in use. Based on C# `ItemInUseException` with ErrorKey 'IN_USE'.
+
+<Schema
+  schema={{"type":"object","description":"Error response when attempting to delete or modify a resource that is in use. Based on C# `ItemInUseException` with ErrorKey 'IN_USE'.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (409 Conflict)","example":409},"Message":{"type":"string","description":"Human-readable description of why the item cannot be modified","example":"The item you are trying to delete is in use"},"ErrorKey":{"type":"string","description":"Machine-readable error key","example":"IN_USE"}},"required":["StatusCode","Message","ErrorKey"],"title":"ItemInUseError"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

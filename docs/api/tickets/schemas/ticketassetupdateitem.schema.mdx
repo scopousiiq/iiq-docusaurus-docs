@@ -1,0 +1,33 @@
+---
+id: ticketassetupdateitem
+title: "TicketAssetUpdateItem"
+description: "Asset entry to attach to a ticket. Provide either a specific `AssetId` or a placeholder pairing of `ModelId` and `CategoryId` when the exact device is not yet known. Existing links can be retained or removed by including their `TicketAssetId`."
+sidebar_label: "TicketAssetUpdateItem"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketAssetId":"1f6f9c46-4d23-4db0-8df0-2c53b5b2c2e1","AssetId":"42f8cc6d-0efd-4a68-983b-be61e9e1c49c","ModelId":"d20688ee-81f3-42f8-a0f3-2324e4e95e68","CategoryId":"36c6be98-4f39-e611-bf3b-005056bb000e"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketAssetUpdateItem"}
+>
+</Heading>
+
+
+
+Asset entry to attach to a ticket. Provide either a specific `AssetId` or a placeholder pairing of `ModelId` and `CategoryId` when the exact device is not yet known. Existing links can be retained or removed by including their `TicketAssetId`.
+
+<Schema
+  schema={{"type":"object","description":"Asset entry to attach to a ticket. Provide either a specific `AssetId` or a placeholder pairing of `ModelId` and `CategoryId` when the exact device is not yet known. Existing links can be retained or removed by including their `TicketAssetId`.","properties":{"TicketAssetId":{"type":"string","format":"uuid","description":"Existing ticket asset identifier. Include to retain or update a previously attached asset; omit to add a new link.","example":"1f6f9c46-4d23-4db0-8df0-2c53b5b2c2e1"},"AssetId":{"type":"string","format":"uuid","description":"Identifier of the asset to attach to the ticket.","example":"42f8cc6d-0efd-4a68-983b-be61e9e1c49c"},"ModelId":{"type":"string","format":"uuid","description":"Asset model identifier used when linking a model placeholder instead of a specific asset.","example":"d20688ee-81f3-42f8-a0f3-2324e4e95e68"},"CategoryId":{"type":"string","format":"uuid","description":"Asset category identifier required when linking by model without an `AssetId`.","example":"36c6be98-4f39-e611-bf3b-005056bb000e"}},"anyOf":[{"required":["AssetId"]},{"required":["ModelId"]},{"required":["CategoryId"]}],"title":"TicketAssetUpdateItem"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

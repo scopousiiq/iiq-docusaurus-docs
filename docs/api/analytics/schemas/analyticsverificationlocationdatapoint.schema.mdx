@@ -1,0 +1,33 @@
+---
+id: analyticsverificationlocationdatapoint
+title: "AnalyticsVerificationLocationDataPoint"
+description: "Aggregated asset verification counts grouped by the location captured on the most recent verification event per asset."
+sidebar_label: "AnalyticsVerificationLocationDataPoint"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Name":"IncidentIQ Demo High School","Value":186,"Id":"9e5d33da-bc45-11ee-b662-0a58ac120002","Date":null}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AnalyticsVerificationLocationDataPoint"}
+>
+</Heading>
+
+
+
+Aggregated asset verification counts grouped by the location captured on the most recent verification event per asset.
+
+<Schema
+  schema={{"type":"object","description":"Aggregated asset verification counts grouped by the location captured on the most recent verification event per asset.","properties":{"Name":{"type":"string","description":"Display name of the location associated with the verification event.","example":"IncidentIQ Demo High School"},"Value":{"type":"number","description":"Distinct asset count that most recently verified at this location.","example":186},"Id":{"type":"string","format":"uuid","nullable":true,"description":"Location identifier. When populated it lines up with `LocationId` from the locations directory so the chart can link to additional details.","example":"9e5d33da-bc45-11ee-b662-0a58ac120002","x-obtained-from":{"operationId":"getAllSiteLocationsV2","endpoint":"GET /api/v1.0/locations/view","responseField":"Items[].LocationId"}},"Date":{"type":"string","format":"date-time","nullable":true,"description":"Timestamp associated with the data point (not set for this aggregate).","example":null}},"required":["Name","Value"],"example":{"Name":"IncidentIQ Demo High School","Value":186,"Id":"9e5d33da-bc45-11ee-b662-0a58ac120002","Date":null},"title":"AnalyticsVerificationLocationDataPoint"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

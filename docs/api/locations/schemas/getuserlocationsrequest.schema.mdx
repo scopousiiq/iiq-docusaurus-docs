@@ -1,0 +1,33 @@
+---
+id: getuserlocationsrequest
+title: "GetUserLocationsRequest"
+description: "Request options for filtering locations by user permissions. Extends standard request options with permission-based filtering flags."
+sidebar_label: "GetUserLocationsRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Paging":{"PageIndex":0,"PageSize":0},"Filters":[{"Facet":"string","Values":["string"]}],"HasViewLocationPermission":true,"HasManageLocationPermission":true,"HasViewTicketsPermission":true,"HasWorkTicketsPermission":true,"HasResolveTicketsPermission":true,"HasSubmitTicketsPermission":true,"HasViewAssetsPermission":true,"HasViewEventsPermission":true,"HasManageEventsPermission":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetUserLocationsRequest"}
+>
+</Heading>
+
+
+
+Request options for filtering locations by user permissions. Extends standard request options with permission-based filtering flags.
+
+<Schema
+  schema={{"type":"object","description":"Request options for filtering locations by user permissions. Extends standard request options with permission-based filtering flags.","properties":{"Paging":{"type":"object","description":"Pagination options","properties":{"PageIndex":{"type":"integer","minimum":0,"description":"Zero-based page index"},"PageSize":{"type":"integer","minimum":1,"maximum":1000,"description":"Number of records per page"}}},"Filters":{"type":"array","description":"Array of filter criteria to apply","items":{"type":"object","properties":{"Facet":{"type":"string","description":"Field name to filter on"},"Values":{"type":"array","items":{"type":"string"},"description":"Filter values"}}}},"HasViewLocationPermission":{"type":"boolean","description":"Filter to locations where user has 'location.view' permission"},"HasManageLocationPermission":{"type":"boolean","description":"Filter to locations where user has 'location.manage' permission"},"HasViewTicketsPermission":{"type":"boolean","description":"Filter to locations where user has 'tickets.view' permission"},"HasWorkTicketsPermission":{"type":"boolean","description":"Filter to locations where user has 'tickets.work' permission"},"HasResolveTicketsPermission":{"type":"boolean","description":"Filter to locations where user has 'tickets.resolve' permission"},"HasSubmitTicketsPermission":{"type":"boolean","description":"Filter to locations where user has 'tickets.submit' permission"},"HasViewAssetsPermission":{"type":"boolean","description":"Filter to locations where user has 'assets.view' permission"},"HasViewEventsPermission":{"type":"boolean","description":"Filter to locations where user has 'events.view' permission"},"HasManageEventsPermission":{"type":"boolean","description":"Filter to locations where user has 'events.manage' permission"}},"title":"GetUserLocationsRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

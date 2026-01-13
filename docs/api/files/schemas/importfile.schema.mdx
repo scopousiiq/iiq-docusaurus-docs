@@ -1,0 +1,33 @@
+---
+id: importfile
+title: "ImportFile"
+description: ""
+sidebar_label: "ImportFile"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Name":"string","Headers":[{"Name":"string","Index":0}],"Data":["string"]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ImportFile"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"Name":{"type":"string","description":"Import file name"},"Headers":{"type":"array","items":{"type":"object","properties":{"Name":{"type":"string","description":"Column display name"},"Index":{"type":"integer","description":"Column position index"}},"title":"ImportColumnLegacy"}},"Data":{"type":"array","items":{"type":"array","items":{"type":"string","nullable":true}}}},"title":"ImportFile"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

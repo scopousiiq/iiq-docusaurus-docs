@@ -1,0 +1,81 @@
+---
+id: get-activities-for-tickets
+title: "Get activities for multiple tickets"
+description: "Retrieves ticket activities for multiple tickets in a single request. This is a batch operation that accepts a list of ticket IDs in the request body and returns activities for all specified tickets."
+sidebar_label: "Get activities for multiple tickets"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/tickets/tickets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get activities for multiple tickets"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/tickets/activities"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves ticket activities for multiple tickets in a single request. This is a batch operation that accepts a list of ticket IDs in the request body and returns activities for all specified tickets.
+
+**Prerequisites**
+1. **TicketIds** – Use [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) to search for tickets and extract `Items[].TicketId`.
+
+**Workflow Example**
+1. Search tickets: [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) with filters → extract multiple `Items[].TicketId` values.
+2. Call [POST /api/v1.0/tickets/activities](/docs/api/tickets/get-activities-for-tickets) with the list of ticket IDs.
+3. Process the combined activity feed for reporting or display.
+
+**Pagination**: Supports `$p` (page index) and `$s` (page size) query parameters.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"$p","in":"query","schema":{"type":"integer","default":0},"description":"Zero-based page index for pagination."},{"name":"$s","in":"query","schema":{"type":"integer","default":20},"description":"Number of activities per page."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"array","items":{"type":"string","format":"uuid"},"description":"List of ticket IDs to retrieve activities for."},"example":["a1b2c3d4-e5f6-7890-abcd-ef1234567890","b2c3d4e5-f6a7-8901-bcde-f23456789012"]}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Activities retrieved successfully","content":{"application/json":{"schema":{"type":"object","description":"Paginated response containing ticket activities.","properties":{"Items":{"type":"array","items":{"type":"object","description":"Represents an activity or comment on a ticket.","properties":{"TicketActivityId":{"type":"string","format":"uuid","description":"Identifier for the activity."},"SiteId":{"type":"string","format":"uuid","description":"Site identifier."},"ProductId":{"type":"string","format":"uuid","description":"Product identifier.","nullable":true},"CreatedDate":{"type":"string","format":"date-time","description":"When the activity was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"When the activity was last modified."},"IsPublic":{"type":"boolean","description":"Whether the activity is visible to end users."},"IsDeleted":{"type":"boolean","description":"Whether the activity has been soft-deleted."},"TicketId":{"type":"string","format":"uuid","description":"Parent ticket identifier."},"TicketSubject":{"type":"string","description":"Subject of the parent ticket.","nullable":true},"OwnerId":{"type":"string","format":"uuid","description":"User identifier who created the activity."},"OwnerDetails":{"type":"string","description":"Quick reference display name for the owner.","nullable":true},"ActivityItems":{"type":"array","description":"Collection of polymorphic items making up the activity content.","items":{"type":"object","additionalProperties":true,"description":"Polymorphic activity item. Fields vary by activity type."},"nullable":true},"SortOrder":{"type":"integer","description":"Sort order index."},"Alignment":{"type":"string","description":"UI alignment preference.","nullable":true}},"title":"TicketActivity"}},"Paging":{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"},"IsSuccess":{"type":"boolean"},"StatusCode":{"type":"integer"}},"title":"TicketActivityListResponse"},"example":{"Items":[{"TicketActivityId":"02a7f6ec-05f9-4dda-8de6-533b1fdefa92","TicketId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","OwnerId":"51c89694-ae9f-f011-8e61-6045bd7991ab","IsPublic":true,"IsDeleted":false,"CreatedDate":"2025-01-15T10:00:00Z"}],"Paging":{"PageIndex":0,"PageSize":20,"TotalCount":1},"IsSuccess":true,"StatusCode":200}}}},"401":{"description":"Unauthorized – caller is not authenticated"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,76 @@
+---
+id: list-asset-status-types-post
+title: "List asset status types (POST)"
+description: "Returns all available asset status types for the tenant. This POST variant accepts filter parameters in the request body and is functionally equivalent to [GET /api/v1.0/assets/status/types](/docs/api/assets/list-asset-status-types)."
+sidebar_label: "List asset status types (POST)"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/assets/assets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List asset status types (POST)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/assets/status/types"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns all available asset status types for the tenant. This POST variant accepts filter parameters in the request body and is functionally equivalent to [GET /api/v1.0/assets/status/types](/docs/api/assets/list-asset-status-types).
+
+**Workflow Example**
+1. Call [POST /api/v1.0/assets/status/types](/docs/api/assets/list-asset-status-types-post) with optional filters.
+2. Extract `Items[].AssetStatusTypeId` for use when updating asset status.
+3. Update an asset's status via [POST /api/v1.0/assets/\{assetId\}/status/\{assetStatusTypeId\}](/docs/api/assets/set-asset-status).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"$p","in":"query","required":false,"description":"Zero-based page index to retrieve","schema":{"type":"integer","minimum":0},"example":0},{"name":"$s","in":"query","required":false,"description":"Number of records per page","schema":{"type":"integer","minimum":1},"example":20}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":false,"content":{"application/json":{"schema":{"type":"object","description":"Filtering and pagination options for retrieving asset status types.","properties":{"IncludeRetired":{"type":"boolean","description":"When true, includes retired status types in the result set.","default":true},"Scope":{"type":"string","description":"Filter by scope (Global, Site, or System)."}},"title":"GetAssetStatusTypesRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Asset status types retrieved successfully","content":{"application/json":{"schema":{"type":"object","description":"ListGetResponse envelope containing a collection of asset status types.","allOf":[{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"}],"properties":{"Items":{"type":"array","description":"Collection of asset status types.","items":{"type":"object","description":"Full definition for an asset status type entry returned by GET /api/v1.0/assets/status/types.","properties":{"AssetStatusTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the status definition."},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site identifier when the status is scoped to a single location. `null` indicates a global status."},"Scope":{"type":"string","description":"Scope enum that determines where the status is visible (values such as `Global`, `Site`, or `System`)."},"Name":{"type":"string","description":"Display label for the status that appears in pickers and reports."},"IsRetired":{"type":"boolean","description":"True if applying this status should retire the asset."},"SupportsNSAs":{"type":"boolean","description":"Indicates whether the status is eligible for Non-Stock Assignment (NSA) workflows such as advanced deployments."}},"required":["AssetStatusTypeId","Scope","Name","IsRetired","SupportsNSAs"],"example":{"AssetStatusTypeId":"deadbeef-1111-4111-8111-aaaaaaaaaaaa","SiteId":"44444444-4444-4444-8444-444444444444","Scope":"Site","Name":"Ready to Deploy","IsRetired":false,"SupportsNSAs":true},"title":"AssetStatusType"}}},"title":"AssetStatusTypeListResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

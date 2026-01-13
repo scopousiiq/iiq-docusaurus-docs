@@ -1,0 +1,33 @@
+---
+id: workflowapprovaltype
+title: "WorkflowApprovalType"
+description: "Defines an approval type that can be required for workflow transitions."
+sidebar_label: "WorkflowApprovalType"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"WorkflowApprovalTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"Manager Approval","DefaultSortOrder":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"WorkflowApprovalType"}
+>
+</Heading>
+
+
+
+Defines an approval type that can be required for workflow transitions.
+
+<Schema
+  schema={{"type":"object","description":"Defines an approval type that can be required for workflow transitions.","properties":{"WorkflowApprovalTypeId":{"type":"string","format":"uuid","description":"Unique identifier for this approval type."},"Name":{"type":"string","description":"Display name of the approval type.","example":"Manager Approval"},"DefaultSortOrder":{"type":"integer","description":"Default ordering for this approval type in lists."}},"required":["WorkflowApprovalTypeId","Name","DefaultSortOrder"],"title":"WorkflowApprovalType"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

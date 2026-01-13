@@ -1,0 +1,33 @@
+---
+id: setuserinitialproductrequest
+title: "SetUserInitialProductRequest"
+description: "Payload to set initial product for a user. Mirrors `Spark.Shared.Models.Requests.SetUserInitialProductRequest`."
+sidebar_label: "SetUserInitialProductRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"UserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsLocked":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SetUserInitialProductRequest"}
+>
+</Heading>
+
+
+
+Payload to set initial product for a user. Mirrors `Spark.Shared.Models.Requests.SetUserInitialProductRequest`.
+
+<Schema
+  schema={{"type":"object","description":"Payload to set initial product for a user. Mirrors `Spark.Shared.Models.Requests.SetUserInitialProductRequest`.","properties":{"UserId":{"type":"string","format":"uuid","description":"User identifier. Ignored when used in bulk operations."},"ProductId":{"type":"string","format":"uuid","description":"Product to set as the user's initial product."},"IsLocked":{"type":"boolean","description":"When true, locks the initial product setting from further automated changes."}},"title":"SetUserInitialProductRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

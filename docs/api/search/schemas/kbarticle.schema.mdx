@@ -1,0 +1,33 @@
+---
+id: kbarticle
+title: "KbArticle"
+description: "A knowledge base article containing help documentation or troubleshooting guides."
+sidebar_label: "KbArticle"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"KbArticleId":"a1b2c3d4-e5f6-7890-abcd-123456789abc","Title":"How to Reset a Chromebook","Summary":"Step-by-step guide to factory reset a Chromebook device","CategoryName":"Device Troubleshooting","IsPublished":true,"ViewCount":1250,"HelpfulCount":89}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"KbArticle"}
+>
+</Heading>
+
+
+
+A knowledge base article containing help documentation or troubleshooting guides.
+
+<Schema
+  schema={{"type":"object","description":"A knowledge base article containing help documentation or troubleshooting guides.","properties":{"KbArticleId":{"type":"string","format":"uuid","description":"Unique identifier for the KB article."},"Title":{"type":"string","description":"Article title."},"Content":{"type":"string","nullable":true,"description":"Full article content (may be HTML formatted)."},"Summary":{"type":"string","nullable":true,"description":"Brief summary or excerpt of the article."},"CategoryId":{"type":"string","format":"uuid","nullable":true,"description":"Category the article belongs to."},"CategoryName":{"type":"string","nullable":true,"description":"Display name of the category."},"IsPublished":{"type":"boolean","description":"Whether the article is published and visible."},"ViewCount":{"type":"integer","description":"Number of times the article has been viewed."},"HelpfulCount":{"type":"integer","description":"Number of users who marked this article as helpful."},"CreatedDate":{"type":"string","format":"date-time","description":"When the article was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"When the article was last modified."},"CreatedBy":{"description":"User who created the article.","allOf":[{"type":"object","description":"Lightweight user representation for embedded references in other entities (e.g., CreatedBy, ModifiedBy, Owner).","properties":{"UserId":{"type":"string","format":"uuid","description":"Unique identifier for the user"},"Name":{"type":"string","description":"Full display name of the user","example":"iiQ User"},"FirstName":{"type":"string","nullable":true,"description":"User's first name","example":"iiQ"},"LastName":{"type":"string","nullable":true,"description":"User's last name","example":"User"},"Email":{"type":"string","nullable":true,"description":"User's email address","example":"demo@incidentiq.com"},"Username":{"type":"string","nullable":true,"description":"User's login username","example":"demo@incidentiq.com"},"PhotoId":{"type":"string","format":"uuid","nullable":true,"description":"Reference to the user's profile photo"},"RoleId":{"type":"string","format":"uuid","nullable":true,"description":"Reference to the user's role"},"LocationId":{"type":"string","format":"uuid","nullable":true,"description":"Reference to the user's primary location"},"LocationName":{"type":"string","nullable":true,"description":"Display name of the user's primary location"}},"required":["UserId","Name"],"title":"UserSummary"}]},"ModifiedBy":{"description":"User who last modified the article.","allOf":[{"type":"object","description":"Lightweight user representation for embedded references in other entities (e.g., CreatedBy, ModifiedBy, Owner).","properties":{"UserId":{"type":"string","format":"uuid","description":"Unique identifier for the user"},"Name":{"type":"string","description":"Full display name of the user","example":"iiQ User"},"FirstName":{"type":"string","nullable":true,"description":"User's first name","example":"iiQ"},"LastName":{"type":"string","nullable":true,"description":"User's last name","example":"User"},"Email":{"type":"string","nullable":true,"description":"User's email address","example":"demo@incidentiq.com"},"Username":{"type":"string","nullable":true,"description":"User's login username","example":"demo@incidentiq.com"},"PhotoId":{"type":"string","format":"uuid","nullable":true,"description":"Reference to the user's profile photo"},"RoleId":{"type":"string","format":"uuid","nullable":true,"description":"Reference to the user's role"},"LocationId":{"type":"string","format":"uuid","nullable":true,"description":"Reference to the user's primary location"},"LocationName":{"type":"string","nullable":true,"description":"Display name of the user's primary location"}},"required":["UserId","Name"],"title":"UserSummary"}]},"Tags":{"type":"array","items":{"type":"object","properties":{"TagId":{"type":"string","format":"uuid"},"Name":{"type":"string","description":"Tag name"},"TagTypeId":{"type":"integer"},"CreatedDate":{"type":"string","format":"date-time"},"ModifiedDate":{"type":"string","format":"date-time"},"IsDeleted":{"type":"boolean"},"Scope":{"type":"string"}},"required":["TagId","Name","TagTypeId","IsDeleted","Scope"],"title":"Tag"},"description":"Tags associated with the article for categorization and search."}},"example":{"KbArticleId":"a1b2c3d4-e5f6-7890-abcd-123456789abc","Title":"How to Reset a Chromebook","Summary":"Step-by-step guide to factory reset a Chromebook device","CategoryName":"Device Troubleshooting","IsPublished":true,"ViewCount":1250,"HelpfulCount":89},"title":"KbArticle"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: assetsaveoptions
+title: "AssetSaveOptions"
+description: "Optional persistence options that accompany asset updates."
+sidebar_label: "AssetSaveOptions"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ManualRevisionEntries":[{"FieldName":"OwnerId","OldVal":"a215e88e-14be-ef11-88cf-6045bdb6b1c8","NewVal":"1eb32e06-b79f-f011-b484-002248538047"}],"RevisionUserId":"6e6c1699-86b0-4bbd-8a28-8bf0adf948c2"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetSaveOptions"}
+>
+</Heading>
+
+
+
+Optional persistence options that accompany asset updates.
+
+<Schema
+  schema={{"type":"object","description":"Optional persistence options that accompany asset updates.","properties":{"ManualRevisionEntries":{"type":"array","description":"Custom revision entries that should be logged with the update.","items":{"type":"object","description":"Revision override passed by integrations that need to author explicit change history entries.","properties":{"FieldName":{"type":"string","description":"Name of the field tracked in the revision log.","example":"OwnerId"},"OldVal":{"type":"string","description":"Value recorded before the asset update.","example":"a215e88e-14be-ef11-88cf-6045bdb6b1c8","nullable":true},"NewVal":{"type":"string","description":"Value recorded after the asset update.","example":"1eb32e06-b79f-f011-b484-002248538047","nullable":true}},"title":"AssetManualRevisionEntry"}},"RevisionUserId":{"type":"string","format":"uuid","description":"Override user identifier to stamp on generated revision entries.","nullable":true,"example":"6e6c1699-86b0-4bbd-8a28-8bf0adf948c2"}},"title":"AssetSaveOptions"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

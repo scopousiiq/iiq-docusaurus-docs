@@ -1,0 +1,33 @@
+---
+id: sitestatus
+title: "SiteStatus"
+description: "Operational status metadata for the district site."
+sidebar_label: "SiteStatus"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SiteStatusTypeId":"999a2b63-7bf4-49f9-a2a3-aa739e000060","Name":"Testing","DisplayOrder":0,"IsActive":true,"IsOnboarding":false}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SiteStatus"}
+>
+</Heading>
+
+
+
+Operational status metadata for the district site.
+
+<Schema
+  schema={{"type":"object","description":"Operational status metadata for the district site.","properties":{"SiteStatusTypeId":{"type":"string","format":"uuid","description":"Identifier of the status type applied to the site.","example":"999a2b63-7bf4-49f9-a2a3-aa739e000060"},"Name":{"type":"string","description":"Human-readable status label.","example":"Testing"},"DisplayOrder":{"type":"integer","description":"Sort order for the status entry as rendered in the UI.","example":0},"IsActive":{"type":"boolean","description":"Indicates whether the status is currently active.","example":true},"IsOnboarding":{"type":"boolean","description":"True when the site is in an onboarding state.","example":false}},"required":["SiteStatusTypeId","Name","IsActive"],"title":"SiteStatus"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: updateassetverificationrequest
+title: "UpdateAssetVerificationRequest"
+description: "Request payload for creating or updating an asset verification."
+sidebar_label: "UpdateAssetVerificationRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetVerificationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","VerifiedByUserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AssetVerificationTypeId":"web-manual","IsSuccessful":true,"Comments":"string","Latitude":0,"Longitude":0,"LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationRoomId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ExternalId":"string","AssetAuditPolicyId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ActualQuantity":0,"ExpectedQuantity":0,"Flags":1}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateAssetVerificationRequest"}
+>
+</Heading>
+
+
+
+Request payload for creating or updating an asset verification.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for creating or updating an asset verification.","properties":{"AssetVerificationId":{"type":"string","format":"uuid","description":"Identifier of the verification to update. Omit when creating new."},"AssetId":{"type":"string","format":"uuid","description":"Asset being verified."},"CreatedDate":{"type":"string","format":"date-time","description":"UTC timestamp for the verification.","nullable":true},"VerifiedByUserId":{"type":"string","format":"uuid","description":"User performing the verification."},"AssetVerificationTypeId":{"type":"string","description":"Verification mode identifier.","example":"web-manual"},"IsSuccessful":{"type":"boolean","description":"Whether the verification passed."},"Comments":{"type":"string","description":"Optional notes.","nullable":true},"Latitude":{"type":"number","format":"decimal","description":"GPS latitude.","nullable":true},"Longitude":{"type":"number","format":"decimal","description":"GPS longitude.","nullable":true},"LocationId":{"type":"string","format":"uuid","description":"Verified location."},"LocationRoomId":{"type":"string","format":"uuid","description":"Optional room.","nullable":true},"ExternalId":{"type":"string","description":"External tracking identifier.","nullable":true},"AssetAuditPolicyId":{"type":"string","format":"uuid","description":"Associated audit policy.","nullable":true},"ActualQuantity":{"type":"integer","description":"Actual quantity observed.","nullable":true},"ExpectedQuantity":{"type":"integer","description":"Expected quantity.","nullable":true},"Flags":{"type":"integer","description":"Update entity flags (1=RunRules, 2=CheckStatus).","default":1}},"title":"UpdateAssetVerificationRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: searchpartsrequest
+title: "SearchPartsRequest"
+description: "Request parameters for searching parts."
+sidebar_label: "SearchPartsRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Query":"string","UniqueByName":true,"SkipCustomFieldLoading":true,"SearchPartName":true,"SearchPartNumber":true,"SearchPartLocation":true,"SearchPartCategory":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SearchPartsRequest"}
+>
+</Heading>
+
+
+
+Request parameters for searching parts.
+
+<Schema
+  schema={{"type":"object","description":"Request parameters for searching parts.","properties":{"Query":{"type":"string","description":"Keyword search term."},"UniqueByName":{"type":"boolean","description":"If true, return only unique results by part name."},"SkipCustomFieldLoading":{"type":"boolean","description":"If true, skip loading custom field data for performance."},"SearchPartName":{"type":"boolean","description":"Include part names in the search."},"SearchPartNumber":{"type":"boolean","description":"Include part numbers in the search."},"SearchPartLocation":{"type":"boolean","description":"Include part locations in the search."},"SearchPartCategory":{"type":"boolean","description":"Include part categories in the search."}},"title":"SearchPartsRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: assetcountresponse
+title: "AssetCountResponse"
+description: "Envelope returned by POST /api/v1.0/assets/count. The total number of matching assets is exposed via `Paging.TotalRows` while no asset records are returned."
+sidebar_label: "AssetCountResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Paging":{"TotalRows":2486,"PageCount":1,"PageSize":0,"PageIndex":0},"UserToken":"11111111-1111-4111-8111-111111111111","RequestDate":"2025-11-14T15:03:22.667Z","ExecutionTime":143.27,"StatusCode":200,"ServerName":"spark-assets-6b8676c76c-s9khd","ProcessId":1,"OperationId":"q8k1p2vz","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetCountResponse"}
+>
+</Heading>
+
+
+
+Envelope returned by POST /api/v1.0/assets/count. The total number of matching assets is exposed via `Paging.TotalRows` while no asset records are returned.
+
+<Schema
+  schema={{"type":"object","description":"Envelope returned by POST /api/v1.0/assets/count. The total number of matching assets is exposed via `Paging.TotalRows` while no asset records are returned.","allOf":[{"type":"object","description":"Base response envelope containing standard API response metadata. All API responses inherit these framework-level fields. Use this schema with `allOf` composition when defining typed response schemas.","properties":{"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier that executed the request"},"RequestDate":{"type":"string","format":"date-time","description":"UTC timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code mirrored inside the response envelope"},"Message":{"type":"string","nullable":true,"description":"Optional informational or error message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Name of the application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier used for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier emitted for log correlation"},"Properties":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Additional metadata properties keyed by ResponseProperties enum values"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Logs":{"type":"array","nullable":true,"items":{"type":"object","description":"Diagnostic log entry emitted during request processing.","properties":{"Type":{"type":"string","description":"Log type classification (Info, Warning, Error, etc.)"},"Message":{"type":"string","description":"Human-readable log message"},"ExecutionTime":{"type":"number","format":"double","description":"Execution time in milliseconds for this log entry"}},"title":"ResponseLog"},"description":"Diagnostic log entries emitted during request processing"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors that did not prevent the operation"}},"required":["StatusCode"],"title":"ResponseEnvelope"}],"properties":{"Paging":{"description":"Paging metadata describing the evaluated filter set. `TotalRows` reflects the total number of matching assets.","allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}]}},"example":{"Paging":{"TotalRows":2486,"PageCount":1,"PageSize":0,"PageIndex":0},"UserToken":"11111111-1111-4111-8111-111111111111","RequestDate":"2025-11-14T15:03:22.667Z","ExecutionTime":143.27,"StatusCode":200,"ServerName":"spark-assets-6b8676c76c-s9khd","ProcessId":1,"OperationId":"q8k1p2vz","Properties":{}},"title":"AssetCountResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

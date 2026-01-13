@@ -1,0 +1,33 @@
+---
+id: ticketactivityattachmentevent
+title: "TicketActivityAttachmentEvent"
+description: "Attachment entry logged against the ticket activity, including file metadata for downloads and previews."
+sidebar_label: "TicketActivityAttachmentEvent"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"$type":"Spark.Shared.Models.TicketActivityAttachment, Spark.Shared","TicketActivityAttachmentId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TicketActivityId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TicketActivityTypeId":6,"FileId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","FileName":"string","Name":"string","MimeType":"image/jpeg","ContentTypeId":0,"FileType":0,"Size":0,"Icon":"string","Url":"string","PdfUrl":"string","IsImage":true,"CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","IsPublic":true,"MetaData":{},"Meta":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketActivityAttachmentEvent"}
+>
+</Heading>
+
+
+
+Attachment entry logged against the ticket activity, including file metadata for downloads and previews.
+
+<Schema
+  schema={{"type":"object","description":"Attachment entry logged against the ticket activity, including file metadata for downloads and previews.","properties":{"$type":{"type":"string","description":"Fully qualified CLR type emitted by the API","example":"Spark.Shared.Models.TicketActivityAttachment, Spark.Shared"},"TicketActivityAttachmentId":{"type":"string","format":"uuid","description":"Identifier of the attachment record"},"TicketActivityId":{"type":"string","format":"uuid","description":"Identifier of the parent ticket activity"},"TicketActivityTypeId":{"type":"integer","enum":[6],"description":"Activity type code used for attachment entries"},"FileId":{"type":"string","format":"uuid","description":"Identifier of the stored file"},"FileName":{"type":"string","description":"Unique filename used by the platform"},"Name":{"type":"string","description":"Original filename displayed to agents"},"MimeType":{"type":"string","description":"MIME type reported by the platform","example":"image/jpeg"},"ContentTypeId":{"type":"integer","description":"Internal content-type identifier"},"FileType":{"type":"integer","description":"Internal enum describing the attachment type"},"Size":{"type":"integer","description":"File size in bytes"},"Icon":{"type":"string","description":"Icon CSS class used in the UI","nullable":true},"Url":{"type":"string","description":"URL to download or view the attachment"},"PdfUrl":{"type":"string","description":"Optional link to a PDF rendition of the attachment","nullable":true},"IsImage":{"type":"boolean","description":"Indicates whether the attachment is an image"},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the attachment was added"},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the attachment metadata was last updated"},"IsPublic":{"type":"boolean","description":"Whether the attachment is visible to the ticket requester"},"MetaData":{"type":"object","nullable":true,"description":"Additional attachment metadata provided by the platform","additionalProperties":true},"Meta":{"type":"object","nullable":true,"description":"Additional metadata supplied by the platform","additionalProperties":true}},"required":["$type","TicketActivityAttachmentId","TicketActivityId","TicketActivityTypeId","FileId","FileName","Name","MimeType","ContentTypeId","FileType","Size","Url","IsImage","CreatedDate","ModifiedDate","IsPublic"],"title":"TicketActivityAttachmentEvent"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

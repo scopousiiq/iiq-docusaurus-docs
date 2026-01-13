@@ -1,0 +1,33 @@
+---
+id: inventorypagingoptions
+title: "InventoryPagingOptions"
+description: "Paging and sorting controls accepted by inventory queries."
+sidebar_label: "InventoryPagingOptions"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"PageIndex":0,"PageSize":0,"SortField":"string","SortDirection":"Ascending"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"InventoryPagingOptions"}
+>
+</Heading>
+
+
+
+Paging and sorting controls accepted by inventory queries.
+
+<Schema
+  schema={{"type":"object","description":"Paging and sorting controls accepted by inventory queries.","properties":{"PageIndex":{"type":"integer","minimum":0,"description":"Zero-based index of the page to retrieve."},"PageSize":{"type":"integer","minimum":1,"description":"Maximum number of records to return per page."},"SortField":{"type":"string","description":"Inventory field to sort on, such as `Name` or `LocationId`."},"SortDirection":{"type":"string","enum":["Ascending","Descending"],"description":"Direction to sort results."}},"title":"InventoryPagingOptions"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

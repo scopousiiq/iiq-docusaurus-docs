@@ -1,0 +1,33 @@
+---
+id: site
+title: "Site"
+description: ""
+sidebar_label: "Site"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","Name":"string","OffsetInMinutesFromUtc":0,"WorkMinutesPerDay":0,"DbClusterIndex":0,"PreviousDbClusterIndex":0,"StatusTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","WorkHoursStartUtc":"string","WorkHoursEndUtc":"string","SystemUserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AnonymousUserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsSandbox":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Site"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"SiteId":{"type":"string","format":"uuid"},"ProductId":{"type":"string","format":"uuid"},"CreatedDate":{"type":"string","format":"date-time"},"Name":{"type":"string","description":"Site name"},"OffsetInMinutesFromUtc":{"type":"integer","description":"Timezone offset in minutes"},"WorkMinutesPerDay":{"type":"integer","description":"Working minutes per day"},"DbClusterIndex":{"type":"integer"},"PreviousDbClusterIndex":{"type":"integer"},"StatusTypeId":{"type":"string","format":"uuid"},"WorkHoursStartUtc":{"type":"string","format":"time","description":"Start of work hours in UTC"},"WorkHoursEndUtc":{"type":"string","format":"time","description":"End of work hours in UTC"},"SystemUserId":{"type":"string","format":"uuid"},"AnonymousUserId":{"type":"string","format":"uuid"},"IsSandbox":{"type":"boolean","description":"Whether this is a sandbox environment"}},"required":["SiteId","ProductId","CreatedDate","Name","OffsetInMinutesFromUtc","IsSandbox"],"title":"Site"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

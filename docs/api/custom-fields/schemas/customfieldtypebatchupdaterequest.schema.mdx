@@ -1,0 +1,33 @@
+---
+id: customfieldtypebatchupdaterequest
+title: "CustomFieldTypeBatchUpdateRequest"
+description: "Array of custom field type definitions to update in bulk. Each item must include CustomFieldTypeId and the properties to update."
+sidebar_label: "CustomFieldTypeBatchUpdateRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: [{"CustomFieldTypeId":"027d9a34-c8b0-4dd3-86d9-badc9b95c547","Name":"Updated Equipment Type","IsRequired":true,"DisplayOrder":5},{"CustomFieldTypeId":"e7c8b30d-d899-4193-a70b-21994d2a8089","IsHidden":true}]
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CustomFieldTypeBatchUpdateRequest"}
+>
+</Heading>
+
+
+
+Array of custom field type definitions to update in bulk. Each item must include CustomFieldTypeId and the properties to update.
+
+<Schema
+  schema={{"type":"array","description":"Array of custom field type definitions to update in bulk. Each item must include CustomFieldTypeId and the properties to update.","items":{"type":"object","description":"Request payload for updating an existing custom field type definition. Based on CustomFieldType model.","properties":{"CustomFieldTypeId":{"type":"string","format":"uuid","description":"UUID of the custom field type to update"},"Name":{"type":"string","description":"Display name for the custom field type","example":"Serial Number"},"Description":{"type":"string","nullable":true,"description":"Detailed description of the field's purpose"},"EditorTypeId":{"type":"integer","description":"Editor type for rendering (1=Text, 2=Number, 3=Date, etc.)"},"Scope":{"type":"string","enum":["Site","Product","Global"],"description":"Visibility scope"},"IsRequired":{"type":"boolean","description":"Whether the field is required by default"},"IsHidden":{"type":"boolean","description":"Whether the field is hidden from users"},"IsReadOnly":{"type":"boolean","description":"Whether the field is read-only"},"DisplayOrder":{"type":"integer","description":"Display order for the field"},"ProductId":{"type":"string","format":"uuid","nullable":true,"description":"Product this field type belongs to"}},"required":["CustomFieldTypeId"],"title":"CustomFieldTypeUpdateRequest"},"minItems":1,"example":[{"CustomFieldTypeId":"027d9a34-c8b0-4dd3-86d9-badc9b95c547","Name":"Updated Equipment Type","IsRequired":true,"DisplayOrder":5},{"CustomFieldTypeId":"e7c8b30d-d899-4193-a70b-21994d2a8089","IsHidden":true}],"title":"CustomFieldTypeBatchUpdateRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

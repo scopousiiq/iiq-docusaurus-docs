@@ -1,0 +1,92 @@
+---
+id: lookup-site-by-searchable-value
+title: "Lookup site by custom field searchable value"
+description: "Performs a cross-site lookup to find which site owns a record based on a complex custom field searchable value. This specialized endpoint is used by integrations (like Google Devices) to locate records across multiple sites without requiring prior knowledge of the site ID."
+sidebar_label: "Lookup site by custom field searchable value"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/custom-fields/custom-fields-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Lookup site by custom field searchable value"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/custom-fields/complex/lookup-site-by-searchable-value"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Performs a cross-site lookup to find which site owns a record based on a complex custom field searchable value. This specialized endpoint is used by integrations (like Google Devices) to locate records across multiple sites without requiring prior knowledge of the site ID.
+
+**Key Use Case**:
+- Google Devices app receives a position update for a DeviceId
+- The app doesn't know which site the device belongs to
+- This endpoint looks up the complex custom field value and returns the owning SiteId
+- The app can then correctly route the update to the proper site
+
+**Behavioral Notes**:
+- Does **NOT** filter by SiteId (searches across all sites)
+- Allows anonymous/app authorization for integration scenarios
+- Searches based on custom field table name, property name, and value
+- Returns the SiteId where the matching custom field value was found
+
+**Prerequisites**:
+1. **TableName** - The database table name for the custom field (e.g., `AssetCustomFields`)
+2. **PropertyName** - The property/column being searched (e.g., `DeviceId`)
+3. **Value** - The searchable value to look up
+4. **CustomFieldTypeId** (optional) - Narrows the search to a specific field type
+5. **CustomFieldComplexEditorNamespace** (optional) - For complex editor types
+
+**Minimal Required Fields**: TableName, PropertyName, Value
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","description":"Request payload for looking up which site owns a record based on a complex custom field searchable value. Used by integrations to perform cross-site lookups without prior knowledge of the site ID.","required":["TableName","PropertyName","Value"],"properties":{"TableName":{"type":"string","description":"Database table name where the custom field values are stored. Common values: 'AssetCustomFields', 'TicketCustomFields', 'UserCustomFields'.","example":"AssetCustomFields"},"PropertyName":{"type":"string","description":"Property or column name being searched within the custom field value. This is typically a property within a complex editor's JSON value.","example":"DeviceId"},"Value":{"type":"string","description":"The searchable value to look up. The system will find which site contains a custom field with this value.","example":"ABC123XYZ789"},"CustomFieldTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Optional UUID of the custom field type to narrow the search. When provided, only searches within this specific field type.","example":"c8f4d52a-3b1e-4c9d-b7f6-8e2a5d9c1f3b"},"CustomFieldComplexEditorNamespace":{"type":"string","nullable":true,"description":"Optional namespace identifier for complex editor types. Used to further narrow the search to specific complex editor implementations.","example":"GoogleDevices"}},"example":{"TableName":"AssetCustomFields","PropertyName":"DeviceId","Value":"ABC123XYZ789","CustomFieldTypeId":"c8f4d52a-3b1e-4c9d-b7f6-8e2a5d9c1f3b"},"title":"ComplexCustomFieldSearchValueLookupRequest"},"examples":{"googleDeviceLookup":{"summary":"Lookup site for Google Device ID","description":"Finds which site owns an asset with a specific Google Device ID custom field value","value":{"TableName":"AssetCustomFields","PropertyName":"DeviceId","Value":"ABC123XYZ789","CustomFieldTypeId":"c8f4d52a-3b1e-4c9d-b7f6-8e2a5d9c1f3b"}},"serialNumberLookup":{"summary":"Lookup site by serial number","description":"Finds which site owns an asset with a specific serial number in a custom field","value":{"TableName":"AssetCustomFields","PropertyName":"SerialNumber","Value":"SN-2025-001234"}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Site ID retrieved successfully (or null if not found)","content":{"application/json":{"schema":{"allOf":[{"type":"object","description":"Standard response envelope for single-item GET operations. The `Item` property contains the requested entity.","properties":{"Item":{"description":"The requested entity. Structure varies by endpoint."},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful GET)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Item","StatusCode"],"title":"ItemGetResponse"}],"type":"object","properties":{"Item":{"type":"object","nullable":true,"description":"Result containing the SiteId, or null if not found","properties":{"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"The SiteId where the custom field value was found"}}}},"title":"SiteLookupBySearchableValueResponse"},"examples":{"found":{"summary":"Site found","description":"The custom field value was found and belongs to the returned site","value":{"Item":{"SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e"},"StatusCode":200}},"notFound":{"summary":"Site not found","description":"The custom field value was not found in any site","value":{"Item":{"SiteId":null},"StatusCode":200}}}}}},"400":{"description":"Bad Request - Missing or invalid required fields (TableName, PropertyName, Value)","content":{"application/json":{"schema":{"type":"object","description":"Detailed validation error information for bad request responses","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (400)","example":400},"Message":{"type":"string","description":"Human-readable description of the validation error","example":"Invalid request data"},"Errors":{"type":"object","description":"Field-specific validation errors","additionalProperties":{"type":"array","items":{"type":"string"}},"example":{"Subject":["Subject is required"],"IssueId":["IssueId must be a valid UUID"]}}},"required":["StatusCode","Message"],"title":"ValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

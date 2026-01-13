@@ -1,0 +1,566 @@
+import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
+
+const sidebar: SidebarsConfig = {
+  apisidebar: [
+    {
+      type: "doc",
+      id: "api/organizations/organizations-api",
+    },
+    {
+      type: "category",
+      label: "Attachments",
+      link: {
+        type: "doc",
+        id: "api/organizations/organizations-attachments",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/organizations/get-organization-attachments",
+          label: "Get organization attachments",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/save-organization-attachments",
+          label: "Save organization attachments",
+          className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Creating",
+      link: {
+        type: "doc",
+        id: "api/organizations/organizations-creating",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/organizations/create-organization",
+          label: "Create organization",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/create-organizations",
+          label: "Create multiple organizations",
+          className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Details",
+      link: {
+        type: "doc",
+        id: "api/organizations/organizations-details",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/organizations/get-organizations-by-ids",
+          label: "Get organizations by IDs",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/get-organization",
+          label: "Get organization by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/get-default-organization",
+          label: "Get default organization",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Deleting",
+      link: {
+        type: "doc",
+        id: "api/organizations/organizations-deleting",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/organizations/delete-organizations-by-ids",
+          label: "Delete organizations by IDs",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/delete-organization",
+          label: "Delete organization by ID",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/delete-organizations-by-query",
+          label: "Delete organizations by query",
+          className: "api-method delete",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Querying",
+      link: {
+        type: "doc",
+        id: "api/organizations/organizations-querying",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/organizations/get-organizations-by-query-get",
+          label: "Query organizations (GET)",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/get-organizations-by-query-post",
+          label: "Query organizations (POST)",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/search-organizations",
+          label: "Search organizations by keyword",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/get-organizations-for-contact-email",
+          label: "Get organizations by contact email",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/get-my-organizations-get",
+          label: "Get my organizations (GET)",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/get-my-organizations-post",
+          label: "Get my organizations (POST)",
+          className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Types",
+      link: {
+        type: "doc",
+        id: "api/organizations/organizations-types",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/organizations/get-organization-type",
+          label: "Get organization type by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/delete-organization-type",
+          label: "Delete organization type by ID",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/update-organization-type",
+          label: "Update organization type by ID",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/get-organization-types-by-query-get",
+          label: "Query organization types (GET)",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/get-organization-types-by-query-post",
+          label: "Query organization types (POST)",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/delete-organization-types-by-query",
+          label: "Delete organization types by query",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/update-organization-types-by-query",
+          label: "Update organization types by query",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/get-organization-types-by-ids",
+          label: "Get organization types by IDs",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/create-organization-types",
+          label: "Create multiple organization types",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/delete-organization-types-by-ids",
+          label: "Delete organization types by IDs",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/update-organization-types-by-ids",
+          label: "Update organization types by IDs",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/create-organization-type",
+          label: "Create organization type",
+          className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Updating",
+      link: {
+        type: "doc",
+        id: "api/organizations/organizations-updating",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/organizations/update-organization",
+          label: "Update organization by ID",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/update-organizations-by-query",
+          label: "Update organizations by query",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/update-organizations-by-ids",
+          label: "Update organizations by IDs",
+          className: "api-method put",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Users",
+      link: {
+        type: "doc",
+        id: "api/organizations/organizations-users",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/organizations/get-organization-user",
+          label: "Get organization user by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/delete-organization-user",
+          label: "Delete organization user by ID",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/update-organization-user",
+          label: "Update organization user by ID",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/get-organization-users-by-query-get",
+          label: "Query organization users (GET)",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/get-organization-users-by-query-post",
+          label: "Query organization users (POST)",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/delete-organization-users-by-query",
+          label: "Delete organization users by query",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/update-organization-users-by-query",
+          label: "Update organization users by query",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/get-organization-users-by-ids",
+          label: "Get organization users by IDs",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/create-organization-users",
+          label: "Create multiple organization users",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/delete-organization-users-by-ids",
+          label: "Delete organization users by IDs",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/update-organization-users-by-ids",
+          label: "Update organization users by IDs",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/create-organization-user",
+          label: "Create organization user",
+          className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Schemas",
+      items: [
+        {
+          type: "doc",
+          id: "api/organizations/schemas/actionresponse",
+          label: "ActionResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/address",
+          label: "Address",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/datafilter",
+          label: "DataFilter",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/datafilteroperations",
+          label: "DataFilterOperations",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/entityfiledetail",
+          label: "EntityFileDetail",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/entityfiledetaillistresponse",
+          label: "EntityFileDetailListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/errorresponse",
+          label: "ErrorResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organization",
+          label: "Organization",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationbatchcreateresponse",
+          label: "OrganizationBatchCreateResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationcustomfieldvalue",
+          label: "OrganizationCustomFieldValue",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationitemresponse",
+          label: "OrganizationItemResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationlistresponse",
+          label: "OrganizationListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationstatustype",
+          label: "OrganizationStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationtype",
+          label: "OrganizationType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationtypebatchcreateresponse",
+          label: "OrganizationTypeBatchCreateResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationtypeitemresponse",
+          label: "OrganizationTypeItemResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationtypelistresponse",
+          label: "OrganizationTypeListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationuser",
+          label: "OrganizationUser",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationuserbatchcreateresponse",
+          label: "OrganizationUserBatchCreateResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationuseritemresponse",
+          label: "OrganizationUserItemResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationuserlistresponse",
+          label: "OrganizationUserListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationsdomainbatchdeleteresponse",
+          label: "OrganizationsDomainBatchDeleteResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationsdomainbatchupdateresponse",
+          label: "OrganizationsDomainBatchUpdateResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationsdomaindeleteresponse",
+          label: "OrganizationsDomainDeleteResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/organizationsdomainupdateresponse",
+          label: "OrganizationsDomainUpdateResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/pagingmetadata",
+          label: "PagingMetadata",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/simpleuser",
+          label: "SimpleUser",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/softvalidationerror",
+          label: "SoftValidationError",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/updateentityfiledetailsrequest",
+          label: "UpdateEntityFileDetailsRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/updateorganizationrequest",
+          label: "UpdateOrganizationRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/updateorganizationtyperequest",
+          label: "UpdateOrganizationTypeRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/updateorganizationtypesrequest",
+          label: "UpdateOrganizationTypesRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/updateorganizationuserrequest",
+          label: "UpdateOrganizationUserRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/updateorganizationusersrequest",
+          label: "UpdateOrganizationUsersRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/organizations/schemas/updateorganizationsrequest",
+          label: "UpdateOrganizationsRequest",
+          className: "schema",
+        },
+      ],
+    },
+  ],
+};
+
+export default sidebar.apisidebar;

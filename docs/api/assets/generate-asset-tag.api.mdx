@@ -1,0 +1,75 @@
+---
+id: generate-asset-tag
+title: "Generate asset tag"
+description: "Generates a new unique asset tag using the tenant's configured auto-generation pattern. Returns the generated tag string and its sequence index."
+sidebar_label: "Generate asset tag"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/assets/assets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Generate asset tag"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/assets/generate-asset-tag"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Generates a new unique asset tag using the tenant's configured auto-generation pattern. Returns the generated tag string and its sequence index.
+
+**Workflow Example**
+1. Call [GET /api/v1.0/assets/generate-asset-tag](/docs/api/assets/generate-asset-tag) to reserve a new tag.
+2. Extract `Item.AssetTag` from the response.
+3. Use the tag when creating an asset via [POST /api/v1.0/assets/new](/docs/api/assets/create-asset).
+
+**Common Use Cases**
+- Pre-generate tags for batch asset imports
+- Reserve tag sequences before labeling devices
+- Maintain sequential numbering during bulk deployments
+
+**Notes**: Tag pattern is configured at the tenant level. Contact administrator to customize the prefix or format.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Asset tag generated successfully","content":{"application/json":{"schema":{"type":"object","description":"Response containing a generated asset tag","properties":{"Item":{"type":"object","description":"Generated asset tag from the system's auto-generation pattern","properties":{"AssetTag":{"type":"string","description":"The generated asset tag value","example":"IIDHS-DEV-00123"},"SequenceIndex":{"type":"integer","description":"The sequence number used to generate this tag"}},"title":"NewAssetTag"},"StatusCode":{"type":"integer"}},"title":"NewAssetTagResponse"},"example":{"Item":{"AssetTag":"IIDHS-DEV-00456","SequenceIndex":456},"StatusCode":200,"RequestDate":"2025-01-01T00:00:00Z"}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

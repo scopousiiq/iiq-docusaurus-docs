@@ -1,0 +1,82 @@
+---
+id: get-funding-sources-by-ids
+title: "Get funding sources by IDs"
+description: "Returns multiple funding sources in one call by posting an array of IDs. Useful when you already have a list of IDs from another workflow and need full objects in a single round trip."
+sidebar_label: "Get funding sources by IDs"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/funding-sources/funding-sources-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get funding sources by IDs"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/funding-sources/ids"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns multiple funding sources in one call by posting an array of IDs. Useful when you already have a list of IDs from another workflow and need full objects in a single round trip.
+
+**Prerequisites**
+1. **FundingSourceId list** - Use [POST /api/v1.0/funding-sources/query](/docs/api/funding-sources/search-funding-sources) to locate records and collect `Items[].FundingSourceId` (or reuse IDs returned from create endpoints).
+
+**Workflow Example**
+1. Search for funding sources and capture the IDs you need.
+2. Call [GET /api/v1.0/funding-sources/ids](/docs/api/funding-sources/get-funding-sources-by-ids) with the ID array in the request body to retrieve full records.
+
+**Minimal Required Fields**: Request body array of `FundingSourceId` values.
+
+**Note**: This API is deprecated.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"description":"Array of funding source UUIDs to retrieve","required":true,"content":{"application/json":{"schema":{"type":"array","items":{"type":"string","format":"uuid"}},"example":["a1b2c3d4-e5f6-7890-abcd-ef1234567890","b2c3d4e5-f6a7-8901-bcde-f12345678901"]}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful response with funding sources","content":{"application/json":{"schema":{"allOf":[{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"}],"properties":{"Items":{"type":"array","items":{"type":"object","description":"Represents a funding source for budget tracking.","properties":{"FundingSourceId":{"type":"string","format":"uuid","description":"Unique identifier for the funding source."},"Name":{"type":"string","description":"Display name of the funding source."}},"title":"FundingSource"}}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

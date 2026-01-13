@@ -1,0 +1,33 @@
+---
+id: eventsupdateresponse
+title: "EventsUpdateResponse"
+description: "Standard response for event and event type update operations. Returns the updated item ID, success status, and any validation errors."
+sidebar_label: "EventsUpdateResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsSuccess":true,"Errors":[{"StatusCode":401,"Message":"Attempted to perform an unauthorized operation."}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"EventsUpdateResponse"}
+>
+</Heading>
+
+
+
+Standard response for event and event type update operations. Returns the updated item ID, success status, and any validation errors.
+
+<Schema
+  schema={{"type":"object","description":"Standard response for event and event type update operations. Returns the updated item ID, success status, and any validation errors.","properties":{"ItemId":{"type":"string","format":"uuid"},"IsSuccess":{"type":"boolean"},"Errors":{"type":"array","items":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"}}},"title":"EventsUpdateResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

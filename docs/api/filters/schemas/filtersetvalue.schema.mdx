@@ -1,0 +1,33 @@
+---
+id: filtersetvalue
+title: "FilterSetValue"
+description: "A single filter value within a filter set. Extends the base FilterValue with set-specific metadata including the filter key, name, and scope settings."
+sidebar_label: "FilterSetValue"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"FilterSetValueId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","FilterSetId":"b2c3d4e5-f6a7-8901-bcde-f23456789012","FilterKey":"status","FilterName":"Status","FilterTypeKey":"selectlist","FilterSetType":"View.Filters","Scope":"Global","ProductId":"88df910c-91aa-e711-80c2-0004ffa00010","EntityTypeId":"888891ac-91aa-e711-80c2-100dffa00001","FilterIsIdBased":true,"FilterId":"38889bac-91aa-e711-80c2-100dffa00001","Exclude":false,"Value":"38889bac-91aa-e711-80c2-100dffa00001","GroupIndex":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"FilterSetValue"}
+>
+</Heading>
+
+
+
+A single filter value within a filter set. Extends the base FilterValue with set-specific metadata including the filter key, name, and scope settings.
+
+<Schema
+  schema={{"type":"object","description":"A single filter value within a filter set. Extends the base FilterValue with set-specific metadata including the filter key, name, and scope settings.","properties":{"FilterSetValueId":{"type":"string","format":"uuid","description":"Unique identifier for this filter set value."},"FilterSetId":{"type":"string","format":"uuid","description":"ID of the parent filter set this value belongs to."},"FilterKey":{"type":"string","description":"The facet key identifying the filter (e.g., 'status', 'location')."},"FilterName":{"type":"string","description":"Display name for the filter."},"FilterTypeKey":{"type":"string","description":"Key identifying the filter input control type (e.g., 'selectlist', 'daterange')."},"FilterSetType":{"type":"string","description":"Enumeration of filter set types that determine how filter sets are used within the system.","enum":["CustomField.Condition","KbArticle.Condition","Rule.Condition","View.Filters","App.SparePool.Criteria","App.Marketing.Criteria","App.Jamf.Criteria"],"example":"View.Filters","title":"FilterSetTypes"},"Scope":{"type":"string","description":"Visibility scope for entities within the system.","enum":["System","Global","Site","Product"],"example":"Global","title":"Scopes"},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site ID when scoped to a specific site."},"ProductId":{"type":"string","format":"uuid","description":"Product ID this value is associated with."},"EntityTypeId":{"type":"string","format":"uuid","description":"Entity type this filter applies to."},"FilterIsIdBased":{"type":"boolean","description":"Whether the filter value is ID-based (UUID) vs expression-based."},"FilterId":{"type":"string","format":"uuid","description":"UUID of the filter definition."},"Exclude":{"type":"boolean","description":"When true, excludes matching records."},"Value":{"type":"string","description":"The filter value (expression or literal)."},"CustomFieldTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Custom field type ID if this is a custom field filter."},"ComplexEditorPath":{"type":"string","nullable":true,"description":"Path to complex editor configuration."},"GroupIndex":{"type":"integer","description":"Grouping index for OR logic within the filter set."}},"example":{"FilterSetValueId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","FilterSetId":"b2c3d4e5-f6a7-8901-bcde-f23456789012","FilterKey":"status","FilterName":"Status","FilterTypeKey":"selectlist","FilterSetType":"View.Filters","Scope":"Global","ProductId":"88df910c-91aa-e711-80c2-0004ffa00010","EntityTypeId":"888891ac-91aa-e711-80c2-100dffa00001","FilterIsIdBased":true,"FilterId":"38889bac-91aa-e711-80c2-100dffa00001","Exclude":false,"Value":"38889bac-91aa-e711-80c2-100dffa00001","GroupIndex":0},"title":"FilterSetValue"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

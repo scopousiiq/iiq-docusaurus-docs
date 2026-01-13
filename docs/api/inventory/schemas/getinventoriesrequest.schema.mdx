@@ -1,0 +1,33 @@
+---
+id: getinventoriesrequest
+title: "GetInventoriesRequest"
+description: "Request parameters for querying inventory stock records. Extends RequestOptionParameter with inventory-specific filters."
+sidebar_label: "GetInventoriesRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"InventoryItemId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Paging":{"PageIndex":0,"PageSize":0,"SortField":"string","SortDirection":"Ascending"},"Filters":[{"Facet":"string","Ids":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Values":["string"],"Value":"string"}],"Fields":["string"]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetInventoriesRequest"}
+>
+</Heading>
+
+
+
+Request parameters for querying inventory stock records. Extends RequestOptionParameter with inventory-specific filters.
+
+<Schema
+  schema={{"type":"object","description":"Request parameters for querying inventory stock records. Extends RequestOptionParameter with inventory-specific filters.","properties":{"InventoryItemId":{"type":"string","format":"uuid","nullable":true,"description":"Filter results to a specific catalog item.","x-obtained-from":{"operationId":"queryInventoryItems","endpoint":"POST /api/v1.0/inventory-items/query","responseField":"Items[].InventoryItemId"}},"LocationId":{"type":"string","format":"uuid","nullable":true,"description":"Filter results to a specific location.","x-obtained-from":{"operationId":"listLocations","endpoint":"GET /api/v2.0/locations","responseField":"Items[].LocationId"}},"Paging":{"type":"object","description":"Paging and sorting controls accepted by inventory queries.","properties":{"PageIndex":{"type":"integer","minimum":0,"description":"Zero-based index of the page to retrieve."},"PageSize":{"type":"integer","minimum":1,"description":"Maximum number of records to return per page."},"SortField":{"type":"string","description":"Inventory field to sort on, such as `Name` or `LocationId`."},"SortDirection":{"type":"string","enum":["Ascending","Descending"],"description":"Direction to sort results."}},"title":"InventoryPagingOptions"},"Filters":{"type":"array","items":{"type":"object","description":"Generic filter used across inventory search operations.","properties":{"Facet":{"type":"string","description":"Name of the facet to filter on, such as `keyword`, `InventoryItemId`, or `LocationId`."},"Ids":{"type":"array","description":"Collection of UUIDs to match when filtering facets that accept identifiers.","items":{"type":"string","format":"uuid"}},"Values":{"type":"array","description":"Collection of raw values used when filtering keyword or text facets.","items":{"type":"string"}},"Value":{"type":"string","nullable":true,"description":"Single-value fallback used by certain legacy facets."}},"required":["Facet"],"title":"InventoryRequestFilter"},"description":"Array of filters applied to the inventory query."},"Fields":{"type":"array","description":"Optional projection list (e.g., `*`, `InventoryItem.*`, `Location.*`) for expanding related entities.","items":{"type":"string"}}},"title":"GetInventoriesRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

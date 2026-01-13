@@ -1,0 +1,33 @@
+---
+id: bulkworkticketsrequest
+title: "BulkWorkTicketsRequest"
+description: "Request payload for bulk working tickets (add activity and update progress fields)."
+sidebar_label: "BulkWorkTicketsRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Request":{"Activity":{"TicketActivityId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","IsPublic":true,"IsDeleted":true,"TicketId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TicketSubject":"string","OwnerId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","OwnerDetails":"string","ActivityItems":[{}],"SortOrder":0,"Alignment":"string"},"StatusTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CloseReasonTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsIssueConfirmed":false}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"BulkWorkTicketsRequest"}
+>
+</Heading>
+
+
+
+Request payload for bulk working tickets (add activity and update progress fields).
+
+<Schema
+  schema={{"type":"object","description":"Request payload for bulk working tickets (add activity and update progress fields).","properties":{"TicketIds":{"type":"array","description":"Array of ticket identifiers to update.","items":{"type":"string","format":"uuid"},"minItems":1},"Request":{"allOf":[{"type":"object","description":"Work-progress payload used by bulk work operations to add an activity and optionally set status/close metadata.","properties":{"Activity":{"allOf":[{"type":"object","description":"Represents an activity or comment on a ticket.","properties":{"TicketActivityId":{"type":"string","format":"uuid","description":"Identifier for the activity."},"SiteId":{"type":"string","format":"uuid","description":"Site identifier."},"ProductId":{"type":"string","format":"uuid","description":"Product identifier.","nullable":true},"CreatedDate":{"type":"string","format":"date-time","description":"When the activity was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"When the activity was last modified."},"IsPublic":{"type":"boolean","description":"Whether the activity is visible to end users."},"IsDeleted":{"type":"boolean","description":"Whether the activity has been soft-deleted."},"TicketId":{"type":"string","format":"uuid","description":"Parent ticket identifier."},"TicketSubject":{"type":"string","description":"Subject of the parent ticket.","nullable":true},"OwnerId":{"type":"string","format":"uuid","description":"User identifier who created the activity."},"OwnerDetails":{"type":"string","description":"Quick reference display name for the owner.","nullable":true},"ActivityItems":{"type":"array","description":"Collection of polymorphic items making up the activity content.","items":{"type":"object","additionalProperties":true,"description":"Polymorphic activity item. Fields vary by activity type."},"nullable":true},"SortOrder":{"type":"integer","description":"Sort order index."},"Alignment":{"type":"string","description":"UI alignment preference.","nullable":true}},"title":"TicketActivity"}],"type":"object","description":"Activity/comment details to attach to each ticket."},"StatusTypeId":{"type":"string","format":"uuid","description":"Optional workflow status type identifier to apply.","nullable":true},"CloseReasonTypeId":{"type":"string","format":"uuid","description":"Optional close reason type identifier to apply when closing.","nullable":true},"IsIssueConfirmed":{"type":"boolean","description":"Whether to mark the ticket issue as confirmed.","default":false}},"title":"SetTicketProgressRequest"}],"type":"object","description":"Work/progress payload applied to each ticket."}},"required":["TicketIds","Request"],"title":"BulkWorkTicketsRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

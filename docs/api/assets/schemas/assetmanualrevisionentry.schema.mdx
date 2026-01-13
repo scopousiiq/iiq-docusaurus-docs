@@ -1,0 +1,33 @@
+---
+id: assetmanualrevisionentry
+title: "AssetManualRevisionEntry"
+description: "Revision override passed by integrations that need to author explicit change history entries."
+sidebar_label: "AssetManualRevisionEntry"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"FieldName":"OwnerId","OldVal":"a215e88e-14be-ef11-88cf-6045bdb6b1c8","NewVal":"1eb32e06-b79f-f011-b484-002248538047"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetManualRevisionEntry"}
+>
+</Heading>
+
+
+
+Revision override passed by integrations that need to author explicit change history entries.
+
+<Schema
+  schema={{"type":"object","description":"Revision override passed by integrations that need to author explicit change history entries.","properties":{"FieldName":{"type":"string","description":"Name of the field tracked in the revision log.","example":"OwnerId"},"OldVal":{"type":"string","description":"Value recorded before the asset update.","example":"a215e88e-14be-ef11-88cf-6045bdb6b1c8","nullable":true},"NewVal":{"type":"string","description":"Value recorded after the asset update.","example":"1eb32e06-b79f-f011-b484-002248538047","nullable":true}},"title":"AssetManualRevisionEntry"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

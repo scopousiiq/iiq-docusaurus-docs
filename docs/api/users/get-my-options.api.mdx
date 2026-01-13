@@ -1,0 +1,70 @@
+---
+id: get-my-options
+title: "Get current user's options/preferences"
+description: "Retrieves the authenticated user's personal options and preferences, including notification settings, UI preferences, and feature flags. This is a convenience endpoint equivalent to [GET /api/v1.0/users/{UserId}/options](/docs/api/users/get-user-options) but automatically uses the authenticated user's ID."
+sidebar_label: "Get current user's options/preferences"
+hide_title: true
+hide_table_of_contents: true
+api: eJztW1tz2ziy/itdzINsFSU7cya7Z3Vqt9Zj56KZJPZY8uZMWa4xTLYkjEmAAUA5GkX//VQDIAlSysUz2Tovm4dIIoHuRveHRl/gTSQLVMxwKcZpNIoWaN6szwv6raM4SlEnituf0Si6RKM4rlCDWSKw0ixRGJ4wgymUGlVPQ4FKS8EykI4GMJFCoXCOCkWCOgYukqxMuViAkIbPaTqXAjQaw8VCx3A1bk8gCnNkplQI84wt9BCmS66Ba2CQSLFCwWkooEgLyYUBfF/yFctQGDASrl8+n8IRK/jR6unw+IgE1UebK41qnG6PvJw3B0epTLQd5kYs0Azo28CPOIS70tCiZc5o0Vm2pkV/Rhfjs+FMzES/f6URTplG3e+PZmIAryVzg8KFAjPAiiKrFWKYMmVB48+4LjK2hqRUiha1V3HABbDmV8EWSHNPl5jct/UHc6ms1BU9EsVJ+lYaKyW8lVAwxXI0qDQo0qjCdAhXn10xT+mRWcNcydwOu0OmUIGR9yiGURwZttDR6Doi9etRoeScZ6ijmzhSqAspNOpotIm+Oz6mjzb8aE6FqyiOEikMCkPjAr0d/aZp8CbSyRJzRt/MusBoFMm73zAxe0Dt+BKUDOOCkFkGnI4CG9EKWJadz6PR9ZfoTgwTKVMpVAsDFCvMZIFW/5qLRYYDbjAHAmi9DS28EW7HBvNbKBS9MOtKOqd8sgdqUrzTN8nlR3KnQJq9q8HpvrkwMapMLDxWTHHUcLeu99Iw2sZW8VOyYKBNbRQXiyiO5lLlzESjqCx5GsWRKLOM3WUYjYwqsauVkxZsNGpNGHa4mXNUxO7SSXjGDH6WYcoMDgzPcUf3U56jNiwv4GGJwqrs5ILcikxQa0xDJRLH5x8wKWkuTQx4ijK/Q9XiKUta246xUa1QDTRPEbAiBiQbbcucZxnXmEiRamI3McyU+lSmIS8uDC4sszbpV9PpBTkDU2pIZIpwYNaF9z/fHR87MJUJLWxeZoSlwyiO8APLCzLCd8fH2zh6g1qzxV51ft5e7ihgGXDhdOB+5Z4e6U4pqX7C9eNpv2HJkgscKGQpjQIkUnCPa7uoJOMojNepfbNkIs2IMunQavwty/cuqgO6wK0KUqFZMvNpNFy4F3QeftE6Y2FQkUY8tQDKdhEpZwshteGJtfx5eNg+Vl9TxRLsMsjkAhKpFGaWrpc/8ARdL8XSlDsrhuMcvy/s3Xom5GhYygyDwOtYmLnHX8+3q4Ptl4T4CdeDFctKDGRgXOkaiiFRphRb79Ered29yuksGIQUgzkzLIMVy3jqIOTAaDGU8pROYzrHVzbcWGLjyd0pmEjaiMYZuO2kX3DM/gAOCPQg55bZnEjAAzdL+zOQkmtdYvT5vd/xNGXORLMbg5cVt33kO27sz+19cnDRdkvRgIs4KFaoFnATR4YbohhN5Nz8qxbG2p1kafN4zbUhybWcmx376R029shsOeeAIb18iaYKFqLtzadO3M9D6mon6hNpFWkM4Q23osHtpGDqfjhZMgq63sgUMz2kqT4yv9098N8GMaF98LVxytu9wSS5FmbjoK+XqiXCHhGnPLlHc6qQzv5AVXdSZsjEnsgsQb7CVrir3YnOwFhilAQkjqCNVByLqyL9tixKRzBgcaI1XwhMp/IXWX47RsyTpbxlLcu9DKfI8n8bRwUGWR7wPeOa9ucLmWXyAdUOzL4ghZ/ekcImIJa8JqbAKDWxHLhYWOYnWqM5XTKx+NN2FLRGDxVHcGj3frW1CcHhsiZ+D9g9/rV7hbyj3S17PF97/23j6LX8A/u0mtTyHn9km9bc92zRF2wlFTfYkrBzmO53snM/E7JKzqur8ZmT8H3Jk3tgNkYlnt3j9xO5xE4s0LVad0F7LPZJrT3CYNvPB017JNrBl3/eOkG2NOj746d7El1B2bVU/HfC6jfLdO0x2aSjFjtNOmYDFsazUqHewcWfzFi+P37aSkq+P376bQOTzjrsCR8yDPNOGtAUNC4yZBopjl1RomHDBDpSbJTNMj3ciRMCXcT7YpPQej4ysaZ+tq+mUecPLp8BO+Hfa3NesdSOpQ+HvrHJnx0ft0z+7Et56GNNHkrfNrXYv0SQiS14NUY3ag1swbiAjBlyBU3xYX9+1t2m/H1ZZ47dxMwoWyrQSyl98N+IqPD9r0+/+6/vn/3lr//9t2N2l6Q4fzTOKug45DRI28aRxqRU3KztseJKcLQBotH1zTa2gDrxEHVJIz2/iaMPA87fD6gOaiGGiV9oXaaLI6lSVNHob3/Z0noMCu1OietNdE81gJBGHNlE7StoEfMczVL6EjSBkZG8Ubdum6+Pmgqgs67jXqosGkVLYwo9OjpKMZdDLhJnk/fDROb2cKgUM6Ht43Aeqqe2ONEhBnYYxR12UBT7Ly+qc+rHd9MdWPz4burqnS7/O0lzLrg2Pif8B5yhKwMqmEqZ2cRVc4MtxLGCU0kljjhRXCJLLXdhyx3RxA3vMv6FwjciFULxgI7hQ2Li6ilfzeTUDd9J3Ept4A5hFp0U3I2ZRRa7VCGy1INzT1PdjYCASrv5T4fHw+Mdqk+gHj2jUrSaCapV1g8r/6x9FEHRqi3S5kywBeaUe3MBY2/x8c9DmCBTydJuRQud2I+FCoGxqyd1Dw/XcCD3q2RG7GQpTBPssURJrV2oLNWCCb+HhpXcT57A+QrViuND9cgtoyUfKCwUapIbV6jWUiA8LKXzXCwxusnpi4wZCoxGoE1Js3VMQXqytIvShs3n9CBZCp5wJnzHhDWwk0rX0o1GI7IT1frfUQGDou+ECUhlw7DWer9vJ7iZ/7D/wQD6fa9aYpNJeV8W/b7TMVWOCT4xYM54FoOSGcZ1SBgDpfilNlQWoWBRcdZQfePM4/sizkb9ftAvsiXwxISlyG57qaH2ytvW2y/jc0zWSYb9vi/LUNZoi7RLJcvFElJkieEr+7Ahc1rhoIWRfj8ABEnAtH6QKg3g2JCgst09OGsnxN+m/CLjAqsjc27PaJbZajYkksJRqTqiXKCidcNdmd0H7QJakKSNoKs81cnE80IqowNYnso8p7i86kY1r57AZDw5enUJdKYsGsaTtUicQbwePSw9EFuW0GtNYT0cXFCeOEmWUmYxjMWcC3JJpywvSn1ICHh1WQ82suqo+RCMvATZmlbgVzNsyWnbJjDhCzE4FzBBapGpmTiVYs4X1MNw4rbDPSPhQap7J7zdunWnyjsWBQcnv9P0k7MYXkpJTN5Jda8LlmAMpxntUvpkWr/m4v6wJdWlzHDwA6Na8on1T/TCZex+Yxhp94J2ZcPKu5glckU905zbRkjtXnxyHLvUdXdLU647L0Xi6kahKLbA9NruSosLl8Vbgboe0eXHbiOIRYsnX1grpLjitgdLPQYHeCiLdpbd4v4DYdOK8Ka1E8YWjLE3qaVX7zf00nDhoH1n9UhRvFAyy6xvd4m7tnKQwwNTKiFXqEK3S+fExAUaNbY/Vk/gI5wFQeRH+3JQ/Wu+2V9uZuXouFj0+/ARfi5RrSvVEZLmPDPWCRdswUVwesxZgq6/ZTVe07to3NpHqLrpLY+349xSNIxneocGuCKXI/VGpnzuRPucd2yInPjt7GYHjnf3vBNp5aW6swMbWzqfcrmBswpodB3qR7iovCi5SgLiZHJOW8Vu7EC7tLkbAQPF1B72Izin2/aydu6K8Yzd8Yz2fj31ytAD7rX5CjOKzqoWqK53zMB2WQicexZE0PfqJE/sOsj1sMAjuykesz/b0siEev3V034/ubp87b5RV/729vaO6SU9SEqVweB/4eJ8MoVZHe2SRxtQ4NcJeTvB8yyC2YzIAAxeUQAX5gAj+MG16n85v7r8dXr+0/O33fEu7By5EZPx9Pmv47PuGBcRjiAIDjsDXF47mK4LHEE3tQ1Hp9DbuK8As+iF22uzaATX1VOAzSx6QXuNHs8icsPUHJlFMcyif1Hy4SdEE3dizaKbbTX7Jm6oX9AGXtDYjf2BE/470s9nx7F7jWOR4gd6dOwpbHv0eXt72xjuR7ZiE+tjWub7ja2Yrh8nUmjTpOR/B/bAuIE5mmR50HukTXsxeCW5/GkEPQJHz6/NBfV6BLUmey2r90bQ27F7r1ZMz5mcRoVGDwY4I9OA2uLh28DYNKZr7p7XpJ9xJ9P1CH6cnL8dupSbz9cHteQeAW37gzX/CHqV7XsxOMOP4Lrnrd67gT1WdzYfwQYqgztz18YewXE1b3tIn9vD/6ls7Yxo24+VASuLDmllB24oDZMZDjO5OKDBQ+oSafeuhZyLtVlK0UJNUT9yjqMqNNRnWwCh6tWwkNoc1Pp/NJiqmR43f980qn4kdL4KPl+G0GNg1AAJgB53pPf46bUA5GHUszDqtXHUc0DqtZC0DefetOV0iOqNYNOrINVzmOrVoOo1DgQcug4re3o0dXBEbwrFhbEAuu5ZBPVuDjsQmonBYEAfFIa9ROOisLs1jM+qIXsOErp59Ohz5GhTustz/08HSmflNi1wgdbdGp5T4hmsmJQItED67QEx88Umd2qQv5xFcfWqVJl7/vVacWFeQMNvH3ee1IdMSz2Oxx4VBaeS048b2dZRMKjSyqhdkglHBNvHjds9dtuOeBaRK+6Ib8NfN/83uRRDnXOz/Ke2id4Q07LFk3hVZy8hcRbdeBbWke6YEH7CNZxKkWDROLigWHFpkyeKoi6abGlffcIVL6ihWHc2g8QrpfuMObfFFmava6xt+UMjumhbDqs02c1y1QcEv/9jmLrKS0wxGxVeThb2MU0+CUsuQ3AiB4UkX7ciX84yKuK4JiwlvS4gfWyat9JDOH8QqGyKJeqWqqXiE0cq6NgbqKrfp/Sp338h6au7OMJFaq/iaVt8orH2QiJ3Me8BDhdDR6LK+GmYQloCptRatddADt2VxX7fCkM1G39HlHRT+TNOdXxX6NAyKzs1sydQd/FmdcVsyVYIdMeI50ytm87igcubHfRoUXclz6hEdAgPS06VqfkcqYbmNaxkSbmCz6Y9MPLabm49lNs2pggLZg9MUTZMMHz+wTcWxmefQR8hysqO1fCmIKtd+WkynlRFkCG8ozxcr0Vic25mWEz5A6lQI3Ei1OTMJEtQmEiV1req7Z2jtHSbuVUpgUufqpxcjOv9NIBrXw4Irzt71FSfA1bwQxiAu6dRY0oKuMMly+bUf3HphKNoO/Utgg56/qMi56shvqJQ1W8rIrXxQzqVvXXzraJm4V/joTFoRY/uSLQXSQ/c/xUNGgM50g1PveRFp3bnW3AssRVzXxMP6rdNFX9SFoSfKO70ILSRRcYXS9NtRMSRrY66CvxAu+n/7HYr4ijjCVKnuOFPzWfF0TC13mH38PDQPaDI17leNIWFORMBKQoRwvvfPb3vwnO3UL9p+pL/+WuA//w1wJ/+awDXiDL4wRwVGeP2+qqF9cY3AK9pj1AD6antGlljRHGUE/6rRuBNHC2lNjR4s6Hq4ZXKtlt6/J5CFupuUitScXfHg3qgVber6VtS3bYwTc9yt+vealK+fE6NP9buGna6hOGlHibWAe3Nxo2wl+q32yj2QljFRNub7Xb7f34TI74=
+sidebar_class_name: "get api-method"
+info_path: docs/api/users/users-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get current user's options/preferences"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/users/my/options"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves the authenticated user's personal options and preferences, including notification settings, UI preferences, and feature flags. This is a convenience endpoint equivalent to [GET /api/v1.0/users/\{UserId\}/options](/docs/api/users/get-user-options) but automatically uses the authenticated user's ID.
+
+**Use Cases**:
+- Load user preferences at application startup
+- Display current notification settings in a settings page
+- Check feature flags for the current user
+
+**Notes**: No parameters required. Uses the authenticated user's identity from the bearer token.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"User options","content":{"application/json":{"schema":{"type":"object","description":"Response containing user options/preferences.","allOf":[{"type":"object","description":"Standard response envelope for single-item GET operations. The `Item` property contains the requested entity.","properties":{"Item":{"description":"The requested entity. Structure varies by endpoint."},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful GET)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Item","StatusCode"],"title":"ItemGetResponse"}],"properties":{"Item":{"type":"object","description":"User preferences and options. Mirrors `Spark.Shared.Models.UserOptions`.","properties":{"Notifications":{"allOf":[{"type":"object","description":"Notification settings for a user. Mirrors `Spark.Shared.Models.UserOptionsNotifications`.","properties":{"TicketCreated":{"type":"boolean","description":"Receive notifications when a ticket is created."},"TicketUpdated":{"type":"boolean","description":"Receive notifications when a ticket is updated."},"TicketAssignedToYou":{"type":"boolean","description":"Receive notifications when a ticket is assigned to you."},"TicketAssignedToTeam":{"type":"boolean","description":"Receive notifications when a ticket is assigned to your team."},"TicketDisableFollowerNotifications":{"type":"boolean","description":"Disable notifications for tickets you are following."},"AssetChanged":{"type":"boolean","description":"Receive notifications when an asset is changed."}},"title":"UserNotificationSettings"}],"description":"Notification settings for the user.","nullable":true,"type":"object"},"Locations":{"allOf":[{"type":"object","description":"Location preferences for a user. Mirrors `Spark.Shared.Models.UserOptionsLocations`.","properties":{"FavoriteLocations":{"type":"array","description":"List of favorite location UUIDs for quick access.","items":{"type":"string","format":"uuid"},"nullable":true}},"title":"UserOptionsLocations"}],"description":"Location preferences for the user.","nullable":true,"type":"object"}},"additionalProperties":true,"title":"UserOptions"}},"title":"UserOptionsGetResponse"}}}},"401":{"description":"Unauthorized.","content":{"application/json":{"schema":{"type":"object","description":"Error response for authentication failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (401)","example":401},"Message":{"type":"string","description":"Human-readable description of the authentication error","example":"Authentication required. Please provide valid credentials."}},"required":["StatusCode","Message"],"title":"UnauthorizedError"}}}},"500":{"description":"Internal Server Error.","content":{"application/json":{"schema":{"type":"object","description":"Error response for internal server errors","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (500)","example":500},"Message":{"type":"string","description":"Human-readable description of the server error","example":"An internal server error occurred. Please try again later."},"RequestId":{"type":"string","description":"Unique request identifier for troubleshooting","example":"req_1234567890abcdef"}},"required":["StatusCode","Message"],"title":"InternalServerError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

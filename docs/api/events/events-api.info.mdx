@@ -1,0 +1,307 @@
+---
+id: events-api
+title: "Events API"
+description: "# Events API"
+sidebar_label: Introduction
+sidebar_position: 0
+hide_title: true
+custom_edit_url: null
+---
+
+import ApiLogo from "@theme/ApiLogo";
+import Heading from "@theme/Heading";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+import Export from "@theme/ApiExplorer/Export";
+
+<span
+  className={"theme-doc-version-badge badge badge--secondary"}
+  children={"Version: 1.0.0"}
+>
+</span>
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Events API"}
+>
+</Heading>
+
+
+
+# Events API
+
+The Events API provides access to IncidentIQ's event and scheduling system. Create, manage, and query events for facilities reservations, maintenance schedules, and organizational calendars.
+
+## Overview
+
+Events in IncidentIQ represent scheduled activities such as facility reservations, maintenance windows, training sessions, and other calendar-based items.
+
+:::info
+**What you can do with the Events API**
+:::
+
+>
+> - **Create and manage events** for facilities, equipment, or organizational scheduling
+> - **Query events** by date range, user, location, or custom criteria
+> - **Handle recurring events** with series management and date projections
+> - **Manage RSVPs and scheduling** with conflict validation
+> - **Attach files** to events for supporting documentation
+
+## Common Use Cases
+
+### Facility Reservations
+Allow users to book rooms, labs, or shared spaces with conflict detection.
+
+### Maintenance Scheduling
+Schedule recurring maintenance windows for equipment or facilities.
+
+### Training and Meetings
+Manage training sessions, staff meetings, and other organizational events.
+
+### Calendar Integration
+Sync events with external calendar systems for unified scheduling.
+
+## API Sections
+
+| Section | Description |
+|---------|-------------|
+| **Querying** | Search and filter events by various criteria |
+| **Details** | Retrieve individual event information and attachments |
+| **Creating** | Create new single or recurring events |
+| **Updating** | Modify event properties and manage changes |
+| **Deleting** | Remove events or event instances |
+| **Recurrence** | Manage event series and date projections |
+| **RSVP** | Validate schedules and manage attendance |
+| **Event Types** | Manage event type definitions and categories |
+
+## Quick Start
+
+### Query Events
+
+```bash
+curl -X POST "https://your-site.incidentiq.com/api/v1.0/events/query" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Paging": {"PageSize": 25, "PageIndex": 0}
+  }'
+```
+
+### Get Event Details
+
+```bash
+curl -X GET "https://your-site.incidentiq.com/api/v1.0/events/{EventId}" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient"
+```
+
+### Create a New Event
+
+:::warning
+**Required Fields**
+:::
+
+>
+> When creating an event, ensure you provide the event type, start/end times, and any required location or resource information.
+
+```json http
+{
+  "method": "POST",
+  "url": "https://your-site.incidentiq.com/api/v1.0/events/new",
+  "headers": {
+    "Authorization": "Bearer YOUR_TOKEN",
+    "SiteId": "YOUR_SITE_ID",
+    "Client": "ApiClient",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "Name": "Staff Meeting",
+    "EventTypeId": "EVENT_TYPE_UUID",
+    "StartDate": "2025-01-15T09:00:00Z",
+    "EndDate": "2025-01-15T10:00:00Z"
+  }
+}
+```
+
+## Event Types
+
+Event Types define the categories of events that can be created in IncidentIQ, such as facility reservations, maintenance windows, meetings, or training sessions. Use event types to categorize different kinds of scheduled activities for reporting and filtering.
+
+### Query Event Types
+
+```bash
+curl -X POST "https://your-site.incidentiq.com/api/v1.0/events/types/query" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Paging": {"PageSize": 50, "PageIndex": 0}
+  }'
+```
+
+### Get Event Type Details
+
+```bash
+curl -X GET "https://your-site.incidentiq.com/api/v1.0/events/types/{EventTypeId}" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient"
+```
+
+### Create a New Event Type
+
+```json http
+{
+  "method": "POST",
+  "url": "https://your-site.incidentiq.com/api/v1.0/events/types",
+  "headers": {
+    "Authorization": "Bearer YOUR_TOKEN",
+    "SiteId": "YOUR_SITE_ID",
+    "Client": "ApiClient",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "Name": "Staff Meeting",
+    "Description": "Internal staff meetings and team gatherings"
+  }
+}
+```
+
+## Related APIs
+
+- [Locations](/docs/api/locations/locations-api) - Reference locations for event venues
+- [Users](/docs/api/users/users-api) - Look up users for event attendance
+
+
+<div
+  style={{"marginBottom":"2rem"}}
+>
+  <Heading
+    id={"authentication"}
+    as={"h2"}
+    className={"openapi-tabs__heading"}
+    children={"Authentication"}
+  >
+  </Heading><SchemaTabs
+    className={"openapi-tabs__security-schemes"}
+  >
+    <TabItem
+      label={"HTTP: Bearer Auth"}
+      value={"bearerAuth"}
+    >
+      
+      
+      JWT token from Administration > Developer Tools
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                http
+              </td>
+            </tr><tr>
+              <th>
+                HTTP Authorization Scheme:
+              </th><td>
+                bearer
+              </td>
+            </tr><tr>
+              <th>
+                Bearer format:
+              </th><td>
+                JWT
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem><TabItem
+      label={"API Key: siteId"}
+      value={"siteId"}
+    >
+      
+      
+      Your site identifier (UUID)
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                apiKey
+              </td>
+            </tr><tr>
+              <th>
+                Header parameter name:
+              </th><td>
+                SiteId
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem><TabItem
+      label={"API Key: client"}
+      value={"client"}
+    >
+      
+      
+      Must be "ApiClient"
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                apiKey
+              </td>
+            </tr><tr>
+              <th>
+                Header parameter name:
+              </th><td>
+                Client
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem>
+  </SchemaTabs>
+</div><div
+  style={{"display":"flex","flexDirection":"column","marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    Contact
+  </h3><span>
+    IncidentIQ Developer Support: [api-support@incidentiq.com](mailto:api-support@incidentiq.com)
+  </span><span>
+    URL: [https://stoplight.incidentiq.com](https://stoplight.incidentiq.com)
+  </span>
+</div><div
+  style={{"marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    License
+  </h3><a
+    href={"https://www.incidentiq.com/terms"}
+  >
+    Proprietary
+  </a>
+</div>
+      

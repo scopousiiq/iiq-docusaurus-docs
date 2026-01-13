@@ -1,0 +1,78 @@
+---
+id: upload-file
+title: "Upload a file"
+description: "Upload a file using multipart/form-data encoding. The uploaded file is stored in the system and a FileId is returned which can be used to associate the file with tickets, assets, custom fields, or other entities."
+sidebar_label: "Upload a file"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/files/files-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Upload a file"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/files"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Upload a file using multipart/form-data encoding. The uploaded file is stored in the system and a FileId is returned which can be used to associate the file with tickets, assets, custom fields, or other entities.
+
+**Workflow Example**:
+1. Upload file using this endpoint → receive `FileId` in response
+2. Associate with ticket custom field: [POST /api/v1.0/tickets/\{TicketId\}/custom-fields](/docs/api/tickets/update-ticket-custom-fields)
+3. Or link to any entity: [POST /api/v1.0/files/\{FileId\}/entity/\{EntityTypeId\}/\{EntityId\}](/docs/api/files/add-file-to-entity)
+
+**Supported file types**: Images (PNG, JPG, GIF), Documents (PDF, DOC, DOCX, XLS, XLSX), Text files, and other common formats. Maximum file size is typically 25MB but may vary by site configuration.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"multipart/form-data":{"schema":{"type":"object","required":["file"],"properties":{"file":{"type":"string","format":"binary","description":"The file content to upload"}},"title":"UploadFileFilesRequestMultipartFormData"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"File uploaded successfully","content":{"application/json":{"schema":{"type":"object","description":"Response envelope after successfully uploading a file.","properties":{"Id":{"type":"integer","description":"Legacy numeric identifier","example":0},"Uid":{"type":"string","format":"uuid","description":"Server-generated correlation identifier for the upload operation"},"Item":{"description":"The uploaded file metadata including the generated FileId","allOf":[{"type":"object","description":"Represents a file stored in the IncidentIQ system. Files can be attached to tickets, assets, users, and other entities.","properties":{"FileId":{"type":"string","format":"uuid","description":"Unique identifier for the file"},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site/district identifier the file belongs to"},"Name":{"type":"string","description":"Display name for the file","example":"screenshot.png"},"FileName":{"type":"string","description":"Physical filename as stored on the server","example":"screenshot.png"},"Url":{"type":"string","description":"URL path to access or download the file","example":"/api/v1.0/files/a1b2c3d4-e5f6-7890-abcd-ef1234567890"},"FileType":{"description":"Classification of the file type","allOf":[{"type":"integer","description":"File type classification enum from Spark.Shared.Enums.FileTypes. Determines how the file is categorized and handled by the system.","oneOf":[{"enum":[0],"title":"Other","description":"Default file type for uncategorized files"},{"enum":[1],"title":"Photo","description":"User profile photo or avatar image"},{"enum":[2],"title":"Logo","description":"Organization or location logo"},{"enum":[3],"title":"Floorplan","description":"Location floorplan or layout image"},{"enum":[4],"title":"Icon","description":"Small icon or pictogram"},{"enum":[5],"title":"AssetImage","description":"Image associated with an asset"},{"enum":[6],"title":"TicketAttachment","description":"File attached to a ticket"},{"enum":[7],"title":"KnowledgeBaseAttachment","description":"File attached to a knowledge base article"},{"enum":[8],"title":"Import","description":"Data import file (CSV, Excel, etc.)"},{"enum":[9],"title":"Export","description":"Data export file"},{"enum":[10],"title":"Report","description":"Generated report file"},{"enum":[11],"title":"CustomFieldFile","description":"File uploaded via a custom field"},{"enum":[12],"title":"Signature","description":"Electronic signature image"},{"enum":[13],"title":"FormSubmissionAttachment","description":"File attached to a form submission"}],"default":0,"example":6,"title":"FileType"}]},"MimeType":{"type":"string","description":"MIME type of the file content","example":"image/png"},"Size":{"type":"integer","description":"File size in bytes","example":245760},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the file was uploaded"},"CreatedById":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the user who uploaded the file"},"IsPrivateInternal":{"type":"boolean","description":"When true, the file is only visible to internal/agent users","default":false},"IsDeleted":{"type":"boolean","description":"Whether the file has been soft-deleted","default":false},"ModifiedDate":{"type":"string","format":"date-time","nullable":true,"description":"Timestamp when the file metadata was last modified"},"ExpirationDate":{"type":"string","format":"date-time","nullable":true,"description":"Optional expiration date after which the file should be deleted"}},"required":["FileId","FileName","FileType","MimeType","Size","CreatedDate"],"example":{"FileId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","Name":"screenshot.png","FileName":"screenshot.png","Url":"/api/v1.0/files/a1b2c3d4-e5f6-7890-abcd-ef1234567890","FileType":6,"MimeType":"image/png","Size":245760,"CreatedDate":"2025-12-09T14:30:00.000Z","CreatedById":"51c89694-ae9f-f011-8e61-6045bd7991ab","IsPrivateInternal":false,"IsDeleted":false},"title":"File"}]},"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (201 for successful upload)"},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"}},"required":["Item","StatusCode"],"example":{"Id":0,"Uid":"b2c3d4e5-f6a7-8901-bcde-f23456789012","Item":{"FileId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","Name":"screenshot.png","FileName":"screenshot.png","Url":"/api/v1.0/files/a1b2c3d4-e5f6-7890-abcd-ef1234567890","FileType":6,"MimeType":"image/png","Size":245760,"CreatedDate":"2025-12-09T14:30:00.000Z","CreatedById":"51c89694-ae9f-f011-8e61-6045bd7991ab","IsPrivateInternal":false,"IsDeleted":false},"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2025-12-09T14:30:00.000Z","ExecutionTime":892.5,"StatusCode":201,"ServerName":"spark-files-7bcdf6964c-2xr98","ProcessId":1,"OperationId":"FileUpload456"},"title":"FileUploadResponse"}}}},"400":{"description":"Bad request - Invalid file or missing required data","content":{"application/json":{"schema":{"type":"object","description":"Detailed validation error information for bad request responses","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (400)","example":400},"Message":{"type":"string","description":"Human-readable description of the validation error","example":"Invalid request data"},"Errors":{"type":"object","description":"Field-specific validation errors","additionalProperties":{"type":"array","items":{"type":"string"}},"example":{"Subject":["Subject is required"],"IssueId":["IssueId must be a valid UUID"]}}},"required":["StatusCode","Message"],"title":"ValidationError"}}}},"401":{"description":"Unauthorized - Authentication required","content":{"application/json":{"schema":{"type":"object","description":"Error response for authentication failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (401)","example":401},"Message":{"type":"string","description":"Human-readable description of the authentication error","example":"Authentication required. Please provide valid credentials."}},"required":["StatusCode","Message"],"title":"UnauthorizedError"}}}},"413":{"description":"Payload Too Large - File exceeds maximum size limit","content":{"application/json":{"schema":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

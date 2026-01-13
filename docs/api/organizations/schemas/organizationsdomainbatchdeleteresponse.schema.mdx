@@ -1,0 +1,33 @@
+---
+id: organizationsdomainbatchdeleteresponse
+title: "OrganizationsDomainBatchDeleteResponse"
+description: "Standard response for batch delete operations in the Organizations domain. Returns the count of deleted items, success status, and any validation errors. Used by Organization, OrganizationType, and OrganizationUser batch delete endpoints."
+sidebar_label: "OrganizationsDomainBatchDeleteResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemsDeleted":0,"IsSuccess":true,"Errors":[{"StatusCode":401,"Message":"Attempted to perform an unauthorized operation."}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"OrganizationsDomainBatchDeleteResponse"}
+>
+</Heading>
+
+
+
+Standard response for batch delete operations in the Organizations domain. Returns the count of deleted items, success status, and any validation errors. Used by Organization, OrganizationType, and OrganizationUser batch delete endpoints.
+
+<Schema
+  schema={{"type":"object","description":"Standard response for batch delete operations in the Organizations domain. Returns the count of deleted items, success status, and any validation errors. Used by Organization, OrganizationType, and OrganizationUser batch delete endpoints.","properties":{"ItemsDeleted":{"type":"integer","description":"Number of items deleted."},"IsSuccess":{"type":"boolean","description":"Indicates whether the operation succeeded."},"Errors":{"type":"array","items":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"},"description":"Array of error messages if the operation failed."}},"title":"OrganizationsDomainBatchDeleteResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

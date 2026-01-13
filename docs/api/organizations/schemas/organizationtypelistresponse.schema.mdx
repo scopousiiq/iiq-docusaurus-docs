@@ -1,0 +1,33 @@
+---
+id: organizationtypelistresponse
+title: "OrganizationTypeListResponse"
+description: "Response wrapper for a list of OrganizationTypes."
+sidebar_label: "OrganizationTypeListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":[{"OrganizationTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","IsDeleted":true,"SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Scope":"Global","Name":"string"}],"Paging":{"TotalRows":54343,"PageCount":10869,"PageSize":5,"PageIndex":0},"IsSuccess":true,"Errors":[{"StatusCode":401,"Message":"Attempted to perform an unauthorized operation."}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"OrganizationTypeListResponse"}
+>
+</Heading>
+
+
+
+Response wrapper for a list of OrganizationTypes.
+
+<Schema
+  schema={{"type":"object","description":"Response wrapper for a list of OrganizationTypes.","properties":{"Items":{"type":"array","items":{"type":"object","description":"Represents a type/category for organizations (event venues).","properties":{"OrganizationTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the organization type."},"CreatedDate":{"type":"string","format":"date-time","description":"Date and time the organization type was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"Date and time the organization type was last modified."},"IsDeleted":{"type":"boolean","description":"Indicates if the organization type has been soft-deleted."},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the site this organization type belongs to. Null for global types."},"Scope":{"type":"string","enum":["Global","Site"],"description":"Scope of the organization type - Global or Site-specific."},"Name":{"type":"string","description":"Display name of the organization type."}},"title":"OrganizationType"}},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object"},"IsSuccess":{"type":"boolean"},"Errors":{"type":"array","items":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"}}},"title":"OrganizationTypeListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

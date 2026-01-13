@@ -1,0 +1,33 @@
+---
+id: siteproductworkflowsresponse
+title: "SiteProductWorkflowsResponse"
+description: "Envelope returned when listing workflows per product for a site."
+sidebar_label: "SiteProductWorkflowsResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":0,"Items":[{"WorkflowId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","PromptLocations":true,"PromptUsers":true,"PromptSystems":true,"InitialStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ApprovalTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z"}],"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":0,"ServerName":"string","ProcessId":0,"OperationId":"string","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SiteProductWorkflowsResponse"}
+>
+</Heading>
+
+
+
+Envelope returned when listing workflows per product for a site.
+
+<Schema
+  schema={{"type":"object","description":"Envelope returned when listing workflows per product for a site.","properties":{"ItemCount":{"type":"integer","description":"Number of workflows returned in this response."},"Items":{"type":"array","description":"Collection of workflows mapped to products for the requested site.","items":{"type":"object","description":"Describes the workflow assigned to a specific product at a site.","properties":{"WorkflowId":{"type":"string","format":"uuid","description":"Identifier of the workflow configured for the product at the site."},"SiteId":{"type":"string","format":"uuid","description":"Identifier of the site that owns the workflow-product pairing."},"ProductId":{"type":"string","format":"uuid","description":"Identifier of the licensed product whose tickets use this workflow."},"Name":{"type":"string","description":"Display name of the workflow."},"PromptLocations":{"type":"boolean","description":"Indicates whether the workflow requires the requester to choose a location."},"PromptUsers":{"type":"boolean","description":"Indicates whether the workflow prompts for affected users."},"PromptSystems":{"type":"boolean","description":"Indicates whether the workflow prompts for associated systems or assets."},"InitialStepId":{"type":"string","format":"uuid","description":"Identifier of the initial workflow step used when new tickets are created."},"ApprovalTypeId":{"type":"string","format":"uuid","description":"Identifier of the approval template applied to this workflow, when approvals are required.","nullable":true},"CreatedDate":{"type":"string","format":"date-time","description":"UTC timestamp when the workflow-product pairing was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"UTC timestamp of the last update to the workflow-product pairing."}},"required":["WorkflowId","SiteId","ProductId","Name","PromptLocations","PromptUsers","PromptSystems","InitialStepId","CreatedDate","ModifiedDate"],"title":"SiteProductWorkflowSummary"}},"UserToken":{"type":"string","format":"uuid","description":"Echo of the UserToken header that authenticated the request."},"RequestDate":{"type":"string","format":"date-time","description":"Server-side timestamp indicating when the request was processed."},"ExecutionTime":{"type":"number","description":"Server processing time in milliseconds."},"StatusCode":{"type":"integer","description":"HTTP status code emitted by the service."},"ServerName":{"type":"string","description":"Name of the server instance that fulfilled the request."},"ProcessId":{"type":"integer","description":"Internal process identifier logged by the service."},"OperationId":{"type":"string","description":"Trace identifier correlating this call with server logs."},"Properties":{"type":"object","description":"Additional diagnostic metadata, if any.","additionalProperties":{"type":"string"}}},"required":["ItemCount","Items","StatusCode"],"title":"SiteProductWorkflowsResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

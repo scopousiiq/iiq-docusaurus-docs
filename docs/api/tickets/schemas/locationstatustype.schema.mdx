@@ -1,0 +1,33 @@
+---
+id: locationstatustype
+title: "LocationStatusType"
+description: "Status classification for locations (e.g., Active, Inactive, Under Construction)"
+sidebar_label: "LocationStatusType"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"LocationStatusTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","IsDeleted":true,"CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"LocationStatusType"}
+>
+</Heading>
+
+
+
+Status classification for locations (e.g., Active, Inactive, Under Construction)
+
+<Schema
+  schema={{"type":"object","description":"Status classification for locations (e.g., Active, Inactive, Under Construction)","properties":{"LocationStatusTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the status type"},"Name":{"type":"string","description":"Display name for the status (e.g., 'Active / In Use')"},"IsDeleted":{"type":"boolean","description":"Whether this status type has been soft-deleted"},"CreatedDate":{"type":"string","format":"date-time"},"ModifiedDate":{"type":"string","format":"date-time"}},"required":["LocationStatusTypeId","Name"],"title":"LocationStatusType"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: gettickettimelinerequest
+title: "GetTicketTimelineRequest"
+description: "Request payload for filtering timeline results by activity type. All load flags default to true when not specified."
+sidebar_label: "GetTicketTimelineRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"LoadRevisions":true,"LoadComments":true,"LoadActions":true,"LoadAttachments":false,"LoadParts":false,"LoadWorkflowLogs":true,"LoadRuleExecutionsLogs":false,"LoadSlaTimerLogs":false,"LoadMessagingActivity":false}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetTicketTimelineRequest"}
+>
+</Heading>
+
+
+
+Request payload for filtering timeline results by activity type. All load flags default to true when not specified.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for filtering timeline results by activity type. All load flags default to true when not specified.","properties":{"TicketId":{"type":"string","format":"uuid","description":"Ticket identifier (typically provided in path, included here for completeness)."},"LoadRevisions":{"type":"boolean","default":true,"description":"Include field change revisions in the timeline."},"LoadComments":{"type":"boolean","default":true,"description":"Include comments and notes in the timeline."},"LoadActions":{"type":"boolean","default":true,"description":"Include resolution actions in the timeline."},"LoadAttachments":{"type":"boolean","default":true,"description":"Include attachment-related activities in the timeline."},"LoadParts":{"type":"boolean","default":true,"description":"Include part/inventory usage activities in the timeline."},"LoadWorkflowLogs":{"type":"boolean","default":true,"description":"Include workflow status changes and approvals in the timeline."},"LoadRuleExecutionsLogs":{"type":"boolean","default":true,"description":"Include rule execution logs in the timeline."},"LoadSlaTimerLogs":{"type":"boolean","default":true,"description":"Include SLA timer events in the timeline."},"LoadMessagingActivity":{"type":"boolean","default":true,"description":"Include messaging/conversation activities in the timeline."}},"example":{"LoadRevisions":true,"LoadComments":true,"LoadActions":true,"LoadAttachments":false,"LoadParts":false,"LoadWorkflowLogs":true,"LoadRuleExecutionsLogs":false,"LoadSlaTimerLogs":false,"LoadMessagingActivity":false},"title":"GetTicketTimelineRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

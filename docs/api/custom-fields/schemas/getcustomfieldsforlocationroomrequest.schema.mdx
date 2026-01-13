@@ -1,0 +1,33 @@
+---
+id: getcustomfieldsforlocationroomrequest
+title: "GetCustomFieldsForLocationRoomRequest"
+description: "Request payload for retrieving custom fields applicable to a location room."
+sidebar_label: "GetCustomFieldsForLocationRoomRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"EntityId":"d1e2f3a4-b5c6-7890-abcd-ef1234567890"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetCustomFieldsForLocationRoomRequest"}
+>
+</Heading>
+
+
+
+Request payload for retrieving custom fields applicable to a location room.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for retrieving custom fields applicable to a location room.","properties":{"Entity":{"type":"object","description":"Full LocationRoom object used for filter matching.","properties":{"LocationRoomId":{"type":"string","format":"uuid","description":"Unique identifier of the location room."},"LocationId":{"type":"string","format":"uuid","description":"Parent location identifier."}}},"EntityId":{"type":"string","format":"uuid","description":"UUID of the location room to retrieve custom fields for."},"ForProductId":{"type":"string","format":"uuid","description":"Optional product UUID to override the product context from request headers."}},"example":{"EntityId":"d1e2f3a4-b5c6-7890-abcd-ef1234567890"},"title":"GetCustomFieldsForLocationRoomRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

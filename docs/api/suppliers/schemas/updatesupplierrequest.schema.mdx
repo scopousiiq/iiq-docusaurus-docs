@@ -1,0 +1,33 @@
+---
+id: updatesupplierrequest
+title: "UpdateSupplierRequest"
+description: "Request body for creating or updating a supplier."
+sidebar_label: "UpdateSupplierRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Name":"string","Phone":"string","SupplierNumber":"string","SupplierUrl":"string","ContactName":"string","ContactEmail":"string","AdditionalContactName":"string","AdditionalContactEmail":"string","Description":"string","SupplierTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AddressId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateSupplierRequest"}
+>
+</Heading>
+
+
+
+Request body for creating or updating a supplier.
+
+<Schema
+  schema={{"type":"object","description":"Request body for creating or updating a supplier.","properties":{"Name":{"type":"string","description":"Display name of the supplier."},"Phone":{"type":"string","nullable":true,"description":"Primary phone number."},"SupplierNumber":{"type":"string","nullable":true,"description":"Internal supplier/vendor number."},"SupplierUrl":{"type":"string","nullable":true,"description":"Supplier website URL."},"ContactName":{"type":"string","nullable":true,"description":"Primary contact person name."},"ContactEmail":{"type":"string","nullable":true,"description":"Primary contact email address."},"AdditionalContactName":{"type":"string","nullable":true,"description":"Secondary contact person name."},"AdditionalContactEmail":{"type":"string","nullable":true,"description":"Secondary contact email address."},"Description":{"type":"string","nullable":true,"description":"Description or notes about the supplier."},"SupplierTypeId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the supplier type category."},"AddressId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the supplier's address."}},"title":"UpdateSupplierRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

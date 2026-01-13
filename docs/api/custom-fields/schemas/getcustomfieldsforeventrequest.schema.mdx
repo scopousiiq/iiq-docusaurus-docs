@@ -1,0 +1,33 @@
+---
+id: getcustomfieldsforeventrequest
+title: "GetCustomFieldsForEventRequest"
+description: "Request payload for retrieving custom fields applicable to an event. Similar structure to GetCustomFieldsForAssetRequest but for events."
+sidebar_label: "GetCustomFieldsForEventRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"EntityId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetCustomFieldsForEventRequest"}
+>
+</Heading>
+
+
+
+Request payload for retrieving custom fields applicable to an event. Similar structure to GetCustomFieldsForAssetRequest but for events.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for retrieving custom fields applicable to an event. Similar structure to GetCustomFieldsForAssetRequest but for events.","properties":{"Entity":{"type":"object","description":"Full Event object used for filter matching.","properties":{"EventId":{"type":"string","format":"uuid","description":"Unique identifier of the event."}}},"EntityId":{"type":"string","format":"uuid","description":"UUID of the event to retrieve custom fields for."}},"example":{"EntityId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890"},"title":"GetCustomFieldsForEventRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: shortcut
+title: "Shortcut"
+description: "User shortcut/quick action configuration. Mirrors `Spark.Shared.Models.Shortcut`."
+sidebar_label: "Shortcut"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ShortcutId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","OwnerId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Scope":"All","RuleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ForEntityTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Snippet":"string","FilterSetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Shortcut"}
+>
+</Heading>
+
+
+
+User shortcut/quick action configuration. Mirrors `Spark.Shared.Models.Shortcut`.
+
+<Schema
+  schema={{"type":"object","description":"User shortcut/quick action configuration. Mirrors `Spark.Shared.Models.Shortcut`.","properties":{"ShortcutId":{"type":"string","format":"uuid","description":"Unique identifier for the shortcut."},"OwnerId":{"type":"string","format":"uuid","description":"UUID of the user, role, or team that owns this shortcut (depends on Scope)."},"Name":{"type":"string","description":"Display name for the shortcut."},"Scope":{"type":"string","description":"Visibility scope for the shortcut.","enum":["All","System","Global","Site","App","User","Role","Team"]},"RuleId":{"type":"string","format":"uuid","description":"UUID of the rule that defines this shortcut's behavior."},"ForEntityTypeId":{"type":"string","format":"uuid","description":"UUID of the entity type this shortcut applies to (e.g., Ticket, Asset, User)."},"Snippet":{"type":"string","nullable":true,"description":"Code snippet or configuration for the shortcut action."},"FilterSetId":{"type":"string","format":"uuid","nullable":true,"description":"Optional UUID of an associated filter set."}},"title":"Shortcut"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

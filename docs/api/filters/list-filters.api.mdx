@@ -1,0 +1,73 @@
+---
+id: list-filters
+title: "Get Filters"
+description: "Returns the full catalog of filter definitions (facets) available to the tenant, including keys, labels, UI control types, and metadata used when building filter UIs or search payloads. Use this endpoint when you need a complete sync across entity types, then narrow the catalog with [GET /api/v1.0/filters/for/entitytype/{entityTypeId}](/docs/api/filters/list-filters-for-entity-type) for entity-specific pickers."
+sidebar_label: "Get Filters"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/filters/filters-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Filters"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/filters"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the full catalog of filter definitions (facets) available to the tenant, including keys, labels, UI control types, and metadata used when building filter UIs or search payloads. Use this endpoint when you need a complete sync across entity types, then narrow the catalog with [GET /api/v1.0/filters/for/entitytype/\{entityTypeId\}](/docs/api/filters/list-filters-for-entity-type) for entity-specific pickers.
+
+**Prerequisites**
+1. None.
+
+**Workflow Example**
+1. Call this endpoint to cache all available filters for the tenant.
+2. For a specific entity type, call [GET /api/v1.0/filters/for/entitytype/\{entityTypeId\}](/docs/api/filters/list-filters-for-entity-type) and match by `FilterId` or `Key`.
+3. Use the selected filter keys in search requests, view definitions, or rule conditions.
+
+**Minimal Required Fields**: None.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Success - Request completed successfully","content":{"application/json":{"schema":{"type":"object","title":"GenericObject"}}}},"401":{"description":"Unauthorized - Authentication required or authentication credentials are invalid","content":{"application/json":{"schema":{"type":"object","description":"Error response for authentication failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (401)","example":401},"Message":{"type":"string","description":"Human-readable description of the authentication error","example":"Authentication required. Please provide valid credentials."}},"required":["StatusCode","Message"],"title":"UnauthorizedError"}}}},"429":{"description":"Too Many Requests - Rate limit exceeded","content":{"application/json":{"schema":{"type":"object","description":"Error response when rate limit is exceeded","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (429)","example":429},"Message":{"type":"string","description":"Human-readable description of the rate limit error","example":"Rate limit exceeded. Please try again later."},"RetryAfter":{"type":"integer","description":"Number of seconds to wait before retrying","example":60}},"required":["StatusCode","Message"],"title":"RateLimitError"}}}},"500":{"description":"Internal Server Error - An unexpected error occurred on the server","content":{"application/json":{"schema":{"type":"object","description":"Error response for internal server errors","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (500)","example":500},"Message":{"type":"string","description":"Human-readable description of the server error","example":"An internal server error occurred. Please try again later."},"RequestId":{"type":"string","description":"Unique request identifier for troubleshooting","example":"req_1234567890abcdef"}},"required":["StatusCode","Message"],"title":"InternalServerError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

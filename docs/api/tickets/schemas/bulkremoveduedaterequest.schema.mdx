@@ -1,0 +1,33 @@
+---
+id: bulkremoveduedaterequest
+title: "BulkRemoveDueDateRequest"
+description: "Request payload for bulk removing ticket due dates."
+sidebar_label: "BulkRemoveDueDateRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Request":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"BulkRemoveDueDateRequest"}
+>
+</Heading>
+
+
+
+Request payload for bulk removing ticket due dates.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for bulk removing ticket due dates.","properties":{"TicketIds":{"type":"array","description":"Array of ticket identifiers to clear due dates from.","items":{"type":"string","format":"uuid"},"minItems":1},"Request":{"type":"object","description":"Empty object or due date package with null values.","nullable":true}},"required":["TicketIds"],"title":"BulkRemoveDueDateRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

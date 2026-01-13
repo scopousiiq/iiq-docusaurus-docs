@@ -1,0 +1,33 @@
+---
+id: assetaggregationcacheentry
+title: "AssetAggregationCacheEntry"
+description: "Aggregated cost values for a set of assets"
+sidebar_label: "AssetAggregationCacheEntry"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TotalPurchasePrice":0,"TotalReplacementCost":0,"TotalCurrentValue":0,"TotalCostToDate":0,"AssetCount":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetAggregationCacheEntry"}
+>
+</Heading>
+
+
+
+Aggregated cost values for a set of assets
+
+<Schema
+  schema={{"type":"object","description":"Aggregated cost values for a set of assets","properties":{"TotalPurchasePrice":{"type":"number","format":"decimal","nullable":true,"description":"Sum of purchase prices"},"TotalReplacementCost":{"type":"number","format":"decimal","nullable":true,"description":"Sum of replacement costs"},"TotalCurrentValue":{"type":"number","format":"decimal","nullable":true,"description":"Sum of current valuations"},"TotalCostToDate":{"type":"number","format":"decimal","nullable":true,"description":"Sum of total costs to date"},"AssetCount":{"type":"integer","description":"Number of assets in the aggregation"}},"title":"AssetAggregationCacheEntry"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

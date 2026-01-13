@@ -1,0 +1,33 @@
+---
+id: completeexternaluserregistrationrequest
+title: "CompleteExternalUserRegistrationRequest"
+description: "Request to complete external user registration. Mirrors `Spark.Shared.Models.Requests.CompleteExternalUserRegistrationRequest`. Used after email verification."
+sidebar_label: "CompleteExternalUserRegistrationRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"UserTokenId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","VerificationCode":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CompleteExternalUserRegistrationRequest"}
+>
+</Heading>
+
+
+
+Request to complete external user registration. Mirrors `Spark.Shared.Models.Requests.CompleteExternalUserRegistrationRequest`. Used after email verification.
+
+<Schema
+  schema={{"type":"object","description":"Request to complete external user registration. Mirrors `Spark.Shared.Models.Requests.CompleteExternalUserRegistrationRequest`. Used after email verification.","properties":{"UserTokenId":{"type":"string","format":"uuid","description":"Token identifier received from the RegisterExternalUserResponse or verification email."},"VerificationCode":{"type":"string","description":"Verification code from the email sent to the user."}},"title":"CompleteExternalUserRegistrationRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

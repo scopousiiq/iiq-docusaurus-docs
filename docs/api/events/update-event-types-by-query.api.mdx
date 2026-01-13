@@ -1,0 +1,78 @@
+---
+id: update-event-types-by-query
+title: "Update event types by query"
+description: "Applies a batch update to all event types matched by the provided filters. The request includes both the `Filters` list and an `Update` object describing the fields to change."
+sidebar_label: "Update event types by query"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "put api-method"
+info_path: docs/api/events/events-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update event types by query"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/api/v1.0/events/types/query/update"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Applies a batch update to all event types matched by the provided filters. The request includes both the `Filters` list and an `Update` object describing the fields to change.
+
+**Workflow Example**
+1. Preview target types: [POST /api/v1.0/events/types/query](/docs/api/events/get-event-types-by-query-post) with the same filters.
+2. Build `UpdateEventTypesRequest` with `Filters` and an `Update` payload.
+3. Submit update: [PUT /api/v1.0/events/types/query/update](/docs/api/events/update-event-types-by-query).
+
+**Minimal Required Fields**: `Filters` and `Update` in the request body.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","description":"Request model for batch updating event types by query.","properties":{"Filters":{"type":"array","items":{"type":"object","description":"Filter condition for search/list operations. Based on C# `DataFilter` from `Spark.Shared.Models.DataFramework`. Supports both simple filters and nested filter groups.","properties":{"Facet":{"type":"string","description":"Field name or facet to filter on (e.g., 'Status', 'LocationId', 'CreatedDate')"},"Ids":{"type":"array","nullable":true,"items":{"type":"string","format":"uuid"},"description":"Array of UUIDs to filter by (for ID-based facets)"},"Values":{"type":"array","nullable":true,"items":{"type":"string"},"description":"Array of string values to filter by"},"Op":{"allOf":[{"type":"string","description":"Filter operations for DataFilter queries. Based on C# `DataFilterOperations` enum from `Spark.Shared.Enums`.","enum":["None","Equal","Greater","Less","GreaterOrEqual","LessOrEqual","StartsWith","EndsWith","Contains","NotEqual","NotGreater","NotLess","NotGreaterOrEqual","NotLessOrEqual"],"x-enum-descriptions":{"None":"No operation specified","Equal":"Equals (eq)","Greater":"Greater than (gt)","Less":"Less than (lt)","GreaterOrEqual":"Greater than or equal (ge)","LessOrEqual":"Less than or equal (le)","StartsWith":"String starts with","EndsWith":"String ends with","Contains":"String contains","NotEqual":"Not equal (ne)","NotGreater":"Not greater than (ng)","NotLess":"Not less than (nl)","NotGreaterOrEqual":"Not greater than or equal (nge)","NotLessOrEqual":"Not less than or equal (nle)"},"title":"DataFilterOperations"}],"description":"Filter operation to apply"},"CustomFieldTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Custom field type ID (when filtering on custom fields)"},"ComplexEditorPath":{"type":"string","nullable":true,"description":"JSON path for filtering within complex editor values"},"Items":{"type":"array","nullable":true,"items":"circular(DataFilter)","description":"Nested filter conditions for complex AND/OR queries"}},"required":["Facet"],"title":"DataFilter"},"description":"Filters to select event types to update."},"Update":{"allOf":[{"type":"object","description":"Event type/category for categorizing events.","properties":{"EventTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the event type."},"CreatedDate":{"type":"string","format":"date-time","description":"Date when the event type was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"Date when the event type was last modified."},"IsDeleted":{"type":"boolean","description":"Indicates if the event type is deleted (soft delete)."},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site scope for site-specific event types."},"Scope":{"type":"string","enum":["All","System","Global","Site","App","User","Role","Team"],"description":"Visibility scope of the event type."},"Name":{"type":"string","description":"Display name of the event type."},"Icon":{"type":"string","description":"Icon identifier for the event type."}},"title":"EventType"}],"description":"Event type data to apply to matched items."}},"title":"UpdateEventTypesRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Items updated.","content":{"application/json":{"schema":{"type":"object","description":"Response after updating multiple event types.","properties":{"ItemIds":{"type":"array","items":{"type":"string","format":"uuid"}},"IsSuccess":{"type":"boolean"},"Errors":{"type":"array","items":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"}}},"title":"EventTypeBatchUpdateResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,33 @@
+---
+id: filetype
+title: "FileType"
+description: "File type classification enum from Spark.Shared.Enums.FileTypes. Determines how the file is categorized and handled by the system."
+sidebar_label: "FileType"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: 6
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"FileType"}
+>
+</Heading>
+
+
+
+File type classification enum from Spark.Shared.Enums.FileTypes. Determines how the file is categorized and handled by the system.
+
+<Schema
+  schema={{"type":"integer","description":"File type classification enum from Spark.Shared.Enums.FileTypes. Determines how the file is categorized and handled by the system.","oneOf":[{"enum":[0],"title":"Other","description":"Default file type for uncategorized files"},{"enum":[1],"title":"Photo","description":"User profile photo or avatar image"},{"enum":[2],"title":"Logo","description":"Organization or location logo"},{"enum":[3],"title":"Floorplan","description":"Location floorplan or layout image"},{"enum":[4],"title":"Icon","description":"Small icon or pictogram"},{"enum":[5],"title":"AssetImage","description":"Image associated with an asset"},{"enum":[6],"title":"TicketAttachment","description":"File attached to a ticket"},{"enum":[7],"title":"KnowledgeBaseAttachment","description":"File attached to a knowledge base article"},{"enum":[8],"title":"Import","description":"Data import file (CSV, Excel, etc.)"},{"enum":[9],"title":"Export","description":"Data export file"},{"enum":[10],"title":"Report","description":"Generated report file"},{"enum":[11],"title":"CustomFieldFile","description":"File uploaded via a custom field"},{"enum":[12],"title":"Signature","description":"Electronic signature image"},{"enum":[13],"title":"FormSubmissionAttachment","description":"File attached to a form submission"}],"default":0,"example":6,"title":"FileType"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

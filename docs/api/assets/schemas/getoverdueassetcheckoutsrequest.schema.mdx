@@ -1,0 +1,33 @@
+---
+id: getoverdueassetcheckoutsrequest
+title: "GetOverdueAssetCheckoutsRequest"
+description: "Filters to retrieve overdue or soon-to-be-overdue checkout records."
+sidebar_label: "GetOverdueAssetCheckoutsRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"NumberOfDaysOverdueFilters":[{"FilterId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Exclude":true,"Value":"string","CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ComplexEditorPath":"string","GroupIndex":0}],"NumberOfDaysUntilOverdueFilters":[{"FilterId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Exclude":true,"Value":"string","CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ComplexEditorPath":"string","GroupIndex":0}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetOverdueAssetCheckoutsRequest"}
+>
+</Heading>
+
+
+
+Filters to retrieve overdue or soon-to-be-overdue checkout records.
+
+<Schema
+  schema={{"type":"object","description":"Filters to retrieve overdue or soon-to-be-overdue checkout records.","properties":{"NumberOfDaysOverdueFilters":{"type":"array","items":{"type":"object","description":"Base structure for a filter value used in save requests.","properties":{"FilterId":{"type":"string","format":"uuid","description":"UUID of the filter definition."},"Exclude":{"type":"boolean","description":"When true, excludes the specified value."},"Value":{"type":"string","description":"The filter value (expression or literal)."},"CustomFieldTypeId":{"type":"string","format":"uuid","description":"UUID of the custom field type if applicable.","nullable":true},"ComplexEditorPath":{"type":"string","description":"Path to the complex editor if used.","nullable":true},"GroupIndex":{"type":"integer","description":"Grouping index for OR logic."}},"title":"FilterValue"},"description":"Filters specifying minimum days overdue thresholds."},"NumberOfDaysUntilOverdueFilters":{"type":"array","items":{"type":"object","description":"Base structure for a filter value used in save requests.","properties":{"FilterId":{"type":"string","format":"uuid","description":"UUID of the filter definition."},"Exclude":{"type":"boolean","description":"When true, excludes the specified value."},"Value":{"type":"string","description":"The filter value (expression or literal)."},"CustomFieldTypeId":{"type":"string","format":"uuid","description":"UUID of the custom field type if applicable.","nullable":true},"ComplexEditorPath":{"type":"string","description":"Path to the complex editor if used.","nullable":true},"GroupIndex":{"type":"integer","description":"Grouping index for OR logic."}},"title":"FilterValue"},"description":"Filters specifying days remaining until overdue."}},"title":"GetOverdueAssetCheckoutsRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

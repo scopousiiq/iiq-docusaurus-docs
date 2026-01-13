@@ -1,0 +1,85 @@
+---
+id: get-user-subtask-groups
+title: "Get subtask groups for a user"
+description: "Retrieves all subtask groups owned by a specific user. Use this endpoint to view another user's grouped subtasks for management or visibility purposes."
+sidebar_label: "Get subtask groups for a user"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/tickets/tickets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get subtask groups for a user"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/subtasks/{userId}/groups"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves all subtask groups owned by a specific user. Use this endpoint to view another user's grouped subtasks for management or visibility purposes.
+
+**Prerequisites**
+1. **userId** – Use [POST /api/v1.0/search](/docs/api/users/search-users) to find users and extract `Item.Users[].UserId`.
+
+**Workflow Example**
+1. Find user: [POST /api/v1.0/search](/docs/api/search/global-search) with user criteria → extract `Item.Users[0].UserId`
+2. Get groups: [GET /api/v1.0/subtasks/\{userId\}/groups](/docs/api/tickets/get-user-subtask-groups)
+3. View group contents: For each group, use [GET /api/v1.0/subtasks/\{id\}](/docs/api/tickets/get-subtasks-for-ticket) to see member subtasks
+
+**Note**: Requires appropriate permissions to view another user's subtask groups. For your own groups, use [GET /api/v1.0/subtasks/my/groups](/docs/api/tickets/get-my-subtask-groups) instead.
+
+**Related Endpoints**
+- [GET /api/v1.0/subtasks/my/groups](/docs/api/tickets/get-my-subtask-groups) – View your own groups
+- [POST /api/v1.0/subtasks/group/new](/docs/api/tickets/create-subtask-group) – Create a new group
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"userId","in":"path","required":true,"description":"User identifier.","schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of subtask groups.","content":{"application/json":{"schema":{"type":"object","description":"Response containing a list of subtask groups.","properties":{"ItemCount":{"type":"integer","description":"Number of subtask groups returned."},"Items":{"type":"array","description":"Collection of subtask groups.","items":{"type":"object","description":"User-defined grouping container for ticket subtasks.","properties":{"SubtaskGroupId":{"type":"string","format":"uuid","description":"Identifier for the subtask group.","example":"33333333-3333-4333-8333-333333333333"},"OwnerId":{"type":"string","format":"uuid","description":"User identifier that owns the group.","example":"bcaf8610-0a3d-4f08-b1ff-1d951f63d901"},"Name":{"type":"string","description":"Group name shown in the UI.","example":"Chromebook roll-out"},"Scope":{"type":"string","description":"Scope enum value (site, district, etc.) serialized by the API."},"ProductId":{"type":"string","format":"uuid","description":"Product identifier that owns the group.","example":"88df910c-91aa-e711-80c2-0004ffa00010"},"SiteId":{"type":"string","format":"uuid","description":"Site identifier that owns the group.","example":"bb6cece8-e4f4-e511-a789-005056bb000e"},"SubtaskList":{"type":"array","description":"Optional embedded list of subtasks in this group.","nullable":true,"items":{"type":"object","description":"Lightweight list item representing a subtask entry inside a group.","properties":{"Name":{"type":"string","description":"Subtask subject or display name.","example":"Contact requestor for more details"}},"title":"SubtaskGroupListItem"}}},"required":["SubtaskGroupId","OwnerId","Name","ProductId","SiteId"],"title":"SubtaskGroup"}},"UserToken":{"type":"string","format":"uuid"},"RequestDate":{"type":"string","format":"date-time"},"StatusCode":{"type":"integer","example":200}},"required":["ItemCount","Items","RequestDate","StatusCode"],"title":"SubtaskGroupListResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

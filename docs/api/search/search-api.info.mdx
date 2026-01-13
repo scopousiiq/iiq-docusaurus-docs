@@ -1,0 +1,221 @@
+---
+id: search-api
+title: "Search API"
+description: "# Search API"
+sidebar_label: Introduction
+sidebar_position: 0
+hide_title: true
+custom_edit_url: null
+---
+
+import ApiLogo from "@theme/ApiLogo";
+import Heading from "@theme/Heading";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+import Export from "@theme/ApiExplorer/Export";
+
+<span
+  className={"theme-doc-version-badge badge badge--secondary"}
+  children={"Version: 1.0.0"}
+>
+</span>
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Search API"}
+>
+</Heading>
+
+
+
+# Search API
+
+The Search API provides advanced cross-entity search capabilities with faceting support in IncidentIQ.
+
+## Overview
+
+The Search API enables powerful searches across multiple entity types simultaneously. It supports full-text search, faceted filtering, and relevance ranking.
+
+:::info
+**What you can do with the Search API**
+:::
+
+>
+> - **Search across entities** including tickets, assets, users, and knowledge articles
+> - **Use faceted search** for refined filtering
+> - **Get unified search results** from a single endpoint
+
+## Common Use Cases
+
+### Universal Search
+Build search interfaces that find results across all entity types.
+
+### User Lookup
+Quickly find users by name, email, or other attributes.
+
+### Knowledge Search
+Search help articles and documentation.
+
+## Quick Start
+
+### Search Across Entities
+
+```json http
+{
+  "method": "POST",
+  "url": "https://your-site.incidentiq.com/api/v1.0/search",
+  "headers": {
+    "Authorization": "Bearer YOUR_TOKEN",
+    "SiteId": "YOUR_SITE_ID",
+    "Client": "ApiClient",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "Query": "chromebook screen",
+    "Types": ["Ticket", "Asset", "KnowledgeArticle"]
+  }
+}
+```
+
+:::info
+**Search Types**
+:::
+
+>
+> The `Types` parameter accepts: `Ticket`, `Asset`, `User`, `KnowledgeArticle`, `Location`, and more. Omit to search all types.
+
+## Related APIs
+
+- [Tickets](/docs/api/tickets/tickets-api) - Ticket-specific search
+- [Assets](/docs/api/assets/assets-api) - Asset-specific search
+- [Users](/docs/api/users/users-api) - User-specific search
+
+
+<div
+  style={{"marginBottom":"2rem"}}
+>
+  <Heading
+    id={"authentication"}
+    as={"h2"}
+    className={"openapi-tabs__heading"}
+    children={"Authentication"}
+  >
+  </Heading><SchemaTabs
+    className={"openapi-tabs__security-schemes"}
+  >
+    <TabItem
+      label={"HTTP: Bearer Auth"}
+      value={"bearerAuth"}
+    >
+      
+      
+      JWT token from Administration > Developer Tools
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                http
+              </td>
+            </tr><tr>
+              <th>
+                HTTP Authorization Scheme:
+              </th><td>
+                bearer
+              </td>
+            </tr><tr>
+              <th>
+                Bearer format:
+              </th><td>
+                JWT
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem><TabItem
+      label={"API Key: siteId"}
+      value={"siteId"}
+    >
+      
+      
+      Your site identifier (UUID)
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                apiKey
+              </td>
+            </tr><tr>
+              <th>
+                Header parameter name:
+              </th><td>
+                SiteId
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem><TabItem
+      label={"API Key: client"}
+      value={"client"}
+    >
+      
+      
+      Must be "ApiClient"
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                apiKey
+              </td>
+            </tr><tr>
+              <th>
+                Header parameter name:
+              </th><td>
+                Client
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem>
+  </SchemaTabs>
+</div><div
+  style={{"display":"flex","flexDirection":"column","marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    Contact
+  </h3><span>
+    IncidentIQ Developer Support: [api-support@incidentiq.com](mailto:api-support@incidentiq.com)
+  </span><span>
+    URL: [https://stoplight.incidentiq.com](https://stoplight.incidentiq.com)
+  </span>
+</div><div
+  style={{"marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    License
+  </h3><a
+    href={"https://www.incidentiq.com/terms"}
+  >
+    Proprietary
+  </a>
+</div>
+      

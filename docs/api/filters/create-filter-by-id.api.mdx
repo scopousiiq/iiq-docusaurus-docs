@@ -1,0 +1,82 @@
+---
+id: create-filter-by-id
+title: "Get Filter Value Labels"
+description: "Returns display labels for a list of raw filter values associated with a specific filter definition. Use this when saved filters or view definitions store raw values (IDs, enums, codes) and you need the human-readable labels for UI chips, exports, or audit views."
+sidebar_label: "Get Filter Value Labels"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/filters/filters-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Filter Value Labels"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/filters/label/{filterId}/values"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns display labels for a list of raw filter values associated with a specific filter definition. Use this when saved filters or view definitions store raw values (IDs, enums, codes) and you need the human-readable labels for UI chips, exports, or audit views.
+
+**Prerequisites**
+1. **filterId** - Use [GET /api/v1.0/filters/for/entitytype/\{entityTypeId\}](/docs/api/filters/list-filters-for-entity-type) and extract `Items[].FilterId` for the facet you are labeling.
+2. **Values** - Collect raw values from a saved filter set or view definition (for example, [GET /api/v1.0/filters/sets/\{filterId\}/values](/docs/api/filters/get-filter-set-values) or [GET /api/v1.0/tickets/views/\{viewId\}](/docs/api/tickets/get-ticket-view)).
+
+**Workflow Example**
+1. Identify the filter definition for the facet you need to label.
+2. Gather the stored raw values from a view or filter set.
+3. Submit the values to [POST /api/v1.0/filters/label/\{filterId\}/values](/docs/api/filters/create-filter-by-id) and render the returned labels.
+
+**Minimal Required Fields**: filterId (path) and a body array of values.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"filterId","in":"path","required":true,"schema":{"type":"string","format":"uuid"},"description":"The filterId parameter"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Success - Request completed successfully","content":{"application/json":{"schema":{"type":"object","title":"GenericObject"}}}},"400":{"description":"Bad Request - Invalid input data or validation errors","content":{"application/json":{"schema":{"type":"object","description":"Detailed validation error information for bad request responses","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (400)","example":400},"Message":{"type":"string","description":"Human-readable description of the validation error","example":"Invalid request data"},"Errors":{"type":"object","description":"Field-specific validation errors","additionalProperties":{"type":"array","items":{"type":"string"}},"example":{"Subject":["Subject is required"],"IssueId":["IssueId must be a valid UUID"]}}},"required":["StatusCode","Message"],"title":"ValidationError"}}}},"401":{"description":"Unauthorized - Authentication required or authentication credentials are invalid","content":{"application/json":{"schema":{"type":"object","description":"Error response for authentication failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (401)","example":401},"Message":{"type":"string","description":"Human-readable description of the authentication error","example":"Authentication required. Please provide valid credentials."}},"required":["StatusCode","Message"],"title":"UnauthorizedError"}}}},"403":{"description":"Forbidden - Insufficient permissions to perform this operation","content":{"application/json":{"schema":{"type":"object","description":"Error response for authorization/permission failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (403)","example":403},"Message":{"type":"string","description":"Human-readable description of the authorization error","example":"You do not have permission to perform this action"}},"required":["StatusCode","Message"],"title":"ForbiddenError"}}}},"429":{"description":"Too Many Requests - Rate limit exceeded","content":{"application/json":{"schema":{"type":"object","description":"Error response when rate limit is exceeded","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (429)","example":429},"Message":{"type":"string","description":"Human-readable description of the rate limit error","example":"Rate limit exceeded. Please try again later."},"RetryAfter":{"type":"integer","description":"Number of seconds to wait before retrying","example":60}},"required":["StatusCode","Message"],"title":"RateLimitError"}}}},"500":{"description":"Internal Server Error - An unexpected error occurred on the server","content":{"application/json":{"schema":{"type":"object","description":"Error response for internal server errors","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (500)","example":500},"Message":{"type":"string","description":"Human-readable description of the server error","example":"An internal server error occurred. Please try again later."},"RequestId":{"type":"string","description":"Unique request identifier for troubleshooting","example":"req_1234567890abcdef"}},"required":["StatusCode","Message"],"title":"InternalServerError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

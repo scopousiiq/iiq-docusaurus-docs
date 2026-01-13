@@ -1,0 +1,33 @@
+---
+id: ticketundeleteresponse
+title: "TicketUndeleteResponse"
+description: "Response returned when a ticket is successfully restored (undeleted)."
+sidebar_label: "TicketUndeleteResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Uid":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8","IsSuccess":true,"Message":"string","UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","StatusCode":200}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketUndeleteResponse"}
+>
+</Heading>
+
+
+
+Response returned when a ticket is successfully restored (undeleted).
+
+<Schema
+  schema={{"type":"object","description":"Response returned when a ticket is successfully restored (undeleted).","properties":{"Uid":{"type":"string","format":"uuid","description":"UUID of the restored ticket","example":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8"},"IsSuccess":{"type":"boolean","description":"Indicates whether the operation succeeded","example":true},"Message":{"type":"string","description":"Optional message about the operation","nullable":true},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated user token"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the request was processed"},"StatusCode":{"type":"integer","description":"HTTP status code mirrored in the response body","example":200}},"required":["Uid","IsSuccess","StatusCode"],"title":"TicketUndeleteResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

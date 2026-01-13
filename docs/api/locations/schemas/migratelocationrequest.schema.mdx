@@ -1,0 +1,33 @@
+---
+id: migratelocationrequest
+title: "MigrateLocationRequest"
+description: "Request payload for migrating assets, tickets, users, and parts from one location to another. Used when decommissioning or consolidating locations."
+sidebar_label: "MigrateLocationRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","NewAssetLocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","NewTicketLocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","NewUserLocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","NewPartLocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"MigrateLocationRequest"}
+>
+</Heading>
+
+
+
+Request payload for migrating assets, tickets, users, and parts from one location to another. Used when decommissioning or consolidating locations.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for migrating assets, tickets, users, and parts from one location to another. Used when decommissioning or consolidating locations.","properties":{"LocationId":{"type":"string","format":"uuid","description":"The source location ID from which entities will be migrated"},"NewAssetLocationId":{"type":"string","format":"uuid","nullable":true,"description":"Target location ID for migrating assets. If null, assets will not be migrated."},"NewTicketLocationId":{"type":"string","format":"uuid","nullable":true,"description":"Target location ID for migrating tickets. If null, tickets will not be migrated."},"NewUserLocationId":{"type":"string","format":"uuid","nullable":true,"description":"Target location ID for migrating users. If null, users will not be migrated."},"NewPartLocationId":{"type":"string","format":"uuid","nullable":true,"description":"Target location ID for migrating parts/inventory. If null, parts will not be migrated."}},"required":["LocationId"],"title":"MigrateLocationRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

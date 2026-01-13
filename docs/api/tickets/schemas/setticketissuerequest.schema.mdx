@@ -1,0 +1,33 @@
+---
+id: setticketissuerequest
+title: "SetTicketIssueRequest"
+description: "Request payload for changing a ticket's issue type/category."
+sidebar_label: "SetTicketIssueRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketId":"260b8773-dcad-f011-8e61-000d3a7bb518","IssueId":"b87f2fbb-4db7-e611-80ff-000c29ab80b0"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SetTicketIssueRequest"}
+>
+</Heading>
+
+
+
+Request payload for changing a ticket's issue type/category.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for changing a ticket's issue type/category.","properties":{"TicketId":{"type":"string","format":"uuid","description":"Identifier of the ticket to update. Must match the `ticketId` path parameter.","example":"260b8773-dcad-f011-8e61-000d3a7bb518"},"IssueId":{"type":"string","format":"uuid","description":"New issue type identifier to assign to the ticket. Obtain valid values from GET /api/v1.0/issues.","example":"b87f2fbb-4db7-e611-80ff-000c29ab80b0","x-obtained-from":{"operationId":"listIssues","endpoint":"GET /api/v1.0/issues","responseField":"Items[].IssueId"}}},"required":["TicketId","IssueId"],"example":{"TicketId":"260b8773-dcad-f011-8e61-000d3a7bb518","IssueId":"b87f2fbb-4db7-e611-80ff-000c29ab80b0"},"title":"SetTicketIssueRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

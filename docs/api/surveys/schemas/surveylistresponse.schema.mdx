@@ -1,0 +1,33 @@
+---
+id: surveylistresponse
+title: "SurveyListResponse"
+description: "Paginated list of surveys."
+sidebar_label: "SurveyListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":[{"SurveyId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","Name":"string","Intro":"string","IsActive":true,"ExpirationInDays":0,"RemindOnDays":[0],"Questions":[{"SurveyQuestionId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SurveyQuestionTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Question":"string","Response":"string","IsRequired":true}]}],"Paging":{"TotalRows":54343,"PageCount":10869,"PageSize":5,"PageIndex":0},"IsSuccess":true,"Message":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SurveyListResponse"}
+>
+</Heading>
+
+
+
+Paginated list of surveys.
+
+<Schema
+  schema={{"type":"object","description":"Paginated list of surveys.","properties":{"Item":{"type":"array","items":{"type":"object","description":"A satisfaction survey that can be assigned to users after ticket resolution.","properties":{"SurveyId":{"type":"string","format":"uuid","description":"Unique identifier for the survey."},"ProductId":{"type":"string","format":"uuid","description":"Product this survey belongs to."},"SiteId":{"type":"string","format":"uuid","description":"Site this survey is associated with."},"CreatedDate":{"type":"string","format":"date-time","description":"When the survey was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"When the survey was last modified."},"Name":{"type":"string","description":"Display name of the survey."},"Intro":{"type":"string","nullable":true,"description":"Introductory text shown to users before the survey questions."},"IsActive":{"type":"boolean","description":"Whether the survey is currently active and can be assigned."},"ExpirationInDays":{"type":"integer","nullable":true,"description":"Number of days after assignment before the survey expires."},"RemindOnDays":{"type":"array","nullable":true,"items":{"type":"integer"},"description":"Days after assignment when reminder notifications are sent (e.g., [1, 3, 7])."},"Questions":{"type":"array","nullable":true,"items":{"type":"object","description":"A question within a survey, including its type and response when used in survey responses.","properties":{"SurveyQuestionId":{"type":"string","format":"uuid","description":"Unique identifier for the question."},"SurveyQuestionTypeId":{"type":"string","format":"uuid","description":"Type of question (e.g., text, rating, multiple choice)."},"Question":{"type":"string","description":"The question text displayed to the user."},"Response":{"type":"string","nullable":true,"description":"The user's response to this question (populated in survey responses)."},"IsRequired":{"type":"boolean","description":"Whether this question must be answered to submit the survey."}},"title":"SurveyQuestion"},"description":"List of questions included in this survey."}},"title":"Survey"}},"Paging":{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"},"IsSuccess":{"type":"boolean"},"Message":{"type":"string","nullable":true}},"title":"SurveyListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

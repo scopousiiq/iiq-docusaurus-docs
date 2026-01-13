@@ -1,0 +1,33 @@
+---
+id: responselog
+title: "ResponseLog"
+description: "Diagnostic log entry emitted during request processing."
+sidebar_label: "ResponseLog"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Type":"string","Message":"string","ExecutionTime":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ResponseLog"}
+>
+</Heading>
+
+
+
+Diagnostic log entry emitted during request processing.
+
+<Schema
+  schema={{"type":"object","description":"Diagnostic log entry emitted during request processing.","properties":{"Type":{"type":"string","description":"Log type classification (Info, Warning, Error, etc.)"},"Message":{"type":"string","description":"Human-readable log message"},"ExecutionTime":{"type":"number","format":"double","description":"Execution time in milliseconds for this log entry"}},"title":"ResponseLog"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

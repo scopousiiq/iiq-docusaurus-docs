@@ -1,0 +1,33 @@
+---
+id: tagcreateresponse
+title: "TagCreateResponse"
+description: "Response envelope for tag creation operations."
+sidebar_label: "TagCreateResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Id":0,"Uid":"5c61a623-ef84-f011-b484-002248538048","Item":{"SampleKey":"SampleValue"},"Message":null,"UserToken":"5c61a623-ef84-f011-b484-002248538048","RequestDate":"2025-01-15T14:22:13.480Z","ExecutionTime":92.314,"StatusCode":201,"ServerName":"spark-assets-6b8676c76c-5tzm6","ProcessId":1,"OperationId":"exampleOperation","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TagCreateResponse"}
+>
+</Heading>
+
+
+
+Response envelope for tag creation operations.
+
+<Schema
+  schema={{"type":"object","description":"Response envelope for tag creation operations.","allOf":[{"type":"object","description":"Command-style envelope returned after successfully creating a resource.","properties":{"Id":{"type":"integer","description":"Legacy numeric identifier returned for parity with ItemCreateResponse.","example":0},"Uid":{"type":"string","format":"uuid","description":"Server-generated correlation identifier for the command execution.","example":"5c61a623-ef84-f011-b484-002248538048"},"Item":{"type":"object","description":"Payload describing the resource that was created. The exact structure depends on the endpoint.","nullable":true,"additionalProperties":true},"Message":{"type":"string","description":"Optional informational message returned by the service.","nullable":true},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated session identifier that executed the call.","example":"5c61a623-ef84-f011-b484-002248538048"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request.","example":"2025-01-15T14:22:13.480Z"},"ExecutionTime":{"type":"number","description":"Server-side execution time in milliseconds.","example":92.314},"StatusCode":{"type":"integer","description":"HTTP status code mirrored inside the envelope.","example":201},"ServerName":{"type":"string","description":"Name of the application node that processed the request.","example":"spark-assets-6b8676c76c-5tzm6"},"ProcessId":{"type":"integer","description":"Internal process identifier used for diagnostics.","example":1},"OperationId":{"type":"string","description":"Trace identifier emitted for log correlation.","example":"exampleOperation"},"Properties":{"type":"object","description":"Additional metadata emitted by the platform.","additionalProperties":true}},"required":["Item","UserToken","RequestDate","ExecutionTime","StatusCode","ServerName","ProcessId"],"example":{"Id":0,"Uid":"5c61a623-ef84-f011-b484-002248538048","Item":{"SampleKey":"SampleValue"},"Message":null,"UserToken":"5c61a623-ef84-f011-b484-002248538048","RequestDate":"2025-01-15T14:22:13.480Z","ExecutionTime":92.314,"StatusCode":201,"ServerName":"spark-assets-6b8676c76c-5tzm6","ProcessId":1,"OperationId":"exampleOperation","Properties":{}},"title":"ItemCreateResponse"}],"properties":{"Item":{"allOf":[{"type":"object","properties":{"TagId":{"type":"string","format":"uuid"},"Name":{"type":"string","description":"Tag name"},"TagTypeId":{"type":"integer"},"CreatedDate":{"type":"string","format":"date-time"},"ModifiedDate":{"type":"string","format":"date-time"},"IsDeleted":{"type":"boolean"},"Scope":{"type":"string"}},"required":["TagId","Name","TagTypeId","IsDeleted","Scope"],"title":"Tag"}],"description":"The created tag"}},"title":"TagCreateResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

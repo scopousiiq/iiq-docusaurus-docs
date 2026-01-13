@@ -1,0 +1,82 @@
+---
+id: get-tags-by-ids
+title: "Get tags by IDs"
+description: "Retrieves multiple tags by TagId in a single call, useful when a client already has a list of identifiers to hydrate."
+sidebar_label: "Get tags by IDs"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/tags/tags-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get tags by IDs"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/tags/ids"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves multiple tags by TagId in a single call, useful when a client already has a list of identifiers to hydrate.
+
+**Prerequisites**
+1. **TagId list** - Use [GET /api/v1.0/tags/query](/docs/api/tags/get-tags-by-query) or [POST /api/v1.0/tags/query](/docs/api/tags/search-tags-by-query) to gather tag IDs and extract `Items[].TagId`.
+
+**Workflow Example**
+1. Collect TagId values from a search.
+2. Call [GET /api/v1.0/tags/ids](/docs/api/tags/get-tags-by-ids) with the TagId array in the request body.
+
+**Minimal Required Fields**: TagId array (request body)
+
+**Note**: This API is deprecated.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"array","description":"List of tag IDs to retrieve","items":{"type":"string","format":"uuid"}},"example":["a1b2c3d4-e5f6-7890-abcd-ef1234567890","b2c3d4e5-f6a7-8901-bcde-f12345678901"]}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Tags retrieved successfully","content":{"application/json":{"schema":{"type":"object","description":"Response envelope containing a list of tags.","allOf":[{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"}],"properties":{"Items":{"type":"array","description":"List of tags","items":{"type":"object","properties":{"TagId":{"type":"string","format":"uuid"},"Name":{"type":"string","description":"Tag name"},"TagTypeId":{"type":"integer"},"CreatedDate":{"type":"string","format":"date-time"},"ModifiedDate":{"type":"string","format":"date-time"},"IsDeleted":{"type":"boolean"},"Scope":{"type":"string"}},"required":["TagId","Name","TagTypeId","IsDeleted","Scope"],"title":"Tag"}}},"title":"TagListResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

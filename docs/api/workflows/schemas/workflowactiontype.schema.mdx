@@ -1,0 +1,33 @@
+---
+id: workflowactiontype
+title: "WorkflowActionType"
+description: "Defines a type of automated action available in workflows."
+sidebar_label: "WorkflowActionType"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"WorkflowActionTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"Send Email Notification","DefaultSortOrder":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"WorkflowActionType"}
+>
+</Heading>
+
+
+
+Defines a type of automated action available in workflows.
+
+<Schema
+  schema={{"type":"object","description":"Defines a type of automated action available in workflows.","properties":{"WorkflowActionTypeId":{"type":"string","format":"uuid","description":"Unique identifier for this action type."},"Name":{"type":"string","description":"Display name of the action type.","example":"Send Email Notification"},"DefaultSortOrder":{"type":"integer","description":"Default ordering for this action type in lists."}},"required":["WorkflowActionTypeId","Name","DefaultSortOrder"],"title":"WorkflowActionType"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

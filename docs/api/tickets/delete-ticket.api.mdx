@@ -1,0 +1,81 @@
+---
+id: delete-ticket
+title: "Delete ticket"
+description: "Soft-deletes a ticket by setting its `IsDeleted` flag to true. The ticket remains in the database but is excluded from normal search results. Deleted tickets can be restored using [PUT /api/v1.0/tickets/{ticketId}/undelete](/docs/api/tickets/undelete-ticket)."
+sidebar_label: "Delete ticket"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "delete api-method"
+info_path: docs/api/tickets/tickets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete ticket"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1.0/tickets/{ticketId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Soft-deletes a ticket by setting its `IsDeleted` flag to true. The ticket remains in the database but is excluded from normal search results. Deleted tickets can be restored using [PUT /api/v1.0/tickets/\{ticketId\}/undelete](/docs/api/tickets/undelete-ticket).
+
+**Prerequisites**
+1. **ticketId** – Use [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) to locate the ticket and extract `Items[].TicketId`.
+
+**Workflow Example**
+1. Search for tickets: [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) with filters → extract `Items[].TicketId`
+2. Delete ticket: [DELETE /api/v1.0/tickets/\{ticketId\}](/docs/api/tickets/delete-ticket)
+3. To restore: [PUT /api/v1.0/tickets/\{ticketId\}/undelete](/docs/api/tickets/undelete-ticket)
+
+**Note**: This operation requires appropriate permissions. The caller must have rights to delete tickets in the target site.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"ticketId","in":"path","required":true,"description":"UUID of the ticket to delete. Obtain via POST /api/v1.0/tickets and read `Items[].TicketId` from the search response.","example":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8","x-obtained-from":{"operationId":"searchTickets","endpoint":"POST /api/v1.0/tickets","responseField":"Items[].TicketId"},"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Ticket deleted successfully","content":{"application/json":{"schema":{"type":"object","description":"Response returned when a ticket is successfully deleted.","properties":{"Uid":{"type":"string","format":"uuid","description":"UUID of the deleted ticket","example":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8"},"Item":{"type":"object","description":"Minimal ticket data confirming deletion","properties":{"TicketId":{"type":"string","format":"uuid","description":"UUID of the deleted ticket"},"IsDeleted":{"type":"boolean","description":"Always true for deleted tickets"}},"required":["TicketId","IsDeleted"]},"IsSuccess":{"type":"boolean","description":"Indicates whether the operation succeeded","example":true},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated user token"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the request was processed"},"StatusCode":{"type":"integer","description":"HTTP status code mirrored in the response body","example":200}},"required":["Uid","IsSuccess","StatusCode"],"title":"TicketDeleteResponse"},"example":{"Uid":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8","Item":{"TicketId":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8","IsDeleted":true},"IsSuccess":true,"UserToken":"c64a05b1-6a2d-ea11-a601-0003ffe41fe2","RequestDate":"2025-01-15T10:30:00Z","StatusCode":200}}}},"401":{"description":"Unauthorized – caller is not authenticated"},"403":{"description":"Forbidden – caller lacks permission to delete tickets"},"404":{"description":"Not found – ticket does not exist"}}}
+>
+  
+</StatusCodes>
+
+
+      

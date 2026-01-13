@@ -1,0 +1,33 @@
+---
+id: viewsharesummary
+title: "ViewShareSummary"
+description: "Share metadata returned for the current authenticated user. It communicates which access rights were granted and whether the user has responded to an invite."
+sidebar_label: "ViewShareSummary"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ViewUserId":"b45cef88-22db-48df-9f91-2a95f201fa4b","ViewTeamId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2025-08-20T08:29:55.807Z","ModifiedDate":"2025-08-20T08:29:55.807Z","ViewId":"0c8f7039-1234-4e7f-9c22-11c25e7b45b2","UserId":"3e2ce901-0002-4b1c-b5b3-6f5b91e5f030","TeamId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Response":"NoResponse","Access":"View"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ViewShareSummary"}
+>
+</Heading>
+
+
+
+Share metadata returned for the current authenticated user. It communicates which access rights were granted and whether the user has responded to an invite.
+
+<Schema
+  schema={{"type":"object","description":"Share metadata returned for the current authenticated user. It communicates which access rights were granted and whether the user has responded to an invite.","properties":{"ViewUserId":{"type":"string","format":"uuid","description":"Identifier of the share assignment when the view is shared with an individual.","example":"b45cef88-22db-48df-9f91-2a95f201fa4b"},"ViewTeamId":{"type":"string","format":"uuid","nullable":true,"description":"Identifier of the share assignment when the view is shared with a team."},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the share record was created.","example":"2025-08-20T08:29:55.807Z"},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the share record was last updated.","example":"2025-08-20T08:29:55.807Z"},"ViewId":{"type":"string","format":"uuid","description":"Identifier of the shared view.","example":"0c8f7039-1234-4e7f-9c22-11c25e7b45b2"},"UserId":{"type":"string","format":"uuid","description":"User receiving the share.","example":"3e2ce901-0002-4b1c-b5b3-6f5b91e5f030"},"TeamId":{"type":"string","format":"uuid","nullable":true,"description":"Team receiving the share when the view is distributed to a group."},"Response":{"type":"string","description":"Tracks whether the user accepted the share invitation.","enum":["NoResponse","Accepted","Declined"],"example":"NoResponse"},"Access":{"type":"string","description":"Permission level granted to the recipient.","enum":["View","Edit","Owner"],"example":"View"}},"required":["ViewUserId","CreatedDate","ModifiedDate","ViewId","UserId","Response","Access"],"title":"ViewShareSummary"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

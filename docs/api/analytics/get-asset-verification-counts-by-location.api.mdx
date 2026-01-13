@@ -1,0 +1,73 @@
+---
+id: get-asset-verification-counts-by-location
+title: "Get verified asset counts by location"
+description: "Returns a list of locations with the number of assets whose most recent verification entry occurred at that location. The controller limits the dataset to the caller's site, discards deleted assets/verifications, and only counts each asset once by using its latest verification record."
+sidebar_label: "Get verified asset counts by location"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/analytics/analytics-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get verified asset counts by location"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/analytics/assets/by-verification-location"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns a list of locations with the number of assets whose most recent verification entry occurred at that location. The controller limits the dataset to the caller's site, discards deleted assets/verifications, and only counts each asset once by using its latest verification record.
+
+**Prerequisites**
+1. **locationId** – Use [GET /api/v2.0/locations/all](/docs/api/locations/get-all-site-locations-v-2) to enumerate the locations that appear in your dashboard and capture `Items[].LocationId` so you can link a row from this response back to your directory data.
+
+**Workflow Example**
+1. List locations: [GET /api/v2.0/locations/all](/docs/api/locations/get-all-site-locations-v-2) with `$s=500` to capture the full location directory and cache `LocationId`/`Name` pairs in the UI.
+2. Call [GET /api/v1.0/analytics/assets/by-verification-location](/docs/api/analytics/get-asset-verification-counts-by-location) to obtain the current verification counts grouped by each location.
+3. Merge the response with the cached directory data so users can click through to a location detail page or filter other queries using the same `LocationId`.
+
+**Minimal Required Fields**: None; the endpoint uses the authenticated user's site and permissions.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Asset verification counts grouped by location","content":{"application/json":{"schema":{"type":"object","description":"Standard list envelope returned by analytics endpoints that surface aggregated verification counts.","properties":{"ItemCount":{"type":"integer","description":"Total number of locations included in this response.","example":2},"Items":{"type":"array","description":"Collection of location analytics data points ordered by asset count.","items":{"type":"object","description":"Aggregated asset verification counts grouped by the location captured on the most recent verification event per asset.","properties":{"Name":{"type":"string","description":"Display name of the location associated with the verification event.","example":"IncidentIQ Demo High School"},"Value":{"type":"number","description":"Distinct asset count that most recently verified at this location.","example":186},"Id":{"type":"string","format":"uuid","nullable":true,"description":"Location identifier. When populated it lines up with `LocationId` from the locations directory so the chart can link to additional details.","example":"9e5d33da-bc45-11ee-b662-0a58ac120002","x-obtained-from":{"operationId":"getAllSiteLocationsV2","endpoint":"GET /api/v1.0/locations/view","responseField":"Items[].LocationId"}},"Date":{"type":"string","format":"date-time","nullable":true,"description":"Timestamp associated with the data point (not set for this aggregate).","example":null}},"required":["Name","Value"],"example":{"Name":"IncidentIQ Demo High School","Value":186,"Id":"9e5d33da-bc45-11ee-b662-0a58ac120002","Date":null},"title":"AnalyticsVerificationLocationDataPoint"}},"Paging":{"description":"Paging metadata (unused for this aggregate, provided for envelope parity).","type":"object","nullable":true,"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}]},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated session token.","example":"3e17f735-b79f-f011-b484-002248538047","nullable":true},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp the query finished executing.","example":"2025-11-04T13:18:54.124Z"},"ExecutionTime":{"type":"number","description":"How long the analytics query took to execute (ms).","example":12.8},"StatusCode":{"type":"integer","description":"HTTP status code mirrored inside the payload.","example":200},"ServerName":{"type":"string","description":"Application node that served the request.","example":"spark-analytics-7d7c5f5d9b-gb5nq"},"ProcessId":{"type":"integer","description":"Process identifier useful during troubleshooting.","example":24},"OperationId":{"type":"string","description":"Identifier assigned for tracing across services.","example":"asset-verification-locations"},"Properties":{"type":"object","description":"Additional instrumentation metadata returned by the platform.","example":{}}},"required":["ItemCount","Items","StatusCode"],"example":{"ItemCount":2,"Items":[{"Name":"IncidentIQ Demo High School","Value":186,"Id":"9e5d33da-bc45-11ee-b662-0a58ac120002","Date":null},{"Name":"IncidentIQ Demo Middle School","Value":142,"Id":"c1f4a26a-bc45-11ee-b662-0a58ac120002","Date":null}],"Paging":{},"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2025-11-04T13:18:54.124Z","ExecutionTime":12.8,"StatusCode":200,"ServerName":"spark-analytics-7d7c5f5d9b-gb5nq","ProcessId":24,"OperationId":"asset-verification-locations","Properties":{}},"title":"AnalyticsVerificationLocationListResponse"},"example":{"ItemCount":2,"Items":[{"Name":"IncidentIQ Demo High School","Value":186,"Id":"9e5d33da-bc45-11ee-b662-0a58ac120002","Date":null},{"Name":"IncidentIQ Demo Middle School","Value":142,"Id":"c1f4a26a-bc45-11ee-b662-0a58ac120002","Date":null}],"Paging":{},"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2025-11-04T13:18:54.124Z","ExecutionTime":12.8,"StatusCode":200,"ServerName":"spark-analytics-7d7c5f5d9b-gb5nq","ProcessId":24,"OperationId":"asset-verification-locations","Properties":{}}}}},"401":{"description":"Unauthorized - Authentication required or authentication credentials are invalid","content":{"application/json":{"schema":{"type":"object","description":"Error response for authentication failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (401)","example":401},"Message":{"type":"string","description":"Human-readable description of the authentication error","example":"Authentication required. Please provide valid credentials."}},"required":["StatusCode","Message"],"title":"UnauthorizedError"}}}},"403":{"description":"Forbidden - Insufficient permissions to perform this operation","content":{"application/json":{"schema":{"type":"object","description":"Error response for authorization/permission failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (403)","example":403},"Message":{"type":"string","description":"Human-readable description of the authorization error","example":"You do not have permission to perform this action"}},"required":["StatusCode","Message"],"title":"ForbiddenError"}}}},"429":{"description":"Too Many Requests - Rate limit exceeded","content":{"application/json":{"schema":{"type":"object","description":"Error response when rate limit is exceeded","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (429)","example":429},"Message":{"type":"string","description":"Human-readable description of the rate limit error","example":"Rate limit exceeded. Please try again later."},"RetryAfter":{"type":"integer","description":"Number of seconds to wait before retrying","example":60}},"required":["StatusCode","Message"],"title":"RateLimitError"}}}},"500":{"description":"Internal Server Error - An unexpected error occurred on the server","content":{"application/json":{"schema":{"type":"object","description":"Error response for internal server errors","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (500)","example":500},"Message":{"type":"string","description":"Human-readable description of the server error","example":"An internal server error occurred. Please try again later."},"RequestId":{"type":"string","description":"Unique request identifier for troubleshooting","example":"req_1234567890abcdef"}},"required":["StatusCode","Message"],"title":"InternalServerError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

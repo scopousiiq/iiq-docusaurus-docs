@@ -1,0 +1,82 @@
+---
+id: update-organization-types-by-ids
+title: "Update organization types by IDs"
+description: "Updates multiple organization types using an array of update objects. Use this when you need to rename or re-scope several types in one request and already know their IDs."
+sidebar_label: "Update organization types by IDs"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "put api-method"
+info_path: docs/api/organizations/organizations-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update organization types by IDs"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/api/v1.0/organizations/types/ids/update"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Updates multiple organization types using an array of update objects. Use this when you need to rename or re-scope several types in one request and already know their IDs.
+
+**Prerequisites**
+1. **OrganizationTypeId** - Use [GET /api/v1.0/organizations/types/query](/docs/api/organizations/get-organization-types-by-query-get) and extract `Items[].OrganizationTypeId`.
+
+**Workflow Example**
+1. Build an array where each item includes OrganizationTypeId and updated fields.
+2. Call [PUT /api/v1.0/organizations/types/ids/update](/docs/api/organizations/update-organization-types-by-ids).
+
+**Minimal Required Fields**: OrganizationTypeId plus fields to update in each array item.
+
+**Notes**: This API version is deprecated.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"array","items":{"type":"object","description":"Request body for creating or updating an organization type.","properties":{"OrganizationTypeId":{"type":"string","format":"uuid"},"SiteId":{"type":"string","format":"uuid","nullable":true},"Scope":{"type":"string","enum":["Global","Site"]},"Name":{"type":"string"}},"title":"UpdateOrganizationTypeRequest"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Items updated.","content":{"application/json":{"schema":{"type":"object","description":"Standard response for batch update operations in the Organizations domain. Returns an array of updated item UUIDs, success status, and any validation errors. Used by Organization, OrganizationType, and OrganizationUser batch update endpoints.","properties":{"Items":{"type":"array","items":{"type":"string","format":"uuid"},"description":"Array of UUIDs for the updated items."},"IsSuccess":{"type":"boolean","description":"Indicates whether the operation succeeded."},"Errors":{"type":"array","items":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"},"description":"Array of error messages if the operation failed."}},"title":"OrganizationsDomainBatchUpdateResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

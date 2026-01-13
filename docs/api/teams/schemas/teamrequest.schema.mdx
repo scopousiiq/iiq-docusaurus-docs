@@ -1,0 +1,33 @@
+---
+id: teamrequest
+title: "TeamRequest"
+description: "Request payload for creating or updating a team."
+sidebar_label: "TeamRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TeamName":"string","Description":"string","IsDeleted":false}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TeamRequest"}
+>
+</Heading>
+
+
+
+Request payload for creating or updating a team.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for creating or updating a team.","properties":{"TeamName":{"type":"string","description":"Name of the team.","minLength":1},"Description":{"type":"string","description":"Description of the team.","nullable":true},"IsDeleted":{"type":"boolean","description":"Whether the team is soft-deleted.","default":false}},"required":["TeamName"],"title":"TeamRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

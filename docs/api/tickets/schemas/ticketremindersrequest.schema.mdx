@@ -1,0 +1,33 @@
+---
+id: ticketremindersrequest
+title: "TicketRemindersRequest"
+description: "Request payload for saving ticket due date reminders."
+sidebar_label: "TicketRemindersRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Reminders":[{"ReminderId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TicketId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ReminderDate":"2024-07-29T15:51:28.071Z","ReminderType":"string","OffsetDays":-1,"RecipientUserIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"IsActive":true}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketRemindersRequest"}
+>
+</Heading>
+
+
+
+Request payload for saving ticket due date reminders.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for saving ticket due date reminders.","properties":{"Reminders":{"type":"array","description":"Array of reminder configurations to save.","items":{"type":"object","description":"A reminder configuration for ticket due dates.","properties":{"ReminderId":{"type":"string","format":"uuid","description":"Unique identifier for this reminder."},"TicketId":{"type":"string","format":"uuid","description":"Ticket this reminder is associated with."},"ReminderDate":{"type":"string","format":"date-time","description":"When the reminder should be triggered."},"ReminderType":{"type":"string","description":"Type of reminder (e.g., 'Before', 'After', 'OnDue')."},"OffsetDays":{"type":"integer","description":"Days before/after due date to trigger reminder.","example":-1},"RecipientUserIds":{"type":"array","description":"Users who should receive this reminder.","items":{"type":"string","format":"uuid"}},"IsActive":{"type":"boolean","description":"Whether this reminder is active.","example":true}},"title":"TicketReminder"}}},"required":["Reminders"],"title":"TicketRemindersRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

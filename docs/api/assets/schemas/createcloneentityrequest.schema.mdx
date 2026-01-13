@@ -1,0 +1,33 @@
+---
+id: createcloneentityrequest
+title: "CreateCloneEntityRequest"
+description: "Request to generate multiple assets from a clone template."
+sidebar_label: "CreateCloneEntityRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"CloneTemplateId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Count":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CreateCloneEntityRequest"}
+>
+</Heading>
+
+
+
+Request to generate multiple assets from a clone template.
+
+<Schema
+  schema={{"type":"object","description":"Request to generate multiple assets from a clone template.","properties":{"CloneTemplateId":{"type":"string","format":"uuid","description":"UUID of the asset clone template to use."},"Count":{"type":"integer","description":"Number of assets to generate from the template.","minimum":1}},"required":["CloneTemplateId","Count"],"title":"CreateCloneEntityRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

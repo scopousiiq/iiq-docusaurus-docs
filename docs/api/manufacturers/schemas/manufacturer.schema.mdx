@@ -1,0 +1,33 @@
+---
+id: manufacturer
+title: "Manufacturer"
+description: "Represents an asset manufacturer in the system. Manufacturers are associated with asset models and can be scoped globally or to specific sites."
+sidebar_label: "Manufacturer"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ManufacturerId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Scope":"All","Name":"string","LogoId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Icon":"string","EsoIsVisible":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Manufacturer"}
+>
+</Heading>
+
+
+
+Represents an asset manufacturer in the system. Manufacturers are associated with asset models and can be scoped globally or to specific sites.
+
+<Schema
+  schema={{"type":"object","description":"Represents an asset manufacturer in the system. Manufacturers are associated with asset models and can be scoped globally or to specific sites.","properties":{"ManufacturerId":{"type":"string","format":"uuid","description":"Unique identifier for the manufacturer"},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site identifier if the manufacturer is site-scoped. Null for global manufacturers."},"Scope":{"type":"string","description":"Defines the visibility scope for a manufacturer","enum":["All","System","Global","Site","App","User","Role","Team"],"title":"ManufacturerScope"},"Name":{"type":"string","description":"Display name of the manufacturer"},"LogoId":{"type":"string","format":"uuid","nullable":true,"description":"File identifier for the manufacturer's logo image"},"Icon":{"type":"string","nullable":true,"description":"CSS icon class for display purposes"},"EsoIsVisible":{"type":"boolean","description":"Whether the manufacturer is visible in the External Service Order portal","default":true}},"title":"Manufacturer"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

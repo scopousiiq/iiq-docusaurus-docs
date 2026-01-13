@@ -1,0 +1,33 @@
+---
+id: ticketasset
+title: "TicketAsset"
+description: "Asset associated with a ticket"
+sidebar_label: "TicketAsset"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketAssetId":"0866a7fd-6dab-ef11-88cf-6045bdb6b1c8","AssetId":"42f8cc6d-0efd-4a68-983b-be61e9e1c49c","CreatedDate":"2024-11-25T20:44:06.727","ModelId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AssetTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AssetStatusTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","OwnerId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AssetTag":"059369","SerialNumber":"DZNYK82","ModelName":"C720 Chromebook"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketAsset"}
+>
+</Heading>
+
+
+
+Asset associated with a ticket
+
+<Schema
+  schema={{"type":"object","description":"Asset associated with a ticket","properties":{"TicketAssetId":{"type":"string","format":"uuid","description":"Identifier for the ticket-to-asset relationship","example":"0866a7fd-6dab-ef11-88cf-6045bdb6b1c8"},"AssetId":{"type":"string","format":"uuid","description":"Identifier for the linked asset record","example":"42f8cc6d-0efd-4a68-983b-be61e9e1c49c"},"CreatedDate":{"type":"string","format":"date-time","description":"When the asset was attached to the ticket","example":"2024-11-25T20:44:06.727"},"ModelId":{"type":"string","format":"uuid","description":"Identifier for the asset model"},"CategoryId":{"type":"string","format":"uuid","description":"Product category for the asset","nullable":true},"AssetTypeId":{"type":"string","format":"uuid","description":"Asset type identifier","nullable":true},"AssetStatusTypeId":{"type":"string","format":"uuid","description":"Status type currently applied to the asset","nullable":true},"OwnerId":{"type":"string","format":"uuid","description":"Identifier for the asset's current owner. Obtain user details via [POST /api/v1.0/search](/docs/api/users/search-users).","nullable":true,"x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/search","responseField":"Item.Users[].UserId"}},"AssetTag":{"type":"string","description":"Asset tag or barcode","nullable":true,"example":"059369"},"SerialNumber":{"type":"string","description":"Asset serial number","nullable":true,"example":"DZNYK82"},"ModelName":{"type":"string","description":"Display name for the asset model","example":"C720 Chromebook"}},"required":["TicketAssetId","CreatedDate"],"title":"TicketAsset"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

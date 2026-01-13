@@ -1,0 +1,33 @@
+---
+id: achievement
+title: "Achievement"
+description: "Achievement badge that can be awarded to users. Mirrors `Spark.Shared.Models.Achievement`."
+sidebar_label: "Achievement"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AchievementId":"a1b2c3d4-5678-90ab-cdef-123456789012","Name":"First Ticket Resolved","ImageUrl":"/images/achievements/first-resolution.png","PrimaryColor":"#4CAF50"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Achievement"}
+>
+</Heading>
+
+
+
+Achievement badge that can be awarded to users. Mirrors `Spark.Shared.Models.Achievement`.
+
+<Schema
+  schema={{"type":"object","description":"Achievement badge that can be awarded to users. Mirrors `Spark.Shared.Models.Achievement`.","properties":{"AchievementId":{"type":"string","format":"uuid","description":"Unique identifier for the achievement."},"Name":{"type":"string","description":"Display name of the achievement."},"ImageUrl":{"type":"string","description":"URL to the achievement badge image."},"PrimaryColor":{"type":"string","description":"Primary color for the achievement badge display (hex color code or color name)."}},"example":{"AchievementId":"a1b2c3d4-5678-90ab-cdef-123456789012","Name":"First Ticket Resolved","ImageUrl":"/images/achievements/first-resolution.png","PrimaryColor":"#4CAF50"},"title":"Achievement"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

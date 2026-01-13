@@ -1,0 +1,33 @@
+---
+id: slimeventschedule
+title: "SlimEventSchedule"
+description: "Minimal schedule entry for adding dates to a series."
+sidebar_label: "SlimEventSchedule"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"EventId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","StartDateTime":"2024-07-29T15:51:28.071Z","EndDateTime":"2024-07-29T15:51:28.071Z","SetupTimeInMinutes":0,"BreakdownTimeInMinutes":0,"SkipAvailabilityCheck":true,"OverrideUserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","OverrideDateTime":"2024-07-29T15:51:28.071Z","DoubleBookingStrategy":"DontAllow"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SlimEventSchedule"}
+>
+</Heading>
+
+
+
+Minimal schedule entry for adding dates to a series.
+
+<Schema
+  schema={{"type":"object","description":"Minimal schedule entry for adding dates to a series.","properties":{"EventId":{"type":"string","format":"uuid"},"StartDateTime":{"type":"string","format":"date-time"},"EndDateTime":{"type":"string","format":"date-time"},"SetupTimeInMinutes":{"type":"integer","nullable":true},"BreakdownTimeInMinutes":{"type":"integer","nullable":true},"SkipAvailabilityCheck":{"type":"boolean"},"OverrideUserId":{"type":"string","format":"uuid","nullable":true},"OverrideDateTime":{"type":"string","format":"date-time","nullable":true},"DoubleBookingStrategy":{"type":"string","enum":["DontAllow","AllowIfSameOwner","Allow"]}},"title":"SlimEventSchedule"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

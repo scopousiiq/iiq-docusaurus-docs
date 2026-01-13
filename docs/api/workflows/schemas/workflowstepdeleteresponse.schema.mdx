@@ -1,0 +1,33 @@
+---
+id: workflowstepdeleteresponse
+title: "WorkflowStepDeleteResponse"
+description: "Envelope returned after deleting a workflow step."
+sidebar_label: "WorkflowStepDeleteResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Message":"Workflow step successfully deleted","UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":0,"ServerName":"string","ProcessId":0,"OperationId":"string","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"WorkflowStepDeleteResponse"}
+>
+</Heading>
+
+
+
+Envelope returned after deleting a workflow step.
+
+<Schema
+  schema={{"type":"object","description":"Envelope returned after deleting a workflow step.","properties":{"Id":{"type":"string","format":"uuid","description":"UUID of the deleted workflow step."},"Message":{"type":"string","description":"Confirmation message.","example":"Workflow step successfully deleted"},"UserToken":{"type":"string","format":"uuid","description":"Echo of the UserToken header that authenticated the request."},"RequestDate":{"type":"string","format":"date-time","description":"Server-side timestamp indicating when the request was processed."},"ExecutionTime":{"type":"number","description":"Server processing time in milliseconds."},"StatusCode":{"type":"integer","description":"HTTP status code emitted by the service."},"ServerName":{"type":"string","description":"Name of the server instance that fulfilled the request."},"ProcessId":{"type":"integer","description":"Internal process identifier logged by the service."},"OperationId":{"type":"string","description":"Trace identifier correlating this call with server logs."},"Properties":{"type":"object","description":"Additional diagnostic metadata, if any.","additionalProperties":{"type":"string"}}},"required":["StatusCode"],"title":"WorkflowStepDeleteResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

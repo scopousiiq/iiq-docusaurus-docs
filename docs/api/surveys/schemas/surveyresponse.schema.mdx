@@ -1,0 +1,33 @@
+---
+id: surveyresponse
+title: "SurveyResponse"
+description: "A user's response to a survey, including overall satisfaction and individual question responses."
+sidebar_label: "SurveyResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SurveyResponseId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SurveyId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","UserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TicketId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","OverallSatisfaction":0,"Responses":[{"SurveyQuestionId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SurveyQuestionTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Question":"string","Response":"string","IsRequired":true}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SurveyResponse"}
+>
+</Heading>
+
+
+
+A user's response to a survey, including overall satisfaction and individual question responses.
+
+<Schema
+  schema={{"type":"object","description":"A user's response to a survey, including overall satisfaction and individual question responses.","properties":{"SurveyResponseId":{"type":"string","format":"uuid","description":"Unique identifier for this survey response."},"SurveyId":{"type":"string","format":"uuid","description":"The survey this response is for."},"UserId":{"type":"string","format":"uuid","description":"User who submitted this response."},"TicketId":{"type":"string","format":"uuid","nullable":true,"description":"Ticket this survey was assigned for (if ticket-based)."},"CreatedDate":{"type":"string","format":"date-time","description":"When the response was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"When the response was last modified."},"OverallSatisfaction":{"type":"integer","minimum":1,"maximum":5,"description":"Overall satisfaction rating on a 1-5 scale."},"Responses":{"type":"array","nullable":true,"items":{"type":"object","description":"A question within a survey, including its type and response when used in survey responses.","properties":{"SurveyQuestionId":{"type":"string","format":"uuid","description":"Unique identifier for the question."},"SurveyQuestionTypeId":{"type":"string","format":"uuid","description":"Type of question (e.g., text, rating, multiple choice)."},"Question":{"type":"string","description":"The question text displayed to the user."},"Response":{"type":"string","nullable":true,"description":"The user's response to this question (populated in survey responses)."},"IsRequired":{"type":"boolean","description":"Whether this question must be answered to submit the survey."}},"title":"SurveyQuestion"},"description":"Individual question responses with the Response field populated."}},"title":"SurveyResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

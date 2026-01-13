@@ -1,0 +1,82 @@
+---
+id: delete-organization-types-by-ids
+title: "Delete organization types by IDs"
+description: "Deletes organization types for the provided list of OrganizationTypeId values. Use this when you have a known set of types to remove and want a deterministic bulk delete."
+sidebar_label: "Delete organization types by IDs"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "delete api-method"
+info_path: docs/api/organizations/organizations-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete organization types by IDs"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1.0/organizations/types/ids"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes organization types for the provided list of OrganizationTypeId values. Use this when you have a known set of types to remove and want a deterministic bulk delete.
+
+**Prerequisites**
+1. **OrganizationTypeId** - Use [GET /api/v1.0/organizations/types/query](/docs/api/organizations/get-organization-types-by-query-get) and extract `Items[].OrganizationTypeId`.
+
+**Workflow Example**
+1. Collect the OrganizationTypeId list.
+2. Call [DELETE /api/v1.0/organizations/types/ids](/docs/api/organizations/delete-organization-types-by-ids) with the ID array in the body.
+
+**Minimal Required Fields**: OrganizationTypeId array in the request body.
+
+**Notes**: This API version is deprecated and performs a destructive bulk action.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"array","items":{"type":"string","format":"uuid"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Items deleted.","content":{"application/json":{"schema":{"type":"object","description":"Standard response for batch delete operations in the Organizations domain. Returns the count of deleted items, success status, and any validation errors. Used by Organization, OrganizationType, and OrganizationUser batch delete endpoints.","properties":{"ItemsDeleted":{"type":"integer","description":"Number of items deleted."},"IsSuccess":{"type":"boolean","description":"Indicates whether the operation succeeded."},"Errors":{"type":"array","items":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"},"description":"Array of error messages if the operation failed."}},"title":"OrganizationsDomainBatchDeleteResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

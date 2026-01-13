@@ -1,0 +1,33 @@
+---
+id: viewcolumnoption
+title: "ViewColumnOption"
+description: "Key/value pair attached to a grid column to configure how the renderer should behave. Keys such as `CustomFieldTypeId` or `ComplexEditorPath` instruct the UI which editor to load."
+sidebar_label: "ViewColumnOption"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Key":"CustomFieldTypeId","Value":null}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ViewColumnOption"}
+>
+</Heading>
+
+
+
+Key/value pair attached to a grid column to configure how the renderer should behave. Keys such as `CustomFieldTypeId` or `ComplexEditorPath` instruct the UI which editor to load.
+
+<Schema
+  schema={{"type":"object","description":"Key/value pair attached to a grid column to configure how the renderer should behave. Keys such as `CustomFieldTypeId` or `ComplexEditorPath` instruct the UI which editor to load.","properties":{"Key":{"type":"string","description":"Option name used by the grid renderer.","example":"CustomFieldTypeId"},"Value":{"type":"string","nullable":true,"description":"Optional option value. Many system columns leave this blank.","example":null}},"required":["Key","Value"],"title":"ViewColumnOption"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

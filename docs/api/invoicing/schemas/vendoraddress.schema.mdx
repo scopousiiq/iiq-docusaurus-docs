@@ -1,0 +1,33 @@
+---
+id: vendoraddress
+title: "VendorAddress"
+description: "Physical address information for a vendor."
+sidebar_label: "VendorAddress"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AddressId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Street1":"string","Street2":"string","City":"string","State":"string","Zip":"string","Country":"string","Latitude":0,"Longitude":0,"IsDeleted":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"VendorAddress"}
+>
+</Heading>
+
+
+
+Physical address information for a vendor.
+
+<Schema
+  schema={{"type":"object","description":"Physical address information for a vendor.","properties":{"AddressId":{"type":"string","format":"uuid","description":"Unique identifier for this address record."},"SiteId":{"type":"string","format":"uuid","description":"The site this address belongs to."},"Street1":{"type":"string","nullable":true,"description":"Primary street address line."},"Street2":{"type":"string","nullable":true,"description":"Secondary street address line (suite, building, etc.)."},"City":{"type":"string","nullable":true,"description":"City name."},"State":{"type":"string","nullable":true,"description":"State or province."},"Zip":{"type":"string","nullable":true,"description":"Postal or ZIP code."},"Country":{"type":"string","nullable":true,"description":"Country name or code."},"Latitude":{"type":"number","format":"double","nullable":true,"description":"Geographic latitude coordinate."},"Longitude":{"type":"number","format":"double","nullable":true,"description":"Geographic longitude coordinate."},"IsDeleted":{"type":"boolean","description":"Indicates if the address has been soft-deleted."}},"title":"VendorAddress"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

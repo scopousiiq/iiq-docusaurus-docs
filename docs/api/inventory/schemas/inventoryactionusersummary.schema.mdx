@@ -1,0 +1,33 @@
+---
+id: inventoryactionusersummary
+title: "InventoryActionUserSummary"
+description: "User metadata returned when an inventory action is created."
+sidebar_label: "InventoryActionUserSummary"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"UserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","FullName":"string","Initials":"string","FirstName":"string","LastName":"string","LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RoleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Email":"user@example.com","Username":"string","IsOnline":true,"IsEmailVerified":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"InventoryActionUserSummary"}
+>
+</Heading>
+
+
+
+User metadata returned when an inventory action is created.
+
+<Schema
+  schema={{"type":"object","description":"User metadata returned when an inventory action is created.","properties":{"UserId":{"type":"string","format":"uuid","description":"User identifier."},"SiteId":{"type":"string","format":"uuid","description":"Site scope for the user."},"Name":{"type":"string","description":"Display name of the user."},"FullName":{"type":"string","description":"Full display name."},"Initials":{"type":"string","description":"User initials used for avatars."},"FirstName":{"type":"string","description":"First name."},"LastName":{"type":"string","description":"Last name."},"LocationId":{"type":"string","format":"uuid","description":"Primary location identifier."},"RoleId":{"type":"string","format":"uuid","description":"Role identifier assigned to the user."},"Email":{"type":"string","format":"email","description":"User email address."},"Username":{"type":"string","description":"Username used for login. Matches email for most customers."},"IsOnline":{"type":"boolean","description":"Indicates if the user is currently online."},"IsEmailVerified":{"type":"boolean","description":"Indicates if the user's email has been verified."}},"required":["UserId","SiteId","Name","FullName","Initials","FirstName","LastName","LocationId","RoleId","Email","Username","IsOnline","IsEmailVerified"],"title":"InventoryActionUserSummary"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

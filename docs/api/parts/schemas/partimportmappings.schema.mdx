@@ -1,0 +1,33 @@
+---
+id: partimportmappings
+title: "PartImportMappings"
+description: "Field mappings for part import."
+sidebar_label: "PartImportMappings"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"PartName":{"MapType":"string","FieldName":"string","FieldIndex":0,"Maps":[{"Alias":"string","ToId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}]},"StandardSupplierName":{"MapType":"string","FieldName":"string","FieldIndex":0,"Maps":[{"Alias":"string","ToId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}]},"StandardCost":{"MapType":"string","FieldName":"string","FieldIndex":0,"Maps":[{"Alias":"string","ToId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}]},"QuantityOnHand":{"MapType":"string","FieldName":"string","FieldIndex":0,"Maps":[{"Alias":"string","ToId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}]}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"PartImportMappings"}
+>
+</Heading>
+
+
+
+Field mappings for part import.
+
+<Schema
+  schema={{"type":"object","description":"Field mappings for part import.","properties":{"PartName":{"allOf":[{"type":"object","description":"Defines how a field is mapped from the import file.","properties":{"MapType":{"type":"string","description":"Type of mapping (e.g., 'column', 'fixed')."},"FieldName":{"type":"string","description":"Name of the field in the import file."},"FieldIndex":{"type":"integer","description":"Zero-based column index in the import file."},"Maps":{"type":"array","items":{"type":"object","description":"Maps an import file value to an internal ID.","properties":{"Alias":{"type":"string","description":"Value as it appears in the import file."},"ToId":{"type":"string","format":"uuid","description":"Internal UUID to map the value to."}},"title":"PartImportValueMap"},"description":"Value mappings for transforming import values."}},"title":"PartImportFieldMap"}],"description":"Mapping for the part name field.","nullable":true,"type":"object"},"StandardSupplierName":{"allOf":[{"type":"object","description":"Defines how a field is mapped from the import file.","properties":{"MapType":{"type":"string","description":"Type of mapping (e.g., 'column', 'fixed')."},"FieldName":{"type":"string","description":"Name of the field in the import file."},"FieldIndex":{"type":"integer","description":"Zero-based column index in the import file."},"Maps":{"type":"array","items":{"type":"object","description":"Maps an import file value to an internal ID.","properties":{"Alias":{"type":"string","description":"Value as it appears in the import file."},"ToId":{"type":"string","format":"uuid","description":"Internal UUID to map the value to."}},"title":"PartImportValueMap"},"description":"Value mappings for transforming import values."}},"title":"PartImportFieldMap"}],"description":"Mapping for the supplier name field.","nullable":true,"type":"object"},"StandardCost":{"allOf":[{"type":"object","description":"Defines how a field is mapped from the import file.","properties":{"MapType":{"type":"string","description":"Type of mapping (e.g., 'column', 'fixed')."},"FieldName":{"type":"string","description":"Name of the field in the import file."},"FieldIndex":{"type":"integer","description":"Zero-based column index in the import file."},"Maps":{"type":"array","items":{"type":"object","description":"Maps an import file value to an internal ID.","properties":{"Alias":{"type":"string","description":"Value as it appears in the import file."},"ToId":{"type":"string","format":"uuid","description":"Internal UUID to map the value to."}},"title":"PartImportValueMap"},"description":"Value mappings for transforming import values."}},"title":"PartImportFieldMap"}],"description":"Mapping for the standard cost field.","nullable":true,"type":"object"},"QuantityOnHand":{"allOf":[{"type":"object","description":"Defines how a field is mapped from the import file.","properties":{"MapType":{"type":"string","description":"Type of mapping (e.g., 'column', 'fixed')."},"FieldName":{"type":"string","description":"Name of the field in the import file."},"FieldIndex":{"type":"integer","description":"Zero-based column index in the import file."},"Maps":{"type":"array","items":{"type":"object","description":"Maps an import file value to an internal ID.","properties":{"Alias":{"type":"string","description":"Value as it appears in the import file."},"ToId":{"type":"string","format":"uuid","description":"Internal UUID to map the value to."}},"title":"PartImportValueMap"},"description":"Value mappings for transforming import values."}},"title":"PartImportFieldMap"}],"description":"Mapping for the quantity on hand field.","nullable":true,"type":"object"}},"title":"PartImportMappings"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

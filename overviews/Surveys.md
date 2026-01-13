@@ -1,0 +1,201 @@
+# Surveys API
+
+The Surveys API provides access to satisfaction surveys in IncidentIQ. Create, configure, and manage surveys to collect feedback from users after ticket resolution.
+
+## Overview
+
+Surveys in IncidentIQ enable you to measure user satisfaction by sending questionnaires after tickets are resolved. Surveys are linked to tickets via business rules and can be configured with custom questions, expiration periods, and reminder schedules.
+
+:::info
+**What you can do with the Surveys API**
+:::
+
+>
+> - **Create and configure surveys** with custom questions and settings
+> - **Manage survey lifecycle** by activating or deactivating surveys
+> - **Collect responses** and analyze satisfaction scores
+> - **View pending surveys** for users awaiting feedback
+> - **Link surveys to business rules** for automated assignment
+
+## Common Use Cases
+
+### Satisfaction Tracking
+Automatically send satisfaction surveys when tickets are resolved to measure service quality and identify improvement opportunities.
+
+### Custom Feedback Collection
+Create surveys with specific questions tailored to different ticket types, teams, or service categories.
+
+### Response Analytics
+Export survey responses to build custom satisfaction dashboards and track trends over time.
+
+### Pending Survey Management
+Monitor which users have outstanding surveys and manage reminder schedules to improve response rates.
+
+## API Sections
+
+| Section | Description |
+|---------|-------------|
+| **Management** | Create, update, delete, and list surveys and their configurations |
+| **Lifecycle** | Activate and deactivate surveys to control when they can be assigned |
+| **Responses** | Submit responses, view collected feedback, and manage pending surveys |
+
+## Quick Start
+
+### List Available Surveys
+
+```bash
+curl -X GET "https://your-site.incidentiq.com/api/v1.0/surveys" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient"
+```
+
+### Get Survey Details
+
+```bash
+curl -X GET "https://your-site.incidentiq.com/api/v1.0/surveys/{SurveyId}" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient"
+```
+
+### Create a New Survey
+
+:::info
+**Note**
+:::
+
+>
+> New surveys are created inactive by default. Use the activate endpoint when ready to start collecting responses.
+
+```json http
+{
+  "method": "POST",
+  "url": "https://your-site.incidentiq.com/api/v1.0/surveys/new",
+  "headers": {
+    "Authorization": "Bearer YOUR_TOKEN",
+    "SiteId": "YOUR_SITE_ID",
+    "Client": "ApiClient",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "Name": "IT Support Satisfaction Survey",
+    "Intro": "Thank you for contacting IT Support. Please rate your experience.",
+    "IsActive": false,
+    "ExpirationInDays": 7,
+    "RemindOnDays": [1, 3],
+    "Questions": [
+      {
+        "SurveyQuestionTypeId": "QUESTION_TYPE_UUID",
+        "Question": "How satisfied were you with the resolution?",
+        "IsRequired": true
+      },
+      {
+        "SurveyQuestionTypeId": "QUESTION_TYPE_UUID",
+        "Question": "Any additional feedback?",
+        "IsRequired": false
+      }
+    ]
+  }
+}
+```
+
+### Submit a Survey Response
+
+**cURL
+**
+
+```bash
+curl -X POST "https://your-site.incidentiq.com/api/v1.0/surveys/responses/ticket/{TicketId}" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "SurveyId": "SURVEY_UUID",
+    "OverallSatisfaction": 5,
+    "Responses": [
+      {
+        "SurveyQuestionId": "QUESTION_UUID",
+        "Response": "Excellent service!"
+      }
+    ]
+  }'
+```
+
+**JavaScript
+**
+
+```javascript
+const response = await fetch(
+  'https://your-site.incidentiq.com/api/v1.0/surveys/responses/ticket/{TicketId}',
+  {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer YOUR_TOKEN',
+      'SiteId': 'YOUR_SITE_ID',
+      'Client': 'ApiClient',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      SurveyId: 'SURVEY_UUID',
+      OverallSatisfaction: 5,
+      Responses: [
+        {
+          SurveyQuestionId: 'QUESTION_UUID',
+          Response: 'Excellent service!'
+        }
+      ]
+    })
+  }
+);
+
+const data = await response.json();
+console.log(data);
+```
+
+**Python
+**
+
+```python
+import requests
+
+response = requests.post(
+    'https://your-site.incidentiq.com/api/v1.0/surveys/responses/ticket/{TicketId}',
+    headers={
+        'Authorization': 'Bearer YOUR_TOKEN',
+        'SiteId': 'YOUR_SITE_ID',
+        'Client': 'ApiClient',
+        'Content-Type': 'application/json'
+    },
+    json={
+        'SurveyId': 'SURVEY_UUID',
+        'OverallSatisfaction': 5,
+        'Responses': [
+            {
+                'SurveyQuestionId': 'QUESTION_UUID',
+                'Response': 'Excellent service!'
+            }
+        ]
+    }
+)
+
+data = response.json()
+print(data)
+```
+
+
+---
+
+## Typical Workflow
+
+1. **Create a survey** with questions and configuration settings
+2. **Link the survey to a business rule** that triggers on ticket resolution
+3. **Activate the survey** to enable assignments
+4. **Users receive pending surveys** after their tickets are resolved
+5. **Collect and analyze responses** to measure satisfaction
+
+## Related APIs
+
+- [Tickets](#/Tickets) - Tickets that surveys are assigned to
+- [Users](#/Users) - Users who receive and respond to surveys

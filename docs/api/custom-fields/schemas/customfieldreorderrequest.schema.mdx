@@ -1,0 +1,33 @@
+---
+id: customfieldreorderrequest
+title: "CustomFieldReorderRequest"
+description: "Array of custom field IDs in the desired display order. The order of IDs in the array determines the new DisplayOrder values assigned to each custom field."
+sidebar_label: "CustomFieldReorderRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: ["a1b2c3d4-e5f6-7890-abcd-ef1234567890","b2c3d4e5-f6a7-8901-bcde-f1234567890a","c3d4e5f6-a7b8-9012-cdef-234567890abc"]
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CustomFieldReorderRequest"}
+>
+</Heading>
+
+
+
+Array of custom field IDs in the desired display order. The order of IDs in the array determines the new DisplayOrder values assigned to each custom field.
+
+<Schema
+  schema={{"type":"array","description":"Array of custom field IDs in the desired display order. The order of IDs in the array determines the new DisplayOrder values assigned to each custom field.","items":{"type":"string","format":"uuid"},"minItems":1,"example":["a1b2c3d4-e5f6-7890-abcd-ef1234567890","b2c3d4e5-f6a7-8901-bcde-f1234567890a","c3d4e5f6-a7b8-9012-cdef-234567890abc"],"title":"CustomFieldReorderRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

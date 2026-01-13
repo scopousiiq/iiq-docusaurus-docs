@@ -1,0 +1,33 @@
+---
+id: assettypesummary
+title: "AssetTypeSummary"
+description: "Lightweight asset type reference for use in dropdowns, filters, and summary views"
+sidebar_label: "AssetTypeSummary"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetTypeSummary"}
+>
+</Heading>
+
+
+
+Lightweight asset type reference for use in dropdowns, filters, and summary views
+
+<Schema
+  schema={{"type":"object","description":"Lightweight asset type reference for use in dropdowns, filters, and summary views","properties":{"AssetTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the asset type"},"Name":{"type":"string","description":"Display name for the asset type"}},"required":["AssetTypeId","Name"],"title":"AssetTypeSummary"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

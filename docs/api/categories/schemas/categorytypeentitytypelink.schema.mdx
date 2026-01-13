@@ -1,0 +1,33 @@
+---
+id: categorytypeentitytypelink
+title: "CategoryTypeEntityTypeLink"
+description: "Association between a Category Type and an Entity Type"
+sidebar_label: "CategoryTypeEntityTypeLink"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"EntityTypeLinkId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","FromCategoryTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","FromCategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Key":"string","ToEntityTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ToEntityId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CategoryTypeEntityTypeLink"}
+>
+</Heading>
+
+
+
+Association between a Category Type and an Entity Type
+
+<Schema
+  schema={{"type":"object","description":"Association between a Category Type and an Entity Type","properties":{"EntityTypeLinkId":{"type":"string","format":"uuid"},"FromCategoryTypeId":{"type":"string","format":"uuid"},"FromCategoryId":{"type":"string","format":"uuid","nullable":true},"Key":{"type":"string","nullable":true},"ToEntityTypeId":{"type":"string","format":"uuid"},"ToEntityId":{"type":"string","format":"uuid","nullable":true}},"required":["EntityTypeLinkId","FromCategoryTypeId","ToEntityTypeId"],"title":"CategoryTypeEntityTypeLink"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

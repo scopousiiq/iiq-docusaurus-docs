@@ -1,0 +1,33 @@
+---
+id: viewtab
+title: "ViewTab"
+description: "Default tab definition for split view layouts."
+sidebar_label: "ViewTab"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Key":"overview","Title":"Overview"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ViewTab"}
+>
+</Heading>
+
+
+
+Default tab definition for split view layouts.
+
+<Schema
+  schema={{"type":"object","description":"Default tab definition for split view layouts.","properties":{"Key":{"type":"string","description":"Identifier used to route to the tab.","example":"overview"},"Title":{"type":"string","description":"Display label for the tab.","example":"Overview"}},"required":["Key","Title"],"title":"ViewTab"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

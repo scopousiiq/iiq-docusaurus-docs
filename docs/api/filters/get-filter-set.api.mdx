@@ -1,0 +1,81 @@
+---
+id: get-filter-set
+title: "Get filter set"
+description: "Retrieves a single filter set (a stored collection of filter criteria) by ID, including its type, entity type, scope, and match rules. Use this to load saved view filters, automation rule conditions, or custom field visibility logic when you already have a filter set identifier."
+sidebar_label: "Get filter set"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/filters/filters-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get filter set"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/filters/sets/{filterId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves a single filter set (a stored collection of filter criteria) by ID, including its type, entity type, scope, and match rules. Use this to load saved view filters, automation rule conditions, or custom field visibility logic when you already have a filter set identifier.
+
+**Prerequisites**
+1. **filterId** - Use [GET /api/v1.0/filters/sets/for/type/\{FilterSetType\}](/docs/api/filters/get-filter-sets-by-type) or [POST /api/v1.0/filters/sets/ids/get](/docs/api/filters/get-filter-sets-by-ids) to obtain filter set IDs.
+
+**Workflow Example**
+1. List filter sets by type and select a `FilterSetId`.
+2. Fetch the full filter set: [GET /api/v1.0/filters/sets/\{filterId\}](/docs/api/filters/get-filter-set).
+3. If you need the concrete selected values, call [GET /api/v1.0/filters/sets/\{filterId\}/values](/docs/api/filters/get-filter-set-values).
+
+**Minimal Required Fields**: filterId (path).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"filterId","in":"path","required":true,"schema":{"type":"string","format":"uuid"},"description":"The filterId parameter"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Success - Request completed successfully","content":{"application/json":{"schema":{"type":"object","title":"GenericObject"}}}},"401":{"description":"Unauthorized - Authentication required or authentication credentials are invalid","content":{"application/json":{"schema":{"type":"object","description":"Error response for authentication failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (401)","example":401},"Message":{"type":"string","description":"Human-readable description of the authentication error","example":"Authentication required. Please provide valid credentials."}},"required":["StatusCode","Message"],"title":"UnauthorizedError"}}}},"404":{"description":"Not Found - The requested resource does not exist","content":{"application/json":{"schema":{"type":"object","description":"Error response when a requested resource is not found","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (404)","example":404},"Message":{"type":"string","description":"Human-readable description indicating the resource was not found","example":"The requested resource was not found"},"ResourceId":{"type":"string","description":"ID of the resource that was not found"}},"required":["StatusCode","Message"],"title":"NotFoundError"}}}},"429":{"description":"Too Many Requests - Rate limit exceeded","content":{"application/json":{"schema":{"type":"object","description":"Error response when rate limit is exceeded","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (429)","example":429},"Message":{"type":"string","description":"Human-readable description of the rate limit error","example":"Rate limit exceeded. Please try again later."},"RetryAfter":{"type":"integer","description":"Number of seconds to wait before retrying","example":60}},"required":["StatusCode","Message"],"title":"RateLimitError"}}}},"500":{"description":"Internal Server Error - An unexpected error occurred on the server","content":{"application/json":{"schema":{"type":"object","description":"Error response for internal server errors","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (500)","example":500},"Message":{"type":"string","description":"Human-readable description of the server error","example":"An internal server error occurred. Please try again later."},"RequestId":{"type":"string","description":"Unique request identifier for troubleshooting","example":"req_1234567890abcdef"}},"required":["StatusCode","Message"],"title":"InternalServerError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

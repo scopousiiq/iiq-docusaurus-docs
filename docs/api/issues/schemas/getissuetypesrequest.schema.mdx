@@ -1,0 +1,33 @@
+---
+id: getissuetypesrequest
+title: "GetIssueTypesRequest"
+description: ""
+sidebar_label: "GetIssueTypesRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SiteScope":"Aggregate","ApplySiteVisibility":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetIssueTypesRequest"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"SiteScope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"],"default":"Aggregate"},"ApplySiteVisibility":{"type":"boolean","default":true},"IgnoreSiteIdFilter":{"type":"boolean"},"IgnoreProductIdFilter":{"type":"boolean"},"AppIds":{"type":"array","items":{"type":"string"},"nullable":true}},"example":{"SiteScope":"Aggregate","ApplySiteVisibility":true},"title":"GetIssueTypesRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

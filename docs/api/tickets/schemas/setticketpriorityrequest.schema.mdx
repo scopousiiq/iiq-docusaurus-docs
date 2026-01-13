@@ -1,0 +1,33 @@
+---
+id: setticketpriorityrequest
+title: "SetTicketPriorityRequest"
+description: "Request payload for changing a ticket's priority level."
+sidebar_label: "SetTicketPriorityRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketId":"260b8773-dcad-f011-8e61-000d3a7bb518","PriorityId":2}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SetTicketPriorityRequest"}
+>
+</Heading>
+
+
+
+Request payload for changing a ticket's priority level.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for changing a ticket's priority level.","properties":{"TicketId":{"type":"string","format":"uuid","description":"Identifier of the ticket to update. Must match the `ticketId` path parameter.","example":"260b8773-dcad-f011-8e61-000d3a7bb518"},"PriorityId":{"type":"integer","description":"Priority level identifier. Obtain valid values from GET /api/v1.0/tickets/priorities.","example":2,"x-obtained-from":{"operationId":"listTicketPriorityLevels","endpoint":"GET /api/v1.0/tickets/priorities","responseField":"Items[].PriorityId"}}},"required":["TicketId","PriorityId"],"example":{"TicketId":"260b8773-dcad-f011-8e61-000d3a7bb518","PriorityId":2},"title":"SetTicketPriorityRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: ticketusersummary
+title: "TicketUserSummary"
+description: "Minimal user record embedded in ticket payloads"
+sidebar_label: "TicketUserSummary"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"UserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Relationship":"Owner","Name":"string","FirstName":"string","LastName":"string","Initials":"iA","Email":"user@example.com","Username":"string","LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationName":"string","RoleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Role":{"RoleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Portal":0,"Visibility":0,"CategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Users":0,"Scope":"string"},"IsOnline":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketUserSummary"}
+>
+</Heading>
+
+
+
+Minimal user record embedded in ticket payloads
+
+<Schema
+  schema={{"type":"object","description":"Minimal user record embedded in ticket payloads","properties":{"UserId":{"type":"string","format":"uuid"},"Relationship":{"type":"string","description":"Ticket relationship such as Owner, For, or Assigned","example":"Owner"},"Name":{"type":"string","description":"Full display name"},"FirstName":{"type":"string","nullable":true},"LastName":{"type":"string","nullable":true},"Initials":{"type":"string","nullable":true,"example":"iA"},"Email":{"type":"string","format":"email"},"Username":{"type":"string","description":"Unique username/principal name"},"LocationId":{"type":"string","format":"uuid","nullable":true},"LocationName":{"type":"string","nullable":true},"RoleId":{"type":"string","format":"uuid","nullable":true},"Role":{"nullable":true,"allOf":[{"type":"object","properties":{"RoleId":{"type":"string","format":"uuid"},"Name":{"type":"string","description":"Role name"},"Portal":{"type":"integer","description":"Portal access level"},"Visibility":{"type":"integer","description":"Visibility level"},"CategoryId":{"type":"string","format":"uuid"},"Users":{"type":"integer","description":"Number of users with this role"},"Scope":{"type":"string","description":"Role scope"}},"required":["RoleId","Portal","Visibility","CategoryId","Users","Scope"],"title":"Role"}],"type":"object"},"IsOnline":{"type":"boolean","description":"Indicates whether the user is currently online"}},"required":["UserId","Name","Email","Username","IsOnline"],"title":"TicketUserSummary"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

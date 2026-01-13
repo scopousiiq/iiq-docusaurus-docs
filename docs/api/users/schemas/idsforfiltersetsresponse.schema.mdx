@@ -1,0 +1,33 @@
+---
+id: idsforfiltersetsresponse
+title: "IdsForFilterSetsResponse"
+description: "Result entry mapping a filter set to the entity IDs that match its conditions."
+sidebar_label: "IdsForFilterSetsResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"FilterSetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","MatchedIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"IdsForFilterSetsResponse"}
+>
+</Heading>
+
+
+
+Result entry mapping a filter set to the entity IDs that match its conditions.
+
+<Schema
+  schema={{"type":"object","description":"Result entry mapping a filter set to the entity IDs that match its conditions.","properties":{"FilterSetId":{"type":"string","format":"uuid","description":"Filter set identifier."},"MatchedIds":{"type":"array","description":"List of entity identifiers that matched the filter set.","items":{"type":"string","format":"uuid"}}},"title":"IdsForFilterSetsResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: viewshareitemcreateresponse
+title: "ViewShareItemCreateResponse"
+description: ""
+sidebar_label: "ViewShareItemCreateResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Id":0,"Uid":"5c61a623-ef84-f011-b484-002248538048","Item":{"SampleKey":"SampleValue"},"Message":null,"UserToken":"5c61a623-ef84-f011-b484-002248538048","RequestDate":"2025-01-15T14:22:13.480Z","ExecutionTime":92.314,"StatusCode":201,"ServerName":"spark-assets-6b8676c76c-5tzm6","ProcessId":1,"OperationId":"exampleOperation","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ViewShareItemCreateResponse"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"allOf":[{"type":"object","description":"Command-style envelope returned after successfully creating a resource.","properties":{"Id":{"type":"integer","description":"Legacy numeric identifier returned for parity with ItemCreateResponse.","example":0},"Uid":{"type":"string","format":"uuid","description":"Server-generated correlation identifier for the command execution.","example":"5c61a623-ef84-f011-b484-002248538048"},"Item":{"type":"object","description":"Payload describing the resource that was created. The exact structure depends on the endpoint.","nullable":true,"additionalProperties":true},"Message":{"type":"string","description":"Optional informational message returned by the service.","nullable":true},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated session identifier that executed the call.","example":"5c61a623-ef84-f011-b484-002248538048"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request.","example":"2025-01-15T14:22:13.480Z"},"ExecutionTime":{"type":"number","description":"Server-side execution time in milliseconds.","example":92.314},"StatusCode":{"type":"integer","description":"HTTP status code mirrored inside the envelope.","example":201},"ServerName":{"type":"string","description":"Name of the application node that processed the request.","example":"spark-assets-6b8676c76c-5tzm6"},"ProcessId":{"type":"integer","description":"Internal process identifier used for diagnostics.","example":1},"OperationId":{"type":"string","description":"Trace identifier emitted for log correlation.","example":"exampleOperation"},"Properties":{"type":"object","description":"Additional metadata emitted by the platform.","additionalProperties":true}},"required":["Item","UserToken","RequestDate","ExecutionTime","StatusCode","ServerName","ProcessId"],"example":{"Id":0,"Uid":"5c61a623-ef84-f011-b484-002248538048","Item":{"SampleKey":"SampleValue"},"Message":null,"UserToken":"5c61a623-ef84-f011-b484-002248538048","RequestDate":"2025-01-15T14:22:13.480Z","ExecutionTime":92.314,"StatusCode":201,"ServerName":"spark-assets-6b8676c76c-5tzm6","ProcessId":1,"OperationId":"exampleOperation","Properties":{}},"title":"ItemCreateResponse"}],"type":"object","properties":{"Item":{"type":"object","description":"Share assignment for a view, either to an individual user or a team.","properties":{"ViewUserId":{"type":"string","format":"uuid","description":"Identifier for the user share assignment.","example":"c5e177b6-9968-4f65-95cc-842ae2d63b57"},"ViewTeamId":{"type":"string","format":"uuid","description":"Identifier for the team share assignment.","example":"2a0c8d3f-7d73-4bc2-9a6a-6d8dbd6b9ef4"},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the share record was created.","example":"2025-08-20T08:29:55.807Z"},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the share record was last updated.","example":"2025-08-20T08:29:55.807Z"},"ViewId":{"type":"string","format":"uuid","description":"Identifier of the shared view.","example":"0c8f7039-1234-4e7f-9c22-11c25e7b45b2"},"UserId":{"type":"string","format":"uuid","description":"User receiving the share.","example":"c9a09d97-e757-4f9a-8918-f4eb4d4a0d9f"},"TeamId":{"type":"string","format":"uuid","description":"Team receiving the share.","example":"bb6cece8-e4f4-e511-a789-005056bb000e"},"Response":{"type":"string","description":"Invitation response captured from the user.","enum":["NoResponse","Accepted","Declined"],"example":"NoResponse"},"Access":{"type":"string","description":"Access level granted to the recipient.","enum":["View","Edit","Owner"],"example":"View"}},"example":{"ViewUserId":"c5e177b6-9968-4f65-95cc-842ae2d63b57","ViewTeamId":"2a0c8d3f-7d73-4bc2-9a6a-6d8dbd6b9ef4","CreatedDate":"2025-08-20T08:29:55.807Z","ModifiedDate":"2025-08-20T08:29:55.807Z","ViewId":"0c8f7039-1234-4e7f-9c22-11c25e7b45b2","UserId":"c9a09d97-e757-4f9a-8918-f4eb4d4a0d9f","TeamId":"bb6cece8-e4f4-e511-a789-005056bb000e","Response":"NoResponse","Access":"View"},"title":"ViewShare"}},"title":"ViewShareItemCreateResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

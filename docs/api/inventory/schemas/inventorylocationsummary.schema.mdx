@@ -1,0 +1,33 @@
+---
+id: inventorylocationsummary
+title: "InventoryLocationSummary"
+description: "Location metadata returned with inventory stock entries."
+sidebar_label: "InventoryLocationSummary"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Abbreviation":"string","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AddressId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsReservable":true,"IsDeleted":true,"CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"InventoryLocationSummary"}
+>
+</Heading>
+
+
+
+Location metadata returned with inventory stock entries.
+
+<Schema
+  schema={{"type":"object","description":"Location metadata returned with inventory stock entries.","properties":{"LocationId":{"type":"string","format":"uuid","description":"Identifier of the location housing stock."},"Name":{"type":"string","description":"Display name of the location."},"Abbreviation":{"type":"string","description":"Short code for the location."},"SiteId":{"type":"string","format":"uuid","description":"Site scope for the location."},"AddressId":{"type":"string","format":"uuid","description":"Identifier of the associated address record."},"IsReservable":{"type":"boolean","description":"Indicates whether the location can host reservations."},"IsDeleted":{"type":"boolean","description":"True when the location has been soft-deleted."},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the location record was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the location record was last modified."}},"required":["LocationId","Name","Abbreviation","SiteId","AddressId","IsReservable","IsDeleted","CreatedDate","ModifiedDate"],"title":"InventoryLocationSummary"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

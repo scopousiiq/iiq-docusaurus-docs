@@ -1,0 +1,76 @@
+---
+id: get-user-rooms-bulk
+title: "Get room assignments for users"
+description: "Retrieves room assignments for multiple users based on filter criteria. Returns a list of user-to-room associations showing which physical spaces (classrooms, offices, labs) are assigned to which users."
+sidebar_label: "Get room assignments for users"
+hide_title: true
+hide_table_of_contents: true
+api: eJztW21z27ay/is7zAfZGkqWm+S88J7TOa7jJG6T2LXs9vRangYmVyJqCmAAUI7q6L/fWQAkQcpN7HvaOV/amUYyCSwWu88u9gW6i2SJihkuxXEWJdECzYVGdSblUn9TFTdRHGWoU8VLGhIl0RkaxXGFGpSUS2Ba84VYojAa5lLBsioMLwuESqPScM00ZiAFzHlhUEGquEHF2RjO0FRKaGBQcG1Azu2MkZGjmq5MueVLg87lLRcLuM15mkOZrzVPWQG6ZClq2EkLpjXN0jHI+ZynqGMo2LXeBabQs4gZGOkpWN7GMzETw+GPUt3MC3kLRx/ZsixwOJyJ/THsnNgNs2IXThWWRKe3hQRIUMeZjuGNTL0EiQMFGpkiRpliSzSo9Ex8NYbTk+k5mJxrQJGVkgsDt9zkoPBDhdrAtczWM/GURJMiX2FXMNtScZPpcYaG8UK7DV1ohEOmUQ+HyUyM4KDKuNlWFkuV1LqnLxp/9LGUamsCKKTHdsQPrOAZM+jGpHKFii3Qqr/wkrDjCD9bdFao+Jy7UXCNc6kQ0pyJBXr+30ljeW8RUhSwZCbNCQKtLErGlR6TEmrNtPImVRd8SftGXRVGj+El6YWLRYEjouH4KqS8qUodg0aEy1dH57DHSr632h9P9qxA9u6ckjd7Fl9XO3uZTLUd5N4v0IwanvTuGM4lLGXG5+tQ2jHxbQGw9+LozdH5EZnE55fau6tRRbZ4nG3GURwZttBRchnRSJ2USs457ackbejoKo4U6lIKjTpK7qKvJhP66NrvmwBUW6iI4iiVwqAwNJGVZeE1tfeLptl3kU5zXDL6ZtYlRkkkr3/B1NzjJhwjQPQYF6S7rqlvLT6Gt1wpqTS8JyZfoamJ/KN2SV+/JymwojiZR8nll3iYGiYypjKopQIoVljI0mG1ZAsumMHMs1X7QT2GQ8e0BiaAKcXWxDQ3uNRQFpWupxKEl2hYxgwjxkpFRAx34j+m8YGkLKEtJg9q8igMp6mgLO4xg+s1mBzhQ4VqPYapUVVqKoWwYorGXa8bR0KLc7/cZhPbpQ9l5dTol+fC4ALVFgPvquU1qnaDXNhV00opZ/dedjsFioXJaaDdmRPMbhRH6DxnlHz1fBNHpySbhcXPA/V02krTe7JWBtbJlWyBmQONd621WW8J/VwaVpzJW/2AnduxIJr9K3mrga0YL9h1gbWHJPdDDNjFmq0+f/b02VO3W3yopPvrWarBggTKUPRO8eGq+5O//eXvftUp/xUfpV6FqVRZINvS+swFdjfmyR+LDD8+gP7/opIjd8xzmkIrhZugBdolPbhqUHVWnhByDTf03aPorTeuaHMVR6IqrJyixKgK48eDiou0qDLyRMZqgvQdOwZTUmEMTGQdxqNNbH3tubxBEQhDG0UYj6O5VEtmoiSqKp5F2zz2bL0yOZl5ar2ORq2JPZ7RszlHRcuduWjgBTP42QXJ5Y8MX+I2zPgStWHLEm5zdPI+OD2GUskUNenJacAuQysefcS0ork0MVjTAbWzpqxob1t+FtUK1UjzDAFrYkC8kb6XvCi4xlSKTNNyU8NMpQ9l9hD0vj4/PwVtZ0AqM4Qdsy4p+CvW8NVkYk1GVyltbF4V1pF3PdJksomjt6g1afMeeX5eYXUQCFw4Ibi/lp4eCY9OrO9w/XjabxlFNDhSyDJr/kik4AbXdldpwVEYL1T7JmciK4gyCdGK/B1b3rupHuraYxwEydDkzPw2HE7dC8oGvqieY2FQkUQ8tQDLdhMZZwshteGpVf1JmGo8Vl7niqXYX6CQC0ilUlhYup7/4DzoOwmWZdxpMRzn1vuC8TYzmzMfgrPHwsx7qwev25fB5ktMfIfr0YoVFQY8UBzcQPG+gKNPkvcCk9/woAcgpBjNGbnKlQv5CUIOjBZDGc9ASMISrshlEpKaMArmymYHZIjGKbh7VL/kWPw/cECgrw+ZOZFwMQL9GXDJta4w+rzt91xNtWSitcbgZb3afeR7fuw/s33ycBGdgmSOXGFGsX69gav2cJzKufmhYcbqnXi5P9DXcm629Ke3lnHRasc9Byv2AnJ7Hj8s2n0o2NrMFq7R3CIKYC7ko0OZNZmlTRuCVGFaMnUznuZMYTZ+KzMs9LhOF95vx4cux3rIUd7lj+YFzmdM8u4maI+n+SbcUpd4EAnVm4k29z3VW5qxw55N9rdTvwvBKpNLxX/F7PfL9Cz82jSBvDJr4xzrCBgvKoV6Sxn/YSjwbLLfOeyfTfZ/X4Pv7cNaTrhgGNBZPXp7GsNpgUwjnQ8rOsCt+UGq0OqYFXq8ZX+BLOL7bD5Unrd4r+mn25p+KdU1zzIUf7iaiSFHsES15C6i/eMU/rSn8Ke/v8KbHd2j759kBZm0Z17OVgjBno2kv8jgXY2PpS4geaSaG82FOn5+XyGnib1cLAhHnts/Tt+8XlG7Ff1J8jsr+flk0lHy8y+F8I9Vcsh915rF/VsEmdqksLVro9bAFowLKJjxp4FP3O4/CPqOmH+omqC7H9MaZdMsnUvp46aWRYUfft7/6umz53/569/+PmHXaYbzR2OsRo4DTgu0TRxpTCvFzdpWba6RKVTk46Lk8moTW0AdhCZin1/F0ccR5x9GVBq1EMPUb7RfoYwjqTJUUbL/jOoM+NGgIOvRdr0bSqNCWnFkY91H0CRmlmhySb2MUmrCdcloA1G/3OqqrAukIU7bjotKFVES5caUOtnby3Apx1ykTkcfxikdxFetoKZkTg73obgaBBAdWsAOixI/KIr9l5d1gPDtj+dbMPn2x3MwVHlwofRBtuSCa+PD66/hBbpqpoJzKQubA2husINAVnLKTuOIE8UcWWZXFzZzjKZueH/hn2RFxXLTSbd2Li6OX+zSIi41ffAih274VgxcUc8DYRYdlNyNmUUWy5RsW+pBrKOphkGAQKXd/P3xZDzZovoEmtEzNRP0/3mO7cP6SCYHbTNWI12UuWSCLdC2KLiAY6/x4+/HMHUlRzJNi5zYjwWPRB271LwfL/hykhRGyYKWoxoTaDRk1U0DZk2ylmrBhLepcc33kydwskK14nhbP3Lb6PBHjRmFmvjGFaq1FAi3uXSejKVGt+lRWTBDB1QC2lSZ60sYZGluN6UNm8/pQZoLnnImtNsAa2EnqWvmWUmShPRkW2iUC65lBSkTdDw2CzZSp6ZakiRu5tf2HxjBcOhFS8u4VsxwWDcO10DwiQGXjBcxKFlg3CQBtsuWVtpQhun7cS3Vt049Vq21jobDoPxnexKpCas6lodS4RwVihR1S+21163XX8HnmK5TahT6DFeho2ByJatFDhnS2b+yD1syhzUOOhgZDgNAEAdM61upsgCOLQmqgNyA03ZK69MMKQousD5C5/bMZoWtDEIqKQmVqsfKqY9Trqk/17Y9aEPUwWVag3eudgW+dJ2/FpaHcrmUAppOY/vqCUyPp3uvz4DOmEW78HQtUp/NOTl6WHogdjSh19r2F3ZO5S2qaZpLWcRwLOZckEs6ZMuy0ruEgNdnzWAjSbJySW1Ja+LkJWzTSWT1bsYdPm0vEKZ8IUYnAqZoqpLeHUox5wtqszh2uxE+tZClunHMW9N1HtKsa8eiYOfgV5p+8CKGV1LSItRjts3qGA4LslL6ZFq/4eJmt8PVmSxw9I2tph9Y/0QvDmyPzBuGkdYWtKvA1N7F5MhVEI427sXw9AbJ0JnW7rNr0tRnnlcidY2vkBWb8b6xVmlxce4oWW32PKIrNDtDoOp6sCZfWC1kuHJtedsdt4CHqqRAumkGd1e3vWPLwtuOJRxbMMZepZZeY2/1pQMuHLSbywcolCwK69t9q9nyQQ4PqDFBHezQ7dI5MXUBR4PtT/UT+AQvgqDyk305qv9rv9m/3Mza0XGxGA7hE3xPjZ1adIQk18B2zQjftXCamrMUXa/ASryhd9q6tU9QX8noeLwt51Z3Qfo04MJZhyX11rWuLaHPeMeWyIE3Zzc7cLzb553Iai/Vnx3o2NL5LZcbOKuARt+hfoLT2ouSqyQgTqcnZCrWsAPpknG3DAaCaTzsJ3BOt+tl7VzXtuMF2X4z9cLQA+6l+RoLis7qLq1uLGZkC9YEzns2RND34iRPTMIMhgUe2U3xmP2+4ukNTA1Tpn46HKYXZ2/cN7pb8f79+2umc3qQVqqA0b/dnZRZE+2SRxtR4NcLeXux8yyC2YzIAIxeUwAX5gQJfGNDW/jp5OLs5/OT747e9ce7sDNxI6bH50c/H7/oj3ERYQJBcNgb4PLc0fm6xAT6qW44OoPBnfsKMIteOlubRQlc1k8B7mbRS7I1ejyLyA1TnXkWxTCLfqAkxE+Ipu7EmkVXm3r2VdxSd31LGns3a9q09OfzSexeu84qPZp4CpsBfb5//75V3LdsxabWx3TU9wtbMd08TqXQQYP+n8BuGTcwR5PmO4NH6nQQgxeSy58SGBA4Bn5vLqjXCTSSHHS0PkhgsKX3QSOYgVM5jQqVHgxwSqYBjcbDt4GyaUxf3QMvST+DrlIl8O305N3YpeB8vt5pOPcI6OofrPoTGNS6H8TgFJ/A5cBrfXAF92jd6TyBO6gV7tTdKDuBST1vs0ufm93/qXXtlGg7ObUCm+447WzHDaVhssBxIRc79rqJrbe7dx3knK5NLkUHNWXzyDmOuvDQnG0BhOpXY0qedxr5PxpM9UyPm3/etaJ+JHQeBJ8vQ+gxMGqBBECPe9x7/Aw6APIwGlgYDbo4GjggDTpI2oRzr7p8OkQNErgb1JAaOEwNGlANWgcCDl27tT49mno4ojel4sJYAF0OLIIGV7s9CM3EaDSiDwrDXqFxUdj1Go5f1EPuOUjo7tyjz5G9u8pdefsvHSi9ndu0wAVa12s4osQz2DEJEWiD9LcHxMwXm9ypQf5yFsX1q0oV7vnDpeLCvICGNx93njSHTEc8bo17RBScSk4+bmRXRsGgWipJtyQTjgjMx43bPna7jngW2VutXfZt+Ovm/yJzMdZLbvJ/aZvojTGrOmvSWvXZS0icRVd+CetIt1QI3+Ga7u+lWLYOLihWnNnkiaKo0zZbuq8+4YoXnQvEQeKV0T3TJbfFFmY732tb/qCLpDbaluM6TXazXPUBwdt/DOeu8hJTzEaFl4MF1leQDsKSyxgcy0EhydetyJezgoo4NuECSnpdQPrYNG+lx3ByK1DZFEvUGZyj4hNHKujY28VqOKT0aTh8Kemr68FzkdlrTdoWn2gsNX6Bu5h3B8eLsSNRZ/w0zN0pxoyuWdqOOt2ftctYZqhmo11fZhFcReT1XTmFWhZVr2b2pLmNbbXvtGibNXRdgy+ZWre95B2XNzvo0aauK15QiWjX3xRn8zlSDc1LWMmKcgWfTQeXV53A3X4ot21VERbMbpmibJhgePTRNxqOX3wGfYQoyzvWw9uCrHblp+nxtC6CjOFHysP1WqQ252aGuYvHJkeNtBKhxl6lbi4D+sTOXt/IKmfMnUoJnPlU5eD0uLGnEVz6ckB4I9qjpv4csZLvwggOqS6ADaZsgz9nxby+CKw9xQMLtJCgg57/qMn5aoivKNT125pIo/yQTnMrvf1WU7Pwb/AQ3Eaut4mse+3b0AP3b02DxsAS6bacznnZq935lhxLbcXc18SD+m1bxZ9WJeEnins9CG1kWfBFbvqNiDiy1VFXgR9pN/1f/W5FHBU8Rbob0K5Pl5AUR8PUemu529vb/gFFvs5dGaGwcMlEQOoV3vPrgqY01C/Q37X9yT9/SvLnT0n+/CnJf+2nJK51Z/Cj2SsLxu3dSesI7nzH9JK8CrXc9m2frTZnSzKK6Zdi1FTOqcmaXEZ3d2SgF6rYbOixvbtO7WHq4SrursJRE7luD7YNXyp0l6Zt9m5fW+h0dWnrdKGy22ft9VXDXx0wsQ6I3925EfZK92YTxZ4L22iNNlebzeb/AIoAVwY=
+sidebar_class_name: "post api-method"
+info_path: docs/api/users/users-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get room assignments for users"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/users/rooms/get"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves room assignments for multiple users based on filter criteria. Returns a list of user-to-room associations showing which physical spaces (classrooms, offices, labs) are assigned to which users.
+
+**Workflow Example**
+1. (Optional) Prepare filter criteria: UserIds, LocationIds, or search parameters
+2. POST this endpoint with request body
+3. Receive list of user-room associations with room details
+
+**Use Cases**:
+- Audit room assignments across multiple users
+- Export room assignment reports
+- Validate room coverage for locations
+- Bulk room assignment verification before changes
+
+**Notes**: Returns all matching user-room pairs. Use filter parameters to limit results. For single-user room lookups, see [GET /api/v1.0/users/\{UserId\}/rooms](/docs/api/users/get-user-rooms). To modify assignments, use POST/DELETE on /api/v1.0/users/\{UserId\}/rooms/\{LocationRoomId\}.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of user room assignments","content":{"application/json":{"schema":{"type":"object","description":"Response containing a list of user room assignments. Mirrors `ListGetResponse<UserRoom>`.","allOf":[{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"}],"properties":{"Items":{"type":"array","items":{"type":"object","description":"Association between a user and a location room. Mirrors `Spark.Shared.Models.UserRoom`.","properties":{"UserId":{"type":"string","format":"uuid","description":"User identifier."},"LocationRoomId":{"type":"string","format":"uuid","description":"Location room identifier."}},"title":"UserRoom"}}},"title":"UserRoomsListGetResponse"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","description":"Error response for authentication failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (401)","example":401},"Message":{"type":"string","description":"Human-readable description of the authentication error","example":"Authentication required. Please provide valid credentials."}},"required":["StatusCode","Message"],"title":"UnauthorizedError"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","description":"Error response for authorization/permission failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (403)","example":403},"Message":{"type":"string","description":"Human-readable description of the authorization error","example":"You do not have permission to perform this action"}},"required":["StatusCode","Message"],"title":"ForbiddenError"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"type":"object","description":"Error response for internal server errors","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (500)","example":500},"Message":{"type":"string","description":"Human-readable description of the server error","example":"An internal server error occurred. Please try again later."},"RequestId":{"type":"string","description":"Unique request identifier for troubleshooting","example":"req_1234567890abcdef"}},"required":["StatusCode","Message"],"title":"InternalServerError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

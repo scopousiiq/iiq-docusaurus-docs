@@ -1,0 +1,179 @@
+# Assets API
+
+The Assets API provides full access to IncidentIQ's asset management system. Track devices, equipment, and inventory throughout their lifecycle—from procurement to retirement.
+
+## Overview
+
+Assets in IncidentIQ represent physical or digital items your organization manages: laptops, Chromebooks, tablets, printers, projectors, and more.
+
+:::info
+**What you can do with the Assets API**
+
+- **Search and inventory** assets by model, location, status, or assigned user
+- **Track asset lifecycle** from purchase through deployment, repair, and retirement
+- **Manage assignments** to users, locations, or storage areas
+- **Record costs** including purchase price, repairs, and total cost of ownership
+- **Handle checkout/check-in** for loaner devices and shared equipment
+- **Link assets to tickets** for repair tracking and history
+:::
+
+## Common Use Cases
+
+### Device Onboarding
+Automatically create asset records when devices are enrolled in MDM systems like Google Admin, Jamf, or Intune.
+
+### Inventory Sync
+Keep asset data synchronized with external inventory systems, ERPs, or procurement platforms.
+
+### Assignment Automation
+Automatically assign devices to users based on student information system (SIS) data or HR feeds.
+
+### Audit and Compliance
+Generate asset reports for E-Rate audits, insurance claims, or compliance requirements.
+
+### Repair Tracking
+Link assets to repair tickets and track total repair costs over the device lifecycle.
+
+## API Sections
+
+| Section | Description |
+|---------|-------------|
+| **Searching** | Query assets with filters, pagination, and faceted search |
+| **Details** | Retrieve comprehensive asset information and history |
+| **Creating** | Add new assets individually or via batch operations |
+| **Updating** | Modify asset properties, status, and custom fields |
+| **Checkout** | Manage device checkout/check-in for loaner programs |
+| **Files** | Attach documents, images, and receipts to assets |
+| **Cost** | Track purchase price, repairs, and total cost of ownership |
+| **Linked** | Manage relationships between assets and other entities |
+| **Activity** | View asset history, changes, and audit trail |
+| **Types** | Access asset type definitions and configurations |
+| **Bulk** | Perform mass updates, assignments, and status changes |
+
+## Quick Start
+
+**cURL
+**
+
+```bash
+curl -X POST "https://your-site.incidentiq.com/api/v1.0/assets" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Filters": [
+      {"Facet": "ModelName", "Values": ["Chromebook 3100"]}
+    ],
+    "Paging": {"PageSize": 50, "PageIndex": 0}
+  }'
+```
+
+**JavaScript
+**
+
+```javascript
+const response = await fetch('https://your-site.incidentiq.com/api/v1.0/assets', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_TOKEN',
+    'SiteId': 'YOUR_SITE_ID',
+    'Client': 'ApiClient',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    Filters: [
+      { Facet: 'ModelName', Values: ['Chromebook 3100'] }
+    ],
+    Paging: { PageSize: 50, PageIndex: 0 }
+  })
+});
+
+const data = await response.json();
+console.log(data.Items);
+```
+
+**Python
+**
+
+```python
+import requests
+
+response = requests.post(
+    'https://your-site.incidentiq.com/api/v1.0/assets',
+    headers={
+        'Authorization': 'Bearer YOUR_TOKEN',
+        'SiteId': 'YOUR_SITE_ID',
+        'Client': 'ApiClient',
+        'Content-Type': 'application/json'
+    },
+    json={
+        'Filters': [
+            {'Facet': 'ModelName', 'Values': ['Chromebook 3100']}
+        ],
+        'Paging': {'PageSize': 50, 'PageIndex': 0}
+    }
+)
+
+data = response.json()
+print(data['Items'])
+```
+
+
+---
+
+### Get Asset Details
+
+```bash
+curl -X GET "https://your-site.incidentiq.com/api/v1.0/assets/{assetId}" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient"
+```
+
+### Checkout an Asset
+
+:::warning
+**Checkout Requirements**
+
+The asset must be in a status that allows checkout (typically "In Storage" or "Available"). The user must exist in the system.
+:::
+
+```json http
+{
+  "method": "POST",
+  "url": "https://your-site.incidentiq.com/api/v1.0/assets/{assetId}/checkout",
+  "headers": {
+    "Authorization": "Bearer YOUR_TOKEN",
+    "SiteId": "YOUR_SITE_ID",
+    "Client": "ApiClient",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "UserId": "USER_UUID",
+    "ExpectedReturnDate": "2025-06-01T00:00:00Z"
+  }
+}
+```
+
+## Key Concepts
+
+:::info
+**Asset Status Types**
+
+Assets have status types that indicate their current state: Deployed, In Storage, In Repair, Retired, etc. Use the status type endpoints to retrieve available statuses for your site.
+:::
+
+### Serial Numbers and Asset Tags
+Assets are typically identified by serial number (manufacturer-assigned) and asset tag (organization-assigned). Both can be used for searching and lookups.
+
+### Owner vs. Location
+An asset's **Owner** is the user it's assigned to. The **Location** is where the asset physically resides. These can differ—for example, a laptop assigned to a student (owner) at a specific school (location).
+
+## Related APIs
+
+- [Tickets](#/Tickets) - Create repair tickets linked to assets
+- [Users](#/Users) - Look up users for asset assignment
+- [Locations](#/Locations) - Reference buildings, rooms, and storage areas
+- [Custom Fields](#/Custom%20Fields) - Manage custom field values on assets
+- [Categories](#/Categories) - Asset categories and classifications

@@ -1,0 +1,88 @@
+---
+id: get-ticket-activity-by-id
+title: "Get ticket activity by ID"
+description: "Retrieves the complete details of a specific ticket activity by its identifier. Activities include comments, status changes, assignments, attachments, and other timeline events."
+sidebar_label: "Get ticket activity by ID"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/tickets/tickets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get ticket activity by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/tickets/activities/{ticketActivityId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves the complete details of a specific ticket activity by its identifier. Activities include comments, status changes, assignments, attachments, and other timeline events.
+
+**Prerequisites**
+1. **ticketActivityId** – Use [GET /api/v1.0/tickets/\{ticketId\}/timeline](/docs/api/tickets/get-ticket-timeline) to view the ticket's activity history and extract `TicketActivityId` from timeline entries.
+
+**Workflow Example**
+1. View timeline: [GET /api/v1.0/tickets/\{ticketId\}/timeline](/docs/api/tickets/get-ticket-timeline) → identify activity of interest
+2. Get details: [GET /api/v1.0/tickets/activities/\{ticketActivityId\}](/docs/api/tickets/get-ticket-activity-by-id)
+3. Process: Use activity data for display, audit, or integration purposes
+
+**Response Contents**: Returns the activity type, creator, timestamp, content (comment text, field changes), visibility settings, and any attachments.
+
+**Use Cases**: Activity detail views, audit logging, activity-triggered integrations.
+
+**Related Endpoints**
+- [GET /api/v1.0/tickets/\{ticketId\}/timeline](/docs/api/tickets/get-ticket-timeline) – View full activity history
+- [POST /api/v1.0/tickets/\{ticketId\}/activities/\{ticketActivityId\}](/docs/api/tickets/update-ticket-activity) – Edit activity
+- [DELETE /api/v1.0/tickets/activities/\{ticketActivityId\}](/docs/api/tickets/delete-ticket-activity) – Delete activity
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"ticketActivityId","in":"path","required":true,"description":"Unique identifier of the ticket activity","schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Activity retrieved successfully","content":{"application/json":{"schema":{"type":"object","description":"Response containing a single ticket activity record.","allOf":[{"type":"object","description":"Standard response envelope for single-item GET operations. The `Item` property contains the requested entity.","properties":{"Item":{"description":"The requested entity. Structure varies by endpoint."},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful GET)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Item","StatusCode"],"title":"ItemGetResponse"}],"properties":{"Item":{"allOf":[{"type":"object","description":"Represents an activity or comment on a ticket.","properties":{"TicketActivityId":{"type":"string","format":"uuid","description":"Identifier for the activity."},"SiteId":{"type":"string","format":"uuid","description":"Site identifier."},"ProductId":{"type":"string","format":"uuid","description":"Product identifier.","nullable":true},"CreatedDate":{"type":"string","format":"date-time","description":"When the activity was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"When the activity was last modified."},"IsPublic":{"type":"boolean","description":"Whether the activity is visible to end users."},"IsDeleted":{"type":"boolean","description":"Whether the activity has been soft-deleted."},"TicketId":{"type":"string","format":"uuid","description":"Parent ticket identifier."},"TicketSubject":{"type":"string","description":"Subject of the parent ticket.","nullable":true},"OwnerId":{"type":"string","format":"uuid","description":"User identifier who created the activity."},"OwnerDetails":{"type":"string","description":"Quick reference display name for the owner.","nullable":true},"ActivityItems":{"type":"array","description":"Collection of polymorphic items making up the activity content.","items":{"type":"object","additionalProperties":true,"description":"Polymorphic activity item. Fields vary by activity type."},"nullable":true},"SortOrder":{"type":"integer","description":"Sort order index."},"Alignment":{"type":"string","description":"UI alignment preference.","nullable":true}},"title":"TicketActivity"}]}},"title":"TicketActivitySingleResponse"}}}},"401":{"description":"Unauthorized – caller is not authenticated"},"404":{"description":"Not found – activity does not exist"}}}
+>
+  
+</StatusCodes>
+
+
+      

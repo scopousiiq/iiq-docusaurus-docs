@@ -1,0 +1,33 @@
+---
+id: setuserinforequest
+title: "SetUserInfoRequest"
+description: "Payload to update user info fields. Mirrors `Spark.Shared.Models.Requests.SetUserInfoRequest`."
+sidebar_label: "SetUserInfoRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"UserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Values":[{"Key":"string","Value":"string"}],"RunRules":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SetUserInfoRequest"}
+>
+</Heading>
+
+
+
+Payload to update user info fields. Mirrors `Spark.Shared.Models.Requests.SetUserInfoRequest`.
+
+<Schema
+  schema={{"type":"object","description":"Payload to update user info fields. Mirrors `Spark.Shared.Models.Requests.SetUserInfoRequest`.","properties":{"UserId":{"type":"string","format":"uuid","description":"User identifier. Ignored when used in bulk operations."},"Values":{"type":"array","description":"Field values to set. Each element is a key/value pair where the key is the field identifier.","items":{"type":"object","description":"Represents a key/value pair serialized from .NET `KeyValuePair<string,string>`.","properties":{"Key":{"type":"string","description":"Key identifier."},"Value":{"type":"string","description":"String value."}},"title":"StringKeyValuePair"}},"RunRules":{"type":"boolean","description":"When true, server-side rules run after applying the values.","default":true}},"title":"SetUserInfoRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

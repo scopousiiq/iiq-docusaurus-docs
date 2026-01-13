@@ -1,0 +1,33 @@
+---
+id: assetdatamappings
+title: "AssetDataMappings"
+description: "Integration data mappings associated with the asset"
+sidebar_label: "AssetDataMappings"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetTag":{"AppId":"string"},"SerialNumber":{"AppId":"string"},"Location":{"AppId":"string"},"Model":{"AppId":"string"},"Owner":{"AppId":"string"},"Lookups":[{"Key":"string","AppId":"string","Value":"string"}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetDataMappings"}
+>
+</Heading>
+
+
+
+Integration data mappings associated with the asset
+
+<Schema
+  schema={{"type":"object","description":"Integration data mappings associated with the asset","properties":{"AssetTag":{"nullable":true,"allOf":[{"type":"object","description":"Reference to an external integration source","properties":{"AppId":{"type":"string","description":"Identifier for the external application","nullable":true}},"title":"AssetDataMappingSource"}],"type":"object"},"SerialNumber":{"nullable":true,"allOf":[{"type":"object","description":"Reference to an external integration source","properties":{"AppId":{"type":"string","description":"Identifier for the external application","nullable":true}},"title":"AssetDataMappingSource"}],"type":"object"},"Location":{"nullable":true,"allOf":[{"type":"object","description":"Reference to an external integration source","properties":{"AppId":{"type":"string","description":"Identifier for the external application","nullable":true}},"title":"AssetDataMappingSource"}],"type":"object"},"Model":{"nullable":true,"allOf":[{"type":"object","description":"Reference to an external integration source","properties":{"AppId":{"type":"string","description":"Identifier for the external application","nullable":true}},"title":"AssetDataMappingSource"}],"type":"object"},"Owner":{"nullable":true,"allOf":[{"type":"object","description":"Reference to an external integration source","properties":{"AppId":{"type":"string","description":"Identifier for the external application","nullable":true}},"title":"AssetDataMappingSource"}],"type":"object"},"Lookups":{"type":"array","items":{"type":"object","description":"Lookup value associated with an external system","properties":{"Key":{"type":"string"},"AppId":{"type":"string","nullable":true},"Value":{"type":"string","nullable":true}},"title":"AssetDataMappingLookup"},"nullable":true}},"additionalProperties":{"type":"object","description":"Reference to an external integration source","properties":{"AppId":{"type":"string","description":"Identifier for the external application","nullable":true}},"title":"AssetDataMappingSource"},"title":"AssetDataMappings"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

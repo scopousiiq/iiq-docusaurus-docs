@@ -1,0 +1,126 @@
+---
+id: usersearchfacetkey
+title: "UserSearchFacetKey"
+description: "Facet keys for user search (entity type `888891ac-91aa-e711-80c2-100dffa00003`). The supported facets are organized by category:"
+sidebar_label: "UserSearchFacetKey"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: "role"
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UserSearchFacetKey"}
+>
+</Heading>
+
+
+
+Facet keys for user search (entity type `888891ac-91aa-e711-80c2-100dffa00003`). The supported facets are organized by category:
+
+## User Identity
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `user` | Specific user | UUID |
+| `username` | Username | String |
+| `email` | Email address | String |
+| `personalemail` | Personal email | String |
+| `schoolidnumber` | School ID number | String |
+| `keyword` | Full-text search | String |
+| `requestorlastnamesearch` | Last name search | String |
+
+## Role & Classification
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `role` | User role | UUID |
+| `grade` | Grade level | UUID |
+| `department` | Department | UUID |
+| `jobtitle` | Job title | String |
+| `employmentstatus` | Employment status | UUID |
+| `userstatus` | User account status | UUID |
+
+## Location & Assignment
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `location` | User location | UUID |
+| `locationtype` | Location type | UUID |
+| `site` | Site/school | UUID |
+| `team` | Assigned team | UUID |
+| `homeroom` | Homeroom | UUID |
+| `orgunit` | Organizational unit | UUID |
+
+## Device & Asset
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `hasassigneddevice` | Has assigned device | Boolean |
+| `usermultipledevices` | Has multiple devices | Boolean |
+
+## Forms & Documents
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `form` | Associated form | UUID |
+| `formstatus` | Form completion status | UUID |
+| `formsubmissionstatus` | Submission status | UUID |
+| `hasfileswithincategory` | Has files in category | UUID |
+| `hasfileswithkeyword` | Has files with keyword | String |
+
+## Labor & Activity
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `labortype` | Labor activity type | UUID |
+| `laboractivitydate` | Labor activity date | Date |
+| `laborhourlyrate` | Hourly rate | Numeric |
+| `performedbyapp` | Activity by app | UUID |
+
+## Data Source & Integration
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `source` | Data source/origin | UUID |
+| `authenticatedby` | Authentication provider | String |
+| `userapplink` | App integration link | UUID |
+
+## SIS Integration
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `sisuserstatus` | SIS user status | UUID |
+| `sisclass` | SIS class | UUID |
+| `siscourse` | SIS course | UUID |
+| `sisteacher` | SIS teacher | UUID |
+
+## Duplicates & Data Quality
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `userduplicateany` | Any duplicate detected | Boolean |
+| `userduplicateemail` | Duplicate email | Boolean |
+| `userduplicateschoolid` | Duplicate school ID | Boolean |
+| `userduplicateusername` | Duplicate username | Boolean |
+
+## Custom & Extended
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `userattribute` | User attributes | UUID |
+| `usercustomfield` | Custom field values | UUID |
+| `userappattribute` | App-specific attributes | UUID |
+| `view` | Saved view/filter | UUID |
+| `field` | Dynamic field filter | String |
+| `tag` | User tags | UUID |
+| `pronouns` | Pronouns | String |
+| `supervisor` | Supervisor | UUID |
+| `installedapp` | Installed app | UUID |
+| `licensedproduct` | Licensed product | UUID |
+
+Call `/api/v1.0/filters/for/entitytype/{entityTypeId}` to retrieve the latest supported keys.
+
+<Schema
+  schema={{"type":"string","description":"Facet keys for user search (entity type `888891ac-91aa-e711-80c2-100dffa00003`). The supported facets are organized by category:\n\n## User Identity\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `user` | Specific user | UUID |\n| `username` | Username | String |\n| `email` | Email address | String |\n| `personalemail` | Personal email | String |\n| `schoolidnumber` | School ID number | String |\n| `keyword` | Full-text search | String |\n| `requestorlastnamesearch` | Last name search | String |\n\n## Role & Classification\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `role` | User role | UUID |\n| `grade` | Grade level | UUID |\n| `department` | Department | UUID |\n| `jobtitle` | Job title | String |\n| `employmentstatus` | Employment status | UUID |\n| `userstatus` | User account status | UUID |\n\n## Location & Assignment\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `location` | User location | UUID |\n| `locationtype` | Location type | UUID |\n| `site` | Site/school | UUID |\n| `team` | Assigned team | UUID |\n| `homeroom` | Homeroom | UUID |\n| `orgunit` | Organizational unit | UUID |\n\n## Device & Asset\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `hasassigneddevice` | Has assigned device | Boolean |\n| `usermultipledevices` | Has multiple devices | Boolean |\n\n## Forms & Documents\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `form` | Associated form | UUID |\n| `formstatus` | Form completion status | UUID |\n| `formsubmissionstatus` | Submission status | UUID |\n| `hasfileswithincategory` | Has files in category | UUID |\n| `hasfileswithkeyword` | Has files with keyword | String |\n\n## Labor & Activity\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `labortype` | Labor activity type | UUID |\n| `laboractivitydate` | Labor activity date | Date |\n| `laborhourlyrate` | Hourly rate | Numeric |\n| `performedbyapp` | Activity by app | UUID |\n\n## Data Source & Integration\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `source` | Data source/origin | UUID |\n| `authenticatedby` | Authentication provider | String |\n| `userapplink` | App integration link | UUID |\n\n## SIS Integration\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `sisuserstatus` | SIS user status | UUID |\n| `sisclass` | SIS class | UUID |\n| `siscourse` | SIS course | UUID |\n| `sisteacher` | SIS teacher | UUID |\n\n## Duplicates & Data Quality\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `userduplicateany` | Any duplicate detected | Boolean |\n| `userduplicateemail` | Duplicate email | Boolean |\n| `userduplicateschoolid` | Duplicate school ID | Boolean |\n| `userduplicateusername` | Duplicate username | Boolean |\n\n## Custom & Extended\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `userattribute` | User attributes | UUID |\n| `usercustomfield` | Custom field values | UUID |\n| `userappattribute` | App-specific attributes | UUID |\n| `view` | Saved view/filter | UUID |\n| `field` | Dynamic field filter | String |\n| `tag` | User tags | UUID |\n| `pronouns` | Pronouns | String |\n| `supervisor` | Supervisor | UUID |\n| `installedapp` | Installed app | UUID |\n| `licensedproduct` | Licensed product | UUID |\n\nCall `/api/v1.0/filters/for/entitytype/{entityTypeId}` to retrieve the latest supported keys.","enum":["authenticatedby","customfieldaddress","customfieldassetfundingsource","customfieldassets","customfieldassetstatus","customfieldchangerequests","customfieldconfirmationmessage","customfielddate","customfielddaterange","customfielddatetime","customfielddetailssection","customfieldemailmessage","customfieldfileupload","customfieldinformation","customfieldipaddress","customfieldlocations","customfieldmodels","customfieldmultilinetext","customfieldmultiselect","customfieldnumber","customfieldnumberrange","customfieldphone","customfieldprotectedinfo","customfieldrichtext","customfieldscheduleselector","customfieldselect","customfieldtext","customfieldtickets","customfieldusers","customfieldyesno","department","email","employmentstatus","field","form","formstatus","formsubmissionstatus","grade","hasassigneddevice","hasfileswithincategory","hasfileswithkeyword","homeroom","installedapp","jobtitle","keyword","laboractivitydate","laborhourlyrate","labortype","licensedproduct","location","locationtype","orgunit","performedbyapp","personalemail","pronouns","requestorlastnamesearch","role","schoolidnumber","sisclass","siscourse","sisteacher","sisuserstatus","site","source","supervisor","tag","team","user","userappattribute","userapplink","userattribute","usercustomfield","userduplicateany","userduplicateemail","userduplicateschoolid","userduplicateusername","usermultipledevices","username","userstatus","view"],"example":"role","title":"UserSearchFacetKey"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

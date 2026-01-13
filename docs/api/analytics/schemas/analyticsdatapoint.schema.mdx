@@ -1,0 +1,33 @@
+---
+id: analyticsdatapoint
+title: "AnalyticsDataPoint"
+description: "Generic analytics data point used for chart and graph data across various analytics endpoints."
+sidebar_label: "AnalyticsDataPoint"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Name":"Active","Value":1250,"Id":"77777790-7ac2-44d9-895a-1d1e01000001","Date":null}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AnalyticsDataPoint"}
+>
+</Heading>
+
+
+
+Generic analytics data point used for chart and graph data across various analytics endpoints.
+
+<Schema
+  schema={{"type":"object","description":"Generic analytics data point used for chart and graph data across various analytics endpoints.","properties":{"Name":{"type":"string","description":"Display name of the data point category.","example":"Active"},"Value":{"type":"number","description":"Numeric value or count for this data point.","example":1250},"Id":{"type":"string","format":"uuid","description":"Optional identifier associated with this data point for drill-down operations.","example":"77777790-7ac2-44d9-895a-1d1e01000001"},"Date":{"type":"string","format":"date-time","nullable":true,"description":"Optional timestamp for time-series data points.","example":null}},"required":["Name","Value"],"example":{"Name":"Active","Value":1250,"Id":"77777790-7ac2-44d9-895a-1d1e01000001","Date":null},"title":"AnalyticsDataPoint"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

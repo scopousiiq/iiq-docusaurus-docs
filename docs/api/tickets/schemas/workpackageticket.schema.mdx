@@ -1,0 +1,33 @@
+---
+id: workpackageticket
+title: "WorkpackageTicket"
+description: "Ticket entry inside a work package."
+sidebar_label: "WorkpackageTicket"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"WorkpackageId":"44444444-4444-4444-8444-444444444444","TicketId":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8","IsClosed":false,"Priority":100}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"WorkpackageTicket"}
+>
+</Heading>
+
+
+
+Ticket entry inside a work package.
+
+<Schema
+  schema={{"type":"object","description":"Ticket entry inside a work package.","properties":{"WorkpackageId":{"type":"string","format":"uuid","description":"Work package identifier.","example":"44444444-4444-4444-8444-444444444444"},"TicketId":{"type":"string","format":"uuid","description":"Ticket identifier.","example":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8"},"IsClosed":{"type":"boolean","description":"Whether the ticket is closed.","example":false},"Priority":{"type":"integer","description":"Ticket numeric priority score.","example":100}},"required":["WorkpackageId","TicketId","IsClosed","Priority"],"title":"WorkpackageTicket"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

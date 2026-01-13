@@ -1,0 +1,79 @@
+---
+id: delete-organization-users-by-query
+title: "Delete organization users by query"
+description: "Deletes organization-user relationships matching the provided query parameters. Use this for bulk cleanup when you can identify the relationships to remove via OrganizationId or other query constraints."
+sidebar_label: "Delete organization users by query"
+hide_title: true
+hide_table_of_contents: true
+api: eJztO9tyGzeyv9I1eaDEGlJydrMPs7VbR5bkrJLYUiRqc3JEVwTNNEnEQ2AMYCgziqryEfnCfMlWNzBXUr6lTpx14iqL5AzQDXQ3+o67SBdohJNanWRREmWYo8NTMxdK/sCPLy0a+3j9dYlmHcVRhjY1sqA3URId8XALujVhVFo0YDDnX3YhCwtL4dKFVHNwC4TC6JXMMIOXBBMKYcQSHRo7hkuL4BbSwkwbuCnzF5DmKFRZwO0CFax1CalQIDNUTs7WDK6LyWkwuNQrhJUU0N7ISQbagHYLNAFzqpV1Rkjl7Hiqpmo4/EabF7Nc38LxK7EschwOp+rRGM4MriTe+m2ghVvpFnD1+fEE9kQh91aPxvt7bRLYPaKB3WM0z3f2Mp1aHtkdNEc32qCcHd2sRzxxNEe3C0JltNCZNEvebi6tG0/Vp2M4FHkOV0fHXx1Pjn/dQjzXX7eWXb/nHj0bYtcM7nAjUPWpVHIpcjjHl6U0mMETiXlmh8OkD1BaMJjq5RIVCYjTYFNdIPACpVYB4DPtkKdPSFYOzk5ghcZKrQhAhoXBVDjMmHYFmpk2SwsCMrTOlKmTK/TCJVIGGsWRE3MbJVdRez02YRpEz+Po1UjKlyOiXpTcRRbTIP9+QBxpk6GJkr/t38dRI89RcnUXKbHEKIm6G43iSNL8l+FU2XSBS0Gw3bqg4dYZqeZRHNHahSNUpcyi+/vncWTQFlpZ5LV8ur9PH91jeeJwaT3RMKPtpVo5VI5GiqLIZcrr2Pve0vC7TfT65ntM3cZxv3BCZcJkUC3Bn1PifcAGtTqxIBULbIekkOmlkGoM5+hKoyyPSHWpHOhZtWKQtP4YbJmmaC1YJ1xpY2anUGtYiVxmDA/QGB0URwY36w6yuPNrsi7Qg+hrt+4GUGWFZpUQxVFhaD9OelozWb3Ky1rEksrhHM0GtZ6Vyxs0tC/Z5cd9HJ3YC7+5FpwbrUnZbcA5URkxjPTOAll9EdFqQnsyYRYgHzNFWmCFMYJkjBfxDjxm0kIh1rkWxHHilycyoadDxzpZgMGXJVoHMyHzLVS7YO4d6gzfgmb/mkzOAr8h1RmCsFankk8zayDCTYhKg1EcoVfTUfLX/Uf3cfQUrRVz3HaOemjKpVAjgyITNzmpl/olsYtw8O7bGKID53BZOK+WglYBoaBUonQLbeQPmDVcGUf393RUvcYj1dKiQ7PS53HkpGP4zLjzcLCIk90lHxAbaXWeL0sPwIKc9cSBqMOycN/A7pzBIz6Cj0novTA3SOkf7dmhInXqNdgLXEdJWwXG0UrkJb5JFZKuWqJb6MaxIOEQbhEl0VvYK9KLaFaVIi1NHiXRwrnCJnt7GS71WKrUuwIvx6leRoTQYloa6dY85QaFQXNQEsYreikdkptD39Ncska8et6edkGa0Mtte3ItT4S+0td8ZnlQFIcvTypt/cU3kw2h++KbCTj9AhXMjF7CQbaUSpIDwmz7JxzhCnPiI0y0zi2JQLXg5jAX8ktcV+ZjgSJj7MHIXPjhfcTf6tIAgaocJ4kGdi4vT452CUlFibdEcuiH95E8La2DG4RpdFBIP2YasRBKNdMMfZswkiIhgfL2O0qiR+P98f4G9E9gY9bUTBX9n2zYGNJNwckkLbIsDC5IoNlPUWKOS/T2hgTdKJEDUYX0FdmskyBUJ1+PYWJE+gJWqDJt2CCR8UT6arAQ0lRoTLBOhTBOkc5vr+eXn36WKs3LLDjA0pBD50TqrPfuhMM56Q+vOKp9ffIJnK7QkONZPepus7NWWpBBSxvb3NWaBCAjWZOpIy+YiEKW9FabF96dTSDDlUyx2ezmDq2euVthsE0H2okRqdMVCejIEpxACjuG7QzyqJ2ee5O24V4CGWwLO+RhdCm0u2HFgYOUMNaTtsXpXVbYfhu8c2/nKyq1PVagvbyQal5zIUkSkl8ODhbC1SFIpht7tLE5ChuSJPEQ/sl/YATD4VNeUyAxe7qG3GBoxKNiTIaOrGkMIssMWouV+5N6Z4nWRKpGatWAP6zIhF0BHA7Zaq8LhJ1/M+4YLgILYzj3fD4LfI7hzHNutwHsj0EltMMhCAco0kUHjaeH0TnaKmhhRmxd6oFzND/TaUks4rfDIbkyCxC2lioSuiBPYm6Q2RkokZKHMQuerG0gc6DKI2Yyd2iGwy4xKlLEQPos5tNQWqeXkBrp0EjRwPpKqhckPMJaDIeVxJooQKJWGJ2WxmsTehdOTCVDrYN8qJdLL6ZwKCza5tUn4DkCR9IgHSO/9rMGNI17SkGqkORtpUikydnbyOo5egaiIBnHrDrBfomlSRfCkkTDE6YH7b/DNpYLp2Em6fRWJ5tn2wJTojEoxIz02EKYjDVAoxIrnUDKJ89ZJ1CYPZsR0xjcOki1RDtub7wnePC0PrGs1lnmWq5VXx/xCm/Ju1XOE02XbqRno/pZ0Gh+oh3DQeVLbsJi2a23GyYuhSpnInWloSHkdOkM8yB/y4olW+TcEy9dYFbmPij2K2jv/jCIOAM7qITbW5wgPOGQVCegdSiabfdORWFkShirg8UJkQ67g9apbFsFFAwqvBU5ZBxptDW5Qw6fc63mllRoUF+t/Y63yPNhIEuXq7Ugl8XI6REhe5CAtZoMhk1Q4E77DDrQa/jK7jhMF0qmImeh08bV+qrN+GWZO1nk2Fhg5vymMqMFZHI2Q0NcKUpTaIt9Di6LXApFyol4WGbSBc59jorccRY0bZwFrZrttNNVhOZ4dE5DBc23cUerpDUKPlVS2dIwwhBYMIvrk71VzwXjl5UkQd5ArEe1pIdFUVKpvTm20Bfet6+V1Y/VE/gRjloR04/8clT9a77xLz8z6GWp5sMhECBhSNPXWrq3dmZKIeZSiRYKGA6PvF1kIOfojMQVglSZXMmsFHmXh22BqiEcGhSuWsdBloHC260npJlyWWTNlKc6o8xjZ0YT8LZXSimrMOncZ8lej8Yfd2apx+S9hZlki8ovffDZpdWPLbZ9Xcr0BVw4YVxbUr1N7Lgp1evhML08/8p/o+Ta9fX1jbALepCWJofR/8LZ6cUEpnXkRc7kiKKJXvj1UETHsdw0gumUgAKM/kUxQtDrPCaBxxw9wbenl+ffTU6/PH7WH+8jm8SPuDiZHH93ctQf44OOBFrxR2+Az4KNyLNMoJ8Ia4/OYHDnvwJMozMSxPk0SuCOf+CF/AHp56efxf41nqgMX9Gj/Xs/735An9fX1w2hvxArccGnpkPu78VK2Pox56Sb/No/QNwK6WCGLl3sDH4VDwYxhE35qDyBAbF2EPuHPs6zCdQ7H3S4NEhgsMGnajLAwLOIRrWZ1BrgmUIDag6137aYQ2P67BkEuoYZNzpbJ/DFxemzsc/xyNl6p16551gCd1CxyzOrZlUC+1Bxih3d+92/V5zyLMiEEzX5K36MaSU7figN0zmOcz3focFjTg/6dx2+n63dQqsOz4v6kVyyrQo5tPpYtgSgejUutHU7Nb1+pShUcALX/1GT7p0Z/1bMf7MAvIsQNGIAQI97q/fcHyRwN6jYP/D8H9QCMGiOKnhJ2K1oHzjf4zm9KYxUjpl9NWBuD57v9tg9VaPRiD5I736OrhunBvNVDd6ibKmo9P669q5bZrj/QGq3RxN2lsjsIgh4hrcdmrQC7VthFClaNRxulIo2A+pvKPucBmtOidg2KWIO1JeUk6oifwHXz8QSr9nruO6XBk6y66r8iHC1mYh4hyoeeV2tKh4d2926rOBrZsFx4UKG99JOjhr/i4yC1QpICuh3kO5pyKaSmZlGpLqnUVy9Kk3un7+v6Ci8bYELasHbvNoQdsTHo9siQnEzwcuPH9mVodagSmqSbu6wPaKlFvy4TePdNQ/TiAxEb/nE/oDm8SFMKGDQuZ6v4cJHOraDdFNC/NzT88+/m3x7dvwdJVBrvGxDtsh9cM1P+645b+VD8ju4ZR83xz31eVNXjYm4m0ZPRIphAdv4TG7dSRbm9Tn+vLYbz1srftBJ/Gz/YSdxu9RsyYNOt2SAQ4Y0bbJ+nOfdSP+Oq/QTK6aQbMSkAkmJLh+zD4fwy08/c1zL2RrWoSGDhCGIdJarF9XEKo0Ypp6quSZtHPI+nVi3mtJL+4SZBxuJnm3J5ApGSFGGuRdUQ8G5TH2M7HAeair9aYd1srqa2UutUNos5C5tmTuhGo/s25D4Tb0hCznDjUwaJ1y4G8Jzoz1gYCHNhbV12tLn1TpJhS0M/u1icUoDbNvS+4XfbNfeMwbv4X1jBM643isMb2GaPhgudw/h/3/MzIv6mCPn1ynF31Xk3OLEHzx+Jpb9GT93BaKC9seJokkKfuMougod1aZK/qAeNEvCx+5BNzFTz2/rIGu5IH7wceWE1qU/cFQ+r4LxTmmucvPsG6KprTX/UGeyteBtGdT0RrR8lU4FiEqr3QzCLz/9zM3KqKlcRJ4wdSz4yoRwW3tCOh5rVVocw/FGcYn8yIVYPViOagpPXE5vueoHvdqXxymoQtCrk/nxkwerYv79RV3j43FSqPDiscxzn1fJQLQ6lVbYgbDVbfVE/5Bua03Ot/ZctxUhX++v1ji2V2QeclsrRG/rrNZouGnswdLPVq+VGfHbea2t3r3/aq+1m0Stsz4Hz07+72Bycvos5AF+bfD/u/JzW7z7A/m5XU4nMNhgc4P5T5/47YTnY/aJu/IyeL3A/L68aDJbou7KoaY29RvUYYBEY0sx5rpLyVCUIXvFhRhqGeVrZDxJ5NSpvwZ8RYa+26L7QSMAlvuPPQJ4d2vo2ehHXl4cn79NpQS+xDVJZ4pFo7FazbfdAsrKjuFErbRvdvPZ663C2WqQXggL7lbDrVizz8Ztmk22vA5Ukmnd/9lBGlLGT8o8H81QUFdg1ku2r9v95b49mGLEuHbiQhNv0+jja45Nt5vPuXNsoEMuvdswRlDHzQq3EMEntiU1js1k3Q5atxu1ukKxaXeul3EjrExBMliklRp5U9Y9foGqT0ILedNXH5A024/p/HbLXp0892RdcFhS3bis3j0aV/42bsnAht0d4UwqX6qtqh+hWkEJddiRdJVsJsrc0YUzNXBgS25IZQ356QMoKuikKf1+9qrgrqZe3fPN3baF4aZCFzIRfyHANHvTCa9KK6F4ELRwhyc+0NzWWU2w/zpuuqaPqubOAPWy4Ctarf7QNzdLfzZu9TcfcH/z3lnobWYi1C2TWzrzQj80Xw+j7kZa/5au53OSXMwoEqyP9AiuPLZ2Qd3DCx8jUchdXgMvL+ByeoMn3YV15PqBbuwRXPEe27h5B/5vg7nZvd+gbw/u9EYX3Q7tEVzVZ7ENXlYPm28Nmtef0uoQ9nbwhPoB2yi4QdD/bUD3ZYJJ0mm3Zx/AC1Q/giVM4daoSPlmULj701KnzW2lC59ZiOLeFS3rdJHL+cL172nFES6FzP1No1FITPxP/zJXHOUyRbqW1uA/4zOHTvDtsC6629vbvtnmzmW+g0R+7lKoFqijcF+176xwdf7lttvud8012j8vvv958f0jufjur/w5fOX2ilxIRQePD9ZduKp5RaeUrug94nt5HQLSIQz3Pv2ReR5HC23pWmV0d3cjLF6a/P6eHvv3dCszk5Zu3WZRMhO5xThcMN24IR8umUZ8r3MljKRZfGEzri4lNtdTD1LyHFuzNu65d66jeuGJ7u//A4c3kQY=
+sidebar_class_name: "delete api-method"
+info_path: docs/api/organizations/organizations-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete organization users by query"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1.0/organizations/users/query"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes organization-user relationships matching the provided query parameters. Use this for bulk cleanup when you can identify the relationships to remove via OrganizationId or other query constraints.
+
+**Workflow Example**
+1. Preview matches with [GET /api/v1.0/organizations/users/query](/docs/api/organizations/get-organization-users-by-query-get) and confirm the list.
+2. Call [DELETE /api/v1.0/organizations/users/query](/docs/api/organizations/delete-organization-users-by-query) with OrganizationId to remove matching relationships.
+
+**Minimal Required Fields**: OrganizationId is recommended to scope deletion.
+
+**Notes**: This API version is deprecated and performs a destructive bulk action.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"OrganizationId","in":"query","schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Items deleted.","content":{"application/json":{"schema":{"type":"object","description":"Standard response for batch delete operations in the Organizations domain. Returns the count of deleted items, success status, and any validation errors. Used by Organization, OrganizationType, and OrganizationUser batch delete endpoints.","properties":{"ItemsDeleted":{"type":"integer","description":"Number of items deleted."},"IsSuccess":{"type":"boolean","description":"Indicates whether the operation succeeded."},"Errors":{"type":"array","items":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"},"description":"Array of error messages if the operation failed."}},"title":"OrganizationsDomainBatchDeleteResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

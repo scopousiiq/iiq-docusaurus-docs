@@ -1,0 +1,33 @@
+---
+id: deletecustomfieldvaluesrequest
+title: "DeleteCustomFieldValuesRequest"
+description: "Request payload for deleting custom field values. Supports targeting specific custom fields and/or specific entity records through include/exclude lists."
+sidebar_label: "DeleteCustomFieldValuesRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"CustomFieldIds":["e7c8b30d-d899-4193-a70b-21994d2a8089"],"IncludePkIds":["546f841c-32d8-47e5-bfc1-a4f21754d6d3"],"ExcludePkIds":[]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"DeleteCustomFieldValuesRequest"}
+>
+</Heading>
+
+
+
+Request payload for deleting custom field values. Supports targeting specific custom fields and/or specific entity records through include/exclude lists.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for deleting custom field values. Supports targeting specific custom fields and/or specific entity records through include/exclude lists.","properties":{"CustomFieldIds":{"type":"array","nullable":true,"items":{"type":"string","format":"uuid"},"description":"Array of custom field IDs to delete values for. When specified, only values for these custom fields are deleted. When null/empty, all custom field values matching the entity filters are deleted.","x-obtained-from":{"operationId":"searchCustomFields","endpoint":"POST /api/v1.0/custom-fields","responseField":"Items[].CustomFieldId"}},"IncludePkIds":{"type":"array","nullable":true,"items":{"type":"string","format":"uuid"},"description":"Array of entity IDs (AssetId, TicketId, UserId, EventId) to delete custom field values for. When specified, only custom field values for these entities are deleted. Use this to target specific records."},"ExcludePkIds":{"type":"array","nullable":true,"items":{"type":"string","format":"uuid"},"description":"Array of entity IDs to exclude from deletion. Custom field values for these entities will NOT be deleted even if they match other criteria. Use this to protect specific records when doing bulk deletes."}},"example":{"CustomFieldIds":["e7c8b30d-d899-4193-a70b-21994d2a8089"],"IncludePkIds":["546f841c-32d8-47e5-bfc1-a4f21754d6d3"],"ExcludePkIds":[]},"title":"DeleteCustomFieldValuesRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

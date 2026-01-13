@@ -1,0 +1,33 @@
+---
+id: simpleusercreateresponse
+title: "SimpleUserCreateResponse"
+description: "Response after creating a simplified user."
+sidebar_label: "SimpleUserCreateResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Id":0,"Uid":"5c61a623-ef84-f011-b484-002248538048","Item":{"SampleKey":"SampleValue"},"Message":null,"UserToken":"5c61a623-ef84-f011-b484-002248538048","RequestDate":"2025-01-15T14:22:13.480Z","ExecutionTime":92.314,"StatusCode":201,"ServerName":"spark-assets-6b8676c76c-5tzm6","ProcessId":1,"OperationId":"exampleOperation","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SimpleUserCreateResponse"}
+>
+</Heading>
+
+
+
+Response after creating a simplified user.
+
+<Schema
+  schema={{"type":"object","description":"Response after creating a simplified user.","allOf":[{"type":"object","description":"Command-style envelope returned after successfully creating a resource.","properties":{"Id":{"type":"integer","description":"Legacy numeric identifier returned for parity with ItemCreateResponse.","example":0},"Uid":{"type":"string","format":"uuid","description":"Server-generated correlation identifier for the command execution.","example":"5c61a623-ef84-f011-b484-002248538048"},"Item":{"type":"object","description":"Payload describing the resource that was created. The exact structure depends on the endpoint.","nullable":true,"additionalProperties":true},"Message":{"type":"string","description":"Optional informational message returned by the service.","nullable":true},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated session identifier that executed the call.","example":"5c61a623-ef84-f011-b484-002248538048"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request.","example":"2025-01-15T14:22:13.480Z"},"ExecutionTime":{"type":"number","description":"Server-side execution time in milliseconds.","example":92.314},"StatusCode":{"type":"integer","description":"HTTP status code mirrored inside the envelope.","example":201},"ServerName":{"type":"string","description":"Name of the application node that processed the request.","example":"spark-assets-6b8676c76c-5tzm6"},"ProcessId":{"type":"integer","description":"Internal process identifier used for diagnostics.","example":1},"OperationId":{"type":"string","description":"Trace identifier emitted for log correlation.","example":"exampleOperation"},"Properties":{"type":"object","description":"Additional metadata emitted by the platform.","additionalProperties":true}},"required":["Item","UserToken","RequestDate","ExecutionTime","StatusCode","ServerName","ProcessId"],"example":{"Id":0,"Uid":"5c61a623-ef84-f011-b484-002248538048","Item":{"SampleKey":"SampleValue"},"Message":null,"UserToken":"5c61a623-ef84-f011-b484-002248538048","RequestDate":"2025-01-15T14:22:13.480Z","ExecutionTime":92.314,"StatusCode":201,"ServerName":"spark-assets-6b8676c76c-5tzm6","ProcessId":1,"OperationId":"exampleOperation","Properties":{}},"title":"ItemCreateResponse"}],"properties":{"Item":{"type":"object","description":"Simplified user object containing essential identification information. Maps to C# `Spark.Shared.Models.SimpleUser`.","properties":{"UserId":{"type":"string","format":"uuid","description":"Unique identifier for the user."},"SiteId":{"type":"string","format":"uuid","description":"Site identifier the user belongs to."},"Name":{"type":"string","description":"Full name of the user (computed from FirstName + LastName)."},"FullName":{"type":"string","description":"Full name of the user (computed from FirstName + LastName)."},"Initials":{"type":"string","description":"User initials (computed from first letter of FirstName and LastName)."},"FirstName":{"type":"string","description":"First name of the user."},"LastName":{"type":"string","description":"Last name of the user."},"Email":{"type":"string","format":"email","description":"Email address of the user."},"Username":{"type":"string","description":"Username for authentication."},"SchoolIdNumber":{"type":"string","description":"School identification number."},"Grade":{"type":"string","description":"Grade level of the user (for students)."},"Homeroom":{"type":"string","description":"Homeroom assignment (for students)."},"LocationId":{"type":"string","format":"uuid","description":"Primary location/school ID for the user."},"LocationName":{"type":"string","description":"Name of the user's primary location."},"Location":{"type":"object","description":"Simplified location object.","properties":{"LocationId":{"type":"string","format":"uuid"},"Name":{"type":"string"}}},"PhotoId":{"type":"string","format":"uuid","nullable":true,"description":"Profile photo file identifier."},"RoleId":{"type":"string","format":"uuid","description":"Role identifier for the user."},"RoleName":{"type":"string","description":"Human-readable role name."},"Role":{"type":"object","description":"Simplified role object.","properties":{"RoleId":{"type":"string","format":"uuid"},"Name":{"type":"string"}}},"IsOnline":{"type":"boolean","description":"Whether the user is currently online."},"IsOnlineLastUpdated":{"type":"string","format":"date-time","nullable":true,"description":"Timestamp when online status was last updated."},"AuthenticatedBy":{"type":"string","description":"Authentication provider (e.g., 'Local', 'SAML', 'Google')."},"IsEmailVerified":{"type":"boolean","description":"Whether the user's email address has been verified."},"UserStatusId":{"type":"string","format":"uuid","nullable":true,"description":"User status type identifier (e.g., active, shell user)."},"ProfilePicturePath":{"type":"string","description":"URL path to the user's profile picture."}},"example":{"UserId":"51c89694-ae9f-f011-8e61-6045bd7991ab","SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","Name":"iiQ User","FirstName":"iiQ","LastName":"User","Email":"demo@incidentiq.com","Username":"demo@incidentiq.com","LocationId":"cc7dede9-f5f5-e622-b89a-116167cc111f","LocationName":"IncidentIQ Demo High School","RoleId":"d4e5f6a7-8901-2345-6789-0abcdef12345","RoleName":"Student","IsOnline":false,"IsEmailVerified":true},"title":"SimpleUser"}},"title":"SimpleUserCreateResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

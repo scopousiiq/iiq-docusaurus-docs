@@ -1,0 +1,33 @@
+---
+id: bulkassignticketsrequest
+title: "BulkAssignTicketsRequest"
+description: "Request payload for bulk assigning tickets to a user or team."
+sidebar_label: "BulkAssignTicketsRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketIds":["260b8773-dcad-f011-8e61-000d3a7bb518","370c9884-edbe-f011-9f72-111e4a8cc629"],"Request":{"AssignToUserId":"1eb32e06-b79f-f011-b484-002248538047"}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"BulkAssignTicketsRequest"}
+>
+</Heading>
+
+
+
+Request payload for bulk assigning tickets to a user or team.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for bulk assigning tickets to a user or team.","properties":{"TicketIds":{"type":"array","description":"Array of ticket identifiers to assign.","items":{"type":"string","format":"uuid"},"minItems":1},"Request":{"type":"object","description":"Assignment target details.","properties":{"AssignToUserId":{"type":"string","format":"uuid","description":"User ID to assign tickets to.","nullable":true},"AssignToTeamId":{"type":"string","format":"uuid","description":"Team ID to assign tickets to.","nullable":true}}}},"required":["TicketIds","Request"],"example":{"TicketIds":["260b8773-dcad-f011-8e61-000d3a7bb518","370c9884-edbe-f011-9f72-111e4a8cc629"],"Request":{"AssignToUserId":"1eb32e06-b79f-f011-b484-002248538047"}},"title":"BulkAssignTicketsRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: locationstat
+title: "LocationStat"
+description: "Statistics about assets and tickets at a specific location"
+sidebar_label: "LocationStat"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","OpenTickets":0,"AvailableTickets":0,"TotalTickets":0,"TotalAssets":0,"AssignedUsers":0,"Parts":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"LocationStat"}
+>
+</Heading>
+
+
+
+Statistics about assets and tickets at a specific location
+
+<Schema
+  schema={{"type":"object","description":"Statistics about assets and tickets at a specific location","properties":{"LocationId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the location"},"OpenTickets":{"type":"integer","description":"Number of open tickets at the location"},"AvailableTickets":{"type":"integer","description":"Number of available tickets at the location"},"TotalTickets":{"type":"integer","description":"Total number of tickets at the location"},"TotalAssets":{"type":"integer","description":"Total number of assets at the location"},"AssignedUsers":{"type":"integer","description":"Number of users assigned to assets at the location"},"Parts":{"type":"integer","description":"Number of parts in inventory at the location"}},"title":"LocationStat"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

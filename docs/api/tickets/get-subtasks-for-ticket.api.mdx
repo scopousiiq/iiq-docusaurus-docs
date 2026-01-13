@@ -1,0 +1,89 @@
+---
+id: get-subtasks-for-ticket
+title: "Get subtasks for a ticket"
+description: "Retrieves all subtasks associated with a specific ticket. Returns a paginated list of subtasks including their status, assignee, and completion state."
+sidebar_label: "Get subtasks for a ticket"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/tickets/tickets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get subtasks for a ticket"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/subtasks/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves all subtasks associated with a specific ticket. Returns a paginated list of subtasks including their status, assignee, and completion state.
+
+**Prerequisites**
+1. **id** (TicketId) – Use [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) to find tickets and extract `Items[].TicketId`.
+
+**Workflow Example**
+1. Find ticket: [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) → extract `TicketId`
+2. List subtasks: [GET /api/v1.0/subtasks/\{id\}](/docs/api/tickets/get-subtasks-for-ticket) with `TicketId`
+3. Work subtask: Complete the work item
+4. Mark complete: [POST /api/v1.0/subtasks/\{subtaskId\}/complete](/docs/api/tickets/complete-subtask)
+
+**Response Fields**: Each subtask includes `TicketSubtaskId`, `Subject`, `Description`, `IsComplete`, `AssignedUserId`, `AssignedUser` details, and `SortOrder`.
+
+**Query Parameters**: Supports pagination with `$p` (page index) and `$s` (page size).
+
+**Related Endpoints**
+- [POST /api/v1.0/subtasks/create](/docs/api/tickets/create-subtask) – Create new subtask
+- [POST /api/v1.0/subtasks/\{subtaskId\}/complete](/docs/api/tickets/complete-subtask) – Complete subtask
+- [POST /api/v1.0/subtasks/\{subtaskId\}/assign/\{userId\}](/docs/api/tickets/assign-subtask) – Assign subtask
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"description":"Ticket identifier used to fetch subtasks (GET).","schema":{"type":"string","format":"uuid"}},{"name":"$p","in":"query","required":false,"description":"Zero-based page index to retrieve","schema":{"type":"integer","minimum":0},"example":0},{"name":"$s","in":"query","required":false,"description":"Number of records per page","schema":{"type":"integer","minimum":1},"example":20}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"A list of subtasks","content":{"application/json":{"schema":{"type":"object","properties":{"Items":{"type":"array","items":{"type":"object","properties":{"SubtaskId":{"type":"string","format":"uuid"},"Subject":{"type":"string"},"IsComplete":{"type":"boolean"}},"title":"Subtask"}}},"title":"SubtaskResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

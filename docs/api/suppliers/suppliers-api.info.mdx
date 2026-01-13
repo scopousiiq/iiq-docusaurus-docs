@@ -1,0 +1,253 @@
+---
+id: suppliers-api
+title: "Suppliers API"
+description: "# Suppliers API"
+sidebar_label: Introduction
+sidebar_position: 0
+hide_title: true
+custom_edit_url: null
+---
+
+import ApiLogo from "@theme/ApiLogo";
+import Heading from "@theme/Heading";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+import Export from "@theme/ApiExplorer/Export";
+
+<span
+  className={"theme-doc-version-badge badge badge--secondary"}
+  children={"Version: 1.0.0"}
+>
+</span>
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Suppliers API"}
+>
+</Heading>
+
+
+
+# Suppliers API
+
+The Suppliers API provides access to vendor and supplier management in IncidentIQ. Manage the external companies from which assets and parts are procured.
+
+## Overview
+
+Suppliers in IncidentIQ represent external vendors and companies that provide assets, parts, and equipment. Suppliers are linked to purchase orders and inventory items for procurement tracking and vendor management.
+
+:::info
+**What you can do with the Suppliers API**
+
+- **List and search suppliers** in your vendor catalog
+- **Create new suppliers** with contact and address information
+- **Update supplier details** including contact info and vendor numbers
+- **Delete suppliers** when no longer needed
+- **Link suppliers to purchase orders** for procurement workflows
+:::
+
+## Common Use Cases
+
+### Vendor Catalog Management
+Maintain a catalog of approved vendors for asset and parts procurement.
+
+### Procurement Workflows
+Reference suppliers when creating purchase orders to track where equipment is sourced.
+
+### Contact Management
+Store vendor contact information including primary and secondary contacts, phone numbers, and email addresses.
+
+### Supplier Categorization
+Organize suppliers by type using supplier categories for reporting and filtering.
+
+## API Sections
+
+| Section | Description |
+|---------|-------------|
+| **Suppliers** | List, create, update, and delete supplier records |
+
+## Quick Start
+
+### Get a Supplier
+
+```bash
+curl -X GET "https://your-site.incidentiq.com/api/v1.0/suppliers/{supplierId}" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient"
+```
+
+### Create a Supplier
+
+```bash
+curl -X POST "https://your-site.incidentiq.com/api/v1.0/suppliers" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Name": "Tech Equipment Co.",
+    "Phone": "555-123-4567",
+    "ContactName": "Jane Smith",
+    "ContactEmail": "jane@techequipment.com",
+    "SupplierUrl": "https://www.techequipment.com"
+  }'
+```
+
+### Update a Supplier
+
+```bash
+curl -X POST "https://your-site.incidentiq.com/api/v1.0/suppliers/{supplierId}/update" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Phone": "555-987-6543",
+    "ContactEmail": "support@techequipment.com"
+  }'
+```
+
+### Delete a Supplier
+
+```bash
+curl -X DELETE "https://your-site.incidentiq.com/api/v1.0/suppliers/{supplierId}" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient"
+```
+
+## Related APIs
+
+- [Parts](/docs/api/parts/parts-api) - Parts can be linked to suppliers for procurement tracking
+- [Inventory](/docs/api/inventory/inventory-api) - Track inventory sourced from suppliers
+
+
+<div
+  style={{"marginBottom":"2rem"}}
+>
+  <Heading
+    id={"authentication"}
+    as={"h2"}
+    className={"openapi-tabs__heading"}
+    children={"Authentication"}
+  >
+  </Heading><SchemaTabs
+    className={"openapi-tabs__security-schemes"}
+  >
+    <TabItem
+      label={"HTTP: Bearer Auth"}
+      value={"bearerAuth"}
+    >
+      
+      
+      JWT token from Administration > Developer Tools
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                http
+              </td>
+            </tr><tr>
+              <th>
+                HTTP Authorization Scheme:
+              </th><td>
+                bearer
+              </td>
+            </tr><tr>
+              <th>
+                Bearer format:
+              </th><td>
+                JWT
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem><TabItem
+      label={"API Key: siteId"}
+      value={"siteId"}
+    >
+      
+      
+      Your site identifier (UUID)
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                apiKey
+              </td>
+            </tr><tr>
+              <th>
+                Header parameter name:
+              </th><td>
+                SiteId
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem><TabItem
+      label={"API Key: client"}
+      value={"client"}
+    >
+      
+      
+      Must be "ApiClient"
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                apiKey
+              </td>
+            </tr><tr>
+              <th>
+                Header parameter name:
+              </th><td>
+                Client
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem>
+  </SchemaTabs>
+</div><div
+  style={{"display":"flex","flexDirection":"column","marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    Contact
+  </h3><span>
+    IncidentIQ Developer Support: [api-support@incidentiq.com](mailto:api-support@incidentiq.com)
+  </span><span>
+    URL: [https://stoplight.incidentiq.com](https://stoplight.incidentiq.com)
+  </span>
+</div><div
+  style={{"marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    License
+  </h3><a
+    href={"https://www.incidentiq.com/terms"}
+  >
+    Proprietary
+  </a>
+</div>
+      

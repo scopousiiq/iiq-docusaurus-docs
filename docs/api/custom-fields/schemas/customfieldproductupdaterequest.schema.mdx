@@ -1,0 +1,33 @@
+---
+id: customfieldproductupdaterequest
+title: "CustomFieldProductUpdateRequest"
+description: "Request payload for updating product associations on multiple custom fields. Used to assign or reassign custom fields to different products in bulk."
+sidebar_label: "CustomFieldProductUpdateRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Ids":["a1b2c3d4-e5f6-7890-abcd-ef1234567890","b2c3d4e5-f6a7-8901-bcde-f1234567890a"],"Values":[{"Id":"88df910c-91aa-e711-80c2-0004ffa00010","FilterId":"00000000-0000-0000-0000-000000000000","Exclude":false,"Value":"Technology","GroupIndex":0}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CustomFieldProductUpdateRequest"}
+>
+</Heading>
+
+
+
+Request payload for updating product associations on multiple custom fields. Used to assign or reassign custom fields to different products in bulk.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for updating product associations on multiple custom fields. Used to assign or reassign custom fields to different products in bulk.","required":["Ids","Values"],"properties":{"Ids":{"type":"array","items":{"type":"string","format":"uuid"},"description":"Array of CustomFieldId values to update. Obtain via POST /api/v1.0/custom-fields.","x-obtained-from":{"operationId":"searchCustomFields","endpoint":"POST /api/v1.0/custom-fields","responseField":"Items[].CustomFieldId"},"example":["a1b2c3d4-e5f6-7890-abcd-ef1234567890","b2c3d4e5-f6a7-8901-bcde-f1234567890a"]},"Values":{"type":"array","items":{"allOf":[{"type":"object","description":"Base structure for a filter value used in save requests.","properties":{"FilterId":{"type":"string","format":"uuid","description":"UUID of the filter definition."},"Exclude":{"type":"boolean","description":"When true, excludes the specified value."},"Value":{"type":"string","description":"The filter value (expression or literal)."},"CustomFieldTypeId":{"type":"string","format":"uuid","description":"UUID of the custom field type if applicable.","nullable":true},"ComplexEditorPath":{"type":"string","description":"Path to the complex editor if used.","nullable":true},"GroupIndex":{"type":"integer","description":"Grouping index for OR logic."}},"title":"FilterValue"}],"type":"object","description":"Filter value targeting a specific entity ID.","properties":{"Id":{"type":"string","format":"uuid","description":"UUID of the target entity."}},"title":"EntityFilterValue"},"description":"Array of product filter values to apply to the custom fields. Each value associates the custom fields with a product.","example":[{"Id":"88df910c-91aa-e711-80c2-0004ffa00010","FilterId":"00000000-0000-0000-0000-000000000000","Exclude":false,"Value":"Technology","GroupIndex":0}]}},"example":{"Ids":["a1b2c3d4-e5f6-7890-abcd-ef1234567890","b2c3d4e5-f6a7-8901-bcde-f1234567890a"],"Values":[{"Id":"88df910c-91aa-e711-80c2-0004ffa00010","FilterId":"00000000-0000-0000-0000-000000000000","Exclude":false,"Value":"Technology","GroupIndex":0}]},"title":"CustomFieldProductUpdateRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

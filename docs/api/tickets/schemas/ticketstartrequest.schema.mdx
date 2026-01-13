@@ -1,0 +1,33 @@
+---
+id: ticketstartrequest
+title: "TicketStartRequest"
+description: "Payload used to mark a ticket as started by a technician."
+sidebar_label: "TicketStartRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"UserId":"1eb32e06-b79f-f011-b484-002248538047"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketStartRequest"}
+>
+</Heading>
+
+
+
+Payload used to mark a ticket as started by a technician.
+
+<Schema
+  schema={{"type":"object","description":"Payload used to mark a ticket as started by a technician.","properties":{"UserId":{"type":"string","format":"uuid","description":"UUID of the technician beginning work on the ticket. Use [POST /api/v1.0/search](/docs/api/users/search-users) to locate the user or reuse the acting agent's identifier from [GET /api/v1.0/tickets/{ticketId}](/docs/api/tickets/get-ticket).","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/search","responseField":"Item.Users[].UserId"},"example":"1eb32e06-b79f-f011-b484-002248538047"}},"required":["UserId"],"title":"TicketStartRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

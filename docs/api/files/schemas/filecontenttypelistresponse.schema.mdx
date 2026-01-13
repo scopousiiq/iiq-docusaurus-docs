@@ -1,0 +1,33 @@
+---
+id: filecontenttypelistresponse
+title: "FileContentTypeListResponse"
+description: "Response envelope containing a list of allowed file content types."
+sidebar_label: "FileContentTypeListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":[{"FileContentTypeId":1,"Name":"PDF Document","Extension":"pdf","MimeType":"application/pdf","Icon":"fa-file-pdf","IsImage":false},{"FileContentTypeId":2,"Name":"JPEG Image","Extension":"jpg","MimeType":"image/jpeg","Icon":"fa-file-image","IsImage":true},{"FileContentTypeId":3,"Name":"PNG Image","Extension":"png","MimeType":"image/png","Icon":"fa-file-image","IsImage":true}],"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2025-12-09T14:35:00.000Z","ExecutionTime":12.5,"StatusCode":200,"ServerName":"spark-api-7bcdf6964c-2xr98","ProcessId":1}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"FileContentTypeListResponse"}
+>
+</Heading>
+
+
+
+Response envelope containing a list of allowed file content types.
+
+<Schema
+  schema={{"type":"object","description":"Response envelope containing a list of allowed file content types.","properties":{"Items":{"type":"array","description":"List of file content type definitions","items":{"type":"object","description":"Represents an allowed file content type for attachments. Defines the MIME types, extensions, and icons used for file uploads and display.","properties":{"FileContentTypeId":{"type":"integer","description":"Unique identifier for the file content type"},"Name":{"type":"string","description":"Display name for the content type (e.g., 'PDF Document', 'JPEG Image')","example":"PDF Document"},"Extension":{"type":"string","nullable":true,"description":"File extension without the dot (e.g., 'pdf', 'jpg')","example":"pdf"},"MimeType":{"type":"string","description":"MIME type string (e.g., 'application/pdf', 'image/jpeg')","example":"application/pdf"},"Icon":{"type":"string","description":"Icon class or identifier for UI display","example":"fa-file-pdf"},"IsImage":{"type":"boolean","description":"Whether this content type represents an image file that can be previewed inline","example":false}},"required":["FileContentTypeId","Name","MimeType","Icon","IsImage"],"example":{"FileContentTypeId":1,"Name":"PDF Document","Extension":"pdf","MimeType":"application/pdf","Icon":"fa-file-pdf","IsImage":false},"title":"FileContentType"}},"Paging":{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"},"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"}},"required":["Items","StatusCode"],"example":{"Items":[{"FileContentTypeId":1,"Name":"PDF Document","Extension":"pdf","MimeType":"application/pdf","Icon":"fa-file-pdf","IsImage":false},{"FileContentTypeId":2,"Name":"JPEG Image","Extension":"jpg","MimeType":"image/jpeg","Icon":"fa-file-image","IsImage":true},{"FileContentTypeId":3,"Name":"PNG Image","Extension":"png","MimeType":"image/png","Icon":"fa-file-image","IsImage":true}],"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2025-12-09T14:35:00.000Z","ExecutionTime":12.5,"StatusCode":200,"ServerName":"spark-api-7bcdf6964c-2xr98","ProcessId":1},"title":"FileContentTypeListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

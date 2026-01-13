@@ -1,0 +1,33 @@
+---
+id: ticketactivitypartevent
+title: "TicketActivityPartEvent"
+description: "Parts and inventory usage recorded against a ticket, including quantity and cost tracking. Generated when stock is consumed via POST /api/v1.0/inventory/actions/ids/new."
+sidebar_label: "TicketActivityPartEvent"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"$type":"Spark.Shared.Models.TicketActivityPart, Spark.Shared","TicketActivityPartId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TicketActivityId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TicketActivityTypeId":57,"ActivityDate":"2024-07-29T15:51:28.071Z","PartName":"string","PartId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","PartSupplierId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SupplierName":"string","Qty":0,"CostEach":0,"Notes":"string","PurchaseOrderId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","PurchaseOrder":{},"InventoryActionId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","InventoryAction":{},"CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","IsPublic":true,"Meta":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketActivityPartEvent"}
+>
+</Heading>
+
+
+
+Parts and inventory usage recorded against a ticket, including quantity and cost tracking. Generated when stock is consumed via POST /api/v1.0/inventory/actions/ids/new.
+
+<Schema
+  schema={{"type":"object","description":"Parts and inventory usage recorded against a ticket, including quantity and cost tracking. Generated when stock is consumed via POST /api/v1.0/inventory/actions/ids/new.","properties":{"$type":{"type":"string","description":"Fully qualified CLR type emitted by the API","example":"Spark.Shared.Models.TicketActivityPart, Spark.Shared"},"TicketActivityPartId":{"type":"string","format":"uuid","description":"Identifier for the parts log entry"},"TicketActivityId":{"type":"string","format":"uuid","description":"Identifier of the parent ticket activity"},"TicketActivityTypeId":{"type":"integer","enum":[57],"description":"Activity type code reserved for parts entries"},"ActivityDate":{"type":"string","format":"date-time","nullable":true,"description":"When the part was consumed or logged"},"PartName":{"type":"string","description":"Display name for the part"},"PartId":{"type":"string","format":"uuid","nullable":true,"description":"Identifier of the part catalog record, when available"},"PartSupplierId":{"type":"string","format":"uuid","nullable":true,"description":"Identifier of the supplier providing the part"},"SupplierName":{"type":"string","nullable":true,"description":"Name of the supplier"},"Qty":{"type":"integer","description":"Quantity of the part consumed"},"CostEach":{"type":"number","format":"double","nullable":true,"description":"Cost per part at time of usage"},"Notes":{"type":"string","nullable":true,"description":"Technician notes about the part usage"},"PurchaseOrderId":{"type":"string","format":"uuid","nullable":true,"description":"Associated purchase order identifier, if any"},"PurchaseOrder":{"type":"object","nullable":true,"description":"Purchase order payload as returned by the API","additionalProperties":true},"InventoryActionId":{"type":"string","format":"uuid","nullable":true,"description":"Identifier of the inventory action created for the usage"},"InventoryAction":{"type":"object","nullable":true,"description":"Inventory action details describing stock adjustments","additionalProperties":true},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the part entry was recorded"},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the part entry was last updated"},"IsPublic":{"type":"boolean","description":"Whether the part entry is visible to the requester"},"Meta":{"type":"object","nullable":true,"description":"Additional metadata supplied by the platform","additionalProperties":true}},"required":["$type","TicketActivityPartId","TicketActivityId","TicketActivityTypeId","PartName","Qty","CreatedDate","ModifiedDate","IsPublic"],"title":"TicketActivityPartEvent"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

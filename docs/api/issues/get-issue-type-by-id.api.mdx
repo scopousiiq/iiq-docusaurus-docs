@@ -1,0 +1,80 @@
+---
+id: get-issue-type-by-id
+title: "Get issue type by ID"
+description: "Retrieves a single issue type definition by ID, including scope and product metadata. Use this when inspecting or editing issue types."
+sidebar_label: "Get issue type by ID"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/issues/issues-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get issue type by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/issues/types/{issueTypeId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves a single issue type definition by ID, including scope and product metadata. Use this when inspecting or editing issue types.
+
+**Prerequisites**
+1. **issueTypeId** - Use [GET /api/v1.0/issues/types](/docs/api/issues/list-issue-types) or [POST /api/v1.0/issues/types](/docs/api/issues/search-issue-types) and extract `Items[].IssueTypeId`.
+
+**Workflow Example**
+1. List issue types and capture the target `IssueTypeId`.
+2. Retrieve details: [GET /api/v1.0/issues/types/\{issueTypeId\}](/docs/api/issues/get-issue-type-by-id).
+
+**Minimal Required Fields**: issueTypeId (path).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"issueTypeId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Issue type retrieved successfully","content":{"application/json":{"schema":{"allOf":[{"type":"object","description":"Standard response envelope for single-item GET operations. The `Item` property contains the requested entity.","properties":{"Item":{"description":"The requested entity. Structure varies by endpoint."},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful GET)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Item","StatusCode"],"title":"ItemGetResponse"},{"type":"object","properties":{"Item":{"type":"object","properties":{"SiteId":{"type":"string","format":"uuid","nullable":true},"ProductId":{"type":"string","format":"uuid"},"IssueTypeId":{"type":"string","format":"uuid"},"Scope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"Name":{"type":"string"},"OriginId":{"type":"string","nullable":true},"OriginSourceId":{"type":"string","format":"uuid"}},"example":{"SiteId":"e5f6a7b8-c9d0-1234-e5f6-a7b8c9d01234","ProductId":"a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890","IssueTypeId":"b2c3d4e5-f6a7-8901-b2c3-d4e5f6a78901","Scope":"Global","Name":"Hardware Failure"},"title":"IssueType"}}}],"title":"IssueTypeItemResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,33 @@
+---
+id: updatelocationroomrequest
+title: "UpdateLocationRoomRequest"
+description: "Request model for creating or updating a location room. Extends LocationRoom with additional update options."
+sidebar_label: "UpdateLocationRoomRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"LocationRoomId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Number":"string","LocationRoomTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationRoomStatusTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Area":0,"SeatingCapacity":0,"MaximumOccupancy":0,"PrimaryPhotoId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Description":"string","InternalNotes":"string","IsAvailable":true,"IsExternallyAvailable":true,"LeadTimeThreshold":0,"LeadTimeThresholdUnit":"Hours","IsDuplicateRequest":false,"UpdateCustomFields":false,"CustomFieldValues":[{"LocationRoomId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","EditorTypeId":0,"Value":"string","IsHidden":true,"ComplexValue":[{"Key":"string","Value":"string","DisplayValue":"string"}]}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateLocationRoomRequest"}
+>
+</Heading>
+
+
+
+Request model for creating or updating a location room. Extends LocationRoom with additional update options.
+
+<Schema
+  schema={{"type":"object","description":"Request model for creating or updating a location room. Extends LocationRoom with additional update options.","properties":{"LocationRoomId":{"type":"string","format":"uuid","nullable":true,"description":"Unique identifier for the room. Required for updates, null for creates."},"SiteId":{"type":"string","format":"uuid","description":"Site/district this room belongs to"},"LocationId":{"type":"string","format":"uuid","description":"Parent location (building/school) containing this room"},"Name":{"type":"string","description":"Room name or number (e.g., 'Room 101', 'Main Office')"},"Number":{"type":"string","nullable":true,"description":"Room number identifier"},"LocationRoomTypeId":{"type":"string","format":"uuid","description":"Reference to the room type classification"},"LocationRoomStatusTypeId":{"type":"string","format":"uuid","description":"Reference to the room's current status"},"Area":{"type":"integer","nullable":true,"description":"Room area in square feet"},"SeatingCapacity":{"type":"integer","nullable":true,"description":"Number of seats available in the room"},"MaximumOccupancy":{"type":"integer","nullable":true,"description":"Maximum number of people allowed in the room"},"PrimaryPhotoId":{"type":"string","format":"uuid","nullable":true,"description":"Reference to the primary photo file for this room"},"Description":{"type":"string","nullable":true,"description":"Detailed description of the room"},"InternalNotes":{"type":"string","nullable":true,"description":"Internal notes about the room (not visible to end users)"},"IsAvailable":{"type":"boolean","description":"Whether the room is available for internal reservations"},"IsExternallyAvailable":{"type":"boolean","description":"Whether the room is available for external/community reservations"},"LeadTimeThreshold":{"type":"integer","nullable":true,"description":"Minimum lead time required before reserving this room"},"LeadTimeThresholdUnit":{"type":"string","nullable":true,"description":"Unit for lead time threshold","enum":["Hours","Days","Weeks"]},"IsDuplicateRequest":{"type":"boolean","description":"Indicates if this is a duplicate/clone request","default":false},"UpdateCustomFields":{"type":"boolean","description":"Whether to update custom field values","default":false},"CustomFieldValues":{"type":"array","nullable":true,"items":{"type":"object","description":"Custom field value assigned to a location room. Extends the base CustomFieldValue with a room reference.","properties":{"LocationRoomId":{"type":"string","format":"uuid","description":"Reference to the room this custom field value belongs to"},"CustomFieldTypeId":{"type":"string","format":"uuid","description":"Reference to the custom field type definition"},"EditorTypeId":{"type":"integer","nullable":true,"description":"Editor type identifier for rendering the field"},"Value":{"type":"string","nullable":true,"description":"The custom field value (for simple field types)"},"IsHidden":{"type":"boolean","description":"Whether this field value is hidden from display"},"ComplexValue":{"type":"array","nullable":true,"items":{"type":"object","description":"Complex editor value structure for multi-value or structured custom field editors.","properties":{"Key":{"type":"string","description":"Key identifier for the complex value entry."},"Value":{"type":"string","description":"Value associated with the key."},"DisplayValue":{"type":"string","description":"Human-readable display value."}},"additionalProperties":true,"title":"ComplexEditorValues"},"description":"Complex/multi-value field data (for advanced field types)"}},"required":["LocationRoomId","CustomFieldTypeId"],"title":"LocationRoomCustomFieldValue"},"description":"Custom field values to set on the room"}},"title":"UpdateLocationRoomRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: analyticsverificationlocationlistresponse
+title: "AnalyticsVerificationLocationListResponse"
+description: "Standard list envelope returned by analytics endpoints that surface aggregated verification counts."
+sidebar_label: "AnalyticsVerificationLocationListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":2,"Items":[{"Name":"IncidentIQ Demo High School","Value":186,"Id":"9e5d33da-bc45-11ee-b662-0a58ac120002","Date":null},{"Name":"IncidentIQ Demo Middle School","Value":142,"Id":"c1f4a26a-bc45-11ee-b662-0a58ac120002","Date":null}],"Paging":{},"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2025-11-04T13:18:54.124Z","ExecutionTime":12.8,"StatusCode":200,"ServerName":"spark-analytics-7d7c5f5d9b-gb5nq","ProcessId":24,"OperationId":"asset-verification-locations","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AnalyticsVerificationLocationListResponse"}
+>
+</Heading>
+
+
+
+Standard list envelope returned by analytics endpoints that surface aggregated verification counts.
+
+<Schema
+  schema={{"type":"object","description":"Standard list envelope returned by analytics endpoints that surface aggregated verification counts.","properties":{"ItemCount":{"type":"integer","description":"Total number of locations included in this response.","example":2},"Items":{"type":"array","description":"Collection of location analytics data points ordered by asset count.","items":{"type":"object","description":"Aggregated asset verification counts grouped by the location captured on the most recent verification event per asset.","properties":{"Name":{"type":"string","description":"Display name of the location associated with the verification event.","example":"IncidentIQ Demo High School"},"Value":{"type":"number","description":"Distinct asset count that most recently verified at this location.","example":186},"Id":{"type":"string","format":"uuid","nullable":true,"description":"Location identifier. When populated it lines up with `LocationId` from the locations directory so the chart can link to additional details.","example":"9e5d33da-bc45-11ee-b662-0a58ac120002","x-obtained-from":{"operationId":"getAllSiteLocationsV2","endpoint":"GET /api/v1.0/locations/view","responseField":"Items[].LocationId"}},"Date":{"type":"string","format":"date-time","nullable":true,"description":"Timestamp associated with the data point (not set for this aggregate).","example":null}},"required":["Name","Value"],"example":{"Name":"IncidentIQ Demo High School","Value":186,"Id":"9e5d33da-bc45-11ee-b662-0a58ac120002","Date":null},"title":"AnalyticsVerificationLocationDataPoint"}},"Paging":{"description":"Paging metadata (unused for this aggregate, provided for envelope parity).","type":"object","nullable":true,"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}]},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated session token.","example":"3e17f735-b79f-f011-b484-002248538047","nullable":true},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp the query finished executing.","example":"2025-11-04T13:18:54.124Z"},"ExecutionTime":{"type":"number","description":"How long the analytics query took to execute (ms).","example":12.8},"StatusCode":{"type":"integer","description":"HTTP status code mirrored inside the payload.","example":200},"ServerName":{"type":"string","description":"Application node that served the request.","example":"spark-analytics-7d7c5f5d9b-gb5nq"},"ProcessId":{"type":"integer","description":"Process identifier useful during troubleshooting.","example":24},"OperationId":{"type":"string","description":"Identifier assigned for tracing across services.","example":"asset-verification-locations"},"Properties":{"type":"object","description":"Additional instrumentation metadata returned by the platform.","example":{}}},"required":["ItemCount","Items","StatusCode"],"example":{"ItemCount":2,"Items":[{"Name":"IncidentIQ Demo High School","Value":186,"Id":"9e5d33da-bc45-11ee-b662-0a58ac120002","Date":null},{"Name":"IncidentIQ Demo Middle School","Value":142,"Id":"c1f4a26a-bc45-11ee-b662-0a58ac120002","Date":null}],"Paging":{},"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2025-11-04T13:18:54.124Z","ExecutionTime":12.8,"StatusCode":200,"ServerName":"spark-analytics-7d7c5f5d9b-gb5nq","ProcessId":24,"OperationId":"asset-verification-locations","Properties":{}},"title":"AnalyticsVerificationLocationListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

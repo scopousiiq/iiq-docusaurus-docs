@@ -1,0 +1,82 @@
+---
+id: bulk-delete-asset-types
+title: "Bulk Delete Asset Types"
+description: "Deletes multiple asset types in a single request. You can target explicit identifiers or delete all matching types by combining `IsSelectAll` with filter criteria in `AssetTypesRequest`."
+sidebar_label: "Bulk Delete Asset Types"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/assets/assets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Bulk Delete Asset Types"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/assets/types/bulk/delete"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes multiple asset types in a single request. You can target explicit identifiers or delete all matching types by combining `IsSelectAll` with filter criteria in `AssetTypesRequest`.
+
+**Prerequisites**
+1. **AssetTypeIds** - Use [GET /api/v1.0/assets/types](/docs/api/assets/list-asset-types) to identify the asset types to delete when `IsSelectAll` is false.
+2. **AssetTypesRequest** (optional) - Build filter criteria when `IsSelectAll` is true to select all matching asset types.
+
+**Workflow Example**
+1. List asset types and decide which should be removed.
+2. Build a `BulkAssetTypeDeleteRequest` with either `AssetTypeIds` or `IsSelectAll` + `AssetTypesRequest`.
+3. [POST /api/v1.0/assets/types/bulk/delete](/docs/api/assets/bulk-delete-asset-types) to remove the selected types.
+
+**Minimal Required Fields**: `Request` plus either `AssetTypeIds` or `IsSelectAll` with `AssetTypesRequest`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","description":"Bulk request wrapper for deleting multiple asset types. Mirrors `BulkAssetTypeRequest<BulkDeleteAssetTypeRequest>`.","properties":{"AssetTypeIds":{"type":"array","description":"List of asset type identifiers to delete when `IsSelectAll` is false.","items":{"type":"string","format":"uuid"}},"Request":{"description":"The delete command to apply to the selected asset types.","allOf":[{"type":"object","description":"Individual delete command for an asset type in a bulk operation. Mirrors `Spark.Shared.Models.Requests.BulkDeleteAssetTypeRequest`.","properties":{"AssetTypeId":{"type":"string","format":"uuid","description":"The unique identifier of the asset type to delete."}},"required":["AssetTypeId"],"title":"BulkDeleteAssetTypeRequest"}]},"IsSelectAll":{"type":"boolean","description":"When true, ignores `AssetTypeIds` and applies the operation to all asset types matching the `AssetTypesRequest` criteria.","default":false},"AssetTypesRequest":{"description":"Filtering criteria applied when `IsSelectAll` is true.","allOf":[{"type":"object","description":"Filtering and pagination options for retrieving asset types. Mirrors `Spark.Shared.Models.Requests.GetAssetTypesRequest`.","properties":{"FilterByProduct":{"type":"boolean","description":"When true, filters the result set to include only types applicable to the active product module.","default":true},"ProductId":{"type":"string","format":"uuid","description":"Optional product identifier to filter by."},"ResourceGroupIds":{"type":"array","description":"Optional list of resource group identifiers to filter by.","items":{"type":"string","format":"uuid"}}},"title":"GetAssetTypesRequest"}]}},"required":["Request"],"example":{"AssetTypeIds":["11111111-1111-4111-8111-111111111111","22222222-2222-4222-8222-222222222222"],"Request":{"AssetTypeId":"00000000-0000-0000-0000-000000000000"},"IsSelectAll":false},"title":"BulkAssetTypeDeleteRequest"},"example":{"AssetTypeIds":["11111111-1111-4111-8111-111111111111","22222222-2222-4222-8222-222222222222"],"Request":{"AssetTypeId":"00000000-0000-0000-0000-000000000000"},"IsSelectAll":false}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","description":"ItemGetResponse envelope containing the identifier of the bulk delete operation result.","allOf":[{"type":"object","description":"Standard response envelope for single-item GET operations. The `Item` property contains the requested entity.","properties":{"Item":{"description":"The requested entity. Structure varies by endpoint."},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful GET)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Item","StatusCode"],"title":"ItemGetResponse"},{"type":"object","properties":{"Item":{"type":"string","format":"uuid","description":"Identifier of the bulk operation job or the last deleted asset type."}}}],"title":"AssetTypeBulkDeleteResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

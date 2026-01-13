@@ -1,0 +1,33 @@
+---
+id: createissueresponse
+title: "CreateIssueResponse"
+description: ""
+sidebar_label: "CreateIssueResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Id":0,"Uid":"5c61a623-ef84-f011-b484-002248538048","Item":{"SampleKey":"SampleValue"},"Message":null,"UserToken":"5c61a623-ef84-f011-b484-002248538048","RequestDate":"2025-01-15T14:22:13.480Z","ExecutionTime":92.314,"StatusCode":201,"ServerName":"spark-assets-6b8676c76c-5tzm6","ProcessId":1,"OperationId":"exampleOperation","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CreateIssueResponse"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"allOf":[{"type":"object","description":"Command-style envelope returned after successfully creating a resource.","properties":{"Id":{"type":"integer","description":"Legacy numeric identifier returned for parity with ItemCreateResponse.","example":0},"Uid":{"type":"string","format":"uuid","description":"Server-generated correlation identifier for the command execution.","example":"5c61a623-ef84-f011-b484-002248538048"},"Item":{"type":"object","description":"Payload describing the resource that was created. The exact structure depends on the endpoint.","nullable":true,"additionalProperties":true},"Message":{"type":"string","description":"Optional informational message returned by the service.","nullable":true},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated session identifier that executed the call.","example":"5c61a623-ef84-f011-b484-002248538048"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request.","example":"2025-01-15T14:22:13.480Z"},"ExecutionTime":{"type":"number","description":"Server-side execution time in milliseconds.","example":92.314},"StatusCode":{"type":"integer","description":"HTTP status code mirrored inside the envelope.","example":201},"ServerName":{"type":"string","description":"Name of the application node that processed the request.","example":"spark-assets-6b8676c76c-5tzm6"},"ProcessId":{"type":"integer","description":"Internal process identifier used for diagnostics.","example":1},"OperationId":{"type":"string","description":"Trace identifier emitted for log correlation.","example":"exampleOperation"},"Properties":{"type":"object","description":"Additional metadata emitted by the platform.","additionalProperties":true}},"required":["Item","UserToken","RequestDate","ExecutionTime","StatusCode","ServerName","ProcessId"],"example":{"Id":0,"Uid":"5c61a623-ef84-f011-b484-002248538048","Item":{"SampleKey":"SampleValue"},"Message":null,"UserToken":"5c61a623-ef84-f011-b484-002248538048","RequestDate":"2025-01-15T14:22:13.480Z","ExecutionTime":92.314,"StatusCode":201,"ServerName":"spark-assets-6b8676c76c-5tzm6","ProcessId":1,"OperationId":"exampleOperation","Properties":{}},"title":"ItemCreateResponse"},{"type":"object","properties":{"Item":{"type":"object","properties":{"IssueId":{"type":"string","format":"uuid"},"SiteId":{"type":"string","format":"uuid","nullable":true},"ProductId":{"type":"string","format":"uuid","nullable":true},"Scope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"IssueTypeId":{"type":"string","format":"uuid"},"IssueTypeScope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"Name":{"type":"string"},"SortOrder":{"type":"integer"},"IssueCategoryId":{"type":"string","format":"uuid"},"IssueCategoryName":{"type":"string","nullable":true},"IssueCategoryIcon":{"type":"string","nullable":true},"IssueCategorySortOrder":{"type":"integer"},"IssueCategoryScope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"ModelCategoryId":{"type":"string","format":"uuid"},"ModelCategoryName":{"type":"string","nullable":true},"EnabledByDefault":{"type":"boolean"},"Models":{"type":"array","items":{"type":"object","properties":{"SiteId":{"type":"string","format":"uuid","nullable":true},"ModelIssueId":{"type":"string","format":"uuid"},"Scope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"IssueId":{"type":"string","format":"uuid"},"ModelId":{"type":"string","format":"uuid"},"Apps":{"type":"array","items":{"type":"object","properties":{"AppId":{"type":"string"},"ModelIssueId":{"type":"string","format":"uuid"},"NameOverride":{"type":"string","nullable":true}},"example":{"AppId":"google-admin","ModelIssueId":"c3d4e5f6-a7b8-9012-c3d4-e5f6a7b89012","NameOverride":"Chromebook Hardware Issue"},"title":"AppModelIssue"},"nullable":true}},"example":{"SiteId":"e5f6a7b8-c9d0-1234-e5f6-a7b8c9d01234","ModelIssueId":"c3d4e5f6-a7b8-9012-c3d4-e5f6a7b89012","Scope":"Global","IssueId":"a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890","ModelId":"d4e5f6a7-b8c9-0123-d4e5-f6a7b8c90123"},"title":"ModelIssue"},"nullable":true},"WorkflowId":{"type":"string","format":"uuid","nullable":true}},"example":{"IssueId":"a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890","SiteId":"e5f6a7b8-c9d0-1234-e5f6-a7b8c9d01234","ProductId":"12345678-90ab-cdef-1234-567890abcdef","Scope":"Global","IssueTypeId":"b2c3d4e5-f6a7-8901-b2c3-d4e5f6a78901","Name":"Broken Screen","SortOrder":1,"IssueCategoryName":"Hardware","EnabledByDefault":true},"title":"Issue"}}}],"title":"CreateIssueResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

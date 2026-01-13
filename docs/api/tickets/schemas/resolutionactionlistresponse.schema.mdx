@@ -1,0 +1,33 @@
+---
+id: resolutionactionlistresponse
+title: "ResolutionActionListResponse"
+description: "Paginated list of resolution actions"
+sidebar_label: "ResolutionActionListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":2,"Items":[{"ResolutionActionId":"11111111-1111-1111-1111-111111111111","SiteId":"22222222-2222-2222-2222-222222222222","Scope":"Site","ProductId":"33333333-3333-3333-3333-333333333333","Name":"IncidentIQ Demo First Contact Resolution","ActionCategoryId":"44444444-4444-4444-4444-444444444444","ActionCategoryName":"IncidentIQ Demo Repairs"},{"ResolutionActionId":"55555555-5555-5555-5555-555555555555","Scope":"Global","ProductId":"33333333-3333-3333-3333-333333333333","Name":"IncidentIQ Demo Password Reset","ActionCategoryId":"66666666-6666-6666-6666-666666666666","ActionCategoryName":"IncidentIQ Demo Support"}],"Paging":{"TotalRows":2,"PageCount":1,"PageSize":2,"PageIndex":0},"UserToken":"77777777-7777-4777-9777-777777777777","RequestDate":"2024-10-01T12:00:00Z","ExecutionTime":123.456,"StatusCode":200,"ServerName":"spark-services-demo","ProcessId":42,"OperationId":"demoOp123","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ResolutionActionListResponse"}
+>
+</Heading>
+
+
+
+Paginated list of resolution actions
+
+<Schema
+  schema={{"type":"object","description":"Paginated list of resolution actions","properties":{"ItemCount":{"type":"integer","description":"Number of resolution actions returned in this response page.","example":2},"Items":{"type":"array","description":"Collection of resolution actions available to the authenticated user.","items":{"type":"object","description":"Summary information for a resolution action","properties":{"ResolutionActionId":{"type":"string","format":"uuid","description":"Unique identifier for the resolution action record.","example":"11111111-1111-1111-1111-111111111111"},"SiteId":{"type":"string","format":"uuid","description":"Identifier for the site where the action is scoped. Present when Scope is Site.","example":"22222222-2222-2222-2222-222222222222"},"Scope":{"type":"string","description":"Indicates whether the resolution action is available globally or constrained to a specific site.","example":"Site"},"ProductId":{"type":"string","format":"uuid","description":"Product identifier associated with the resolution action.","example":"33333333-3333-3333-3333-333333333333"},"Name":{"type":"string","description":"Display name of the resolution action as shown to agents.","example":"IncidentIQ Demo First Contact Resolution"},"ActionCategoryId":{"type":"string","format":"uuid","description":"Identifier of the resolution action category.","example":"44444444-4444-4444-4444-444444444444"},"ActionCategoryName":{"type":"string","description":"Friendly name of the category that groups similar resolution actions.","example":"IncidentIQ Demo Repairs"}},"required":["ResolutionActionId","Scope","ProductId","Name","ActionCategoryId","ActionCategoryName"],"example":{"ResolutionActionId":"11111111-1111-1111-1111-111111111111","SiteId":"22222222-2222-2222-2222-222222222222","Scope":"Site","ProductId":"33333333-3333-3333-3333-333333333333","Name":"IncidentIQ Demo First Contact Resolution","ActionCategoryId":"44444444-4444-4444-4444-444444444444","ActionCategoryName":"IncidentIQ Demo Repairs"},"title":"ResolutionActionSummary"}},"Paging":{"description":"Paging metadata describing the total available results and current page position.","allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}]},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated session identifier.","example":"77777777-7777-4777-9777-777777777777"},"RequestDate":{"type":"string","format":"date-time","description":"UTC timestamp for when the request was processed.","example":"2024-10-01T12:00:00Z"},"ExecutionTime":{"type":"number","description":"Server-side processing time in milliseconds.","example":123.456},"StatusCode":{"type":"integer","description":"HTTP status code mirrored in the response body.","example":200},"ServerName":{"type":"string","description":"Hostname of the application node that served the request.","example":"spark-services-demo"},"ProcessId":{"type":"integer","description":"Internal process identifier for troubleshooting.","example":42},"OperationId":{"type":"string","description":"Trace identifier for correlating the request across services.","example":"demoOp123"},"Properties":{"type":"object","description":"Additional metadata emitted by the platform.","additionalProperties":true}},"example":{"ItemCount":2,"Items":[{"ResolutionActionId":"11111111-1111-1111-1111-111111111111","SiteId":"22222222-2222-2222-2222-222222222222","Scope":"Site","ProductId":"33333333-3333-3333-3333-333333333333","Name":"IncidentIQ Demo First Contact Resolution","ActionCategoryId":"44444444-4444-4444-4444-444444444444","ActionCategoryName":"IncidentIQ Demo Repairs"},{"ResolutionActionId":"55555555-5555-5555-5555-555555555555","Scope":"Global","ProductId":"33333333-3333-3333-3333-333333333333","Name":"IncidentIQ Demo Password Reset","ActionCategoryId":"66666666-6666-6666-6666-666666666666","ActionCategoryName":"IncidentIQ Demo Support"}],"Paging":{"TotalRows":2,"PageCount":1,"PageSize":2,"PageIndex":0},"UserToken":"77777777-7777-4777-9777-777777777777","RequestDate":"2024-10-01T12:00:00Z","ExecutionTime":123.456,"StatusCode":200,"ServerName":"spark-services-demo","ProcessId":42,"OperationId":"demoOp123","Properties":{}},"title":"ResolutionActionListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

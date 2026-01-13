@@ -1,0 +1,33 @@
+---
+id: assetinventoryoptions
+title: "AssetInventoryOptions"
+description: "Options for inventory-related operations when changing asset ownership or location."
+sidebar_label: "AssetInventoryOptions"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Quantity":0,"ToEntityId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ToEntityTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ToLocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ToLocationRoomId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetInventoryOptions"}
+>
+</Heading>
+
+
+
+Options for inventory-related operations when changing asset ownership or location.
+
+<Schema
+  schema={{"type":"object","description":"Options for inventory-related operations when changing asset ownership or location.","properties":{"Quantity":{"type":"number","format":"decimal","description":"Quantity of inventory items to transfer"},"ToEntityId":{"type":"string","format":"uuid","nullable":true,"description":"Target entity UUID for the inventory transfer"},"ToEntityTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Entity type UUID of the target entity"},"ToLocationId":{"type":"string","format":"uuid","nullable":true,"description":"Target location UUID for the inventory transfer"},"ToLocationRoomId":{"type":"string","format":"uuid","nullable":true,"description":"Target room UUID within the location"}},"title":"AssetInventoryOptions"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

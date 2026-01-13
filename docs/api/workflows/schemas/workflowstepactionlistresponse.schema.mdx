@@ -1,0 +1,33 @@
+---
+id: workflowstepactionlistresponse
+title: "WorkflowStepActionListResponse"
+description: "Envelope returned when listing workflow step actions."
+sidebar_label: "WorkflowStepActionListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":0,"Items":[{"WorkflowStepActionId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","WorkflowStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","WorkflowActionTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","WorkflowActionTypeName":"Send Email Notification","Options":"string","SortOrder":0,"CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z"}],"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":0,"ServerName":"string","ProcessId":0,"OperationId":"string","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"WorkflowStepActionListResponse"}
+>
+</Heading>
+
+
+
+Envelope returned when listing workflow step actions.
+
+<Schema
+  schema={{"type":"object","description":"Envelope returned when listing workflow step actions.","properties":{"ItemCount":{"type":"integer","description":"Number of actions returned."},"Items":{"type":"array","description":"Collection of workflow step actions.","items":{"type":"object","description":"Defines an automated action that executes when a ticket enters a workflow step.","properties":{"WorkflowStepActionId":{"type":"string","format":"uuid","description":"Unique identifier for this action."},"WorkflowStepId":{"type":"string","format":"uuid","description":"Workflow step that triggers this action."},"WorkflowActionTypeId":{"type":"string","format":"uuid","description":"Type of action to perform (e.g., send email, assign ticket)."},"WorkflowActionTypeName":{"type":"string","nullable":true,"description":"Display name of the action type.","example":"Send Email Notification"},"Options":{"type":"string","nullable":true,"description":"JSON string containing action-specific configuration options."},"SortOrder":{"type":"integer","description":"Order in which actions execute within a step."},"CreatedDate":{"type":"string","format":"date-time","description":"UTC timestamp when the action was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"UTC timestamp when the action was last modified."}},"required":["WorkflowStepActionId","WorkflowStepId","WorkflowActionTypeId","SortOrder"],"title":"WorkflowStepAction"}},"UserToken":{"type":"string","format":"uuid","description":"Echo of the UserToken header that authenticated the request."},"RequestDate":{"type":"string","format":"date-time","description":"Server-side timestamp indicating when the request was processed."},"ExecutionTime":{"type":"number","description":"Server processing time in milliseconds."},"StatusCode":{"type":"integer","description":"HTTP status code emitted by the service."},"ServerName":{"type":"string","description":"Name of the server instance that fulfilled the request."},"ProcessId":{"type":"integer","description":"Internal process identifier logged by the service."},"OperationId":{"type":"string","description":"Trace identifier correlating this call with server logs."},"Properties":{"type":"object","description":"Additional diagnostic metadata, if any.","additionalProperties":{"type":"string"}}},"required":["ItemCount","Items","StatusCode"],"title":"WorkflowStepActionListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

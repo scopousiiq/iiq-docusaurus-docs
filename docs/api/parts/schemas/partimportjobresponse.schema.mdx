@@ -1,0 +1,33 @@
+---
+id: partimportjobresponse
+title: "PartImportJobResponse"
+description: "Response wrapper for scheduling a part import job."
+sidebar_label: "PartImportJobResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Item":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Success":true,"Errors":["string"]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"PartImportJobResponse"}
+>
+</Heading>
+
+
+
+Response wrapper for scheduling a part import job.
+
+<Schema
+  schema={{"type":"object","description":"Response wrapper for scheduling a part import job.","properties":{"ItemId":{"type":"string","format":"uuid","description":"UUID of the scheduled import job."},"Item":{"type":"string","format":"uuid","description":"UUID of the scheduled import job (duplicate for compatibility)."},"Success":{"type":"boolean","description":"Indicates if the operation was successful."},"Errors":{"type":"array","items":{"type":"string"},"description":"List of error messages, if any."}},"title":"PartImportJobResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: newlocaluserrequest
+title: "NewLocalUserRequest"
+description: ""
+sidebar_label: "NewLocalUserRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"FirstName":"string","LastName":"string","Email":"user@example.com","Password":"string","LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RoleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"NewLocalUserRequest"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"FirstName":{"type":"string"},"LastName":{"type":"string"},"Email":{"type":"string","format":"email"},"Password":{"type":"string","format":"password"},"LocationId":{"type":"string","format":"uuid"},"RoleId":{"type":"string","format":"uuid"}},"title":"NewLocalUserRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: sparepoolassetsearchfilter
+title: "SparePoolAssetSearchFilter"
+description: "Filter condition applied when searching spare pool inventory."
+sidebar_label: "SparePoolAssetSearchFilter"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Facet":"string","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ComplexEditorPath":"string","Value":"string","Negative":false}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SparePoolAssetSearchFilter"}
+>
+</Heading>
+
+
+
+Filter condition applied when searching spare pool inventory.
+
+<Schema
+  schema={{"type":"object","description":"Filter condition applied when searching spare pool inventory.","properties":{"Facet":{"type":"string","description":"Filter facet name such as `assetsparepool`, `AssetCustomField`, or `ParentAsset`."},"Id":{"type":"string","format":"uuid","description":"Identifier value used by facets referencing a specific pool or asset.","nullable":true},"CustomFieldTypeId":{"type":"string","format":"uuid","description":"Custom-field identifier when filtering by a spare metadata field.","nullable":true},"ComplexEditorPath":{"type":"string","description":"Path to the nested property within a complex custom field (e.g., `0:IssueDate`).","nullable":true},"Value":{"type":"string","description":"Raw value to compare against (supporting operators like `date<YYYY-MM-DD`).","nullable":true},"Negative":{"type":"boolean","description":"When true, inverts the filter to exclude matching records.","default":false}},"required":["Facet"],"additionalProperties":false,"title":"SparePoolAssetSearchFilter"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

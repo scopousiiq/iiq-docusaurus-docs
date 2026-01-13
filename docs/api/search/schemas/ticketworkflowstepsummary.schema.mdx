@@ -1,0 +1,33 @@
+---
+id: ticketworkflowstepsummary
+title: "TicketWorkflowStepSummary"
+description: "Workflow step metadata for the ticket's current state"
+sidebar_label: "TicketWorkflowStepSummary"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"WorkflowStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","OriginalWorkflowStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","WorkflowId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","WorkflowName":"string","StepName":"string","StepDescription":"string","StatusId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","StatusName":"string","IsClosed":true,"IsDeleted":true,"CommandSortOrder":0,"CommandMore":true,"DisplayOrder":0,"SourceEntityTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SourceEntityId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","OriginId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","OriginSource":"string","Color":"#FFBA1A"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketWorkflowStepSummary"}
+>
+</Heading>
+
+
+
+Workflow step metadata for the ticket's current state
+
+<Schema
+  schema={{"type":"object","description":"Workflow step metadata for the ticket's current state","properties":{"WorkflowStepId":{"type":"string","format":"uuid","description":"Identifier of the active workflow step. Supply this ID when advancing the ticket status via [POST /api/v1.0/tickets/{ticketId}/status/{statusId}](/docs/api/tickets/set-ticket-status).","x-obtained-from":{"operationId":"getTicketStatus","endpoint":"GET /api/v1.0/tickets/{ticketId}/status","responseField":"Item.CurrentWorkflowStep.WorkflowStepId"}},"OriginalWorkflowStepId":{"type":"string","format":"uuid","nullable":true},"WorkflowId":{"type":"string","format":"uuid","nullable":true},"WorkflowName":{"type":"string","nullable":true},"StepName":{"type":"string","description":"Display name for the workflow step"},"StepDescription":{"type":"string","description":"Optional description shown to agents when this step is active.","nullable":true},"StatusId":{"type":"string","format":"uuid"},"StatusName":{"type":"string","description":"Status label visible in the UI"},"IsClosed":{"type":"boolean"},"IsDeleted":{"type":"boolean"},"CommandSortOrder":{"type":"integer","nullable":true},"CommandMore":{"type":"boolean","description":"True when the step is exposed through the more actions menu"},"DisplayOrder":{"type":"integer","nullable":true},"SourceEntityTypeId":{"type":"string","format":"uuid","nullable":true},"SourceEntityId":{"type":"string","format":"uuid","nullable":true},"CreatedDate":{"type":"string","format":"date-time","nullable":true},"ModifiedDate":{"type":"string","format":"date-time","nullable":true},"OriginId":{"type":"string","format":"uuid","nullable":true},"OriginSource":{"type":"string","description":"Source that produced the workflow step (for example, automation or user action).","nullable":true},"Color":{"type":"string","description":"Hex color used to render the workflow step in the UI.","nullable":true,"example":"#FFBA1A"}},"required":["WorkflowStepId","StepName","StatusId","IsClosed","IsDeleted","CommandMore"],"title":"TicketWorkflowStepSummary"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

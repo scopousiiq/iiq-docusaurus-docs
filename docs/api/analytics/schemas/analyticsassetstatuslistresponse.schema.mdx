@@ -1,0 +1,33 @@
+---
+id: analyticsassetstatuslistresponse
+title: "AnalyticsAssetStatusListResponse"
+description: "Standard list envelope returned by analytics endpoints that surface asset counts grouped by status type."
+sidebar_label: "AnalyticsAssetStatusListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":5,"Items":[{"Name":"Active","Value":1250,"Id":"77777790-7ac2-44d9-895a-1d1e01000001","Date":null},{"Name":"Deployed","Value":890,"Id":"77777790-7ac2-44d9-895a-1d1e01000002","Date":null},{"Name":"In Repair","Value":45,"Id":"77777790-7ac2-44d9-895a-1d1e01000003","Date":null},{"Name":"In Storage","Value":312,"Id":"77777790-7ac2-44d9-895a-1d1e01000004","Date":null},{"Name":"Retired","Value":156,"Id":"77777790-7ac2-44d9-895a-1d1e01000005","Date":null}],"Paging":{},"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2026-01-05T10:30:00.000Z","ExecutionTime":9.2,"StatusCode":200,"ServerName":"spark-analytics-7d7c5f5d9b-gb5nq","ProcessId":24,"OperationId":"asset-status-counts","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AnalyticsAssetStatusListResponse"}
+>
+</Heading>
+
+
+
+Standard list envelope returned by analytics endpoints that surface asset counts grouped by status type.
+
+<Schema
+  schema={{"type":"object","description":"Standard list envelope returned by analytics endpoints that surface asset counts grouped by status type.","properties":{"ItemCount":{"type":"integer","description":"Total number of status types included in this response.","example":5},"Items":{"type":"array","description":"Collection of asset status data points ordered by count.","items":{"type":"object","description":"Generic analytics data point used for chart and graph data across various analytics endpoints.","properties":{"Name":{"type":"string","description":"Display name of the data point category.","example":"Active"},"Value":{"type":"number","description":"Numeric value or count for this data point.","example":1250},"Id":{"type":"string","format":"uuid","description":"Optional identifier associated with this data point for drill-down operations.","example":"77777790-7ac2-44d9-895a-1d1e01000001"},"Date":{"type":"string","format":"date-time","nullable":true,"description":"Optional timestamp for time-series data points.","example":null}},"required":["Name","Value"],"example":{"Name":"Active","Value":1250,"Id":"77777790-7ac2-44d9-895a-1d1e01000001","Date":null},"title":"AnalyticsDataPoint"}},"Paging":{"description":"Paging metadata (unused for this aggregate, provided for envelope parity).","type":"object","nullable":true,"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}]},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated session token.","example":"3e17f735-b79f-f011-b484-002248538047","nullable":true},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp the query finished executing.","example":"2026-01-05T10:30:00.000Z"},"ExecutionTime":{"type":"number","description":"How long the analytics query took to execute (ms).","example":9.2},"StatusCode":{"type":"integer","description":"HTTP status code mirrored inside the payload.","example":200},"ServerName":{"type":"string","description":"Application node that served the request.","example":"spark-analytics-7d7c5f5d9b-gb5nq"},"ProcessId":{"type":"integer","description":"Process identifier useful during troubleshooting.","example":24},"OperationId":{"type":"string","description":"Identifier assigned for tracing across services.","example":"asset-status-counts"},"Properties":{"type":"object","description":"Additional instrumentation metadata returned by the platform.","example":{}}},"required":["ItemCount","Items","StatusCode"],"example":{"ItemCount":5,"Items":[{"Name":"Active","Value":1250,"Id":"77777790-7ac2-44d9-895a-1d1e01000001","Date":null},{"Name":"Deployed","Value":890,"Id":"77777790-7ac2-44d9-895a-1d1e01000002","Date":null},{"Name":"In Repair","Value":45,"Id":"77777790-7ac2-44d9-895a-1d1e01000003","Date":null},{"Name":"In Storage","Value":312,"Id":"77777790-7ac2-44d9-895a-1d1e01000004","Date":null},{"Name":"Retired","Value":156,"Id":"77777790-7ac2-44d9-895a-1d1e01000005","Date":null}],"Paging":{},"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2026-01-05T10:30:00.000Z","ExecutionTime":9.2,"StatusCode":200,"ServerName":"spark-analytics-7d7c5f5d9b-gb5nq","ProcessId":24,"OperationId":"asset-status-counts","Properties":{}},"title":"AnalyticsAssetStatusListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

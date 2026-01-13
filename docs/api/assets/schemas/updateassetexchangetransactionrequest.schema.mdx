@@ -1,0 +1,33 @@
+---
+id: updateassetexchangetransactionrequest
+title: "UpdateAssetExchangeTransactionRequest"
+description: "Payload to update an existing checkout or checkin transaction."
+sidebar_label: "UpdateAssetExchangeTransactionRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetCheckoutId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ExchangeActionId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Quantity":0,"CheckoutDueDate":"2024-07-29T15:51:28.071Z","CheckinAssetStatusTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateAssetExchangeTransactionRequest"}
+>
+</Heading>
+
+
+
+Payload to update an existing checkout or checkin transaction.
+
+<Schema
+  schema={{"type":"object","description":"Payload to update an existing checkout or checkin transaction.","allOf":[{"type":"object","description":"Identifies a specific exchange transaction linked to a checkout.","properties":{"AssetCheckoutId":{"type":"string","format":"uuid","description":"Checkout identifier."},"ExchangeActionId":{"type":"string","format":"uuid","description":"Inventory action identifier representing the exchange."}},"required":["AssetCheckoutId","ExchangeActionId"],"title":"AssetExchangeTransactionDto"},{"type":"object","properties":{"Quantity":{"type":"number","description":"Adjusted quantity for the transaction.","nullable":true},"CheckoutDueDate":{"type":"string","format":"date-time","description":"Updated due date for the checkout transaction.","nullable":true},"CheckinAssetStatusTypeId":{"type":"string","format":"uuid","description":"Status to apply on checkin.","nullable":true}}}],"title":"UpdateAssetExchangeTransactionRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,85 @@
+---
+id: bulk-update-authentication-source
+title: "Bulk update authentication source"
+description: "Migrates all users within a site from one authentication source to another. This is a site-wide bulk operation that changes authentication configuration for all users matching the `StartingSource` to use the `TargetSource` instead."
+sidebar_label: "Bulk update authentication source"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/users/users-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Bulk update authentication source"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/users/bulk/authentication-source"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Migrates all users within a site from one authentication source to another. This is a site-wide bulk operation that changes authentication configuration for all users matching the `StartingSource` to use the `TargetSource` instead.
+
+**Prerequisites**
+1. **SiteId** - The site identifier where the migration will occur. Use [GET /api/v1.0/sites](#/Sites/listSites) to find site IDs.
+2. **StartingSource** / **TargetSource** - Valid authentication source names configured for your organization (e.g., 'Local', 'SAML', 'Azure AD', 'Google').
+
+**Workflow Example**
+1. Identify the site: [GET /api/v1.0/sites](#/Sites/listSites) → extract `SiteId`.
+2. Submit this endpoint with `SiteId`, `StartingSource`, and `TargetSource`.
+3. Review the returned list of migrated user IDs.
+4. Validate via [POST /api/v1.0/users](/docs/api/users/search-users) filtered by authentication source.
+
+**Minimal Required Fields**: `SiteId`, `StartingSource`, `TargetSource`
+
+**Notes**: This operation affects ALL users in the site who are currently using `StartingSource`. Use with caution in production environments.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","description":"Request to bulk update authentication sources for users matching a source type. Mirrors `Spark.Shared.Models.Requests.BulkUpdateAuthenticationSourceRequest`. Migrates all users from `StartingSource` to `TargetSource` within the specified site.","properties":{"SiteId":{"type":"string","format":"uuid","description":"Site identifier where the bulk migration will occur."},"StartingSource":{"type":"string","description":"The current authentication source to migrate users from (e.g., 'Local', 'SAML', 'Azure AD')."},"TargetSource":{"type":"string","description":"The target authentication source to migrate users to (e.g., 'Local', 'SAML', 'Azure AD')."}},"title":"BulkUpdateAuthenticationSourceRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of updated user IDs","content":{"application/json":{"schema":{"type":"object","description":"Response containing a list of GUIDs.","allOf":[{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"}],"properties":{"Items":{"type":"array","items":{"type":"string","format":"uuid"}}},"title":"GuidListGetResponse"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","description":"Detailed validation error information for bad request responses","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (400)","example":400},"Message":{"type":"string","description":"Human-readable description of the validation error","example":"Invalid request data"},"Errors":{"type":"object","description":"Field-specific validation errors","additionalProperties":{"type":"array","items":{"type":"string"}},"example":{"Subject":["Subject is required"],"IssueId":["IssueId must be a valid UUID"]}}},"required":["StatusCode","Message"],"title":"ValidationError"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","description":"Error response for authentication failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (401)","example":401},"Message":{"type":"string","description":"Human-readable description of the authentication error","example":"Authentication required. Please provide valid credentials."}},"required":["StatusCode","Message"],"title":"UnauthorizedError"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","description":"Error response for authorization/permission failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (403)","example":403},"Message":{"type":"string","description":"Human-readable description of the authorization error","example":"You do not have permission to perform this action"}},"required":["StatusCode","Message"],"title":"ForbiddenError"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"type":"object","description":"Error response for internal server errors","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (500)","example":500},"Message":{"type":"string","description":"Human-readable description of the server error","example":"An internal server error occurred. Please try again later."},"RequestId":{"type":"string","description":"Unique request identifier for troubleshooting","example":"req_1234567890abcdef"}},"required":["StatusCode","Message"],"title":"InternalServerError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,33 @@
+---
+id: ticketcustomfieldupdateitem
+title: "TicketCustomFieldUpdateItem"
+description: "Single ticket custom field update entry submitted to POST /api/v1.0/tickets/{ticketId}/custom-fields. Most integrations only need to provide `TicketId`, `CustomFieldTypeId`, `Value`, and (optionally) `EditorTypeId`, but the service accepts the richer metadata seen in HAR captures for parity with the agent portal."
+sidebar_label: "TicketCustomFieldUpdateItem"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketId":"3a66c3fc-9fbf-f011-8e61-000d3a7bb518","CustomFieldTypeId":"abefec53-0823-4909-9d69-fdedebc46035","EditorTypeId":1,"Value":"WAG-CLM-004218","IsHidden":false}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketCustomFieldUpdateItem"}
+>
+</Heading>
+
+
+
+Single ticket custom field update entry submitted to POST /api/v1.0/tickets/\{ticketId\}/custom-fields. Most integrations only need to provide `TicketId`, `CustomFieldTypeId`, `Value`, and (optionally) `EditorTypeId`, but the service accepts the richer metadata seen in HAR captures for parity with the agent portal.
+
+<Schema
+  schema={{"type":"object","description":"Single ticket custom field update entry submitted to POST /api/v1.0/tickets/{ticketId}/custom-fields. Most integrations only need to provide `TicketId`, `CustomFieldTypeId`, `Value`, and (optionally) `EditorTypeId`, but the service accepts the richer metadata seen in HAR captures for parity with the agent portal.","properties":{"TicketId":{"type":"string","format":"uuid","description":"Identifier of the ticket whose custom field should be updated. Defaults to the `ticketId` path parameter.","example":"3a66c3fc-9fbf-f011-8e61-000d3a7bb518","x-obtained-from":{"operationId":"searchTickets","endpoint":"POST /api/v1.0/tickets","responseField":"Items[].TicketId"}},"CustomFieldTypeId":{"type":"string","format":"uuid","description":"Identifier of the custom field definition to update (e.g., the \"WAG Claim Number\" field). Retrieve via [GET /api/v1.0/custom-fields/types](/docs/api/custom-fields/list-custom-field-types) or read `Item.CustomFieldValues[].CustomFieldTypeId` from [GET /api/v1.0/tickets/{ticketId}](/docs/api/tickets/get-ticket).","example":"abefec53-0823-4909-9d69-fdedebc46035","x-obtained-from":{"operationId":"listCustomFieldTypes","endpoint":"GET /api/v1.0/custom-fields/types","responseField":"Items[].CustomFieldTypeId"}},"CustomFieldId":{"type":"string","format":"uuid","description":"Unique identifier of the specific custom field instance, when available (e.g., `CustomFieldValues[].CustomFieldId`).","nullable":true},"EditorTypeId":{"type":"integer","description":"Editor type identifier that informs the service how to parse `Value` (Text=1, Number=4, Dropdown=8, Multi-select=10, etc.).","example":1},"Scope":{"type":"string","description":"Scope for the custom field (Site, Product, or Global).","example":"Site"},"SiteId":{"type":"string","format":"uuid","description":"Site identifier that owns the custom field definition.","nullable":true},"ProductId":{"type":"string","format":"uuid","description":"Product/module associated with the custom field.","nullable":true},"EntityTypeId":{"type":"string","format":"uuid","description":"Entity type identifier corresponding to the ticket custom field scope.","nullable":true},"IsRequired":{"type":"boolean","description":"Indicates whether the custom field must contain a value."},"IsReadOnly":{"type":"boolean","description":"Flag used by the UI to prevent edits to system-managed fields."},"IsHidden":{"type":"boolean","description":"Whether the field is hidden from most users."},"IsSystemField":{"type":"boolean","description":"True when the field ships with Incident IQ and may have additional validation rules."},"IsDeleted":{"type":"boolean","description":"Soft delete flag for the field metadata."},"DisplayOrder":{"type":"integer","description":"Display order in the ticket form."},"TypeDisplayOrder":{"type":"integer","description":"Display order relative to other fields of the same type."},"SetDisplayOrder":{"type":"integer","description":"Display order relative to other fields in the same set."},"Value":{"description":"Value assigned to the custom field. Text and dropdown editors accept strings, numeric editors accept numbers, and multi-select editors accept an array of option identifiers or a JSON string representation depending on tenant configuration. May be null when the field value has not been set.","oneOf":[{"type":"string","nullable":true,"example":"WAG-CLM-004218"},{"type":"number"},{"type":"boolean"},{"type":"array","items":{"type":"string"},"example":["OptionA","OptionB"]},{"type":"object","description":"Complex custom field values serialized as structured JSON.","additionalProperties":true}]},"ComplexValue":{"type":"object","description":"Optional complex value payload for editor types that require structured data (e.g., cascading dropdowns).","additionalProperties":true,"nullable":true},"IsValid":{"type":"boolean","description":"Indicates whether the value passed validation."},"FilterSetId":{"type":"string","format":"uuid","description":"Filter set identifier used by conditional dropdowns.","nullable":true},"OriginSourceId":{"type":"string","format":"uuid","description":"Source identifier recorded when the field originated from another system.","nullable":true},"OriginId":{"type":"string","format":"uuid","description":"Original identifier from the source system (if applicable).","nullable":true}},"required":["TicketId","CustomFieldTypeId"],"example":{"TicketId":"3a66c3fc-9fbf-f011-8e61-000d3a7bb518","CustomFieldTypeId":"abefec53-0823-4909-9d69-fdedebc46035","EditorTypeId":1,"Value":"WAG-CLM-004218","IsHidden":false},"title":"TicketCustomFieldUpdateItem"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

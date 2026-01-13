@@ -1,0 +1,33 @@
+---
+id: updateinventoryitemrequest
+title: "UpdateInventoryItemRequest"
+description: "Request body for creating or updating an inventory catalog item."
+sidebar_label: "UpdateInventoryItemRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"InventoryItemId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","InventoryTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","ItemNumber":"string","ImageId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TrackSupplier":true,"TrackUnits":true,"QuantityAvailable":0,"AverageCost":0,"UseFixedCost":true,"FixedCost":0,"Description":"string","MinQuantityAvailable":0,"MaxQuantityAvailable":0,"UpdateCustomFields":true,"CustomFieldValues":[{"InventoryItemId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Value":"string","MappedProperties":{}}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateInventoryItemRequest"}
+>
+</Heading>
+
+
+
+Request body for creating or updating an inventory catalog item.
+
+<Schema
+  schema={{"type":"object","description":"Request body for creating or updating an inventory catalog item.","properties":{"InventoryItemId":{"type":"string","format":"uuid","description":"Unique identifier (required for updates, generated on create)."},"InventoryTypeId":{"type":"string","format":"uuid","description":"Identifier for the inventory type."},"SiteId":{"type":"string","format":"uuid","description":"Site scope that owns the item."},"ProductId":{"type":"string","format":"uuid","description":"Product scope identifier."},"CategoryId":{"type":"string","format":"uuid","nullable":true,"description":"Category identifier."},"Name":{"type":"string","description":"Display name of the item."},"ItemNumber":{"type":"string","nullable":true,"description":"Internal part number or SKU."},"ImageId":{"type":"string","format":"uuid","nullable":true,"description":"Identifier of the item's image file."},"TrackSupplier":{"type":"boolean","description":"Whether to track supplier for this item."},"TrackUnits":{"type":"boolean","description":"Whether to track units for this item."},"QuantityAvailable":{"type":"integer","description":"Total quantity available."},"AverageCost":{"type":"number","format":"double","description":"Average unit cost."},"UseFixedCost":{"type":"boolean","description":"Whether to use fixed cost pricing."},"FixedCost":{"type":"number","format":"double","nullable":true,"description":"Fixed unit cost when UseFixedCost is true."},"Description":{"type":"string","nullable":true,"description":"Optional description."},"MinQuantityAvailable":{"type":"integer","description":"Minimum quantity threshold."},"MaxQuantityAvailable":{"type":"integer","nullable":true,"description":"Maximum quantity threshold."},"UpdateCustomFields":{"type":"boolean","description":"When true, custom field values will be updated."},"CustomFieldValues":{"type":"array","nullable":true,"description":"Custom field values to set.","items":{"type":"object","description":"Custom field value for an inventory item.","properties":{"InventoryItemId":{"type":"string","format":"uuid","description":"Identifier of the inventory item."},"CustomFieldTypeId":{"type":"string","format":"uuid","description":"Identifier of the custom field type."},"Value":{"type":"string","nullable":true,"description":"The field value as a string."},"MappedProperties":{"type":"object","nullable":true,"additionalProperties":true,"description":"Additional mapped properties for the field value."}},"title":"InventoryItemCustomFieldValue"}}},"title":"UpdateInventoryItemRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

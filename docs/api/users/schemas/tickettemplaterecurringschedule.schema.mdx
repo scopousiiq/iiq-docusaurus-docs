@@ -1,0 +1,33 @@
+---
+id: tickettemplaterecurringschedule
+title: "TicketTemplateRecurringSchedule"
+description: "Recurring schedule definition that governs when the template auto-creates tickets."
+sidebar_label: "TicketTemplateRecurringSchedule"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"RecurringScheduleId":"99999999-9999-9999-9999-999999999999","SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","CreatedDate":"2024-12-01T15:00:00Z","ModifiedDate":"2024-12-01T15:00:00Z","Name":"Monthly on the first school day at 8:30 AM","Pattern":"Monthly","StartTime":"08:30:00","StopRecurringDate":"2025-09-30T00:00:00Z","RRule":"","RRuleJson":"","IsValidMonthlyPattern":true,"IsValidQuarterlyPattern":true,"IsMonthlyInstanceBased":false,"RunOnceDate":"2025-02-10T08:30:00Z","WeeklyDays":18,"MonthlyDay":1,"MonthlyDayInstance":1,"MonthlyDayWeekDay":1,"YearlyMonth":7,"YearlyDay":15}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketTemplateRecurringSchedule"}
+>
+</Heading>
+
+
+
+Recurring schedule definition that governs when the template auto-creates tickets.
+
+<Schema
+  schema={{"type":"object","description":"Recurring schedule definition that governs when the template auto-creates tickets.","properties":{"RecurringScheduleId":{"type":"string","format":"uuid","description":"Identifier for the recurring schedule definition.","example":"99999999-9999-9999-9999-999999999999"},"SiteId":{"type":"string","format":"uuid","description":"Site that owns the recurring schedule.","example":"bb6cece8-e4f4-e511-a789-005056bb000e"},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the schedule was created.","example":"2024-12-01T15:00:00Z"},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the schedule definition was last updated.","example":"2024-12-01T15:00:00Z"},"Name":{"type":"string","description":"Display name for the recurring schedule shown in the UI.","example":"Monthly on the first school day at 8:30 AM"},"Pattern":{"type":"string","description":"Describes how often the template runs.","enum":["Daily","Weekly","Monthly","Quarterly","Yearly","Once"],"example":"Monthly"},"StartTime":{"type":"string","description":"Local start time of day when the schedule fires (HH:mm:ss).","pattern":"^\\d{2}:\\d{2}:\\d{2}$","example":"08:30:00"},"StopRecurringDate":{"type":"string","format":"date-time","nullable":true,"description":"Optional end date after which the recurring schedule stops generating tickets.","example":"2025-09-30T00:00:00Z"},"RRule":{"type":"string","nullable":true,"description":"Raw RRULE expression when advanced recurrence is configured.","example":""},"RRuleJson":{"type":"string","nullable":true,"description":"JSON-encoded recurrence metadata used by the web application.","example":""},"IsValidMonthlyPattern":{"type":"boolean","description":"Indicates whether the monthly recurrence pattern is valid.","example":true},"IsValidQuarterlyPattern":{"type":"boolean","description":"Indicates whether the quarterly recurrence pattern is valid.","example":true},"IsMonthlyInstanceBased":{"type":"boolean","description":"True when the schedule uses week-instance rules (e.g., 2nd Tuesday).","example":false},"RunOnceDate":{"type":"string","format":"date-time","nullable":true,"description":"For one-time schedules, the exact timestamp when the template will run.","example":"2025-02-10T08:30:00Z"},"WeeklyDays":{"type":"integer","description":"Bitmask representing selected weekdays (1=Sunday, 2=Monday, etc.) for weekly recurrences.","minimum":0,"example":18},"MonthlyDay":{"type":"integer","description":"Calendar day of the month when the template should run (1-31). Value 0 indicates the pattern uses instance-based logic instead.","minimum":0,"maximum":31,"example":1},"MonthlyDayInstance":{"type":"integer","description":"Week instance (1=first, 2=second, etc.) used when the schedule is instance-based.","minimum":0,"example":1},"MonthlyDayWeekDay":{"type":"integer","description":"Weekday identifier (0=Sunday .. 6=Saturday) used with instance-based monthly schedules.","minimum":0,"maximum":6,"example":1},"YearlyMonth":{"type":"integer","description":"Month (1-12) when the yearly schedule should run.","minimum":0,"maximum":12,"example":7},"YearlyDay":{"type":"integer","description":"Day of the month for a yearly schedule. A value of 0 indicates the pattern uses instance-based rules.","minimum":0,"maximum":31,"example":15}},"required":["RecurringScheduleId","SiteId","CreatedDate","ModifiedDate","Name","Pattern","StartTime","IsValidMonthlyPattern","IsValidQuarterlyPattern","IsMonthlyInstanceBased"],"title":"TicketTemplateRecurringSchedule"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

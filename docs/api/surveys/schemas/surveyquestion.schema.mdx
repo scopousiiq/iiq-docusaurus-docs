@@ -1,0 +1,33 @@
+---
+id: surveyquestion
+title: "SurveyQuestion"
+description: "A question within a survey, including its type and response when used in survey responses."
+sidebar_label: "SurveyQuestion"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SurveyQuestionId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SurveyQuestionTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Question":"string","Response":"string","IsRequired":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SurveyQuestion"}
+>
+</Heading>
+
+
+
+A question within a survey, including its type and response when used in survey responses.
+
+<Schema
+  schema={{"type":"object","description":"A question within a survey, including its type and response when used in survey responses.","properties":{"SurveyQuestionId":{"type":"string","format":"uuid","description":"Unique identifier for the question."},"SurveyQuestionTypeId":{"type":"string","format":"uuid","description":"Type of question (e.g., text, rating, multiple choice)."},"Question":{"type":"string","description":"The question text displayed to the user."},"Response":{"type":"string","nullable":true,"description":"The user's response to this question (populated in survey responses)."},"IsRequired":{"type":"boolean","description":"Whether this question must be answered to submit the survey."}},"title":"SurveyQuestion"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

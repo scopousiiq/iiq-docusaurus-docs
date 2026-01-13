@@ -1,0 +1,33 @@
+---
+id: ticketbulksetinfovalue
+title: "TicketBulkSetInfoValue"
+description: ""
+sidebar_label: "TicketBulkSetInfoValue"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Key":"custom-field:9f0c8306-4f2b-4af8-8f87-0e3918e0d3ab","Value":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketBulkSetInfoValue"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"Key":{"type":"string","description":"Custom field identifier (e.g., custom-field:{id}). Obtain allowed identifiers from [GET /api/v1.0/tickets/{ticketId}](/docs/api/tickets/get-ticket) `Item.CustomFieldValues[].CustomFieldId` or [GET /api/v1.0/custom-fields](/docs/api/custom-fields/search-custom-fields).","example":"custom-field:9f0c8306-4f2b-4af8-8f87-0e3918e0d3ab"},"Value":{"type":"string","nullable":true,"description":"Value to assign to the custom field"}},"required":["Key"],"title":"TicketBulkSetInfoValue"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

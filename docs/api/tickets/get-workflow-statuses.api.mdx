@@ -1,0 +1,91 @@
+---
+id: get-workflow-statuses
+title: "Get statuses for specific workflow"
+description: "Retrieves all ticket statuses available within a specific workflow, including the status sequence, display colors, and which statuses represent closed states. Use this to populate workflow-specific status dropdowns and understand valid status transitions."
+sidebar_label: "Get statuses for specific workflow"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/tickets/tickets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get statuses for specific workflow"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/tickets/{workflowId}/statuses"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves all ticket statuses available within a specific workflow, including the status sequence, display colors, and which statuses represent closed states. Use this to populate workflow-specific status dropdowns and understand valid status transitions.
+
+**Prerequisites**
+1. **workflowId** – Use [GET /api/v1.0/workflows](/docs/api/workflows/list-workflows) to list workflows and extract `WorkflowId`, or get from ticket data via [GET /api/v1.0/tickets/\{ticketId\}](/docs/api/tickets/get-ticket) → `Item.WorkflowId`.
+
+**Workflow Example**
+1. Get ticket: [GET /api/v1.0/tickets/\{ticketId\}](/docs/api/tickets/get-ticket) → extract `WorkflowId`
+2. List statuses: [GET /api/v1.0/tickets/\{workflowId\}/statuses](/docs/api/tickets/get-workflow-statuses)
+3. Display: Show valid status options for the ticket's workflow
+4. Transition: Use [POST /api/v1.0/tickets/\{ticketId\}/status/\{statusId\}](/docs/api/tickets/set-ticket-status) to change status
+
+**Response Fields**: Each status includes `WorkflowStepId`, `StepName`, `Color`, `IsClosed`, `DisplayOrder`, and transition rules.
+
+**Use Cases**: Building workflow-specific status selectors, validating status transitions, displaying available actions for tickets.
+
+**Note**: For all statuses across all workflows, use [GET /api/v1.0/tickets/workflows/statuses](/docs/api/tickets/get-all-workflow-statuses).
+
+**Related Endpoints**
+- [GET /api/v1.0/workflows](/docs/api/workflows/list-workflows) – List all workflows
+- [GET /api/v1.0/tickets/workflows/statuses](/docs/api/tickets/get-all-workflow-statuses) – All statuses across workflows
+- [POST /api/v1.0/tickets/\{ticketId\}/status/\{statusId\}](/docs/api/tickets/set-ticket-status) – Change ticket status
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"workflowId","in":"path","required":true,"description":"Unique identifier of the workflow","schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Workflow statuses retrieved successfully","content":{"application/json":{"schema":{"type":"object","description":"Response containing a list of available ticket statuses across all workflows.","allOf":[{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"}],"properties":{"Items":{"type":"array","description":"Collection of ticket status definitions.","items":{"type":"object","description":"Ticket status definition representing a workflow state. Maps workflow steps to user-friendly status labels.","properties":{"TicketStatusTypeId":{"type":"string","format":"uuid","description":"Internal status type identifier.","example":"c7932b63-7bf4-49f9-a2a3-ea739e7e0002"},"StatusId":{"type":"string","format":"uuid","description":"Alias for TicketStatusTypeId. Unique identifier for this status.","example":"c7932b63-7bf4-49f9-a2a3-ea739e7e0002"},"StatusName":{"type":"string","description":"Display name for the status shown in UI.","example":"In Progress"},"WorkflowId":{"type":"string","format":"uuid","description":"Identifier of the workflow this status belongs to.","example":"0f6db4fb-4b4f-ec11-9820-0003ffe402cf"},"WorkflowName":{"type":"string","description":"Name of the workflow this status belongs to.","example":"In Progress"},"WorkflowStepId":{"type":"string","format":"uuid","description":"Identifier of the specific workflow step.","example":"a63d07c9-554f-ec11-9820-0003ffe402cf"},"StepName":{"type":"string","description":"Name of the workflow step.","example":"In Progress"},"StepDescription":{"type":"string","description":"Optional description of what this workflow step represents.","nullable":true},"IsClosed":{"type":"boolean","description":"Whether this status represents a closed/resolved state.","example":false},"IsReadonly":{"type":"boolean","description":"Whether tickets in this status are read-only.","example":false},"IsDeleted":{"type":"boolean","description":"Whether this status has been soft-deleted.","example":false},"IsRequestorInputNeeded":{"type":"boolean","description":"Whether this status indicates waiting for requestor input.","example":false},"Color":{"type":"string","description":"Hex color code for UI display.","example":"#FFBA1A"},"DisplayOrder":{"type":"integer","description":"Sort order for displaying statuses in lists.","example":100}},"required":["WorkflowStepId","WorkflowId","StepName","StatusName"],"title":"TicketStatus"}}},"title":"TicketStatusListResponse"}}}},"401":{"description":"Unauthorized – caller is not authenticated"},"404":{"description":"Not found – workflow does not exist"}}}
+>
+  
+</StatusCodes>
+
+
+      

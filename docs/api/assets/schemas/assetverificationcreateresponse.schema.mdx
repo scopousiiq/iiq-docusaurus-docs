@@ -1,0 +1,33 @@
+---
+id: assetverificationcreateresponse
+title: "AssetVerificationCreateResponse"
+description: "Command-style envelope returned after recording an asset verification."
+sidebar_label: "AssetVerificationCreateResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":{"AssetVerificationId":"fb9d8e7d-beb8-f011-8194-6045bdb27a29","AssetId":"995b4f42-f011-4d07-b536-62db80f60938","CreatedDate":"2025-03-18T19:07:56.205Z","VerifiedByUserId":"d3f67a16-7bbd-4b8e-8fd8-2df8cf2d6df1","AssetVerificationTypeId":"web-manual","IsSuccessful":true,"Comments":"","LocationId":"2bd1574a-2243-e611-a93b-a45e60e682da","ExternalId":""},"Uid":"fb9d8e7d-beb8-f011-8194-6045bdb27a29","Id":0,"UserToken":"b50e1738-b9b8-f011-8194-6045bdb27a29","RequestDate":"2025-03-18T19:07:56.176Z","ExecutionTime":438.11,"StatusCode":201,"ServerName":"spark-assets-6b8676c76c-qhz7s","ProcessId":1,"OperationId":"createVerification","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetVerificationCreateResponse"}
+>
+</Heading>
+
+
+
+Command-style envelope returned after recording an asset verification.
+
+<Schema
+  schema={{"type":"object","description":"Command-style envelope returned after recording an asset verification.","allOf":[{"type":"object","description":"Command-style envelope returned after successfully creating a resource.","properties":{"Id":{"type":"integer","description":"Legacy numeric identifier returned for parity with ItemCreateResponse.","example":0},"Uid":{"type":"string","format":"uuid","description":"Server-generated correlation identifier for the command execution.","example":"5c61a623-ef84-f011-b484-002248538048"},"Item":{"type":"object","description":"Payload describing the resource that was created. The exact structure depends on the endpoint.","nullable":true,"additionalProperties":true},"Message":{"type":"string","description":"Optional informational message returned by the service.","nullable":true},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated session identifier that executed the call.","example":"5c61a623-ef84-f011-b484-002248538048"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request.","example":"2025-01-15T14:22:13.480Z"},"ExecutionTime":{"type":"number","description":"Server-side execution time in milliseconds.","example":92.314},"StatusCode":{"type":"integer","description":"HTTP status code mirrored inside the envelope.","example":201},"ServerName":{"type":"string","description":"Name of the application node that processed the request.","example":"spark-assets-6b8676c76c-5tzm6"},"ProcessId":{"type":"integer","description":"Internal process identifier used for diagnostics.","example":1},"OperationId":{"type":"string","description":"Trace identifier emitted for log correlation.","example":"exampleOperation"},"Properties":{"type":"object","description":"Additional metadata emitted by the platform.","additionalProperties":true}},"required":["Item","UserToken","RequestDate","ExecutionTime","StatusCode","ServerName","ProcessId"],"example":{"Id":0,"Uid":"5c61a623-ef84-f011-b484-002248538048","Item":{"SampleKey":"SampleValue"},"Message":null,"UserToken":"5c61a623-ef84-f011-b484-002248538048","RequestDate":"2025-01-15T14:22:13.480Z","ExecutionTime":92.314,"StatusCode":201,"ServerName":"spark-assets-6b8676c76c-5tzm6","ProcessId":1,"OperationId":"exampleOperation","Properties":{}},"title":"ItemCreateResponse"}],"properties":{"Item":{"description":"Verification record that was created.","allOf":[{"type":"object","description":"Represents an asset verification record produced by manual or automated checks.","properties":{"AssetVerificationId":{"type":"string","format":"uuid","description":"Identifier assigned to the verification event."},"AssetId":{"type":"string","format":"uuid","description":"Asset that was verified.","x-obtained-from":{"operationId":"getAssetById","endpoint":"GET /api/v1.0/assets/{assetId}","responseField":"Item.AssetId"}},"CreatedDate":{"type":"string","format":"date-time","description":"UTC timestamp when the verification was created."},"VerifiedByUserId":{"type":"string","format":"uuid","description":"User that completed the verification.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/search","responseField":"Item.Users[].UserId"}},"AssetVerificationTypeId":{"type":"string","description":"Verification mode identifier such as `web-manual`.","example":"web-manual"},"IsSuccessful":{"type":"boolean","description":"Indicates whether the verification passed."},"Comments":{"type":"string","description":"Optional notes captured during verification.","nullable":true},"LocationId":{"type":"string","format":"uuid","description":"Location confirmed during verification.","x-obtained-from":{"operationId":"getAllSiteLocationsV2","endpoint":"GET /api/v1.0/locations/all","responseField":"Items[].LocationId"}},"ExternalId":{"type":"string","description":"External identifier supplied by integrated systems.","nullable":true}},"additionalProperties":false,"title":"AssetVerificationSummary"}]}},"example":{"Item":{"AssetVerificationId":"fb9d8e7d-beb8-f011-8194-6045bdb27a29","AssetId":"995b4f42-f011-4d07-b536-62db80f60938","CreatedDate":"2025-03-18T19:07:56.205Z","VerifiedByUserId":"d3f67a16-7bbd-4b8e-8fd8-2df8cf2d6df1","AssetVerificationTypeId":"web-manual","IsSuccessful":true,"Comments":"","LocationId":"2bd1574a-2243-e611-a93b-a45e60e682da","ExternalId":""},"Uid":"fb9d8e7d-beb8-f011-8194-6045bdb27a29","Id":0,"UserToken":"b50e1738-b9b8-f011-8194-6045bdb27a29","RequestDate":"2025-03-18T19:07:56.176Z","ExecutionTime":438.11,"StatusCode":201,"ServerName":"spark-assets-6b8676c76c-qhz7s","ProcessId":1,"OperationId":"createVerification","Properties":{}},"title":"AssetVerificationCreateResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

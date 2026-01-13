@@ -1,0 +1,33 @@
+---
+id: getcustomfieldsforassetinventoryactionrequest
+title: "GetCustomFieldsForAssetInventoryActionRequest"
+description: "Request payload for retrieving custom fields applicable to an asset inventory action."
+sidebar_label: "GetCustomFieldsForAssetInventoryActionRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"EntityId":"e1f2a3b4-c5d6-7890-abcd-ef1234567890"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetCustomFieldsForAssetInventoryActionRequest"}
+>
+</Heading>
+
+
+
+Request payload for retrieving custom fields applicable to an asset inventory action.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for retrieving custom fields applicable to an asset inventory action.","properties":{"Entity":{"type":"object","description":"Full AssetInventoryAction object used for filter matching.","properties":{"AssetInventoryActionId":{"type":"string","format":"uuid","description":"Unique identifier of the asset inventory action."}}},"EntityId":{"type":"string","format":"uuid","description":"UUID of the asset inventory action to retrieve custom fields for."},"ForProductId":{"type":"string","format":"uuid","description":"Optional product UUID to override the product context from request headers."}},"example":{"EntityId":"e1f2a3b4-c5d6-7890-abcd-ef1234567890"},"title":"GetCustomFieldsForAssetInventoryActionRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

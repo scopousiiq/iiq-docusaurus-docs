@@ -1,0 +1,82 @@
+---
+id: get-filter-value-label
+title: "Get the label for a filter value"
+description: "Returns the display label for a specific filter value. Use this to turn stored filter values into human-friendly labels when rendering saved searches or audit logs."
+sidebar_label: "Get the label for a filter value"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/filters/filters-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get the label for a filter value"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/filters/label/{FilterId}/{Value}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the display label for a specific filter value. Use this to turn stored filter values into human-friendly labels when rendering saved searches or audit logs.
+
+**Prerequisites**
+1. **FilterId** - Use [GET /api/v1.0/filters/for/entitytype/\{entityTypeId\}](/docs/api/filters/list-filters-for-entity-type) and extract `Items[].FilterId`.
+2. **Value** - Use a value previously stored in a filter set or view definition.
+
+**Workflow Example**
+1. Identify the filter and value from a saved view or filter set.
+2. Call [GET /api/v1.0/filters/label/\{FilterId\}/\{Value\}](/docs/api/filters/get-filter-value-label).
+3. Render the returned label in the UI.
+
+**Minimal Required Fields**: FilterId and Value (path).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"FilterId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"Value","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Label retrieved successfully.","content":{"application/json":{"schema":{"allOf":[{"type":"object","description":"Standard response envelope for single-item GET operations. The `Item` property contains the requested entity.","properties":{"Item":{"description":"The requested entity. Structure varies by endpoint."},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful GET)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Item","StatusCode"],"title":"ItemGetResponse"}],"properties":{"Item":{"type":"string"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

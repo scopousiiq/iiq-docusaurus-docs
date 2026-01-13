@@ -1,0 +1,33 @@
+---
+id: workflowapprovaltypelistresponse
+title: "WorkflowApprovalTypeListResponse"
+description: "Envelope returned when listing workflow approval types."
+sidebar_label: "WorkflowApprovalTypeListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":0,"Items":[{"WorkflowApprovalTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"Manager Approval","DefaultSortOrder":0}],"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":0,"ServerName":"string","ProcessId":0,"OperationId":"string","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"WorkflowApprovalTypeListResponse"}
+>
+</Heading>
+
+
+
+Envelope returned when listing workflow approval types.
+
+<Schema
+  schema={{"type":"object","description":"Envelope returned when listing workflow approval types.","properties":{"ItemCount":{"type":"integer","description":"Number of approval types returned."},"Items":{"type":"array","description":"Collection of workflow approval types.","items":{"type":"object","description":"Defines an approval type that can be required for workflow transitions.","properties":{"WorkflowApprovalTypeId":{"type":"string","format":"uuid","description":"Unique identifier for this approval type."},"Name":{"type":"string","description":"Display name of the approval type.","example":"Manager Approval"},"DefaultSortOrder":{"type":"integer","description":"Default ordering for this approval type in lists."}},"required":["WorkflowApprovalTypeId","Name","DefaultSortOrder"],"title":"WorkflowApprovalType"}},"UserToken":{"type":"string","format":"uuid","description":"Echo of the UserToken header that authenticated the request."},"RequestDate":{"type":"string","format":"date-time","description":"Server-side timestamp indicating when the request was processed."},"ExecutionTime":{"type":"number","description":"Server processing time in milliseconds."},"StatusCode":{"type":"integer","description":"HTTP status code emitted by the service."},"ServerName":{"type":"string","description":"Name of the server instance that fulfilled the request."},"ProcessId":{"type":"integer","description":"Internal process identifier logged by the service."},"OperationId":{"type":"string","description":"Trace identifier correlating this call with server logs."},"Properties":{"type":"object","description":"Additional diagnostic metadata, if any.","additionalProperties":{"type":"string"}}},"required":["ItemCount","Items","StatusCode"],"title":"WorkflowApprovalTypeListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

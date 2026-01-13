@@ -1,0 +1,33 @@
+---
+id: partitemgetresponse
+title: "PartItemGetResponse"
+description: "Response wrapper for retrieving a single part."
+sidebar_label: "PartItemGetResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":{"PartId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","Name":"string","StandardCostEach":0,"StandardSupplierId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","StandardSupplier":{"PartSupplierId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","Name":"string","AddressId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Address":{"AddressId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Street1":"string","Street2":"string","City":"string","State":"string","Zip":"string","Country":"string","Latitude":0,"Longitude":0,"IsDeleted":true,"CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z"}},"QuantityOnHand":0},"Success":true,"Errors":["string"]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"PartItemGetResponse"}
+>
+</Heading>
+
+
+
+Response wrapper for retrieving a single part.
+
+<Schema
+  schema={{"type":"object","description":"Response wrapper for retrieving a single part.","properties":{"Item":{"type":"object","description":"Represents a part in the legacy parts management system.","properties":{"PartId":{"type":"string","format":"uuid","description":"Unique identifier for the part."},"SiteId":{"type":"string","format":"uuid","description":"Site this part belongs to."},"ProductId":{"type":"string","format":"uuid","description":"Product module identifier."},"CreatedDate":{"type":"string","format":"date-time","description":"Date and time the part was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"Date and time the part was last modified."},"Name":{"type":"string","description":"Display name of the part."},"StandardCostEach":{"type":"number","format":"decimal","description":"Standard unit cost for the part."},"StandardSupplierId":{"type":"string","format":"uuid","description":"UUID of the default supplier for this part."},"StandardSupplier":{"allOf":[{"type":"object","description":"Represents a supplier in the legacy parts management system.","properties":{"PartSupplierId":{"type":"string","format":"uuid","description":"Unique identifier for the part supplier."},"SiteId":{"type":"string","format":"uuid","description":"Site this supplier belongs to."},"ProductId":{"type":"string","format":"uuid","description":"Product module identifier."},"CreatedDate":{"type":"string","format":"date-time","description":"Date and time the supplier was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"Date and time the supplier was last modified."},"Name":{"type":"string","description":"Display name of the supplier."},"AddressId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the associated address."},"Address":{"allOf":[{"type":"object","description":"Physical mailing address","properties":{"AddressId":{"type":"string","format":"uuid","description":"Unique identifier for the address"},"SiteId":{"type":"string","format":"uuid","description":"Site this address belongs to"},"Street1":{"type":"string","nullable":true,"description":"Primary street address line"},"Street2":{"type":"string","nullable":true,"description":"Secondary address line (suite, building, etc.)"},"City":{"type":"string","nullable":true,"description":"City name"},"State":{"type":"string","nullable":true,"description":"State or province code"},"Zip":{"type":"string","nullable":true,"description":"Postal/ZIP code"},"Country":{"type":"string","nullable":true,"description":"Country name or code"},"Latitude":{"type":"number","format":"double","nullable":true,"description":"Geographic latitude coordinate"},"Longitude":{"type":"number","format":"double","nullable":true,"description":"Geographic longitude coordinate"},"IsDeleted":{"type":"boolean","description":"Whether the address has been soft-deleted"},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the address was created"},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the address was last modified"}},"required":["AddressId"],"title":"Address"}],"description":"Expanded address details.","nullable":true,"type":"object"}},"title":"PartSupplier"}],"description":"Expanded default supplier details.","nullable":true,"type":"object"},"QuantityOnHand":{"type":"integer","nullable":true,"description":"Current stock quantity on hand."}},"title":"Part"},"Success":{"type":"boolean","description":"Indicates if the operation was successful."},"Errors":{"type":"array","items":{"type":"string"},"description":"List of error messages, if any."}},"title":"PartItemGetResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

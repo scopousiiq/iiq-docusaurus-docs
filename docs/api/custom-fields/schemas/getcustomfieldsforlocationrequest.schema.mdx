@@ -1,0 +1,33 @@
+---
+id: getcustomfieldsforlocationrequest
+title: "GetCustomFieldsForLocationRequest"
+description: "Request payload for retrieving custom fields applicable to a location."
+sidebar_label: "GetCustomFieldsForLocationRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"EntityId":"bb6cece8-e4f4-e511-a789-005056bb000e"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetCustomFieldsForLocationRequest"}
+>
+</Heading>
+
+
+
+Request payload for retrieving custom fields applicable to a location.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for retrieving custom fields applicable to a location.","properties":{"Entity":{"type":"object","description":"Full Location object used for filter matching.","properties":{"LocationId":{"type":"string","format":"uuid","description":"Unique identifier of the location."},"LocationTypeId":{"type":"string","format":"uuid","description":"Location type identifier used for filter matching."}}},"EntityId":{"type":"string","format":"uuid","description":"UUID of the location to retrieve custom fields for."},"ForProductId":{"type":"string","format":"uuid","description":"Optional product UUID to override the product context from request headers."}},"example":{"EntityId":"bb6cece8-e4f4-e511-a789-005056bb000e"},"title":"GetCustomFieldsForLocationRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

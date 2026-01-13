@@ -1,0 +1,81 @@
+---
+id: get-ticket-roles
+title: "Get roles associated with ticket"
+description: "Returns the list of roles that have access to or are associated with the specified ticket. This includes roles assigned through team membership, location-based access, or direct permissions."
+sidebar_label: "Get roles associated with ticket"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/tickets/tickets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get roles associated with ticket"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/tickets/{ticketId}/roles"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the list of roles that have access to or are associated with the specified ticket. This includes roles assigned through team membership, location-based access, or direct permissions.
+
+**Prerequisites**
+1. **ticketId** – Use [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) to locate the ticket and extract `Items[].TicketId`.
+
+**Workflow Example**
+1. Search tickets: [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) with filters → extract `Items[].TicketId`.
+2. Call [GET /api/v1.0/tickets/\{ticketId\}/roles](/docs/api/tickets/get-ticket-roles) to retrieve associated roles.
+3. Use role information for permission checks or assignment workflows.
+
+**Pagination**: Supports `$p` (page index) and `$s` (page size) query parameters. Default page size is 100.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"ticketId","in":"path","required":true,"schema":{"type":"string","format":"uuid"},"description":"UUID of the ticket","example":"a1b2c3d4-e5f6-7890-abcd-ef1234567890"},{"name":"$p","in":"query","schema":{"type":"integer","default":0},"description":"Zero-based page index."},{"name":"$s","in":"query","schema":{"type":"integer","default":100},"description":"Number of roles per page."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Roles retrieved successfully","content":{"application/json":{"schema":{"type":"object","description":"Paginated response containing roles.","properties":{"Items":{"type":"array","items":{"type":"object","properties":{"RoleId":{"type":"string","format":"uuid"},"Name":{"type":"string","description":"Role name"},"Portal":{"type":"integer","description":"Portal access level"},"Visibility":{"type":"integer","description":"Visibility level"},"CategoryId":{"type":"string","format":"uuid"},"Users":{"type":"integer","description":"Number of users with this role"},"Scope":{"type":"string","description":"Role scope"}},"required":["RoleId","Portal","Visibility","CategoryId","Users","Scope"],"title":"Role"}},"Paging":{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"},"IsSuccess":{"type":"boolean"},"StatusCode":{"type":"integer"}},"title":"RoleListResponse"},"example":{"Items":[{"RoleId":"c3d4e5f6-a7b8-9012-cdef-345678901234","Name":"Help Desk Technician","Portal":1,"Visibility":1,"CategoryId":"d4e5f6a7-b8c9-0123-def4-567890123456","Users":15,"Scope":"Site"}],"Paging":{"PageIndex":0,"PageSize":100,"TotalCount":1},"IsSuccess":true,"StatusCode":200}}}},"401":{"description":"Unauthorized – caller is not authenticated"},"404":{"description":"Not found – ticket does not exist"}}}
+>
+  
+</StatusCodes>
+
+
+      

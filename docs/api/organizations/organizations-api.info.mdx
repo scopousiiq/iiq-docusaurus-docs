@@ -1,0 +1,571 @@
+---
+id: organizations-api
+title: "Organizations API"
+description: "# Organizations API"
+sidebar_label: Introduction
+sidebar_position: 0
+hide_title: true
+custom_edit_url: null
+---
+
+import ApiLogo from "@theme/ApiLogo";
+import Heading from "@theme/Heading";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+import Export from "@theme/ApiExplorer/Export";
+
+<span
+  className={"theme-doc-version-badge badge badge--secondary"}
+  children={"Version: 1.0.0"}
+>
+</span>
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Organizations API"}
+>
+</Heading>
+
+
+
+# Organizations API
+
+The Organizations API provides comprehensive management of external entities in IncidentIQ. Track vendors, suppliers, repair providers, and partner organizations—including their contacts and categorization.
+
+## Overview
+
+Organizations in IncidentIQ represent external entities your district or company works with: device vendors, repair providers, software suppliers, contractors, and service partners. The Organizations API works together with Organization Types (for categorization) and Organization Users (for contact management) to provide complete external relationship tracking.
+
+:::info
+**What you can do with the Organizations API**
+:::
+
+>
+> - **Manage vendor records** including company details, addresses, and account information
+> - **Categorize organizations** by type (Vendor, Supplier, Repair Provider, Partner)
+> - **Track contacts** at each organization with roles and contact information
+> - **Attach documentation** such as contracts, service agreements, and certifications
+> - **Query and filter** organizations by type, name, or custom criteria
+> - **Link to assets and parts** for procurement and repair tracking
+
+## Common Use Cases
+
+### Vendor Directory and Procurement
+Maintain a centralized directory of approved vendors for purchasing. Filter by organization type to find suppliers for specific needs—hardware vendors, software resellers, or office supply companies.
+
+### Repair Provider Management
+Track authorized repair providers for warranty and out-of-warranty device repairs. Associate repair providers with specific device manufacturers or models, and maintain contact information for scheduling repairs.
+
+### Contract and Agreement Tracking
+Attach service contracts, warranty agreements, and pricing documents to organization records. Track contract renewal dates and service terms alongside vendor information.
+
+### Vendor Contact Management
+Maintain up-to-date contact information for vendor representatives, account managers, and technical support contacts. Associate multiple contacts with each organization for different purposes.
+
+### Compliance and Auditing
+Generate reports on vendor relationships for E-Rate audits, procurement compliance, or insurance requirements. Filter organizations by type to produce category-specific vendor lists.
+
+## API Sections
+
+| Section | Description |
+|---------|-------------|
+| **Querying** | Search and filter organizations with pagination |
+| **Details** | Retrieve individual organization information |
+| **Creating** | Add new organization records |
+| **Updating** | Modify organization properties |
+| **Deleting** | Remove organization records |
+| **Attachments** | Manage files attached to organizations |
+
+## Quick Start
+
+### Query Organizations
+
+**cURL
+**
+
+```bash
+curl -X POST "https://your-site.incidentiq.com/api/v1.0/organizations/query" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Paging": {"PageSize": 25, "PageIndex": 0}
+  }'
+```
+
+**JavaScript
+**
+
+```javascript
+const response = await fetch('https://your-site.incidentiq.com/api/v1.0/organizations/query', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_TOKEN',
+    'SiteId': 'YOUR_SITE_ID',
+    'Client': 'ApiClient',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    Paging: { PageSize: 25, PageIndex: 0 }
+  })
+});
+
+const data = await response.json();
+console.log(data.Items);
+```
+
+**Python
+**
+
+```python
+import requests
+
+response = requests.post(
+    'https://your-site.incidentiq.com/api/v1.0/organizations/query',
+    headers={
+        'Authorization': 'Bearer YOUR_TOKEN',
+        'SiteId': 'YOUR_SITE_ID',
+        'Client': 'ApiClient',
+        'Content-Type': 'application/json'
+    },
+    json={
+        'Paging': {'PageSize': 25, 'PageIndex': 0}
+    }
+)
+
+data = response.json()
+print(data['Items'])
+```
+
+
+---
+
+### Get Organization Details
+
+```bash
+curl -X GET "https://your-site.incidentiq.com/api/v1.0/organizations/{OrganizationId}" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient"
+```
+
+### Create a New Organization
+
+:::warning
+**Required Fields**
+:::
+
+>
+> When creating an organization, you must provide a `Name` and `OrganizationTypeId`. Use the [Organization Types](/docs/api/organizations/get-organization-types-by-query-post) endpoint to retrieve valid type IDs.
+
+```json http
+{
+  "method": "POST",
+  "url": "https://your-site.incidentiq.com/api/v1.0/organizations/new",
+  "headers": {
+    "Authorization": "Bearer YOUR_TOKEN",
+    "SiteId": "YOUR_SITE_ID",
+    "Client": "ApiClient",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "Name": "ABC Technology Services",
+    "OrganizationTypeId": "ORG_TYPE_UUID"
+  }
+}
+```
+
+### Filter Organizations by Type
+
+```json http
+{
+  "method": "POST",
+  "url": "https://your-site.incidentiq.com/api/v1.0/organizations/query",
+  "headers": {
+    "Authorization": "Bearer YOUR_TOKEN",
+    "SiteId": "YOUR_SITE_ID",
+    "Client": "ApiClient",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "Filters": [
+      {"Facet": "OrganizationTypeId", "Ids": ["ORG_TYPE_UUID"]}
+    ],
+    "Paging": {"PageSize": 50, "PageIndex": 0}
+  }
+}
+```
+
+## Organization Types
+
+Organization Types categorize your external entities. Common types include:
+
+- **Vendor** — Companies you purchase products from
+- **Supplier** — Ongoing supply relationships
+- **Repair Provider** — Authorized repair and service partners
+- **Partner** — Strategic or integration partners
+- **Contractor** — Service contractors and consultants
+
+You can create custom organization types to match your organization's classification needs.
+
+### Organization Types API Sections
+
+| Section | Description |
+|---------|-------------|
+| **Querying** | Search and list organization types |
+| **Details** | Retrieve individual organization type information |
+| **Creating** | Add new organization types |
+| **Updating** | Modify organization type properties |
+| **Deleting** | Remove organization types |
+
+### Query Organization Types
+
+**cURL
+**
+
+```bash
+curl -X POST "https://your-site.incidentiq.com/api/v1.0/organizations/types/query" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Paging": {"PageSize": 50, "PageIndex": 0}
+  }'
+```
+
+**JavaScript
+**
+
+```javascript
+const response = await fetch('https://your-site.incidentiq.com/api/v1.0/organizations/types/query', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_TOKEN',
+    'SiteId': 'YOUR_SITE_ID',
+    'Client': 'ApiClient',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    Paging: { PageSize: 50, PageIndex: 0 }
+  })
+});
+
+const data = await response.json();
+console.log(data.Items);
+```
+
+**Python
+**
+
+```python
+import requests
+
+response = requests.post(
+    'https://your-site.incidentiq.com/api/v1.0/organizations/types/query',
+    headers={
+        'Authorization': 'Bearer YOUR_TOKEN',
+        'SiteId': 'YOUR_SITE_ID',
+        'Client': 'ApiClient',
+        'Content-Type': 'application/json'
+    },
+    json={
+        'Paging': {'PageSize': 50, 'PageIndex': 0}
+    }
+)
+
+data = response.json()
+print(data['Items'])
+```
+
+
+---
+
+### Create an Organization Type
+
+```json http
+{
+  "method": "POST",
+  "url": "https://your-site.incidentiq.com/api/v1.0/organizations/types",
+  "headers": {
+    "Authorization": "Bearer YOUR_TOKEN",
+    "SiteId": "YOUR_SITE_ID",
+    "Client": "ApiClient",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "Name": "Repair Provider",
+    "Description": "External companies that provide device repair services"
+  }
+}
+```
+
+## Organization Users (Contacts)
+
+Organization Users represent individual contacts within an organization—the people you work with at vendors, suppliers, and service providers. Each organization can have multiple contacts with different roles:
+
+- Account managers and sales representatives
+- Technical support contacts
+- Service technicians
+- Billing and administrative contacts
+
+### Organization Users API Sections
+
+| Section | Description |
+|---------|-------------|
+| **Querying** | Search and list organization contacts |
+| **Details** | Retrieve individual contact information |
+| **Creating** | Add new contacts to organizations |
+| **Updating** | Modify contact properties |
+| **Deleting** | Remove contacts from organizations |
+
+### Query Organization Users
+
+**cURL
+**
+
+```bash
+curl -X POST "https://your-site.incidentiq.com/api/v1.0/organizations/users/query" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "OrganizationId": "ORGANIZATION_UUID",
+    "Paging": {"PageSize": 50, "PageIndex": 0}
+  }'
+```
+
+**JavaScript
+**
+
+```javascript
+const response = await fetch('https://your-site.incidentiq.com/api/v1.0/organizations/users/query', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_TOKEN',
+    'SiteId': 'YOUR_SITE_ID',
+    'Client': 'ApiClient',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    OrganizationId: 'ORGANIZATION_UUID',
+    Paging: { PageSize: 50, PageIndex: 0 }
+  })
+});
+
+const data = await response.json();
+console.log(data.Items);
+```
+
+**Python
+**
+
+```python
+import requests
+
+response = requests.post(
+    'https://your-site.incidentiq.com/api/v1.0/organizations/users/query',
+    headers={
+        'Authorization': 'Bearer YOUR_TOKEN',
+        'SiteId': 'YOUR_SITE_ID',
+        'Client': 'ApiClient',
+        'Content-Type': 'application/json'
+    },
+    json={
+        'OrganizationId': 'ORGANIZATION_UUID',
+        'Paging': {'PageSize': 50, 'PageIndex': 0}
+    }
+)
+
+data = response.json()
+print(data['Items'])
+```
+
+
+---
+
+### Add a Contact to an Organization
+
+:::warning
+**Required Fields**
+:::
+
+>
+> When creating an organization user, you must provide `OrganizationId` and `UserId`. The user must already exist in IncidentIQ.
+
+```json http
+{
+  "method": "POST",
+  "url": "https://your-site.incidentiq.com/api/v1.0/organizations/users",
+  "headers": {
+    "Authorization": "Bearer YOUR_TOKEN",
+    "SiteId": "YOUR_SITE_ID",
+    "Client": "ApiClient",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "OrganizationId": "ORGANIZATION_UUID",
+    "UserId": "USER_UUID"
+  }
+}
+```
+
+## Key Concepts
+
+:::info
+**Organizations vs. Invoicing Vendors**
+:::
+
+>
+> IncidentIQ has two ways to track external companies:
+> - **Organizations** — Full-featured external entity management with types, contacts, and attachments. Use for vendors you have ongoing relationships with.
+> - **Invoicing Vendors** — Simplified vendor records for purchase tracking. Use for basic invoice attribution.
+>
+> For comprehensive vendor management, use Organizations.
+
+### Typical Workflow
+
+1. **Create Organization Types** — Define the categories you need (if defaults don't suffice)
+2. **Create Organizations** — Add vendor/supplier records with the appropriate type
+3. **Add Organization Users** — Create contact records for people at each organization
+4. **Attach Documents** — Upload contracts, agreements, and certifications
+5. **Link to Assets/Parts** — Associate organizations with assets or parts for tracking
+
+## Related APIs
+
+- [Assets](/docs/api/assets/assets-api) — Link assets to vendor/supplier organizations for purchase and repair tracking
+- [Parts](/docs/api/parts/parts-api) — Associate parts with suppliers for procurement
+- [Invoicing](/docs/api/invoicing/invoicing-api) — Simplified vendor records for invoice tracking
+- [Files](/docs/api/files/files-api) — Upload contracts and documentation to attach to organizations
+
+
+<div
+  style={{"marginBottom":"2rem"}}
+>
+  <Heading
+    id={"authentication"}
+    as={"h2"}
+    className={"openapi-tabs__heading"}
+    children={"Authentication"}
+  >
+  </Heading><SchemaTabs
+    className={"openapi-tabs__security-schemes"}
+  >
+    <TabItem
+      label={"HTTP: Bearer Auth"}
+      value={"bearerAuth"}
+    >
+      
+      
+      JWT token from Administration > Developer Tools
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                http
+              </td>
+            </tr><tr>
+              <th>
+                HTTP Authorization Scheme:
+              </th><td>
+                bearer
+              </td>
+            </tr><tr>
+              <th>
+                Bearer format:
+              </th><td>
+                JWT
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem><TabItem
+      label={"API Key: siteId"}
+      value={"siteId"}
+    >
+      
+      
+      Your site identifier (UUID)
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                apiKey
+              </td>
+            </tr><tr>
+              <th>
+                Header parameter name:
+              </th><td>
+                SiteId
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem><TabItem
+      label={"API Key: client"}
+      value={"client"}
+    >
+      
+      
+      Must be "ApiClient"
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                apiKey
+              </td>
+            </tr><tr>
+              <th>
+                Header parameter name:
+              </th><td>
+                Client
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem>
+  </SchemaTabs>
+</div><div
+  style={{"display":"flex","flexDirection":"column","marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    Contact
+  </h3><span>
+    IncidentIQ Developer Support: [api-support@incidentiq.com](mailto:api-support@incidentiq.com)
+  </span><span>
+    URL: [https://stoplight.incidentiq.com](https://stoplight.incidentiq.com)
+  </span>
+</div><div
+  style={{"marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    License
+  </h3><a
+    href={"https://www.incidentiq.com/terms"}
+  >
+    Proprietary
+  </a>
+</div>
+      

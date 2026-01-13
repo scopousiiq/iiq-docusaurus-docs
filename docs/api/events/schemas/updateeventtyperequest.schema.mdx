@@ -1,0 +1,33 @@
+---
+id: updateeventtyperequest
+title: "UpdateEventTypeRequest"
+description: "Request model for creating or updating an event type."
+sidebar_label: "UpdateEventTypeRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"EventTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Scope":"All","Name":"string","Icon":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateEventTypeRequest"}
+>
+</Heading>
+
+
+
+Request model for creating or updating an event type.
+
+<Schema
+  schema={{"type":"object","description":"Request model for creating or updating an event type.","properties":{"EventTypeId":{"type":"string","format":"uuid","description":"Event type ID (required for updates)."},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site scope for site-specific event types."},"Scope":{"type":"string","enum":["All","System","Global","Site","App","User","Role","Team"],"description":"Visibility scope of the event type."},"Name":{"type":"string","description":"Display name of the event type."},"Icon":{"type":"string","description":"Icon identifier for the event type."}},"title":"UpdateEventTypeRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

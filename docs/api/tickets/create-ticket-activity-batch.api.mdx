@@ -1,0 +1,89 @@
+---
+id: create-ticket-activity-batch
+title: "Add batch of activities to ticket"
+description: "Logs multiple activity entries (comments, updates, notes) to a ticket in a single request. This is more efficient than individual activity posts when recording multiple related updates, such as importing conversation history or logging a series of actions taken during troubleshooting."
+sidebar_label: "Add batch of activities to ticket"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/tickets/tickets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add batch of activities to ticket"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/tickets/{ticketId}/activities/new-batch"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Logs multiple activity entries (comments, updates, notes) to a ticket in a single request. This is more efficient than individual activity posts when recording multiple related updates, such as importing conversation history or logging a series of actions taken during troubleshooting.
+
+**Prerequisites**
+1. **ticketId** – Use [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) to find the ticket and extract `Items[].TicketId`.
+
+**Workflow Example**
+1. Locate ticket: [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) → extract `TicketId`
+2. Prepare activities: Build array of activity objects with type, content, and visibility settings
+3. Batch post: [POST /api/v1.0/tickets/\{ticketId\}/activities/new-batch](/docs/api/tickets/create-ticket-activity-batch) with activity array
+4. View timeline: [GET /api/v1.0/tickets/\{ticketId\}/timeline](/docs/api/tickets/get-ticket-timeline) to confirm activities are recorded
+
+**Query Parameters**: Set `sendActivityEmail=false` to suppress notifications for the batch (useful for imports or bulk operations).
+
+**Request Body**: Array of activity objects, each specifying type, content, visibility, and optional attachments.
+
+**Related Endpoints**
+- [POST /api/v1.0/tickets/\{ticketId\}/activities/new](/docs/api/tickets/create-ticket-activity) – Add single activity
+- [GET /api/v1.0/tickets/\{ticketId\}/timeline](/docs/api/tickets/get-ticket-timeline) – View activity history
+- [POST /api/v1.0/tickets/\{ticketId\}/activities/\{activityId\}/send-notification](/docs/api/tickets/send-ticket-activity-notification) – Send notification for activity
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"ticketId","in":"path","required":true,"description":"UUID of the ticket.","schema":{"type":"string","format":"uuid"}},{"name":"sendActivityEmail","in":"query","required":false,"description":"Whether to send notification emails for these activities.","schema":{"type":"boolean","default":true}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"array","items":{"type":"object","description":"Represents an activity or comment on a ticket.","properties":{"TicketActivityId":{"type":"string","format":"uuid","description":"Identifier for the activity."},"SiteId":{"type":"string","format":"uuid","description":"Site identifier."},"ProductId":{"type":"string","format":"uuid","description":"Product identifier.","nullable":true},"CreatedDate":{"type":"string","format":"date-time","description":"When the activity was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"When the activity was last modified."},"IsPublic":{"type":"boolean","description":"Whether the activity is visible to end users."},"IsDeleted":{"type":"boolean","description":"Whether the activity has been soft-deleted."},"TicketId":{"type":"string","format":"uuid","description":"Parent ticket identifier."},"TicketSubject":{"type":"string","description":"Subject of the parent ticket.","nullable":true},"OwnerId":{"type":"string","format":"uuid","description":"User identifier who created the activity."},"OwnerDetails":{"type":"string","description":"Quick reference display name for the owner.","nullable":true},"ActivityItems":{"type":"array","description":"Collection of polymorphic items making up the activity content.","items":{"type":"object","additionalProperties":true,"description":"Polymorphic activity item. Fields vary by activity type."},"nullable":true},"SortOrder":{"type":"integer","description":"Sort order index."},"Alignment":{"type":"string","description":"UI alignment preference.","nullable":true}},"title":"TicketActivity"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Activities created successfully","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","description":"Represents an activity or comment on a ticket.","properties":{"TicketActivityId":{"type":"string","format":"uuid","description":"Identifier for the activity."},"SiteId":{"type":"string","format":"uuid","description":"Site identifier."},"ProductId":{"type":"string","format":"uuid","description":"Product identifier.","nullable":true},"CreatedDate":{"type":"string","format":"date-time","description":"When the activity was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"When the activity was last modified."},"IsPublic":{"type":"boolean","description":"Whether the activity is visible to end users."},"IsDeleted":{"type":"boolean","description":"Whether the activity has been soft-deleted."},"TicketId":{"type":"string","format":"uuid","description":"Parent ticket identifier."},"TicketSubject":{"type":"string","description":"Subject of the parent ticket.","nullable":true},"OwnerId":{"type":"string","format":"uuid","description":"User identifier who created the activity."},"OwnerDetails":{"type":"string","description":"Quick reference display name for the owner.","nullable":true},"ActivityItems":{"type":"array","description":"Collection of polymorphic items making up the activity content.","items":{"type":"object","additionalProperties":true,"description":"Polymorphic activity item. Fields vary by activity type."},"nullable":true},"SortOrder":{"type":"integer","description":"Sort order index."},"Alignment":{"type":"string","description":"UI alignment preference.","nullable":true}},"title":"TicketActivity"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

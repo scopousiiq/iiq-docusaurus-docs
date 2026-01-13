@@ -1,0 +1,33 @@
+---
+id: assettypelistresponse
+title: "AssetTypeListResponse"
+description: ""
+sidebar_label: "AssetTypeListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":0,"Items":[{"AssetTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string"}],"Paging":{"TotalRows":54343,"PageCount":10869,"PageSize":5,"PageIndex":0}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetTypeListResponse"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"ItemCount":{"type":"integer"},"Items":{"type":"array","items":{"type":"object","description":"Lightweight asset type reference for use in dropdowns, filters, and summary views","properties":{"AssetTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the asset type"},"Name":{"type":"string","description":"Display name for the asset type"}},"required":["AssetTypeId","Name"],"title":"AssetTypeSummary"}},"Paging":{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}},"title":"AssetTypeListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

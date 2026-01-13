@@ -1,0 +1,33 @@
+---
+id: intercomcompanyattributes
+title: "IntercomCompanyAttributes"
+description: "Company (Site) attributes for Intercom integration. These attributes represent the organization context and are passed to Intercom alongside the JWT token."
+sidebar_label: "IntercomCompanyAttributes"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"CompanyId":"fba6a1b3-df9e-43cc-ad86-c20b1a46b946","Name":"IncidentIQ Demo District","Website":"https://demo.incidentiq.com","Status":"Live / Active","Timezone":"Central Standard Time","SalesforceId":"0013i000007v8cUAAQ","LicensedProducts":"Change Management Standard, Ticketing Professional, Assets Standard, Facilities Standard, Events Standard"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"IntercomCompanyAttributes"}
+>
+</Heading>
+
+
+
+Company (Site) attributes for Intercom integration. These attributes represent the organization context and are passed to Intercom alongside the JWT token.
+
+<Schema
+  schema={{"type":"object","description":"Company (Site) attributes for Intercom integration. These attributes represent the organization context and are passed to Intercom alongside the JWT token.","properties":{"CompanyId":{"type":"string","format":"uuid","description":"Unique identifier for the company (maps to Site ID)","example":"fba6a1b3-df9e-43cc-ad86-c20b1a46b946"},"Name":{"type":"string","description":"Company name","example":"IncidentIQ Demo District"},"Website":{"type":"string","format":"uri","description":"Company website URL with protocol","example":"https://demo.incidentiq.com"},"Status":{"type":"string","description":"Company status (e.g., 'Live / Active')","example":"Live / Active"},"Timezone":{"type":"string","description":"Company timezone","example":"Central Standard Time"},"SalesforceId":{"type":"string","description":"Associated Salesforce account ID if applicable","example":"0013i000007v8cUAAQ"},"LicensedProducts":{"type":"string","description":"Comma-separated list of licensed product names and tiers","example":"Change Management Standard, Ticketing Professional, Assets Standard, Facilities Standard, Events Standard"}},"required":["CompanyId","Name","Website","Status"],"title":"IntercomCompanyAttributes"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

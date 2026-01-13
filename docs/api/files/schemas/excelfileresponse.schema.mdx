@@ -1,0 +1,33 @@
+---
+id: excelfileresponse
+title: "ExcelFileResponse"
+description: ""
+sidebar_label: "ExcelFileResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":{"Filename":"string","Worksheets":[{"Name":"string","Headers":[{"Name":"string","Index":0}],"Data":["string"],"Index":0}]},"StatusCode":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ExcelFileResponse"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","required":["Item","StatusCode"],"properties":{"Item":{"allOf":[{"type":"object","properties":{"Filename":{"type":"string","description":"Excel file name"},"Worksheets":{"type":"array","items":{"allOf":[{"type":"object","properties":{"Name":{"type":"string","description":"Import file name"},"Headers":{"type":"array","items":{"type":"object","properties":{"Name":{"type":"string","description":"Column display name"},"Index":{"type":"integer","description":"Column position index"}},"title":"ImportColumnLegacy"}},"Data":{"type":"array","items":{"type":"array","items":{"type":"string","nullable":true}}}},"title":"ImportFile"}],"type":"object","properties":{"Index":{"type":"integer","description":"Worksheet index"}},"title":"ExcelSheet"}}},"title":"ExcelFile"}]},"StatusCode":{"type":"integer"}},"title":"ExcelFileResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

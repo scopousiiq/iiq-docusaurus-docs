@@ -1,0 +1,33 @@
+---
+id: ticketactivityruleexecutionevent
+title: "TicketActivityRuleExecutionEvent"
+description: "Automation rule execution entry recorded on the timeline when a workflow or rule processes the ticket."
+sidebar_label: "TicketActivityRuleExecutionEvent"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"$type":"Spark.Shared.Models.TicketActivityRuleExecutionLog, Spark.Shared","TicketActivityRuleExecutionLogId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TicketActivityId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TicketActivityTypeId":7,"RuleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RuleName":"string","RuleTriggerTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsSuccessful":true,"CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","IsPublic":true,"Meta":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketActivityRuleExecutionEvent"}
+>
+</Heading>
+
+
+
+Automation rule execution entry recorded on the timeline when a workflow or rule processes the ticket.
+
+<Schema
+  schema={{"type":"object","description":"Automation rule execution entry recorded on the timeline when a workflow or rule processes the ticket.","properties":{"$type":{"type":"string","description":"Fully qualified CLR type emitted by the API","example":"Spark.Shared.Models.TicketActivityRuleExecutionLog, Spark.Shared"},"TicketActivityRuleExecutionLogId":{"type":"string","format":"uuid","description":"Identifier for the rule execution log entry"},"TicketActivityId":{"type":"string","format":"uuid","description":"Identifier of the parent ticket activity"},"TicketActivityTypeId":{"type":"integer","enum":[7],"description":"Activity type code representing rule execution events"},"RuleId":{"type":"string","format":"uuid","description":"Identifier of the automation rule that executed"},"RuleName":{"type":"string","description":"Display name of the automation rule"},"RuleTriggerTypeId":{"type":"string","format":"uuid","description":"Identifier of the trigger type that fired the rule"},"IsSuccessful":{"type":"boolean","description":"Indicates whether the rule completed successfully"},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the rule execution was recorded"},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the rule execution log was last updated"},"IsPublic":{"type":"boolean","description":"Whether the execution details are visible to the requester"},"Meta":{"type":"object","nullable":true,"description":"Additional metadata supplied by the platform","additionalProperties":true}},"required":["$type","TicketActivityRuleExecutionLogId","TicketActivityId","TicketActivityTypeId","RuleId","RuleName","RuleTriggerTypeId","IsSuccessful","CreatedDate","ModifiedDate","IsPublic"],"title":"TicketActivityRuleExecutionEvent"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

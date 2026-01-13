@@ -1,0 +1,33 @@
+---
+id: getidsforfiltersetrequest
+title: "GetIdsForFilterSetRequest"
+description: "Request body for retrieving entity IDs belonging to specific filter sets."
+sidebar_label: "GetIdsForFilterSetRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"FilterSetIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"IdsToProcess":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"IgnoreFilterSetsWithNoConditions":false,"OnlyReturnFirstMatch":false}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetIdsForFilterSetRequest"}
+>
+</Heading>
+
+
+
+Request body for retrieving entity IDs belonging to specific filter sets.
+
+<Schema
+  schema={{"type":"object","description":"Request body for retrieving entity IDs belonging to specific filter sets.","properties":{"FilterSetIds":{"type":"array","description":"List of filter set identifiers to evaluate.","items":{"type":"string","format":"uuid"}},"IdsToProcess":{"type":"array","description":"Optional subset of entity IDs to restrict the evaluation to.","items":{"type":"string","format":"uuid"},"nullable":true},"IgnoreFilterSetsWithNoConditions":{"type":"boolean","description":"If true, filter sets without conditions are skipped.","default":false},"OnlyReturnFirstMatch":{"type":"boolean","description":"If true, stops after the first matching filter set.","default":false}},"title":"GetIdsForFilterSetRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: filtercategorylistresponse
+title: "FilterCategoryListResponse"
+description: "Paginated list of filter categories used to organize facets in the UI."
+sidebar_label: "FilterCategoryListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":25,"Items":[{"Scope":"Global","CategoryId":"88887282-4125-4562-93de-100db1b50001","Level":0,"SortOrder":0,"ParentCategoryName":"","CategoryTypeId":"3b5a7282-4125-4562-93de-8e8db1b5c908","CategoryTypeName":"Filters","Name":"Asset filters","Icon":"fa fa-laptop","NameWithParent":"Asset filters","AppId":""}],"Paging":{"TotalRows":25,"PageCount":1,"PageSize":50,"PageIndex":0},"StatusCode":200}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"FilterCategoryListResponse"}
+>
+</Heading>
+
+
+
+Paginated list of filter categories used to organize facets in the UI.
+
+<Schema
+  schema={{"type":"object","description":"Paginated list of filter categories used to organize facets in the UI.","allOf":[{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"}],"properties":{"Items":{"type":"array","items":{"type":"object","description":"Metadata that groups filters into logical buckets such as asset filters, location filters, and workflow filters.","properties":{"Scope":{"type":"string","description":"Visibility scope for the filter category (for example, `Global` or `Site`).","example":"Global"},"CategoryId":{"type":"string","format":"uuid","description":"Unique identifier for the category.","example":"88887282-4125-4562-93de-100db1b50001"},"Level":{"type":"integer","description":"Hierarchy level for nested categories. `0` represents a top-level category.","example":0},"SortOrder":{"type":"integer","description":"Ordering hint used when rendering categories in the UI.","example":0},"ParentCategoryName":{"type":"string","description":"Name of the parent category when nested. Empty when the category is top-level."},"CategoryTypeId":{"type":"string","format":"uuid","description":"Identifier for the category type definition.","example":"3b5a7282-4125-4562-93de-8e8db1b5c908"},"CategoryTypeName":{"type":"string","description":"Display label for the category type.","example":"Filters"},"Name":{"type":"string","description":"Display name for the category as shown in UI filter pickers.","example":"Asset filters"},"Description":{"type":"string","description":"Additional descriptive text for the category when provided."},"Icon":{"type":"string","description":"Font Awesome icon class used by the UI when rendering the category.","example":"fa fa-laptop"},"NameWithParent":{"type":"string","description":"Full display label including the parent category when applicable.","example":"Asset filters"},"AppId":{"type":"string","description":"Identifier of the app providing the category when scoped to an application. Empty for core categories."}},"required":["CategoryId","Name","Scope"],"title":"FilterCategory"},"description":"Collection of filter categories."}},"example":{"ItemCount":25,"Items":[{"Scope":"Global","CategoryId":"88887282-4125-4562-93de-100db1b50001","Level":0,"SortOrder":0,"ParentCategoryName":"","CategoryTypeId":"3b5a7282-4125-4562-93de-8e8db1b5c908","CategoryTypeName":"Filters","Name":"Asset filters","Icon":"fa fa-laptop","NameWithParent":"Asset filters","AppId":""}],"Paging":{"TotalRows":25,"PageCount":1,"PageSize":50,"PageIndex":0},"StatusCode":200},"title":"FilterCategoryListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

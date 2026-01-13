@@ -1,0 +1,33 @@
+---
+id: usersummary
+title: "UserSummary"
+description: "Lightweight user representation for embedded references in other entities (e.g., CreatedBy, ModifiedBy, Owner)."
+sidebar_label: "UserSummary"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"UserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"iiQ User","FirstName":"iiQ","LastName":"User","Email":"demo@incidentiq.com","Username":"demo@incidentiq.com","PhotoId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RoleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationName":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UserSummary"}
+>
+</Heading>
+
+
+
+Lightweight user representation for embedded references in other entities (e.g., CreatedBy, ModifiedBy, Owner).
+
+<Schema
+  schema={{"type":"object","description":"Lightweight user representation for embedded references in other entities (e.g., CreatedBy, ModifiedBy, Owner).","properties":{"UserId":{"type":"string","format":"uuid","description":"Unique identifier for the user"},"Name":{"type":"string","description":"Full display name of the user","example":"iiQ User"},"FirstName":{"type":"string","nullable":true,"description":"User's first name","example":"iiQ"},"LastName":{"type":"string","nullable":true,"description":"User's last name","example":"User"},"Email":{"type":"string","nullable":true,"description":"User's email address","example":"demo@incidentiq.com"},"Username":{"type":"string","nullable":true,"description":"User's login username","example":"demo@incidentiq.com"},"PhotoId":{"type":"string","format":"uuid","nullable":true,"description":"Reference to the user's profile photo"},"RoleId":{"type":"string","format":"uuid","nullable":true,"description":"Reference to the user's role"},"LocationId":{"type":"string","format":"uuid","nullable":true,"description":"Reference to the user's primary location"},"LocationName":{"type":"string","nullable":true,"description":"Display name of the user's primary location"}},"required":["UserId","Name"],"title":"UserSummary"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

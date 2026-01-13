@@ -1,0 +1,33 @@
+---
+id: entityfiledetaillistresponse
+title: "EntityFileDetailListResponse"
+description: "Response envelope for entity file list operations (floorplans, images)"
+sidebar_label: "EntityFileDetailListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":0,"Items":[{"FileId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Description":"string"}],"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":0,"ServerName":"string","ProcessId":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"EntityFileDetailListResponse"}
+>
+</Heading>
+
+
+
+Response envelope for entity file list operations (floorplans, images)
+
+<Schema
+  schema={{"type":"object","description":"Response envelope for entity file list operations (floorplans, images)","properties":{"ItemCount":{"type":"integer","description":"Number of files returned"},"Items":{"type":"array","items":{"type":"object","description":"File metadata associated with an entity (location, room, etc.). Used for floorplans, images, and other file attachments.","properties":{"FileId":{"type":"string","format":"uuid","description":"Unique identifier for the file"},"Description":{"type":"string","nullable":true,"description":"Optional description or caption for the file"}},"required":["FileId"],"title":"EntityFileDetail"},"description":"Array of file records"},"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"}},"required":["Items"],"title":"EntityFileDetailListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

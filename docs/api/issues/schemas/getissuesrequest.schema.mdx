@@ -1,0 +1,33 @@
+---
+id: getissuesrequest
+title: "GetIssuesRequest"
+description: ""
+sidebar_label: "GetIssuesRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SiteScope":"Aggregate","Strategy":"Explicit","ModelIds":["d4e5f6a7-b8c9-0123-d4e5-f6a7b8c90123"]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetIssuesRequest"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"SiteScope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"],"default":"Aggregate"},"Strategy":{"type":"string","enum":["AggregateTicket","Explicit","All"],"default":"Explicit"},"ApplySiteVisibility":{"type":"boolean","default":true},"ApplyProductIdFilter":{"type":"boolean","default":true},"AssetIds":{"type":"array","items":{"type":"string","format":"uuid"},"nullable":true},"ModelIds":{"type":"array","items":{"type":"string","format":"uuid"},"nullable":true},"ProductId":{"type":"string","format":"uuid","nullable":true},"TicketIds":{"type":"array","items":{"type":"string","format":"uuid"},"nullable":true},"ModelCategoryIds":{"type":"array","items":{"type":"string","format":"uuid"},"nullable":true},"IssueCategoryIds":{"type":"array","items":{"type":"string","format":"uuid"},"nullable":true},"IssueTypeIds":{"type":"array","items":{"type":"string","format":"uuid"},"nullable":true},"AppIds":{"type":"array","items":{"type":"string"},"nullable":true},"IsRemoteSupport":{"type":"boolean","default":false}},"example":{"SiteScope":"Aggregate","Strategy":"Explicit","ModelIds":["d4e5f6a7-b8c9-0123-d4e5-f6a7b8c90123"]},"title":"GetIssuesRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

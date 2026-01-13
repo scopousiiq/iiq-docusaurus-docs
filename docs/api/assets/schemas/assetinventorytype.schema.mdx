@@ -1,0 +1,33 @@
+---
+id: assetinventorytype
+title: "AssetInventoryType"
+description: "Asset inventory type definition that classifies how assets are tracked (Tracked, Consumable, Non-Inventory)."
+sidebar_label: "AssetInventoryType"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetInventoryTypeId":"646443ba-8d0b-4dfa-b3c4-16afd540064d","Name":"Tracked","Description":"Assets that are individually tracked with asset tags","SortOrder":10}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetInventoryType"}
+>
+</Heading>
+
+
+
+Asset inventory type definition that classifies how assets are tracked (Tracked, Consumable, Non-Inventory).
+
+<Schema
+  schema={{"type":"object","description":"Asset inventory type definition that classifies how assets are tracked (Tracked, Consumable, Non-Inventory).","properties":{"AssetInventoryTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the inventory type."},"Name":{"type":"string","description":"Display name for the inventory type."},"Description":{"type":"string","description":"Description of the inventory type classification.","nullable":true},"SortOrder":{"type":"integer","description":"Display order when presenting inventory types in lists."},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site identifier when scoped to a single location."},"ProductId":{"type":"string","format":"uuid","nullable":true,"description":"Product identifier when scoped to a specific product module."},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the inventory type was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the inventory type was last modified."},"IsDeleted":{"type":"boolean","description":"Whether the inventory type has been soft-deleted."}},"required":["AssetInventoryTypeId","Name"],"example":{"AssetInventoryTypeId":"646443ba-8d0b-4dfa-b3c4-16afd540064d","Name":"Tracked","Description":"Assets that are individually tracked with asset tags","SortOrder":10},"title":"AssetInventoryType"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

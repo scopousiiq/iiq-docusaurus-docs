@@ -1,0 +1,33 @@
+---
+id: bulkdeletemanufacturersrequest
+title: "BulkDeleteManufacturersRequest"
+description: "Request payload for bulk deleting manufacturers"
+sidebar_label: "BulkDeleteManufacturersRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ManufacturerIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Request":{"ManufacturerId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"},"IsSelectAll":false,"ManufacturersRequest":{"FilterByProduct":true,"ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"BulkDeleteManufacturersRequest"}
+>
+</Heading>
+
+
+
+Request payload for bulk deleting manufacturers
+
+<Schema
+  schema={{"type":"object","description":"Request payload for bulk deleting manufacturers","properties":{"ManufacturerIds":{"type":"array","description":"List of manufacturer IDs to delete","items":{"type":"string","format":"uuid"}},"Request":{"type":"object","description":"Additional request parameters","properties":{"ManufacturerId":{"type":"string","format":"uuid","description":"Single manufacturer ID (used internally)"}}},"IsSelectAll":{"type":"boolean","description":"When true, deletes all manufacturers matching the filter criteria instead of using ManufacturerIds","default":false},"ManufacturersRequest":{"type":"object","description":"Filter criteria when IsSelectAll is true","properties":{"FilterByProduct":{"type":"boolean","description":"Whether to filter by product","default":true},"ProductId":{"type":"string","format":"uuid","description":"Product ID to filter by"}}}},"title":"BulkDeleteManufacturersRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

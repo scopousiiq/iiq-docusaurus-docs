@@ -1,0 +1,33 @@
+---
+id: inventorydeleteresponse
+title: "InventoryDeleteResponse"
+description: "Consolidated response envelope for single-item delete operations in the inventory domain (inventory items and inventory actions)."
+sidebar_label: "InventoryDeleteResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Properties":{},"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":0,"Message":"string","ErrorKey":"string","ServerName":"string","ProcessId":0,"OperationId":"string","Metadata":{},"Logs":[{"Type":"string","Message":"string","ExecutionTime":0}],"Errors":[{"Field":"string","Message":"string","Code":"string"}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"InventoryDeleteResponse"}
+>
+</Heading>
+
+
+
+Consolidated response envelope for single-item delete operations in the inventory domain (inventory items and inventory actions).
+
+<Schema
+  schema={{"type":"object","description":"Consolidated response envelope for single-item delete operations in the inventory domain (inventory items and inventory actions).","allOf":[{"type":"object","description":"Base response envelope containing standard API response metadata. All API responses inherit these framework-level fields. Use this schema with `allOf` composition when defining typed response schemas.","properties":{"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier that executed the request"},"RequestDate":{"type":"string","format":"date-time","description":"UTC timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code mirrored inside the response envelope"},"Message":{"type":"string","nullable":true,"description":"Optional informational or error message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Name of the application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier used for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier emitted for log correlation"},"Properties":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Additional metadata properties keyed by ResponseProperties enum values"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Logs":{"type":"array","nullable":true,"items":{"type":"object","description":"Diagnostic log entry emitted during request processing.","properties":{"Type":{"type":"string","description":"Log type classification (Info, Warning, Error, etc.)"},"Message":{"type":"string","description":"Human-readable log message"},"ExecutionTime":{"type":"number","format":"double","description":"Execution time in milliseconds for this log entry"}},"title":"ResponseLog"},"description":"Diagnostic log entries emitted during request processing"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors that did not prevent the operation"}},"required":["StatusCode"],"title":"ResponseEnvelope"}],"properties":{"Properties":{"type":"object","description":"Additional metadata emitted by the platform.","additionalProperties":true}},"title":"InventoryDeleteResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

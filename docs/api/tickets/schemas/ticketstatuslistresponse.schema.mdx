@@ -1,0 +1,33 @@
+---
+id: ticketstatuslistresponse
+title: "TicketStatusListResponse"
+description: "Response containing a list of available ticket statuses across all workflows."
+sidebar_label: "TicketStatusListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":[{"TicketStatusTypeId":"c7932b63-7bf4-49f9-a2a3-ea739e7e0002","StatusId":"c7932b63-7bf4-49f9-a2a3-ea739e7e0002","StatusName":"In Progress","WorkflowId":"0f6db4fb-4b4f-ec11-9820-0003ffe402cf","WorkflowName":"In Progress","WorkflowStepId":"a63d07c9-554f-ec11-9820-0003ffe402cf","StepName":"In Progress","StepDescription":"string","IsClosed":false,"IsReadonly":false,"IsDeleted":false,"IsRequestorInputNeeded":false,"Color":"#FFBA1A","DisplayOrder":100}],"ItemCount":25,"Paging":{"TotalRows":54343,"PageCount":10869,"PageSize":5,"PageIndex":0},"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":200,"Message":"string","ErrorKey":"string","ServerName":"string","ProcessId":0,"OperationId":"string","Properties":{},"Metadata":{},"Errors":[{"Field":"string","Message":"string","Code":"string"}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketStatusListResponse"}
+>
+</Heading>
+
+
+
+Response containing a list of available ticket statuses across all workflows.
+
+<Schema
+  schema={{"type":"object","description":"Response containing a list of available ticket statuses across all workflows.","allOf":[{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"}],"properties":{"Items":{"type":"array","description":"Collection of ticket status definitions.","items":{"type":"object","description":"Ticket status definition representing a workflow state. Maps workflow steps to user-friendly status labels.","properties":{"TicketStatusTypeId":{"type":"string","format":"uuid","description":"Internal status type identifier.","example":"c7932b63-7bf4-49f9-a2a3-ea739e7e0002"},"StatusId":{"type":"string","format":"uuid","description":"Alias for TicketStatusTypeId. Unique identifier for this status.","example":"c7932b63-7bf4-49f9-a2a3-ea739e7e0002"},"StatusName":{"type":"string","description":"Display name for the status shown in UI.","example":"In Progress"},"WorkflowId":{"type":"string","format":"uuid","description":"Identifier of the workflow this status belongs to.","example":"0f6db4fb-4b4f-ec11-9820-0003ffe402cf"},"WorkflowName":{"type":"string","description":"Name of the workflow this status belongs to.","example":"In Progress"},"WorkflowStepId":{"type":"string","format":"uuid","description":"Identifier of the specific workflow step.","example":"a63d07c9-554f-ec11-9820-0003ffe402cf"},"StepName":{"type":"string","description":"Name of the workflow step.","example":"In Progress"},"StepDescription":{"type":"string","description":"Optional description of what this workflow step represents.","nullable":true},"IsClosed":{"type":"boolean","description":"Whether this status represents a closed/resolved state.","example":false},"IsReadonly":{"type":"boolean","description":"Whether tickets in this status are read-only.","example":false},"IsDeleted":{"type":"boolean","description":"Whether this status has been soft-deleted.","example":false},"IsRequestorInputNeeded":{"type":"boolean","description":"Whether this status indicates waiting for requestor input.","example":false},"Color":{"type":"string","description":"Hex color code for UI display.","example":"#FFBA1A"},"DisplayOrder":{"type":"integer","description":"Sort order for displaying statuses in lists.","example":100}},"required":["WorkflowStepId","WorkflowId","StepName","StatusName"],"title":"TicketStatus"}}},"title":"TicketStatusListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

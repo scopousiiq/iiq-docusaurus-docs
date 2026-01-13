@@ -1,0 +1,33 @@
+---
+id: partimportfieldmap
+title: "PartImportFieldMap"
+description: "Defines how a field is mapped from the import file."
+sidebar_label: "PartImportFieldMap"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"MapType":"string","FieldName":"string","FieldIndex":0,"Maps":[{"Alias":"string","ToId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"PartImportFieldMap"}
+>
+</Heading>
+
+
+
+Defines how a field is mapped from the import file.
+
+<Schema
+  schema={{"type":"object","description":"Defines how a field is mapped from the import file.","properties":{"MapType":{"type":"string","description":"Type of mapping (e.g., 'column', 'fixed')."},"FieldName":{"type":"string","description":"Name of the field in the import file."},"FieldIndex":{"type":"integer","description":"Zero-based column index in the import file."},"Maps":{"type":"array","items":{"type":"object","description":"Maps an import file value to an internal ID.","properties":{"Alias":{"type":"string","description":"Value as it appears in the import file."},"ToId":{"type":"string","format":"uuid","description":"Internal UUID to map the value to."}},"title":"PartImportValueMap"},"description":"Value mappings for transforming import values."}},"title":"PartImportFieldMap"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

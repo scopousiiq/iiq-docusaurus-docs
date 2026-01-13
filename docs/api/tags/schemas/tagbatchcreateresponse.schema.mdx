@@ -1,0 +1,33 @@
+---
+id: tagbatchcreateresponse
+title: "TagBatchCreateResponse"
+description: "Response envelope for batch tag creation operations."
+sidebar_label: "TagBatchCreateResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":[{"TagId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","TagTypeId":0,"CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","IsDeleted":true,"Scope":"string"}],"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":201,"Message":"string","ServerName":"string","ProcessId":0,"OperationId":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TagBatchCreateResponse"}
+>
+</Heading>
+
+
+
+Response envelope for batch tag creation operations.
+
+<Schema
+  schema={{"type":"object","description":"Response envelope for batch tag creation operations.","allOf":[{"type":"object","description":"Response envelope returned after successfully creating multiple resources in bulk. Based on C# `ListCreateResponse<T>` from `Spark.Shared.Models.Responses`.","properties":{"Items":{"type":"array","description":"Array of created entities","items":{"type":"object","additionalProperties":true}},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 201 for successful create)","example":201},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"}},"required":["Items","StatusCode"],"title":"ListCreateResponse"}],"properties":{"Items":{"type":"array","description":"List of created tags","items":{"type":"object","properties":{"TagId":{"type":"string","format":"uuid"},"Name":{"type":"string","description":"Tag name"},"TagTypeId":{"type":"integer"},"CreatedDate":{"type":"string","format":"date-time"},"ModifiedDate":{"type":"string","format":"date-time"},"IsDeleted":{"type":"boolean"},"Scope":{"type":"string"}},"required":["TagId","Name","TagTypeId","IsDeleted","Scope"],"title":"Tag"}}},"title":"TagBatchCreateResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

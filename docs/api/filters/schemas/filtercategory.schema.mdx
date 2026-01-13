@@ -1,0 +1,33 @@
+---
+id: filtercategory
+title: "FilterCategory"
+description: "Metadata that groups filters into logical buckets such as asset filters, location filters, and workflow filters."
+sidebar_label: "FilterCategory"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Scope":"Global","CategoryId":"88887282-4125-4562-93de-100db1b50001","Level":0,"SortOrder":0,"ParentCategoryName":"string","CategoryTypeId":"3b5a7282-4125-4562-93de-8e8db1b5c908","CategoryTypeName":"Filters","Name":"Asset filters","Description":"string","Icon":"fa fa-laptop","NameWithParent":"Asset filters","AppId":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"FilterCategory"}
+>
+</Heading>
+
+
+
+Metadata that groups filters into logical buckets such as asset filters, location filters, and workflow filters.
+
+<Schema
+  schema={{"type":"object","description":"Metadata that groups filters into logical buckets such as asset filters, location filters, and workflow filters.","properties":{"Scope":{"type":"string","description":"Visibility scope for the filter category (for example, `Global` or `Site`).","example":"Global"},"CategoryId":{"type":"string","format":"uuid","description":"Unique identifier for the category.","example":"88887282-4125-4562-93de-100db1b50001"},"Level":{"type":"integer","description":"Hierarchy level for nested categories. `0` represents a top-level category.","example":0},"SortOrder":{"type":"integer","description":"Ordering hint used when rendering categories in the UI.","example":0},"ParentCategoryName":{"type":"string","description":"Name of the parent category when nested. Empty when the category is top-level."},"CategoryTypeId":{"type":"string","format":"uuid","description":"Identifier for the category type definition.","example":"3b5a7282-4125-4562-93de-8e8db1b5c908"},"CategoryTypeName":{"type":"string","description":"Display label for the category type.","example":"Filters"},"Name":{"type":"string","description":"Display name for the category as shown in UI filter pickers.","example":"Asset filters"},"Description":{"type":"string","description":"Additional descriptive text for the category when provided."},"Icon":{"type":"string","description":"Font Awesome icon class used by the UI when rendering the category.","example":"fa fa-laptop"},"NameWithParent":{"type":"string","description":"Full display label including the parent category when applicable.","example":"Asset filters"},"AppId":{"type":"string","description":"Identifier of the app providing the category when scoped to an application. Empty for core categories."}},"required":["CategoryId","Name","Scope"],"title":"FilterCategory"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

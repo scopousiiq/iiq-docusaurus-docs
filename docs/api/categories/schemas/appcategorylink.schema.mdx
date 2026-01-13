@@ -1,0 +1,33 @@
+---
+id: appcategorylink
+title: "AppCategoryLink"
+description: "Association between an App and a Category"
+sidebar_label: "AppCategoryLink"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AppId":"string","CategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AppCategoryLink"}
+>
+</Heading>
+
+
+
+Association between an App and a Category
+
+<Schema
+  schema={{"type":"object","description":"Association between an App and a Category","properties":{"AppId":{"type":"string"},"CategoryId":{"type":"string","format":"uuid"}},"required":["AppId","CategoryId"],"title":"AppCategoryLink"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: bulkrunticketrulesrequest
+title: "BulkRunTicketRulesRequest"
+description: "Request payload for bulk running rules against tickets."
+sidebar_label: "BulkRunTicketRulesRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Request":{"EntityTypeId":"888891ac-91aa-e711-80c2-100dffa00001","EntityIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"RuleIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"RuleActionIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"IsSimulation":false,"IsActionEntityCreationPermitted":false,"ReturnRuleExecutionLogs":true}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"BulkRunTicketRulesRequest"}
+>
+</Heading>
+
+
+
+Request payload for bulk running rules against tickets.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for bulk running rules against tickets.","properties":{"TicketIds":{"type":"array","description":"Array of ticket identifiers to process.","items":{"type":"string","format":"uuid"},"minItems":1},"Request":{"allOf":[{"type":"object","description":"Request payload describing which rules/actions to run across a set of entities.","properties":{"EntityTypeId":{"type":"string","format":"uuid","description":"Entity type identifier.","example":"888891ac-91aa-e711-80c2-100dffa00001"},"EntityIds":{"type":"array","description":"Entity identifiers to process.","items":{"type":"string","format":"uuid"},"nullable":true},"RuleIds":{"type":"array","description":"Rule identifiers to run.","items":{"type":"string","format":"uuid"},"nullable":true},"RuleActionIds":{"type":"array","description":"Rule action identifiers to run.","items":{"type":"string","format":"uuid"},"nullable":true},"IsSimulation":{"type":"boolean","description":"When true, execute in simulation mode.","default":false},"IsActionEntityCreationPermitted":{"type":"boolean","description":"When true, rules may create related entities during execution.","default":false},"ReturnRuleExecutionLogs":{"type":"boolean","description":"When true, rule execution logs are returned.","default":true}},"required":["EntityTypeId"],"title":"BulkRunEntityRuleRequest"}],"type":"object","description":"Rule execution request applied to the selected tickets."}},"required":["TicketIds","Request"],"title":"BulkRunTicketRulesRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

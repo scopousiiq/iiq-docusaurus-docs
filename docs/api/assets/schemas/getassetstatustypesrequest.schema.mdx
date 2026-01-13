@@ -1,0 +1,33 @@
+---
+id: getassetstatustypesrequest
+title: "GetAssetStatusTypesRequest"
+description: "Filtering and pagination options for retrieving asset status types."
+sidebar_label: "GetAssetStatusTypesRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"IncludeRetired":true,"Scope":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetAssetStatusTypesRequest"}
+>
+</Heading>
+
+
+
+Filtering and pagination options for retrieving asset status types.
+
+<Schema
+  schema={{"type":"object","description":"Filtering and pagination options for retrieving asset status types.","properties":{"IncludeRetired":{"type":"boolean","description":"When true, includes retired status types in the result set.","default":true},"Scope":{"type":"string","description":"Filter by scope (Global, Site, or System)."}},"title":"GetAssetStatusTypesRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: assetverificationbulkcreateresponse
+title: "AssetVerificationBulkCreateResponse"
+description: "Response after bulk creating asset verifications."
+sidebar_label: "AssetVerificationBulkCreateResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":0,"Items":[{"AssetVerificationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","VerifiedByUserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AssetVerificationTypeId":"web-manual","IsSuccessful":true,"Comments":"string","Latitude":0,"Longitude":0,"LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationRoomId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ExternalId":"string","AssetAuditPolicyId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ActualQuantity":0,"ExpectedQuantity":0}],"StatusCode":0,"RequestDate":"2024-07-29T15:51:28.071Z"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetVerificationBulkCreateResponse"}
+>
+</Heading>
+
+
+
+Response after bulk creating asset verifications.
+
+<Schema
+  schema={{"type":"object","description":"Response after bulk creating asset verifications.","properties":{"ItemCount":{"type":"integer","description":"Number of verifications created."},"Items":{"type":"array","description":"Collection of created verification records.","items":{"type":"object","description":"Full asset verification record including location and audit policy details.","properties":{"AssetVerificationId":{"type":"string","format":"uuid","description":"Unique identifier for the verification record."},"AssetId":{"type":"string","format":"uuid","description":"Asset that was verified."},"CreatedDate":{"type":"string","format":"date-time","description":"UTC timestamp when the verification was created.","nullable":true},"VerifiedByUserId":{"type":"string","format":"uuid","description":"User that completed the verification."},"AssetVerificationTypeId":{"type":"string","description":"Verification mode identifier such as `web-manual`.","example":"web-manual"},"IsSuccessful":{"type":"boolean","description":"Indicates whether the verification passed."},"Comments":{"type":"string","description":"Optional notes captured during verification.","nullable":true},"Latitude":{"type":"number","format":"decimal","description":"GPS latitude captured during mobile verification.","nullable":true},"Longitude":{"type":"number","format":"decimal","description":"GPS longitude captured during mobile verification.","nullable":true},"LocationId":{"type":"string","format":"uuid","description":"Location confirmed during verification."},"LocationRoomId":{"type":"string","format":"uuid","description":"Optional room within the location.","nullable":true},"ExternalId":{"type":"string","description":"External identifier supplied by integrated systems.","nullable":true},"AssetAuditPolicyId":{"type":"string","format":"uuid","description":"Audit policy associated with this verification.","nullable":true},"ActualQuantity":{"type":"integer","description":"Actual quantity observed during inventory verification.","nullable":true},"ExpectedQuantity":{"type":"integer","description":"Expected quantity per inventory records.","nullable":true}},"title":"AssetVerification"}},"StatusCode":{"type":"integer","description":"HTTP status code."},"RequestDate":{"type":"string","format":"date-time","description":"UTC timestamp of the request."}},"title":"AssetVerificationBulkCreateResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

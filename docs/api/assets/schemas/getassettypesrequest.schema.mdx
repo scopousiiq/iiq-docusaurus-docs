@@ -1,0 +1,33 @@
+---
+id: getassettypesrequest
+title: "GetAssetTypesRequest"
+description: "Filtering and pagination options for retrieving asset types. Mirrors `Spark.Shared.Models.Requests.GetAssetTypesRequest`."
+sidebar_label: "GetAssetTypesRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"FilterByProduct":true,"ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ResourceGroupIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetAssetTypesRequest"}
+>
+</Heading>
+
+
+
+Filtering and pagination options for retrieving asset types. Mirrors `Spark.Shared.Models.Requests.GetAssetTypesRequest`.
+
+<Schema
+  schema={{"type":"object","description":"Filtering and pagination options for retrieving asset types. Mirrors `Spark.Shared.Models.Requests.GetAssetTypesRequest`.","properties":{"FilterByProduct":{"type":"boolean","description":"When true, filters the result set to include only types applicable to the active product module.","default":true},"ProductId":{"type":"string","format":"uuid","description":"Optional product identifier to filter by."},"ResourceGroupIds":{"type":"array","description":"Optional list of resource group identifiers to filter by.","items":{"type":"string","format":"uuid"}}},"title":"GetAssetTypesRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

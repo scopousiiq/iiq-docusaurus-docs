@@ -1,0 +1,33 @@
+---
+id: ticketactivityrevisionevent
+title: "TicketActivityRevisionEvent"
+description: "Revision event captured on the timeline when automation or workflow rules adjust ticket fields. Includes serialized change details for auditing."
+sidebar_label: "TicketActivityRevisionEvent"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"$type":"Spark.Shared.Models.TicketActivityRevision, Spark.Shared","TicketActivityRevisionId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TicketActivityId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TicketActivityTypeId":1,"CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","Notes":"string","RevisionJsonData":"string","IsPublic":true,"Meta":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketActivityRevisionEvent"}
+>
+</Heading>
+
+
+
+Revision event captured on the timeline when automation or workflow rules adjust ticket fields. Includes serialized change details for auditing.
+
+<Schema
+  schema={{"type":"object","description":"Revision event captured on the timeline when automation or workflow rules adjust ticket fields. Includes serialized change details for auditing.","properties":{"$type":{"type":"string","description":"Fully qualified CLR type emitted by the API","example":"Spark.Shared.Models.TicketActivityRevision, Spark.Shared"},"TicketActivityRevisionId":{"type":"string","format":"uuid","description":"Identifier for the revision record"},"TicketActivityId":{"type":"string","format":"uuid","description":"Identifier of the parent ticket activity"},"TicketActivityTypeId":{"type":"integer","enum":[1,3],"description":"Activity type code representing revision events"},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the revision was recorded"},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the revision record was last updated"},"Notes":{"type":"string","nullable":true,"description":"Optional notes describing the revision"},"RevisionJsonData":{"type":"string","nullable":true,"description":"JSON payload describing field changes"},"IsPublic":{"type":"boolean","description":"Indicates if the revision log is visible to the requestor"},"Meta":{"type":"object","nullable":true,"description":"Additional metadata supplied by the platform","additionalProperties":true}},"required":["TicketActivityRevisionId","TicketActivityId","TicketActivityTypeId","CreatedDate","ModifiedDate","IsPublic"],"title":"TicketActivityRevisionEvent"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

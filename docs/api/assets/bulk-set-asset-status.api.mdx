@@ -1,0 +1,82 @@
+---
+id: bulk-set-asset-status
+title: "Bulk set asset status"
+description: "Updates lifecycle status for multiple assets in a single operation. Use this for mass status changes like retiring old devices, marking assets for repair, or activating new inventory."
+sidebar_label: "Bulk set asset status"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/assets/assets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Bulk set asset status"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/assets/bulk/set-status"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Updates lifecycle status for multiple assets in a single operation. Use this for mass status changes like retiring old devices, marking assets for repair, or activating new inventory.
+
+**Prerequisites**
+1. **AssetIds** - Use [POST /api/v1.0/assets](/docs/api/assets/search-assets) to identify assets and extract `Items[].AssetId`.
+2. **AssetStatusTypeId** - Use [POST /api/v1.0/assets](/docs/api/assets/search-assets) and read `Items[].Status.AssetStatusTypeId` to get valid status type UUIDs.
+
+**Workflow Example**
+1. Search for assets to update: [POST /api/v1.0/assets](/docs/api/assets/search-assets) with current status filter.
+2. Identify target status from existing asset data or configuration.
+3. Submit [POST /api/v1.0/assets/bulk/set-status](/docs/api/assets/bulk-set-asset-status) with AssetIds and target AssetStatusTypeId.
+
+**Minimal Required Fields**: AssetIds array, AssetStatusTypeId
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"AssetIds":{"type":"array","items":{"type":"string","format":"uuid"}},"Request":{"type":"object","properties":{"AssetStatusTypeId":{"type":"string","format":"uuid"}}}},"title":"BulkSetAssetStatusRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status set for assets"}}}
+>
+  
+</StatusCodes>
+
+
+      

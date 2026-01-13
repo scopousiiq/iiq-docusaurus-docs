@@ -1,0 +1,33 @@
+---
+id: bulksetduedaterequest
+title: "BulkSetDueDateRequest"
+description: "Request payload for bulk setting ticket due dates."
+sidebar_label: "BulkSetDueDateRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Request":{"Type":3,"Count":0,"Period":3,"CustomDate":"2026-01-31T17:00:00Z"}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"BulkSetDueDateRequest"}
+>
+</Heading>
+
+
+
+Request payload for bulk setting ticket due dates.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for bulk setting ticket due dates.","properties":{"TicketIds":{"type":"array","description":"Array of ticket identifiers to update.","items":{"type":"string","format":"uuid"},"minItems":1},"Request":{"type":"object","description":"Due date configuration for bulk due date operations. Specifies how to calculate or set due dates on tickets.","properties":{"Type":{"type":"integer","description":"Due date calculation type. 0=PeriodAfterDueDate (relative), 1=FirstDayOfTheMonth, 2=LastDayOfTheMonth, 3=CustomDate (specific date), 4=Today, 5=EventDate, 99=Remove (clear due date).","enum":[0,1,2,3,4,5,99],"example":3},"Count":{"type":"integer","description":"Number of periods to add when Type=0 (PeriodAfterDueDate). For example, Count=5 with Period=Days means '5 days from now'.","example":5},"Period":{"type":"integer","description":"Period unit for relative due dates. 0=Days, 1=Weeks, 2=Months, 3=None.","enum":[0,1,2,3],"example":0},"CustomDate":{"type":"string","format":"date-time","description":"Specific due date when Type=3 (CustomDate). Ignored for other Type values.","example":"2026-01-31T17:00:00Z"},"Reminders":{"type":"array","description":"Optional list of reminder configurations to set along with the due date.","items":{"type":"object","description":"Reminder configuration for due date notifications.","properties":{"ReminderId":{"type":"string","format":"uuid","description":"Unique identifier for the reminder."},"EntityId":{"type":"string","format":"uuid","description":"ID of the entity (ticket) this reminder is associated with."},"EntityTypeId":{"type":"string","format":"uuid","description":"Entity type identifier (typically ticket entity type)."},"PeriodCount":{"type":"integer","description":"Number of periods before due date to send reminder.","example":2},"PeriodType":{"type":"integer","description":"Period unit for reminder timing. 0=Days, 1=Weeks, 2=Months, 3=None.","enum":[0,1,2,3],"example":0},"ReminderType":{"type":"integer","description":"Type of reminder notification.","example":1},"ReminderDate":{"type":"string","format":"date-time","description":"Calculated date when reminder will be sent."}},"title":"Reminder"},"nullable":true}},"example":{"Type":3,"Count":0,"Period":3,"CustomDate":"2026-01-31T17:00:00Z"},"title":"DueDatePackage"}},"required":["TicketIds","Request"],"title":"BulkSetDueDateRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

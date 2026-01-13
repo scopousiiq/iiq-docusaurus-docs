@@ -1,0 +1,33 @@
+---
+id: subtaskgrouplistresponse
+title: "SubtaskGroupListResponse"
+description: "Response containing a list of subtask groups."
+sidebar_label: "SubtaskGroupListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":0,"Items":[{"SubtaskGroupId":"33333333-3333-4333-8333-333333333333","OwnerId":"bcaf8610-0a3d-4f08-b1ff-1d951f63d901","Name":"Chromebook roll-out","Scope":"string","ProductId":"88df910c-91aa-e711-80c2-0004ffa00010","SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","SubtaskList":[{"Name":"Contact requestor for more details"}]}],"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","StatusCode":200}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SubtaskGroupListResponse"}
+>
+</Heading>
+
+
+
+Response containing a list of subtask groups.
+
+<Schema
+  schema={{"type":"object","description":"Response containing a list of subtask groups.","properties":{"ItemCount":{"type":"integer","description":"Number of subtask groups returned."},"Items":{"type":"array","description":"Collection of subtask groups.","items":{"type":"object","description":"User-defined grouping container for ticket subtasks.","properties":{"SubtaskGroupId":{"type":"string","format":"uuid","description":"Identifier for the subtask group.","example":"33333333-3333-4333-8333-333333333333"},"OwnerId":{"type":"string","format":"uuid","description":"User identifier that owns the group.","example":"bcaf8610-0a3d-4f08-b1ff-1d951f63d901"},"Name":{"type":"string","description":"Group name shown in the UI.","example":"Chromebook roll-out"},"Scope":{"type":"string","description":"Scope enum value (site, district, etc.) serialized by the API."},"ProductId":{"type":"string","format":"uuid","description":"Product identifier that owns the group.","example":"88df910c-91aa-e711-80c2-0004ffa00010"},"SiteId":{"type":"string","format":"uuid","description":"Site identifier that owns the group.","example":"bb6cece8-e4f4-e511-a789-005056bb000e"},"SubtaskList":{"type":"array","description":"Optional embedded list of subtasks in this group.","nullable":true,"items":{"type":"object","description":"Lightweight list item representing a subtask entry inside a group.","properties":{"Name":{"type":"string","description":"Subtask subject or display name.","example":"Contact requestor for more details"}},"title":"SubtaskGroupListItem"}}},"required":["SubtaskGroupId","OwnerId","Name","ProductId","SiteId"],"title":"SubtaskGroup"}},"UserToken":{"type":"string","format":"uuid"},"RequestDate":{"type":"string","format":"date-time"},"StatusCode":{"type":"integer","example":200}},"required":["ItemCount","Items","RequestDate","StatusCode"],"title":"SubtaskGroupListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

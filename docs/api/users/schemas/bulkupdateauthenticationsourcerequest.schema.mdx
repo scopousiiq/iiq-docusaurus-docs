@@ -1,0 +1,33 @@
+---
+id: bulkupdateauthenticationsourcerequest
+title: "BulkUpdateAuthenticationSourceRequest"
+description: "Request to bulk update authentication sources for users matching a source type. Mirrors `Spark.Shared.Models.Requests.BulkUpdateAuthenticationSourceRequest`. Migrates all users from `StartingSource` to `TargetSource` within the specified site."
+sidebar_label: "BulkUpdateAuthenticationSourceRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","StartingSource":"string","TargetSource":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"BulkUpdateAuthenticationSourceRequest"}
+>
+</Heading>
+
+
+
+Request to bulk update authentication sources for users matching a source type. Mirrors `Spark.Shared.Models.Requests.BulkUpdateAuthenticationSourceRequest`. Migrates all users from `StartingSource` to `TargetSource` within the specified site.
+
+<Schema
+  schema={{"type":"object","description":"Request to bulk update authentication sources for users matching a source type. Mirrors `Spark.Shared.Models.Requests.BulkUpdateAuthenticationSourceRequest`. Migrates all users from `StartingSource` to `TargetSource` within the specified site.","properties":{"SiteId":{"type":"string","format":"uuid","description":"Site identifier where the bulk migration will occur."},"StartingSource":{"type":"string","description":"The current authentication source to migrate users from (e.g., 'Local', 'SAML', 'Azure AD')."},"TargetSource":{"type":"string","description":"The target authentication source to migrate users to (e.g., 'Local', 'SAML', 'Azure AD')."}},"title":"BulkUpdateAuthenticationSourceRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

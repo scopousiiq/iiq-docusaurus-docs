@@ -1,0 +1,36 @@
+---
+id: globalsearchdatasource
+title: "GlobalSearchDataSource"
+description: "Indicates which data source was used to retrieve results."
+sidebar_label: "GlobalSearchDataSource"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: "Index"
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GlobalSearchDataSource"}
+>
+</Heading>
+
+
+
+Indicates which data source was used to retrieve results.
+
+- `Index`: Results from high-performance Query Engine (Elasticsearch)
+- `Sql`: Results from direct database query (fallback when Query Engine unavailable)
+
+<Schema
+  schema={{"type":"string","enum":["Index","Sql"],"description":"Indicates which data source was used to retrieve results.\n\n- `Index`: Results from high-performance Query Engine (Elasticsearch)\n- `Sql`: Results from direct database query (fallback when Query Engine unavailable)","title":"GlobalSearchDataSource"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

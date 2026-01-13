@@ -1,0 +1,33 @@
+---
+id: guidlistupdateresponse
+title: "GuidListUpdateResponse"
+description: "Response from bulk update operations returning affected GUIDs."
+sidebar_label: "GuidListUpdateResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"IsSuccessful":true,"StatusCode":0,"Messages":["string"]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GuidListUpdateResponse"}
+>
+</Heading>
+
+
+
+Response from bulk update operations returning affected GUIDs.
+
+<Schema
+  schema={{"type":"object","description":"Response from bulk update operations returning affected GUIDs.","properties":{"Items":{"type":"array","items":{"type":"string","format":"uuid"},"description":"List of updated entity IDs"},"IsSuccessful":{"type":"boolean","description":"Whether the request was successful"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Messages":{"type":"array","nullable":true,"items":{"type":"string"},"description":"Status or error messages"}},"required":["IsSuccessful","StatusCode"],"title":"GuidListUpdateResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

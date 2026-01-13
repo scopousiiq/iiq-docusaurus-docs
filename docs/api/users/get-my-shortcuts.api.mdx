@@ -1,0 +1,70 @@
+---
+id: get-my-shortcuts
+title: "Get current user's shortcuts"
+description: "Retrieves the list of navigation shortcuts configured for the authenticated user. This is a convenience endpoint equivalent to [GET /api/v1.0/users/{UserId}/shortcuts](/docs/api/users/get-user-shortcuts) but automatically uses the authenticated user's ID."
+sidebar_label: "Get current user's shortcuts"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/users/users-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get current user's shortcuts"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/users/my/shortcuts"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves the list of navigation shortcuts configured for the authenticated user. This is a convenience endpoint equivalent to [GET /api/v1.0/users/\{UserId\}/shortcuts](/docs/api/users/get-user-shortcuts) but automatically uses the authenticated user's ID.
+
+**Use Cases**:
+- Load user's shortcuts at application startup
+- Populate quick navigation menu
+- Display shortcuts in user's profile settings
+
+**Notes**: No parameters required. Uses the authenticated user's identity from the bearer token. For all available shortcuts (including shared and system), use [GET /api/v1.0/users/shortcuts/available](/docs/api/users/get-available-shortcuts).
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of user shortcuts","content":{"application/json":{"schema":{"type":"object","description":"Response containing a list of shortcuts.","allOf":[{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"}],"properties":{"Items":{"type":"array","items":{"type":"object","description":"User shortcut/quick action configuration. Mirrors `Spark.Shared.Models.Shortcut`.","properties":{"ShortcutId":{"type":"string","format":"uuid","description":"Unique identifier for the shortcut."},"OwnerId":{"type":"string","format":"uuid","description":"UUID of the user, role, or team that owns this shortcut (depends on Scope)."},"Name":{"type":"string","description":"Display name for the shortcut."},"Scope":{"type":"string","description":"Visibility scope for the shortcut.","enum":["All","System","Global","Site","App","User","Role","Team"]},"RuleId":{"type":"string","format":"uuid","description":"UUID of the rule that defines this shortcut's behavior."},"ForEntityTypeId":{"type":"string","format":"uuid","description":"UUID of the entity type this shortcut applies to (e.g., Ticket, Asset, User)."},"Snippet":{"type":"string","nullable":true,"description":"Code snippet or configuration for the shortcut action."},"FilterSetId":{"type":"string","format":"uuid","nullable":true,"description":"Optional UUID of an associated filter set."}},"title":"Shortcut"}}},"title":"ShortcutsListGetResponse"}}}},"401":{"description":"Unauthorized.","content":{"application/json":{"schema":{"type":"object","description":"Error response for authentication failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (401)","example":401},"Message":{"type":"string","description":"Human-readable description of the authentication error","example":"Authentication required. Please provide valid credentials."}},"required":["StatusCode","Message"],"title":"UnauthorizedError"}}}},"500":{"description":"Internal Server Error.","content":{"application/json":{"schema":{"type":"object","description":"Error response for internal server errors","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (500)","example":500},"Message":{"type":"string","description":"Human-readable description of the server error","example":"An internal server error occurred. Please try again later."},"RequestId":{"type":"string","description":"Unique request identifier for troubleshooting","example":"req_1234567890abcdef"}},"required":["StatusCode","Message"],"title":"InternalServerError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

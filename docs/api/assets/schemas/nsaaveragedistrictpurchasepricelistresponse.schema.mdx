@@ -1,0 +1,33 @@
+---
+id: nsaaveragedistrictpurchasepricelistresponse
+title: "NSAAverageDistrictPurchasePriceListResponse"
+description: "Response containing NSA average cost data"
+sidebar_label: "NSAAverageDistrictPurchasePriceListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":[{"AssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AverageDistrictPurchasePrice":0}],"StatusCode":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"NSAAverageDistrictPurchasePriceListResponse"}
+>
+</Heading>
+
+
+
+Response containing NSA average cost data
+
+<Schema
+  schema={{"type":"object","description":"Response containing NSA average cost data","properties":{"Items":{"type":"array","items":{"type":"object","description":"Average district purchase price for non-serialized assets","properties":{"AssetId":{"type":"string","format":"uuid","description":"UUID of the asset"},"AverageDistrictPurchasePrice":{"type":"number","format":"decimal","description":"Average purchase price across the district"}},"title":"NSAAverageDistrictPurchasePrice"}},"StatusCode":{"type":"integer"}},"title":"NSAAverageDistrictPurchasePriceListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: globalsearchrequest
+title: "GlobalSearchRequest"
+description: "Request payload for performing a global multi-entity search across the system."
+sidebar_label: "GlobalSearchRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Query":"chromebook","Limit":10,"Facets":9}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GlobalSearchRequest"}
+>
+</Heading>
+
+
+
+Request payload for performing a global multi-entity search across the system.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for performing a global multi-entity search across the system.","required":["Query"],"properties":{"Query":{"type":"string","maxLength":200,"description":"The search term or text to find. Searches across entity names, descriptions, tags, and other indexed fields.","example":"projector"},"Limit":{"type":"integer","default":10,"minimum":1,"maximum":100,"description":"Maximum number of results **per entity type** to return. For example, `Limit: 5` returns up to 5 tickets, 5 assets, 5 users, etc.","example":10},"Facets":{"type":"integer","format":"int32","description":"Bitmask representing which entity types to include in the global search. Sum the values of desired entities to search multiple types simultaneously.\n\n**Bitmask Values:**\n| Entity Type | Bit Value | Description |\n|-------------|-----------|-------------|\n| None | 0 | No entities |\n| Tickets | 1 | Help desk tickets |\n| KbArticles | 2 | Knowledge base articles |\n| Users | 4 | User accounts |\n| Assets | 8 | Hardware/software assets |\n| Locations | 16 | Schools, buildings, rooms |\n| RepairOrderNumber | 32 | Repair order tracking numbers |\n| Students | 64 | Student records |\n| Models | 128 | Device/asset models |\n| AssetFundingTypes | 256 | Asset funding classifications |\n| AssetStatusTypes | 512 | Asset status types |\n| AssetTypes | 1024 | Asset type classifications |\n\n**Examples:**\n- Search Tickets only: `1`\n- Search Tickets and Assets: `9` (1 + 8)\n- Search Tickets, KB Articles, and Assets (default): `11` (1 + 2 + 8)\n- Search Users and Students: `68` (4 + 64)\n- Search all common entities: `31` (1 + 2 + 4 + 8 + 16)","default":11,"example":9,"x-enum-bitmask":{"None":0,"Tickets":1,"KbArticles":2,"Users":4,"Assets":8,"Locations":16,"RepairOrderNumber":32,"Students":64,"Models":128,"AssetFundingTypes":256,"AssetStatusTypes":512,"AssetTypes":1024},"title":"GlobalSearchFacetBitmask"},"TokenFilters":{"type":"string","nullable":true,"description":"Advanced filters string passed to the search provider for fine-grained result filtering."},"OriginatingSearchFacet":{"type":"integer","format":"int32","nullable":true,"description":"Used for analytics to indicate the UI context where the search was initiated (e.g., global search bar, ticket panel, asset lookup)."},"EntityTypeIds":{"type":"array","items":{"type":"string","format":"uuid"},"description":"Optional list of specific entity type UUIDs to search. Provide this if searching for custom types or specific sub-entities not covered by the default Facets bitmask."},"EntityClassificationId":{"type":"string","format":"uuid","nullable":true,"description":"Filter results by a specific entity classification (e.g., a specific asset category or user group)."},"IncludeMatchedItem":{"type":"boolean","default":false,"description":"When true, returns the detailed entity record in the search results instead of just the search summary."},"Meta":{"type":"object","nullable":true,"additionalProperties":true,"description":"Dictionary of arbitrary metadata to pass through to the search provider."}},"example":{"Query":"chromebook","Limit":10,"Facets":9},"title":"GlobalSearchRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

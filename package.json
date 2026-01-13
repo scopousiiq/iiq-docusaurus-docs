@@ -1,0 +1,61 @@
+{
+  "name": "iiq-docusaurus-docs",
+  "version": "1.0.0",
+  "description": "IncidentIQ API Documentation - Generated from OpenAPI specification",
+  "private": true,
+  "scripts": {
+    "preprocess": "node scripts/preprocess-specs.js",
+    "gen-config": "node scripts/generate-plugin-config.js",
+    "gen-api-docs": "docusaurus gen-api-docs all",
+    "clean-api-docs": "docusaurus clean-api-docs all",
+    "verify": "node scripts/verify.js",
+    "build:prepare": "npm run preprocess && npm run gen-config",
+    "build:api": "npm run build:prepare && npm run gen-api-docs",
+    "build": "npm run build:api && docusaurus build",
+    "start": "npm run build:api && docusaurus start",
+    "serve": "docusaurus serve",
+    "clean": "npm run clean-api-docs && rm -rf build api-specs api-config.json",
+    "rebuild": "npm run clean && npm run build",
+    "update-docs": "npm run rebuild",
+    "docusaurus": "docusaurus",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/preset-classic": "^3.8.1",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.1.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "^3.8.1",
+    "@docusaurus/tsconfig": "^3.8.1",
+    "@docusaurus/types": "^3.8.1",
+    "docusaurus-plugin-openapi-docs": "^4.4.0",
+    "docusaurus-theme-openapi-docs": "^4.4.0",
+    "typescript": "~5.3.0",
+    "lodash": "^4.17.21"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0"
+  }
+}

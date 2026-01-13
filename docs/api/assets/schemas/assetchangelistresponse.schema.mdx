@@ -1,0 +1,33 @@
+---
+id: assetchangelistresponse
+title: "AssetChangeListResponse"
+description: "Response containing a list of asset change records"
+sidebar_label: "AssetChangeListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":[{"AssetChangeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","CreatedById":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ChangeType":"string","FieldName":"string","OldValue":"string","NewValue":"string","Source":"string"}],"Paging":{"TotalRows":54343,"PageCount":10869,"PageSize":5,"PageIndex":0},"StatusCode":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetChangeListResponse"}
+>
+</Heading>
+
+
+
+Response containing a list of asset change records
+
+<Schema
+  schema={{"type":"object","description":"Response containing a list of asset change records","properties":{"Items":{"type":"array","items":{"type":"object","description":"Audit log entry for an asset change","properties":{"AssetChangeId":{"type":"string","format":"uuid","description":"Unique identifier for the change record"},"AssetId":{"type":"string","format":"uuid","description":"UUID of the asset that was changed"},"SiteId":{"type":"string","format":"uuid","description":"Site where the change occurred"},"CreatedDate":{"type":"string","format":"date-time","description":"When the change was recorded"},"CreatedById":{"type":"string","format":"uuid","nullable":true,"description":"User who made the change"},"ChangeType":{"type":"string","description":"Type of change (e.g., 'Created', 'Updated', 'Deleted')"},"FieldName":{"type":"string","nullable":true,"description":"Name of the field that changed"},"OldValue":{"type":"string","nullable":true,"description":"Previous value before the change"},"NewValue":{"type":"string","nullable":true,"description":"New value after the change"},"Source":{"type":"string","nullable":true,"description":"Source of the change (e.g., 'UI', 'API', 'Import')"}},"title":"AssetChange"}},"Paging":{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"},"StatusCode":{"type":"integer"}},"title":"AssetChangeListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

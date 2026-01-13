@@ -1,0 +1,33 @@
+---
+id: workflowissuelistresponse
+title: "WorkflowIssueListResponse"
+description: "Envelope returned when listing issues linked to a workflow."
+sidebar_label: "WorkflowIssueListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":0,"Items":[{"IssueId":"a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890","SiteId":"e5f6a7b8-c9d0-1234-e5f6-a7b8c9d01234","ProductId":"12345678-90ab-cdef-1234-567890abcdef","Scope":"Global","IssueTypeId":"b2c3d4e5-f6a7-8901-b2c3-d4e5f6a78901","Name":"Broken Screen","SortOrder":1,"IssueCategoryName":"Hardware","EnabledByDefault":true}],"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":0,"ServerName":"string","ProcessId":0,"OperationId":"string","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"WorkflowIssueListResponse"}
+>
+</Heading>
+
+
+
+Envelope returned when listing issues linked to a workflow.
+
+<Schema
+  schema={{"type":"object","description":"Envelope returned when listing issues linked to a workflow.","properties":{"ItemCount":{"type":"integer","description":"Number of issues returned."},"Items":{"type":"array","description":"Collection of issues linked to the workflow.","items":{"type":"object","properties":{"IssueId":{"type":"string","format":"uuid"},"SiteId":{"type":"string","format":"uuid","nullable":true},"ProductId":{"type":"string","format":"uuid","nullable":true},"Scope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"IssueTypeId":{"type":"string","format":"uuid"},"IssueTypeScope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"Name":{"type":"string"},"SortOrder":{"type":"integer"},"IssueCategoryId":{"type":"string","format":"uuid"},"IssueCategoryName":{"type":"string","nullable":true},"IssueCategoryIcon":{"type":"string","nullable":true},"IssueCategorySortOrder":{"type":"integer"},"IssueCategoryScope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"ModelCategoryId":{"type":"string","format":"uuid"},"ModelCategoryName":{"type":"string","nullable":true},"EnabledByDefault":{"type":"boolean"},"Models":{"type":"array","items":{"type":"object","properties":{"SiteId":{"type":"string","format":"uuid","nullable":true},"ModelIssueId":{"type":"string","format":"uuid"},"Scope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"IssueId":{"type":"string","format":"uuid"},"ModelId":{"type":"string","format":"uuid"},"Apps":{"type":"array","items":{"type":"object","properties":{"AppId":{"type":"string"},"ModelIssueId":{"type":"string","format":"uuid"},"NameOverride":{"type":"string","nullable":true}},"example":{"AppId":"google-admin","ModelIssueId":"c3d4e5f6-a7b8-9012-c3d4-e5f6a7b89012","NameOverride":"Chromebook Hardware Issue"},"title":"AppModelIssue"},"nullable":true}},"example":{"SiteId":"e5f6a7b8-c9d0-1234-e5f6-a7b8c9d01234","ModelIssueId":"c3d4e5f6-a7b8-9012-c3d4-e5f6a7b89012","Scope":"Global","IssueId":"a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890","ModelId":"d4e5f6a7-b8c9-0123-d4e5-f6a7b8c90123"},"title":"ModelIssue"},"nullable":true},"WorkflowId":{"type":"string","format":"uuid","nullable":true}},"example":{"IssueId":"a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890","SiteId":"e5f6a7b8-c9d0-1234-e5f6-a7b8c9d01234","ProductId":"12345678-90ab-cdef-1234-567890abcdef","Scope":"Global","IssueTypeId":"b2c3d4e5-f6a7-8901-b2c3-d4e5f6a78901","Name":"Broken Screen","SortOrder":1,"IssueCategoryName":"Hardware","EnabledByDefault":true},"title":"Issue"}},"UserToken":{"type":"string","format":"uuid","description":"Echo of the UserToken header that authenticated the request."},"RequestDate":{"type":"string","format":"date-time","description":"Server-side timestamp indicating when the request was processed."},"ExecutionTime":{"type":"number","description":"Server processing time in milliseconds."},"StatusCode":{"type":"integer","description":"HTTP status code emitted by the service."},"ServerName":{"type":"string","description":"Name of the server instance that fulfilled the request."},"ProcessId":{"type":"integer","description":"Internal process identifier logged by the service."},"OperationId":{"type":"string","description":"Trace identifier correlating this call with server logs."},"Properties":{"type":"object","description":"Additional diagnostic metadata, if any.","additionalProperties":{"type":"string"}}},"required":["ItemCount","Items","StatusCode"],"title":"WorkflowIssueListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

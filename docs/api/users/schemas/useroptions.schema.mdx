@@ -1,0 +1,33 @@
+---
+id: useroptions
+title: "UserOptions"
+description: "User preferences and options. Mirrors `Spark.Shared.Models.UserOptions`."
+sidebar_label: "UserOptions"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Notifications":{"TicketCreated":true,"TicketUpdated":true,"TicketAssignedToYou":true,"TicketAssignedToTeam":true,"TicketDisableFollowerNotifications":true,"AssetChanged":true},"Locations":{"FavoriteLocations":["3fa85f64-5717-4562-b3fc-2c963f66afa6"]}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UserOptions"}
+>
+</Heading>
+
+
+
+User preferences and options. Mirrors `Spark.Shared.Models.UserOptions`.
+
+<Schema
+  schema={{"type":"object","description":"User preferences and options. Mirrors `Spark.Shared.Models.UserOptions`.","properties":{"Notifications":{"allOf":[{"type":"object","description":"Notification settings for a user. Mirrors `Spark.Shared.Models.UserOptionsNotifications`.","properties":{"TicketCreated":{"type":"boolean","description":"Receive notifications when a ticket is created."},"TicketUpdated":{"type":"boolean","description":"Receive notifications when a ticket is updated."},"TicketAssignedToYou":{"type":"boolean","description":"Receive notifications when a ticket is assigned to you."},"TicketAssignedToTeam":{"type":"boolean","description":"Receive notifications when a ticket is assigned to your team."},"TicketDisableFollowerNotifications":{"type":"boolean","description":"Disable notifications for tickets you are following."},"AssetChanged":{"type":"boolean","description":"Receive notifications when an asset is changed."}},"title":"UserNotificationSettings"}],"description":"Notification settings for the user.","nullable":true,"type":"object"},"Locations":{"allOf":[{"type":"object","description":"Location preferences for a user. Mirrors `Spark.Shared.Models.UserOptionsLocations`.","properties":{"FavoriteLocations":{"type":"array","description":"List of favorite location UUIDs for quick access.","items":{"type":"string","format":"uuid"},"nullable":true}},"title":"UserOptionsLocations"}],"description":"Location preferences for the user.","nullable":true,"type":"object"}},"additionalProperties":true,"title":"UserOptions"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

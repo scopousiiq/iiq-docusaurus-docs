@@ -1,0 +1,33 @@
+---
+id: getcustomfieldtypesrequest
+title: "GetCustomFieldTypesRequest"
+description: "Request payload for retrieving custom field types with filtering options."
+sidebar_label: "GetCustomFieldTypesRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SiteScope":"Aggregate","ApplySiteVisibility":true,"AppIds":["string"],"HideHidden":true,"HideReadOnly":false,"CurrentProductOnly":false,"CustomFieldTypeIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"EntityTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetCustomFieldTypesRequest"}
+>
+</Heading>
+
+
+
+Request payload for retrieving custom field types with filtering options.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for retrieving custom field types with filtering options.","properties":{"SiteScope":{"type":"string","enum":["Aggregate","Site","Product","Global"],"description":"Scope for site visibility filtering","default":"Aggregate"},"ApplySiteVisibility":{"type":"boolean","description":"When true, respects site-level visibility rules for custom field types","default":true},"AppIds":{"type":"array","nullable":true,"items":{"type":"string"},"description":"Filter to custom field types associated with specific app identifiers"},"HideHidden":{"type":"boolean","description":"When true, excludes custom field types marked as hidden","default":true},"HideReadOnly":{"type":"boolean","description":"When true, excludes read-only custom field types","default":false},"CurrentProductOnly":{"type":"boolean","description":"When true, only returns custom field types for the current product context","default":false},"CustomFieldTypeIds":{"type":"array","nullable":true,"items":{"type":"string","format":"uuid"},"description":"Filter to specific custom field type UUIDs"},"EntityTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Filter to custom field types for a specific entity type (e.g., Assets, Tickets, Users)"}},"title":"GetCustomFieldTypesRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

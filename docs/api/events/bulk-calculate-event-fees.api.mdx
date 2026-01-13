@@ -1,0 +1,81 @@
+---
+id: bulk-calculate-event-fees
+title: "Bulk calculate event fees"
+description: "Queues a background job to calculate fees for many events at once. This is the preferred path for recalculating fees across a large set of events without blocking a client request."
+sidebar_label: "Bulk calculate event fees"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/events/events-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Bulk calculate event fees"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/events/bulk/calculate-fees"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Queues a background job to calculate fees for many events at once. This is the preferred path for recalculating fees across a large set of events without blocking a client request.
+
+**Prerequisites**
+1. **EventIds** or **EventsRequest** - Use [POST /api/v1.0/events/query](/docs/api/events/get-events-by-query-post) to collect `Items[].EventId`, or reuse the same filters in `EventsRequest`.
+
+**Workflow Example**
+1. Identify the target events.
+2. Submit job: [POST /api/v1.0/events/bulk/calculate-fees](/docs/api/events/bulk-calculate-event-fees).
+3. Track the job using the returned identifier.
+
+**Minimal Required Fields**: Either `EventIds` or `EventsRequest` in the body.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","description":"Request for bulk event job operations.","properties":{"IsSelectAll":{"type":"boolean"},"EventIds":{"type":"array","items":{"type":"string","format":"uuid"}},"EventsRequest":{"type":"object","description":"Query parameters for retrieving events.","properties":{"Filters":{"type":"array","items":{"type":"object","description":"Filter condition for search/list operations. Based on C# `DataFilter` from `Spark.Shared.Models.DataFramework`. Supports both simple filters and nested filter groups.","properties":{"Facet":{"type":"string","description":"Field name or facet to filter on (e.g., 'Status', 'LocationId', 'CreatedDate')"},"Ids":{"type":"array","nullable":true,"items":{"type":"string","format":"uuid"},"description":"Array of UUIDs to filter by (for ID-based facets)"},"Values":{"type":"array","nullable":true,"items":{"type":"string"},"description":"Array of string values to filter by"},"Op":{"allOf":[{"type":"string","description":"Filter operations for DataFilter queries. Based on C# `DataFilterOperations` enum from `Spark.Shared.Enums`.","enum":["None","Equal","Greater","Less","GreaterOrEqual","LessOrEqual","StartsWith","EndsWith","Contains","NotEqual","NotGreater","NotLess","NotGreaterOrEqual","NotLessOrEqual"],"x-enum-descriptions":{"None":"No operation specified","Equal":"Equals (eq)","Greater":"Greater than (gt)","Less":"Less than (lt)","GreaterOrEqual":"Greater than or equal (ge)","LessOrEqual":"Less than or equal (le)","StartsWith":"String starts with","EndsWith":"String ends with","Contains":"String contains","NotEqual":"Not equal (ne)","NotGreater":"Not greater than (ng)","NotLess":"Not less than (nl)","NotGreaterOrEqual":"Not greater than or equal (nge)","NotLessOrEqual":"Not less than or equal (nle)"},"title":"DataFilterOperations"}],"description":"Filter operation to apply"},"CustomFieldTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Custom field type ID (when filtering on custom fields)"},"ComplexEditorPath":{"type":"string","nullable":true,"description":"JSON path for filtering within complex editor values"},"Items":{"type":"array","nullable":true,"items":"circular(DataFilter)","description":"Nested filter conditions for complex AND/OR queries"}},"required":["Facet"],"title":"DataFilter"}}},"title":"GetEventsRequest"},"Request":{"type":"object","description":"Job-specific request parameters."}},"title":"BulkJobEventRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Job queued.","content":{"application/json":{"schema":{"type":"object","description":"Response containing a single GUID value (e.g., job ID).","properties":{"Item":{"type":"string","format":"uuid","description":"The GUID value"},"IsSuccessful":{"type":"boolean","description":"Whether the request was successful"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Messages":{"type":"array","nullable":true,"items":{"type":"string"},"description":"Status or error messages"}},"required":["IsSuccessful","StatusCode"],"title":"GuidItemResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

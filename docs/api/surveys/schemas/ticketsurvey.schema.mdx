@@ -1,0 +1,33 @@
+---
+id: ticketsurvey
+title: "TicketSurvey"
+description: "A pending survey assignment linking a survey to a ticket and user."
+sidebar_label: "TicketSurvey"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SurveyId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","UserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketSurvey"}
+>
+</Heading>
+
+
+
+A pending survey assignment linking a survey to a ticket and user.
+
+<Schema
+  schema={{"type":"object","description":"A pending survey assignment linking a survey to a ticket and user.","properties":{"TicketId":{"type":"string","format":"uuid","description":"Ticket this survey was assigned for."},"SurveyId":{"type":"string","format":"uuid","description":"The survey that was assigned."},"UserId":{"type":"string","format":"uuid","description":"User who should complete the survey."},"CreatedDate":{"type":"string","format":"date-time","description":"When the survey was assigned to the ticket."}},"title":"TicketSurvey"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

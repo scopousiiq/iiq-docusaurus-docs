@@ -1,0 +1,33 @@
+---
+id: employmentstatus
+title: "EmploymentStatus"
+description: "User employment status. Mirrors `Spark.Shared.Models.EmploymentStatus`."
+sidebar_label: "EmploymentStatus"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"EmploymentStatusId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"EmploymentStatus"}
+>
+</Heading>
+
+
+
+User employment status. Mirrors `Spark.Shared.Models.EmploymentStatus`.
+
+<Schema
+  schema={{"type":"object","description":"User employment status. Mirrors `Spark.Shared.Models.EmploymentStatus`.","properties":{"EmploymentStatusId":{"type":"string","format":"uuid","description":"Unique identifier for the employment status."},"SiteId":{"type":"string","format":"uuid","description":"Site this employment status belongs to."},"Name":{"type":"string","description":"Display name of the employment status (e.g., 'Active', 'On Leave', 'Terminated')."},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the employment status was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the employment status was last modified."}},"title":"EmploymentStatus"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

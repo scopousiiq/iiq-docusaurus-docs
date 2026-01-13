@@ -1,0 +1,33 @@
+---
+id: customfieldvalue
+title: "CustomFieldValue"
+description: ""
+sidebar_label: "CustomFieldValue"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CustomFieldId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","EntityTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Scope":"Site","EditorTypeId":1,"IsRequired":true,"IsReadOnly":true,"IsHidden":true,"IsSystemField":true,"IsDeleted":true,"DisplayOrder":0,"TypeDisplayOrder":0,"SetDisplayOrder":0,"Value":"string","IsValid":true,"FilterSetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","OriginSourceId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","OriginId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CustomFieldValue"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","required":["CustomFieldId","Value"],"properties":{"SiteId":{"type":"string","format":"uuid","description":"Site this custom field belongs to"},"ProductId":{"type":"string","format":"uuid","description":"Product this custom field is associated with"},"CustomFieldId":{"type":"string","format":"uuid","description":"Unique identifier for the custom field definition"},"CustomFieldTypeId":{"type":"string","format":"uuid","description":"Type of custom field (text, dropdown, date, etc.)"},"EntityTypeId":{"type":"string","format":"uuid","description":"Entity type this field applies to (ticket, asset, user, etc.)"},"Scope":{"type":"string","enum":["Site","Product","Global"],"description":"Scope of the custom field visibility"},"EditorTypeId":{"type":"integer","description":"Editor type (1=Text, 2=Number, 3=Date, 4=Dropdown, etc.). Retrieve the catalog of editor types from [GET /api/v1.0/sites/{siteUrl}](/docs/api/sites/get-site-by-url).","example":1,"x-obtained-from":{"operationId":"getSiteByUrl","endpoint":"GET /api/v1.0/sites/{siteUrl}","responseField":"Item.Settings.EditorTypes[].EditorTypeId"}},"IsRequired":{"type":"boolean","description":"Whether this field is required"},"IsReadOnly":{"type":"boolean","description":"Whether this field is read-only"},"IsHidden":{"type":"boolean","description":"Whether this field is hidden in the UI"},"IsSystemField":{"type":"boolean","description":"Whether this is a system-managed field"},"IsDeleted":{"type":"boolean","description":"Soft delete flag"},"DisplayOrder":{"type":"integer","description":"Order for displaying this field"},"TypeDisplayOrder":{"type":"integer","description":"Display order within field type"},"SetDisplayOrder":{"type":"integer","description":"Display order within field set"},"Value":{"type":"string","description":"The actual value of the custom field","nullable":true},"IsValid":{"type":"boolean","description":"Whether the current value is valid"},"FilterSetId":{"type":"string","format":"uuid","description":"Optional filter set ID for conditional fields","nullable":true},"OriginSourceId":{"type":"string","format":"uuid","description":"Source system ID for imported custom fields"},"OriginId":{"type":"string","format":"uuid","description":"Original ID from source system"}},"title":"CustomFieldValue"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

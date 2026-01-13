@@ -1,0 +1,33 @@
+---
+id: sitelicensedproduct
+title: "SiteLicensedProduct"
+description: "Represents a licensed Incident IQ product module for the site."
+sidebar_label: "SiteLicensedProduct"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ProductTierId":"9ceaa7b6-02ab-479b-9344-97712f744aec","TierName":"Professional","ProductId":"88df910c-91aa-e711-80c2-0004ffa00010","ProductName":"Ticketing","Icon":"fa-ticketing","DisplayOrder":10}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SiteLicensedProduct"}
+>
+</Heading>
+
+
+
+Represents a licensed Incident IQ product module for the site.
+
+<Schema
+  schema={{"type":"object","description":"Represents a licensed Incident IQ product module for the site.","properties":{"ProductTierId":{"type":"string","format":"uuid","description":"Identifier of the licensed tier for this product module.","example":"9ceaa7b6-02ab-479b-9344-97712f744aec"},"TierName":{"type":"string","description":"Name of the licensing tier (for example, Standard or Professional).","example":"Professional"},"ProductId":{"type":"string","format":"uuid","description":"Unique identifier for the product module.","example":"88df910c-91aa-e711-80c2-0004ffa00010"},"ProductName":{"type":"string","description":"Marketing name of the product module.","example":"Ticketing"},"Icon":{"type":"string","description":"UI icon identifier for the module.","example":"fa-ticketing"},"DisplayOrder":{"type":"integer","description":"Ordering used when presenting licensed products.","example":10}},"required":["ProductId","ProductName"],"title":"SiteLicensedProduct"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

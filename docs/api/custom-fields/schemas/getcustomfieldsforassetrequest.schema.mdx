@@ -1,0 +1,33 @@
+---
+id: getcustomfieldsforassetrequest
+title: "GetCustomFieldsForAssetRequest"
+description: "Request payload for retrieving custom fields applicable to an asset. When an Entity or EntityId is provided, the response is filtered to only include custom fields whose filter conditions match the specified asset. When neither is provided, all custom fields for the Assets entity type are returned."
+sidebar_label: "GetCustomFieldsForAssetRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"EntityId":"546f841c-32d8-47e5-bfc1-a4f21754d6d3"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetCustomFieldsForAssetRequest"}
+>
+</Heading>
+
+
+
+Request payload for retrieving custom fields applicable to an asset. When an Entity or EntityId is provided, the response is filtered to only include custom fields whose filter conditions match the specified asset. When neither is provided, all custom fields for the Assets entity type are returned.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for retrieving custom fields applicable to an asset. When an Entity or EntityId is provided, the response is filtered to only include custom fields whose filter conditions match the specified asset. When neither is provided, all custom fields for the Assets entity type are returned.","properties":{"Entity":{"type":"object","description":"Full Asset object used for filter matching. When provided, the system evaluates custom field filter conditions against this object's properties (AssetTypeId, ModelId, LocationId, etc.) without requiring a database lookup. Either Entity or EntityId may be provided, but not both required.","properties":{"AssetId":{"type":"string","format":"uuid","description":"Unique identifier of the asset."},"AssetTypeId":{"type":"string","format":"uuid","description":"Asset type identifier used for filter matching."},"ModelId":{"type":"string","format":"uuid","description":"Model identifier used for filter matching."},"LocationId":{"type":"string","format":"uuid","description":"Location identifier used for filter matching."}}},"EntityId":{"type":"string","format":"uuid","description":"UUID of the asset to retrieve custom fields for. When provided without Entity, the system loads the asset from the database to evaluate filter conditions.","x-obtained-from":{"operationId":"searchAssets","endpoint":"POST /api/v1.0/assets","responseField":"Items[].AssetId"}},"ForProductId":{"type":"string","format":"uuid","description":"Optional product UUID to override the product context from request headers. Affects which product-specific custom fields are returned and how EntitySiteOption visibility is evaluated."}},"example":{"EntityId":"546f841c-32d8-47e5-bfc1-a4f21754d6d3"},"title":"GetCustomFieldsForAssetRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

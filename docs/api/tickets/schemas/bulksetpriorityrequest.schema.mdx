@@ -1,0 +1,33 @@
+---
+id: bulksetpriorityrequest
+title: "BulkSetPriorityRequest"
+description: "Request payload for bulk changing ticket priorities."
+sidebar_label: "BulkSetPriorityRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketIds":["260b8773-dcad-f011-8e61-000d3a7bb518"],"Request":2}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"BulkSetPriorityRequest"}
+>
+</Heading>
+
+
+
+Request payload for bulk changing ticket priorities.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for bulk changing ticket priorities.","properties":{"TicketIds":{"type":"array","description":"Array of ticket identifiers to update.","items":{"type":"string","format":"uuid"},"minItems":1},"Request":{"type":"integer","description":"Priority ID to apply to all tickets. Obtain valid values from GET /api/v1.0/tickets/priorities."}},"required":["TicketIds","Request"],"example":{"TicketIds":["260b8773-dcad-f011-8e61-000d3a7bb518"],"Request":2},"title":"BulkSetPriorityRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,90 @@
+---
+id: send-ticket-for-approval
+title: "Send ticket for approval"
+description: "Submits a ticket into an approval workflow, transitioning it to an awaiting-approval status. Designated approvers will be notified via email and in-app notifications and can approve or reject the request."
+sidebar_label: "Send ticket for approval"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/tickets/tickets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Send ticket for approval"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/tickets/{ticketId}/workflow/approval"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Submits a ticket into an approval workflow, transitioning it to an awaiting-approval status. Designated approvers will be notified via email and in-app notifications and can approve or reject the request.
+
+**Prerequisites**
+1. **ticketId** – Use [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) to find the ticket and extract `Items[].TicketId`.
+2. **ApproverUserIds** (optional) – Use [POST /api/v1.0/search](/docs/api/search/global-search) to find approvers, or let workflow rules determine approvers.
+
+**Workflow Example**
+1. Complete ticket work: Ensure ticket is ready for approval review
+2. Find ticket: [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) → extract `TicketId`
+3. Submit for approval: [POST /api/v1.0/tickets/\{ticketId\}/workflow/approval](/docs/api/tickets/send-ticket-for-approval) with optional approver list
+4. Monitor: [GET /api/v1.0/tickets/\{ticketId\}/approvals](/docs/api/tickets/get-ticket-approvals) to track approval status
+5. On decision: Ticket advances or returns based on approve/reject outcome
+
+**Use Cases**: Budget approvals, change management requests, equipment purchases, policy exceptions, HR actions requiring management sign-off.
+
+**Request Body**: Optionally specify `ApproverUserIds` array; if omitted, workflow rules determine approvers.
+
+**Related Endpoints**
+- [GET /api/v1.0/tickets/\{ticketId\}/approvals](/docs/api/tickets/get-ticket-approvals) – View approval status
+- [POST /api/v1.0/tickets/\{ticketId\}/workflow/approval/response](/docs/api/tickets/process-ticket-approval) – Approve or reject
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"ticketId","in":"path","required":true,"description":"Unique identifier of the ticket","schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","description":"Request payload for sending a ticket to an approval workflow or changing the approver assignment.","properties":{"TicketId":{"type":"string","format":"uuid","description":"Identifier of the ticket requiring approval. Should match the TicketId in the URL path.","example":"a1b2c3d4-e5f6-7890-abcd-ef1234567890"},"ApproverUserId":{"type":"string","format":"uuid","description":"Current approver user ID (when changing approvers).","nullable":true,"example":"c64a05b1-6a2d-ea11-a601-0003ffe41fe2","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/search","responseField":"Item.Users[].UserId"}},"NewApproverUserId":{"type":"string","format":"uuid","description":"New approver user ID to assign for this ticket.","nullable":true,"example":"2899c843-6030-ed11-ae83-14cb6572af81","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/search","responseField":"Item.Users[].UserId"}},"ApproverTeamId":{"type":"string","format":"uuid","description":"Current approver team ID (when changing team approvers).","nullable":true,"example":"9d2d1481-3a23-4c1d-8f89-7c6e81cb4364"},"NewApproverTeamId":{"type":"string","format":"uuid","description":"New approver team ID to assign for this ticket.","nullable":true,"example":"e4b5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d"}},"example":{"TicketId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","NewApproverUserId":"2899c843-6030-ed11-ae83-14cb6572af81"},"title":"SendTicketForApprovalRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Ticket submitted for approval successfully","content":{"application/json":{"schema":{"type":"object","description":"Generic response for actions that do not return a specific entity. Extends BaseResponse with no additional properties. Used for operations like enabling, disabling, or triggering workflows.","properties":{"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Message":{"type":"string","nullable":true,"description":"Optional informational or error message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors that did not prevent the operation"}},"required":["StatusCode"],"title":"ActionResponse"}}}},"400":{"description":"Bad request – ticket cannot be submitted for approval in current state"},"401":{"description":"Unauthorized – caller is not authenticated"},"403":{"description":"Forbidden – caller lacks permission to submit for approval"},"404":{"description":"Not found – ticket does not exist"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,33 @@
+---
+id: workflownextstep
+title: "WorkflowNextStep"
+description: "Defines an allowed transition from one workflow step to another."
+sidebar_label: "WorkflowNextStep"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"WorkflowNextStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","WorkflowStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AllowedNextWorkflowStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsAllActionsCompleteRequired":true,"StepName":"In Progress","SourceEntityTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SourceEntityId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"WorkflowNextStep"}
+>
+</Heading>
+
+
+
+Defines an allowed transition from one workflow step to another.
+
+<Schema
+  schema={{"type":"object","description":"Defines an allowed transition from one workflow step to another.","properties":{"WorkflowNextStepId":{"type":"string","format":"uuid","description":"Unique identifier for this next-step mapping."},"WorkflowStepId":{"type":"string","format":"uuid","description":"Source workflow step from which this transition originates."},"AllowedNextWorkflowStepId":{"type":"string","format":"uuid","description":"Target workflow step that can be transitioned to."},"IsAllActionsCompleteRequired":{"type":"boolean","description":"If true, all step actions must be completed before this transition is allowed."},"StepName":{"type":"string","nullable":true,"description":"Display name of the target step for convenience.","example":"In Progress"},"SourceEntityTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Entity type identifier for the source system."},"SourceEntityId":{"type":"string","format":"uuid","nullable":true,"description":"Entity identifier from the source system."},"CreatedDate":{"type":"string","format":"date-time","description":"UTC timestamp when the mapping was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"UTC timestamp when the mapping was last modified."}},"required":["WorkflowNextStepId","WorkflowStepId","AllowedNextWorkflowStepId","IsAllActionsCompleteRequired"],"title":"WorkflowNextStep"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

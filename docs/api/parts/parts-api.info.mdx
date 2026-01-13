@@ -1,0 +1,278 @@
+---
+id: parts-api
+title: "Parts API"
+description: "# Parts API"
+sidebar_label: Introduction
+sidebar_position: 0
+hide_title: true
+custom_edit_url: null
+---
+
+import ApiLogo from "@theme/ApiLogo";
+import Heading from "@theme/Heading";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+import Export from "@theme/ApiExplorer/Export";
+
+<span
+  className={"theme-doc-version-badge badge badge--secondary"}
+  children={"Version: 1.0.0"}
+>
+</span>
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Parts API"}
+>
+</Heading>
+
+
+
+# Parts API
+
+The Parts API provides access to parts management in IncidentIQ. Track parts inventory, manage suppliers, and handle purchase orders for repair and maintenance operations.
+
+## Overview
+
+Parts in IncidentIQ represent components and materials used for device repairs and maintenance—replacement screens, batteries, keyboards, cables, and other repair components.
+
+:::info
+**What you can do with the Parts API**
+:::
+
+>
+> - **Manage parts catalog** with part numbers, descriptions, and pricing
+> - **Track suppliers** and their part offerings with cost information
+> - **Create purchase orders** for parts procurement
+> - **Record parts usage** on repairs and tickets for cost tracking
+> - **Import parts data** from spreadsheets and external sources
+
+## Common Use Cases
+
+### Repair Parts Management
+Maintain a catalog of repair parts with supplier pricing for device repairs.
+
+### Procurement Workflow
+Create and track purchase orders to replenish parts inventory.
+
+### Cost Tracking
+Record which parts are used on repairs to calculate total repair costs.
+
+### Supplier Management
+Manage multiple suppliers per part with different pricing and availability.
+
+### Bulk Import
+Import parts catalogs from vendor spreadsheets or existing inventory systems.
+
+## API Sections
+
+| Section | Description |
+|---------|-------------|
+| **Searching** | Search the parts catalog |
+| **Parts** | Create, retrieve, update, and delete part records |
+| **Suppliers** | Manage supplier information and part-supplier relationships |
+| **Purchase Orders** | Create and manage purchase orders |
+| **Usage** | Record parts usage on tickets and repairs |
+| **Importing** | Import parts from uploaded files |
+
+## Quick Start
+
+### Search Parts
+
+```bash
+curl -X POST "https://your-site.incidentiq.com/api/v1.0/parts/search" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Paging": {"PageSize": 25, "PageIndex": 0}
+  }'
+```
+
+### Get Part Details
+
+```bash
+curl -X GET "https://your-site.incidentiq.com/api/v1.0/parts/{PartId}" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient"
+```
+
+### Get Purchase Order
+
+```bash
+curl -X GET "https://your-site.incidentiq.com/api/v1.0/purchaseorders/{PurchaseOrderId}" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient"
+```
+
+### Import Parts from File
+
+:::warning
+**Import Workflow**
+:::
+
+>
+> First upload your import file using the Files API, then use the returned FileId to schedule the import job.
+
+```json http
+{
+  "method": "POST",
+  "url": "https://your-site.incidentiq.com/api/v1.0/parts/import/{FileId}",
+  "headers": {
+    "Authorization": "Bearer YOUR_TOKEN",
+    "SiteId": "YOUR_SITE_ID",
+    "Client": "ApiClient",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "ProductId": "PRODUCT_UUID",
+    "Worksheet": 0,
+    "Mappings": {
+      "PartName": {"MapType": "column", "FieldIndex": 0},
+      "StandardSupplierName": {"MapType": "column", "FieldIndex": 1},
+      "StandardCost": {"MapType": "column", "FieldIndex": 2},
+      "QuantityOnHand": {"MapType": "column", "FieldIndex": 3}
+    }
+  }
+}
+```
+
+## Related APIs
+
+- [Inventory](/docs/api/inventory/inventory-api) - Track consumable supplies and stock levels
+- [Tickets](/docs/api/tickets/tickets-api) - Link parts usage to repair tickets
+- [Assets](/docs/api/assets/assets-api) - Track repairs on assets
+- [Files](/docs/api/files/files-api) - Upload import files for parts data
+
+
+<div
+  style={{"marginBottom":"2rem"}}
+>
+  <Heading
+    id={"authentication"}
+    as={"h2"}
+    className={"openapi-tabs__heading"}
+    children={"Authentication"}
+  >
+  </Heading><SchemaTabs
+    className={"openapi-tabs__security-schemes"}
+  >
+    <TabItem
+      label={"HTTP: Bearer Auth"}
+      value={"bearerAuth"}
+    >
+      
+      
+      JWT token from Administration > Developer Tools
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                http
+              </td>
+            </tr><tr>
+              <th>
+                HTTP Authorization Scheme:
+              </th><td>
+                bearer
+              </td>
+            </tr><tr>
+              <th>
+                Bearer format:
+              </th><td>
+                JWT
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem><TabItem
+      label={"API Key: siteId"}
+      value={"siteId"}
+    >
+      
+      
+      Your site identifier (UUID)
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                apiKey
+              </td>
+            </tr><tr>
+              <th>
+                Header parameter name:
+              </th><td>
+                SiteId
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem><TabItem
+      label={"API Key: client"}
+      value={"client"}
+    >
+      
+      
+      Must be "ApiClient"
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                apiKey
+              </td>
+            </tr><tr>
+              <th>
+                Header parameter name:
+              </th><td>
+                Client
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem>
+  </SchemaTabs>
+</div><div
+  style={{"display":"flex","flexDirection":"column","marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    Contact
+  </h3><span>
+    IncidentIQ Developer Support: [api-support@incidentiq.com](mailto:api-support@incidentiq.com)
+  </span><span>
+    URL: [https://stoplight.incidentiq.com](https://stoplight.incidentiq.com)
+  </span>
+</div><div
+  style={{"marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    License
+  </h3><a
+    href={"https://www.incidentiq.com/terms"}
+  >
+    Proprietary
+  </a>
+</div>
+      

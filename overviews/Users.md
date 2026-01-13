@@ -1,0 +1,179 @@
+# Users API
+
+The Users API provides access to user management in IncidentIQ. Search for users, manage profiles, handle authentication, and control account settings across your organization.
+
+## Overview
+
+Users in IncidentIQ represent everyone who interacts with the platform: students, teachers, staff, technicians, and administrators.
+
+:::info
+**What you can do with the Users API**
+:::
+
+>
+> - **Search and lookup** users by name, email, role, location, or custom criteria
+> - **Manage user profiles** including contact information and preferences
+> - **Handle account lifecycle** from creation through deactivation
+> - **Control authentication** settings and password management
+> - **Track presence** and online status for real-time collaboration
+> - **Perform bulk operations** for mass updates and imports
+
+## Common Use Cases
+
+### SIS/HR Integration
+Sync user accounts with student information systems (PowerSchool, Infinite Campus) or HR systems to automate provisioning and updates.
+
+### Single Sign-On Setup
+Configure user authentication to work with your identity provider (Azure AD, Google Workspace, Clever, ClassLink).
+
+### Role-Based Access
+Assign users to roles that control their permissions across tickets, assets, and administrative functions.
+
+### User Lookup for Tickets
+Search for users when creating tickets, assigning devices, or setting up notifications.
+
+### Bulk User Management
+Import, update, or deactivate users in bulk based on enrollment changes or staff turnover.
+
+## API Sections
+
+| Section | Description |
+|---------|-------------|
+| **Searching** | Query users with filters, pagination, and faceted search |
+| **Profiles** | Retrieve user profile information and details |
+| **Profile Updates** | Modify user information and preferences |
+| **Accounts** | Manage user account settings and status |
+| **Account Management** | Handle account lifecycle operations |
+| **Authentication** | Password resets, SSO configuration, and auth settings |
+| **Presence** | Track online status and availability |
+| **Utilities** | Helper endpoints for user-related operations |
+| **Bulk** | Mass user operations and imports |
+
+## Quick Start
+
+**cURL
+**
+
+```bash
+curl -X POST "https://your-site.incidentiq.com/api/v1.0/users" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Filters": [
+      {"Facet": "RoleName", "Values": ["Student"]}
+    ],
+    "Paging": {"PageSize": 50, "PageIndex": 0}
+  }'
+```
+
+**JavaScript
+**
+
+```javascript
+const response = await fetch('https://your-site.incidentiq.com/api/v1.0/users', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_TOKEN',
+    'SiteId': 'YOUR_SITE_ID',
+    'Client': 'ApiClient',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    Filters: [
+      { Facet: 'RoleName', Values: ['Student'] }
+    ],
+    Paging: { PageSize: 50, PageIndex: 0 }
+  })
+});
+
+const data = await response.json();
+console.log(data.Items);
+```
+
+**Python
+**
+
+```python
+import requests
+
+response = requests.post(
+    'https://your-site.incidentiq.com/api/v1.0/users',
+    headers={
+        'Authorization': 'Bearer YOUR_TOKEN',
+        'SiteId': 'YOUR_SITE_ID',
+        'Client': 'ApiClient',
+        'Content-Type': 'application/json'
+    },
+    json={
+        'Filters': [
+            {'Facet': 'RoleName', 'Values': ['Student']}
+        ],
+        'Paging': {'PageSize': 50, 'PageIndex': 0}
+    }
+)
+
+data = response.json()
+print(data['Items'])
+```
+
+
+---
+
+### Get User by ID
+
+```bash
+curl -X GET "https://your-site.incidentiq.com/api/v1.0/users/{userId}" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "Client: ApiClient"
+```
+
+### Search by Email
+
+```json http
+{
+  "method": "POST",
+  "url": "https://your-site.incidentiq.com/api/v1.0/search",
+  "headers": {
+    "Authorization": "Bearer YOUR_TOKEN",
+    "SiteId": "YOUR_SITE_ID",
+    "Client": "ApiClient",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "Query": "john.smith@school.edu",
+    "Types": ["User"]
+  }
+}
+```
+
+## Key Concepts
+
+:::info
+**Roles and Permissions**
+:::
+
+>
+> Users are assigned roles that determine what they can see and do. Common roles include Student, Teacher, Staff, Agent, and Administrator. Roles control access to portals, ticket visibility, and administrative functions.
+
+### User vs. Owner
+In tickets and assets, the **User** or **For** field indicates who the item is for (e.g., the student who reported an issue). The **Owner** is the agent responsible for resolution.
+
+### Locations
+Users have a primary location (their school or building) which affects ticket routing, asset assignment, and reporting visibility.
+
+:::warning
+**External IDs**
+:::
+
+>
+> Users can have external identifiers from SIS systems. When syncing data, use these IDs to match records and prevent duplicates.
+
+## Related APIs
+
+- [Tickets](#/Tickets) - Create tickets on behalf of users
+- [Assets](#/Assets) - Assign devices to users
+- [Locations](#/Locations) - User location assignments
+- [Teams](#/Teams) - Team membership management

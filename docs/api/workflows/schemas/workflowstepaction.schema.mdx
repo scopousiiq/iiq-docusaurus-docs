@@ -1,0 +1,33 @@
+---
+id: workflowstepaction
+title: "WorkflowStepAction"
+description: "Defines an automated action that executes when a ticket enters a workflow step."
+sidebar_label: "WorkflowStepAction"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"WorkflowStepActionId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","WorkflowStepId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","WorkflowActionTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","WorkflowActionTypeName":"Send Email Notification","Options":"string","SortOrder":0,"CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"WorkflowStepAction"}
+>
+</Heading>
+
+
+
+Defines an automated action that executes when a ticket enters a workflow step.
+
+<Schema
+  schema={{"type":"object","description":"Defines an automated action that executes when a ticket enters a workflow step.","properties":{"WorkflowStepActionId":{"type":"string","format":"uuid","description":"Unique identifier for this action."},"WorkflowStepId":{"type":"string","format":"uuid","description":"Workflow step that triggers this action."},"WorkflowActionTypeId":{"type":"string","format":"uuid","description":"Type of action to perform (e.g., send email, assign ticket)."},"WorkflowActionTypeName":{"type":"string","nullable":true,"description":"Display name of the action type.","example":"Send Email Notification"},"Options":{"type":"string","nullable":true,"description":"JSON string containing action-specific configuration options."},"SortOrder":{"type":"integer","description":"Order in which actions execute within a step."},"CreatedDate":{"type":"string","format":"date-time","description":"UTC timestamp when the action was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"UTC timestamp when the action was last modified."}},"required":["WorkflowStepActionId","WorkflowStepId","WorkflowActionTypeId","SortOrder"],"title":"WorkflowStepAction"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

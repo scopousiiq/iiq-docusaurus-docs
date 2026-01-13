@@ -1,0 +1,90 @@
+---
+id: bulk-delete-tickets
+title: "Bulk delete tickets"
+description: "Soft-deletes multiple tickets in a single bulk operation. Deleted tickets are marked with `IsDeleted: true` but remain in the database and can be restored by administrators."
+sidebar_label: "Bulk delete tickets"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "delete api-method"
+info_path: docs/api/tickets/tickets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Bulk delete tickets"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1.0/tickets/bulk/delete"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Soft-deletes multiple tickets in a single bulk operation. Deleted tickets are marked with `IsDeleted: true` but remain in the database and can be restored by administrators.
+
+**Prerequisites**
+1. **TicketIds** – Use [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) to find tickets and collect `Items[].TicketId` values.
+
+**Workflow Example**
+1. Search tickets: [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) with criteria → collect `TicketId` array
+2. Review: Confirm tickets should be deleted (consider export or archiving first)
+3. Bulk delete: [DELETE /api/v1.0/tickets/bulk/delete](/docs/api/tickets/bulk-delete-tickets) with ticket IDs
+4. Verify: [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets) with standard filters – deleted tickets no longer appear
+
+**Request Body**: Provide `TicketIds` array.
+
+**Restoration**: Administrators can restore deleted tickets using [PUT /api/v1.0/tickets/\{ticketId\}/undelete](/docs/api/tickets/undelete-ticket) or by searching with `OnlyShowDeleted: true` filter.
+
+**Note**: This is a soft delete. For compliance or data retention, tickets remain queryable with the `OnlyShowDeleted` filter.
+
+**Related Endpoints**
+- [PUT /api/v1.0/tickets/\{ticketId\}/undelete](/docs/api/tickets/undelete-ticket) – Restore single ticket
+- [POST /api/v1.0/tickets/bulk/assign](/docs/api/tickets/bulk-assign-tickets) – Bulk assign instead
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","description":"Request payload for bulk deleting tickets.","properties":{"TicketIds":{"type":"array","description":"Array of ticket identifiers to delete.","items":{"type":"string","format":"uuid"},"minItems":1},"Request":{"type":"object","description":"Delete options.","properties":{"TicketId":{"type":"string","format":"uuid","description":"Template ticket ID (optional)."}}}},"required":["TicketIds"],"example":{"TicketIds":["260b8773-dcad-f011-8e61-000d3a7bb518","370c9884-edbe-f011-9f72-111e4a8cc629"]},"title":"BulkDeleteTicketsRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Bulk deletion initiated successfully","content":{"application/json":{"schema":{"type":"object","description":"Response from a bulk ticket operation, containing a job ID for tracking progress.","allOf":[{"type":"object","description":"Standard response envelope for single-item GET operations. The `Item` property contains the requested entity.","properties":{"Item":{"description":"The requested entity. Structure varies by endpoint."},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful GET)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Item","StatusCode"],"title":"ItemGetResponse"}],"properties":{"Item":{"type":"string","format":"uuid","description":"Job ID that can be used to track the bulk operation progress."}},"title":"BulkOperationResponse"}}}},"400":{"description":"Bad request – invalid ticket IDs"},"401":{"description":"Unauthorized – caller is not authenticated"},"403":{"description":"Forbidden – caller lacks permission to delete tickets"}}}
+>
+  
+</StatusCodes>
+
+
+      

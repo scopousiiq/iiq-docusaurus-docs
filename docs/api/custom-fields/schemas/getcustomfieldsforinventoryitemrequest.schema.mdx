@@ -1,0 +1,33 @@
+---
+id: getcustomfieldsforinventoryitemrequest
+title: "GetCustomFieldsForInventoryItemRequest"
+description: "Request payload for retrieving custom fields applicable to an inventory item."
+sidebar_label: "GetCustomFieldsForInventoryItemRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"EntityId":"f1a2b3c4-d5e6-7890-abcd-ef1234567890"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetCustomFieldsForInventoryItemRequest"}
+>
+</Heading>
+
+
+
+Request payload for retrieving custom fields applicable to an inventory item.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for retrieving custom fields applicable to an inventory item.","properties":{"Entity":{"type":"object","description":"Full InventoryItem object used for filter matching.","properties":{"InventoryItemId":{"type":"string","format":"uuid","description":"Unique identifier of the inventory item."}}},"EntityId":{"type":"string","format":"uuid","description":"UUID of the inventory item to retrieve custom fields for."},"ForProductId":{"type":"string","format":"uuid","description":"Optional product UUID to override the product context from request headers."}},"example":{"EntityId":"f1a2b3c4-d5e6-7890-abcd-ef1234567890"},"title":"GetCustomFieldsForInventoryItemRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: getticketassetsrequest
+title: "GetTicketAssetsRequest"
+description: "Filters used to retrieve ticket asset links for specific models or categories. Provide at least one of `ModelIds` or `CategoryIds`; when both arrays are empty the service returns an empty collection."
+sidebar_label: "GetTicketAssetsRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ModelIds":["8b7f9421-1b0a-4dd4-d7c7-498f1954f69a"],"CategoryIds":["36c6be98-4f39-e611-bf3b-005056bb000e"],"FilterByProduct":true,"ProductId":"88df910c-91aa-e711-80c2-0004ffa00010","IncludeDeleted":false}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetTicketAssetsRequest"}
+>
+</Heading>
+
+
+
+Filters used to retrieve ticket asset links for specific models or categories. Provide at least one of `ModelIds` or `CategoryIds`; when both arrays are empty the service returns an empty collection.
+
+<Schema
+  schema={{"type":"object","description":"Filters used to retrieve ticket asset links for specific models or categories. Provide at least one of `ModelIds` or `CategoryIds`; when both arrays are empty the service returns an empty collection.","properties":{"ModelIds":{"type":"array","description":"One or more asset model identifiers to match when returning ticket assets.","items":{"type":"string","format":"uuid","description":"Asset model identifier obtained from the model catalog."},"minItems":1,"x-obtained-from":{"operationId":"getIssuesForModels","endpoint":"POST /api/v1.0/models","responseField":"Items[].ModelId"}},"ModelId":{"type":"string","format":"uuid","description":"Shortcut for a single model identifier. When set, this value is inserted as the first entry in `ModelIds`.","x-obtained-from":{"operationId":"getIssuesForModels","endpoint":"POST /api/v1.0/models","responseField":"Items[].ModelId"}},"CategoryIds":{"type":"array","description":"Category identifiers used to find ticket assets tied to any model within the specified categories.","items":{"type":"string","format":"uuid","description":"Asset category identifier returned with model metadata."},"minItems":1,"x-obtained-from":{"operationId":"getIssuesForModels","endpoint":"POST /api/v1.0/models","responseField":"Items[].Category.CategoryId"}},"CategoryId":{"type":"string","format":"uuid","description":"Shortcut for a single category identifier. When provided, this value populates the first element of `CategoryIds`.","x-obtained-from":{"operationId":"getIssuesForModels","endpoint":"POST /api/v1.0/models","responseField":"Items[].Category.CategoryId"}},"FilterByProduct":{"type":"boolean","description":"When true, limits results to ticket assets whose tickets belong to the current product context. Set to `false` to search across all products for the site.","default":true},"ProductId":{"type":"string","format":"uuid","description":"Overrides the product scope when `FilterByProduct` is true. If omitted, the ProductId header for the current request is used.","x-obtained-from":{"operationId":"searchAssets","endpoint":"POST /api/v1.0/assets/","responseField":"Items[].ProductId"}},"IncludeDeleted":{"type":"boolean","description":"Include ticket asset links marked as deleted. Defaults to false so only active links are returned.","default":false}},"anyOf":[{"required":["ModelIds"]},{"required":["CategoryIds"]}],"example":{"ModelIds":["8b7f9421-1b0a-4dd4-d7c7-498f1954f69a"],"CategoryIds":["36c6be98-4f39-e611-bf3b-005056bb000e"],"FilterByProduct":true,"ProductId":"88df910c-91aa-e711-80c2-0004ffa00010","IncludeDeleted":false},"title":"GetTicketAssetsRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

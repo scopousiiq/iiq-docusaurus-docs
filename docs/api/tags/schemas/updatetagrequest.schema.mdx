@@ -1,0 +1,33 @@
+---
+id: updatetagrequest
+title: "UpdateTagRequest"
+description: "Request payload for creating or updating a tag."
+sidebar_label: "UpdateTagRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TagId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","TagTypeId":0,"SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ScopeId":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateTagRequest"}
+>
+</Heading>
+
+
+
+Request payload for creating or updating a tag.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for creating or updating a tag.","properties":{"TagId":{"type":"string","format":"uuid","description":"Unique identifier for the tag. Required for updates, generated on create if not provided."},"Name":{"type":"string","description":"Display name for the tag"},"TagTypeId":{"type":"integer","description":"Type identifier for the tag (e.g., asset tag, ticket tag)"},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site scope for the tag. Null for district-wide tags."},"ProductId":{"type":"string","format":"uuid","nullable":true,"description":"Product association for the tag"},"ScopeId":{"type":"string","description":"Scope identifier for the tag"}},"required":["Name","TagTypeId"],"title":"UpdateTagRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

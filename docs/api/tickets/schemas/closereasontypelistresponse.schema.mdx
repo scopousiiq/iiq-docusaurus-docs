@@ -1,0 +1,33 @@
+---
+id: closereasontypelistresponse
+title: "CloseReasonTypeListResponse"
+description: "Response containing a list of close reason types available for ticket resolution."
+sidebar_label: "CloseReasonTypeListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":[{"CloseReasonTypeId":"11111111-1111-1111-1111-111111111111","Name":"Resolved"},{"CloseReasonTypeId":"22222222-2222-2222-2222-222222222222","Name":"Duplicate"},{"CloseReasonTypeId":"33333333-3333-3333-3333-333333333333","Name":"Won't Fix"}],"IsSuccess":true,"Message":null}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CloseReasonTypeListResponse"}
+>
+</Heading>
+
+
+
+Response containing a list of close reason types available for ticket resolution.
+
+<Schema
+  schema={{"type":"object","description":"Response containing a list of close reason types available for ticket resolution.","properties":{"Item":{"type":"array","description":"Array of close reason types.","items":{"type":"object","description":"Defines a reason type that can be selected when closing a ticket. Close reason types categorize the resolution outcome (e.g., Resolved, Duplicate, Won't Fix).","properties":{"CloseReasonTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the close reason type."},"Name":{"type":"string","description":"Display name of the close reason type shown when closing tickets."}},"example":{"CloseReasonTypeId":"11111111-1111-1111-1111-111111111111","Name":"Resolved"},"title":"CloseReasonType"}},"Paging":{"allOf":[{"type":"object","description":"Pagination and sorting options for list requests","properties":{"PageSize":{"type":"integer","description":"Number of records per page. Use -1 for unlimited (not recommended for large datasets).","default":-1,"example":50},"PageIndex":{"type":"integer","description":"Zero-based page index","default":0,"minimum":0,"example":0},"SortField":{"type":"string","nullable":true,"description":"Field name to sort results by. Available fields depend on the entity type.","example":"Name"},"SortDirection":{"type":"string","enum":["Ascending","Descending"],"description":"Sort direction for the primary sort field","default":"Ascending"},"SecondarySortOptions":{"type":"array","nullable":true,"items":{"type":"object","description":"Sort configuration for a single field","properties":{"SortField":{"type":"string","description":"Field name to sort by"},"SortDirection":{"type":"string","enum":["Ascending","Descending"],"description":"Sort direction","default":"Ascending"}},"required":["SortField"],"title":"SortOptions"},"description":"Additional sort criteria applied after the primary sort"}},"title":"PagingOptions"}],"nullable":true,"type":"object","description":"Pagination information for the result set."},"IsSuccess":{"type":"boolean","description":"Indicates whether the request succeeded."},"Message":{"type":"string","nullable":true,"description":"Optional message providing additional context about the response."}},"example":{"Item":[{"CloseReasonTypeId":"11111111-1111-1111-1111-111111111111","Name":"Resolved"},{"CloseReasonTypeId":"22222222-2222-2222-2222-222222222222","Name":"Duplicate"},{"CloseReasonTypeId":"33333333-3333-3333-3333-333333333333","Name":"Won't Fix"}],"IsSuccess":true,"Message":null},"title":"CloseReasonTypeListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

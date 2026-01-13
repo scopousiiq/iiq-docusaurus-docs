@@ -1,0 +1,83 @@
+---
+id: update-funding-sources-by-query
+title: "Bulk update funding sources"
+description: "Bulk-updates funding sources that match the provided filters by applying the fields in the `Update` object to every matching record. Use this to shift status, dates, or allocations across a cohort without editing records one by one."
+sidebar_label: "Bulk update funding sources"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/funding-sources/funding-sources-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Bulk update funding sources"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/funding-sources/query/update"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Bulk-updates funding sources that match the provided filters by applying the fields in the `Update` object to every matching record. Use this to shift status, dates, or allocations across a cohort without editing records one by one.
+
+**Prerequisites**
+1. Identify targets with [POST /api/v1.0/funding-sources/query](/docs/api/funding-sources/search-funding-sources) and validate the filters you plan to apply.
+
+**Workflow Example**
+1. Run [POST /api/v1.0/funding-sources/query](/docs/api/funding-sources/search-funding-sources) to confirm the target set.
+2. Submit [POST /api/v1.0/funding-sources/query/update](/docs/api/funding-sources/update-funding-sources-by-query) with `Update` values and `Filters` to scope the change.
+3. Verify results with [GET /api/v1.0/funding-sources/\{FundingSourceId\}](/docs/api/funding-sources/get-funding-source-by-id) for a sample of updated records.
+
+**Minimal Required Fields**: `Update` (fields to apply). Provide `Filters` to avoid updating all records.
+
+**Note**: This API is deprecated.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"description":"Bulk update request with filter criteria and update values","required":true,"content":{"application/json":{"schema":{"type":"object","description":"Request payload for bulk updating funding sources matching filter criteria.","properties":{"Update":{"allOf":[{"type":"object","description":"Represents a funding source for budget tracking.","properties":{"FundingSourceId":{"type":"string","format":"uuid","description":"Unique identifier for the funding source."},"Name":{"type":"string","description":"Display name of the funding source."}},"title":"FundingSource"}],"description":"The field values to apply to all matching funding sources.","type":"object"},"Filters":{"type":"array","description":"Filter conditions to select which funding sources to update.","items":{"type":"object","description":"Filter condition for search/list operations. Based on C# `DataFilter` from `Spark.Shared.Models.DataFramework`. Supports both simple filters and nested filter groups.","properties":{"Facet":{"type":"string","description":"Field name or facet to filter on (e.g., 'Status', 'LocationId', 'CreatedDate')"},"Ids":{"type":"array","nullable":true,"items":{"type":"string","format":"uuid"},"description":"Array of UUIDs to filter by (for ID-based facets)"},"Values":{"type":"array","nullable":true,"items":{"type":"string"},"description":"Array of string values to filter by"},"Op":{"allOf":[{"type":"string","description":"Filter operations for DataFilter queries. Based on C# `DataFilterOperations` enum from `Spark.Shared.Enums`.","enum":["None","Equal","Greater","Less","GreaterOrEqual","LessOrEqual","StartsWith","EndsWith","Contains","NotEqual","NotGreater","NotLess","NotGreaterOrEqual","NotLessOrEqual"],"x-enum-descriptions":{"None":"No operation specified","Equal":"Equals (eq)","Greater":"Greater than (gt)","Less":"Less than (lt)","GreaterOrEqual":"Greater than or equal (ge)","LessOrEqual":"Less than or equal (le)","StartsWith":"String starts with","EndsWith":"String ends with","Contains":"String contains","NotEqual":"Not equal (ne)","NotGreater":"Not greater than (ng)","NotLess":"Not less than (nl)","NotGreaterOrEqual":"Not greater than or equal (nge)","NotLessOrEqual":"Not less than or equal (nle)"},"title":"DataFilterOperations"}],"description":"Filter operation to apply"},"CustomFieldTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Custom field type ID (when filtering on custom fields)"},"ComplexEditorPath":{"type":"string","nullable":true,"description":"JSON path for filtering within complex editor values"},"Items":{"type":"array","nullable":true,"items":"circular(DataFilter)","description":"Nested filter conditions for complex AND/OR queries"}},"required":["Facet"],"title":"DataFilter"}},"OnlyShowDeleted":{"type":"boolean","description":"When true, only targets deleted/archived funding sources.","default":false}},"title":"UpdateFundingSourcesRequest"},"example":{"Update":{"FundingSourceStatusTypeId":"d4e5f6a7-b8c9-0123-def0-234567890123"},"Filters":[{"Facet":"EndDate","Value":"2024-12-31T23:59:59Z","FilterType":4}]}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful bulk update response","content":{"application/json":{"schema":{"type":"object","description":"Response envelope returned after successfully updating multiple resources in bulk. Based on C# `ListUpdateResponse<T>` from `Spark.Shared.Models.Responses`.","properties":{"Ids":{"type":"array","description":"Array of UUIDs for the updated resources","items":{"type":"string","format":"uuid"}},"Items":{"type":"array","description":"Array of updated entities (when returned)","nullable":true,"items":{"type":"object","additionalProperties":true}},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful update)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"}},"required":["StatusCode"],"title":"ListUpdateResponse"},"example":{"ItemCount":2,"Ids":["a1b2c3d4-e5f6-7890-abcd-ef1234567890","b2c3d4e5-f6a7-8901-bcde-f12345678901"],"UserToken":"bb6cece8-e4f4-e511-a789-005056bb000e","StatusCode":200}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

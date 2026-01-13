@@ -1,0 +1,33 @@
+---
+id: usercustomfieldvalue
+title: "UserCustomFieldValue"
+description: ""
+sidebar_label: "UserCustomFieldValue"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","EditorTypeId":0,"Value":"string","IsHidden":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UserCustomFieldValue"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"CustomFieldTypeId":{"type":"string","format":"uuid"},"EditorTypeId":{"type":"integer","description":"Editor type identifier describing the UI control used for the custom field. Retrieve editor types from [GET /api/v1.0/sites/{siteUrl}](/docs/api/sites/get-site-by-url).","x-obtained-from":{"operationId":"getSiteByUrl","endpoint":"GET /api/v1.0/sites/{siteUrl}","responseField":"Item.Settings.EditorTypes[].EditorTypeId"}},"Value":{"type":"string"},"IsHidden":{"type":"boolean"}},"required":["CustomFieldTypeId","EditorTypeId","Value","IsHidden"],"title":"UserCustomFieldValue"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

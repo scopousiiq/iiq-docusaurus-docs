@@ -1,0 +1,33 @@
+---
+id: updateinventoryrequest
+title: "UpdateInventoryRequest"
+description: "Request body for creating or updating an inventory stock record."
+sidebar_label: "UpdateInventoryRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"InventoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","InventoryItemId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SupplierId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","TrackInventory":true,"QuantityAvailable":0,"AverageCost":0,"MinQuantityAvailable":0,"MaxQuantityAvailable":0,"InventoryStateTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateInventoryRequest"}
+>
+</Heading>
+
+
+
+Request body for creating or updating an inventory stock record.
+
+<Schema
+  schema={{"type":"object","description":"Request body for creating or updating an inventory stock record.","properties":{"InventoryId":{"type":"string","format":"uuid","description":"Unique identifier of the inventory record (required for updates, generated on create)."},"InventoryItemId":{"type":"string","format":"uuid","description":"Identifier of the catalog item."},"LocationId":{"type":"string","format":"uuid","description":"Identifier of the location where stock is stored."},"SupplierId":{"type":"string","format":"uuid","nullable":true,"description":"Identifier of the associated supplier."},"TrackInventory":{"type":"boolean","description":"Whether to actively track inventory for this stock entry."},"QuantityAvailable":{"type":"integer","description":"Number of units available."},"AverageCost":{"type":"number","format":"double","description":"Average cost per unit."},"MinQuantityAvailable":{"type":"integer","nullable":true,"description":"Minimum quantity threshold for reorder alerts."},"MaxQuantityAvailable":{"type":"integer","nullable":true,"description":"Maximum quantity threshold for overstock alerts."},"InventoryStateTypeId":{"type":"string","format":"uuid","description":"Identifier describing the inventory state."}},"title":"UpdateInventoryRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

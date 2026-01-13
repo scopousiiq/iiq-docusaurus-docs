@@ -1,0 +1,33 @@
+---
+id: categorycreaterequest
+title: "CategoryCreateRequest"
+description: "Payload for creating a new category"
+sidebar_label: "CategoryCreateRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ParentCategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Description":"string","SortOrder":0,"ImageId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Icon":"string","Scope":"Global","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CategoryCreateRequest"}
+>
+</Heading>
+
+
+
+Payload for creating a new category
+
+<Schema
+  schema={{"type":"object","description":"Payload for creating a new category","properties":{"ParentCategoryId":{"type":"string","format":"uuid","nullable":true},"Name":{"type":"string"},"Description":{"type":"string","nullable":true},"SortOrder":{"type":"integer"},"ImageId":{"type":"string","format":"uuid","nullable":true},"Icon":{"type":"string","nullable":true},"Scope":{"type":"string","enum":["Global","Site","Product","App"]},"SiteId":{"type":"string","format":"uuid","nullable":true}},"required":["Name"],"title":"CategoryCreateRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

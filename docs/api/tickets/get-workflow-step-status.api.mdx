@@ -1,0 +1,80 @@
+---
+id: get-workflow-step-status
+title: "Get workflow step status"
+description: "Retrieves the ticket status definition associated with a specific workflow step. Returns status metadata including step name, closure state, and workflow configuration."
+sidebar_label: "Get workflow step status"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/tickets/tickets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get workflow step status"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/tickets/workflow/steps/{workflowStepId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves the ticket status definition associated with a specific workflow step. Returns status metadata including step name, closure state, and workflow configuration.
+
+**Use Cases**
+- Looking up status details before changing ticket state
+- Validating workflow step configuration
+- Building status selection interfaces
+
+**Prerequisites**
+- Obtain workflow step IDs via [GET /api/v1.0/workflows/steps](/docs/api/workflows/get-workflow-steps)
+- Or extract from ticket response `WorkflowStep.WorkflowStepId`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"workflowStepId","in":"path","required":true,"schema":{"type":"string","format":"uuid"},"description":"UUID of the workflow step to retrieve","example":"c7932b63-7bf4-49f9-a2a3-ea739e7e0001"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Workflow step status retrieved successfully","content":{"application/json":{"schema":{"type":"object","description":"Response containing a single ticket status definition.","allOf":[{"type":"object","description":"Standard response envelope for single-item GET operations. The `Item` property contains the requested entity.","properties":{"Item":{"description":"The requested entity. Structure varies by endpoint."},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful GET)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Item","StatusCode"],"title":"ItemGetResponse"}],"properties":{"Item":{"allOf":[{"type":"object","description":"Ticket status definition representing a workflow state. Maps workflow steps to user-friendly status labels.","properties":{"TicketStatusTypeId":{"type":"string","format":"uuid","description":"Internal status type identifier.","example":"c7932b63-7bf4-49f9-a2a3-ea739e7e0002"},"StatusId":{"type":"string","format":"uuid","description":"Alias for TicketStatusTypeId. Unique identifier for this status.","example":"c7932b63-7bf4-49f9-a2a3-ea739e7e0002"},"StatusName":{"type":"string","description":"Display name for the status shown in UI.","example":"In Progress"},"WorkflowId":{"type":"string","format":"uuid","description":"Identifier of the workflow this status belongs to.","example":"0f6db4fb-4b4f-ec11-9820-0003ffe402cf"},"WorkflowName":{"type":"string","description":"Name of the workflow this status belongs to.","example":"In Progress"},"WorkflowStepId":{"type":"string","format":"uuid","description":"Identifier of the specific workflow step.","example":"a63d07c9-554f-ec11-9820-0003ffe402cf"},"StepName":{"type":"string","description":"Name of the workflow step.","example":"In Progress"},"StepDescription":{"type":"string","description":"Optional description of what this workflow step represents.","nullable":true},"IsClosed":{"type":"boolean","description":"Whether this status represents a closed/resolved state.","example":false},"IsReadonly":{"type":"boolean","description":"Whether tickets in this status are read-only.","example":false},"IsDeleted":{"type":"boolean","description":"Whether this status has been soft-deleted.","example":false},"IsRequestorInputNeeded":{"type":"boolean","description":"Whether this status indicates waiting for requestor input.","example":false},"Color":{"type":"string","description":"Hex color code for UI display.","example":"#FFBA1A"},"DisplayOrder":{"type":"integer","description":"Sort order for displaying statuses in lists.","example":100}},"required":["WorkflowStepId","WorkflowId","StepName","StatusName"],"title":"TicketStatus"}]}},"title":"TicketStatusSingleResponse"}}}},"401":{"description":"Unauthorized – caller is not authenticated"},"404":{"description":"Not found – workflow step does not exist"}}}
+>
+  
+</StatusCodes>
+
+
+      

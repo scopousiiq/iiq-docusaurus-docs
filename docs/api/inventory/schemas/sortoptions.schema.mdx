@@ -1,0 +1,33 @@
+---
+id: sortoptions
+title: "SortOptions"
+description: "Sort configuration for a single field"
+sidebar_label: "SortOptions"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SortField":"string","SortDirection":"Ascending"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SortOptions"}
+>
+</Heading>
+
+
+
+Sort configuration for a single field
+
+<Schema
+  schema={{"type":"object","description":"Sort configuration for a single field","properties":{"SortField":{"type":"string","description":"Field name to sort by"},"SortDirection":{"type":"string","enum":["Ascending","Descending"],"description":"Sort direction","default":"Ascending"}},"required":["SortField"],"title":"SortOptions"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

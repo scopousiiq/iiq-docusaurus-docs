@@ -1,0 +1,175 @@
+---
+id: assetsearchfacetkey
+title: "AssetSearchFacetKey"
+description: "Facet keys for asset search (entity type `888891ac-91aa-e711-80c2-100dffa00003`). The 75 supported facets are organized by category:"
+sidebar_label: "AssetSearchFacetKey"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: "asset"
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetSearchFacetKey"}
+>
+</Heading>
+
+
+
+Facet keys for asset search (entity type `888891ac-91aa-e711-80c2-100dffa00003`). The 75 supported facets are organized by category:
+
+## Asset Identification
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `asset` | Specific asset | UUID |
+| `assettag` | Asset tag number | String |
+| `assetserialnumber` | Serial number | String |
+| `assetname` | Asset display name | String |
+| `assetponumber` | Purchase order number | String |
+| `invoicenumber` | Invoice number | String |
+| `linkedasset` | Linked/related asset | UUID |
+| `parentasset` | Parent asset (for components) | UUID |
+
+## Asset Classification
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `assettype` | Asset type/category | UUID |
+| `assetstatus` | Current status | UUID |
+| `assetinventorytype` | Inventory type | UUID |
+| `model` | Hardware model | UUID |
+| `modelcategory` | Model category | UUID |
+| `manufacturer` | Manufacturer | UUID |
+| `vendor` | Vendor/supplier | UUID |
+| `assetfundingsource` | Funding source | UUID |
+| `resourcegroup` | Resource group | UUID |
+
+## Location & Storage
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `location` | Asset location | UUID |
+| `locationtype` | Location type | UUID |
+| `room` | Physical room | UUID |
+| `assetstoragelocation` | Storage location | UUID |
+| `assetstorageunit` | Storage unit | UUID |
+| `assetpinmapped` | Has mapped GPS pin | Boolean |
+| `assetpinunmapped` | Has unmapped GPS pin | Boolean |
+
+## Ownership & Assignment
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `user` | Assigned user/owner | UUID |
+| `role` | Owner's role | UUID |
+| `grade` | Owner's grade level | UUID |
+| `ownerlocation` | Owner's location | UUID |
+| `ownerdepartment` | Owner's department | UUID |
+| `ownerlocationmismatch` | Location mismatch | Boolean |
+| `ownerrecentusermismatch` | Recent user mismatch | Boolean |
+| `previousowner` | Previous owner | UUID |
+| `previousownerlocation` | Previous owner location | UUID |
+| `previousownergrade` | Previous owner grade | UUID |
+| `previousownerrole` | Previous owner role | UUID |
+
+## Dates (use DateExpressionSyntax)
+| Facet | Description |
+|-------|-------------|
+| `createddate` | Asset creation date |
+| `modifieddate` | Last modification date |
+| `purchaseddate` | Purchase date |
+| `deployeddate` | Deployment date |
+| `retireddate` | Retirement date |
+| `endoflifedate` | End of life date |
+| `warrantyexpirationdate` | Warranty expiration |
+| `insuranceexpirationdate` | Insurance expiration |
+| `timeline` | Timeline range filter |
+
+## Financial (use NumericExpressionSyntax)
+| Facet | Description |
+|-------|-------------|
+| `purchasedprice` | Purchase price |
+| `currentbookvalue` | Current book value |
+| `totalassetcost` | Total asset cost |
+| `totallaborcost` | Total labor cost |
+| `totallabortime` | Total labor time |
+| `inventoryusedtotalcost` | Inventory costs |
+
+## Verification & Audit
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `assetauditstatus` | Audit status | UUID |
+| `assetauditpolicies` | Audit policies | UUID |
+| `assetauditpolicieshistorical` | Historical audit policies | UUID |
+| `assetauditstatusbypolicy` | Status by policy | UUID |
+| `assetauditstatusbypolicyschedule` | Status by schedule | UUID |
+| `manualaudit` | Manual audit status | Boolean |
+| `verificationdate` | Verification date | Date |
+| `verificationdatefailed` | Failed verification date | Date |
+| `verificationdatesuccessful` | Successful verification | Date |
+| `assetlastverificationdatetime` | Last verification time | Date |
+| `assetlastverificationlocation` | Last verification location | UUID |
+| `assetlastverificationroom` | Last verification room | UUID |
+| `assetlastverificationstatus` | Last verification status | UUID |
+| `assetlastverificationtype` | Last verification type | UUID |
+| `assetlastverificationuser` | Last verification user | UUID |
+
+## Duplicates & Data Quality
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `assetduplicateany` | Any duplicate detected | Boolean |
+| `assetduplicateassettag` | Duplicate asset tag | Boolean |
+| `assetduplicateserialnumber` | Duplicate serial number | Boolean |
+
+## Spare Pool
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `assetsparepool` | Spare pool membership | UUID |
+| `assetsparegroup` | Spare group | UUID |
+
+## Integration & Apps
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `source` | Data source/origin | UUID |
+| `assetapplink` | App integration link | UUID |
+| `schedule` | Assigned schedule | UUID |
+| `tickettemplate` | Linked ticket template | UUID |
+
+## Custom & Extended
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `assetattribute` | Asset attributes | UUID |
+| `assetcustomfield` | Custom field values | UUID |
+| `locationcustomfield` | Location custom fields | UUID |
+| `usercustomfield` | User custom fields | UUID |
+| `keyword` | Full-text search | String |
+| `view` | Saved view/filter | UUID |
+| `orgunit` | Organizational unit | UUID |
+
+## Historical Changes
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `historicalchangelocation` | Location change history | UUID |
+| `historicalchangeowner` | Owner change history | UUID |
+| `historicalchangestatus` | Status change history | UUID |
+| `historicalchangestoragelocation` | Storage change history | UUID |
+
+## SIS Integration
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `sisclass` | SIS class | UUID |
+| `siscourse` | SIS course | UUID |
+| `sisteacher` | SIS teacher | UUID |
+
+Call `/api/v1.0/filters/for/entitytype/{entityTypeId}` to retrieve the latest supported keys.
+
+<Schema
+  schema={{"type":"string","description":"Facet keys for asset search (entity type `888891ac-91aa-e711-80c2-100dffa00003`). The 75 supported facets are organized by category:\n\n## Asset Identification\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `asset` | Specific asset | UUID |\n| `assettag` | Asset tag number | String |\n| `assetserialnumber` | Serial number | String |\n| `assetname` | Asset display name | String |\n| `assetponumber` | Purchase order number | String |\n| `invoicenumber` | Invoice number | String |\n| `linkedasset` | Linked/related asset | UUID |\n| `parentasset` | Parent asset (for components) | UUID |\n\n## Asset Classification\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `assettype` | Asset type/category | UUID |\n| `assetstatus` | Current status | UUID |\n| `assetinventorytype` | Inventory type | UUID |\n| `model` | Hardware model | UUID |\n| `modelcategory` | Model category | UUID |\n| `manufacturer` | Manufacturer | UUID |\n| `vendor` | Vendor/supplier | UUID |\n| `assetfundingsource` | Funding source | UUID |\n| `resourcegroup` | Resource group | UUID |\n\n## Location & Storage\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `location` | Asset location | UUID |\n| `locationtype` | Location type | UUID |\n| `room` | Physical room | UUID |\n| `assetstoragelocation` | Storage location | UUID |\n| `assetstorageunit` | Storage unit | UUID |\n| `assetpinmapped` | Has mapped GPS pin | Boolean |\n| `assetpinunmapped` | Has unmapped GPS pin | Boolean |\n\n## Ownership & Assignment\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `user` | Assigned user/owner | UUID |\n| `role` | Owner's role | UUID |\n| `grade` | Owner's grade level | UUID |\n| `ownerlocation` | Owner's location | UUID |\n| `ownerdepartment` | Owner's department | UUID |\n| `ownerlocationmismatch` | Location mismatch | Boolean |\n| `ownerrecentusermismatch` | Recent user mismatch | Boolean |\n| `previousowner` | Previous owner | UUID |\n| `previousownerlocation` | Previous owner location | UUID |\n| `previousownergrade` | Previous owner grade | UUID |\n| `previousownerrole` | Previous owner role | UUID |\n\n## Dates (use DateExpressionSyntax)\n| Facet | Description |\n|-------|-------------|\n| `createddate` | Asset creation date |\n| `modifieddate` | Last modification date |\n| `purchaseddate` | Purchase date |\n| `deployeddate` | Deployment date |\n| `retireddate` | Retirement date |\n| `endoflifedate` | End of life date |\n| `warrantyexpirationdate` | Warranty expiration |\n| `insuranceexpirationdate` | Insurance expiration |\n| `timeline` | Timeline range filter |\n\n## Financial (use NumericExpressionSyntax)\n| Facet | Description |\n|-------|-------------|\n| `purchasedprice` | Purchase price |\n| `currentbookvalue` | Current book value |\n| `totalassetcost` | Total asset cost |\n| `totallaborcost` | Total labor cost |\n| `totallabortime` | Total labor time |\n| `inventoryusedtotalcost` | Inventory costs |\n\n## Verification & Audit\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `assetauditstatus` | Audit status | UUID |\n| `assetauditpolicies` | Audit policies | UUID |\n| `assetauditpolicieshistorical` | Historical audit policies | UUID |\n| `assetauditstatusbypolicy` | Status by policy | UUID |\n| `assetauditstatusbypolicyschedule` | Status by schedule | UUID |\n| `manualaudit` | Manual audit status | Boolean |\n| `verificationdate` | Verification date | Date |\n| `verificationdatefailed` | Failed verification date | Date |\n| `verificationdatesuccessful` | Successful verification | Date |\n| `assetlastverificationdatetime` | Last verification time | Date |\n| `assetlastverificationlocation` | Last verification location | UUID |\n| `assetlastverificationroom` | Last verification room | UUID |\n| `assetlastverificationstatus` | Last verification status | UUID |\n| `assetlastverificationtype` | Last verification type | UUID |\n| `assetlastverificationuser` | Last verification user | UUID |\n\n## Duplicates & Data Quality\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `assetduplicateany` | Any duplicate detected | Boolean |\n| `assetduplicateassettag` | Duplicate asset tag | Boolean |\n| `assetduplicateserialnumber` | Duplicate serial number | Boolean |\n\n## Spare Pool\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `assetsparepool` | Spare pool membership | UUID |\n| `assetsparegroup` | Spare group | UUID |\n\n## Integration & Apps\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `source` | Data source/origin | UUID |\n| `assetapplink` | App integration link | UUID |\n| `schedule` | Assigned schedule | UUID |\n| `tickettemplate` | Linked ticket template | UUID |\n\n## Custom & Extended\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `assetattribute` | Asset attributes | UUID |\n| `assetcustomfield` | Custom field values | UUID |\n| `locationcustomfield` | Location custom fields | UUID |\n| `usercustomfield` | User custom fields | UUID |\n| `keyword` | Full-text search | String |\n| `view` | Saved view/filter | UUID |\n| `orgunit` | Organizational unit | UUID |\n\n## Historical Changes\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `historicalchangelocation` | Location change history | UUID |\n| `historicalchangeowner` | Owner change history | UUID |\n| `historicalchangestatus` | Status change history | UUID |\n| `historicalchangestoragelocation` | Storage change history | UUID |\n\n## SIS Integration\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `sisclass` | SIS class | UUID |\n| `siscourse` | SIS course | UUID |\n| `sisteacher` | SIS teacher | UUID |\n\nCall `/api/v1.0/filters/for/entitytype/{entityTypeId}` to retrieve the latest supported keys.","enum":["asset","assetapplink","assetattribute","assetauditpolicies","assetauditpolicieshistorical","assetauditstatus","assetauditstatusbypolicy","assetauditstatusbypolicyschedule","assetduplicateany","assetduplicateassettag","assetduplicateserialnumber","assetfundingsource","assetlastverificationdatetime","assetlastverificationlocation","assetlastverificationroom","assetlastverificationstatus","assetlastverificationtype","assetlastverificationuser","assetpinmapped","assetpinunmapped","assetponumber","assetserialnumber","assetstatus","assetstoragelocation","assetstorageunit","assettag","assettype","createddate","currentbookvalue","customfieldaddress","customfieldassetfundingsource","customfieldassets","customfieldassetstatus","customfieldchangerequests","customfieldconfirmationmessage","customfielddate","customfielddaterange","customfielddatetime","customfielddetailssection","customfieldemailmessage","customfieldfileupload","customfieldinformation","customfieldipaddress","customfieldlocations","customfieldmultilinetext","customfieldmultiselect","customfieldnumber","customfieldnumberrange","customfieldphone","customfieldprotectedinfo","customfieldrichtext","customfieldscheduleselector","customfieldselect","customfieldtext","customfieldtickets","customfieldusers","customfieldyesno","deployeddate","endoflifedate","field","grade","historicalchangelocation","historicalchangeowner","historicalchangestatus","historicalchangestoragelocation","homeroom","insuranceexpirationdate","inventoryusedtotalcost","invoicenumber","keyword","location","locationtype","manufacturer","model","modelcategory","modifieddate","ownerdepartment","ownerlocation","ownerlocationmismatch","ownerrecentusermismatch","previousowner","previousownergrade","previousownerlocation","previousownerrole","purchaseddate","purchasedprice","retireddate","role","room","sisclass","siscourse","sisteacher","source","timeline","totalassetcost","totallaborcost","totallabortime","user","vendor","verificationdate","verificationdatefailed","verificationdatesuccessful","view","warrantyexpirationdate"],"example":"asset","title":"AssetSearchFacetKey"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

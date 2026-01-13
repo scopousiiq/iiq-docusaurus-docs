@@ -1,0 +1,77 @@
+---
+id: get-workflow-linked-issues
+title: "List issues linked to workflow"
+description: "Returns the issue types (ticket categories) that are linked to a specific workflow. Issues determine the initial categorization of tickets."
+sidebar_label: "List issues linked to workflow"
+hide_title: true
+hide_table_of_contents: true
+api: eJztO9tyG7eSv9IFP+hSMxQpybHDrXNqFUmxlfiiI9GbPWu6jqGZJoloCIwBDGkeWVV52g/YTdW+7NflS7YawFxJO5KTbHK2dqoSjTFA39Dd6At4w1SOmluh5FnKhmyK9julryeZWj4T8hrTM2MKNCxiKZpEi5xmsiG7QFtoacDOEARNAbvK0cC2Fck1Wki4xanSAs0O2Bm3wDVC5iCCVcDB5JiIiUhgGdD1wKOCFC3quZDogUthBc8qgH93tIKagMdkemM5lru7L5TF3d0hjGbCAMo0V0JaEAZyri1NPzo/gwVqQ6sHvT4sZyKZ0YQ510QVJ8y5RkKUBqBHhZ2htCJxSAn8Bb4rhEYDvP6EKRQGdVjzyiAcc+OIeSVT1MZymVboalEtRZbRQrBEcikGWM5Qlrw5qSUaHUksYpZPDRu+ZuUWmWGi5ERMC7+D7E3E3sdCvItTlRg2vGEGk7Bh7YkRUzpFzYYH/duIaTS5kgbdkv1+n/60t9vrgiffgEarBS4wBVMkCRozKbJsxSJCYlFaWs/zPAty2/veEJAbZpIZzjm9kQTYkKmr7zGxa8p1KheYqRwJUaElpl4omTBWyGlJRVObKiViEcs1qbQVnp0zi/NjVXiiAlohLU5Rr+F9UcyvUJOy1Iw6/D12GzlIpgGFa81XazCOVZZ5oTfg1KSSSjeJFR2glUQ6XBAcMtBqorFayCmL2ETpObdsyIpCpETnpbB3mhoxWWQZv8qQDa0u8DZi51qlRWI/c/VlomjF+kqUxZzU9kmmrnjGPIksYueojZJuxH96KZ0aHU2nGqfcIntDcifeR6v8rvxX838jel7w+QaoxL/S9qU3qzVVK+k69m5sdR9eyjWbEW/YiDamxBvf/Vbdh5ffSM7PVYrZPeXVWnNneZ1K+mf61eoEJ7zImq7iSqkMuaxgb3IAd7ThX2CXDvW9fMBvaIr32Yo7zj3K818g2KM834Tnc+RGKvNygVqL9C6qcxsxfM/neYYNOthUqWmGMU/ngk7aNhEsOUgP8eHki5g/unocf9kf7Mc0FNMYDdEI61LCjmdazfFKqWt4ynW6pMDAwSSqrbBEARFQI6MPnyS31EdWYo6TL9N+PNg/8MQ4AmmIRj6bj6CJtcLVEPjgar9aEj96/GU/pqG4hEwjrKFIzA/zRzHRFRNdMQ3FHmFCGA+a8vikMKIqivoso2zL8t5M3Vf4jZOZ0dDDLx6R0PlVnKQ48eseOuD8ikY+KvnyIGWezCC9mLYrpqG4FDKNsPK0Y19pdY0SLhONSErdOB8GG48pVqop2+Rfww6UGxX26DZirwzqEaG6y5Z0osZkplxeMEOowMAMeYo65CCtmJ3maXxXoLEuvrvw7yfk7D6FPOUWYyvmuEbBJeoF6tiIFIEmGMvnOQiZukBYTkNsX+OFJTeQa0UxdIgyT99jUhC8kWidXtLFph9BWcIgHIQYhIS5yDJhMFEyNQ7ypeW2MMeq5dk+Fgo/HY3OwbgVkKgUAefCktSuVo4Bg3ohEvSAHQ0fO207ITafY7lJxtMuJGVICfo9mhTZRGTZhv059zy2rPVj5J9Ji1ryrBQMiJQ2fiJQQ6am082MvGymwj/HyUjzBJtwE6U1Zn6jXUqX8CyDpbCzktNMTU3JSuP8+nQydJSmgl55BqngU6mMFQnM0fKUWx6BmACXK8oleDVzI/zyWLx1GZ9LY1MKBeoMqcxxWrrypjbTymGSuT4Txl6ExJF1vGGdc+1XedPrlpcMTzwYDAbx/v7+fnxwcHAQHzaehgsLQUrHgYWnszx+2HhqB9Y5NT/pwfz5Fp4O5PiLxsM2u74TJJWCqnTysch68HHX2BRWGp4OEfGjxvNzwsLwdJbHjxtPLaxLNbEfE9b+H05Yb1rHBjvAwaPJo4OH8dWjLyfxpD8YxFeHjw/jfn9///Dxw4PH/UMSV8vds/3+/sN4sB8P+qP9/nDwcNjv9/r9/r+xNY+8v987bDvT/X6/7QSZybm+joNrMXGKc8VaDmzQcTZUd+vU21o2fHvrzPawf7hemymtEqSyMFGFTH+9Sswl1a64TgG1VhpyvsoUT+u6THCiVFtzZxuvTrYJF5lZL8f8skOIG6MS4U5v51cJNyEqXJhReaDD/oCCfzSGT+9wJj0t5lzGGnlK6gWNj+VJ5bhvYmBH1uI8t76ok6Om6AC4hEJSkEF1SkyhKq32WNfpNuRQU9pwtaeEsXavfvtzrvmcqqPenUqvbMs6jI2YIIZybmesiY/MpMv1q1dnJyV/jeKjMlWdNhSvzEwVWQpX6ApwvhC5pj8fT6lqmQ3C80mHTdaM7y1KKtR6Pq9xxYbNwmbEFjwr8K4FTgI5RztTwdBIKUlCQ7bHc7G3GPT6e6UEzN5NLc/bPVFaoz/BPT2FztiQzazNzXBvj4y7J2TiI4F3vUTNHRMGk0ILu3JLrpBr1FROZsPX9DGE//SeZMJZ6us3zWWXJGFvM83FlcAJfbkRrlDhJrEovHxdbsM3343WFP6b70ZgXXQ80WoOR5SoCmO96ODPcIK+/qphpFRmaBdNt3jBc/EtrkqN81E2ZUnhAPHTu4j/qgoNBKoZN22TJu4QklISd0Ry7Kd3kTwvjCVtHbOjXPg5Y+YMUMiJctA78YwhB0Za5dsDpKq9fq+/BvkBtFaM9VjSf6MZtj9Q1LkQKXUJXHmcfMRZ0JCzv2w1iv0op0JiD46D8mKo/EMmJpiskgxNBClOqBsSHKHVXBoX55kIqLPAC6vm3CKsnHT9oQNzLvkU5yhtlWCYXknxgwdAtYWFwGU5VDMgZIPYEvlMLaumxFwtKFjXqpg6Fyx0Te5PP/zodMo1LUibrAKNRmXuBO3BaIYroMNJqyz0RDxf6JsdfMGFS7MjWFI60ODWf88ytcTUc+5m8MR/VUlSaOAWkDugmFfsDodD2nrqznxHS1aqgIRLSFV9jLQ2cHfXLfKr/+z+BzHs7l6Exke9gU48nr7dXUeUF0jLG5kawpFXiGo90VmtrHgFXWTYWFWrR7XwCmd8IZTe3YWJ0pCKyQQ17XZQINdjqiE0OlHrekT4S7k7aGGnG+pyrOZzJaFsbjU+1UYB/yJMwbPQoqOvXxUiSyEpjFVzoFNeT3iCxmd6hnSq4ifXaqpJNE6lK2okvrdeSL0mSsrvpsFfjbSYTlE7koi+lmwhmXE5JeUijv1ExyKdMS5DNCtj0VMXILZRHXvqj3Iyap7B16QkDlctUl5+DEcumZ0hXay3pUEVn2IbxQXmSru8Uclams9J2RKHinLNa5/Zm5ygCenVvM0r8XX57MiJECcTkQiUyQq45NnKiDbOk5Xkc5EAHRQOxyVtR03vRGCWGlAaVO4N7Iobiml8ASMpdJethsE9eODc4KU/nCtl+VCOwAc4aURZH9zHuHzqN/cvv3J396Rlah/gk8boZNA2QqggHTfHHaw1s0RL++HBOGOsV18Gk/0AT7AjAOpdU9zrltWBb7121DK6D80Gca3z6wbqAQTJ/qUQyTVcWq5tc0MpH6+9WPlldzd5dfHMv1F/+u3bt1fczGggKXQG8b/Ck9MRjKtwhg6RmI7oTkyzIVQaMxiPCRJA/JSO2xD5OrEO4SsXiMBfX766+Nvo5benL7rzfZAw9DMuz0anfzs76c7x5/cQGkc5fX379m3N4Td8wS+dMrX4/J4vuKmGEyWNhbLTDX8CvuTCwgRtMtve+gzutyK48YT62HIIW09OR1uRH/OxihmWcwC2WuLZGsLWmoDKxQBbXjY0qymdxgQvDZpQiWbLf7ylP7c7/1QKyHNOxaKK61IMPcoHt/1UmqYy7GVquk2Te65u47+1xH2+sjMlW6LOqyExJ1dWZoGVGjbkXn7qTdFuV+x81gaUq4Ow/1TJ+t7yvpPMf0buQfI7Jc9B4h1Z05dcC2mdkF9vOSlvvdnpiHks4zimP2Ta5GeqY+HEu5hy4q9p0K3c549h3WvsO+/7v+Hd2omgC0H+GCL5vRzeBoH8X/OBe3twWmYPIGSSFSmaodO5szQCqu5F4Es3VFmN4MinI41j/R/SlW7c2n9U7/rgV9nD+/lo+BZXlMQnmNc71Ug76ziPovzKmY3cRUeVqenqYylnOXd3F3764Uc4gkRROc1i1dqqo17Yxt60F5GnKeu2TzHLKda+rpCO2U4NnaRSQXaZicuIhWzcqauhnkk4D2namNHAd1y4tIUSj3OurekAd3EsSTngoEpJuMi5otojd7s0hJc5ygiOM2UotVcaAuAaVr07FbkLnonUFyNcyUG5Ggnm7kagVHaGerwpS22dIKetLIoKE1xI4zNOn6ZquhRqGpl1Wa/oeUgw4wsEvsav7zhPJphY47IySt90yCjKhG/YSI3q1d30yC2n7oPupkob0qVNqRPJN+Q5VoSMyfFBN3Zf4DKCI2PEVJL0G5u8Q1lWISVtcQUrbI0Dd84LyglLSGvqEEFziJo0O/WqOh1z++4AHgflrmFeUPFoQYT5aQTg0qo8LyGU+9ux37FPm6sMKtSxypITbRyVgCYq83Vvkcx68EJZwAXqVagdcNksylgVPjrdclN++uHHyokCyonSCQbFpBKz6VF+DaEEXm12DGP2ApdjBj/9+39QHBGETwP//Z/ljOaom9Yyv0/O3GCXzflN3F6q7vt/wbZd5YLa1ivXTArFtp2NZuSRUqWj/HyysQZF5lzfBncypUvP65UR05CPM6aOBwuG/wQlap7B2ah1NNKaqsd7gTkXOiwIDUbtxnzBj+6EE2EpUtfCq0OFuOx9hgZh6W9CiSf2ZRBTznKlXqoaB3dFIL7micgEZf5hsauDEaY5pzqTdNcdSr4bx8WSawdHUqnR6z0sTA9KC1k/Ip4r05AgpP6KdCHMDK7QLtHfNzEIE+GKXc6qhuNGRdOjCYTS7lYnTOQjJaKb7rf7cgq1FUJ1L9QmS+ul9V/TRfAKQOqLeTqZiQWmDapHoZIsJIxZScKYwZyvQKPKUdK1BqozOcTeXTZ/bJBTpZ4in6YGNy/NO3Z7m/0DMVRSsBC8VcpX/kDhlQqHMne7YBuFe/tYwXEd0Lqq739+UGt0IzF54Es33gcrWaPabhZ8rOoa/E4zqzl/eXm/tCbIZu/Gv/gwjypIv19K44URdr8Sw6/Npfbw/xipm6v1Zq5/fXR+Vp1TMbwOevRme486nI6jkpnwN+a52HFG9tz1X4LibVZQKNxdsLd+k99G7k3l7iVIxL0nZDtva4UN1Fw+O2qRYjJu3P9qIpoRjWtb+VZ4uxxaVjLLXkQMr4+ro6CJoD4gGq81snpR49dB/iivELprDmj870FqXQp3IXji+oqhc9job9W9zssiJzfDok6DlwSXienMdru8EcM5F5nvU8bGL//nbis4YplIkLr4NX6626EFWq5Xa+iWy2VXv4lj4zqYuTJ2zmUDlCv7rv3MpJRKt4V5U18M+f+fcP0+P+HynW2L7+1ennHhflrgNOAm3Ep4TepE3eiBa0FXhzuL2LB918NfTngTsZkydIGA3dxQdPJKZ7e3NPyuQL3ylwwWXAt/e/n1DUuFcRep2HDCM9O9GdLUke0grHQHftF9kY1cl01+uapvdDAWhfseDVZv6bcHoftfXwihnk1uG0vXLjq1Ln48OR2x29v/Acbgr5o=
+sidebar_class_name: "get api-method"
+info_path: docs/api/workflows/workflows-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List issues linked to workflow"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/workflows/{workflowId}/issues"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the issue types (ticket categories) that are linked to a specific workflow. Issues determine the initial categorization of tickets.
+
+**Note**: This endpoint is part of API version 1.0 which is marked as deprecated.
+
+**Authentication**: Requires authenticated user.
+
+**Use Case**: Understand which issue types will use this workflow when tickets are created.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"workflowId","in":"path","required":true,"description":"UUID of the workflow whose linked issues should be listed.","schema":{"type":"string","format":"uuid"},"example":"11111111-2222-3333-4444-555555555555"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Linked issues retrieved successfully","content":{"application/json":{"schema":{"type":"object","description":"Envelope returned when listing issues linked to a workflow.","properties":{"ItemCount":{"type":"integer","description":"Number of issues returned."},"Items":{"type":"array","description":"Collection of issues linked to the workflow.","items":{"type":"object","properties":{"IssueId":{"type":"string","format":"uuid"},"SiteId":{"type":"string","format":"uuid","nullable":true},"ProductId":{"type":"string","format":"uuid","nullable":true},"Scope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"IssueTypeId":{"type":"string","format":"uuid"},"IssueTypeScope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"Name":{"type":"string"},"SortOrder":{"type":"integer"},"IssueCategoryId":{"type":"string","format":"uuid"},"IssueCategoryName":{"type":"string","nullable":true},"IssueCategoryIcon":{"type":"string","nullable":true},"IssueCategorySortOrder":{"type":"integer"},"IssueCategoryScope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"ModelCategoryId":{"type":"string","format":"uuid"},"ModelCategoryName":{"type":"string","nullable":true},"EnabledByDefault":{"type":"boolean"},"Models":{"type":"array","items":{"type":"object","properties":{"SiteId":{"type":"string","format":"uuid","nullable":true},"ModelIssueId":{"type":"string","format":"uuid"},"Scope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"]},"IssueId":{"type":"string","format":"uuid"},"ModelId":{"type":"string","format":"uuid"},"Apps":{"type":"array","items":{"type":"object","properties":{"AppId":{"type":"string"},"ModelIssueId":{"type":"string","format":"uuid"},"NameOverride":{"type":"string","nullable":true}},"example":{"AppId":"google-admin","ModelIssueId":"c3d4e5f6-a7b8-9012-c3d4-e5f6a7b89012","NameOverride":"Chromebook Hardware Issue"},"title":"AppModelIssue"},"nullable":true}},"example":{"SiteId":"e5f6a7b8-c9d0-1234-e5f6-a7b8c9d01234","ModelIssueId":"c3d4e5f6-a7b8-9012-c3d4-e5f6a7b89012","Scope":"Global","IssueId":"a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890","ModelId":"d4e5f6a7-b8c9-0123-d4e5-f6a7b8c90123"},"title":"ModelIssue"},"nullable":true},"WorkflowId":{"type":"string","format":"uuid","nullable":true}},"example":{"IssueId":"a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890","SiteId":"e5f6a7b8-c9d0-1234-e5f6-a7b8c9d01234","ProductId":"12345678-90ab-cdef-1234-567890abcdef","Scope":"Global","IssueTypeId":"b2c3d4e5-f6a7-8901-b2c3-d4e5f6a78901","Name":"Broken Screen","SortOrder":1,"IssueCategoryName":"Hardware","EnabledByDefault":true},"title":"Issue"}},"UserToken":{"type":"string","format":"uuid","description":"Echo of the UserToken header that authenticated the request."},"RequestDate":{"type":"string","format":"date-time","description":"Server-side timestamp indicating when the request was processed."},"ExecutionTime":{"type":"number","description":"Server processing time in milliseconds."},"StatusCode":{"type":"integer","description":"HTTP status code emitted by the service."},"ServerName":{"type":"string","description":"Name of the server instance that fulfilled the request."},"ProcessId":{"type":"integer","description":"Internal process identifier logged by the service."},"OperationId":{"type":"string","description":"Trace identifier correlating this call with server logs."},"Properties":{"type":"object","description":"Additional diagnostic metadata, if any.","additionalProperties":{"type":"string"}}},"required":["ItemCount","Items","StatusCode"],"title":"WorkflowIssueListResponse"},"example":{"ItemCount":2,"Items":[{"IssueId":"aaaaaaaa-1111-2222-3333-444444444444","Scope":"Site","IssueTypeId":"bbbbbbbb-2222-3333-4444-555555555555","Name":"Hardware Issue","SortOrder":1,"IssueCategoryId":"cccccccc-3333-4444-5555-666666666666","IssueCategoryName":"Device Issues","IssueCategorySortOrder":1,"EnabledByDefault":true},{"IssueId":"dddddddd-4444-5555-6666-777777777777","Scope":"Site","IssueTypeId":"eeeeeeee-5555-6666-7777-888888888888","Name":"Software Issue","SortOrder":2,"IssueCategoryId":"cccccccc-3333-4444-5555-666666666666","IssueCategoryName":"Device Issues","IssueCategorySortOrder":1,"EnabledByDefault":true}],"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2025-12-10T20:15:00.000Z","ExecutionTime":22.4,"StatusCode":200,"ServerName":"spark-services-demo","ProcessId":1,"OperationId":"getLinkedIssues","Properties":{}}}}},"404":{"description":"Workflow not found","content":{"application/json":{"schema":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

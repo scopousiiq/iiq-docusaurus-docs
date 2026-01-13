@@ -1,0 +1,33 @@
+---
+id: ticketcanceloptions
+title: "TicketCancelOptions"
+description: "Options for canceling a ticket, including an optional close reason."
+sidebar_label: "TicketCancelOptions"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"CloseReasonTypeId":"c98ae44e-ada0-4ae7-ae30-817785c00004"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketCancelOptions"}
+>
+</Heading>
+
+
+
+Options for canceling a ticket, including an optional close reason.
+
+<Schema
+  schema={{"type":"object","description":"Options for canceling a ticket, including an optional close reason.","properties":{"CloseReasonTypeId":{"type":"string","format":"uuid","description":"Optional identifier for the close reason type. Obtain available values from site settings via [GET /api/v1.0/sites/{siteUrl}](/docs/api/sites/get-site-by-url) and read `Item.Settings.CloseReasonTypes[]`.","nullable":true,"x-obtained-from":{"operationId":"getSiteByUrl","endpoint":"GET /api/v1.0/sites/{siteUrl}","responseField":"Item.Settings.CloseReasonTypes[].CloseReasonTypeId"},"example":"c98ae44e-ada0-4ae7-ae30-817785c00004"}},"example":{"CloseReasonTypeId":"c98ae44e-ada0-4ae7-ae30-817785c00004"},"title":"TicketCancelOptions"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

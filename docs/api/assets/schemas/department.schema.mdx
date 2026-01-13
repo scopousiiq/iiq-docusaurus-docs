@@ -1,0 +1,33 @@
+---
+id: department
+title: "Department"
+description: "User department assignment. Mirrors `Spark.Shared.Models.Department`."
+sidebar_label: "Department"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"DepartmentId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Department"}
+>
+</Heading>
+
+
+
+User department assignment. Mirrors `Spark.Shared.Models.Department`.
+
+<Schema
+  schema={{"type":"object","description":"User department assignment. Mirrors `Spark.Shared.Models.Department`.","properties":{"DepartmentId":{"type":"string","format":"uuid","description":"Unique identifier for the department."},"SiteId":{"type":"string","format":"uuid","description":"Site this department belongs to."},"Name":{"type":"string","description":"Display name of the department (e.g., 'IT', 'HR', 'Facilities')."},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the department was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the department was last modified."}},"title":"Department"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

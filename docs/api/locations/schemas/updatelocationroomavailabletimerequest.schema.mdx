@@ -1,0 +1,33 @@
+---
+id: updatelocationroomavailabletimerequest
+title: "UpdateLocationRoomAvailableTimeRequest"
+description: "Request model for creating or updating room availability times. Extends LocationRoomAvailableTime."
+sidebar_label: "UpdateLocationRoomAvailableTimeRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"LocationRoomAvailableTimeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationRoomId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Weekday":0,"IsClosed":true,"LocalStartTime":"08:00:00","LocalEndTime":"17:00:00","IsDeleted":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateLocationRoomAvailableTimeRequest"}
+>
+</Heading>
+
+
+
+Request model for creating or updating room availability times. Extends LocationRoomAvailableTime.
+
+<Schema
+  schema={{"type":"object","description":"Request model for creating or updating room availability times. Extends LocationRoomAvailableTime.","properties":{"LocationRoomAvailableTimeId":{"type":"string","format":"uuid","nullable":true,"description":"Unique identifier for this availability record. Null for new records."},"LocationRoomId":{"type":"string","format":"uuid","nullable":true,"description":"Reference to the parent room"},"Weekday":{"type":"integer","minimum":0,"maximum":6,"description":"Day of the week (0=Sunday, 1=Monday, ..., 6=Saturday)"},"IsClosed":{"type":"boolean","description":"Whether the room is closed/unavailable on this day"},"LocalStartTime":{"type":"string","nullable":true,"description":"Start time of availability window in local time (HH:mm:ss format)","example":"08:00:00"},"LocalEndTime":{"type":"string","nullable":true,"description":"End time of availability window in local time (HH:mm:ss format)","example":"17:00:00"},"IsDeleted":{"type":"boolean","description":"Whether this availability record should be deleted"}},"title":"UpdateLocationRoomAvailableTimeRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

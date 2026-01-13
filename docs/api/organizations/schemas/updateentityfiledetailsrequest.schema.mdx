@@ -1,0 +1,33 @@
+---
+id: updateentityfiledetailsrequest
+title: "UpdateEntityFileDetailsRequest"
+description: "Request payload for updating file associations on an entity (location floorplans, images, etc.)"
+sidebar_label: "UpdateEntityFileDetailsRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"FileData":[{"FileId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Description":"string"}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateEntityFileDetailsRequest"}
+>
+</Heading>
+
+
+
+Request payload for updating file associations on an entity (location floorplans, images, etc.)
+
+<Schema
+  schema={{"type":"object","description":"Request payload for updating file associations on an entity (location floorplans, images, etc.)","properties":{"FileData":{"type":"array","items":{"type":"object","description":"File metadata associated with an entity (location, room, etc.). Used for floorplans, images, and other file attachments.","properties":{"FileId":{"type":"string","format":"uuid","description":"Unique identifier for the file"},"Description":{"type":"string","nullable":true,"description":"Optional description or caption for the file"}},"required":["FileId"],"title":"EntityFileDetail"},"description":"Array of file details to associate with the entity. Existing files not in this list will be removed."}},"required":["FileData"],"title":"UpdateEntityFileDetailsRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: workflowcustomfieldlistresponse
+title: "WorkflowCustomFieldListResponse"
+description: "Envelope returned when listing custom fields linked to a workflow."
+sidebar_label: "WorkflowCustomFieldListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":0,"Items":[{"SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CustomFieldId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Scope":"All","App":{},"CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CustomFieldType":{},"EntityTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsRequired":true,"IsReadOnly":true,"IsSystemField":true,"DisplayOrder":0,"TypeDisplayOrder":0,"SetDisplayOrder":0,"EditorTypeId":0,"Options":"string","IsDeleted":true,"OriginSourceId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","OriginId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","FilterSetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}],"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":0,"ServerName":"string","ProcessId":0,"OperationId":"string","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"WorkflowCustomFieldListResponse"}
+>
+</Heading>
+
+
+
+Envelope returned when listing custom fields linked to a workflow.
+
+<Schema
+  schema={{"type":"object","description":"Envelope returned when listing custom fields linked to a workflow.","properties":{"ItemCount":{"type":"integer","description":"Number of custom fields returned."},"Items":{"type":"array","description":"Collection of custom fields linked to the workflow.","items":{"type":"object","description":"Custom field definition associated with a workflow or entity.","properties":{"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site that owns this custom field, null for global fields."},"ProductId":{"type":"string","format":"uuid","nullable":true,"description":"Product this custom field applies to."},"CustomFieldId":{"type":"string","format":"uuid","description":"Unique identifier for the custom field."},"Scope":{"type":"string","enum":["All","System","Global","Site","App","User","Role","Team"],"description":"Scope level of the custom field."},"App":{"type":"object","nullable":true,"description":"App information if this is an app-scoped field."},"CustomFieldTypeId":{"type":"string","format":"uuid","description":"Type of custom field."},"CustomFieldType":{"type":"object","nullable":true,"description":"Expanded custom field type definition."},"EntityTypeId":{"type":"string","format":"uuid","description":"Entity type this field applies to (Ticket, Asset, User, etc.)."},"IsRequired":{"type":"boolean","description":"Whether the field is required."},"IsReadOnly":{"type":"boolean","description":"Whether the field is read-only."},"IsSystemField":{"type":"boolean","description":"Whether this is a system-defined field."},"DisplayOrder":{"type":"integer","description":"Display order in forms."},"TypeDisplayOrder":{"type":"integer","description":"Display order within field type grouping."},"SetDisplayOrder":{"type":"integer","description":"Display order within field set."},"EditorTypeId":{"type":"integer","description":"Editor type for rendering (text, dropdown, date, etc.)."},"Options":{"type":"string","nullable":true,"description":"JSON string containing field options/configuration."},"IsDeleted":{"type":"boolean","description":"Whether the field has been soft-deleted."},"OriginSourceId":{"type":"string","format":"uuid","nullable":true,"description":"Source system identifier for migrated fields."},"OriginId":{"type":"string","format":"uuid","nullable":true,"description":"Original identifier from source system."},"FilterSetId":{"type":"string","format":"uuid","nullable":true,"description":"Filter set this field belongs to."}},"required":["CustomFieldId","CustomFieldTypeId","EntityTypeId","IsRequired","IsReadOnly","IsSystemField","DisplayOrder","EditorTypeId","IsDeleted"],"title":"CustomField"}},"UserToken":{"type":"string","format":"uuid","description":"Echo of the UserToken header that authenticated the request."},"RequestDate":{"type":"string","format":"date-time","description":"Server-side timestamp indicating when the request was processed."},"ExecutionTime":{"type":"number","description":"Server processing time in milliseconds."},"StatusCode":{"type":"integer","description":"HTTP status code emitted by the service."},"ServerName":{"type":"string","description":"Name of the server instance that fulfilled the request."},"ProcessId":{"type":"integer","description":"Internal process identifier logged by the service."},"OperationId":{"type":"string","description":"Trace identifier correlating this call with server logs."},"Properties":{"type":"object","description":"Additional diagnostic metadata, if any.","additionalProperties":{"type":"string"}}},"required":["ItemCount","Items","StatusCode"],"title":"WorkflowCustomFieldListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

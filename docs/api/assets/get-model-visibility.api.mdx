@@ -1,0 +1,82 @@
+---
+id: get-model-visibility
+title: "Get model visibility"
+description: "Checks whether a specific model is visible or eligible for the given asset context. Use this when validating model selection during swaps, replacements, or category restrictions."
+sidebar_label: "Get model visibility"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/assets/assets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get model visibility"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/assets/{assetId}/{modelId}/visibility"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Checks whether a specific model is visible or eligible for the given asset context. Use this when validating model selection during swaps, replacements, or category restrictions.
+
+**Prerequisites**
+1. **assetId** - Obtain from [POST /api/v1.0/assets/search](/docs/api/assets/keyword-search-assets) or [GET /api/v1.0/assets/\{assetId\}](/docs/api/assets/get-asset-by-id).
+2. **modelId** - Obtain from the asset record or by querying models via [POST /api/v1.0/models](/docs/api/model-issues/get-issues-for-models).
+
+**Workflow Example**
+1. Load the asset to confirm its current model/category.
+2. Choose the candidate model and capture its `ModelId`.
+3. [GET /api/v1.0/assets/\{assetId\}/\{modelId\}/visibility](/docs/api/assets/get-model-visibility) to confirm eligibility.
+
+**Minimal Required Fields**: `assetId`, `modelId` (path).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"assetId","in":"path","required":true,"description":"UUID of the asset","schema":{"type":"string","format":"uuid"}},{"name":"modelId","in":"path","required":true,"description":"UUID of the model","schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Visibility status returned","content":{"application/json":{"schema":{"type":"object","description":"Visibility status returned","properties":{"Item":{"type":"boolean"},"StatusCode":{"type":"integer"}},"title":"AssetModelVisibilityResponse"}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,33 @@
+---
+id: bulkassignworkpackagerequest
+title: "BulkAssignWorkpackageRequest"
+description: "Request payload for bulk assigning a work package to tickets."
+sidebar_label: "BulkAssignWorkpackageRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Request":{"WorkpackageId":"44444444-4444-4444-8444-444444444444","SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","ProductId":"88df910c-91aa-e711-80c2-0004ffa00010","CreatedDate":"2024-07-29T15:51:28.071Z","UserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"IncidentIQ Demo High School Chromebook Rollout","IsSaved":true,"IsComplete":false,"TotalTickets":10,"MaxPriority":200,"ClosedTickets":2,"PercentComplete":20,"Tickets":[{"WorkpackageId":"44444444-4444-4444-8444-444444444444","TicketId":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8","IsClosed":false,"Priority":100}]}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"BulkAssignWorkpackageRequest"}
+>
+</Heading>
+
+
+
+Request payload for bulk assigning a work package to tickets.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for bulk assigning a work package to tickets.","properties":{"TicketIds":{"type":"array","description":"Array of ticket identifiers to update.","items":{"type":"string","format":"uuid"},"minItems":1},"Request":{"allOf":[{"type":"object","description":"Work package container used to group and schedule ticket work.","properties":{"WorkpackageId":{"type":"string","format":"uuid","description":"Work package identifier.","example":"44444444-4444-4444-8444-444444444444"},"SiteId":{"type":"string","format":"uuid","description":"Site identifier that owns the work package.","example":"bb6cece8-e4f4-e511-a789-005056bb000e"},"ProductId":{"type":"string","format":"uuid","description":"Product identifier that owns the work package.","example":"88df910c-91aa-e711-80c2-0004ffa00010"},"CreatedDate":{"type":"string","format":"date-time","description":"When the work package was created."},"UserId":{"type":"string","format":"uuid","description":"User identifier that created or owns the work package."},"Name":{"type":"string","description":"Work package name.","example":"IncidentIQ Demo High School Chromebook Rollout"},"IsSaved":{"type":"boolean","description":"Whether the work package is saved.","example":true},"IsComplete":{"type":"boolean","description":"Whether the work package is marked complete.","example":false},"TotalTickets":{"type":"integer","description":"Total tickets in the work package.","example":10},"MaxPriority":{"type":"integer","description":"Maximum priority score among tickets.","example":200},"ClosedTickets":{"type":"integer","description":"Number of closed tickets in the work package.","example":2},"PercentComplete":{"type":"number","format":"float","description":"Percent completion value.","example":20},"Tickets":{"type":"array","description":"Optional embedded tickets list.","nullable":true,"items":{"type":"object","description":"Ticket entry inside a work package.","properties":{"WorkpackageId":{"type":"string","format":"uuid","description":"Work package identifier.","example":"44444444-4444-4444-8444-444444444444"},"TicketId":{"type":"string","format":"uuid","description":"Ticket identifier.","example":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8"},"IsClosed":{"type":"boolean","description":"Whether the ticket is closed.","example":false},"Priority":{"type":"integer","description":"Ticket numeric priority score.","example":100}},"required":["WorkpackageId","TicketId","IsClosed","Priority"],"title":"WorkpackageTicket"}}},"required":["WorkpackageId","SiteId","ProductId","CreatedDate","UserId","Name","IsSaved","IsComplete","TotalTickets","MaxPriority","ClosedTickets","PercentComplete"],"title":"Workpackage"}],"type":"object","description":"Work package payload (the service commonly consumes WorkpackageId)."}},"required":["TicketIds","Request"],"title":"BulkAssignWorkpackageRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

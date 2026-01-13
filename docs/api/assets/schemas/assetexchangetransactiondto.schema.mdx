@@ -1,0 +1,33 @@
+---
+id: assetexchangetransactiondto
+title: "AssetExchangeTransactionDto"
+description: "Identifies a specific exchange transaction linked to a checkout."
+sidebar_label: "AssetExchangeTransactionDto"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetCheckoutId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ExchangeActionId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetExchangeTransactionDto"}
+>
+</Heading>
+
+
+
+Identifies a specific exchange transaction linked to a checkout.
+
+<Schema
+  schema={{"type":"object","description":"Identifies a specific exchange transaction linked to a checkout.","properties":{"AssetCheckoutId":{"type":"string","format":"uuid","description":"Checkout identifier."},"ExchangeActionId":{"type":"string","format":"uuid","description":"Inventory action identifier representing the exchange."}},"required":["AssetCheckoutId","ExchangeActionId"],"title":"AssetExchangeTransactionDto"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

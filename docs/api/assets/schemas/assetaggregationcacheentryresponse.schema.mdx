@@ -1,0 +1,33 @@
+---
+id: assetaggregationcacheentryresponse
+title: "AssetAggregationCacheEntryResponse"
+description: "Response containing aggregated asset cost values"
+sidebar_label: "AssetAggregationCacheEntryResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":{"TotalPurchasePrice":0,"TotalReplacementCost":0,"TotalCurrentValue":0,"TotalCostToDate":0,"AssetCount":0},"StatusCode":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetAggregationCacheEntryResponse"}
+>
+</Heading>
+
+
+
+Response containing aggregated asset cost values
+
+<Schema
+  schema={{"type":"object","description":"Response containing aggregated asset cost values","properties":{"Item":{"type":"object","description":"Aggregated cost values for a set of assets","properties":{"TotalPurchasePrice":{"type":"number","format":"decimal","nullable":true,"description":"Sum of purchase prices"},"TotalReplacementCost":{"type":"number","format":"decimal","nullable":true,"description":"Sum of replacement costs"},"TotalCurrentValue":{"type":"number","format":"decimal","nullable":true,"description":"Sum of current valuations"},"TotalCostToDate":{"type":"number","format":"decimal","nullable":true,"description":"Sum of total costs to date"},"AssetCount":{"type":"integer","description":"Number of assets in the aggregation"}},"title":"AssetAggregationCacheEntry"},"StatusCode":{"type":"integer"}},"title":"AssetAggregationCacheEntryResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: registerexternaluserrequest
+title: "RegisterExternalUserRequest"
+description: "Request to register an external (guest) user. Mirrors `Spark.Shared.Models.Requests.RegisterExternalUserRequest`. Note: SiteId and Ip are set by the server."
+sidebar_label: "RegisterExternalUserRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"FirstName":"string","LastName":"string","Username":"string","Password":"string","LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"RegisterExternalUserRequest"}
+>
+</Heading>
+
+
+
+Request to register an external (guest) user. Mirrors `Spark.Shared.Models.Requests.RegisterExternalUserRequest`. Note: SiteId and Ip are set by the server.
+
+<Schema
+  schema={{"type":"object","description":"Request to register an external (guest) user. Mirrors `Spark.Shared.Models.Requests.RegisterExternalUserRequest`. Note: SiteId and Ip are set by the server.","properties":{"FirstName":{"type":"string","description":"First name of the new user."},"LastName":{"type":"string","description":"Last name of the new user."},"Username":{"type":"string","description":"Username/email for the new user account."},"Password":{"type":"string","format":"password","description":"Password for the new user account."},"LocationId":{"type":"string","format":"uuid","description":"Location where the user should be assigned."}},"title":"RegisterExternalUserRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

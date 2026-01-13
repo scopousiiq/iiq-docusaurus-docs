@@ -1,0 +1,33 @@
+---
+id: ticketactivityownersummary
+title: "TicketActivityOwnerSummary"
+description: "Owner or actor associated with a ticket activity entry"
+sidebar_label: "TicketActivityOwnerSummary"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"UserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","Name":"MicroK12 API User","FullName":"string","Initials":"MA","FirstName":"string","LastName":"string","LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RoleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","IsOnline":true,"IsEmailVerified":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketActivityOwnerSummary"}
+>
+</Heading>
+
+
+
+Owner or actor associated with a ticket activity entry
+
+<Schema
+  schema={{"type":"object","description":"Owner or actor associated with a ticket activity entry","properties":{"UserId":{"type":"string","format":"uuid","description":"Unique identifier of the user"},"SiteId":{"type":"string","format":"uuid","description":"Site context for the user","example":"bb6cece8-e4f4-e511-a789-005056bb000e"},"Name":{"type":"string","description":"Display name for the user","example":"MicroK12 API User"},"FullName":{"type":"string","description":"Full name returned by the platform","nullable":true},"Initials":{"type":"string","description":"User initials rendered in UI badges","nullable":true,"example":"MA"},"FirstName":{"type":"string","nullable":true},"LastName":{"type":"string","nullable":true},"LocationId":{"type":"string","format":"uuid","nullable":true,"description":"Primary location associated with the user"},"RoleId":{"type":"string","format":"uuid","nullable":true,"description":"Role identifier for the user"},"IsOnline":{"type":"boolean","description":"Indicates if the user is marked as online"},"IsEmailVerified":{"type":"boolean","description":"Whether the user's email address has been verified"}},"required":["UserId","Name","IsOnline","IsEmailVerified"],"title":"TicketActivityOwnerSummary"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

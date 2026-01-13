@@ -1,0 +1,80 @@
+---
+id: bulk-delete-linked-assets
+title: "Bulk delete linked assets"
+description: "Removes multiple parent-child asset relationships in a single request. Unlike the single-parent delete endpoint, this allows unlinking assets across different parents."
+sidebar_label: "Bulk delete linked assets"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "delete api-method"
+info_path: docs/api/assets/assets-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Bulk delete linked assets"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1.0/assets/linked/to"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Removes multiple parent-child asset relationships in a single request. Unlike the single-parent delete endpoint, this allows unlinking assets across different parents.
+
+**Prerequisites**
+1. **Link identifiers** - For each relationship to remove, provide the `ParentAssetId` and `ChildAssetId`.
+
+**Workflow Example**
+1. Identify the linked asset relationships to remove.
+2. [DELETE /api/v1.0/assets/linked/to](/docs/api/assets/bulk-delete-linked-assets) with an array of LinkedAsset objects.
+
+**Minimal Required Fields**: Array of objects with `ParentAssetId` and `ChildAssetId`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"array","items":{"type":"object","description":"Represents a parent-child relationship between two assets. Used to link accessories, peripherals, or components to a main asset.","properties":{"ParentAssetId":{"type":"string","format":"uuid","description":"UUID of the parent asset in the relationship"},"ChildAssetId":{"type":"string","format":"uuid","description":"UUID of the child asset being linked"},"CreatedDate":{"type":"string","format":"date-time","description":"Date and time when the link was created"},"Description":{"type":"string","nullable":true,"description":"Optional description of the relationship"}},"required":["ParentAssetId","ChildAssetId"],"title":"LinkedAsset"},"title":"LinkedAssetListRequest"},"example":[{"ParentAssetId":"11111111-2222-3333-4444-555555555555","ChildAssetId":"aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"},{"ParentAssetId":"22222222-3333-4444-5555-666666666666","ChildAssetId":"bbbbbbbb-cccc-dddd-eeee-ffffffffffff"}]}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Assets unlinked successfully","content":{"application/json":{"schema":{"type":"object","description":"Generic response for actions that do not return a specific entity. Extends BaseResponse with no additional properties. Used for operations like enabling, disabling, or triggering workflows.","properties":{"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Message":{"type":"string","nullable":true,"description":"Optional informational or error message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors that did not prevent the operation"}},"required":["StatusCode"],"title":"ActionResponse"}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

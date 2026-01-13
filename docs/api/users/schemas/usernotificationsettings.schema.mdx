@@ -1,0 +1,33 @@
+---
+id: usernotificationsettings
+title: "UserNotificationSettings"
+description: "Notification settings for a user. Mirrors `Spark.Shared.Models.UserOptionsNotifications`."
+sidebar_label: "UserNotificationSettings"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketCreated":true,"TicketUpdated":true,"TicketAssignedToYou":true,"TicketAssignedToTeam":true,"TicketDisableFollowerNotifications":true,"AssetChanged":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UserNotificationSettings"}
+>
+</Heading>
+
+
+
+Notification settings for a user. Mirrors `Spark.Shared.Models.UserOptionsNotifications`.
+
+<Schema
+  schema={{"type":"object","description":"Notification settings for a user. Mirrors `Spark.Shared.Models.UserOptionsNotifications`.","properties":{"TicketCreated":{"type":"boolean","description":"Receive notifications when a ticket is created."},"TicketUpdated":{"type":"boolean","description":"Receive notifications when a ticket is updated."},"TicketAssignedToYou":{"type":"boolean","description":"Receive notifications when a ticket is assigned to you."},"TicketAssignedToTeam":{"type":"boolean","description":"Receive notifications when a ticket is assigned to your team."},"TicketDisableFollowerNotifications":{"type":"boolean","description":"Disable notifications for tickets you are following."},"AssetChanged":{"type":"boolean","description":"Receive notifications when an asset is changed."}},"title":"UserNotificationSettings"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

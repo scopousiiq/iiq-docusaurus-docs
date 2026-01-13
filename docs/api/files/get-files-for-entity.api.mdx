@@ -1,0 +1,85 @@
+---
+id: get-files-for-entity
+title: "Get files for an entity"
+description: "Retrieves all files associated with a specific entity. This endpoint is commonly used to get files attached to users, assets, tickets, or other entity types."
+sidebar_label: "Get files for an entity"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/files/files-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get files for an entity"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/files/entity/{EntityTypeId}/{EntityId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves all files associated with a specific entity. This endpoint is commonly used to get files attached to users, assets, tickets, or other entity types.
+
+**Permission Notes**:
+- Private files (marked as internal) are only returned if the user has the `USERS_FILES_VIEW_PRIVATE` permission.
+- Without this permission, only non-private files are returned.
+
+**Common Entity Types**:
+- Users: `EntityTypeId` = User entity type UUID
+- Assets: `EntityTypeId` = Asset entity type UUID
+- Tickets: `EntityTypeId` = Ticket entity type UUID
+
+**Workflow Example**:
+1. Get entity type ID from [GET /api/v1.0/entity-types](/docs/api/custom-fields/get-custom-field-entity-mapping-entity-types)
+2. Call this endpoint with the entity type and specific entity ID
+3. Iterate through returned files to display or download
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"EntityTypeId","in":"path","required":true,"description":"UUID identifying the type of entity (e.g., User, Asset, Ticket)","schema":{"type":"string","format":"uuid"}},{"name":"EntityId","in":"path","required":true,"description":"UUID of the specific entity to retrieve files for","schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Files retrieved successfully","content":{"application/json":{"schema":{"type":"object","description":"Response envelope containing a list of files.","properties":{"Items":{"type":"array","description":"List of file metadata objects","items":{"type":"object","description":"Represents a file stored in the IncidentIQ system. Files can be attached to tickets, assets, users, and other entities.","properties":{"FileId":{"type":"string","format":"uuid","description":"Unique identifier for the file"},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site/district identifier the file belongs to"},"Name":{"type":"string","description":"Display name for the file","example":"screenshot.png"},"FileName":{"type":"string","description":"Physical filename as stored on the server","example":"screenshot.png"},"Url":{"type":"string","description":"URL path to access or download the file","example":"/api/v1.0/files/a1b2c3d4-e5f6-7890-abcd-ef1234567890"},"FileType":{"description":"Classification of the file type","allOf":[{"type":"integer","description":"File type classification enum from Spark.Shared.Enums.FileTypes. Determines how the file is categorized and handled by the system.","oneOf":[{"enum":[0],"title":"Other","description":"Default file type for uncategorized files"},{"enum":[1],"title":"Photo","description":"User profile photo or avatar image"},{"enum":[2],"title":"Logo","description":"Organization or location logo"},{"enum":[3],"title":"Floorplan","description":"Location floorplan or layout image"},{"enum":[4],"title":"Icon","description":"Small icon or pictogram"},{"enum":[5],"title":"AssetImage","description":"Image associated with an asset"},{"enum":[6],"title":"TicketAttachment","description":"File attached to a ticket"},{"enum":[7],"title":"KnowledgeBaseAttachment","description":"File attached to a knowledge base article"},{"enum":[8],"title":"Import","description":"Data import file (CSV, Excel, etc.)"},{"enum":[9],"title":"Export","description":"Data export file"},{"enum":[10],"title":"Report","description":"Generated report file"},{"enum":[11],"title":"CustomFieldFile","description":"File uploaded via a custom field"},{"enum":[12],"title":"Signature","description":"Electronic signature image"},{"enum":[13],"title":"FormSubmissionAttachment","description":"File attached to a form submission"}],"default":0,"example":6,"title":"FileType"}]},"MimeType":{"type":"string","description":"MIME type of the file content","example":"image/png"},"Size":{"type":"integer","description":"File size in bytes","example":245760},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the file was uploaded"},"CreatedById":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the user who uploaded the file"},"IsPrivateInternal":{"type":"boolean","description":"When true, the file is only visible to internal/agent users","default":false},"IsDeleted":{"type":"boolean","description":"Whether the file has been soft-deleted","default":false},"ModifiedDate":{"type":"string","format":"date-time","nullable":true,"description":"Timestamp when the file metadata was last modified"},"ExpirationDate":{"type":"string","format":"date-time","nullable":true,"description":"Optional expiration date after which the file should be deleted"}},"required":["FileId","FileName","FileType","MimeType","Size","CreatedDate"],"example":{"FileId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","Name":"screenshot.png","FileName":"screenshot.png","Url":"/api/v1.0/files/a1b2c3d4-e5f6-7890-abcd-ef1234567890","FileType":6,"MimeType":"image/png","Size":245760,"CreatedDate":"2025-12-09T14:30:00.000Z","CreatedById":"51c89694-ae9f-f011-8e61-6045bd7991ab","IsPrivateInternal":false,"IsDeleted":false},"title":"File"}},"Paging":{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"},"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"}},"required":["Items","StatusCode"],"title":"FileListResponse"},"example":{"Items":[{"FileId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","Name":"profile-photo.jpg","FileName":"profile-photo.jpg","Url":"/api/v1.0/files/a1b2c3d4-e5f6-7890-abcd-ef1234567890","FileType":1,"MimeType":"image/jpeg","Size":125000,"CreatedDate":"2025-12-09T10:30:00.000Z","CreatedById":"51c89694-ae9f-f011-8e61-6045bd7991ab","IsPrivateInternal":false,"IsDeleted":false},{"FileId":"b2c3d4e5-f6a7-8901-bcde-f23456789012","SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","Name":"document.pdf","FileName":"document.pdf","Url":"/api/v1.0/files/b2c3d4e5-f6a7-8901-bcde-f23456789012","FileType":0,"MimeType":"application/pdf","Size":450000,"CreatedDate":"2025-12-08T14:15:00.000Z","CreatedById":"51c89694-ae9f-f011-8e61-6045bd7991ab","IsPrivateInternal":false,"IsDeleted":false}],"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2025-12-09T14:35:00.000Z","ExecutionTime":32.5,"StatusCode":200,"ServerName":"spark-api-7bcdf6964c-2xr98","ProcessId":1}}}},"401":{"description":"Unauthorized - Authentication required","content":{"application/json":{"schema":{"type":"object","description":"Error response for authentication failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (401)","example":401},"Message":{"type":"string","description":"Human-readable description of the authentication error","example":"Authentication required. Please provide valid credentials."}},"required":["StatusCode","Message"],"title":"UnauthorizedError"}}}},"403":{"description":"Forbidden - User does not have permission to view files for this entity","content":{"application/json":{"schema":{"type":"object","description":"Error response for authorization/permission failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (403)","example":403},"Message":{"type":"string","description":"Human-readable description of the authorization error","example":"You do not have permission to perform this action"}},"required":["StatusCode","Message"],"title":"ForbiddenError"}}}},"404":{"description":"Not found - Entity does not exist","content":{"application/json":{"schema":{"type":"object","description":"Error response when a requested resource is not found","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (404)","example":404},"Message":{"type":"string","description":"Human-readable description indicating the resource was not found","example":"The requested resource was not found"},"ResourceId":{"type":"string","description":"ID of the resource that was not found"}},"required":["StatusCode","Message"],"title":"NotFoundError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

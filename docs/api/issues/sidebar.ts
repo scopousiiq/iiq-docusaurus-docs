@@ -1,0 +1,412 @@
+import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
+
+const sidebar: SidebarsConfig = {
+  apisidebar: [
+    {
+      type: "doc",
+      id: "api/issues/issues-api",
+    },
+    {
+      type: "category",
+      label: "Configuration",
+      link: {
+        type: "doc",
+        id: "api/issues/issues-configuration",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/issues/get-available-issues",
+          label: "Get available issues",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/issues/get-models-for-issue",
+          label: "Get models for issue",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/issues/link-issue-to-app",
+          label: "Link issue to app",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/issues/unlink-issue-from-app",
+          label: "Unlink issue from app",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/issues/get-issue-roles",
+          label: "Get issue roles",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/issues/save-issue-options-for-site",
+          label: "Save issue options for site",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/issues/set-issue-sort-order",
+          label: "Set issue sort order",
+          className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Listing",
+      link: {
+        type: "doc",
+        id: "api/issues/issues-listing",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/issues/list-issues",
+          label: "List issues",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/issues/search-issues",
+          label: "Search issues",
+          className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Managing",
+      link: {
+        type: "doc",
+        id: "api/issues/issues-managing",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/issues/get-issue-by-id",
+          label: "Get issue by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/issues/update-issue",
+          label: "Update issue",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/issues/delete-issue",
+          label: "Delete issue",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/issues/create-issue",
+          label: "Create issue",
+          className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Types",
+      link: {
+        type: "doc",
+        id: "api/issues/issues-types",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/issues/list-issue-types",
+          label: "List issue types",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/issues/search-issue-types",
+          label: "Search issue types",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/issues/list-global-issue-types",
+          label: "List global issue types",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/issues/get-issue-type-by-id",
+          label: "Get issue type by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/issues/update-issue-type",
+          label: "Update issue type",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/issues/delete-issue-type",
+          label: "Delete issue type",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/issues/create-issue-type",
+          label: "Create issue type",
+          className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Schemas",
+      items: [
+        {
+          type: "doc",
+          id: "api/issues/schemas/actionresponse",
+          label: "ActionResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/appmodelissue",
+          label: "AppModelIssue",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/availableissueslistresponse",
+          label: "AvailableIssuesListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/category",
+          label: "Category",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/createissuerequest",
+          label: "CreateIssueRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/createissueresponse",
+          label: "CreateIssueResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/createissuetyperesponse",
+          label: "CreateIssueTypeResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/customfieldeditortypeid",
+          label: "CustomFieldEditorTypeId",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/customfieldtypedetail",
+          label: "CustomFieldTypeDetail",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/entitysiteoption",
+          label: "EntitySiteOption",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/forbiddenerror",
+          label: "ForbiddenError",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/getissuetypesrequest",
+          label: "GetIssueTypesRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/getissuesrequest",
+          label: "GetIssuesRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/internalservererror",
+          label: "InternalServerError",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/issue",
+          label: "Issue",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/issueitemresponse",
+          label: "IssueItemResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/issuelistresponse",
+          label: "IssueListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/issuemodelslistresponse",
+          label: "IssueModelsListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/issueroles",
+          label: "IssueRoles",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/issuerolesitemresponse",
+          label: "IssueRolesItemResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/issuetype",
+          label: "IssueType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/issuetypeitemresponse",
+          label: "IssueTypeItemResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/issuetypelistresponse",
+          label: "IssueTypeListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/itemcreateresponse",
+          label: "ItemCreateResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/itemdeleteresponse",
+          label: "ItemDeleteResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/itemgetresponse",
+          label: "ItemGetResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/itemupdateresponse",
+          label: "ItemUpdateResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/listgetresponse",
+          label: "ListGetResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/manufacturer",
+          label: "Manufacturer",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/manufacturerscope",
+          label: "ManufacturerScope",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/model",
+          label: "Model",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/modelissue",
+          label: "ModelIssue",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/pagingmetadata",
+          label: "PagingMetadata",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/saveissueoptionsforsiteissuesbyissueidsiterequest",
+          label: "SaveIssueOptionsForSiteIssuesByIssueIdSiteRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/softvalidationerror",
+          label: "SoftValidationError",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/unauthorizederror",
+          label: "UnauthorizedError",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/updateissueresponse",
+          label: "UpdateIssueResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/updateissuetyperesponse",
+          label: "UpdateIssueTypeResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/validationerror",
+          label: "ValidationError",
+          className: "schema",
+        },
+      ],
+    },
+  ],
+};
+
+export default sidebar.apisidebar;

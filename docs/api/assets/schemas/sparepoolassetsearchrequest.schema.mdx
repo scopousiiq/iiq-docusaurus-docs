@@ -1,0 +1,33 @@
+---
+id: sparepoolassetsearchrequest
+title: "SparePoolAssetSearchRequest"
+description: "Request payload submitted to search for available spare devices within a pool."
+sidebar_label: "SparePoolAssetSearchRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"OnlyShowDeleted":false,"Filters":[{"Facet":"assetsparepool","Id":"8db57703-895a-a2d2-0896-c8a9a0360925"},{"Facet":"AssetCustomField","CustomFieldTypeId":"a7ec781d-b42d-4727-abf4-8b132f182701","ComplexEditorPath":"0:IssueDate","Value":"date<2050-01-01","Negative":true},{"Facet":"ParentAsset","Id":null}],"FilterByViewPermission":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SparePoolAssetSearchRequest"}
+>
+</Heading>
+
+
+
+Request payload submitted to search for available spare devices within a pool.
+
+<Schema
+  schema={{"type":"object","description":"Request payload submitted to search for available spare devices within a pool.","properties":{"OnlyShowDeleted":{"type":"boolean","description":"When true, restricts results to deleted assets.","default":false},"Filters":{"type":"array","description":"Collection of filters that scope the spare inventory.","items":{"type":"object","description":"Filter condition applied when searching spare pool inventory.","properties":{"Facet":{"type":"string","description":"Filter facet name such as `assetsparepool`, `AssetCustomField`, or `ParentAsset`."},"Id":{"type":"string","format":"uuid","description":"Identifier value used by facets referencing a specific pool or asset.","nullable":true},"CustomFieldTypeId":{"type":"string","format":"uuid","description":"Custom-field identifier when filtering by a spare metadata field.","nullable":true},"ComplexEditorPath":{"type":"string","description":"Path to the nested property within a complex custom field (e.g., `0:IssueDate`).","nullable":true},"Value":{"type":"string","description":"Raw value to compare against (supporting operators like `date<YYYY-MM-DD`).","nullable":true},"Negative":{"type":"boolean","description":"When true, inverts the filter to exclude matching records.","default":false}},"required":["Facet"],"additionalProperties":false,"title":"SparePoolAssetSearchFilter"}},"FilterByViewPermission":{"type":"boolean","description":"When true, the API restricts results to assets the caller can view.","default":true}},"required":["Filters"],"additionalProperties":false,"example":{"OnlyShowDeleted":false,"Filters":[{"Facet":"assetsparepool","Id":"8db57703-895a-a2d2-0896-c8a9a0360925"},{"Facet":"AssetCustomField","CustomFieldTypeId":"a7ec781d-b42d-4727-abf4-8b132f182701","ComplexEditorPath":"0:IssueDate","Value":"date<2050-01-01","Negative":true},{"Facet":"ParentAsset","Id":null}],"FilterByViewPermission":true},"title":"SparePoolAssetSearchRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,80 @@
+---
+id: delete-event
+title: "Delete event by ID"
+description: "Deletes a single event by its identifier. For recurring series, delete a specific instance using [DELETE /api/v1.0/events/{EventId}/{instance}](/docs/api/events/delete-recurring-event)."
+sidebar_label: "Delete event by ID"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "delete api-method"
+info_path: docs/api/events/events-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete event by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1.0/events/{EventId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes a single event by its identifier. For recurring series, delete a specific instance using [DELETE /api/v1.0/events/\{EventId\}/\{instance\}](/docs/api/events/delete-recurring-event).
+
+**Prerequisites**
+1. **EventId** - Use [POST /api/v1.0/events/query](/docs/api/events/get-events-by-query-post) and extract `Items[].EventId`.
+
+**Workflow Example**
+1. Locate event: [POST /api/v1.0/events/query](/docs/api/events/get-events-by-query-post) -&gt; extract `Items[].EventId`.
+2. Delete event: [DELETE /api/v1.0/events/\{EventId\}](/docs/api/events/delete-event).
+
+**Minimal Required Fields**: EventId (path).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"EventId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Deleted successfully.","content":{"application/json":{"schema":{"type":"object","description":"Standard response for event and event type delete operations. Returns success status and any validation errors.","properties":{"IsSuccess":{"type":"boolean"},"Errors":{"type":"array","items":{"type":"object","description":"Standard error payload returned by the API when a request fails.","properties":{"StatusCode":{"type":"integer","description":"HTTP status code associated with the failure","example":401},"Message":{"type":"string","description":"Human-readable description of the error","example":"Attempted to perform an unauthorized operation."}},"required":["StatusCode","Message"],"title":"ErrorResponse"}}},"title":"EventsDeleteResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

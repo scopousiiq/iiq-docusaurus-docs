@@ -1,0 +1,33 @@
+---
+id: batchcustomfieldentitymappingrequest
+title: "BatchCustomFieldEntityMappingRequest"
+description: "Array of entity mapping requests for batch creation. Allows creating multiple entity mappings in a single API call."
+sidebar_label: "BatchCustomFieldEntityMappingRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: [{"SourceEntityTypeId":"d7bda5de-e6a2-e711-80c2-0004ffa00010","SourceCustomFieldTypeId":"e7c8b30d-d899-4193-a70b-21994d2a8089","TargetEntityTypeId":"f3a1b2c3-d4e5-6789-0abc-def123456789","TargetCustomFieldTypeId":"f4e5d6c7-b8a9-4102-a3b4-c5d6e7f89012","SourceEntityId":"546f841c-32d8-47e5-bfc1-a4f21754d6d3","TargetEntityId":"622760c9-8ba3-f011-8e61-6045bd85293b"}]
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"BatchCustomFieldEntityMappingRequest"}
+>
+</Heading>
+
+
+
+Array of entity mapping requests for batch creation. Allows creating multiple entity mappings in a single API call.
+
+<Schema
+  schema={{"type":"array","description":"Array of entity mapping requests for batch creation. Allows creating multiple entity mappings in a single API call.","items":{"type":"object","description":"Request to create or update an entity mapping. Defines how data should flow from a source entity's custom field to a target entity's field.","required":["SourceEntityTypeId","SourceCustomFieldTypeId","TargetEntityTypeId","SourceEntityId","TargetEntityId"],"properties":{"CustomFieldEntityMappingId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of existing mapping to update. Omit when creating a new mapping.","example":"a1b2c3d4-e5f6-7890-abcd-ef1234567890"},"SourceEntityTypeId":{"type":"string","format":"uuid","description":"Entity type UUID of the source entity.","example":"d7bda5de-e6a2-e711-80c2-0004ffa00010","x-obtained-from":{"operationId":"getCustomFieldEntityMappingEntityTypes","endpoint":"GET /api/v1.0/custom-fields/entity-mappings/entity-types","responseField":"Items[].EntityType.EntityTypeId"}},"SourceCustomFieldTypeId":{"type":"string","format":"uuid","description":"Custom field type UUID on the source entity to map from.","example":"e7c8b30d-d899-4193-a70b-21994d2a8089"},"TargetEntityTypeId":{"type":"string","format":"uuid","description":"Entity type UUID of the target entity.","example":"f3a1b2c3-d4e5-6789-0abc-def123456789","x-obtained-from":{"operationId":"getCustomFieldEntityMappingEntityTypes","endpoint":"GET /api/v1.0/custom-fields/entity-mappings/entity-types","responseField":"Items[].EntityType.EntityTypeId"}},"TargetCustomFieldTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Custom field type UUID on the target entity. Required if mapping to a custom field (mutually exclusive with TargetCustomDatabaseField).","example":"f4e5d6c7-b8a9-4102-a3b4-c5d6e7f89012"},"TargetCustomDatabaseField":{"type":"string","nullable":true,"description":"Database field name on the target entity. Required if mapping to a standard field (mutually exclusive with TargetCustomFieldTypeId).","example":"LocationId"},"SourceEntityId":{"type":"string","format":"uuid","description":"UUID of the specific source entity record (e.g., specific AssetId, TicketId).","example":"546f841c-32d8-47e5-bfc1-a4f21754d6d3"},"TargetEntityId":{"type":"string","format":"uuid","description":"UUID of the specific target entity record.","example":"622760c9-8ba3-f011-8e61-6045bd85293b"}},"example":{"SourceEntityTypeId":"d7bda5de-e6a2-e711-80c2-0004ffa00010","SourceCustomFieldTypeId":"e7c8b30d-d899-4193-a70b-21994d2a8089","TargetEntityTypeId":"f3a1b2c3-d4e5-6789-0abc-def123456789","TargetCustomFieldTypeId":"f4e5d6c7-b8a9-4102-a3b4-c5d6e7f89012","SourceEntityId":"546f841c-32d8-47e5-bfc1-a4f21754d6d3","TargetEntityId":"622760c9-8ba3-f011-8e61-6045bd85293b"},"title":"CustomFieldEntityMappingRequest"},"example":[{"SourceEntityTypeId":"d7bda5de-e6a2-e711-80c2-0004ffa00010","SourceCustomFieldTypeId":"e7c8b30d-d899-4193-a70b-21994d2a8089","TargetEntityTypeId":"f3a1b2c3-d4e5-6789-0abc-def123456789","TargetCustomFieldTypeId":"f4e5d6c7-b8a9-4102-a3b4-c5d6e7f89012","SourceEntityId":"546f841c-32d8-47e5-bfc1-a4f21754d6d3","TargetEntityId":"622760c9-8ba3-f011-8e61-6045bd85293b"}],"title":"BatchCustomFieldEntityMappingRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: idsforfiltersetslistresponse
+title: "IdsForFilterSetsListResponse"
+description: "Response envelope for filter set matching operations"
+sidebar_label: "IdsForFilterSetsListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":0,"Items":[{"FilterSetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","MatchedIds":["3fa85f64-5717-4562-b3fc-2c963f66afa6"]}],"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":0,"ServerName":"string","ProcessId":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"IdsForFilterSetsListResponse"}
+>
+</Heading>
+
+
+
+Response envelope for filter set matching operations
+
+<Schema
+  schema={{"type":"object","description":"Response envelope for filter set matching operations","properties":{"ItemCount":{"type":"integer","description":"Number of filter set results returned"},"Items":{"type":"array","items":{"type":"object","description":"Result entry mapping a filter set to the entity IDs that match its conditions.","properties":{"FilterSetId":{"type":"string","format":"uuid","description":"Filter set identifier."},"MatchedIds":{"type":"array","description":"List of entity identifiers that matched the filter set.","items":{"type":"string","format":"uuid"}}},"title":"IdsForFilterSetsResponse"},"description":"Array of filter set matching results"},"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"}},"required":["Items"],"title":"IdsForFilterSetsListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

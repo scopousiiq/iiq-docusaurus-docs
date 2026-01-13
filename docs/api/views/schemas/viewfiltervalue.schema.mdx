@@ -1,0 +1,33 @@
+---
+id: viewfiltervalue
+title: "ViewFilterValue"
+description: "Filter applied to a saved view. Each filter references a definition from `/api/v1.0/filters`."
+sidebar_label: "ViewFilterValue"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"FilterId":"9f3b2f43-8a55-475f-af4f-13a962b47a95","Exclude":true,"Value":"range:year","CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ComplexEditorPath":"string","GroupIndex":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ViewFilterValue"}
+>
+</Heading>
+
+
+
+Filter applied to a saved view. Each filter references a definition from `/api/v1.0/filters`.
+
+<Schema
+  schema={{"type":"object","description":"Filter applied to a saved view. Each filter references a definition from `/api/v1.0/filters`.","properties":{"FilterId":{"type":"string","format":"uuid","description":"Identifier of the filter definition applied to the view.","example":"9f3b2f43-8a55-475f-af4f-13a962b47a95","x-obtained-from":{"operationId":"listFiltersForEntityType","endpoint":"GET /api/v1.0/filters/for/entitytype/{entityTypeId}","responseField":"Items[].FilterId"}},"Exclude":{"type":"boolean","description":"When true, the filter removes matching records instead of including them.","example":true},"Value":{"type":"string","nullable":true,"description":"Filter value encoded using the format required by the filter definition (for example, `range:year`).","example":"range:year"},"CustomFieldTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Optional identifier for the custom field this filter targets when applicable."},"ComplexEditorPath":{"type":"string","nullable":true,"description":"Path to a complex editor template used to edit the filter value."},"GroupIndex":{"type":"integer","description":"Index describing which grouped clause the filter belongs to.","example":0}},"required":["FilterId","Exclude","GroupIndex"],"title":"ViewFilterValue"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

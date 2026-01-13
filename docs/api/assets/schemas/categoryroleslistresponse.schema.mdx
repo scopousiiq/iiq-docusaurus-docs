@@ -1,0 +1,33 @@
+---
+id: categoryroleslistresponse
+title: "CategoryRolesListResponse"
+description: "Response containing a list of category roles"
+sidebar_label: "CategoryRolesListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":[{"CategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Scope":"string","IsEnabled":true}],"StatusCode":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CategoryRolesListResponse"}
+>
+</Heading>
+
+
+
+Response containing a list of category roles
+
+<Schema
+  schema={{"type":"object","description":"Response containing a list of category roles","properties":{"Items":{"type":"array","items":{"type":"object","description":"Category with associated role permissions for a site","properties":{"CategoryId":{"type":"string","format":"uuid","description":"UUID of the category"},"Name":{"type":"string","description":"Display name of the category"},"Scope":{"type":"string","description":"Scope of the category"},"IsEnabled":{"type":"boolean","description":"Whether the category is enabled for this site"}},"title":"CategoryRoles"}},"StatusCode":{"type":"integer"}},"title":"CategoryRolesListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

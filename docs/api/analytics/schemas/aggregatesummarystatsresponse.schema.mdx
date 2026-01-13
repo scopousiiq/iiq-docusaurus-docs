@@ -1,0 +1,33 @@
+---
+id: aggregatesummarystatsresponse
+title: "AggregateSummaryStatsResponse"
+description: "Standard item envelope returned by analytics endpoints that surface user summary statistics."
+sidebar_label: "AggregateSummaryStatsResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":{"OpenTickets":3,"TotalTickets":42,"ClosedTickets":35,"AssignedTickets":5,"WaitingOnRequestorTickets":2,"Devices":2,"CreatedForMeTickets":28,"CreatedForOthersTickets":14},"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2026-01-05T10:30:00.000Z","ExecutionTime":8.5,"StatusCode":200,"ServerName":"spark-analytics-7d7c5f5d9b-gb5nq","ProcessId":24,"OperationId":"requestor-summary-stats","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AggregateSummaryStatsResponse"}
+>
+</Heading>
+
+
+
+Standard item envelope returned by analytics endpoints that surface user summary statistics.
+
+<Schema
+  schema={{"type":"object","description":"Standard item envelope returned by analytics endpoints that surface user summary statistics.","properties":{"Item":{"type":"object","description":"Aggregated summary statistics for a user (requestor), showing ticket counts and device associations. Used for user profile dashboards and self-service portals.","properties":{"OpenTickets":{"type":"integer","description":"Number of tickets currently open for this user.","example":3},"TotalTickets":{"type":"integer","description":"Total number of tickets associated with this user.","example":42},"ClosedTickets":{"type":"integer","description":"Number of tickets that have been closed.","example":35},"AssignedTickets":{"type":"integer","description":"Number of tickets currently assigned to this user as an agent.","example":5},"WaitingOnRequestorTickets":{"type":"integer","description":"Number of tickets in waiting-on-requestor status.","example":2},"Devices":{"type":"integer","description":"Number of devices assigned to this user.","example":2},"CreatedForMeTickets":{"type":"integer","description":"Number of tickets created for this user (user is the requestor).","example":28},"CreatedForOthersTickets":{"type":"integer","description":"Number of tickets this user created on behalf of others.","example":14}},"example":{"OpenTickets":3,"TotalTickets":42,"ClosedTickets":35,"AssignedTickets":5,"WaitingOnRequestorTickets":2,"Devices":2,"CreatedForMeTickets":28,"CreatedForOthersTickets":14},"title":"AggregateSummaryStats"},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated session token.","example":"3e17f735-b79f-f011-b484-002248538047","nullable":true},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp the query finished executing.","example":"2026-01-05T10:30:00.000Z"},"ExecutionTime":{"type":"number","description":"How long the analytics query took to execute (ms).","example":8.5},"StatusCode":{"type":"integer","description":"HTTP status code mirrored inside the payload.","example":200},"ServerName":{"type":"string","description":"Application node that served the request.","example":"spark-analytics-7d7c5f5d9b-gb5nq"},"ProcessId":{"type":"integer","description":"Process identifier useful during troubleshooting.","example":24},"OperationId":{"type":"string","description":"Identifier assigned for tracing across services.","example":"requestor-summary-stats"},"Properties":{"type":"object","description":"Additional instrumentation metadata returned by the platform.","example":{}}},"required":["Item","StatusCode"],"example":{"Item":{"OpenTickets":3,"TotalTickets":42,"ClosedTickets":35,"AssignedTickets":5,"WaitingOnRequestorTickets":2,"Devices":2,"CreatedForMeTickets":28,"CreatedForOthersTickets":14},"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2026-01-05T10:30:00.000Z","ExecutionTime":8.5,"StatusCode":200,"ServerName":"spark-analytics-7d7c5f5d9b-gb5nq","ProcessId":24,"OperationId":"requestor-summary-stats","Properties":{}},"title":"AggregateSummaryStatsResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            
