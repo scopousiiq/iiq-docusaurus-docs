@@ -17,13 +17,13 @@ const config: Config = {
   tagline: 'Complete API reference for IncidentIQ',
   favicon: 'img/favicon.ico',
 
-  // Production URL
-  url: 'https://api-docs.incidentiq.com',
-  baseUrl: '/',
+  // Production URL - GitHub Pages
+  url: 'https://scopousiiq.github.io',
+  baseUrl: '/iiq-docusaurus-docs/',
 
-  // GitHub pages deployment config (if needed)
-  organizationName: 'incidentiq',
-  projectName: 'api-docs',
+  // GitHub pages deployment config
+  organizationName: 'scopousiiq',
+  projectName: 'iiq-docusaurus-docs',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
