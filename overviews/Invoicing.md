@@ -1,5 +1,3 @@
-# Invoicing API
-
 The Invoicing API provides simplified vendor management for purchase and invoice tracking in IncidentIQ. Create basic vendor records to associate with purchases and financial transactions.
 
 ## Overview

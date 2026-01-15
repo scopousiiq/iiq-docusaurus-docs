@@ -1,5 +1,3 @@
-# Surveys API
-
 The Surveys API provides access to satisfaction surveys in IncidentIQ. Create, configure, and manage surveys to collect feedback from users after ticket resolution.
 
 ## Overview

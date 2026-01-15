@@ -1,5 +1,3 @@
-# Files API
-
 The Files API provides file upload, download, and management capabilities for IncidentIQ.
 
 ## Overview

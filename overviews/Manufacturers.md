@@ -1,5 +1,3 @@
-# Manufacturers API
-
 The Manufacturers API provides access to device manufacturer management in IncidentIQ. Manage the manufacturers of assets and devices tracked in your inventory.
 
 ## Overview

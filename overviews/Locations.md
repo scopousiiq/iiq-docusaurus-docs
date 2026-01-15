@@ -1,5 +1,3 @@
-# Locations API
-
 The Locations API provides access to IncidentIQ's location hierarchy. Manage districts, schools, buildings, and rooms to organize users, assets, and tickets geographically.
 
 ## Overview

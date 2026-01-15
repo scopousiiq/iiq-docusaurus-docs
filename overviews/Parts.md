@@ -1,5 +1,3 @@
-# Parts API
-
 The Parts API provides access to parts management in IncidentIQ. Track parts inventory, manage suppliers, and handle purchase orders for repair and maintenance operations.
 
 ## Overview

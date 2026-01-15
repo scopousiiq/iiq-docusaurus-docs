@@ -1,5 +1,3 @@
-# Workflows API
-
 The Workflows API provides access to IncidentIQ's workflow engine. Configure ticket lifecycles, define status transitions, and automate your service management processes.
 
 ## Overview

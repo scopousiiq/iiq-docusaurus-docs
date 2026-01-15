@@ -1,5 +1,3 @@
-# Analytics API
-
 The Analytics API provides access to IncidentIQ's reporting and analytics data. Retrieve metrics, audit information, and aggregated statistics for dashboards and reporting.
 
 ## Overview

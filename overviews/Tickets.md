@@ -1,5 +1,3 @@
-# Tickets API
-
 The Tickets API provides comprehensive access to IncidentIQ's ticketing system. Create, search, update, and manage help desk tickets programmatically, including workflow transitions, assignments, comments, and attachments.
 
 ## Overview

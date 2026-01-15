@@ -10,16 +10,15 @@
    ============================================ */
 :root {
   /* Brand Colors */
-  --iiq-navy: #011e55;
-  --iiq-navy-light: #0a2d6e;
+  --iiq-navy: #1b2b52;
+  --iiq-navy-rgb: 27, 43, 82;
   --iiq-blue: #2f528b;
-  --iiq-blue-light: #4a6fa3;
+  --iiq-blue-rgb: 47, 82, 139;
   --iiq-gold: #febb12;
-  --iiq-gold-light: #ffd666;
-  --iiq-teal: #22b2a3;
-  --iiq-teal-light: #5cd6c9;
+  --iiq-gold-rgb: 254, 187, 18;
+  --iiq-text: #212121;
 
-  /* Semantic Colors */
+  /* Semantic Colors - Adjusted to harmonize with Navy */
   --color-success: #10b981;
   --color-success-bg: #ecfdf5;
   --color-success-border: #a7f3d0;
@@ -45,35 +44,48 @@
   --gray-800: #1f2937;
   --gray-900: #111827;
 
+  /* Red Colors (for required badges) */
+  --red-100: #fee2e2;
+  --red-700: #b91c1c;
+
+  /* Blue Colors (for nullable badges) */
+  --blue-100: #dbeafe;
+  --blue-700: #1d4ed8;
+
   /* Typography */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  --font-brand: 'proxima-nova', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
 
   /* Docusaurus Overrides */
   --ifm-color-primary: var(--iiq-navy);
-  --ifm-color-primary-dark: #011847;
-  --ifm-color-primary-darker: #01143d;
-  --ifm-color-primary-darkest: #000d2a;
-  --ifm-color-primary-light: var(--iiq-navy-light);
-  --ifm-color-primary-lighter: #1a4080;
-  --ifm-color-primary-lightest: var(--iiq-blue);
+  --ifm-color-primary-dark: #121d3a;
+  --ifm-color-primary-darker: #0d162d;
+  --ifm-color-primary-darkest: #070c19;
+  --ifm-color-primary-light: var(--iiq-blue);
+  --ifm-color-primary-lighter: #3d68c2;
+  --ifm-color-primary-lightest: #5c81d1;
 
-  --ifm-font-family-base: var(--font-sans);
+  --ifm-font-family-base: var(--font-brand);
   --ifm-font-family-monospace: var(--font-mono);
+  --ifm-font-size-base: 16px; /* Fix inconsistent font size between pages */
   --ifm-code-font-size: 0.875rem;
-  --ifm-heading-font-weight: 600;
-  --ifm-font-weight-semibold: 500;
+  --ifm-heading-font-weight: 700;
+  --ifm-font-weight-semibold: 600;
 
-  --ifm-link-color: var(--iiq-navy);
-  --ifm-link-hover-color: var(--iiq-teal);
+  --ifm-link-color: var(--iiq-blue);
+  --ifm-link-hover-color: var(--iiq-navy);
   --ifm-link-hover-decoration: none;
 
-  --ifm-navbar-height: 4rem;
-  --ifm-navbar-background-color: var(--iiq-navy);
-  --ifm-navbar-link-color: rgba(255, 255, 255, 0.9);
-  --ifm-navbar-link-hover-color: white;
+  --ifm-navbar-height: 5rem;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-link-color: var(--iiq-text);
+  --ifm-navbar-link-hover-color: var(--iiq-blue);
 
   --ifm-footer-background-color: var(--iiq-blue);
+  --ifm-footer-title-color: #ffffff;
+  --ifm-footer-text-color: rgba(255, 255, 255, 0.8);
+  --ifm-footer-link-color: rgba(255, 255, 255, 0.8);
+  --ifm-footer-link-hover-color: var(--iiq-gold);
 
   --ifm-global-radius: 0.5rem;
   --ifm-code-border-radius: 0.375rem;
@@ -81,28 +93,32 @@
   --ifm-background-color: #ffffff;
   --ifm-background-surface-color: var(--gray-50);
 
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.06);
-
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow: 0 1px 3px 0 rgba(27, 43, 82, 0.1), 0 1px 2px -1px rgba(27, 43, 82, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(27, 43, 82, 0.1), 0 2px 4px -2px rgba(27, 43, 82, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(27, 43, 82, 0.1), 0 4px 6px -4px rgba(27, 43, 82, 0.05);
+
+  /* Buttons */
+  --btn-border-radius: 16px;
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ============================================
    Base Typography
    ============================================ */
 html {
+  font-size: 16px !important; /* Override inconsistent base font size on docs pages */
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Fix border/padding issue from OpenAPI theme on docs pages */
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #ffffff !important;
 }
 
 body {
@@ -111,17 +127,40 @@ body {
   line-height: 1.7;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--gray-900);
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.02em;
 }
 
-h1 { font-size: 2.25rem; margin-bottom: 1.5rem; }
-h2 { font-size: 1.75rem; margin-top: 2.5rem; margin-bottom: 1rem; }
-h3 { font-size: 1.375rem; margin-top: 2rem; margin-bottom: 0.75rem; }
-h4 { font-size: 1.125rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+h1 {
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.375rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
 
 p {
   margin-bottom: 1.25rem;
@@ -131,32 +170,44 @@ p {
 /* ============================================
    Navbar - Premium Header
    ============================================ */
+/* ============================================
+   Navbar - Clean & Professional
+   ============================================ */
 .navbar {
-  background: linear-gradient(135deg, var(--iiq-navy) 0%, var(--iiq-navy-light) 100%);
-  box-shadow: var(--shadow-md);
-  backdrop-filter: blur(8px);
+  background: white;
+  box-shadow: none;
+  border-bottom: none;
+  height: var(--ifm-navbar-height);
+  min-height: var(--ifm-navbar-height);
+  padding: 0 1rem;
 }
 
 .navbar__title {
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   letter-spacing: -0.01em;
+  color: var(--iiq-navy);
 }
 
 .navbar__link {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.9375rem;
   padding: 0.5rem 1rem;
+  color: var(--iiq-text);
   border-radius: var(--ifm-global-radius);
   transition: all var(--transition-fast);
 }
 
 .navbar__link:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--gray-50);
+  color: var(--iiq-blue);
 }
 
 .navbar__link--active {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--gray-100);
+  color: var(--iiq-blue);
+  box-shadow: inset 0 -2px 0 0 var(--iiq-gold);
+  border-radius: 0;
 }
 
 /* ============================================
@@ -191,7 +242,7 @@ p {
   color: white;
 }
 
-.menu__list-item-collapsible > .menu__link {
+.menu__list-item-collapsible>.menu__link {
   font-weight: 600;
   color: var(--gray-800);
   font-size: 0.8125rem;
@@ -203,13 +254,228 @@ p {
   transition: transform var(--transition-fast);
 }
 
-/* Sidebar category headers */
-.theme-doc-sidebar-item-category > .menu__list-item-collapsible {
-  margin-top: 1.5rem;
+/* Style the button-based caret to match the CSS-based caret */
+/* This makes the caret from linked categories match non-linked categories */
+button.menu__caret,
+.clean-btn.menu__caret {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  position: relative !important;
 }
 
-.theme-doc-sidebar-item-category:first-child > .menu__list-item-collapsible {
+/* Hide the original button content/icon */
+button.menu__caret::before,
+.clean-btn.menu__caret::before {
+  display: none !important;
+}
+
+/* Replace the default small caret with a larger chevron matching the CSS-based caret */
+button.menu__caret::after,
+.clean-btn.menu__caret::after {
+  content: '' !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  background: var(--ifm-menu-link-sublist-icon) center / 1.25rem 1.25rem no-repeat !important;
+  filter: var(--ifm-menu-link-sublist-icon-filter, none) !important;
+  transform: rotate(0deg) !important;
+  transition: transform var(--transition-fast) !important;
+}
+
+/* Rotate caret only when expanded (avoid tying to active page state) */
+button.menu__caret[aria-expanded="true"]::after,
+.clean-btn.menu__caret[aria-expanded="true"]::after {
+  transform: rotate(90deg) !important;
+}
+
+/* Sidebar category headers - tighter spacing */
+.theme-doc-sidebar-item-category>.menu__list-item-collapsible {
+  margin-top: 0.5rem;
+}
+
+.theme-doc-sidebar-item-category:first-child>.menu__list-item-collapsible {
   margin-top: 0;
+}
+
+/* Sidebar container - allow full page scroll (no independent sidebar scroll) */
+aside.theme-doc-sidebar-container {
+  position: static !important;
+  margin-top: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  --doc-sidebar-width: 300px !important;
+  width: 300px !important;
+  min-width: 300px !important;
+  background: white !important;
+  z-index: 1 !important;
+  border-right: 1px solid var(--gray-200) !important;
+}
+
+/* Disable sticky/viewport locking so the sidebar flows with the page */
+aside.theme-doc-sidebar-container > div,
+aside.theme-doc-sidebar-container [class*="sidebarViewport"] {
+  position: static !important;
+  top: auto !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Sidebar content should size to its contents */
+aside.theme-doc-sidebar-container [class*="sidebar"] {
+  height: auto !important;
+}
+
+/* Reset layout offsets added for the fixed sidebar */
+[class*="docMainContainer"] {
+  margin-left: 0 !important;
+}
+
+.footer {
+  position: static !important;
+  z-index: auto !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Sidebar menu - fit within container */
+.theme-doc-sidebar-menu,
+.menu {
+  width: auto !important;
+  max-width: 100% !important;
+  padding: 0.5rem !important;
+  overflow: visible !important;
+}
+
+/* Menu list - ensure it fits within sidebar width */
+.menu__list {
+  width: auto !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* All menu items - constrain to parent width */
+.menu__list-item {
+  max-width: 100% !important;
+  margin: 0.1rem 0 !important;
+}
+
+/* Tighter spacing for link-level items */
+.theme-doc-sidebar-item-link-level-2,
+.theme-doc-sidebar-item-link-level-3,
+.theme-doc-sidebar-item-link-level-4 {
+  margin: 0.02rem 0 !important;
+}
+
+/* Category collapsible row - ensure caret stays visible */
+.menu__list-item-collapsible {
+  max-width: 100% !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* Category link text - allow it to shrink so caret has room */
+.menu__list-item-collapsible > .menu__link {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+
+/* Category hierarchy - level styling */
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+}
+
+.theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible > .menu__link {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+
+/* Expanded categories - inverted treatment for top-level only */
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible
+  > .menu__link[aria-expanded="true"],
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible:has(> .menu__caret[aria-expanded="true"])
+  > .menu__link {
+  background: var(--iiq-blue) !important;
+  color: white !important;
+  border-radius: 0.5rem;
+}
+
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible
+  > .menu__link[aria-expanded="true"]:hover,
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible:has(> .menu__caret[aria-expanded="true"])
+  > .menu__link:hover {
+  background: var(--iiq-navy) !important;
+  color: white !important;
+}
+
+/* Expanded subcategories - subtle highlight */
+.theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible
+  > .menu__link[aria-expanded="true"],
+.theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible:has(> .menu__caret[aria-expanded="true"])
+  > .menu__link {
+  background: rgba(47, 82, 139, 0.12);
+  color: var(--iiq-navy);
+  border-color: rgba(47, 82, 139, 0.35);
+}
+
+/* Subitems - add visual hierarchy under categories */
+/* Only affect nested (subitem) links, not category headers */
+.theme-doc-sidebar-item-link-level-2 .menu__link,
+.theme-doc-sidebar-item-link-level-3 .menu__link,
+.theme-doc-sidebar-item-link-level-4 .menu__link {
+  font-size: 0.75rem;
+  color: var(--gray-600);
+  padding: 0.12rem 0.6rem 0.12rem 1.1rem;
+  line-height: 1.2;
+}
+
+.theme-doc-sidebar-item-link-level-2 .menu__link:hover,
+.theme-doc-sidebar-item-link-level-3 .menu__link:hover,
+.theme-doc-sidebar-item-link-level-4 .menu__link:hover {
+  color: var(--iiq-navy);
+}
+
+.menu__list .menu__list {
+  border-left: 1px solid var(--gray-200);
+  margin-left: 0.35rem;
+  padding-left: 0.35rem;
+}
+
+/* Caret button - ensure it's always visible and not clipped */
+.menu__list-item-collapsible > button {
+  flex: 0 0 28px !important;
+  width: 28px !important;
+  min-width: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 /* ============================================
@@ -247,7 +513,7 @@ p {
    Main Content Area
    ============================================ */
 .main-wrapper {
-  background: var(--gray-50);
+  background: #ffffff;
   max-width: 100vw;
 }
 
@@ -262,8 +528,8 @@ p {
    ============================================ */
 
 /* Hide redundant elements */
-.openapi__heading + .openapi__heading,
-.theme-api-markdown > h1:first-child {
+.openapi__heading+.openapi__heading,
+.theme-api-markdown>h1:first-child {
   display: none;
 }
 
@@ -297,7 +563,9 @@ p {
    HTTP Method Badges - Vibrant & Clear
    Only target actual API method badge elements
    ============================================ */
-[class*="api-method"] {
+/* Target specific API method badge classes only - restricted to spans/divs to avoid cards */
+span[class*="api-method"],
+div[class*="api-method"] {
   display: inline-flex;
   align-items: center;
   font-weight: 700;
@@ -310,7 +578,9 @@ p {
 }
 
 /* Target specific API method badge classes only */
-[class*="api-method"][class*="get"],
+/* Target specific API method badge classes only */
+span[class*="api-method"][class*="get"],
+div[class*="api-method"][class*="get"],
 .openapi-method-endpoint .get,
 span.get {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
@@ -318,7 +588,8 @@ span.get {
   box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
 }
 
-[class*="api-method"][class*="post"],
+span[class*="api-method"][class*="post"],
+div[class*="api-method"][class*="post"],
 .openapi-method-endpoint .post,
 span.post {
   background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
@@ -326,7 +597,8 @@ span.post {
   box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
 }
 
-[class*="api-method"][class*="put"],
+span[class*="api-method"][class*="put"],
+div[class*="api-method"][class*="put"],
 .openapi-method-endpoint .put,
 span.put {
   background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
@@ -334,7 +606,8 @@ span.put {
   box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
 }
 
-[class*="api-method"][class*="patch"],
+span[class*="api-method"][class*="patch"],
+div[class*="api-method"][class*="patch"],
 .openapi-method-endpoint .patch,
 span.patch {
   background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
@@ -342,12 +615,42 @@ span.patch {
   box-shadow: 0 2px 4px rgba(139, 92, 246, 0.3);
 }
 
-[class*="api-method"][class*="delete"],
+span[class*="api-method"][class*="delete"],
+div[class*="api-method"][class*="delete"],
 .openapi-method-endpoint .delete,
 span.delete {
   background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
   color: white;
   box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+}
+
+/* ============================================
+   Category Index Cards (DocCardList)
+   ============================================ */
+.clean-btn.cardContainer {
+  background: white !important;
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  height: 100%;
+}
+
+.clean-btn.cardContainer:hover {
+  border-color: var(--iiq-blue);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.cardTitle {
+  color: var(--iiq-navy) !important;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardDescription {
+  color: var(--gray-600) !important;
+  font-size: 0.875rem;
 }
 
 /* ============================================
@@ -367,7 +670,7 @@ code {
   font-weight: 450;
 }
 
-:not(pre) > code {
+:not(pre)>code {
   background: var(--gray-100);
   color: var(--iiq-navy);
   padding: 0.2em 0.4em;
@@ -382,14 +685,38 @@ code {
 }
 
 /* Syntax highlighting enhancements */
-.token.comment { color: #6b7280; font-style: italic; }
-.token.string { color: #10b981; }
-.token.number { color: #f59e0b; }
-.token.keyword { color: #8b5cf6; }
-.token.function { color: #3b82f6; }
-.token.property { color: #ec4899; }
-.token.operator { color: #94a3b8; }
-.token.punctuation { color: #94a3b8; }
+.token.comment {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.token.string {
+  color: #10b981;
+}
+
+.token.number {
+  color: #f59e0b;
+}
+
+.token.keyword {
+  color: #8b5cf6;
+}
+
+.token.function {
+  color: #3b82f6;
+}
+
+.token.property {
+  color: #ec4899;
+}
+
+.token.operator {
+  color: #94a3b8;
+}
+
+.token.punctuation {
+  color: #94a3b8;
+}
 
 /* ============================================
    Admonitions - Beautiful Callouts
@@ -417,8 +744,8 @@ div[class*="theme-admonition"] {
 [class*="admonition_info"],
 div[class*="admonition-info"],
 .theme-admonition-info {
-  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important;
-  border-left-color: #3b82f6 !important;
+  background: var(--color-info-bg) !important;
+  border-left-color: var(--color-info) !important;
 }
 
 /* Tip/Success admonition */
@@ -427,8 +754,8 @@ div[class*="admonition-info"],
 [class*="admonition_tip"],
 div[class*="admonition-tip"],
 .theme-admonition-tip {
-  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%) !important;
-  border-left-color: #10b981 !important;
+  background: var(--color-success-bg) !important;
+  border-left-color: var(--color-success) !important;
 }
 
 /* Note admonition */
@@ -436,8 +763,8 @@ div[class*="admonition-tip"],
 [class*="admonition_note"],
 div[class*="admonition-note"],
 .theme-admonition-note {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
-  border-left-color: #64748b !important;
+  background: var(--gray-50) !important;
+  border-left-color: var(--gray-500) !important;
 }
 
 /* Warning/Caution admonition */
@@ -450,8 +777,8 @@ div[class*="admonition-caution"],
 div[class*="admonition-warning"],
 .theme-admonition-caution,
 .theme-admonition-warning {
-  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%) !important;
-  border-left-color: #f59e0b !important;
+  background: var(--color-warning-bg) !important;
+  border-left-color: var(--color-warning) !important;
 }
 
 /* Danger admonition */
@@ -460,15 +787,15 @@ div[class*="admonition-warning"],
 [class*="admonition_danger"],
 div[class*="admonition-danger"],
 .theme-admonition-danger {
-  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%) !important;
-  border-left-color: #ef4444 !important;
+  background: var(--color-danger-bg) !important;
+  border-left-color: var(--color-danger) !important;
 }
 
 /* Admonition heading/title */
 .admonition-heading,
 .alert__heading,
 [class*="admonitionHeading"],
-.admonition > .admonition-heading,
+.admonition>.admonition-heading,
 .admonition-title {
   font-weight: 600 !important;
   font-size: 0.9375rem !important;
@@ -588,17 +915,25 @@ tr:hover td {
 /* ============================================
    Response Codes - Visual Status
    ============================================ */
-.response-code-200, .response-code-201, .response-code-204 {
+.response-code-200,
+.response-code-201,
+.response-code-204 {
   color: var(--color-success);
   font-weight: 600;
 }
 
-.response-code-400, .response-code-401, .response-code-403, .response-code-404, .response-code-422 {
+.response-code-400,
+.response-code-401,
+.response-code-403,
+.response-code-404,
+.response-code-422 {
   color: var(--color-warning);
   font-weight: 600;
 }
 
-.response-code-500, .response-code-502, .response-code-503 {
+.response-code-500,
+.response-code-502,
+.response-code-503 {
   color: var(--color-danger);
   font-weight: 600;
 }
@@ -606,11 +941,13 @@ tr:hover td {
 /* ============================================
    Schema/Property Tables
    ============================================ */
-.schema-table, .openapi-schema {
+.schema-table,
+.openapi-schema {
   font-size: 0.875rem;
 }
 
-.schema-table th, .openapi-schema th {
+.schema-table th,
+.openapi-schema th {
   background: var(--gray-100);
   font-size: 0.75rem;
 }
@@ -678,7 +1015,8 @@ tr:hover td {
 /* ============================================
    Lists - Better Readability
    ============================================ */
-ul, ol {
+ul,
+ol {
   padding-left: 1.5rem;
   margin: 1rem 0;
 }
@@ -727,10 +1065,13 @@ li::marker {
 /* ============================================
    Landing Page - Hero Section
    ============================================ */
+/* ============================================
+   Landing Page - Hero Section
+   ============================================ */
 .hero {
-  background: linear-gradient(135deg, var(--iiq-navy) 0%, var(--iiq-blue) 50%, var(--iiq-navy-light) 100%);
+  background: linear-gradient(135deg, var(--iiq-navy) 0%, var(--iiq-blue) 100%);
   color: white;
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -743,8 +1084,10 @@ li::marker {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.5;
+  /* Abstract technological pattern or grain can go here */
+  background-image: radial-gradient(circle at 20% 50%, rgba(254, 187, 18, 0.15) 0%, transparent 25%),
+    radial-gradient(circle at 80% 80%, rgba(47, 82, 139, 0.4) 0%, transparent 25%);
+  opacity: 1;
 }
 
 .hero__title {
@@ -753,10 +1096,12 @@ li::marker {
   margin-bottom: 1rem;
   letter-spacing: -0.03em;
   position: relative;
+  color: white;
 }
 
 .hero__subtitle {
   font-size: 1.375rem;
+  color: white;
   opacity: 0.9;
   margin-bottom: 2.5rem;
   max-width: 600px;
@@ -773,39 +1118,52 @@ li::marker {
   position: relative;
 }
 
-.hero__buttons .button {
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 0.875rem 2rem;
-  border-radius: 0.5rem;
+/* Global Button Styles */
+.button {
+  font-weight: 700;
+  border-radius: var(--btn-border-radius);
   transition: all var(--transition-base);
+  text-transform: capitalize;
 }
 
-.hero__buttons .button--primary {
+.hero__buttons .button--primary,
+.button--primary {
   background: var(--iiq-gold);
   border-color: var(--iiq-gold);
-  color: var(--iiq-navy);
-  box-shadow: 0 4px 14px rgba(254, 187, 18, 0.4);
+  color: #000000;
+  /* Text is black on gold */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.hero__buttons .button--primary:hover {
-  background: var(--iiq-gold-light);
-  border-color: var(--iiq-gold-light);
+.hero__buttons .button--primary:hover,
+.button--primary:hover {
+  background: #e5a80f;
+  /* slightly darker gold */
+  border-color: #e5a80f;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(254, 187, 18, 0.5);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  color: #000000;
+  text-decoration: none;
 }
 
-.hero__buttons .button--secondary {
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  color: white;
+.hero__buttons .button--secondary,
+.button--secondary {
+  background: white;
+  border: 2px solid var(--iiq-gold);
+  color: #000000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-.hero__buttons .button--secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: white;
+.hero__buttons .button--secondary:hover,
+.button--secondary:hover {
+  background: var(--gray-50);
+  border-color: var(--iiq-gold);
   transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
 }
+
+
 
 /* ============================================
    Landing Page - Features Section
@@ -915,12 +1273,12 @@ article h3,
 }
 
 /* Also kill any sibling decorative elements after headings */
-h2 + hr,
-h3 + hr {
+h2+hr,
+h3+hr {
   display: none !important;
 }
 
-/* Fix the sidebar method badges - remove the garish colors */
+/* Fix the sidebar method badges */
 .menu__link[class*="api-method"],
 .menu .api-method,
 .theme-doc-sidebar-item-link .menu__link {
@@ -931,20 +1289,74 @@ h3 + hr {
   font-weight: 450 !important;
   text-transform: none !important;
   font-family: var(--font-sans) !important;
-  padding: 0.5rem 1rem !important;
+  padding: 0.32rem 0.7rem !important;
+  line-height: 1.3 !important;
 }
 
 .menu__link[class*="api-method"]:hover,
 .theme-doc-sidebar-item-link .menu__link:hover {
-  background: var(--gray-100) !important;
+  background: transparent !important;
   color: var(--gray-900) !important;
 }
 
+/* Ensure active state ALWAYS wins with high specificity */
+.menu__link--active,
 .menu__link--active[class*="api-method"],
-.theme-doc-sidebar-item-link .menu__link--active {
+.theme-doc-sidebar-item-link .menu__link--active,
+.theme-doc-sidebar-item-link .menu__link--active:hover,
+.menu__link--active:hover {
   background: linear-gradient(135deg, var(--iiq-navy) 0%, var(--iiq-blue) 100%) !important;
   color: white !important;
   font-weight: 500 !important;
+  box-shadow: 0 4px 6px -1px rgba(27, 43, 82, 0.1), 0 2px 4px -2px rgba(27, 43, 82, 0.06) !important;
+}
+
+/* Active pill sizing - slightly larger, but compact spacing */
+.theme-doc-sidebar-item-link .menu__link--active,
+.theme-doc-sidebar-item-link .menu__link--active:hover {
+  padding: 0.38rem 0.75rem !important;
+  border-radius: 0.5rem !important;
+}
+
+/* Keep active pill stable on hover */
+.theme-doc-sidebar-item-link .menu__link--active:hover {
+  background: linear-gradient(135deg, var(--iiq-navy) 0%, var(--iiq-blue) 100%) !important;
+  color: white !important;
+  box-shadow: 0 4px 6px -1px rgba(27, 43, 82, 0.1), 0 2px 4px -2px rgba(27, 43, 82, 0.06) !important;
+}
+
+/* Ensure visited links don't break visibility */
+.menu__link--active:visited,
+.theme-doc-sidebar-item-link .menu__link--active:visited {
+  color: white !important;
+}
+
+/* FIX: Override category headers so they don't get the white text/blue bg treatment */
+.menu__list-item-collapsible>.menu__link--active,
+.menu__list-item-collapsible>.menu__link--active:hover {
+  background: transparent !important;
+  color: var(--iiq-navy) !important;
+  box-shadow: none !important;
+}
+
+/* Tighter link-level items (override global sidebar link padding) */
+.theme-doc-sidebar-item-link-level-2 .menu__link,
+.theme-doc-sidebar-item-link-level-3 .menu__link,
+.theme-doc-sidebar-item-link-level-4 .menu__link,
+.theme-doc-sidebar-item-link-level-2 .menu__link--active,
+.theme-doc-sidebar-item-link-level-3 .menu__link--active,
+.theme-doc-sidebar-item-link-level-4 .menu__link--active {
+  padding: 0.2rem 0.62rem 0.2rem 0.95rem !important;
+  line-height: 1.2 !important;
+  border-radius: 0.4rem !important;
+}
+
+.theme-doc-sidebar-item-link-level-2 .menu__link--active:hover,
+.theme-doc-sidebar-item-link-level-3 .menu__link--active:hover,
+.theme-doc-sidebar-item-link-level-4 .menu__link--active:hover {
+  padding: 0.2rem 0.62rem 0.2rem 0.95rem !important;
+  line-height: 1.2 !important;
+  border-radius: 0.4rem !important;
 }
 
 /* Method badges in sidebar - small subtle pills */
@@ -965,27 +1377,65 @@ h3 + hr {
    ============================================ */
 
 /* Info/intro pages - remove duplicate titles */
-.theme-api-markdown > h1:first-of-type,
-.openapi-markdown > h1:first-of-type {
+.theme-api-markdown>h1:first-of-type,
+.openapi-markdown>h1:first-of-type {
   display: none;
 }
 
 /* Method endpoint styling */
 .openapi-method-endpoint,
+.openapi__method-endpoint,
 [class*="openapi-explorer"] [class*="endpoint"] {
   background: var(--gray-900) !important;
   border: 1px solid var(--gray-700) !important;
   border-radius: 0.75rem !important;
-  padding: 1rem 1.25rem !important;
-  margin: 1.5rem 0 !important;
+  padding: 0.75rem 1rem !important;
+  margin: 1rem 0 1.5rem 0 !important;
   font-family: var(--font-mono) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
 }
 
-/* Endpoint path text */
+/* OpenAPI typography scale - reduce overall sizing */
+.theme-api-markdown,
+.openapi-markdown,
+.openapi-explorer__container,
+[class*="openapi-explorer"],
+[class*="openapi-tabs"] {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.theme-api-markdown h2,
+.openapi-markdown h2 {
+  font-size: 1.35rem;
+}
+
+.theme-api-markdown h3,
+.openapi-markdown h3 {
+  font-size: 1.15rem;
+}
+
+.openapi__heading {
+  font-size: 2rem !important;
+}
+
+/* Endpoint path text - reset margins for proper alignment */
 .openapi-method-endpoint__path,
+.openapi__method-endpoint-path,
 [class*="endpoint"] [class*="path"] {
   color: var(--gray-300) !important;
-  font-size: 0.9375rem !important;
+  font-size: 0.875rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.4 !important;
+}
+
+/* Method badge inside endpoint box */
+.openapi__method-endpoint .badge {
+  flex-shrink: 0 !important;
+  margin: 0 !important;
 }
 
 /* Parameter styling */
@@ -1004,6 +1454,7 @@ h3 + hr {
   font-family: var(--font-mono);
   font-weight: 600;
   color: var(--iiq-navy);
+  font-size: 0.875rem;
 }
 
 .openapi-params__required,
@@ -1066,7 +1517,10 @@ h3 + hr {
    Print Styles
    ============================================ */
 @media print {
-  .navbar, .footer, .menu {
+
+  .navbar,
+  .footer,
+  .menu {
     display: none;
   }
 
@@ -1097,9 +1551,17 @@ h3 + hr {
     gap: 1rem;
   }
 
-  h1 { font-size: 1.875rem; }
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.25rem; }
+  h1 {
+    font-size: 1.875rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1137,7 +1599,7 @@ body.navigation-with-keyboard {
 }
 
 #__docusaurus,
-#__docusaurus > div {
+#__docusaurus>div {
   overflow-x: hidden !important;
   max-width: 100vw !important;
 }
@@ -1190,7 +1652,7 @@ div[class*="col--3"] {
 }
 
 .openapi-explorer__code-block-lines,
-[class*="code-block-lines"],
+.openapi-explorer__code-block-lines-numbering,
 [class*="codeBlockLines"] {
   max-width: 100% !important;
   overflow-x: auto !important;
@@ -1204,26 +1666,44 @@ div[class*="col--3"] {
   overflow-x: auto !important;
   word-wrap: normal !important;
   white-space: pre !important;
+  font-size: 0.8125rem !important;
 }
 
-/* Token lines - the actual culprit */
+/* Token lines - individual code lines should NOT scroll */
 .token-line,
 [class*="token-line"],
-.openapi-explorer__code-block-code-line,
-[class*="code-block-code-line"] {
+.openapi-explorer__code-block-code-line {
   white-space: pre !important;
-  display: block !important;
+  display: flex !important;
+  align-items: baseline !important;
   max-width: none !important;
+  overflow: visible !important;
 }
 
-/* Language tabs - prevent overflow */
+/* Code line number and content - must be inline for proper layout */
+.openapi-explorer__code-block-code-line-number {
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+  min-width: 2.5rem !important;
+  text-align: right !important;
+  padding-right: 1rem !important;
+  color: var(--gray-500) !important;
+  user-select: none !important;
+}
+
+.openapi-explorer__code-block-code-line-content {
+  display: inline !important;
+  flex: 1 !important;
+  overflow: visible !important;
+}
+
+/* Language tabs - hide scrollbar unless actually scrolling */
 .openapi-tabs__lang-container,
 [class*="openapi-tabs__lang"],
 [class*="openapi-tabs__code"] {
   max-width: 100% !important;
-  overflow-x: auto !important;
+  overflow-x: hidden !important;
   overflow-y: hidden !important;
-  -webkit-overflow-scrolling: touch;
 }
 
 /* Tab items - ensure they fit */
@@ -1236,7 +1716,7 @@ div[class*="col--3"] {
 /* Right panel container - strict overflow control */
 [class*="docItemCol_"],
 .col--3,
-.theme-doc-sidebar-container + div {
+.theme-doc-sidebar-container+div {
   max-width: 100%;
   overflow: hidden;
 }
@@ -1251,7 +1731,8 @@ div[class*="col--3"] {
 }
 
 /* Pre and code elements - always scrollable horizontally */
-pre, code {
+pre,
+code {
   max-width: 100%;
 }
 
@@ -1266,12 +1747,22 @@ pre {
   white-space: pre;
 }
 
-/* Main content wrapper - prevent overflow */
+/* Main content wrapper - prevent horizontal overflow */
 .main-wrapper,
 [class*="docMainContainer"],
 [class*="docItemContainer"] {
   max-width: 100vw !important;
   overflow-x: hidden !important;
+}
+
+/* Doc layout - let content define height so the footer stays reachable */
+.main-wrapper {
+  min-height: 0 !important;
+}
+
+[class*="docRoot"] {
+  min-height: 0 !important;
+  align-items: normal !important;
 }
 
 /* Doc page layout - contain children */
@@ -1280,6 +1771,15 @@ pre {
 article {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+/* Fix row negative margins causing horizontal overflow */
+.theme-doc-markdown .row,
+.markdown .row,
+[class*="docItemContainer"] .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  max-width: 100% !important;
 }
 
 /* Tables - horizontal scroll */
@@ -1314,4 +1814,382 @@ button.openapi-explorer__request-btn,
 .openapi-explorer__request-form:has(.openapi-explorer__request-btn:only-child),
 .openapi-explorer__details-outer-container:has(.openapi-explorer__request-btn:only-child) {
   display: none !important;
+}
+
+/* ============================================
+   Authorization/Security Panel Fixes
+   Fix dark text on dark background in right panel
+   ============================================ */
+
+/* Security details pre blocks - ensure light text on dark background */
+.openapi-security__details pre {
+  color: var(--gray-300) !important;
+  background: var(--gray-900) !important;
+}
+
+.openapi-security__details pre span,
+.openapi-security__details pre strong {
+  color: var(--gray-300) !important;
+}
+
+.openapi-security__details pre strong {
+  color: var(--gray-100) !important;
+  font-weight: 600;
+}
+
+.openapi-security__details pre a {
+  color: var(--iiq-gold) !important;
+}
+
+.openapi-security__details pre a:hover {
+  color: #ffe066 !important;
+}
+
+/* Right panel code blocks - ensure proper text contrast */
+.openapi-right-panel__container pre {
+  color: var(--gray-300) !important;
+}
+
+.openapi-right-panel__container pre span,
+.openapi-right-panel__container pre strong {
+  color: inherit;
+}
+
+/* ============================================
+   OpenAPI Response Tabs - Schema/Example tabs
+   Fix disconnected borders and inconsistent styling
+   ============================================ */
+
+/* Schema tabs container - the list holding Schema, Example (auto), Example */
+.openapi-tabs__schema-list-container,
+.openapi-tabs__schema {
+  border-bottom: 1px solid var(--gray-200) !important;
+  margin-bottom: 0 !important;
+  gap: 0 !important;
+}
+
+/* Individual schema tab items */
+.tabs__item.openapi-tabs__schema-item {
+  border-radius: 0.5rem 0.5rem 0 0 !important;
+  border: 1px solid transparent !important;
+  border-bottom: none !important;
+  margin-bottom: -1px !important;
+  padding: 0.625rem 1rem !important;
+  font-size: 0.875rem !important;
+  background: transparent !important;
+  color: var(--gray-600) !important;
+  position: relative !important;
+}
+
+.tabs__item.openapi-tabs__schema-item:hover {
+  background: var(--gray-50) !important;
+  color: var(--gray-900) !important;
+}
+
+/* Active schema tab - connects to content below */
+.tabs__item.openapi-tabs__schema-item.active {
+  border: 1px solid var(--gray-200) !important;
+  border-bottom: 1px solid white !important;
+  background: white !important;
+  color: var(--iiq-navy) !important;
+  font-weight: 600 !important;
+}
+
+/* MIME type tabs container - remove default bottom border for pill buttons */
+.openapi-tabs__mime-list-container.openapi-tabs__mime,
+ul.openapi-tabs__mime {
+  border-bottom: none !important;
+}
+
+/* MIME type tabs (APPLICATION/JSON) */
+.tabs__item.openapi-tabs__mime-item {
+  border-radius: 2rem !important;
+  border: 1px solid var(--gray-200) !important;
+  border-bottom: 1px solid var(--gray-200) !important; /* Override default tabs border-bottom */
+  padding: 0.5rem 1rem !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  background: white !important;
+  color: var(--gray-700) !important;
+  margin-bottom: 0 !important;
+}
+
+.tabs__item.openapi-tabs__mime-item.active {
+  border: 1px solid var(--iiq-navy) !important;
+  border-top: 1px solid var(--iiq-navy) !important;
+  border-right: 1px solid var(--iiq-navy) !important;
+  border-bottom: 1px solid var(--iiq-navy) !important;
+  border-left: 1px solid var(--iiq-navy) !important;
+  color: var(--iiq-navy) !important;
+  font-weight: 600 !important;
+}
+
+/* Schema content container - should connect to tabs */
+.openapi-tabs__schema-container > div:last-child,
+.openapi-markdown__details {
+  border: 1px solid var(--gray-200) !important;
+  border-top: none !important;
+  border-radius: 0 0 0.5rem 0.5rem !important;
+  background: var(--gray-50) !important;
+  margin-top: 0 !important;
+}
+
+/* ============================================
+   Schema Property Styling
+   Remove cramped boxes, use typography instead
+   ============================================ */
+
+/* Property row container - remove border, flex layout for right-aligned badges */
+.openapi-schema__container {
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  flex: 1 !important;
+  gap: 0.5rem !important;
+}
+
+/* Schema list items - square corners for stacked appearance, proper padding */
+.openapi-schema__list-item {
+  border-radius: 0 !important;
+  padding: 0.5rem 1rem !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Make the property line span full width */
+.openapi-schema__list-item > span:first-child {
+  display: flex !important;
+  width: 100% !important;
+}
+
+/* Property names - bold text, no border */
+.openapi-schema__property {
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+  font-weight: 600 !important;
+  color: var(--iiq-navy) !important;
+}
+
+/* Type indicators - lighter text, no border */
+.openapi-schema__type,
+.openapi-schema__name {
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+  padding-left: 0.25rem !important;
+  color: var(--gray-500) !important;
+  font-weight: 400 !important;
+  font-family: var(--ifm-font-family-monospace) !important;
+  font-size: 0.875em !important;
+}
+
+/* Required badge - clean pill style, right-aligned */
+.openapi-schema__required {
+  border: none !important;
+  background: var(--red-100) !important;
+  color: var(--red-700) !important;
+  padding: 0.125rem 0.5rem !important;
+  border-radius: 0.25rem !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  margin-left: auto !important;
+}
+
+/* Nullable badge - subtle style, right-aligned */
+.openapi-schema__nullable {
+  border: none !important;
+  background: var(--blue-100) !important;
+  color: var(--blue-700) !important;
+  padding: 0.125rem 0.5rem !important;
+  border-radius: 0.25rem !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  margin-left: auto !important;
+}
+
+/* Divider between property and type - hide */
+.openapi-schema__divider {
+  display: none !important;
+}
+
+/* ============================================
+   Hide Contact & License Sections on API Overview Pages
+   (These are auto-generated but not needed in the documentation)
+   ============================================ */
+
+/* Hide Contact section (has display:flex style with h3) */
+.theme-doc-markdown > div[style*="flex"]:has(h3),
+.markdown > div[style*="flex"]:has(h3) {
+  display: none !important;
+}
+
+/* Hide License section (has margin-bottom style with h3) */
+.theme-doc-markdown > div[style*="marginBottom"]:has(h3),
+.markdown > div[style*="marginBottom"]:has(h3),
+.theme-doc-markdown > div[style*="margin-bottom"]:has(h3),
+.markdown > div[style*="margin-bottom"]:has(h3) {
+  display: none !important;
+}
+
+/* ============================================
+   Hide Authentication Section on API Overview Pages
+   (Authentication is documented in /docs/guides/authentication)
+   ============================================ */
+h2#authentication,
+h2#authentication ~ .openapi-tabs__schema-tabs-container,
+h2#authentication ~ *:has(.openapi-tabs__security-schemes) {
+  display: none !important;
+}
+
+/* Also hide any standalone security scheme tabs */
+.openapi-tabs__security-schemes,
+.openapi-tabs__schema-tabs-container:has(.openapi-tabs__security-schemes) {
+  display: none !important;
+}
+
+/* ============================================
+   Authentication Section Styling (kept for reference)
+   Fix tab border clipping and table spacing
+   ============================================ */
+
+/* Security scheme tabs container - add padding to prevent border clipping */
+.openapi-tabs__security-schemes {
+  padding-left: 1px !important;
+  overflow: visible !important;
+}
+
+/* Security scheme tabs container parent */
+.openapi-tabs__schema-tabs-container:has(.openapi-tabs__security-schemes) {
+  overflow: visible !important;
+}
+
+/* Security scheme tab items - ensure proper borders */
+.openapi-tabs__security-schemes .tabs__item {
+  border: 1px solid var(--gray-200) !important;
+  border-bottom: none !important;
+  border-radius: 0.5rem 0.5rem 0 0 !important;
+  margin-right: 0.25rem !important;
+  margin-bottom: -1px !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.8125rem !important;
+  background: var(--gray-50) !important;
+  color: var(--gray-600) !important;
+  font-family: var(--font-mono) !important;
+}
+
+.openapi-tabs__security-schemes .tabs__item:hover {
+  background: white !important;
+  color: var(--gray-900) !important;
+}
+
+/* Active security tab - connects seamlessly to content */
+.openapi-tabs__security-schemes .tabs__item.active {
+  background: white !important;
+  border-color: var(--gray-200) !important;
+  border-bottom: 1px solid white !important;
+  color: var(--iiq-navy) !important;
+  font-weight: 600 !important;
+}
+
+/* Security scheme content panel */
+.openapi-tabs__security-schemes + div,
+.openapi-tabs__schema-tabs-container .tabItem_Ymn6,
+[class*="tabItem_"] {
+  border: 1px solid var(--gray-200) !important;
+  border-radius: 0 0.5rem 0.5rem 0.5rem !important;
+  padding: 1rem !important;
+  background: white !important;
+}
+
+/* Security scheme tables - compact styling, no border (container has border) */
+.openapi-tabs__schema-tabs-container table,
+[class*="tabItem_"] table {
+  margin: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  border-radius: 0 !important;
+  width: 100% !important;
+}
+
+/* Remove all cell borders explicitly */
+.openapi-tabs__schema-tabs-container table th,
+.openapi-tabs__schema-tabs-container table td,
+[class*="tabItem_"] table th,
+[class*="tabItem_"] table td {
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+}
+
+/* Security table cells - reduce excessive padding/height */
+.openapi-tabs__schema-tabs-container table td,
+.openapi-tabs__schema-tabs-container table th,
+[class*="tabItem_"] table td,
+[class*="tabItem_"] table th {
+  padding: 0.5rem 0.75rem !important;
+  height: auto !important;
+  line-height: 1.5 !important;
+  font-size: 0.875rem !important;
+  vertical-align: middle !important;
+}
+
+/* Remove paragraph margins inside table cells */
+.openapi-tabs__schema-tabs-container table td p,
+.openapi-tabs__schema-tabs-container table th p,
+[class*="tabItem_"] table td p,
+[class*="tabItem_"] table th p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Security table label cells (left column - uses th) */
+.openapi-tabs__schema-tabs-container table th,
+[class*="tabItem_"] table th {
+  font-weight: 600 !important;
+  color: var(--gray-500) !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  white-space: nowrap !important;
+  width: auto !important;
+  background: var(--gray-50) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--gray-200) !important;
+}
+
+/* Security table value cells (right column) */
+.openapi-tabs__schema-tabs-container table td,
+[class*="tabItem_"] table td {
+  color: var(--gray-800) !important;
+  font-family: var(--font-mono) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--gray-200) !important;
+}
+
+/* Last row - no bottom border */
+.openapi-tabs__schema-tabs-container table tr:last-child td,
+.openapi-tabs__schema-tabs-container table tr:last-child th,
+[class*="tabItem_"] table tr:last-child td,
+[class*="tabItem_"] table tr:last-child th {
+  border-bottom: none !important;
+}
+
+/* Security description text above table */
+.openapi-tabs__schema-tabs-container p,
+[class*="tabItem_"] > p:first-of-type {
+  margin: 0 0 0.75rem 0 !important;
+  color: var(--gray-600) !important;
+  font-size: 0.875rem !important;
 }

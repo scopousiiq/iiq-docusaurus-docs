@@ -1,5 +1,3 @@
-# Suppliers API
-
 The Suppliers API provides access to vendor and supplier management in IncidentIQ. Manage the external companies from which assets and parts are procured.
 
 ## Overview

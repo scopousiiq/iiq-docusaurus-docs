@@ -1,5 +1,3 @@
-# Events API
-
 The Events API provides access to IncidentIQ's event and scheduling system. Create, manage, and query events for facilities reservations, maintenance schedules, and organizational calendars.
 
 ## Overview

@@ -1,5 +1,3 @@
-# Custom Fields API
-
 The Custom Fields API enables you to extend IncidentIQ with organization-specific data. Create, configure, and manage custom fields for tickets, assets, users, and other entities.
 
 ## Overview

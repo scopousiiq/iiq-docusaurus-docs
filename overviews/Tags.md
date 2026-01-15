@@ -1,5 +1,3 @@
-# Tags API
-
 The Tags API provides access to tag management in IncidentIQ. Create and manage tags for categorizing and organizing tickets, assets, and other entities.
 
 ## Overview

@@ -1,5 +1,3 @@
-# Inventory API
-
 The Inventory API provides access to IncidentIQ's inventory management system. Track consumable items, parts, and supplies across locations with full support for stock actions, catalogs, and usage reporting.
 
 ## Overview

@@ -1,7 +1,7 @@
 ---
 id: funding-sources-api
 title: "Funding Sources API"
-description: "# Funding Sources API"
+description: "The Funding Sources API provides access to funding source management in IncidentIQ. Track budget allocations, grant funds, and financial sources used for purchasing assets, parts, and services."
 sidebar_label: Introduction
 sidebar_position: 0
 hide_title: true
@@ -28,8 +28,6 @@ import Export from "@theme/ApiExplorer/Export";
 </Heading>
 
 
-
-# Funding Sources API
 
 The Funding Sources API provides access to funding source management in IncidentIQ. Track budget allocations, grant funds, and financial sources used for purchasing assets, parts, and services.
 
@@ -123,107 +121,6 @@ curl -X GET "https://your-site.incidentiq.com/api/v1.0/funding-sources/{FundingS
 
 
 <div
-  style={{"marginBottom":"2rem"}}
->
-  <Heading
-    id={"authentication"}
-    as={"h2"}
-    className={"openapi-tabs__heading"}
-    children={"Authentication"}
-  >
-  </Heading><SchemaTabs
-    className={"openapi-tabs__security-schemes"}
-  >
-    <TabItem
-      label={"HTTP: Bearer Auth"}
-      value={"bearerAuth"}
-    >
-      
-      
-      JWT token from Administration > Developer Tools
-      
-      <div>
-        <table>
-          <tbody>
-            <tr>
-              <th>
-                Security Scheme Type:
-              </th><td>
-                http
-              </td>
-            </tr><tr>
-              <th>
-                HTTP Authorization Scheme:
-              </th><td>
-                bearer
-              </td>
-            </tr><tr>
-              <th>
-                Bearer format:
-              </th><td>
-                JWT
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </TabItem><TabItem
-      label={"API Key: siteId"}
-      value={"siteId"}
-    >
-      
-      
-      Your site identifier (UUID)
-      
-      <div>
-        <table>
-          <tbody>
-            <tr>
-              <th>
-                Security Scheme Type:
-              </th><td>
-                apiKey
-              </td>
-            </tr><tr>
-              <th>
-                Header parameter name:
-              </th><td>
-                SiteId
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </TabItem><TabItem
-      label={"API Key: client"}
-      value={"client"}
-    >
-      
-      
-      Must be "ApiClient"
-      
-      <div>
-        <table>
-          <tbody>
-            <tr>
-              <th>
-                Security Scheme Type:
-              </th><td>
-                apiKey
-              </td>
-            </tr><tr>
-              <th>
-                Header parameter name:
-              </th><td>
-                Client
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </TabItem>
-  </SchemaTabs>
-</div><div
   style={{"display":"flex","flexDirection":"column","marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
 >
   <h3

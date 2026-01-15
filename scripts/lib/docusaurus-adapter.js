@@ -39,30 +39,8 @@ function transformToDocusaurusFormat({ tagName, tagDef, paths, schemas, overview
         paths: transformPaths(paths, tagName),
         components: {
             schemas,
-            securitySchemes: {
-                bearerAuth: {
-                    type: 'http',
-                    scheme: 'bearer',
-                    bearerFormat: 'JWT',
-                    description: 'JWT token from Administration > Developer Tools',
-                },
-                siteId: {
-                    type: 'apiKey',
-                    in: 'header',
-                    name: 'SiteId',
-                    description: 'Your site identifier (UUID)',
-                },
-                client: {
-                    type: 'apiKey',
-                    in: 'header',
-                    name: 'Client',
-                    description: 'Must be "ApiClient"',
-                },
-            },
+            // Note: securitySchemes removed - authentication is documented in /docs/guides/authentication
         },
-        security: [
-            { bearerAuth: [], siteId: [], client: [] }
-        ],
     };
 
     // Add x-tagGroups for sidebar organization if there are sections

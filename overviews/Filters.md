@@ -1,5 +1,3 @@
-# Filters API
-
 The Filters API provides access to saved filter management in IncidentIQ.
 
 ## Overview

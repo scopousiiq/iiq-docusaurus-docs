@@ -1,5 +1,3 @@
-# Issues API
-
 The Issues API provides access to issue and issue type management in IncidentIQ. Configure the problems that users can report when creating tickets, define issue type taxonomies, and manage issue visibility.
 
 ## Overview

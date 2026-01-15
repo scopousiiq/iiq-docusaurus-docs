@@ -1,5 +1,3 @@
-# Model Issues API
-
 The Model Issues API manages the association between device models and the issues that can be reported for them.
 
 ## Overview

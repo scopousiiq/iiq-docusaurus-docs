@@ -1,5 +1,3 @@
-# Teams API
-
 The Teams API provides access to team management in IncidentIQ. Create teams, manage membership, and configure team-based ticket routing and assignment for efficient workload distribution.
 
 ## Overview

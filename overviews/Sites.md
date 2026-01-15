@@ -1,5 +1,3 @@
-# Sites API
-
 The Sites API provides access to site configuration and settings in IncidentIQ. Retrieve site information, roles, configuration settings, and system status.
 
 ## Overview

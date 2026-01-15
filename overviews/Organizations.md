@@ -1,5 +1,3 @@
-# Organizations API
-
 The Organizations API provides comprehensive management of external entities in IncidentIQ. Track vendors, suppliers, repair providers, and partner organizations—including their contacts and categorization.
 
 ## Overview

@@ -1,5 +1,3 @@
-# Users API
-
 The Users API provides access to user management in IncidentIQ. Search for users, manage profiles, handle authentication, and control account settings across your organization.
 
 ## Overview

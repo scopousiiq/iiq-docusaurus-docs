@@ -1,5 +1,3 @@
-# Assets API
-
 The Assets API provides full access to IncidentIQ's asset management system. Track devices, equipment, and inventory throughout their lifecycle—from procurement to retirement.
 
 ## Overview

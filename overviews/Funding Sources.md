@@ -1,5 +1,3 @@
-# Funding Sources API
-
 The Funding Sources API provides access to funding source management in IncidentIQ. Track budget allocations, grant funds, and financial sources used for purchasing assets, parts, and services.
 
 ## Overview

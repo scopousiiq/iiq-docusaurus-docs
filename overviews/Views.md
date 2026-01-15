@@ -1,5 +1,3 @@
-# Views API
-
 The Views API provides access to saved view configurations in IncidentIQ.
 
 ## Overview

@@ -1,5 +1,3 @@
-# SLAs API
-
 The SLAs API provides access to Service Level Agreement definitions and tracking in IncidentIQ. Monitor response times, resolution times, and compliance rates across your help desk.
 
 ## Overview

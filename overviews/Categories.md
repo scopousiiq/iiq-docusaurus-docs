@@ -1,5 +1,3 @@
-# Categories API
-
 The Categories API provides access to IncidentIQ's classification system. Manage categories for tickets, assets, knowledge base articles, and other entities to keep your data organized.
 
 ## Overview

@@ -1,5 +1,3 @@
-# Search API
-
 The Search API provides advanced cross-entity search capabilities with faceting support in IncidentIQ.
 
 ## Overview
