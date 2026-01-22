@@ -25,7 +25,7 @@ import Heading from "@theme/Heading";
 Minimal schedule entry for adding dates to a series.
 
 <Schema
-  schema={{"type":"object","description":"Minimal schedule entry for adding dates to a series.","properties":{"EventId":{"type":"string","format":"uuid"},"StartDateTime":{"type":"string","format":"date-time"},"EndDateTime":{"type":"string","format":"date-time"},"SetupTimeInMinutes":{"type":"integer","nullable":true},"BreakdownTimeInMinutes":{"type":"integer","nullable":true},"SkipAvailabilityCheck":{"type":"boolean"},"OverrideUserId":{"type":"string","format":"uuid","nullable":true},"OverrideDateTime":{"type":"string","format":"date-time","nullable":true},"DoubleBookingStrategy":{"type":"string","enum":["DontAllow","AllowIfSameOwner","Allow"]}},"title":"SlimEventSchedule"}}
+  schema={{"type":"object","description":"Minimal schedule entry for adding dates to a series.","properties":{"EventId":{"type":"string","format":"uuid"},"StartDateTime":{"type":"string","format":"date-time"},"EndDateTime":{"type":"string","format":"date-time"},"SetupTimeInMinutes":{"type":"integer","nullable":true},"BreakdownTimeInMinutes":{"type":"integer","nullable":true},"SkipAvailabilityCheck":{"type":"boolean"},"OverrideUserId":{"type":"string","format":"uuid","nullable":true,"x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"},"description":"UUID of the user (OverrideUserId). Obtain via [POST /api/v1.0/users](/docs/api/users/search-users), extract `Items[].UserId`."},"OverrideDateTime":{"type":"string","format":"date-time","nullable":true},"DoubleBookingStrategy":{"type":"string","enum":["DontAllow","AllowIfSameOwner","Allow"]}},"title":"SlimEventSchedule"}}
   schemaType={"response"}
 >
   

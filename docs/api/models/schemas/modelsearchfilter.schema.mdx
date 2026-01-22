@@ -1,0 +1,33 @@
+---
+id: modelsearchfilter
+title: "ModelSearchFilter"
+description: ""
+sidebar_label: "ModelSearchFilter"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Facet":"string","Ids":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Value":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ModelSearchFilter"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"Facet":{"type":"string"},"Ids":{"type":"array","items":{"type":"string","format":"uuid"}},"Value":{"type":"string","nullable":true}},"required":["Facet"],"title":"ModelSearchFilter"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

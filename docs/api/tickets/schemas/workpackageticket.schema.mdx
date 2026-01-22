@@ -25,7 +25,7 @@ import Heading from "@theme/Heading";
 Ticket entry inside a work package.
 
 <Schema
-  schema={{"type":"object","description":"Ticket entry inside a work package.","properties":{"WorkpackageId":{"type":"string","format":"uuid","description":"Work package identifier.","example":"44444444-4444-4444-8444-444444444444"},"TicketId":{"type":"string","format":"uuid","description":"Ticket identifier.","example":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8"},"IsClosed":{"type":"boolean","description":"Whether the ticket is closed.","example":false},"Priority":{"type":"integer","description":"Ticket numeric priority score.","example":100}},"required":["WorkpackageId","TicketId","IsClosed","Priority"],"title":"WorkpackageTicket"}}
+  schema={{"type":"object","description":"Ticket entry inside a work package.","properties":{"WorkpackageId":{"type":"string","format":"uuid","description":"Work package identifier.","example":"44444444-4444-4444-8444-444444444444"},"TicketId":{"type":"string","format":"uuid","description":"UUID of the ticket. Obtain via [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets), extract `Items[].TicketId`.","example":"0466a7fd-6dab-ef11-88cf-6045bdb6b1c8","x-obtained-from":{"operationId":"searchTickets","endpoint":"POST /api/v1.0/tickets","responseField":"Items[].TicketId"}},"IsClosed":{"type":"boolean","description":"Whether the ticket is closed.","example":false},"Priority":{"type":"integer","description":"Ticket numeric priority score.","example":100}},"required":["WorkpackageId","TicketId","IsClosed","Priority"],"title":"WorkpackageTicket"}}
   schemaType={"response"}
 >
   

@@ -25,7 +25,7 @@ import Heading from "@theme/Heading";
 Payload to set initial product for a user. Mirrors `Spark.Shared.Models.Requests.SetUserInitialProductRequest`.
 
 <Schema
-  schema={{"type":"object","description":"Payload to set initial product for a user. Mirrors `Spark.Shared.Models.Requests.SetUserInitialProductRequest`.","properties":{"UserId":{"type":"string","format":"uuid","description":"User identifier. Ignored when used in bulk operations."},"ProductId":{"type":"string","format":"uuid","description":"Product to set as the user's initial product."},"IsLocked":{"type":"boolean","description":"When true, locks the initial product setting from further automated changes."}},"title":"SetUserInitialProductRequest"}}
+  schema={{"type":"object","description":"Payload to set initial product for a user. Mirrors `Spark.Shared.Models.Requests.SetUserInitialProductRequest`.","properties":{"UserId":{"type":"string","format":"uuid","description":"User identifier. Ignored when used in bulk operations.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}},"ProductId":{"type":"string","format":"uuid","description":"Product to set as the user's initial product."},"IsLocked":{"type":"boolean","description":"When true, locks the initial product setting from further automated changes."}},"title":"SetUserInitialProductRequest"}}
   schemaType={"response"}
 >
   

@@ -8,22 +8,6 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Tickets",
-      link: {
-        type: "doc",
-        id: "api/tickets/tickets",
-      },
-      items: [
-        {
-          type: "doc",
-          id: "api/tickets/get-similar-tickets",
-          label: "Find similar tickets",
-          className: "api-method post",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Searching",
       link: {
         type: "doc",
@@ -82,6 +66,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/tickets/get-ticket-assets-by-model",
           label: "Find ticket assets by model/category",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/get-similar-tickets",
+          label: "Find similar tickets",
           className: "api-method post",
         },
         {

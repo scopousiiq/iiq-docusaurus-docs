@@ -25,7 +25,7 @@ import Heading from "@theme/Heading";
 Request payload for updating a ticket's description text.
 
 <Schema
-  schema={{"type":"object","description":"Request payload for updating a ticket's description text.","properties":{"TicketId":{"type":"string","format":"uuid","description":"Identifier of the ticket to update. Should match the TicketId in the URL path.","example":"a1b2c3d4-e5f6-7890-abcd-ef1234567890"},"Description":{"type":"string","description":"New description text for the ticket. This will replace the existing IssueDescription.","example":"Updated description: Device screen cracked after being dropped. Screen is not responding to touch."}},"example":{"TicketId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","Description":"Updated description: Device screen cracked after being dropped."},"title":"UpdateTicketDescriptionRequest"}}
+  schema={{"type":"object","description":"Request payload for updating a ticket's description text.","properties":{"TicketId":{"type":"string","format":"uuid","description":"Identifier of the ticket to update. Should match the TicketId in the URL path.","example":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","x-obtained-from":{"operationId":"searchTickets","endpoint":"POST /api/v1.0/tickets","responseField":"Items[].TicketId"}},"Description":{"type":"string","description":"New description text for the ticket. This will replace the existing IssueDescription.","example":"Updated description: Device screen cracked after being dropped. Screen is not responding to touch."}},"example":{"TicketId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","Description":"Updated description: Device screen cracked after being dropped."},"title":"UpdateTicketDescriptionRequest"}}
   schemaType={"response"}
 >
   

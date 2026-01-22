@@ -1,0 +1,33 @@
+---
+id: modelmapping
+title: "ModelMapping"
+description: "Maps a model alias string to its ModelId"
+sidebar_label: "ModelMapping"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Alias":"string","ModelId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ModelMapping"}
+>
+</Heading>
+
+
+
+Maps a model alias string to its ModelId
+
+<Schema
+  schema={{"type":"object","description":"Maps a model alias string to its ModelId","properties":{"Alias":{"type":"string","description":"Model name or alias to resolve"},"ModelId":{"type":"string","format":"uuid","nullable":true,"description":"Resolved ModelId for the alias"}},"title":"ModelMapping"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

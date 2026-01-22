@@ -1,0 +1,33 @@
+---
+id: getmodelcountrequest
+title: "GetModelCountRequest"
+description: "Request parameters for retrieving model counts"
+sidebar_label: "GetModelCountRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RoleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetModelCountRequest"}
+>
+</Heading>
+
+
+
+Request parameters for retrieving model counts
+
+<Schema
+  schema={{"type":"object","description":"Request parameters for retrieving model counts","properties":{"LocationId":{"type":"string","format":"uuid","nullable":true,"description":"Filter counts by location. Obtain via [GET /api/v2.0/locations](/docs/api/locations/get-my-locations-v-2).","x-obtained-from":{"operationId":"getMyLocationsV2","endpoint":"GET /api/v2.0/locations","responseField":"Items[].LocationId"}},"RoleId":{"type":"string","format":"uuid","nullable":true,"description":"Filter counts by role visibility. Obtain via GET /api/v1.0/sites/{SiteId}/roles."},"CategoryId":{"type":"string","format":"uuid","nullable":true,"description":"Filter counts by category. Obtain via [POST /api/v1.0/categories/v2](/docs/api/categories/search-categories-v-2)."}},"title":"GetModelCountRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

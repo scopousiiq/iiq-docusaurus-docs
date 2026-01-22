@@ -1,0 +1,78 @@
+---
+id: unlink-model-from-app
+title: "Unlink model from app"
+description: "Removes the link between a model and an application integration."
+sidebar_label: "Unlink model from app"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV0tz2zYQ/isYnBoNKTmdnniqGjutJknj+tGLowMMrETEJAADS8kaDf97ZwFKoh6x43R6qy+yKGK/b1/fLtbcOvACtTUTxQvemEqbh09WQfXe23rsHM+4giC9dvQSL/gV1HYBgWEJjF5m94BLAMMEq+kcE0YxYZhwrtIymmbaIMwTzPCL+WIGg0sPHh4bHTRCGAy+mJwNBhF3ogYDlrPbAOzu8vP1DRsJp0eLt8OzUbQfpj+NlJUhPk5PRgGEl2Wevr1JxsbOdabGfSYKDOqZBs8Cem3mic4VVAJBsQujnNUGO0qnCYzWHdF2RAEYCedG6wjXnuBGryRmOdpcOPeG5eydB4EpfjzjKOaBF3c8mg2FcC7vRYxPM/6Ua/2Yk2lerHkA2SXj8NWMW6/A8+KXszbjTnhRA4In62tuRA284B15nnFNJpzAkmc8ZsOD4gX6Bg6Tfns7OWd2FpMefRnyjAdZQi2IEK4cWU4R5RmfWV8LpHpqtOIt8bf3KLQBlc+8renMfuGlDKYA8IxDlwde8JMpiISDsybAew0VWZgg1OFuOty417bZ1uWYnFc5/GzNPOd820533GK2fj47o499+5ElS+0GilFQqGN4xqU1COT5mvdaaPQ10Ln1Ma69/woSj9r0dzDgtWQbKmxmPROxbqh3BTJlmbHIPGDjqXuDA6lnWjLyFldDdvGEYFRgv4kAVxszS40lM5YJpTQZExVznnKJGsKQ2lZFqG16A6v0AzAw4r7SZp4xpcPmX+sZej2fA4WOLa1/mFV2GSi+O6Pk620Af2MfwLxcbUeZbLAkj2Rs8AAh7OeUyvMKHhsIeC4QngVQAiFHXcMRyo2uIaCoHVuWYGKfjC8nFBoJgWJCT3yCIcSLJ5ANnaWDPUzT1Pfg9zBtc18dA16DX4DPg1bAYGOMETemDat1VekA0hoVCO4aBTbhnVV9rCgcEWzf9B83N5csxBNM0pE2458gBDE/GR3TVJUgiicb6bPrqkSb5FL6Zj0D761ndWeYYkIPPsDq9SCfhCy1gdyDUPRWZ/sBVrEWZaXBYBer+EspjKpiu2ZdJP8U9Unvvi0LxipInfTNLF+mH0jhXoz6xCD4rp3oUF92yAmlxdzYgFrGjH7uy+dr43XjhYRDgMrOmbTe0yik1xL/XhMeCs5OAvrvJbzn8cc78agBhRIoeiqS6i09/n7cIyF+icQHWOULUTXQ4yC0D9tS7BsV3ovVibhqmjovq/GYGWvymUBRsYWotEollIoxqbFWUY6dhwUYjJW01dA0H6StXQWYEryvj90QfG0dUNFvxvqMTCR5p689ljqE5iUROFCQphZm1429Hzdop8wfyNO/6/0kXG1/zt9tHZhmHDWSRX5tZ/j3lkzMO3HZx/ioAxLzYGd4lL/wHQk8YtIT5B6ZcZzPm1nLW/rLONAcpqmV1rgHUsj+RpjxWMbfvxnSilIDlpb2JgUVIM2XuBcV/BXbLq1BUTwTscZXvOAlogvFaKSgtkNtZFKZx6G0NSdgmgMxy53PaeejaUmOgA+J/9vh2fDsuI9CAOzuGbUwYg41xTpnCLWjFX6TDJhpQ4W30BKYLIUXEsHrKJ8ZHW1mQmLjwYcs3lhoPZhbryGkTYmAQreOCRnXsW6ZnHQ+Tf5i57CAipLMrhvnrKfG349CQOsqPS/xMBQZh1roKmZK5yEd//UwXhmvtASqhR0+iZ7XgMKvjuCWy+UB0AjB1yHWn7MBa2F6pm7j/tnFs7eD7gV9vVtJ/7/8/QeXv6R2CE84cpXQcfDGrK67lryjEqHmeBs7YnsDKnY3uc5Wyl6RrjvTjJc2IJ1fr+9FgFtftS09fmzAr3hxNyXl8Dpp692ap82cBGomqnCotP06+Omq07I37OTV8KRTm1FqVjvJ4jzrBG17b8t+kMiLV7YfIJUi2U7bjJcgon5uFXgsJTjsnTq6ru3p7PnFx4ubC962/wCidRt7
+sidebar_class_name: "delete api-method"
+info_path: docs/api/models/models-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Unlink model from app"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1.0/models/{ModelId}/link/app/{AppId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Removes the link between a model and an application integration.
+
+**Prerequisites**
+- **ModelId** - Use [POST /api/v1.0/models](/docs/api/models/search-models)
+- **AppId** - Application identifier string
+
+**Related Endpoints**
+- [POST /api/v1.0/models/\{ModelId\}/link/app/\{AppId\}](/docs/api/models/link-model-to-app) - Create link
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"ModelId","in":"path","required":true,"description":"UUID of the model.","schema":{"type":"string","format":"uuid"},"x-obtained-from":{"operationId":"searchModels","endpoint":"POST /api/v1.0/models","responseField":"Items[].ModelId"}},{"name":"AppId","in":"path","required":true,"description":"Application identifier string.","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Model unlinked from app","content":{"application/json":{"schema":{"type":"object","description":"Generic response for actions that do not return a specific entity. Extends BaseResponse with no additional properties. Used for operations like enabling, disabling, or triggering workflows.","properties":{"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Message":{"type":"string","nullable":true,"description":"Optional informational or error message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors that did not prevent the operation"}},"required":["StatusCode"],"title":"ActionResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

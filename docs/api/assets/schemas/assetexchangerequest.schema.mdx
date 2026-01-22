@@ -25,7 +25,7 @@ import Heading from "@theme/Heading";
 Request to exchange an asset between users
 
 <Schema
-  schema={{"type":"object","description":"Request to exchange an asset between users","properties":{"OwnerId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the new owner"},"FromAssetId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the asset to exchange from"},"ToAssetId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the asset to exchange to"},"TicketId":{"type":"string","format":"uuid","nullable":true,"description":"Associated ticket for the exchange"}},"title":"AssetExchangeRequest"}}
+  schema={{"type":"object","description":"Request to exchange an asset between users","properties":{"OwnerId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the user (OwnerId). Obtain via [POST /api/v1.0/users](/docs/api/users/search-users), extract `Items[].UserId`.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}},"FromAssetId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the asset to exchange from"},"ToAssetId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the asset to exchange to"},"TicketId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the ticket. Obtain via [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets), extract `Items[].TicketId`.","x-obtained-from":{"operationId":"searchTickets","endpoint":"POST /api/v1.0/tickets","responseField":"Items[].TicketId"}}},"title":"AssetExchangeRequest"}}
   schemaType={"response"}
 >
   

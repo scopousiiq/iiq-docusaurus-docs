@@ -49,6 +49,7 @@ const sidebars: SidebarsConfig = {
   ],
 
   // API Reference sidebar - dynamically imports generated sidebars
+  // All 27 API categories flattened at top level, sorted alphabetically
   // Uses extractCategoryWithIntro to put overview content on category page instead of separate "Introduction" item
   apiSidebar: [
     {
@@ -58,9 +59,9 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Tickets',
+      label: 'Analytics',
       collapsed: true,
-      ...extractCategoryWithIntro(require('./docs/api/tickets/sidebar.ts').default),
+      ...extractCategoryWithIntro(require('./docs/api/analytics/sidebar.ts').default),
     },
     {
       type: 'category',
@@ -70,15 +71,9 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Users',
+      label: 'Categories',
       collapsed: true,
-      ...extractCategoryWithIntro(require('./docs/api/users/sidebar.ts').default),
-    },
-    {
-      type: 'category',
-      label: 'Locations',
-      collapsed: true,
-      ...extractCategoryWithIntro(require('./docs/api/locations/sidebar.ts').default),
+      ...extractCategoryWithIntro(require('./docs/api/categories/sidebar.ts').default),
     },
     {
       type: 'category',
@@ -88,45 +83,9 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Categories',
-      collapsed: true,
-      ...extractCategoryWithIntro(require('./docs/api/categories/sidebar.ts').default),
-    },
-    {
-      type: 'category',
-      label: 'Workflows',
-      collapsed: true,
-      ...extractCategoryWithIntro(require('./docs/api/workflows/sidebar.ts').default),
-    },
-    {
-      type: 'category',
       label: 'Events',
       collapsed: true,
       ...extractCategoryWithIntro(require('./docs/api/events/sidebar.ts').default),
-    },
-    {
-      type: 'category',
-      label: 'Inventory',
-      collapsed: true,
-      ...extractCategoryWithIntro(require('./docs/api/inventory/sidebar.ts').default),
-    },
-    {
-      type: 'category',
-      label: 'Parts',
-      collapsed: true,
-      ...extractCategoryWithIntro(require('./docs/api/parts/sidebar.ts').default),
-    },
-    {
-      type: 'category',
-      label: 'Organizations',
-      collapsed: true,
-      ...extractCategoryWithIntro(require('./docs/api/organizations/sidebar.ts').default),
-    },
-    {
-      type: 'category',
-      label: 'Teams',
-      collapsed: true,
-      ...extractCategoryWithIntro(require('./docs/api/teams/sidebar.ts').default),
     },
     {
       type: 'category',
@@ -142,76 +101,129 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Funding Sources',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/funding-sources/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Inventory',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/inventory/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Invoicing',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/invoicing/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Issues',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/issues/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Locations',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/locations/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Manufacturers',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/manufacturers/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Model Issues',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/model-issues/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Models',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/models/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Organizations',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/organizations/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Parts',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/parts/sidebar.ts').default),
+    },
+    {
+      type: 'category',
       label: 'Search',
       collapsed: true,
       ...extractCategoryWithIntro(require('./docs/api/search/sidebar.ts').default),
     },
     {
       type: 'category',
-      label: 'Other APIs',
+      label: 'Sites',
       collapsed: true,
-      items: [
-        {
-          type: 'category',
-          label: 'Analytics',
-          ...extractCategoryWithIntro(require('./docs/api/analytics/sidebar.ts').default),
-        },
-        {
-          type: 'category',
-          label: 'Funding Sources',
-          ...extractCategoryWithIntro(require('./docs/api/funding-sources/sidebar.ts').default),
-        },
-        {
-          type: 'category',
-          label: 'Invoicing',
-          ...extractCategoryWithIntro(require('./docs/api/invoicing/sidebar.ts').default),
-        },
-        {
-          type: 'category',
-          label: 'Issues',
-          ...extractCategoryWithIntro(require('./docs/api/issues/sidebar.ts').default),
-        },
-        {
-          type: 'category',
-          label: 'Manufacturers',
-          ...extractCategoryWithIntro(require('./docs/api/manufacturers/sidebar.ts').default),
-        },
-        {
-          type: 'category',
-          label: 'Model Issues',
-          ...extractCategoryWithIntro(require('./docs/api/model-issues/sidebar.ts').default),
-        },
-        {
-          type: 'category',
-          label: 'Sites',
-          ...extractCategoryWithIntro(require('./docs/api/sites/sidebar.ts').default),
-        },
-        {
-          type: 'category',
-          label: 'SLAs',
-          ...extractCategoryWithIntro(require('./docs/api/slas/sidebar.ts').default),
-        },
-        {
-          type: 'category',
-          label: 'Suppliers',
-          ...extractCategoryWithIntro(require('./docs/api/suppliers/sidebar.ts').default),
-        },
-        {
-          type: 'category',
-          label: 'Surveys',
-          ...extractCategoryWithIntro(require('./docs/api/surveys/sidebar.ts').default),
-        },
-        {
-          type: 'category',
-          label: 'Tags',
-          ...extractCategoryWithIntro(require('./docs/api/tags/sidebar.ts').default),
-        },
-        {
-          type: 'category',
-          label: 'Views',
-          ...extractCategoryWithIntro(require('./docs/api/views/sidebar.ts').default),
-        },
-      ],
+      ...extractCategoryWithIntro(require('./docs/api/sites/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'SLAs',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/slas/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Suppliers',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/suppliers/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Surveys',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/surveys/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Tags',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/tags/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Teams',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/teams/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Tickets',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/tickets/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Users',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/users/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Views',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/views/sidebar.ts').default),
+    },
+    {
+      type: 'category',
+      label: 'Workflows',
+      collapsed: true,
+      ...extractCategoryWithIntro(require('./docs/api/workflows/sidebar.ts').default),
     },
   ],
 };

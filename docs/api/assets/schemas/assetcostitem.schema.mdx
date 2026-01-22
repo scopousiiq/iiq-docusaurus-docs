@@ -25,7 +25,7 @@ import Heading from "@theme/Heading";
 Individual cost item for an asset from a ticket
 
 <Schema
-  schema={{"type":"object","description":"Individual cost item for an asset from a ticket","properties":{"TicketId":{"type":"string","format":"uuid","description":"UUID of the ticket associated with this cost"},"Date":{"type":"string","format":"date","description":"Date of the activity"},"TotalCostAmount":{"type":"number","format":"decimal","description":"Total cost for this item"},"TimeAmount":{"type":"number","format":"decimal","description":"Time spent in hours"},"LaborAmount":{"type":"number","format":"decimal","description":"Labor cost component"},"PartsAmount":{"type":"number","format":"decimal","description":"Parts cost component"}},"title":"AssetCostItem"}}
+  schema={{"type":"object","description":"Individual cost item for an asset from a ticket","properties":{"TicketId":{"type":"string","format":"uuid","description":"UUID of the ticket. Obtain via [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets), extract `Items[].TicketId`.","x-obtained-from":{"operationId":"searchTickets","endpoint":"POST /api/v1.0/tickets","responseField":"Items[].TicketId"}},"Date":{"type":"string","format":"date","description":"Date of the activity"},"TotalCostAmount":{"type":"number","format":"decimal","description":"Total cost for this item"},"TimeAmount":{"type":"number","format":"decimal","description":"Time spent in hours"},"LaborAmount":{"type":"number","format":"decimal","description":"Labor cost component"},"PartsAmount":{"type":"number","format":"decimal","description":"Parts cost component"}},"title":"AssetCostItem"}}
   schemaType={"response"}
 >
   

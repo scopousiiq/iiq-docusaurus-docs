@@ -25,7 +25,7 @@ import Heading from "@theme/Heading";
 
 
 <Schema
-  schema={{"type":"array","items":{"type":"object","description":"Represents a user's membership in a team.","properties":{"UserId":{"type":"string","format":"uuid","description":"Unique identifier of the user."},"TeamId":{"type":"string","format":"uuid","description":"Unique identifier of the team."},"UserName":{"type":"string","description":"Display name of the user.","nullable":true},"IsDeleted":{"type":"boolean","description":"Whether the membership is soft-deleted."}},"required":["UserId","TeamId"],"title":"TeamMember"},"title":"TeamMemberListRequest"}}
+  schema={{"type":"array","items":{"type":"object","description":"Represents a user's membership in a team.","properties":{"UserId":{"type":"string","format":"uuid","description":"Unique identifier of the user.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}},"TeamId":{"type":"string","format":"uuid","description":"Unique identifier of the team."},"UserName":{"type":"string","description":"Display name of the user.","nullable":true},"IsDeleted":{"type":"boolean","description":"Whether the membership is soft-deleted."}},"required":["UserId","TeamId"],"title":"TeamMember"},"title":"TeamMemberListRequest"}}
   schemaType={"response"}
 >
   

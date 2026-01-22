@@ -25,7 +25,7 @@ import Heading from "@theme/Heading";
 Ticket reference within an inventory timeline entry.
 
 <Schema
-  schema={{"type":"object","description":"Ticket reference within an inventory timeline entry.","properties":{"InventoryActionId":{"type":"string","format":"uuid","description":"The inventory action this ticket is linked to."},"TicketId":{"type":"string","format":"uuid","description":"Identifier of the ticket."},"TicketNumber":{"type":"string","description":"Human-readable ticket number."}},"required":["InventoryActionId","TicketId","TicketNumber"],"title":"TimelineEntryTicket"}}
+  schema={{"type":"object","description":"Ticket reference within an inventory timeline entry.","properties":{"InventoryActionId":{"type":"string","format":"uuid","description":"The inventory action this ticket is linked to."},"TicketId":{"type":"string","format":"uuid","description":"UUID of the ticket. Obtain via [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets), extract `Items[].TicketId`.","x-obtained-from":{"operationId":"searchTickets","endpoint":"POST /api/v1.0/tickets","responseField":"Items[].TicketId"}},"TicketNumber":{"type":"string","description":"Human-readable ticket number."}},"required":["InventoryActionId","TicketId","TicketNumber"],"title":"TimelineEntryTicket"}}
   schemaType={"response"}
 >
   

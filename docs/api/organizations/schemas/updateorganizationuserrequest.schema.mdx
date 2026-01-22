@@ -25,7 +25,7 @@ import Heading from "@theme/Heading";
 Request body for creating or updating an organization-user relationship.
 
 <Schema
-  schema={{"type":"object","description":"Request body for creating or updating an organization-user relationship.","properties":{"OrganizationUserId":{"type":"string","format":"uuid"},"OrganizationId":{"type":"string","format":"uuid"},"UserId":{"type":"string","format":"uuid"}},"title":"UpdateOrganizationUserRequest"}}
+  schema={{"type":"object","description":"Request body for creating or updating an organization-user relationship.","properties":{"OrganizationUserId":{"type":"string","format":"uuid","x-obtained-from":{"operationId":"getOrganizationsByQueryPost","endpoint":"POST /api/v1.0/organizations/query","responseField":"Items[].Users[].OrganizationUserId"},"description":"UUID of the user (OrganizationUserId). Obtain via [POST /api/v1.0/users](/docs/api/users/search-users), extract `Items[].UserId`."},"OrganizationId":{"type":"string","format":"uuid"},"UserId":{"type":"string","format":"uuid","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"},"description":"UUID of the user (UserId). Obtain via [POST /api/v1.0/users](/docs/api/users/search-users), extract `Items[].UserId`."}},"title":"UpdateOrganizationUserRequest"}}
   schemaType={"response"}
 >
   

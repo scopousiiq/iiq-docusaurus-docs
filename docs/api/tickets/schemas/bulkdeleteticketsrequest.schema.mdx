@@ -25,7 +25,7 @@ import Heading from "@theme/Heading";
 Request payload for bulk deleting tickets.
 
 <Schema
-  schema={{"type":"object","description":"Request payload for bulk deleting tickets.","properties":{"TicketIds":{"type":"array","description":"Array of ticket identifiers to delete.","items":{"type":"string","format":"uuid"},"minItems":1},"Request":{"type":"object","description":"Delete options.","properties":{"TicketId":{"type":"string","format":"uuid","description":"Template ticket ID (optional)."}}}},"required":["TicketIds"],"example":{"TicketIds":["260b8773-dcad-f011-8e61-000d3a7bb518","370c9884-edbe-f011-9f72-111e4a8cc629"]},"title":"BulkDeleteTicketsRequest"}}
+  schema={{"type":"object","description":"Request payload for bulk deleting tickets.","properties":{"TicketIds":{"type":"array","description":"Array of ticket identifiers to delete.","items":{"type":"string","format":"uuid"},"minItems":1},"Request":{"type":"object","description":"Delete options.","properties":{"TicketId":{"type":"string","format":"uuid","description":"UUID of the ticket. Obtain via [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets), extract `Items[].TicketId`.","x-obtained-from":{"operationId":"searchTickets","endpoint":"POST /api/v1.0/tickets","responseField":"Items[].TicketId"}}}}},"required":["TicketIds"],"example":{"TicketIds":["260b8773-dcad-f011-8e61-000d3a7bb518","370c9884-edbe-f011-9f72-111e4a8cc629"]},"title":"BulkDeleteTicketsRequest"}}
   schemaType={"response"}
 >
   

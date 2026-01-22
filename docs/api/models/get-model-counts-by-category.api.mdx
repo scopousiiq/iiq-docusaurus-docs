@@ -1,0 +1,77 @@
+---
+id: get-model-counts-by-category
+title: "Get model counts by category with filters"
+description: "Retrieves model counts grouped by various dimensions for a specific category with optional filtering."
+sidebar_label: "Get model counts by category with filters"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/models/models-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get model counts by category with filters"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/models/for/category/{CategoryId}/counts"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves model counts grouped by various dimensions for a specific category with optional filtering.
+
+**Prerequisites**
+- **CategoryId** - Use [POST /api/v1.0/categories/v2](/docs/api/categories/search-categories-v-2)
+
+**Related Endpoints**
+- [GET /api/v1.0/models/for/category/\{CategoryId\}/counts](/docs/api/models/get-model-counts-by-category-get) - Simple GET version
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"CategoryId","in":"path","required":true,"description":"UUID of the category.","schema":{"type":"string","format":"uuid"},"x-obtained-from":{"operationId":"searchCategoriesV2","endpoint":"POST /api/v1.0/categories/v2","responseField":"Items[].CategoryId"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Model counts for the category","content":{"application/json":{"schema":{"type":"object","description":"Paginated list response containing ModelCount items","allOf":[{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"}],"properties":{"Items":{"type":"array","items":{"type":"object","description":"Asset count statistics for a model","properties":{"SiteId":{"type":"string","format":"uuid","description":"Site where the count applies"},"ModelId":{"type":"string","format":"uuid","description":"Model identifier"},"ManufacturerId":{"type":"string","format":"uuid","nullable":true,"description":"Manufacturer filter applied"},"CategoryId":{"type":"string","format":"uuid","nullable":true,"description":"Category filter applied"},"LocationId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the location. Obtain via [GET /api/v2.0/locations](/docs/api/locations/get-my-locations-v-2), extract `Items[].LocationId`.","x-obtained-from":{"operationId":"getMyLocationsV2","endpoint":"GET /api/v2.0/locations","responseField":"Items[].LocationId"}},"RoleId":{"type":"string","format":"uuid","nullable":true,"description":"Role filter applied"},"Assets":{"type":"integer","description":"Number of assets using this model"}},"required":["SiteId","ModelId","Assets"],"title":"ModelCount"}}},"title":"ModelCountListResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

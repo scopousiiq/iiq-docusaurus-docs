@@ -25,7 +25,7 @@ import Heading from "@theme/Heading";
 Association between a user and a location room. Mirrors `Spark.Shared.Models.UserRoom`.
 
 <Schema
-  schema={{"type":"object","description":"Association between a user and a location room. Mirrors `Spark.Shared.Models.UserRoom`.","properties":{"UserId":{"type":"string","format":"uuid","description":"User identifier."},"LocationRoomId":{"type":"string","format":"uuid","description":"Location room identifier."}},"title":"UserRoom"}}
+  schema={{"type":"object","description":"Association between a user and a location room. Mirrors `Spark.Shared.Models.UserRoom`.","properties":{"UserId":{"type":"string","format":"uuid","description":"UUID of the user (UserId). Obtain via [POST /api/v1.0/users](/docs/api/users/search-users), extract `Items[].UserId`.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}},"LocationRoomId":{"type":"string","format":"uuid","description":"Location room identifier."}},"title":"UserRoom"}}
   schemaType={"response"}
 >
   

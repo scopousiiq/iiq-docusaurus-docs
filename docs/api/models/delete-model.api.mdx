@@ -1,0 +1,84 @@
+---
+id: delete-model
+title: "Delete model"
+description: "Deletes a model from the system."
+sidebar_label: "Delete model"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVs1yGzcMfhUMTolmJdnp9LKnZmJ3qpmmdv3THGwdaC5WYswl1yTWtkajax6gj9gn6YBc2ZKlpE0O7SW6SCKJvw/AByzRtxQUG+8mFZZYkSWm974iiwVWFHUwrdxiiUfpLoKCRu6hDr4BnhPERWRqRtfu2g0Gp4EC3XUmGqY4GFy7IQwGSeGkGgxgCJeR4Or05PwCxqo14/vD0cE4KYzTV+PK65iO88k4kgp6Psz/XgN7qI2rktXsBHvIPmfrH1Rwxs0GgxKSu8bNnvxt1AJUXZNmUDESR+C5YghUUyCnCQyP4NjFLhA4v36jAkEXRQ/PTexV3VDtA2XLxrs+9A8+3NbWP8Dxo2paSxL94QjOUwxZMpbfHPtfn/7Mwe8E/mYEf1Aw9WLD7S7ShsPX7ocRvFPW5jNyVeuN4xKOjn89vjje8Wa87DO2ypGdkVVMFRz3gn1i94cyvuns7Tg7tycsuR3m26fYhjlbBE1n2bS2z24ExeCdJiyQ1SxieYXvM4yNcmpm3AynBT4Ojbkbih0slxhJ9wX79KZAHyoKWP54sCqwVUE1xBRE3xKdaghL7APGAo3ItornWGAq5UAVlhw6etkRl5eTI/D1vnIcwckNK+Pg3qhvTfkIC4x6To2SuHjRip+RQw6p9qFRjCV2nalwJTD4ZJKqobSmyGw3d9aeAcQC11WAJe71L4UfW+8i/WzIioYJUxOvpqM1WKvV9PlRQv/NwYF8beOUnvfAVBA7rSnGurN2gQVq75jEiyWqtrVGJ4fHH6OILncB8DcfSfMOO531XkAg7oKjClTNFLas9Q2bOCFQ9F3QNIJ33glsMaXxOaFrd41wGxbYBkGTTY5TAP2nnHypXNba125IAi8jhQt/S+7rVb/teE6OBTxBmGI03oGp5Kw2FET9Gd11FPlIMX3RQKWYhmwa2rFyYRqKrJoWHubkUhxvTyfQBi8QU+blkM2IxeNH0p3IiuCGTdc1NxS2bPruxu4aPKdwT2EYTUVAa2UgvoFx0BhrTSTtXRXF3Dkr7uI7X23aMo5ploxtq/7l4uIUYpIALSKrAt9TjGq2Fx3XWavExb1EcJJ+KAvG5ZDyv6bXJ76lSH5TzV7tL5L53AbgfEV5Tn0W5dN8sVWRn4t64piCuNZr2ygRqH2AyqiZ85GNToiebPLH14JyEZQM1W0D1s9A+xBkoMiz1WqTZK8wMfBGIqcFsmExkcgnj4l1r+NKPgXSI5OTis+MfksLLDenQoH3ynb0L6aD8FlDPPfPy5C0vgyDEj8/JYWoU4KzA12wWOKcuY3leFxR40fG6YzE3Uj7BsWO1EpCtY8vE7N0lDhMIWY/D0cHo4PdGpEx/7TYODWjhhzDEJiaVoZ1v91UVBsndHNvNIGeq6A0UzApxYWIdrXS3AUKsQDlKhAKmflgKKaE5X2i52mlE0/3I3PSxzT5HY7onqzwI5x3beuD8PM2CpF9a81szi+hKJAaZeSpas0wZvGfXuJVoDWaJOfP9k+Db4MhVmGxY+7h4eGFoTFTaGIquNZHbpTbULVeP/YtvsvnEfV9B/6+A/+fO3DmX6ZHHrdWGSd9kep+2XPUlTSR0Mdh4oynRa5cb2zTAuc+srxcLm9UpMtgVys5vusoLLC8mgpbBpN5/WqJlYnyu8KyVja+ZPnN5nh11hP5a/gPNuO9YPSHyi2eSR+x6EfC09o6XRU4J5VY/2lgvNWaWt6Q21lHt6ZDLhtcrf4GpXRO4g==
+sidebar_class_name: "delete api-method"
+info_path: docs/api/models/models-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete model"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1.0/models/{ModelId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes a model from the system.
+
+**Prerequisites**
+- **ModelId** - Use [POST /api/v1.0/models](/docs/api/models/search-models) to find the model to delete
+
+**Warning**: Deleting a model may affect assets that reference it. Ensure no assets are using this model before deletion.
+
+**Workflow Example**
+1. Search models: [POST /api/v1.0/models](/docs/api/models/search-models) → find model to delete
+2. Verify no assets use this model
+3. Call this endpoint: DELETE /api/v1.0/models/\{ModelId\}
+
+**Related Endpoints**
+- [POST /api/v1.0/models/bulk/delete](/docs/api/models/bulk-delete-models) - Delete multiple models at once
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"ModelId","in":"path","required":true,"description":"UUID of the model to delete. Obtain via [POST /api/v1.0/models](/docs/api/models/search-models).","schema":{"type":"string","format":"uuid"},"x-obtained-from":{"operationId":"searchModels","endpoint":"POST /api/v1.0/models","responseField":"Items[].ModelId"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Model deleted successfully","content":{"application/json":{"schema":{"type":"object","description":"Response returned after successfully deleting a resource. Contains the ID of the deleted item.","properties":{"Id":{"type":"string","format":"uuid","description":"UUID of the deleted resource"},"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"}},"required":["Id","StatusCode"],"title":"ItemDeleteResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

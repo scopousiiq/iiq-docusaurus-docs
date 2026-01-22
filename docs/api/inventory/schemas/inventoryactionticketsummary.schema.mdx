@@ -25,7 +25,7 @@ import Heading from "@theme/Heading";
 Ticket metadata surfaced when inventory actions are linked to tickets.
 
 <Schema
-  schema={{"type":"object","description":"Ticket metadata surfaced when inventory actions are linked to tickets.","properties":{"TicketId":{"type":"string","format":"uuid","description":"Identifier of the related ticket."},"SiteId":{"type":"string","format":"uuid","description":"Site scope for the ticket."},"ProductId":{"type":"string","format":"uuid","description":"Product identifier associated with the ticket."},"TicketNumber":{"type":"string","description":"Human-readable ticket number."},"Subject":{"type":"string","description":"Ticket subject line."}},"required":["TicketId","SiteId","ProductId","TicketNumber","Subject"],"title":"InventoryActionTicketSummary"}}
+  schema={{"type":"object","description":"Ticket metadata surfaced when inventory actions are linked to tickets.","properties":{"TicketId":{"type":"string","format":"uuid","description":"UUID of the ticket. Obtain via [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets), extract `Items[].TicketId`.","x-obtained-from":{"operationId":"searchTickets","endpoint":"POST /api/v1.0/tickets","responseField":"Items[].TicketId"}},"SiteId":{"type":"string","format":"uuid","description":"Site scope for the ticket."},"ProductId":{"type":"string","format":"uuid","description":"Product identifier associated with the ticket."},"TicketNumber":{"type":"string","description":"Human-readable ticket number."},"Subject":{"type":"string","description":"Ticket subject line."}},"required":["TicketId","SiteId","ProductId","TicketNumber","Subject"],"title":"InventoryActionTicketSummary"}}
   schemaType={"response"}
 >
   

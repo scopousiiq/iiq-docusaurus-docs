@@ -1,0 +1,33 @@
+---
+id: appmodel
+title: "AppModel"
+description: "Configuration for a model-application link"
+sidebar_label: "AppModel"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AppId":"string","ModelId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","InheritIssues":false}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AppModel"}
+>
+</Heading>
+
+
+
+Configuration for a model-application link
+
+<Schema
+  schema={{"type":"object","description":"Configuration for a model-application link","properties":{"AppId":{"type":"string","description":"Application identifier"},"ModelId":{"type":"string","format":"uuid","description":"Model identifier"},"InheritIssues":{"type":"boolean","description":"Whether the model inherits issues from the app","default":false}},"required":["AppId","ModelId"],"title":"AppModel"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

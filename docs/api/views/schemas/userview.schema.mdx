@@ -25,7 +25,7 @@ import Heading from "@theme/Heading";
 
 
 <Schema
-  schema={{"type":"object","properties":{"ViewId":{"type":"string","format":"uuid"},"Name":{"type":"string"},"Description":{"type":"string"},"OwnerId":{"type":"string","format":"uuid"}},"title":"UserView"}}
+  schema={{"type":"object","properties":{"ViewId":{"type":"string","format":"uuid"},"Name":{"type":"string"},"Description":{"type":"string"},"OwnerId":{"type":"string","format":"uuid","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"},"description":"UUID of the user (OwnerId). Obtain via [POST /api/v1.0/users](/docs/api/users/search-users), extract `Items[].UserId`."}},"title":"UserView"}}
   schemaType={"response"}
 >
   

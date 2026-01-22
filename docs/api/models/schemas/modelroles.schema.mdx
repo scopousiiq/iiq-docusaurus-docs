@@ -1,0 +1,33 @@
+---
+id: modelroles
+title: "ModelRoles"
+description: "Model visibility settings across roles"
+sidebar_label: "ModelRoles"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ModelId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","EnabledRoles":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"DisabledRoles":["3fa85f64-5717-4562-b3fc-2c963f66afa6"]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ModelRoles"}
+>
+</Heading>
+
+
+
+Model visibility settings across roles
+
+<Schema
+  schema={{"type":"object","description":"Model visibility settings across roles","properties":{"ModelId":{"type":"string","format":"uuid","description":"Model identifier"},"EnabledRoles":{"type":"array","items":{"type":"string","format":"uuid"},"description":"List of role IDs that have this model enabled"},"DisabledRoles":{"type":"array","items":{"type":"string","format":"uuid"},"description":"List of role IDs that have this model disabled"}},"required":["ModelId"],"title":"ModelRoles"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

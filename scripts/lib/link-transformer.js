@@ -2,14 +2,24 @@
  * Link Transformer - Converts documentation links to Docusaurus format
  *
  * Transforms markdown links from OpenAPI internal format to Docusaurus URLs:
- * - Source: [POST /api/v1.0/search](#/Users/searchUsers)
- * - Output: [POST /api/v1.0/search](/docs/api/users/search-users)
+ * - Operations: [POST /api/v1.0/search](#/Users/searchUsers) -> [POST /api/v1.0/search](/docs/api/users/search-users)
+ * - Schemas: [TicketSortField](#/components/schemas/TicketSortField) -> [TicketSortField](/docs/api/tickets/schemas/ticketsortfield)
+ * - Tags: [Users API](#/Users) -> [Users API](/docs/api/users/users-api)
+ *
+ * When a linked operation, schema, or tag doesn't exist in the spec, the link is
+ * converted to plain text (display text only) to avoid broken anchors.
  */
 
 const HTTP_METHODS = ['get', 'post', 'put', 'patch', 'delete', 'options', 'head'];
 
 // Track transformation statistics
-let transformStats = { transformed: 0, crossTag: 0, sameTag: 0, notFound: 0, tagLinks: 0 };
+let transformStats = { transformed: 0, crossTag: 0, sameTag: 0, notFound: 0, tagLinks: 0, schemaLinks: 0 };
+
+// Track broken links for reporting
+let brokenLinks = [];
+
+// Schema lookup: maps schema name to the tag that contains it
+let schemaLookup = new Map();
 
 /**
  * Convert operationId from camelCase to kebab-case
@@ -42,6 +52,17 @@ function tagNameToSlug(tagName) {
 }
 
 /**
+ * Convert schema name to URL slug
+ * Matches the slug generation used by docusaurus-plugin-openapi-docs for schemas
+ * @param {string} schemaName - e.g., "TicketSortField", "UserDetail"
+ * @returns {string} - e.g., "ticketsortfield", "userdetail"
+ */
+function schemaNameToSlug(schemaName) {
+    // Schema slugs are just lowercase, no hyphens
+    return schemaName.toLowerCase();
+}
+
+/**
  * Build a lookup map of operationId -> { path, method, tag }
  * @param {Object} sourceSpec - Full OpenAPI source spec
  * @returns {Map<string, {path: string, method: string, tag: string}>}
@@ -68,6 +89,64 @@ function buildOperationLookup(sourceSpec) {
 }
 
 /**
+ * Build a lookup map of schema name -> tag name
+ * Maps each schema to the first tag that references it (for linking purposes)
+ * @param {Object} sourceSpec - Full OpenAPI source spec
+ * @returns {Map<string, string>} - schema name -> tag name
+ */
+function buildSchemaLookup(sourceSpec) {
+    const lookup = new Map();
+    const paths = sourceSpec.paths || {};
+    const allSchemas = new Set(Object.keys(sourceSpec.components?.schemas || {}));
+
+    // For each path/operation, find which schemas it references and map them to its tag
+    for (const [, pathItem] of Object.entries(paths)) {
+        for (const method of HTTP_METHODS) {
+            const operation = pathItem[method];
+            if (!operation) continue;
+
+            const tag = operation.tags?.[0] || 'Untagged';
+            const operationStr = JSON.stringify(operation);
+
+            // Find all schema references in this operation
+            const refPattern = /"#\/components\/schemas\/([^"]+)"/g;
+            let match;
+            while ((match = refPattern.exec(operationStr)) !== null) {
+                const schemaName = match[1];
+                // Only set if not already mapped (first tag wins)
+                if (allSchemas.has(schemaName) && !lookup.has(schemaName)) {
+                    lookup.set(schemaName, tag);
+                }
+            }
+        }
+    }
+
+    // For any schemas not yet mapped, assign to a default based on naming convention
+    for (const schemaName of allSchemas) {
+        if (!lookup.has(schemaName)) {
+            // Try to infer tag from schema name prefix
+            if (schemaName.startsWith('Ticket')) lookup.set(schemaName, 'Tickets');
+            else if (schemaName.startsWith('Asset')) lookup.set(schemaName, 'Assets');
+            else if (schemaName.startsWith('User')) lookup.set(schemaName, 'Users');
+            else if (schemaName.startsWith('Location')) lookup.set(schemaName, 'Locations');
+            else if (schemaName.startsWith('Event')) lookup.set(schemaName, 'Events');
+            else if (schemaName.startsWith('Inventory')) lookup.set(schemaName, 'Inventory');
+            // Default fallback - won't be linked but won't break
+        }
+    }
+
+    return lookup;
+}
+
+/**
+ * Set the schema lookup map (called from preprocess-specs.js)
+ * @param {Map<string, string>} lookup - schema name -> tag name
+ */
+function setSchemaLookup(lookup) {
+    schemaLookup = lookup;
+}
+
+/**
  * Transform all documentation links in a description string
  * @param {string} description - Description text with markdown links
  * @param {string} currentTag - Tag name of current controller
@@ -80,20 +159,61 @@ function transformDescription(description, currentTag, operationLookup, validTag
         return description;
     }
 
-    // First pass: Transform operation-level links [display text](#/TagName/operationId)
+    // First pass: Transform schema links [display text](#/components/schemas/SchemaName)
+    // Must be processed before operation links since they have more path segments
+    const schemaLinkPattern = /\[([^\]]+)\]\(#\/components\/schemas\/([^)]+)\)/g;
+
+    let result = description.replace(schemaLinkPattern, (match, displayText, schemaName) => {
+        // Look up which tag contains this schema
+        const tag = schemaLookup.get(schemaName);
+        if (!tag) {
+            // Schema not found in any tag - convert to plain text
+            transformStats.notFound++;
+            brokenLinks.push({
+                type: 'schema',
+                tag: currentTag,
+                targetTag: 'components',
+                schemaName,
+                operationId: null,
+                originalLink: match,
+                displayText
+            });
+            return displayText;
+        }
+
+        transformStats.schemaLinks++;
+        transformStats.transformed++;
+
+        // Build Docusaurus URL for schema
+        const tagSlug = tagNameToSlug(tag);
+        const schemaSlug = schemaNameToSlug(schemaName);
+        const docusaurusUrl = `/docs/api/${tagSlug}/schemas/${schemaSlug}`;
+
+        return `[${displayText}](${docusaurusUrl})`;
+    });
+
+    // Second pass: Transform operation-level links [display text](#/TagName/operationId)
     // Captures: (1) display text, (2) tag name (may be URL-encoded), (3) operationId
     const operationLinkPattern = /\[([^\]]+)\]\(#\/([^\/\)]+)\/([^)]+)\)/g;
 
-    let result = description.replace(operationLinkPattern, (match, displayText, tagName, operationId) => {
+    result = result.replace(operationLinkPattern, (match, displayText, tagName, operationId) => {
         // Decode URL-encoded tag names (Custom%20Fields -> Custom Fields)
         const decodedTag = decodeURIComponent(tagName);
 
         // Look up the operation
         const opInfo = operationLookup.get(operationId);
         if (!opInfo) {
-            // Operation not found - preserve original link
+            // Operation not found - convert to plain text (remove broken link)
             transformStats.notFound++;
-            return match;
+            brokenLinks.push({
+                type: 'operation',
+                tag: currentTag,
+                targetTag: decodedTag,
+                operationId,
+                originalLink: match,
+                displayText
+            });
+            return displayText;
         }
 
         transformStats.transformed++;
@@ -124,8 +244,17 @@ function transformDescription(description, currentTag, operationLookup, validTag
 
         // If we have a validTags set, validate the tag exists
         if (validTags && !validTags.has(decodedTag)) {
+            // Tag not found - convert to plain text (remove broken link)
             transformStats.notFound++;
-            return match;
+            brokenLinks.push({
+                type: 'tag',
+                tag: currentTag,
+                targetTag: decodedTag,
+                operationId: null,
+                originalLink: match,
+                displayText
+            });
+            return displayText;
         }
 
         transformStats.tagLinks++;
@@ -223,16 +352,74 @@ function getTransformStats() {
  * Reset transformation statistics
  */
 function resetStats() {
-    transformStats = { transformed: 0, crossTag: 0, sameTag: 0, notFound: 0, tagLinks: 0 };
+    transformStats = { transformed: 0, crossTag: 0, sameTag: 0, notFound: 0, tagLinks: 0, schemaLinks: 0 };
+}
+
+/**
+ * Get all broken links found during transformation
+ * @returns {Array<{type: string, tag: string, targetTag: string, operationId: string|null, originalLink: string, displayText: string}>}
+ */
+function getBrokenLinks() {
+    return [...brokenLinks];
+}
+
+/**
+ * Reset broken links array
+ */
+function resetBrokenLinks() {
+    brokenLinks = [];
+}
+
+/**
+ * Log broken links to console in a readable format
+ */
+function logBrokenLinks() {
+    if (brokenLinks.length === 0) {
+        console.log('  No broken links found');
+        return;
+    }
+
+    console.log(`\n  Found ${brokenLinks.length} broken link(s):`);
+
+    // Group by source tag for readability
+    const byTag = {};
+    for (const link of brokenLinks) {
+        if (!byTag[link.tag]) {
+            byTag[link.tag] = [];
+        }
+        byTag[link.tag].push(link);
+    }
+
+    for (const [tag, links] of Object.entries(byTag)) {
+        console.log(`\n  In "${tag}":`);
+        for (const link of links) {
+            if (link.type === 'operation') {
+                console.log(`    - Missing operation: ${link.targetTag}/${link.operationId}`);
+                console.log(`      Link: ${link.originalLink}`);
+            } else if (link.type === 'schema') {
+                console.log(`    - Missing schema: ${link.schemaName}`);
+                console.log(`      Link: ${link.originalLink}`);
+            } else {
+                console.log(`    - Missing tag: ${link.targetTag}`);
+                console.log(`      Link: ${link.originalLink}`);
+            }
+        }
+    }
 }
 
 module.exports = {
     buildOperationLookup,
+    buildSchemaLookup,
+    setSchemaLookup,
     transformLinks,
     transformDescription,
     operationIdToSlug,
     tagNameToSlug,
+    schemaNameToSlug,
     getTransformStats,
     resetStats,
+    getBrokenLinks,
+    resetBrokenLinks,
+    logBrokenLinks,
     HTTP_METHODS
 };

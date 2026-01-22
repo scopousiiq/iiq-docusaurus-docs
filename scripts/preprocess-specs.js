@@ -26,7 +26,7 @@ const { resolveSchemas, getResolutionStats } = require('./lib/schema-resolver');
 const { extractTags, splitPathsByTag, sortPathsByOrder, getTagStats } = require('./lib/tag-splitter');
 const { loadOverviews, findOverview } = require('./lib/overview-merger');
 const { transformToDocusaurusFormat, getFileName } = require('./lib/docusaurus-adapter');
-const { buildOperationLookup, transformLinks, getTransformStats } = require('./lib/link-transformer');
+const { buildOperationLookup, buildSchemaLookup, setSchemaLookup, transformLinks, getTransformStats, getBrokenLinks, logBrokenLinks } = require('./lib/link-transformer');
 
 // Configuration
 const CONFIG = {
@@ -77,6 +77,12 @@ async function main() {
     const operationLookup = buildOperationLookup(sourceSpec);
     const validTags = new Set(pathsByTag.keys());
     console.log(`  Indexed: ${operationLookup.size} operations`);
+
+    // Build schema lookup for schema link transformation
+    console.log('Building schema lookup for link transformation...');
+    const schemaLookupMap = buildSchemaLookup(sourceSpec);
+    setSchemaLookup(schemaLookupMap);
+    console.log(`  Indexed: ${schemaLookupMap.size} schemas`);
     console.log();
 
     // Ensure output directory exists
@@ -188,6 +194,15 @@ async function main() {
         missingOverviews.forEach(r => {
             console.log(`  - ${r.tag}`);
         });
+        console.log();
+    }
+
+    // Broken links report
+    const brokenLinks = getBrokenLinks();
+    if (brokenLinks.length > 0) {
+        console.log('Broken Links Report:');
+        console.log('-'.repeat(60));
+        logBrokenLinks();
         console.log();
     }
 

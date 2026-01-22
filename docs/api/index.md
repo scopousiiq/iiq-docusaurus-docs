@@ -12,33 +12,33 @@ This section contains the complete API reference for IncidentIQ, organized by fu
 
 | Category | Description | Endpoints |
 |----------|-------------|-----------|
-| [Tickets](/docs/api/tickets) | Ticket management, status tracking, assignments | 149 |
-| [Assets](/docs/api/assets) | Asset management, checkout, inventory tracking | 121 |
-| [Users](/docs/api/users) | User management and profiles | 88 |
+| [Tickets](/docs/api/tickets/tickets-api) | Ticket management, status tracking, assignments | 149 |
+| [Assets](/docs/api/assets/assets-api) | Asset management, checkout, inventory tracking | 121 |
+| [Users](/docs/api/users/users-api) | User management and profiles | 88 |
 
 ### Organization
 
 | Category | Description | Endpoints |
 |----------|-------------|-----------|
-| [Locations](/docs/api/locations) | Physical location management | 55 |
-| [Teams](/docs/api/teams) | Team organization and membership | 18 |
-| [Organizations](/docs/api/organizations) | Multi-organization support | 43 |
+| [Locations](/docs/api/locations/locations-api) | Physical location management | 55 |
+| [Teams](/docs/api/teams/teams-api) | Team organization and membership | 18 |
+| [Organizations](/docs/api/organizations/organizations-api) | Multi-organization support | 43 |
 
 ### Configuration
 
 | Category | Description | Endpoints |
 |----------|-------------|-----------|
-| [Categories](/docs/api/categories) | Asset and ticket categorization | 33 |
-| [Custom Fields](/docs/api/custom-fields) | Custom data attributes | 52 |
-| [Workflows](/docs/api/workflows) | Automation and approval workflows | 22 |
+| [Categories](/docs/api/categories/categories-api) | Asset and ticket categorization | 33 |
+| [Custom Fields](/docs/api/custom-fields/custom-fields-api) | Custom data attributes | 52 |
+| [Workflows](/docs/api/workflows/workflows-api) | Automation and approval workflows | 22 |
 
 ### Inventory & Parts
 
 | Category | Description | Endpoints |
 |----------|-------------|-----------|
-| [Inventory](/docs/api/inventory) | Inventory operations | 46 |
-| [Parts](/docs/api/parts) | Parts management | 19 |
-| [Manufacturers](/docs/api/manufacturers) | Manufacturer data | 11 |
+| [Inventory](/docs/api/inventory/inventory-api) | Inventory operations | 46 |
+| [Parts](/docs/api/parts/parts-api) | Parts management | 19 |
+| [Manufacturers](/docs/api/manufacturers/manufacturers-api) | Manufacturer data | 11 |
 
 ## Authentication
 

@@ -25,7 +25,7 @@ import Heading from "@theme/Heading";
 
 
 <Schema
-  schema={{"type":"object","properties":{"FirstName":{"type":"string"},"LastName":{"type":"string"},"Email":{"type":"string","format":"email"},"Password":{"type":"string","format":"password"},"LocationId":{"type":"string","format":"uuid"},"RoleId":{"type":"string","format":"uuid"}},"title":"NewLocalUserRequest"}}
+  schema={{"type":"object","properties":{"FirstName":{"type":"string"},"LastName":{"type":"string"},"Email":{"type":"string","format":"email"},"Password":{"type":"string","format":"password"},"LocationId":{"type":"string","format":"uuid","x-obtained-from":{"operationId":"getMyLocationsV2","endpoint":"GET /api/v2.0/locations","responseField":"Items[].LocationId"},"description":"UUID of the location. Obtain via [GET /api/v2.0/locations](/docs/api/locations/get-my-locations-v-2), extract `Items[].LocationId`."},"RoleId":{"type":"string","format":"uuid"}},"title":"NewLocalUserRequest"}}
   schemaType={"response"}
 >
   
