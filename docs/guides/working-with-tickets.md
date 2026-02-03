@@ -4,213 +4,161 @@ sidebar_position: 6
 
 # Working with Tickets
 
-Complete guide to ticket operations in the IncidentIQ API.
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-## Overview
+Tickets are the core of the Incident IQ help desk system. The API provides comprehensive access to create, query, update, and manage tickets programmatically.
 
-Tickets are the core of IncidentIQ's service management. This guide covers common ticket operations.
+## Common Ticket Operations
 
-## Listing Tickets
+| Operation | Method | Endpoint | Description |
+|-----------|--------|----------|-------------|
+| Create Ticket | POST | `/tickets/new` | Submit a new ticket |
+| Query Tickets | POST | `/tickets?$s={size}&$p={page}` | Search and filter tickets |
+| Get Ticket | GET | `/tickets/{id}` | Retrieve a specific ticket |
+| Update Ticket | PUT | `/tickets/{id}` | Modify ticket properties |
 
-### Basic Search
+## Querying Tickets
 
-```json
-POST /api/v1.0/tickets
-{
-  "Paging": {
-    "PageIndex": 0,
-    "PageSize": 25
+Search for tickets using pagination (query params) and filters (request body):
+
+### Query with Filters
+
+<Tabs>
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -X POST "https://your-site.incidentiq.com/api/v1.0/tickets?$s=25&$p=0" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "ProductId: 88df910c-91aa-e711-80c2-0004ffa00010" \
+  -H "Client: ApiClient" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Filters": [
+      {
+        "Facet": "status",
+        "Name": "Open",
+        "Selected": true
+      }
+    ]
+  }'
+```
+
+</TabItem>
+<TabItem value="javascript" label="JavaScript">
+
+```javascript
+const response = await fetch(
+  'https://your-site.incidentiq.com/api/v1.0/tickets?$s=25&$p=0',
+  {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer YOUR_API_TOKEN',
+      'SiteId': 'YOUR_SITE_ID',
+      'ProductId': '88df910c-91aa-e711-80c2-0004ffa00010',
+      'Client': 'ApiClient',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      Filters: [
+        { Facet: 'status', Name: 'Open', Selected: true }
+      ]
+    })
   }
+);
+
+const data = await response.json();
+console.log(`Found ${data.Paging.TotalRows} tickets`);
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+
+url = "https://your-site.incidentiq.com/api/v1.0/tickets?$s=25&$p=0"
+headers = {
+    "Authorization": "Bearer YOUR_API_TOKEN",
+    "SiteId": "YOUR_SITE_ID",
+    "ProductId": "88df910c-91aa-e711-80c2-0004ffa00010",
+    "Client": "ApiClient",
+    "Content-Type": "application/json"
 }
-```
-
-### With Filters
-
-```json
-POST /api/v1.0/tickets
-{
-  "Filters": [
-    { "Facet": "StatusId", "Values": ["open-status-id"] }
-  ],
-  "Sort": {
-    "Field": "CreatedDate",
-    "Direction": "Descending"
-  },
-  "Paging": { "PageIndex": 0, "PageSize": 25 }
+payload = {
+    "Filters": [
+        {"Facet": "status", "Name": "Open", "Selected": True}
+    ]
 }
+
+response = requests.post(url, json=payload, headers=headers)
+data = response.json()
+print(f"Found {data['Paging']['TotalRows']} tickets")
 ```
 
-## Getting a Single Ticket
-
-```http
-GET /api/v1.0/tickets/{ticketId}
-```
-
-Response:
-```json
-{
-  "Item": {
-    "TicketId": "uuid",
-    "TicketNumber": 12345,
-    "Subject": "Laptop not booting",
-    "Description": "...",
-    "StatusId": "uuid",
-    "StatusName": "Open",
-    "OwnerId": "uuid",
-    "OwnerName": "John Smith",
-    "CategoryId": "uuid",
-    "CategoryName": "Hardware",
-    "CreatedDate": "2024-01-15T10:30:00Z"
-  }
-}
-```
+</TabItem>
+</Tabs>
 
 ## Creating a Ticket
 
+### Minimum Required Fields
+
 ```json
-POST /api/v1.0/tickets/create
 {
-  "Subject": "New laptop request",
-  "Description": "Need a new laptop for new hire starting Monday",
-  "CategoryId": "hardware-category-uuid",
-  "PriorityId": "medium-priority-uuid",
-  "ForId": "requesting-user-uuid",
-  "LocationId": "location-uuid"
+    "Subject": "Laptop screen is cracked",
+    "IssueDescription": "Student dropped laptop, screen no longer displays.",
+    "ForId": "user-guid-here",
+    "LocationId": "location-guid-here",
+    "IssueTypeId": "issue-type-guid-here"
 }
 ```
 
-### Required Fields
+:::tip
+Use the [Users API](/docs/api/users/users-api) to look up `ForId` and the [Locations API](/docs/api/locations/locations-api) to look up `LocationId`.
+:::
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `Subject` | string | Brief ticket summary |
-| `CategoryId` | UUID | Ticket category |
+## Ticket Lifecycle
 
-### Optional Fields
+Tickets move through various statuses as they're worked:
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `Description` | string | Detailed description |
-| `PriorityId` | UUID | Priority level |
-| `ForId` | UUID | User the ticket is for |
-| `LocationId` | UUID | Associated location |
-| `TeamId` | UUID | Assigned team |
-| `OwnerId` | UUID | Assigned owner |
-| `DueDate` | datetime | Expected resolution date |
-| `CustomFields` | object | Custom field values |
+| Status | Description |
+|--------|-------------|
+| **Open** | New ticket awaiting assignment |
+| **In Progress** | Actively being worked by an agent |
+| **Waiting** | On hold pending external action |
+| **Resolved** | Work completed, pending closure |
+| **Closed** | Ticket finalized |
 
-## Updating a Ticket
+## Common Filter Facets
 
-```json
-PUT /api/v1.0/tickets/{ticketId}
-{
-  "Subject": "Updated subject",
-  "Description": "Updated description",
-  "PriorityId": "high-priority-uuid"
-}
-```
+Use these facets when querying tickets (see [Filtering with Facets](./filtering) for full syntax):
 
-## Changing Ticket Status
+| Facet | Description |
+|-------|-------------|
+| `status` | Ticket status (Open, In Progress, Closed, etc.) |
+| `priority` | Urgency level |
+| `assignedto` | Assigned agent |
+| `for` | Ticket requester |
+| `location` | Associated location |
+| `duedate` | Due date range |
+| `createddate` | Creation date range |
+| `keyword` | Text search across fields |
 
-```json
-POST /api/v1.0/tickets/{ticketId}/status
-{
-  "StatusId": "closed-status-uuid",
-  "Resolution": "Replaced laptop with new device"
-}
-```
+## Related Operations
 
-## Assigning Tickets
+- **Assign Ticket**: Route tickets to agents or teams
+- **Add Comment**: Append notes or customer communications
+- **Link Asset**: Associate hardware/software with the ticket
+- **Attach Files**: Upload supporting documentation
 
-### Assign to User
+## Next Steps
 
-```json
-POST /api/v1.0/tickets/{ticketId}/assign
-{
-  "OwnerId": "user-uuid"
-}
-```
+- See the [Tickets API Reference](/docs/api/tickets/tickets-api) for complete endpoint documentation
+- Learn about [Working with Ticket Activities](./ticket-activities) for comments, attachments, and resolution actions
+- Review [Paging and Sorting](./pagination) and [Filtering with Facets](./filtering) for handling large result sets
+- Explore [Working with Assets](./working-with-assets) to link assets to tickets
 
-### Assign to Team
-
-```json
-POST /api/v1.0/tickets/{ticketId}/assign
-{
-  "TeamId": "team-uuid"
-}
-```
-
-## Ticket Activities
-
-### List Activities
-
-```http
-GET /api/v1.0/tickets/{ticketId}/activities
-```
-
-### Add a Comment
-
-```json
-POST /api/v1.0/tickets/{ticketId}/activities
-{
-  "ActivityType": "Comment",
-  "Body": "Waiting for parts to arrive",
-  "IsPublic": true
-}
-```
-
-### Activity Types
-
-| Type | Description |
-|------|-------------|
-| `Comment` | Text comment |
-| `StatusChange` | Status transition |
-| `Assignment` | Owner/team change |
-| `Attachment` | File added |
-
-## Attaching Assets
-
-### Link Asset to Ticket
-
-```json
-POST /api/v1.0/tickets/{ticketId}/assets
-{
-  "AssetIds": ["asset-uuid-1", "asset-uuid-2"]
-}
-```
-
-### List Ticket Assets
-
-```http
-GET /api/v1.0/tickets/{ticketId}/assets
-```
-
-## Workflow Example
-
-### Complete Ticket Lifecycle
-
-```javascript
-// 1. Create ticket
-const ticket = await createTicket({
-  Subject: "Printer not working",
-  CategoryId: "hardware-category-id",
-  Description: "Office printer showing error code E-101"
-});
-
-// 2. Assign to tech team
-await assignTicket(ticket.TicketId, {
-  TeamId: "tech-support-team-id"
-});
-
-// 3. Add diagnostic comment
-await addComment(ticket.TicketId, {
-  Body: "Diagnosed as paper jam. Clearing now.",
-  IsPublic: false
-});
-
-// 4. Resolve and close
-await updateStatus(ticket.TicketId, {
-  StatusId: "closed-status-id",
-  Resolution: "Cleared paper jam and tested printing"
-});
-```
+:::warning
+This resource is designed for technical administrators. If you are looking for our Incident IQ help guides and announcements, you can find them at our [Help Center](https://help.incidentiq.com/hc/en-us)
+:::

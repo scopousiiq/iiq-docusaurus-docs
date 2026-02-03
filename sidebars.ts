@@ -22,11 +22,12 @@ const sidebars: SidebarsConfig = {
     'intro',
     {
       type: 'category',
-      label: 'Authentication',
+      label: 'Getting Started',
       collapsed: false,
       items: [
         'guides/authentication',
-        'guides/api-tokens',
+        'guides/popular-apis',
+        'guides/products-sites-workspaces',
       ],
     },
     {
@@ -40,10 +41,19 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Common Workflows',
+      label: 'Working with Data',
       items: [
         'guides/working-with-tickets',
+        'guides/ticket-activities',
         'guides/working-with-assets',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Integration',
+      items: [
+        'guides/webhooks',
+        'guides/support',
       ],
     },
   ],

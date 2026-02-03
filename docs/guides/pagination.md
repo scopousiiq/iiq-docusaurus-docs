@@ -357,8 +357,8 @@ print(f"Found {data['Paging']['TotalRows']} tickets")
 ## Next Steps
 
 - Learn about [Filtering with Facets](./filtering) to narrow down your search results
-- Explore the [Tickets API](/api/tickets) for ticket-specific queries
-- See the [Assets API](/api/assets) for asset inventory queries
+- Explore the [Tickets API](/docs/api/tickets/tickets-api) for ticket-specific queries
+- See the [Assets API](/docs/api/assets/assets-api) for asset inventory queries
 
 :::warning
 This resource is designed for technical administrators. If you are looking for our Incident IQ help guides and announcements, you can find them at our [Help Center](https://help.incidentiq.com/hc/en-us)

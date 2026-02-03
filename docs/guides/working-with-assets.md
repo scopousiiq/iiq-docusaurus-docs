@@ -1,237 +1,200 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 # Working with Assets
 
-Complete guide to asset management operations in the IncidentIQ API.
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-## Overview
+Assets represent the hardware, software, and equipment tracked in Incident IQ. The API enables you to query inventory, manage ownership, and integrate with external asset management systems.
 
-Assets represent physical and digital items tracked in IncidentIQ - computers, monitors, software licenses, and more.
+## Common Asset Operations
 
-## Listing Assets
+| Operation | Method | Endpoint | Description |
+|-----------|--------|----------|-------------|
+| Query Assets | POST | `/assets?$s={size}&$p={page}` | Search and filter assets |
+| Get Asset | GET | `/assets/{id}` | Retrieve a specific asset |
+| Get Asset by Tag | GET | `/assets/assettag/{tag}` | Look up by asset tag |
+| Update Asset | PUT | `/assets/{id}` | Modify asset properties |
+| Transfer Ownership | POST | `/assets/checkouts/checkout-or-transfer` | Change asset owner |
 
-### Basic Search
+## Querying Assets
 
-```json
-POST /api/v1.0/assets
-{
-  "Paging": {
-    "PageIndex": 0,
-    "PageSize": 25
-  }
-}
+Search for assets using pagination (query params) and filters (request body):
+
+### Query with Filters
+
+<Tabs>
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -X POST "https://your-site.incidentiq.com/api/v1.0/assets?$s=50&$p=0" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -H "SiteId: YOUR_SITE_ID" \
+  -H "ProductId: 88df910c-91aa-e711-80c2-0004ffa00010" \
+  -H "Client: ApiClient" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Filters": [
+      {
+        "Facet": "assettype",
+        "Name": "Chromebook",
+        "Selected": true
+      },
+      {
+        "Facet": "status",
+        "Name": "In Use",
+        "Selected": true
+      }
+    ]
+  }'
 ```
 
-### Filtered Search
-
-```json
-POST /api/v1.0/assets
-{
-  "Filters": [
-    { "Facet": "CategoryId", "Values": ["laptop-category-id"] },
-    { "Facet": "StatusId", "Values": ["deployed-status-id"] }
-  ],
-  "Sort": { "Field": "Name", "Direction": "Ascending" },
-  "Paging": { "PageIndex": 0, "PageSize": 50 }
-}
-```
-
-## Getting a Single Asset
-
-```http
-GET /api/v1.0/assets/{assetId}
-```
-
-Response:
-```json
-{
-  "Item": {
-    "AssetId": "uuid",
-    "Name": "Laptop-12345",
-    "AssetTag": "IIQ-12345",
-    "SerialNumber": "ABC123XYZ",
-    "CategoryId": "uuid",
-    "CategoryName": "Laptop",
-    "StatusId": "uuid",
-    "StatusName": "Deployed",
-    "LocationId": "uuid",
-    "LocationName": "Main Office",
-    "OwnerId": "uuid",
-    "OwnerName": "Jane Doe",
-    "ModelId": "uuid",
-    "ModelName": "ThinkPad T480"
-  }
-}
-```
-
-## Creating an Asset
-
-```json
-POST /api/v1.0/assets/create
-{
-  "Name": "Laptop-NEW-001",
-  "AssetTag": "IIQ-2024-001",
-  "SerialNumber": "SN123456789",
-  "CategoryId": "laptop-category-uuid",
-  "ModelId": "thinkpad-t480-model-uuid",
-  "StatusId": "available-status-uuid",
-  "LocationId": "warehouse-location-uuid",
-  "PurchaseDate": "2024-01-15",
-  "PurchasePrice": 1299.99
-}
-```
-
-### Required Fields
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `CategoryId` | UUID | Asset category |
-| `Name` | string | Asset name/identifier |
-
-### Optional Fields
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `AssetTag` | string | Internal tracking tag |
-| `SerialNumber` | string | Manufacturer serial |
-| `ModelId` | UUID | Asset model |
-| `StatusId` | UUID | Current status |
-| `LocationId` | UUID | Current location |
-| `OwnerId` | UUID | Assigned owner |
-| `PurchaseDate` | date | Purchase date |
-| `PurchasePrice` | decimal | Purchase cost |
-| `WarrantyExpiration` | date | Warranty end date |
-| `CustomFields` | object | Custom field values |
-
-## Updating an Asset
-
-```json
-PUT /api/v1.0/assets/{assetId}
-{
-  "LocationId": "new-location-uuid",
-  "StatusId": "deployed-status-uuid"
-}
-```
-
-## Asset Checkout/Checkin
-
-### Checkout to User
-
-Assign an asset to a user:
-
-```json
-POST /api/v1.0/assets/{assetId}/checkout
-{
-  "UserId": "user-uuid",
-  "Notes": "Issued for remote work setup"
-}
-```
-
-### Checkin from User
-
-Return an asset from a user:
-
-```json
-POST /api/v1.0/assets/{assetId}/checkin
-{
-  "Notes": "Returned in good condition",
-  "LocationId": "storage-location-uuid"
-}
-```
-
-## Asset History
-
-### View Activity History
-
-```http
-GET /api/v1.0/assets/{assetId}/activities
-```
-
-Returns checkout/checkin history, status changes, and modifications.
-
-## Asset Relationships
-
-### Link Asset to Ticket
-
-```json
-POST /api/v1.0/assets/{assetId}/tickets
-{
-  "TicketId": "ticket-uuid"
-}
-```
-
-### List Related Tickets
-
-```http
-GET /api/v1.0/assets/{assetId}/tickets
-```
-
-## Bulk Operations
-
-### Bulk Update
-
-```json
-POST /api/v1.0/assets/bulk-update
-{
-  "AssetIds": ["asset-1", "asset-2", "asset-3"],
-  "Updates": {
-    "StatusId": "retired-status-uuid",
-    "LocationId": "storage-location-uuid"
-  }
-}
-```
-
-### Bulk Checkout
-
-```json
-POST /api/v1.0/assets/bulk-checkout
-{
-  "AssetIds": ["asset-1", "asset-2"],
-  "UserId": "user-uuid",
-  "Notes": "New hire equipment setup"
-}
-```
-
-## Inventory Workflow Example
+</TabItem>
+<TabItem value="javascript" label="JavaScript">
 
 ```javascript
-// 1. Search for available laptops
-const available = await searchAssets({
-  Filters: [
-    { Facet: "CategoryId", Values: ["laptop-category-id"] },
-    { Facet: "StatusId", Values: ["available-status-id"] }
-  ]
-});
+const response = await fetch(
+  'https://your-site.incidentiq.com/api/v1.0/assets?$s=50&$p=0',
+  {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer YOUR_API_TOKEN',
+      'SiteId': 'YOUR_SITE_ID',
+      'ProductId': '88df910c-91aa-e711-80c2-0004ffa00010',
+      'Client': 'ApiClient',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      Filters: [
+        { Facet: 'assettype', Name: 'Chromebook', Selected: true },
+        { Facet: 'status', Name: 'In Use', Selected: true }
+      ]
+    })
+  }
+);
 
-// 2. Select and checkout to new employee
-const selectedAsset = available.Items[0];
-await checkoutAsset(selectedAsset.AssetId, {
-  UserId: "new-employee-id",
-  Notes: "New hire onboarding"
-});
-
-// 3. Create associated ticket for setup
-await createTicket({
-  Subject: "New laptop setup for " + selectedAsset.Name,
-  CategoryId: "setup-category-id",
-  AssetIds: [selectedAsset.AssetId]
-});
+const data = await response.json();
+console.log(`Found ${data.Paging.TotalRows} assets`);
 ```
 
-## Custom Fields
+</TabItem>
+<TabItem value="python" label="Python">
 
-Assets support custom fields for additional tracking:
+```python
+import requests
+
+url = "https://your-site.incidentiq.com/api/v1.0/assets?$s=50&$p=0"
+headers = {
+    "Authorization": "Bearer YOUR_API_TOKEN",
+    "SiteId": "YOUR_SITE_ID",
+    "ProductId": "88df910c-91aa-e711-80c2-0004ffa00010",
+    "Client": "ApiClient",
+    "Content-Type": "application/json"
+}
+payload = {
+    "Filters": [
+        {"Facet": "assettype", "Name": "Chromebook", "Selected": True},
+        {"Facet": "status", "Name": "In Use", "Selected": True}
+    ]
+}
+
+response = requests.post(url, json=payload, headers=headers)
+data = response.json()
+print(f"Found {data['Paging']['TotalRows']} assets")
+```
+
+</TabItem>
+</Tabs>
+
+## Looking Up an Asset
+
+### By Asset Tag
+
+```http
+GET https://your-site.incidentiq.com/api/v1.0/assets/assettag/CHR-12345
+```
+
+### By Serial Number
+
+Use a filter to find assets by serial number:
 
 ```json
-POST /api/v1.0/assets/create
 {
-  "Name": "Laptop-001",
-  "CategoryId": "laptop-category-uuid",
-  "CustomFields": {
-    "mac-address-field-id": "AA:BB:CC:DD:EE:FF",
-    "encryption-status-field-id": "BitLocker Enabled"
-  }
+    "Filters": [
+        {
+            "Facet": "serialnumber",
+            "Value": "5CD1234XYZ",
+            "Selected": true
+        }
+    ]
 }
 ```
+
+## Common Filter Facets
+
+Use these facets when querying assets (see [Filtering with Facets](./filtering) for full syntax):
+
+| Facet | Description |
+|-------|-------------|
+| `assettype` | Device category (Chromebook, Laptop, iPad) |
+| `status` | Asset status (In Use, Available, Broken) |
+| `model` | Device model |
+| `owner` | Current owner |
+| `location` | Current location |
+| `assettag` | Asset tag number |
+| `serialnumber` | Serial number |
+
+## Asset Ownership
+
+Assets can be assigned to users (students, staff) or locations (carts, rooms):
+
+| Assignment Type | Description |
+|----------------|-------------|
+| **User Assignment** | Links asset to a specific person |
+| **Location Assignment** | Places asset at a physical location |
+| **Transfer** | Moves asset between owners with audit trail |
+
+### Transfer Asset Ownership
+
+```json
+POST https://your-site.incidentiq.com/api/v1.0/assets/checkouts/checkout-or-transfer
+
+{
+    "AssetId": "ASSET_GUID_HERE",
+    "ToOwnerId": "NEW_OWNER_GUID_HERE"
+}
+```
+
+## Linking Assets to Tickets
+
+When creating or updating tickets, associate the affected asset:
+
+```json
+{
+    "Subject": "Broken screen",
+    "AssetId": "asset-guid-here"
+}
+```
+
+This creates a connection between the service request and the equipment.
+
+## Common Use Cases
+
+| Use Case | Description |
+|----------|-------------|
+| **Inventory Sync** | Keep external systems (MDM, CMDB) updated with asset data |
+| **Check-in/Check-out** | Automate device distribution and collection workflows |
+| **Audit Reports** | Extract asset assignments for compliance reporting |
+| **Bulk Updates** | Batch modify asset properties or ownership |
+
+## Next Steps
+
+- See the [Assets API Reference](/docs/api/assets/assets-api) for complete endpoint documentation
+- Review [Paging and Sorting](./pagination) and [Filtering with Facets](./filtering) for handling large inventories
+- Explore [Working with Tickets](./working-with-tickets) to link assets to service requests
+
+:::warning
+This resource is designed for technical administrators. If you are looking for our Incident IQ help guides and announcements, you can find them at our [Help Center](https://help.incidentiq.com/hc/en-us)
+:::
