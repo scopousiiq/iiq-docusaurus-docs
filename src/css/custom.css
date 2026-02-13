@@ -1730,6 +1730,16 @@ div[class*="col--3"] {
   overflow-y: hidden !important;
 }
 
+/* Code language list must be horizontally scrollable */
+.openapi-tabs__code-list-container,
+[class*="openapi-tabs__code-list-container"],
+[class*="code-list_container"] {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  flex-wrap: nowrap !important;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* Tab items - ensure they fit */
 .openapi-tabs__code-item,
 [class*="openapi-tabs__code-item"] {
