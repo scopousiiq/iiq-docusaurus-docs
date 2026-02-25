@@ -1,0 +1,81 @@
+---
+id: get-user-labor-rates
+title: "Get labor rates for a user"
+description: "Retrieves all labor rate records for a specific user. Returns a list of LaborRate objects showing the user's configured hourly rates and labor type assignments. Supports optional route parameters for product filtering and permission checks."
+sidebar_label: "Get labor rates for a user"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/labor-rates/labor-rates-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get labor rates for a user"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/labor/rates/user/{UserId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves all labor rate records for a specific user. Returns a list of LaborRate objects showing the user's configured hourly rates and labor type assignments. Supports optional route parameters for product filtering and permission checks.
+
+**Prerequisites**
+1. **UserId** — Obtain via [POST /api/v1.0/users](/docs/api/users/search-users). Extract `Items[].UserId` from the response.
+
+**Workflow Example**
+1. Search for the target user: [POST /api/v1.0/users](/docs/api/users/search-users).
+2. Extract `UserId` from the response.
+3. Retrieve labor rates: `GET /api/v1.0/labor/rates/user/{UserId}`.
+
+**Minimal Required Fields**: `UserId` path parameter.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"UserId","in":"path","required":true,"description":"Unique identifier of the user whose labor rates to retrieve.","schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Labor rates retrieved successfully.","content":{"application/json":{"schema":{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"},"example":{"Items":[{"UserLaborRateId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","UserId":"b2c3d4e5-f6a7-8901-bcde-f12345678901","ByUserId":"c3d4e5f6-a7b8-9012-cdef-123456789012","HourlyRate":75,"LaborTypeId":"d4e5f6a7-b8c9-0123-defa-234567890123","IsDeleted":false,"CreatedDate":"2024-01-15T10:30:00Z","ModifiedDate":"2024-01-15T10:30:00Z"}],"Total":1,"StatusCode":200}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

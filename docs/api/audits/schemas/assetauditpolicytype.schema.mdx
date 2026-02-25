@@ -1,0 +1,33 @@
+---
+id: assetauditpolicytype
+title: "AssetAuditPolicyType"
+description: "Defines the category or classification of an asset audit policy (e.g., scheduled physical verification, compliance audit, inventory check)"
+sidebar_label: "AssetAuditPolicyType"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetAuditPolicyTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"Physical Verification","Description":"Periodic physical verification of asset location and condition","IsActive":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetAuditPolicyType"}
+>
+</Heading>
+
+
+
+Defines the category or classification of an asset audit policy (e.g., scheduled physical verification, compliance audit, inventory check)
+
+<Schema
+  schema={{"type":"object","description":"Defines the category or classification of an asset audit policy (e.g., scheduled physical verification, compliance audit, inventory check)","properties":{"AssetAuditPolicyTypeId":{"type":"string","format":"uuid","description":"The unique identifier of the asset audit policy type","x-obtained-from":{"endpoint":"GET /api/v1.0/audits/policies/types","field":"Items[].AssetAuditPolicyTypeId"}},"Name":{"type":"string","description":"The display name of the policy type"},"Description":{"type":"string","nullable":true,"description":"A detailed description of the policy type and its purpose"},"IsActive":{"type":"boolean","description":"Indicates whether this policy type is currently active and available for use"}},"example":{"AssetAuditPolicyTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"Physical Verification","Description":"Periodic physical verification of asset location and condition","IsActive":true},"title":"AssetAuditPolicyType"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

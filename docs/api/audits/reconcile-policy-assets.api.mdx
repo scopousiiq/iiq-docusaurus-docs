@@ -1,0 +1,83 @@
+---
+id: reconcile-policy-assets
+title: "Reconcile policy asset assignments"
+description: "Triggers a manual reconciliation of asset assignments for a specific audit policy. This operation schedules a background job that re-evaluates which assets should be included in the policy's scope based on current policy rules (target asset groups, categories, locations) and updates schedule links accordingly. Assets that no longer match the policy criteria are removed from the schedule, and newly matching assets are added. This is useful when asset data has changed and you need to immediately synchronize the policy's asset coverage."
+sidebar_label: "Reconcile policy asset assignments"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/audits/audits-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Reconcile policy asset assignments"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/audits/policies/{AssetAuditPolicyId}/reconcile"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Triggers a manual reconciliation of asset assignments for a specific audit policy. This operation schedules a background job that re-evaluates which assets should be included in the policy's scope based on current policy rules (target asset groups, categories, locations) and updates schedule links accordingly. Assets that no longer match the policy criteria are removed from the schedule, and newly matching assets are added. This is useful when asset data has changed and you need to immediately synchronize the policy's asset coverage.
+
+**Prerequisites:**
+- Asset Audit Policy ID must be obtained from [GET /api/v1.0/audits/policies](/docs/api/audits/get-asset-audit-policies)
+
+**Workflow Example:**
+1. List all policies: [GET /api/v1.0/audits/policies](/docs/api/audits/get-asset-audit-policies)
+2. Extract the target policy's `AssetAuditPolicyId` from `Items[].AssetAuditPolicyId`
+3. Trigger the reconciliation using this endpoint
+4. The response includes a job ID (GUID) for tracking the asynchronous reconciliation operation
+
+**Response:**
+Returns a job identifier (GUID) that can be used to track the reconciliation operation's status and completion.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"AssetAuditPolicyId","in":"path","required":true,"schema":{"type":"string","format":"uuid"},"description":"The unique identifier of the asset audit policy to reconcile"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Policy reconciliation job created successfully","content":{"application/json":{"schema":{"allOf":[{"type":"object","description":"Command-style envelope returned after successfully creating a resource.","properties":{"Id":{"type":"integer","description":"Legacy numeric identifier returned for parity with ItemCreateResponse.","example":0},"Uid":{"type":"string","format":"uuid","description":"Server-generated correlation identifier for the command execution.","example":"5c61a623-ef84-f011-b484-002248538048"},"Item":{"type":"object","description":"Payload describing the resource that was created. The exact structure depends on the endpoint.","nullable":true,"additionalProperties":true},"Message":{"type":"string","description":"Optional informational message returned by the service.","nullable":true},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated session identifier that executed the call.","example":"5c61a623-ef84-f011-b484-002248538048"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request.","example":"2025-01-15T14:22:13.480Z"},"ExecutionTime":{"type":"number","description":"Server-side execution time in milliseconds.","example":92.314},"StatusCode":{"type":"integer","description":"HTTP status code mirrored inside the envelope.","example":201},"ServerName":{"type":"string","description":"Name of the application node that processed the request.","example":"spark-assets-6b8676c76c-5tzm6"},"ProcessId":{"type":"integer","description":"Internal process identifier used for diagnostics.","example":1},"OperationId":{"type":"string","description":"Trace identifier emitted for log correlation.","example":"exampleOperation"},"Properties":{"type":"object","description":"Additional metadata emitted by the platform.","additionalProperties":true}},"required":["Item","UserToken","RequestDate","ExecutionTime","StatusCode","ServerName","ProcessId"],"example":{"Id":0,"Uid":"5c61a623-ef84-f011-b484-002248538048","Item":{"SampleKey":"SampleValue"},"Message":null,"UserToken":"5c61a623-ef84-f011-b484-002248538048","RequestDate":"2025-01-15T14:22:13.480Z","ExecutionTime":92.314,"StatusCode":201,"ServerName":"spark-assets-6b8676c76c-5tzm6","ProcessId":1,"OperationId":"exampleOperation","Properties":{}},"title":"ItemCreateResponse"}],"type":"object","description":"Response wrapper for a newly created entity identified by GUID","properties":{"Item":{"type":"string","format":"uuid","description":"The GUID of the newly created entity"}},"title":"ItemCreateResponse_Guid"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

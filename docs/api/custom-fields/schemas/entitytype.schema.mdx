@@ -1,0 +1,33 @@
+---
+id: entitytype
+title: "EntityType"
+description: "Represents an entity type in the system (e.g., Assets, Tickets, Users, Locations). Used throughout custom fields and entity mappings to identify the type of entity being operated on."
+sidebar_label: "EntityType"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"EntityTypeId":"d7bda5de-e6a2-e711-80c2-0004ffa00010","EntityTypeName":"Assets","Icon":"fa-laptop"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"EntityType"}
+>
+</Heading>
+
+
+
+Represents an entity type in the system (e.g., Assets, Tickets, Users, Locations). Used throughout custom fields and entity mappings to identify the type of entity being operated on.
+
+<Schema
+  schema={{"type":"object","description":"Represents an entity type in the system (e.g., Assets, Tickets, Users, Locations). Used throughout custom fields and entity mappings to identify the type of entity being operated on.","properties":{"EntityTypeId":{"type":"string","format":"uuid","description":"Primary identifier for the entity type.","example":"d7bda5de-e6a2-e711-80c2-0004ffa00010"},"EntityTypeName":{"type":"string","description":"Display name of the entity type.","example":"Assets"},"Icon":{"type":"string","nullable":true,"description":"Font Awesome icon name representing the entity type.","example":"fa-laptop"}},"required":["EntityTypeId","EntityTypeName"],"example":{"EntityTypeId":"d7bda5de-e6a2-e711-80c2-0004ffa00010","EntityTypeName":"Assets","Icon":"fa-laptop"},"title":"EntityType"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

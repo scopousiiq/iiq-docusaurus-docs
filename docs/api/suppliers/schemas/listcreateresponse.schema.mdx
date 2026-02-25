@@ -1,0 +1,33 @@
+---
+id: listcreateresponse
+title: "ListCreateResponse"
+description: "Response envelope returned after successfully creating multiple resources in bulk. Based on C# `ListCreateResponse<T>` from `Spark.Shared.Models.Responses`."
+sidebar_label: "ListCreateResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":[{}],"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":201,"Message":"string","ServerName":"string","ProcessId":0,"OperationId":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ListCreateResponse"}
+>
+</Heading>
+
+
+
+Response envelope returned after successfully creating multiple resources in bulk. Based on C# `ListCreateResponse<T>` from `Spark.Shared.Models.Responses`.
+
+<Schema
+  schema={{"type":"object","description":"Response envelope returned after successfully creating multiple resources in bulk. Based on C# `ListCreateResponse<T>` from `Spark.Shared.Models.Responses`.","properties":{"Items":{"type":"array","description":"Array of created entities","items":{"type":"object","additionalProperties":true}},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 201 for successful create)","example":201},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"}},"required":["Items","StatusCode"],"title":"ListCreateResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

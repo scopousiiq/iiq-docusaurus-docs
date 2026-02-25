@@ -1,0 +1,83 @@
+---
+id: start-policy-compliance-scan
+title: "Start policy compliance scan"
+description: "Initiates a compliance scan for a specific audit policy. This operation triggers an asynchronous background process that evaluates all assets covered by the policy, checks their current compliance status against the policy's verification requirements, and updates schedule statuses accordingly. The scan reconciles asset assignments, identifies assets that require verification, and generates or updates compliance records. This endpoint is typically used when you need to force an immediate compliance evaluation outside of the normal scheduled intervals."
+sidebar_label: "Start policy compliance scan"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/audits/audits-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Start policy compliance scan"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/audits/v2/policy/{AssetAuditPolicyId}/start"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Initiates a compliance scan for a specific audit policy. This operation triggers an asynchronous background process that evaluates all assets covered by the policy, checks their current compliance status against the policy's verification requirements, and updates schedule statuses accordingly. The scan reconciles asset assignments, identifies assets that require verification, and generates or updates compliance records. This endpoint is typically used when you need to force an immediate compliance evaluation outside of the normal scheduled intervals.
+
+**Prerequisites:**
+- Asset Audit Policy ID must be obtained from [GET /api/v1.0/audits/policies](/docs/api/audits/get-asset-audit-policies)
+
+**Workflow Example:**
+1. List all policies: [GET /api/v1.0/audits/policies](/docs/api/audits/get-asset-audit-policies)
+2. Extract the target policy's `AssetAuditPolicyId` from `Items[].AssetAuditPolicyId`
+3. Initiate the compliance scan using this endpoint
+4. The response includes a job ID (GUID) for tracking the asynchronous scan operation
+
+**Response:**
+Returns a job identifier (GUID) that can be used to track the scan operation's status and completion.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"AssetAuditPolicyId","in":"path","required":true,"schema":{"type":"string","format":"uuid"},"description":"The unique identifier of the asset audit policy to scan"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Policy compliance scan initiated successfully","content":{"application/json":{"schema":{"allOf":[{"type":"object","description":"Standard response envelope for single-item GET operations. The `Item` property contains the requested entity.","properties":{"Item":{"description":"The requested entity. Structure varies by endpoint."},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful GET)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Item","StatusCode"],"title":"ItemGetResponse"}],"type":"object","description":"Response wrapper for a single GUID value (typically a job or operation ID)","properties":{"Item":{"type":"string","format":"uuid","description":"The GUID value returned by the operation"}},"title":"ItemGetResponse_Guid"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

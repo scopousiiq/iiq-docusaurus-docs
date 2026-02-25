@@ -1,0 +1,33 @@
+---
+id: analyticsauditpolicyschedulestatuslistresponse
+title: "AnalyticsAuditPolicyScheduleStatusListResponse"
+description: "Standard analytics response envelope for audit policy schedule status breakdowns."
+sidebar_label: "AnalyticsAuditPolicyScheduleStatusListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":4,"Items":[{"Name":"Verified","Value":312,"Id":"77777790-7ac2-44d9-895a-1d1e01000001","Date":null},{"Name":"Pending","Value":58,"Id":"77777790-7ac2-44d9-895a-1d1e01000002","Date":null},{"Name":"At Risk","Value":9,"Id":"77777790-7ac2-44d9-895a-1d1e01000003","Date":null},{"Name":"Failed","Value":4,"Id":"77777790-7ac2-44d9-895a-1d1e01000004","Date":null}],"Paging":{},"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2025-11-04T13:18:54.124Z","ExecutionTime":18.4,"StatusCode":200,"ServerName":"spark-analytics-7d7c5f5d9b-gb5nq","ProcessId":42,"OperationId":"asset-audit-policy-schedule-status","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AnalyticsAuditPolicyScheduleStatusListResponse"}
+>
+</Heading>
+
+
+
+Standard analytics response envelope for audit policy schedule status breakdowns.
+
+<Schema
+  schema={{"type":"object","description":"Standard analytics response envelope for audit policy schedule status breakdowns.","properties":{"ItemCount":{"type":"integer","description":"Total number of status buckets returned (typically four).","example":4},"Items":{"type":"array","description":"Collection of aggregated schedule status metrics ordered by severity.","items":{"type":"object","description":"Represents the number of assets that currently sit in a specific audit policy status within the selected schedule.","properties":{"Name":{"type":"string","description":"Display name of the audit status bucket (Verified, Pending, At Risk, Failed).","example":"Verified"},"Value":{"type":"number","description":"Count of assets that currently resolve to this audit policy status for the schedule.","example":312},"Id":{"type":"string","format":"uuid","description":"Identifier of the audit policy status type as defined in `AssetAuditPolicyStatusTypes` constants so you can map colors or thresholds consistently.","example":"77777790-7ac2-44d9-895a-1d1e01000001"},"Date":{"type":"string","format":"date-time","nullable":true,"description":"Timestamp of the measurement when the aggregate includes a time dimension. Not populated for the compliance summary.","example":null}},"required":["Name","Value","Id"],"example":{"Name":"Verified","Value":312,"Id":"77777790-7ac2-44d9-895a-1d1e01000001","Date":null},"title":"AnalyticsAuditPolicyScheduleStatusDataPoint"}},"Paging":{"description":"Paging metadata (unused for this aggregate, provided for envelope parity).","type":"object","nullable":true,"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}]},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated session token.","example":"3e17f735-b79f-f011-b484-002248538047","nullable":true},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the analytics manager finished building the response.","example":"2025-11-04T13:18:54.124Z"},"ExecutionTime":{"type":"number","description":"Duration (ms) of the analytics computation.","example":18.4},"StatusCode":{"type":"integer","description":"HTTP status code mirrored in the payload.","example":200},"ServerName":{"type":"string","description":"Application node that fulfilled the request.","example":"spark-analytics-7d7c5f5d9b-gb5nq"},"ProcessId":{"type":"integer","description":"Process identifier for correlation/troubleshooting.","example":42},"OperationId":{"type":"string","description":"Operation identifier assigned for distributed tracing.","example":"asset-audit-policy-schedule-status"},"Properties":{"type":"object","description":"Additional instrumentation metadata returned by the platform.","example":{}}},"required":["ItemCount","Items","StatusCode"],"example":{"ItemCount":4,"Items":[{"Name":"Verified","Value":312,"Id":"77777790-7ac2-44d9-895a-1d1e01000001","Date":null},{"Name":"Pending","Value":58,"Id":"77777790-7ac2-44d9-895a-1d1e01000002","Date":null},{"Name":"At Risk","Value":9,"Id":"77777790-7ac2-44d9-895a-1d1e01000003","Date":null},{"Name":"Failed","Value":4,"Id":"77777790-7ac2-44d9-895a-1d1e01000004","Date":null}],"Paging":{},"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2025-11-04T13:18:54.124Z","ExecutionTime":18.4,"StatusCode":200,"ServerName":"spark-analytics-7d7c5f5d9b-gb5nq","ProcessId":42,"OperationId":"asset-audit-policy-schedule-status","Properties":{}},"title":"AnalyticsAuditPolicyScheduleStatusListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,0 +1,33 @@
+---
+id: assetsortfield
+title: "AssetSortField"
+description: "Valid field names for sorting asset search results. These correspond to columns in the AssetDetails view. Use with the `$o` query parameter in the format `FieldName direction` (e.g., `AssetTag desc`)."
+sidebar_label: "AssetSortField"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: "AssetTag"
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetSortField"}
+>
+</Heading>
+
+
+
+Valid field names for sorting asset search results. These correspond to columns in the AssetDetails view. Use with the `$o` query parameter in the format `FieldName direction` (e.g., `AssetTag desc`).
+
+<Schema
+  schema={{"type":"string","description":"Valid field names for sorting asset search results. These correspond to columns in the AssetDetails view. Use with the `$o` query parameter in the format `FieldName direction` (e.g., `AssetTag desc`).","enum":["AssetTag","AssetName","SerialNumber","ModelName","ManufacturerName","CategoryName","LocationName","AssetTypeName","AssetStatusTypeName","OwnerLastName","AssetCreatedDate","AssetModifiedDate","ModifiedDate","PurchasedDate","DeployedDate","RetiredDate","PurchasePrice","WarrantyExpirationDate","LastInventoryDate"],"x-enum-descriptions":{"AssetTag":"Asset tag identifier","AssetName":"Asset display name","SerialNumber":"Device serial number","ModelName":"Model name","ManufacturerName":"Manufacturer name","CategoryName":"Asset category name","LocationName":"Assigned location name","AssetTypeName":"Asset type classification","AssetStatusTypeName":"Current status name","OwnerLastName":"Owner last name (alphabetical)","AssetCreatedDate":"Date/time asset record was created","AssetModifiedDate":"Date/time asset was last modified","ModifiedDate":"Alias for AssetModifiedDate","PurchasedDate":"Purchase date","DeployedDate":"Deployment date","RetiredDate":"Retirement date","PurchasePrice":"Purchase price amount","WarrantyExpirationDate":"Warranty expiration date","LastInventoryDate":"Last inventory scan date"},"title":"AssetSortField"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

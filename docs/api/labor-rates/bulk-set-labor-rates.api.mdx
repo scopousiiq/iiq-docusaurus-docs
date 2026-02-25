@@ -1,0 +1,82 @@
+---
+id: bulk-set-labor-rates
+title: "Bulk set labor rates for multiple users"
+description: "Sets labor rates in bulk for multiple users at once. Provide a list of UserIds (or use IsSelectAll with a UsersRequest filter) along with the desired HourlyRate. Returns a job identifier that can be used to track the bulk operation progress."
+sidebar_label: "Bulk set labor rates for multiple users"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/labor-rates/labor-rates-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Bulk set labor rates for multiple users"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/labor/rates/bulk-set-rate"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Sets labor rates in bulk for multiple users at once. Provide a list of UserIds (or use IsSelectAll with a UsersRequest filter) along with the desired HourlyRate. Returns a job identifier that can be used to track the bulk operation progress.
+
+**Prerequisites**
+1. **UserIds** — Obtain via [POST /api/v1.0/users](/docs/api/users/search-users). Extract `Items[].UserId` from the response.
+2. **LaborTypeId** (if providing LaborRates) — Obtain from [GET /api/v1.0/labor/rates/user/\{UserId\}](/docs/api/labor-rates/get-user-labor-rates) at `Items[].LaborTypeId`.
+
+**Workflow Example**
+1. Search for target users: [POST /api/v1.0/users](/docs/api/users/search-users).
+2. Collect `UserId` values from the response.
+3. Bulk set rates: `POST /api/v1.0/labor/rates/bulk-set-rate` with UserIds and HourlyRate.
+
+**Minimal Required Fields**: `HourlyRate` in the request body, plus either `UserIds` or `IsSelectAll` with `UsersRequest`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"description":"Bulk labor rate change payload specifying target users and the rate to apply.","content":{"application/json":{"schema":{"type":"object","description":"Request payload for bulk-setting labor rates across multiple users. Specify either individual UserIds or use IsSelectAll with a UsersRequest filter to target users.","required":["HourlyRate"],"properties":{"UserIds":{"type":"array","description":"List of user identifiers to apply the labor rate change to.","items":{"type":"string","format":"uuid","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}}},"HourlyRate":{"type":"number","format":"decimal","description":"The hourly rate to set for all targeted users."},"LaborRates":{"type":"array","description":"Optional list of individual labor rate overrides per user.","nullable":true,"items":{"type":"object","description":"Request payload for creating or updating a user labor rate. Extends the LaborRate model with an optional ProductId to scope the rate to a specific product module.","properties":{"UserLaborRateId":{"type":"string","format":"uuid","description":"Unique identifier for the labor rate record. Required when updating; omit or use a zero GUID when creating.","x-obtained-from":{"operationId":"createLaborRate","endpoint":"POST /api/v1.0/labor/rates/new","responseField":"Item.UserLaborRateId"}},"UserId":{"type":"string","format":"uuid","description":"The user to whom this labor rate applies.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}},"ByUserId":{"type":"string","format":"uuid","description":"The user who is creating or modifying this labor rate.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}},"HourlyRate":{"type":"number","format":"decimal","description":"Hourly billing rate in the tenant's configured currency."},"LaborTypeId":{"type":"string","format":"uuid","description":"Identifier of the labor type category (e.g., standard, overtime).","x-obtained-from":{"operationId":"getUserLaborRates","endpoint":"GET /api/v1.0/labor/rates/user/{UserId}","responseField":"Items[].LaborTypeId"}},"ProductId":{"type":"string","format":"uuid","nullable":true,"description":"Optional product module identifier to scope this rate. Obtain from site settings.","x-obtained-from":{"operationId":"getMySiteSettings","endpoint":"GET /api/v1.0/sites/my/settings","responseField":"Item.Products[].ProductId"}},"IsDeleted":{"type":"boolean","description":"Whether this labor rate record has been soft-deleted."},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when this labor rate was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when this labor rate was last modified."}},"example":{"UserId":"b2c3d4e5-f6a7-8901-bcde-f12345678901","HourlyRate":75,"LaborTypeId":"d4e5f6a7-b8c9-0123-defa-234567890123","ProductId":"e5f6a7b8-c9d0-1234-efab-345678901234"},"title":"UpdateLaborRateRequest"}},"IsSelectAll":{"type":"boolean","description":"When true, applies the rate change to all users matching the UsersRequest filter instead of the explicit UserIds list."},"UsersRequest":{"type":"object","nullable":true,"description":"Optional user query filter used when IsSelectAll is true. Follows the standard user search request format.","additionalProperties":true}},"example":{"UserIds":["b2c3d4e5-f6a7-8901-bcde-f12345678901","c3d4e5f6-a7b8-9012-cdef-123456789012"],"HourlyRate":85,"IsSelectAll":false},"title":"BulkChangeLaborRateRequest"},"example":{"UserIds":["b2c3d4e5-f6a7-8901-bcde-f12345678901","c3d4e5f6-a7b8-9012-cdef-123456789012"],"HourlyRate":85,"IsSelectAll":false}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Bulk labor rate change initiated successfully. Returns a job identifier.","content":{"application/json":{"schema":{"type":"object","description":"Standard response envelope for single-item GET operations. The `Item` property contains the requested entity.","properties":{"Item":{"description":"The requested entity. Structure varies by endpoint."},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful GET)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Item","StatusCode"],"title":"ItemGetResponse"},"example":{"Item":"e5f6a7b8-c9d0-1234-efab-345678901234","StatusCode":200}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

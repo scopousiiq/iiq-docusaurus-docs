@@ -988,6 +988,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/users/schemas/intercomjwtresponse",
+          label: "IntercomJwtResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/users/schemas/intercomuserattributes",
           label: "IntercomUserAttributes",
           className: "schema",
@@ -1062,6 +1068,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/users/schemas/locationroomcustomfieldvalue",
           label: "LocationRoomCustomFieldValue",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/locationroomtype",
+          label: "LocationRoomType",
           className: "schema",
         },
         {
@@ -1342,6 +1354,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/users/schemas/useractivity",
+          label: "UserActivity",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/useractivityresponse",
+          label: "UserActivityResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/users/schemas/usercustomfieldvalue",
           label: "UserCustomFieldValue",
           className: "schema",
@@ -1380,6 +1404,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/users/schemas/userdetailgetresponse",
           label: "UserDetailGetResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/userdetailresponse",
+          label: "UserDetailResponse",
           className: "schema",
         },
         {
@@ -1476,6 +1506,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/users/schemas/userupdaterequest",
           label: "UserUpdateRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/userupdateresponse",
+          label: "UserUpdateResponse",
           className: "schema",
         },
         {

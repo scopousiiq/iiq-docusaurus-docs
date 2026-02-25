@@ -96,6 +96,24 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/parts/get-purchase-orders-by-ids",
+          label: "Get purchase orders by IDs",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/parts/create-purchase-orders-bulk",
+          label: "Create purchase orders (bulk)",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/parts/delete-purchase-orders-by-ids",
+          label: "Delete purchase orders by IDs",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
           id: "api/parts/list-purchase-orders",
           label: "List purchase orders",
           className: "api-method get",
@@ -104,6 +122,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/parts/create-purchase-order",
           label: "Create purchase order",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/parts/update-purchase-orders-by-query",
+          label: "Update purchase orders by query",
           className: "api-method post",
         },
       ],
@@ -206,6 +230,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/parts/schemas/itemdeleteresponse",
           label: "ItemDeleteResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/parts/schemas/listdeleteresponse",
+          label: "ListDeleteResponse",
           className: "schema",
         },
         {
@@ -342,8 +372,20 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/parts/schemas/purchaseorderlistcreateresponse",
+          label: "PurchaseOrderListCreateResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/parts/schemas/purchaseorderlistgetresponse",
           label: "PurchaseOrderListGetResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/parts/schemas/purchaseorderlistupdateresponse",
+          label: "PurchaseOrderListUpdateResponse",
           className: "schema",
         },
         {
@@ -392,6 +434,18 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/parts/schemas/ticketsearchrequest",
           label: "TicketSearchRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/parts/schemas/updatepurchaseorderrequest",
+          label: "UpdatePurchaseOrderRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/parts/schemas/updatepurchaseordersrequest",
+          label: "UpdatePurchaseOrdersRequest",
           className: "schema",
         },
       ],

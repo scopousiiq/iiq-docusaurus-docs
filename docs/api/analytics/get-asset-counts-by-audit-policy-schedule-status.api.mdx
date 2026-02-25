@@ -1,0 +1,82 @@
+---
+id: get-asset-counts-by-audit-policy-schedule-status
+title: "Get asset counts by audit policy schedule status"
+description: "Returns asset counts grouped by audit policy status (Verified, Pending, At Risk, Failed) for a single audit policy schedule. This endpoint narrows the analytics query to assets currently assigned to the schedule so you can track compliance for a specific audit run cadence."
+sidebar_label: "Get asset counts by audit policy schedule status"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/analytics/analytics-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get asset counts by audit policy schedule status"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/analytics/assets/by-audit-policy-schedule-status/{AssetAuditPolicyScheduleId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns asset counts grouped by audit policy status (Verified, Pending, At Risk, Failed) for a single audit policy schedule. This endpoint narrows the analytics query to assets currently assigned to the schedule so you can track compliance for a specific audit run cadence.
+
+**Prerequisites**
+1. **AssetAuditPolicyScheduleId** – Use [POST /api/v1.0/assets](/docs/api/assets/search-assets) to locate an asset governed by the target schedule, then load [GET /api/v1.0/assets/\{assetId\}](/docs/api/assets/get-asset-by-id) and read `Item.AssetAuditPolicyScheduleId` from the response.
+
+**Workflow Example**
+1. Search assets: [POST /api/v1.0/assets](/docs/api/assets/search-assets) and select an asset assigned to the desired audit schedule.
+2. Load the asset: [GET /api/v1.0/assets/\{assetId\}](/docs/api/assets/get-asset-by-id) to capture `Item.AssetAuditPolicyScheduleId`.
+3. Call [GET /api/v1.0/analytics/assets/by-audit-policy-schedule-status/\{AssetAuditPolicyScheduleId\}](/docs/api/analytics/get-asset-counts-by-audit-policy-schedule-status) to retrieve the compliance distribution.
+4. Use the counts to populate schedule-level compliance reporting or escalation alerts.
+
+**Minimal Required Fields**: `AssetAuditPolicyScheduleId` (path).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"AssetAuditPolicyScheduleId","in":"path","required":true,"description":"Unique identifier of the audit policy schedule to summarize.","x-obtained-from":{"operationId":"getAssetById","endpoint":"GET /api/v1.0/assets/{assetId}","responseField":"Item.AssetAuditPolicyScheduleId"},"schema":{"type":"string","format":"uuid"},"example":"74bf3a5c-5f2b-49b8-9cdd-7a58b23f6b2d"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Asset counts grouped by audit policy schedule status","content":{"application/json":{"schema":{"type":"object","description":"Standard analytics response envelope for audit policy schedule status breakdowns.","properties":{"ItemCount":{"type":"integer","description":"Total number of status buckets returned (typically four).","example":4},"Items":{"type":"array","description":"Collection of aggregated schedule status metrics ordered by severity.","items":{"type":"object","description":"Represents the number of assets that currently sit in a specific audit policy status within the selected schedule.","properties":{"Name":{"type":"string","description":"Display name of the audit status bucket (Verified, Pending, At Risk, Failed).","example":"Verified"},"Value":{"type":"number","description":"Count of assets that currently resolve to this audit policy status for the schedule.","example":312},"Id":{"type":"string","format":"uuid","description":"Identifier of the audit policy status type as defined in `AssetAuditPolicyStatusTypes` constants so you can map colors or thresholds consistently.","example":"77777790-7ac2-44d9-895a-1d1e01000001"},"Date":{"type":"string","format":"date-time","nullable":true,"description":"Timestamp of the measurement when the aggregate includes a time dimension. Not populated for the compliance summary.","example":null}},"required":["Name","Value","Id"],"example":{"Name":"Verified","Value":312,"Id":"77777790-7ac2-44d9-895a-1d1e01000001","Date":null},"title":"AnalyticsAuditPolicyScheduleStatusDataPoint"}},"Paging":{"description":"Paging metadata (unused for this aggregate, provided for envelope parity).","type":"object","nullable":true,"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}]},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated session token.","example":"3e17f735-b79f-f011-b484-002248538047","nullable":true},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the analytics manager finished building the response.","example":"2025-11-04T13:18:54.124Z"},"ExecutionTime":{"type":"number","description":"Duration (ms) of the analytics computation.","example":18.4},"StatusCode":{"type":"integer","description":"HTTP status code mirrored in the payload.","example":200},"ServerName":{"type":"string","description":"Application node that fulfilled the request.","example":"spark-analytics-7d7c5f5d9b-gb5nq"},"ProcessId":{"type":"integer","description":"Process identifier for correlation/troubleshooting.","example":42},"OperationId":{"type":"string","description":"Operation identifier assigned for distributed tracing.","example":"asset-audit-policy-schedule-status"},"Properties":{"type":"object","description":"Additional instrumentation metadata returned by the platform.","example":{}}},"required":["ItemCount","Items","StatusCode"],"example":{"ItemCount":4,"Items":[{"Name":"Verified","Value":312,"Id":"77777790-7ac2-44d9-895a-1d1e01000001","Date":null},{"Name":"Pending","Value":58,"Id":"77777790-7ac2-44d9-895a-1d1e01000002","Date":null},{"Name":"At Risk","Value":9,"Id":"77777790-7ac2-44d9-895a-1d1e01000003","Date":null},{"Name":"Failed","Value":4,"Id":"77777790-7ac2-44d9-895a-1d1e01000004","Date":null}],"Paging":{},"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2025-11-04T13:18:54.124Z","ExecutionTime":18.4,"StatusCode":200,"ServerName":"spark-analytics-7d7c5f5d9b-gb5nq","ProcessId":42,"OperationId":"asset-audit-policy-schedule-status","Properties":{}},"title":"AnalyticsAuditPolicyScheduleStatusListResponse"},"example":{"ItemCount":4,"Items":[{"Name":"Verified","Value":312,"Id":"77777790-7ac2-44d9-895a-1d1e01000001","Date":null},{"Name":"Pending","Value":58,"Id":"77777790-7ac2-44d9-895a-1d1e01000002","Date":null},{"Name":"At Risk","Value":9,"Id":"77777790-7ac2-44d9-895a-1d1e01000003","Date":null},{"Name":"Failed","Value":4,"Id":"77777790-7ac2-44d9-895a-1d1e01000004","Date":null}],"Paging":{},"UserToken":"3e17f735-b79f-f011-b484-002248538047","RequestDate":"2025-11-04T13:18:54.124Z","ExecutionTime":18.4,"StatusCode":200,"ServerName":"spark-analytics-7d7c5f5d9b-gb5nq","ProcessId":42,"OperationId":"asset-audit-policy-schedule-status","Properties":{}}}}},"401":{"description":"Unauthorized - Authentication required or authentication credentials are invalid","content":{"application/json":{"schema":{"type":"object","description":"Error response for authentication failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (401)","example":401},"Message":{"type":"string","description":"Human-readable description of the authentication error","example":"Authentication required. Please provide valid credentials."}},"required":["StatusCode","Message"],"title":"UnauthorizedError"}}}},"403":{"description":"Forbidden - Insufficient permissions to perform this operation","content":{"application/json":{"schema":{"type":"object","description":"Error response for authorization/permission failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (403)","example":403},"Message":{"type":"string","description":"Human-readable description of the authorization error","example":"You do not have permission to perform this action"}},"required":["StatusCode","Message"],"title":"ForbiddenError"}}}},"429":{"description":"Too Many Requests - Rate limit exceeded","content":{"application/json":{"schema":{"type":"object","description":"Error response when rate limit is exceeded","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (429)","example":429},"Message":{"type":"string","description":"Human-readable description of the rate limit error","example":"Rate limit exceeded. Please try again later."},"RetryAfter":{"type":"integer","description":"Number of seconds to wait before retrying","example":60}},"required":["StatusCode","Message"],"title":"RateLimitError"}}}},"500":{"description":"Internal Server Error - An unexpected error occurred on the server","content":{"application/json":{"schema":{"type":"object","description":"Error response for internal server errors","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (500)","example":500},"Message":{"type":"string","description":"Human-readable description of the server error","example":"An internal server error occurred. Please try again later."},"RequestId":{"type":"string","description":"Unique request identifier for troubleshooting","example":"req_1234567890abcdef"}},"required":["StatusCode","Message"],"title":"InternalServerError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

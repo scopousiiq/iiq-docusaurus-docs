@@ -1,0 +1,33 @@
+---
+id: ticketnextsteptemplatelistresponse
+title: "TicketNextStepTemplateListResponse"
+description: "Paginated list response containing ticket next step templates."
+sidebar_label: "TicketNextStepTemplateListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Items":[{"TicketNextStepTemplateId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","Scope":"Global","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Subject":"string","TicketNextStepTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","FilterSetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}],"Paging":{"PageSize":50,"PageIndex":0,"SortField":"Name","SortDirection":"Ascending","SecondarySortOptions":[{"SortField":"string","SortDirection":"Ascending"}]},"UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":0,"Message":"string","IsError":true,"ErrorData":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketNextStepTemplateListResponse"}
+>
+</Heading>
+
+
+
+Paginated list response containing ticket next step templates.
+
+<Schema
+  schema={{"type":"object","description":"Paginated list response containing ticket next step templates.","properties":{"Items":{"type":"array","description":"Array of ticket next step templates.","items":{"type":"object","description":"A template for ticket next steps, defining predefined workflows that can be applied to tickets.","properties":{"TicketNextStepTemplateId":{"type":"string","format":"uuid","description":"Unique identifier for this next step template."},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the template was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the template was last modified."},"Scope":{"allOf":[{"type":"string","description":"Visibility scope for entities within the system.","enum":["System","Global","Site","Product"],"example":"Global","title":"Scopes"}],"description":"Visibility scope for the template (System, Global, Site, or Product)."},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site identifier if the template is scoped to a specific site. Obtain via [GET /api/v2.0/locations](/docs/api/locations/get-my-locations-v-2), extract `Items[].LocationId`.","x-obtained-from":{"operationId":"getMyLocationsV2","endpoint":"GET /api/v2.0/locations","responseField":"Items[].LocationId"}},"ProductId":{"type":"string","format":"uuid","description":"Product identifier for the template. Obtain via GET /api/v1.0/products, extract `Items[].ProductId`.","x-obtained-from":{"operationId":"listProducts","endpoint":"GET /api/v1.0/products","responseField":"Items[].ProductId"}},"Name":{"type":"string","description":"Display name of the template."},"Subject":{"type":"string","description":"Subject line to use when the template is applied."},"TicketNextStepTypeId":{"type":"string","format":"uuid","description":"Identifier for the next step type this template uses."},"FilterSetId":{"type":"string","format":"uuid","nullable":true,"description":"Optional filter set identifier to limit when this template applies."}},"title":"TicketNextStepTemplate"}},"Paging":{"type":"object","description":"Pagination and sorting options for list requests","properties":{"PageSize":{"type":"integer","description":"Number of records per page. Use -1 for unlimited (not recommended for large datasets).","default":-1,"example":50},"PageIndex":{"type":"integer","description":"Zero-based page index","default":0,"minimum":0,"example":0},"SortField":{"type":"string","nullable":true,"description":"Field name to sort results by. Available fields depend on the entity type.","example":"Name"},"SortDirection":{"type":"string","enum":["Ascending","Descending"],"description":"Sort direction for the primary sort field","default":"Ascending"},"SecondarySortOptions":{"type":"array","nullable":true,"items":{"type":"object","description":"Sort configuration for a single field","properties":{"SortField":{"type":"string","description":"Field name to sort by"},"SortDirection":{"type":"string","enum":["Ascending","Descending"],"description":"Sort direction","default":"Ascending"}},"required":["SortField"],"title":"SortOptions"},"description":"Additional sort criteria applied after the primary sort"}},"title":"PagingOptions"},"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier."},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request."},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds."},"StatusCode":{"type":"integer","description":"HTTP status code."},"Message":{"type":"string","description":"Human-readable status message."},"IsError":{"type":"boolean","description":"Indicates whether an error occurred."},"ErrorData":{"type":"object","nullable":true,"description":"Additional error information if IsError is true."}},"title":"TicketNextStepTemplateListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

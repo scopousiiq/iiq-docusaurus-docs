@@ -1,0 +1,33 @@
+---
+id: issuesearchrequest
+title: "IssueSearchRequest"
+description: "Alias for `GetIssuesRequest`. Mirrors the server-side request model used by POST /api/v1.0/issues."
+sidebar_label: "IssueSearchRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SiteScope":"Aggregate","Strategy":"Explicit","ModelIds":["d4e5f6a7-b8c9-0123-d4e5-f6a7b8c90123"]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"IssueSearchRequest"}
+>
+</Heading>
+
+
+
+Alias for `GetIssuesRequest`. Mirrors the server-side request model used by POST /api/v1.0/issues.
+
+<Schema
+  schema={{"description":"Alias for `GetIssuesRequest`. Mirrors the server-side request model used by POST /api/v1.0/issues.","allOf":[{"type":"object","properties":{"SiteScope":{"type":"string","enum":["Global","Site","Personal","GlobalOnly","Aggregate"],"default":"Aggregate"},"Strategy":{"type":"string","enum":["AggregateTicket","Explicit","All"],"default":"Explicit"},"ApplySiteVisibility":{"type":"boolean","default":true},"ApplyProductIdFilter":{"type":"boolean","default":true},"AssetIds":{"type":"array","items":{"type":"string","format":"uuid"},"nullable":true},"ModelIds":{"type":"array","items":{"type":"string","format":"uuid"},"nullable":true},"ProductId":{"type":"string","format":"uuid","nullable":true},"TicketIds":{"type":"array","items":{"type":"string","format":"uuid"},"nullable":true},"ModelCategoryIds":{"type":"array","items":{"type":"string","format":"uuid"},"nullable":true},"IssueCategoryIds":{"type":"array","items":{"type":"string","format":"uuid"},"nullable":true},"IssueTypeIds":{"type":"array","items":{"type":"string","format":"uuid"},"nullable":true},"AppIds":{"type":"array","items":{"type":"string"},"nullable":true},"IsRemoteSupport":{"type":"boolean","default":false}},"example":{"SiteScope":"Aggregate","Strategy":"Explicit","ModelIds":["d4e5f6a7-b8c9-0123-d4e5-f6a7b8c90123"]},"title":"GetIssuesRequest"}],"title":"IssueSearchRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

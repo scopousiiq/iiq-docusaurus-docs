@@ -1,0 +1,33 @@
+---
+id: assetvaluationperiod
+title: "AssetValuationPeriod"
+description: "Period-based valuation snapshot"
+sidebar_label: "AssetValuationPeriod"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"PeriodName":"string","StartDate":"2024-07-29","EndDate":"2024-07-29","StartingValue":0,"EndingValue":0,"Amount":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetValuationPeriod"}
+>
+</Heading>
+
+
+
+Period-based valuation snapshot
+
+<Schema
+  schema={{"type":"object","description":"Period-based valuation snapshot","properties":{"PeriodName":{"type":"string"},"StartDate":{"type":"string","format":"date","nullable":true},"EndDate":{"type":"string","format":"date","nullable":true},"StartingValue":{"type":"number","nullable":true},"EndingValue":{"type":"number","nullable":true},"Amount":{"type":"number","nullable":true}},"title":"AssetValuationPeriod"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

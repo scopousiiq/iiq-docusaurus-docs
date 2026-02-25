@@ -1,0 +1,33 @@
+---
+id: itemdeleteresponse
+title: "ItemDeleteResponse"
+description: "Response returned after successfully deleting a resource. Contains the ID of the deleted item."
+sidebar_label: "ItemDeleteResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":0,"Message":"string","ServerName":"string","ProcessId":0,"OperationId":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ItemDeleteResponse"}
+>
+</Heading>
+
+
+
+Response returned after successfully deleting a resource. Contains the ID of the deleted item.
+
+<Schema
+  schema={{"type":"object","description":"Response returned after successfully deleting a resource. Contains the ID of the deleted item.","properties":{"Id":{"type":"string","format":"uuid","description":"UUID of the deleted resource"},"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"}},"required":["Id","StatusCode"],"title":"ItemDeleteResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

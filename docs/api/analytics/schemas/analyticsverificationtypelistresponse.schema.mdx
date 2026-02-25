@@ -1,0 +1,33 @@
+---
+id: analyticsverificationtypelistresponse
+title: "AnalyticsVerificationTypeListResponse"
+description: "List envelope returned by GET /api/v1.0/analytics/assets/by-verification-type containing grouped verification counts."
+sidebar_label: "AnalyticsVerificationTypeListResponse"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ItemCount":3,"Items":[{"Name":"Web Manual","Value":214,"Id":null,"Date":null},{"Name":"Mobile Scan","Value":87,"Id":null,"Date":null},{"Name":"Remote App","Value":44,"Id":null,"Date":null}],"Paging":{},"UserToken":"951dd408-2ca7-4ebf-a052-12e7a255046b","RequestDate":"2025-04-18T15:22:01.882Z","ExecutionTime":11.63,"StatusCode":200,"ServerName":"spark-analytics-7f5576b7bc-g92nq","ProcessId":18640,"OperationId":"asset-verification-types","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AnalyticsVerificationTypeListResponse"}
+>
+</Heading>
+
+
+
+List envelope returned by GET /api/v1.0/analytics/assets/by-verification-type containing grouped verification counts.
+
+<Schema
+  schema={{"type":"object","description":"List envelope returned by GET /api/v1.0/analytics/assets/by-verification-type containing grouped verification counts.","properties":{"ItemCount":{"type":"integer","description":"Total number of verification types returned.","example":3},"Items":{"type":"array","description":"Collection of verification-type analytics entries sorted by asset count.","items":{"type":"object","description":"Aggregated asset verification counts grouped by verification method (web manual, mobile scan, remote app, etc.) using each asset's most recent verification record.","properties":{"Name":{"type":"string","description":"Display name of the verification type emitted by the analytics query. Matches the label returned by the Asset Verification Types entity catalog.","example":"Web Manual"},"Value":{"type":"number","description":"Distinct asset count whose latest verification entry used this type.","example":214},"Id":{"type":"string","format":"uuid","nullable":true,"description":"Identifier slot carried over from the analytics data point model. This particular aggregate does not populate the field.","example":null},"Date":{"type":"string","format":"date-time","nullable":true,"description":"Optional timestamp for the data point (not set for this dataset).","example":null}},"required":["Name","Value"],"example":{"Name":"Web Manual","Value":214,"Id":null,"Date":null},"title":"AnalyticsVerificationTypeDataPoint"}},"Paging":{"description":"Paging metadata (unused for this aggregate).","type":"object","nullable":true,"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}]},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated session token.","example":"951dd408-2ca7-4ebf-a052-12e7a255046b","nullable":true},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp the query completed.","example":"2025-04-18T15:22:01.882Z"},"ExecutionTime":{"type":"number","description":"How long the analytics query took to execute (ms).","example":11.63},"StatusCode":{"type":"integer","description":"HTTP status code mirrored into the body.","example":200},"ServerName":{"type":"string","description":"Application node that served the request.","example":"spark-analytics-7f5576b7bc-g92nq"},"ProcessId":{"type":"integer","description":"Process identifier useful for diagnostics.","example":18640},"OperationId":{"type":"string","description":"Identifier assigned for distributed tracing.","example":"asset-verification-types"},"Properties":{"type":"object","description":"Additional instrumentation metadata returned by the platform.","example":{}}},"required":["ItemCount","Items","StatusCode"],"example":{"ItemCount":3,"Items":[{"Name":"Web Manual","Value":214,"Id":null,"Date":null},{"Name":"Mobile Scan","Value":87,"Id":null,"Date":null},{"Name":"Remote App","Value":44,"Id":null,"Date":null}],"Paging":{},"UserToken":"951dd408-2ca7-4ebf-a052-12e7a255046b","RequestDate":"2025-04-18T15:22:01.882Z","ExecutionTime":11.63,"StatusCode":200,"ServerName":"spark-analytics-7f5576b7bc-g92nq","ProcessId":18640,"OperationId":"asset-verification-types","Properties":{}},"title":"AnalyticsVerificationTypeListResponse"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

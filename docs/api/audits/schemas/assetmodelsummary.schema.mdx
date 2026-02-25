@@ -1,0 +1,33 @@
+---
+id: assetmodelsummary
+title: "AssetModelSummary"
+description: "Summary of the asset's model information"
+sidebar_label: "AssetModelSummary"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ModelId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Scope":"string","Name":"string","ModelName":"string","AssetTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ManufacturerId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Manufacturer":{"ManufacturerId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Scope":"string","Name":"string","EsoIsVisible":true,"Icon":"string"},"CategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Category":{"CategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Scope":"string","Level":0,"SortOrder":0,"CategoryTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Icon":"string","ParentCategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"},"ImageId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","CreatedDate":"2024-07-29T15:51:28.071Z","ModifiedDate":"2024-07-29T15:51:28.071Z","EsoIsVisible":true,"IsGenericModel":true,"SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AssetTypeName":"string","Icon":"string","CategoryNameWithParent":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetModelSummary"}
+>
+</Heading>
+
+
+
+Summary of the asset's model information
+
+<Schema
+  schema={{"type":"object","description":"Summary of the asset's model information","properties":{"ModelId":{"type":"string","format":"uuid"},"Scope":{"type":"string","description":"Scope in which the model is available","nullable":true},"Name":{"type":"string"},"ModelName":{"type":"string"},"AssetTypeId":{"type":"string","format":"uuid","nullable":true},"ManufacturerId":{"type":"string","format":"uuid","nullable":true},"Manufacturer":{"nullable":true,"allOf":[{"type":"object","description":"Manufacturer details for the associated model","properties":{"ManufacturerId":{"type":"string","format":"uuid","nullable":true},"Scope":{"type":"string","nullable":true},"Name":{"type":"string"},"EsoIsVisible":{"type":"boolean","nullable":true},"Icon":{"type":"string","nullable":true}},"title":"AssetManufacturerSummary"}],"type":"object"},"CategoryId":{"type":"string","format":"uuid","nullable":true},"Category":{"nullable":true,"allOf":[{"type":"object","description":"Category information for the asset model","properties":{"CategoryId":{"type":"string","format":"uuid"},"Scope":{"type":"string","nullable":true},"Level":{"type":"integer","nullable":true},"SortOrder":{"type":"integer","nullable":true},"CategoryTypeId":{"type":"string","format":"uuid","nullable":true},"Name":{"type":"string"},"Icon":{"type":"string","nullable":true},"ParentCategoryId":{"type":"string","format":"uuid","nullable":true}},"title":"AssetCategorySummary"}],"type":"object"},"ImageId":{"type":"string","format":"uuid","nullable":true},"CreatedDate":{"type":"string","format":"date-time","nullable":true},"ModifiedDate":{"type":"string","format":"date-time","nullable":true},"EsoIsVisible":{"type":"boolean","description":"Indicates whether the model is visible in the external service","nullable":true},"IsGenericModel":{"type":"boolean","nullable":true},"SiteId":{"type":"string","format":"uuid","nullable":true},"AssetTypeName":{"type":"string","description":"Display name for the asset type","nullable":true},"Icon":{"type":"string","description":"Icon CSS class for the model","nullable":true},"CategoryNameWithParent":{"type":"string","description":"Category breadcrumb combining parent and child names","nullable":true}},"title":"AssetModelSummary"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

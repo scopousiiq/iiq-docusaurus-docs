@@ -482,8 +482,20 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/custom-fields/schemas/customfieldentitymapping",
+          label: "CustomFieldEntityMapping",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/custom-fields/schemas/customfieldentitymappingentityfield",
           label: "CustomFieldEntityMappingEntityField",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/custom-fields/schemas/customfieldentitymappingentitymetadata",
+          label: "CustomFieldEntityMappingEntityMetadata",
           className: "schema",
         },
         {
@@ -604,6 +616,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/custom-fields/schemas/entityfiltervalue",
           label: "EntityFilterValue",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/custom-fields/schemas/entitytype",
+          label: "EntityType",
           className: "schema",
         },
         {

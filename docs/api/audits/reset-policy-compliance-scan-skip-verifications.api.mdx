@@ -1,0 +1,85 @@
+---
+id: reset-policy-compliance-scan-skip-verifications
+title: "Reset compliance scan data without verification reset (Admin)"
+description: "Resets policy compliance scan historical data for a specific site while preserving verification records. This administrative operation clears compliance scan state and schedule statuses but skips resetting verification data, allowing historical verification records to be retained. This is useful when you need to refresh compliance calculations without losing verification history. This endpoint is restricted to global administrators and provides a less destructive alternative to the full reset operation."
+sidebar_label: "Reset compliance scan data without verification reset (Admin)"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/audits/audits-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Reset compliance scan data without verification reset (Admin)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/audits/policy-compliance-scan/reset/skip-verifications/{SiteId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Resets policy compliance scan historical data for a specific site while preserving verification records. This administrative operation clears compliance scan state and schedule statuses but skips resetting verification data, allowing historical verification records to be retained. This is useful when you need to refresh compliance calculations without losing verification history. This endpoint is restricted to global administrators and provides a less destructive alternative to the full reset operation.
+
+**Prerequisites:**
+- Site ID must be obtained from GET /api/v1.0/sites
+- **Requires global administrator privileges**
+
+**Workflow Example:**
+1. Identify the target site using site management endpoints
+2. Extract the site's `SiteId`
+3. Execute the reset operation using this endpoint (requires admin authorization)
+4. The system clears compliance scan data but preserves verification records
+5. Compliance scans can regenerate metrics while keeping verification history
+
+**Response:**
+Returns an action response confirming that the compliance scan historical data reset (with verification preservation) was successful.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"SiteId","in":"path","required":true,"schema":{"type":"string","format":"uuid"},"description":"The unique identifier of the site to reset compliance scan data for"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Compliance scan historical data reset successful (verifications preserved)","content":{"application/json":{"schema":{"type":"object","description":"Generic response for actions that do not return a specific entity. Extends BaseResponse with no additional properties. Used for operations like enabling, disabling, or triggering workflows.","properties":{"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Message":{"type":"string","nullable":true,"description":"Optional informational or error message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors that did not prevent the operation"}},"required":["StatusCode"],"title":"ActionResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

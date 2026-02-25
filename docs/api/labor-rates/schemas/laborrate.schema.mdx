@@ -1,0 +1,33 @@
+---
+id: laborrate
+title: "LaborRate"
+description: "Represents a user's labor rate configuration, specifying their hourly billing rate and associated labor type."
+sidebar_label: "LaborRate"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"UserLaborRateId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","UserId":"b2c3d4e5-f6a7-8901-bcde-f12345678901","ByUserId":"c3d4e5f6-a7b8-9012-cdef-123456789012","HourlyRate":75,"LaborTypeId":"d4e5f6a7-b8c9-0123-defa-234567890123","IsDeleted":false,"CreatedDate":"2024-01-15T10:30:00Z","ModifiedDate":"2024-01-15T10:30:00Z"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"LaborRate"}
+>
+</Heading>
+
+
+
+Represents a user's labor rate configuration, specifying their hourly billing rate and associated labor type.
+
+<Schema
+  schema={{"type":"object","description":"Represents a user's labor rate configuration, specifying their hourly billing rate and associated labor type.","properties":{"UserLaborRateId":{"type":"string","format":"uuid","description":"Unique identifier for this labor rate record.","x-obtained-from":{"operationId":"createLaborRate","endpoint":"POST /api/v1.0/labor/rates/new","responseField":"Item.UserLaborRateId"}},"UserId":{"type":"string","format":"uuid","description":"The user to whom this labor rate applies.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}},"ByUserId":{"type":"string","format":"uuid","description":"The user who created or last modified this labor rate.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}},"HourlyRate":{"type":"number","format":"decimal","description":"Hourly billing rate in the tenant's configured currency."},"LaborTypeId":{"type":"string","format":"uuid","description":"Identifier of the labor type category (e.g., standard, overtime).","x-obtained-from":{"operationId":"getUserLaborRates","endpoint":"GET /api/v1.0/labor/rates/user/{UserId}","responseField":"Items[].LaborTypeId"}},"IsDeleted":{"type":"boolean","description":"Whether this labor rate record has been soft-deleted."},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when this labor rate was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when this labor rate was last modified."}},"example":{"UserLaborRateId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","UserId":"b2c3d4e5-f6a7-8901-bcde-f12345678901","ByUserId":"c3d4e5f6-a7b8-9012-cdef-123456789012","HourlyRate":75,"LaborTypeId":"d4e5f6a7-b8c9-0123-defa-234567890123","IsDeleted":false,"CreatedDate":"2024-01-15T10:30:00Z","ModifiedDate":"2024-01-15T10:30:00Z"},"title":"LaborRate"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

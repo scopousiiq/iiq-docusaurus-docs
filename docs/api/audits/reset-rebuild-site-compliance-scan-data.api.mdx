@@ -1,0 +1,86 @@
+---
+id: reset-rebuild-site-compliance-scan-data
+title: "Reset and rebuild compliance scan data for site (Admin)"
+description: "Resets and rebuilds all asset audit compliance scan data for a specific site. This administrative operation performs a complete reset of compliance scan state for the site and then triggers a rebuild process to regenerate all compliance data from scratch. The operation is executed as a background job to handle potentially large data volumes. Returns a job ID that can be used to track the rebuild operation's progress. This endpoint is restricted to global administrators and provides a site-scoped alternative to the full system rebuild."
+sidebar_label: "Reset and rebuild compliance scan data for site (Admin)"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/audits/audits-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Reset and rebuild compliance scan data for site (Admin)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/audits/policy-compliance-scan/reset-rebuild/{SiteId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Resets and rebuilds all asset audit compliance scan data for a specific site. This administrative operation performs a complete reset of compliance scan state for the site and then triggers a rebuild process to regenerate all compliance data from scratch. The operation is executed as a background job to handle potentially large data volumes. Returns a job ID that can be used to track the rebuild operation's progress. This endpoint is restricted to global administrators and provides a site-scoped alternative to the full system rebuild.
+
+**Prerequisites:**
+- Site ID must be obtained from GET /api/v1.0/sites
+- **Requires global administrator privileges**
+
+**Workflow Example:**
+1. Identify the target site using site management endpoints
+2. Extract the site's `SiteId`
+3. Execute this endpoint (requires admin authorization)
+4. The response includes a job ID (GUID) for tracking the rebuild operation
+5. Monitor the background job to track rebuild progress
+6. Once complete, all compliance data for the site will be regenerated fresh
+
+**Response:**
+Returns a job identifier (GUID) that can be used to track the asynchronous reset and rebuild operation's status and completion.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"SiteId","in":"path","required":true,"schema":{"type":"string","format":"uuid"},"description":"The unique identifier of the site to reset and rebuild compliance scan data for"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Site reset and rebuild job created successfully","content":{"application/json":{"schema":{"allOf":[{"type":"object","description":"Command-style envelope returned after successfully creating a resource.","properties":{"Id":{"type":"integer","description":"Legacy numeric identifier returned for parity with ItemCreateResponse.","example":0},"Uid":{"type":"string","format":"uuid","description":"Server-generated correlation identifier for the command execution.","example":"5c61a623-ef84-f011-b484-002248538048"},"Item":{"type":"object","description":"Payload describing the resource that was created. The exact structure depends on the endpoint.","nullable":true,"additionalProperties":true},"Message":{"type":"string","description":"Optional informational message returned by the service.","nullable":true},"UserToken":{"type":"string","format":"uuid","description":"Echo of the authenticated session identifier that executed the call.","example":"5c61a623-ef84-f011-b484-002248538048"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request.","example":"2025-01-15T14:22:13.480Z"},"ExecutionTime":{"type":"number","description":"Server-side execution time in milliseconds.","example":92.314},"StatusCode":{"type":"integer","description":"HTTP status code mirrored inside the envelope.","example":201},"ServerName":{"type":"string","description":"Name of the application node that processed the request.","example":"spark-assets-6b8676c76c-5tzm6"},"ProcessId":{"type":"integer","description":"Internal process identifier used for diagnostics.","example":1},"OperationId":{"type":"string","description":"Trace identifier emitted for log correlation.","example":"exampleOperation"},"Properties":{"type":"object","description":"Additional metadata emitted by the platform.","additionalProperties":true}},"required":["Item","UserToken","RequestDate","ExecutionTime","StatusCode","ServerName","ProcessId"],"example":{"Id":0,"Uid":"5c61a623-ef84-f011-b484-002248538048","Item":{"SampleKey":"SampleValue"},"Message":null,"UserToken":"5c61a623-ef84-f011-b484-002248538048","RequestDate":"2025-01-15T14:22:13.480Z","ExecutionTime":92.314,"StatusCode":201,"ServerName":"spark-assets-6b8676c76c-5tzm6","ProcessId":1,"OperationId":"exampleOperation","Properties":{}},"title":"ItemCreateResponse"}],"type":"object","description":"Response wrapper for a newly created entity identified by GUID","properties":{"Item":{"type":"string","format":"uuid","description":"The GUID of the newly created entity"}},"title":"ItemCreateResponse_Guid"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

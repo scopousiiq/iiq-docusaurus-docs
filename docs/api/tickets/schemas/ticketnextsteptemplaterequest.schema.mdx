@@ -1,0 +1,33 @@
+---
+id: ticketnextsteptemplaterequest
+title: "TicketNextStepTemplateRequest"
+description: "Request body for creating or updating a ticket next step template."
+sidebar_label: "TicketNextStepTemplateRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketNextStepTemplateId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Scope":"Global","SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Subject":"string","TicketNextStepTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","FilterSetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketNextStepTemplateRequest"}
+>
+</Heading>
+
+
+
+Request body for creating or updating a ticket next step template.
+
+<Schema
+  schema={{"type":"object","description":"Request body for creating or updating a ticket next step template.","properties":{"TicketNextStepTemplateId":{"type":"string","format":"uuid","description":"Unique identifier for the template (set by server on create, required on update)."},"Scope":{"allOf":[{"type":"string","description":"Visibility scope for entities within the system.","enum":["System","Global","Site","Product"],"example":"Global","title":"Scopes"}],"description":"Visibility scope for the template (System, Global, Site, or Product)."},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site identifier if the template is scoped to a specific site. Obtain via [GET /api/v2.0/locations](/docs/api/locations/get-my-locations-v-2), extract `Items[].LocationId`.","x-obtained-from":{"operationId":"getMyLocationsV2","endpoint":"GET /api/v2.0/locations","responseField":"Items[].LocationId"}},"ProductId":{"type":"string","format":"uuid","description":"Product identifier for the template. Obtain via GET /api/v1.0/products, extract `Items[].ProductId`.","x-obtained-from":{"operationId":"listProducts","endpoint":"GET /api/v1.0/products","responseField":"Items[].ProductId"}},"Name":{"type":"string","description":"Display name of the template."},"Subject":{"type":"string","description":"Subject line to use when the template is applied."},"TicketNextStepTypeId":{"type":"string","format":"uuid","description":"Identifier for the next step type this template uses."},"FilterSetId":{"type":"string","format":"uuid","nullable":true,"description":"Optional filter set identifier to limit when this template applies."}},"title":"TicketNextStepTemplateRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

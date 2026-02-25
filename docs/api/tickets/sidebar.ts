@@ -782,8 +782,38 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/tickets/list-ticket-next-step-templates",
+          label: "List ticket next step templates",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "api/tickets/set-ticket-requestor-responded",
           label: "Mark requestor has responded",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/get-ticket-next-step-template",
+          label: "Get a ticket next step template by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/update-ticket-next-step-template",
+          label: "Update an existing ticket next step template",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/delete-ticket-next-step-template",
+          label: "Delete a ticket next step template",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/create-ticket-next-step-template",
+          label: "Create a new ticket next step template",
           className: "api-method post",
         },
         {
@@ -1192,6 +1222,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/tickets/schemas/filtermatch",
+          label: "FilterMatch",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/tickets/schemas/forbiddenerror",
           label: "ForbiddenError",
           className: "schema",
@@ -1312,6 +1348,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/tickets/schemas/locationroomtype",
+          label: "LocationRoomType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/tickets/schemas/locationstatustype",
           label: "LocationStatusType",
           className: "schema",
@@ -1398,6 +1440,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/tickets/schemas/rolelistresponse",
           label: "RoleListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/scopes",
+          label: "Scopes",
           className: "schema",
         },
         {
@@ -1566,6 +1614,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/tickets/schemas/ticketactivityappactivity",
           label: "TicketActivityAppActivity",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/ticketactivityattachment",
+          label: "TicketActivityAttachment",
           className: "schema",
         },
         {
@@ -1900,6 +1954,30 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/tickets/schemas/ticketnextsteptemplate",
+          label: "TicketNextStepTemplate",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/ticketnextsteptemplateitemresponse",
+          label: "TicketNextStepTemplateItemResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/ticketnextsteptemplatelistresponse",
+          label: "TicketNextStepTemplateListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/ticketnextsteptemplaterequest",
+          label: "TicketNextStepTemplateRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/tickets/schemas/ticketnextsteptype",
           label: "TicketNextStepType",
           className: "schema",
@@ -2014,6 +2092,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/tickets/schemas/ticketsortfield",
+          label: "TicketSortField",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/tickets/schemas/ticketsource",
           label: "TicketSource",
           className: "schema",
@@ -2028,12 +2112,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/tickets/schemas/ticketstartrequest",
           label: "TicketStartRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/tickets/schemas/ticketstatsresponse",
-          label: "TicketStatsResponse",
           className: "schema",
         },
         {
@@ -2146,6 +2224,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/tickets/schemas/ticketsstat",
+          label: "TicketsStat",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/ticketsstatlistresponse",
+          label: "TicketsStatListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/tickets/schemas/unauthorizederror",
           label: "UnauthorizedError",
           className: "schema",
@@ -2184,6 +2274,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/tickets/schemas/userlistresponse",
           label: "UserListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/userpermissions",
+          label: "UserPermissions",
           className: "schema",
         },
         {

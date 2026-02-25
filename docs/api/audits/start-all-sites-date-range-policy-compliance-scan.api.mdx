@@ -1,0 +1,84 @@
+---
+id: start-all-sites-date-range-policy-compliance-scan
+title: "Start compliance scan for all sites within date range"
+description: "Initiates policy compliance scans for all sites across the entire system within a defined date range. This operation triggers background job-based compliance scans for every site that has active audit policies, evaluating asset compliance across all policies for the time period between the start and end dates. The scan processes verification requirements, schedule statuses, and compliance metrics for all sites during the specified date range. This is a system-wide operation useful for performing comprehensive compliance analysis across all tenants or regenerating historical compliance data. The operation executes asynchronously as background jobs to handle potentially large volumes of data across multiple sites."
+sidebar_label: "Start compliance scan for all sites within date range"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/audits/audits-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Start compliance scan for all sites within date range"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/audits/policy-compliance-scan/allsites/within-range/{StartDate}/{EndDate}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Initiates policy compliance scans for all sites across the entire system within a defined date range. This operation triggers background job-based compliance scans for every site that has active audit policies, evaluating asset compliance across all policies for the time period between the start and end dates. The scan processes verification requirements, schedule statuses, and compliance metrics for all sites during the specified date range. This is a system-wide operation useful for performing comprehensive compliance analysis across all tenants or regenerating historical compliance data. The operation executes asynchronously as background jobs to handle potentially large volumes of data across multiple sites.
+
+**Prerequisites:**
+- **Requires appropriate authorization** (Bearer token or app authorization)
+
+**Workflow Example:**
+1. Determine the date range for system-wide compliance evaluation
+2. Format the start and end dates (e.g., '2024-01-01', '2024-12-31')
+3. Execute this endpoint with the date range parameters
+4. The system schedules background jobs to scan all sites
+5. Review the success message confirming job scheduling
+
+**Response:**
+Returns an action response confirming that compliance scan jobs have been successfully scheduled for all sites within the designated date range.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"StartDate","in":"path","required":true,"schema":{"type":"string"},"description":"The start date of the compliance scan period (e.g., '2024-01-01' or ISO 8601 date string)"},{"name":"EndDate","in":"path","required":true,"schema":{"type":"string"},"description":"The end date of the compliance scan period (e.g., '2024-12-31' or ISO 8601 date string)"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"All sites compliance scan jobs scheduled successfully","content":{"application/json":{"schema":{"type":"object","description":"Generic response for actions that do not return a specific entity. Extends BaseResponse with no additional properties. Used for operations like enabling, disabling, or triggering workflows.","properties":{"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Message":{"type":"string","nullable":true,"description":"Optional informational or error message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors that did not prevent the operation"}},"required":["StatusCode"],"title":"ActionResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -8,6 +8,34 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Audits",
+      link: {
+        type: "doc",
+        id: "api/analytics/analytics-audits",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/analytics/get-asset-verification-counts-by-type",
+          label: "Get verified asset counts by verification type",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/analytics/get-asset-counts-by-audit-policy-status",
+          label: "Get asset counts by audit policy status",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/analytics/get-asset-counts-by-audit-policy-schedule-status",
+          label: "Get asset counts by audit policy schedule status",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Users",
       link: {
         type: "doc",
@@ -74,6 +102,30 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/analytics/schemas/analyticsauditpolicyschedulestatusdatapoint",
+          label: "AnalyticsAuditPolicyScheduleStatusDataPoint",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/analytics/schemas/analyticsauditpolicyschedulestatuslistresponse",
+          label: "AnalyticsAuditPolicyScheduleStatusListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/analytics/schemas/analyticsauditpolicystatusdatapoint",
+          label: "AnalyticsAuditPolicyStatusDataPoint",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/analytics/schemas/analyticsauditpolicystatuslistresponse",
+          label: "AnalyticsAuditPolicyStatusListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/analytics/schemas/analyticsdatapoint",
           label: "AnalyticsDataPoint",
           className: "schema",
@@ -88,6 +140,18 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/analytics/schemas/analyticsverificationlocationlistresponse",
           label: "AnalyticsVerificationLocationListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/analytics/schemas/analyticsverificationtypedatapoint",
+          label: "AnalyticsVerificationTypeDataPoint",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/analytics/schemas/analyticsverificationtypelistresponse",
+          label: "AnalyticsVerificationTypeListResponse",
           className: "schema",
         },
         {

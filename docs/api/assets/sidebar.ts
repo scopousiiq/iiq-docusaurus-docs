@@ -128,8 +128,20 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/assets/bulk-set-asset-location",
+          label: "Bulk set asset location",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
           id: "api/assets/bulk-set-locked-to-id",
           label: "Bulk set locked-to-id",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/assets/bulk-set-asset-status",
+          label: "Bulk set asset status",
           className: "api-method post",
         },
         {
@@ -142,6 +154,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/bulk-verify-assets",
           label: "Bulk verify assets",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/assets/bulk-set-asset-info",
+          label: "Bulk set asset info",
           className: "api-method post",
         },
         {
@@ -182,26 +200,8 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/assets/bulk-set-asset-info",
-          label: "Bulk update asset custom fields",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/bulk-set-asset-location",
-          label: "Bulk update asset location",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
           id: "api/assets/bulk-delete-asset-types",
           label: "Bulk Delete Asset Types",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/bulk-set-asset-status",
-          label: "Bulk set asset status",
           className: "api-method post",
         },
       ],
@@ -928,12 +928,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/assets/schemas/assetbulksetlocationrequest",
-          label: "AssetBulkSetLocationRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/assets/schemas/assetcategorysiteoptionsrequest",
           label: "AssetCategorySiteOptionsRequest",
           className: "schema",
@@ -1084,6 +1078,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/assets/schemas/assetexchangetransactionwrapper",
+          label: "AssetExchangeTransactionWrapper",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/assetexchangetransactionwrapperresponse",
+          label: "AssetExchangeTransactionWrapperResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/assets/schemas/assetfiltermatchlistrequest",
           label: "AssetFilterMatchListRequest",
           className: "schema",
@@ -1206,6 +1212,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/schemas/assetsearchresponse",
           label: "AssetSearchResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/assetsortfield",
+          label: "AssetSortField",
           className: "schema",
         },
         {
@@ -1416,6 +1428,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/schemas/bulkdeleteassetsrequest",
           label: "BulkDeleteAssetsRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/bulksetassetlocationrequest",
+          label: "BulkSetAssetLocationRequest",
           className: "schema",
         },
         {
@@ -1714,6 +1732,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/assets/schemas/listupdateresponse",
+          label: "ListUpdateResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/assets/schemas/location",
           label: "Location",
           className: "schema",
@@ -1740,6 +1764,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/schemas/locationroomcustomfieldvalue",
           label: "LocationRoomCustomFieldValue",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/locationroomtype",
+          label: "LocationRoomType",
           className: "schema",
         },
         {

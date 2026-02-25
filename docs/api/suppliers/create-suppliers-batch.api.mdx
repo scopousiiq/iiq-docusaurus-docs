@@ -1,0 +1,84 @@
+---
+id: create-suppliers-batch
+title: "Create suppliers (batch)"
+description: "Creates multiple supplier records in a single request. Pass an array of supplier objects in the request body. Each object follows the same schema as the single-create endpoint."
+sidebar_label: "Create suppliers (batch)"
+hide_title: true
+hide_table_of_contents: true
+api: eJztG2tTGznyr3QpHzbr8gwYAklcV1dLgNv1XRJIgMvdYmqRZ9q2lhlpImkAL/F/v2ppnrYhQJK92qpQBdhjqVv9fqh9w1SGmluh5CBmfRZp5BaP8ixLBGrzittoyrosRhNpkdEy1me7bpGBNE+syBIEU6wHjZHSsQEhgYMRcpIgaPyYo7EhHHJjgEvgWvMZqHG9TY1+x8i6bXZa7YCRimch7PNoWqyAsUoSdWXcKsNTBBNNMeXAi0cOY+CJAJRxpoS04VAOZafzQemLcaKuYP+ap1mCnc5Q9kI41JhxjXcerAtIh4iUtFxIISfALaRCijRPgcP5W57iOYwFJnE4lBshHOWjVFh3phGxsA+nhwdHx7DGM7F22QvX10oUZk3EZk3i1dnTtVhFxq2oP/SkBNWDwIH7MRzKzRD2r63mkYXzgcXUnJ6FpdwG8TmMtUoLbppMSYMwVhpMPjLEXWmhErwpGPSGCOIJvMePudAYwz+IIAMZahAW006nX5Dq17/HhFuMYb/gs+l0+kMZ3E7qvUj8EQLwClarUPkZQb+Vjx9z1DMI4J37Xz0HPraowWERSvqjv1UW6biwkxgF/JKLhI8ShEvBHc/OSSrnoFVOx0gENyG8R5traYBDIoyt2Xol7BR4kngUGJdGELIus3xiWP+UVQbVT7nkEyEn7KzLrgMhPgbEEta/YQajwr6qNV2mdIya9Te35l1WmMUrFc9ovS7ExPpW57hoozu3GplVxUnpgKTSKC3B47Quckxa+90QkBvmzYte2VmGrM+cibAuI30wjece+JKneN+wZKd/XgxyAkpDnsX+Na8OGcJATlELaxxHx14BK1Uu2QipijEJ4cMUJeQGYy8EZ255chGMZsFgz3gEtR/ogpBRkscI501DsQpEjNKK8cybuZcfcSfTZCRWoCO13tQg3FjtJTVWOuWW9Vmei3iJESdSfMyxREQkEDecz6pIr+zuypFVcmc0AyKmecyrqYimtWStKkilM18HakReCuOA+EZHbbt40t5Drm2lk6zLShaxPvt5v2leGdfW1EbGSAu93jvnwPps2few+bzLyE+sYlObLXvCZAmfgSRfrsZthrB5lx1OlVwJR+aJM9nV2n+oRcr1DDLaDjJPRwW88pRv3aOHAx5Ii1rypDrl2iXKWOlVOE508nAElYpf4cgIi3Dy/rWDukvBJ7K38fV+/Ig8EHLpRknH9ibw/ZSLR5x5EToSGOBxrNEYB38njgUt5skXkXGEkZLxXYQsIXokScuYlonaa+54KILGZvKFkgIS8JHK7bIRlDpxPMvwfs7nbtwnJ4O9RWsDAgkRtzhRelbykmj9Vhh/MA1uzrvMCkvb2YlzZSXNRQRxK9Anbqx/elP4FzaQkfOKg3ewh6mqI8QOq5wH29raCnq9Hv322IIlMSHewYlBzRatgMWYqp9EgUB8DCOVsnn386hfLaDe2Nig340vRX02n89r/+tC0sb6Ov1b7UJMlZGYPIrQmHGeJLMHRX2eJAdjx+/PxfkiGUJ5iYnKKOukbAnjIv1qnqBOAqoCQqNRuY7QlQAUwkN4xSmuKwm7T+D8tTDWJ4Ulpr8d/73Icc+PMq4vwqMp1xiHbygzMGG5zJwvx/HBQu5S5jS3JFAlE0kSDsQd2Q+v3M9hAyVZBImOZH2sLnClu3iYQe3kdkoHirx80RhyJHV6QfZbmM4etytdbYWQzC2wIsUlHhyLFI3laeZTErLencMBZFqRMDFuVmuEcf8ao5z20sYGTh8cWzhVTrQtu119iTowIkbAEhjQ2UgxUpEkwjjPbJxftNzmZlfFTVxCWpw4ZG3QvxwfH4JxOyBSMcJTO8tExEkhN9Z7RXVUamkh9R9Zw+tsrPfmXfYGjeGTRwSvg8xrBgjp2eDfpQU8osdRf7/Maae2W5BEjp1ye7tkDv0HLV9+G6eqHKeAtpi1xoJPpDJWRE4KB83s8qFMOdY8WkqLEzWBSGlN9SUtmxfFj692TgsDbsn/rI4fy77Cee1FU32MT9it/Gm73xE+pCLKNBqUVOEsJZFF/0PIS5RW6RnVOXmCIRxPhQFBW2La761+53DwpxcpTk2FvWcasmDclM5aoqTi3wgTJSdU3ISFlsZ5ZB8DvNi65jnWoMHnt15wX+AKP5QOcEH2cMWrOOtQvVEx4f1muBJuLOmFQ+IwDsweJmixybWRUglyuQq0nWJbqDDlBkaIEowa2yD2wP6fmWcT7UPSkKOVIEHjGDXKCCHmlt9uM/en8qF24w7kSPvyuriE1UiZW/yany1C27/OuIybfsvxJ0bLReKc16LU2mz+k2uBCttDRH84nRmK5kAZtGsqFTAWhf0gSu4r5xLZV/GOBbCGc/TJjka0vcdX58YBqKAnQmINd+NLSuQmSHhqcmGxC6NcJLGQky6gjcIfnRcWdvZwPLTLGUKZ8j2mcUDbqM7OtLoU5AkoBSSAv4rsESxVxvJk7dfBYQVnV+XS6seQ5zcWpq4rgK+5FTaP75lG343jZ1QTzbOpiCApwEKklI6FJHYSNiUn3wRdCXcB32NjVqlqK0PW14n0K4qeEmsj1n+lUP8ZZK1gv5QH166skf6WvvOOMFBieEgA+N7P/d7P/d7P/Rr93BV52z/yJGHz+XzZZimjixcvHDXPsiL5cNfBdV5X3nK6u8cFJCvr4rq7UdXAp+0ikvHeaCPajJ8FuDXeDp6/eLke8FEUBzjubWw+29qmJ6x7r4Zsw+uPeWKQ6vIWLo8Jt4LxNn8evHi53gtGUYxBA1XvHrhercJ11m4Ybayvz11D9dmqHupAXvJExNUoQgDuve+3oNaqkCReW5TUe/OMu8AZ6zfvdbvskic53uN+l86Xop0q4kOmjOtRcDtlfXbH1ADrMuO6Rh5/Ti6KTa3NTH9tjbrI4VIXucuoz/u+vkzeb7TVW9LYHPMXW+PtZ8HW897z4NnW9kYw2hxHwUb0cntzvL3Nx3y7lkZlKGXvu3qw6KSXP3GutX7cbpMvPi6b5NXzW7zRHQuWQLRsf/l8ZWV4X5Y0ioz7bSGxUF/QOZ4FwzXU6SFNQm38+Xrheri+nEs0bshN2ai9FDE5ItfXpIviIrxx2agGnT5iSkMhQkJtVSG8cZ84D0aa7iJlpNKMS4HFvby/i+bGILW0ZAzuyhhopIb6hzk15Wno4skTOLhEfSnwit7WB22hBF32x2qE/sgeeI287HcSgQX6rsfddSspT8qIprDBFDpVIuQFNUgVZLmOptxQ2h1jgaDuvbmGnnOyBR2OQTRxc+HqSxmXzKz55yjt9/skSjdzRIecqRwiLiFW9ZhCS040iUSjLZ0O+WgvG+S64dhNp0N8mqlcl0gjbnmiJn5fMTAj8aq1xaErAx6BLTO/RgvaA/CXbrVKFKmhQ0szE0RxCYg2N8n3qZLxgLzTbZ+CMlupXC2AGiRijHFJr7xojOosy6TTWZLAVTHHZRynC9XaVWmqJN2mwS43aPzjJ/Bvf8Rdz6xCnwnMUL7hwo1zAS95SRkrz0inMK60jtA79Wood+M4YYnpsHHED/UR31e9p5pMx5DqEmxRC63ySkbLNNZ6TP1ff0sWV0gLd9ai68gqjZWWNGRWCLwh0axI9LzGLWRIZE6NdLs0q2bahKY6SRV7d33XTfxRaNeBnnAp/mjSP5r5BlRO412N5KXYiZ7pGjOlbWlqY5FYJK9cOhPyb0c+pDppfyrfwSdoJmOfhvJTUP7Ur9w72tXpHDV09ROQCXaLKq9bzNV40uO2alfDjp+KE73LRXQBR5ZrW3LlZ1Kbijf09Pz8fMTNdCijXCcQ/Ado3mZYhWyy8IDqhIW4vSoFuDFVsJ4PGQyHQwkQ/AJDdztYiaAPr5Br1PDfg5P3vx0f/Gv/bXu171j1/edHg+P93wZ77RW7iUBp+7CTCf9yyBwllRqW83p3Uuom9x5F6p9OXetjf1keUA7Qh8X78nptDD/c0AuAoUuJhqwPQ3aM0RT2KxveVeGQdctlLlPy69yMwsYm5QfPGysaCY1f908uEY5SYafLq1xW45f9ziX+ZDGa1mEwUmljSyPz8jtKsVxdXYUrNtK++Q8tqRcx45tJvaXga94S/3KasCDily+eB9tbzzbvFB6RrbRdJb8VYigi7mfEsLf/ev94/y/uaaAcOd45HBifM53SKGNrstiPLLq/Ac8EzRO7NS4HGzXzvzoi3ZblOQyDMiVsYqnyxPpVie3YRe86kSyCtk+Xa58mi0EcHrlBHLmipvWzNNpJVmmqCNsFnrEqS8RkahervC7DosLhmQhKfVqaZWKJiJAaATV+mlvRAi3XsyV05BoWlMWiTo2rhKlkTblsgCqiQs3lp354fbFwuannkb5/teD7Vwu+f7Xgfl8t8O1Ji9d2LUu4kGTPuW9R+77RKRk/9Q16rlnQHOIWMf2l/tFZl02p2dQ/ZTc3I27wRCfzOT12RLP+6Rn1sLTwrc/Ts3mXTZG7rlXV8GoGxrrltTxbSP0+v2MnijCzd65t9sNIMqzLRsVXH1LXwWOaU/+L/vYZ9dKcP3GXvO7ZDUu4nORuWIt5mPTzP6c5gJc=
+sidebar_class_name: "post api-method"
+info_path: docs/api/suppliers/suppliers-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create suppliers (batch)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/suppliers/ids/new"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Creates multiple supplier records in a single request. Pass an array of supplier objects in the request body. Each object follows the same schema as the single-create endpoint.
+
+**Workflow Example**
+1. Prepare an array of supplier objects, each containing at minimum a `Name` field.
+2. Submit the batch: [POST /api/v1.0/suppliers/ids/new](/docs/api/suppliers/create-suppliers-batch).
+3. Extract `Items[].SupplierId` from the response for subsequent operations.
+
+**Minimal Required Fields per item**: `Name`
+
+**Related Endpoints**:
+- [POST /api/v1.0/suppliers](/docs/api/suppliers/create-supplier) - Create a single supplier
+- POST /api/v1.0/suppliers/query - Query suppliers after creation
+
+**Notes**: Also available via the `/ids` route alias. Returns a list response with all created records.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"description":"Array of supplier objects to create.","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","description":"Request body for creating or updating a supplier. Inherits all fields from the Supplier model. When used with the bulk-by-IDs update endpoint, include `SupplierId` to identify each record.","properties":{"SupplierId":{"type":"string","format":"uuid","description":"Unique identifier for the supplier. Required when updating by IDs to identify which supplier to update.","x-obtained-from":{"operationId":"listPartSuppliers","endpoint":"GET /api/v1.0/parts/suppliers","responseField":"Items[].SupplierId"}},"Name":{"type":"string","description":"Display name of the supplier."},"Phone":{"type":"string","nullable":true,"description":"Primary phone number."},"SupplierNumber":{"type":"string","nullable":true,"description":"Internal supplier/vendor number."},"SupplierUrl":{"type":"string","nullable":true,"description":"Supplier website URL."},"ContactName":{"type":"string","nullable":true,"description":"Primary contact person name."},"ContactEmail":{"type":"string","nullable":true,"description":"Primary contact email address."},"AdditionalContactName":{"type":"string","nullable":true,"description":"Secondary contact person name."},"AdditionalContactEmail":{"type":"string","nullable":true,"description":"Secondary contact email address."},"Description":{"type":"string","nullable":true,"description":"Description or notes about the supplier."},"SupplierTypeId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the supplier type category."},"AddressId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the supplier's address."}},"title":"UpdateSupplierRequest"}},"example":[{"Name":"IncidentIQ Demo Supplier A","Phone":"555-111-1111","ContactName":"iiQ User","ContactEmail":"demo@incidentiq.com"},{"Name":"IncidentIQ Demo Supplier B","Phone":"555-222-2222","ContactName":"iiQ User","ContactEmail":"demo@incidentiq.com"}]}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Suppliers created successfully.","content":{"application/json":{"schema":{"allOf":[{"type":"object","description":"Response envelope returned after successfully creating multiple resources in bulk. Based on C# `ListCreateResponse<T>` from `Spark.Shared.Models.Responses`.","properties":{"Items":{"type":"array","description":"Array of created entities","items":{"type":"object","additionalProperties":true}},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 201 for successful create)","example":201},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"}},"required":["Items","StatusCode"],"title":"ListCreateResponse"},{"type":"object","properties":{"Items":{"type":"array","description":"Created supplier records.","items":{"type":"object","description":"Represents a supplier/vendor in the inventory module. This is a deprecated API.","properties":{"SupplierId":{"type":"string","format":"uuid","description":"Unique identifier for the supplier."},"SiteId":{"type":"string","format":"uuid","description":"Site this supplier belongs to."},"ProductId":{"type":"string","format":"uuid","description":"Product/module identifier."},"CreatedDate":{"type":"string","format":"date-time","description":"When the supplier record was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"When the supplier record was last modified."},"IsDeleted":{"type":"boolean","description":"Whether the supplier has been soft-deleted."},"SupplierTypeId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the supplier type category."},"SupplierType":{"allOf":[{"type":"object","description":"Supplier type category reference data.","properties":{"SupplierTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the supplier type."},"Name":{"type":"string","description":"Display name of the supplier type."}},"title":"SupplierType"}],"description":"Expanded supplier type details.","nullable":true,"type":"object"},"AddressId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the supplier's address."},"Address":{"allOf":[{"type":"object","description":"Physical mailing address","properties":{"AddressId":{"type":"string","format":"uuid","description":"Unique identifier for the address"},"SiteId":{"type":"string","format":"uuid","description":"Site this address belongs to"},"Street1":{"type":"string","nullable":true,"description":"Primary street address line"},"Street2":{"type":"string","nullable":true,"description":"Secondary address line (suite, building, etc.)"},"City":{"type":"string","nullable":true,"description":"City name"},"State":{"type":"string","nullable":true,"description":"State or province code"},"Zip":{"type":"string","nullable":true,"description":"Postal/ZIP code"},"Country":{"type":"string","nullable":true,"description":"Country name or code"},"Latitude":{"type":"number","format":"double","nullable":true,"description":"Geographic latitude coordinate"},"Longitude":{"type":"number","format":"double","nullable":true,"description":"Geographic longitude coordinate"},"IsDeleted":{"type":"boolean","description":"Whether the address has been soft-deleted"},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the address was created"},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the address was last modified"}},"required":["AddressId"],"title":"Address"}],"description":"Expanded address details.","nullable":true,"type":"object"},"Name":{"type":"string","description":"Display name of the supplier."},"Phone":{"type":"string","nullable":true,"description":"Primary phone number."},"SupplierNumber":{"type":"string","nullable":true,"description":"Internal supplier/vendor number."},"SupplierUrl":{"type":"string","nullable":true,"description":"Supplier website URL."},"ContactName":{"type":"string","nullable":true,"description":"Primary contact person name."},"ContactEmail":{"type":"string","nullable":true,"description":"Primary contact email address."},"AdditionalContactName":{"type":"string","nullable":true,"description":"Secondary contact person name."},"AdditionalContactEmail":{"type":"string","nullable":true,"description":"Secondary contact email address."},"Description":{"type":"string","nullable":true,"description":"Description or notes about the supplier."}},"title":"SupplierFull"}}}}],"description":"Typed list response wrapper for batch supplier creation.","title":"SupplierListCreateResponse"},"example":{"Items":[{"SupplierId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","Name":"IncidentIQ Demo Supplier A","IsDeleted":false},{"SupplierId":"b2c3d4e5-f6a7-8901-bcde-f12345678901","Name":"IncidentIQ Demo Supplier B","IsDeleted":false}],"StatusCode":200}}}},"400":{"description":"Invalid request - validation error."}}}
+>
+  
+</StatusCodes>
+
+
+      

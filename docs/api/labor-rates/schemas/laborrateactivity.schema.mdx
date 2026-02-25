@@ -1,0 +1,33 @@
+---
+id: laborrateactivity
+title: "LaborRateActivity"
+description: "Represents a labor rate activity record associated with a ticket, including user details, labor type, effort, and cost information."
+sidebar_label: "LaborRateActivity"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"TicketId":"f6a7b8c9-d0e1-2345-fabc-456789012345","UserId":"b2c3d4e5-f6a7-8901-bcde-f12345678901","SiteId":"a7b8c9d0-e1f2-3456-abcd-567890123456","FullName":"iiQ User","LaborTypeId":"d4e5f6a7-b8c9-0123-defa-234567890123","LaborTypeName":"Standard","LaborEffort":2.5,"LaborCost":187.5}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"LaborRateActivity"}
+>
+</Heading>
+
+
+
+Represents a labor rate activity record associated with a ticket, including user details, labor type, effort, and cost information.
+
+<Schema
+  schema={{"type":"object","description":"Represents a labor rate activity record associated with a ticket, including user details, labor type, effort, and cost information.","properties":{"TicketId":{"type":"string","format":"uuid","description":"The ticket this labor activity is associated with.","x-obtained-from":{"operationId":"searchTickets","endpoint":"POST /api/v1.0/tickets","responseField":"Items[].TicketId"}},"UserId":{"type":"string","format":"uuid","description":"The user who performed the labor.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}},"SiteId":{"type":"string","format":"uuid","description":"The site context for this labor activity.","x-obtained-from":{"operationId":"getMySiteSettings","endpoint":"GET /api/v1.0/sites/my/settings","responseField":"Item.SiteId"}},"FullName":{"type":"string","description":"Display name of the user who performed the labor."},"LaborTypeId":{"type":"string","format":"uuid","description":"Identifier of the labor type category.","x-obtained-from":{"operationId":"getUserLaborRates","endpoint":"GET /api/v1.0/labor/rates/user/{UserId}","responseField":"Items[].LaborTypeId"}},"LaborTypeName":{"type":"string","description":"Display name of the labor type (e.g., 'Standard', 'Overtime')."},"LaborEffort":{"type":"number","format":"decimal","description":"Total labor effort recorded."},"LaborCost":{"type":"number","format":"decimal","description":"Total labor cost calculated from effort and hourly rate."}},"example":{"TicketId":"f6a7b8c9-d0e1-2345-fabc-456789012345","UserId":"b2c3d4e5-f6a7-8901-bcde-f12345678901","SiteId":"a7b8c9d0-e1f2-3456-abcd-567890123456","FullName":"iiQ User","LaborTypeId":"d4e5f6a7-b8c9-0123-defa-234567890123","LaborTypeName":"Standard","LaborEffort":2.5,"LaborCost":187.5},"title":"LaborRateActivity"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

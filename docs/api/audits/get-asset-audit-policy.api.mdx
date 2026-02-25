@@ -1,0 +1,82 @@
+---
+id: get-asset-audit-policy
+title: "Get audit policy details"
+description: "Retrieves complete details for a specific asset audit policy by ID. Returns the full policy configuration including type, name, description, affected asset groups, verification schedules, alert settings, assigned users/teams, and compliance tracking information. This endpoint provides all information needed to understand and manage a specific audit policy's configuration and status."
+sidebar_label: "Get audit policy details"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/audits/audits-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get audit policy details"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/audits/policies/{AssetAuditPolicyId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves complete details for a specific asset audit policy by ID. Returns the full policy configuration including type, name, description, affected asset groups, verification schedules, alert settings, assigned users/teams, and compliance tracking information. This endpoint provides all information needed to understand and manage a specific audit policy's configuration and status.
+
+**Prerequisites:**
+- Asset Audit Policy ID must be obtained from [GET /api/v1.0/audits/policies](/docs/api/audits/get-asset-audit-policies)
+
+**Workflow Example:**
+1. List all policies: [GET /api/v1.0/audits/policies](/docs/api/audits/get-asset-audit-policies)
+2. Extract the desired policy's `AssetAuditPolicyId` from `Items[].AssetAuditPolicyId`
+3. Get policy details using this endpoint
+
+**Response Fields:**
+The response includes complete policy configuration with all settings, schedules, and associations.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"AssetAuditPolicyId","in":"path","required":true,"schema":{"type":"string","format":"uuid"},"description":"The unique identifier of the asset audit policy"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Asset audit policy details retrieved successfully","content":{"application/json":{"schema":{"allOf":[{"type":"object","description":"Standard response envelope for single-item GET operations. The `Item` property contains the requested entity.","properties":{"Item":{"description":"The requested entity. Structure varies by endpoint."},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful GET)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Item","StatusCode"],"title":"ItemGetResponse"}],"type":"object","description":"Response wrapper for a single asset audit policy","properties":{"Item":{"type":"object","description":"Defines rules and schedules for verifying asset locations, conditions, and compliance","properties":{"AssetAuditPolicyId":{"type":"string","format":"uuid","description":"The unique identifier of the asset audit policy","x-obtained-from":{"endpoint":"GET /api/v1.0/audits/policies","field":"Items[].AssetAuditPolicyId"}},"AssetAuditPolicyTypeId":{"type":"string","format":"uuid","description":"The unique identifier of the policy type that categorizes this audit policy","x-obtained-from":{"endpoint":"GET /api/v1.0/audits/policies/types","field":"Items[].AssetAuditPolicyTypeId"}},"Name":{"type":"string","description":"The name of the audit policy"},"Description":{"type":"string","nullable":true,"description":"A detailed description of the audit policy's purpose and scope"},"IsActive":{"type":"boolean","description":"Indicates whether this audit policy is currently active and generating schedules"},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"The unique identifier of the site this policy applies to","x-obtained-from":{"endpoint":"GET /api/v1.0/sites","field":"Items[].SiteId"}},"ProductId":{"type":"string","format":"uuid","nullable":true,"description":"The unique identifier of the product this policy applies to","x-obtained-from":{"endpoint":"GET /api/v1.0/products","field":"Items[].ProductId"}},"IsTemplate":{"type":"boolean","description":"Indicates whether this is a global template policy that can be used to create new policies"},"Created":{"type":"string","format":"date-time","description":"The timestamp when the policy was created"},"CreatedById":{"type":"string","format":"uuid","nullable":true,"description":"The unique identifier of the user who created the policy","x-obtained-from":{"endpoint":"POST /api/v1.0/users/search","field":"Items[].UserId"}},"Modified":{"type":"string","format":"date-time","description":"The timestamp when the policy was last modified"},"ModifiedById":{"type":"string","format":"uuid","nullable":true,"description":"The unique identifier of the user who last modified the policy","x-obtained-from":{"endpoint":"POST /api/v1.0/users/search","field":"Items[].UserId"}}},"example":{"AssetAuditPolicyId":"7c9e6679-7425-40de-944b-e07fc1f90ae7","AssetAuditPolicyTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"Quarterly Laptop Audit","Description":"Quarterly verification of all laptop assets in the district","IsActive":true,"SiteId":"8fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"9fa85f64-5717-4562-b3fc-2c963f66afa6","IsTemplate":false,"Created":"2025-01-15T10:30:00Z","CreatedById":"1fa85f64-5717-4562-b3fc-2c963f66afa6","Modified":"2025-03-01T14:20:00Z","ModifiedById":"1fa85f64-5717-4562-b3fc-2c963f66afa6"},"title":"AssetAuditPolicy"}},"title":"ItemGetResponse_AssetAuditPolicy"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

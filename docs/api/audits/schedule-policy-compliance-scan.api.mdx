@@ -1,0 +1,83 @@
+---
+id: schedule-policy-compliance-scan
+title: "Schedule job-based policy compliance scan"
+description: "Schedules a background job to execute an asset audit policy compliance scan for a specific site. This operation queues an asynchronous compliance scan job that will evaluate all active audit policies for the site, check asset compliance, reconcile schedule assignments, and update compliance status records. The job-based approach allows the scan to run in the background without blocking the API request, making it suitable for large-scale compliance evaluations. Returns a success message indicating whether the job was scheduled or if a scan is already in progress."
+sidebar_label: "Schedule job-based policy compliance scan"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/audits/audits-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Schedule job-based policy compliance scan"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/audits/policy-compliance-scan/schedule/{SiteId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Schedules a background job to execute an asset audit policy compliance scan for a specific site. This operation queues an asynchronous compliance scan job that will evaluate all active audit policies for the site, check asset compliance, reconcile schedule assignments, and update compliance status records. The job-based approach allows the scan to run in the background without blocking the API request, making it suitable for large-scale compliance evaluations. Returns a success message indicating whether the job was scheduled or if a scan is already in progress.
+
+**Prerequisites:**
+- Site ID must be obtained from GET /api/v1.0/sites
+
+**Workflow Example:**
+1. Identify the target site using site management endpoints
+2. Extract the site's `SiteId`
+3. Schedule the compliance scan job using this endpoint
+4. The response indicates whether the job was scheduled successfully or if a scan is already running
+
+**Response:**
+Returns an action response with a success message indicating the job scheduling status. If a scan is already running for the site, the message will indicate that an existing scan is in progress.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"SiteId","in":"path","required":true,"schema":{"type":"string","format":"uuid"},"description":"The unique identifier of the site to schedule the compliance scan for"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Compliance scan job scheduled successfully or already running","content":{"application/json":{"schema":{"type":"object","description":"Generic response for actions that do not return a specific entity. Extends BaseResponse with no additional properties. Used for operations like enabling, disabling, or triggering workflows.","properties":{"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Message":{"type":"string","nullable":true,"description":"Optional informational or error message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors that did not prevent the operation"}},"required":["StatusCode"],"title":"ActionResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

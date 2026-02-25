@@ -1,0 +1,33 @@
+---
+id: ticketsstat
+title: "TicketsStat"
+description: "Aggregate count used in global ticket statistics results."
+sidebar_label: "TicketsStat"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Name":"Open","Tickets":42,"Qualifier":"priority:high"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketsStat"}
+>
+</Heading>
+
+
+
+Aggregate count used in global ticket statistics results.
+
+<Schema
+  schema={{"type":"object","description":"Aggregate count used in global ticket statistics results.","properties":{"Name":{"type":"string","description":"Label for the statistic bucket.","example":"Open"},"Tickets":{"type":"integer","description":"Number of tickets in the bucket.","example":42},"Qualifier":{"type":"string","description":"Optional qualifier string for the bucket.","nullable":true,"example":"priority:high"}},"required":["Name","Tickets"],"title":"TicketsStat"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

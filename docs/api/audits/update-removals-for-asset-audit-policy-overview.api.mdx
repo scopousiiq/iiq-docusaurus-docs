@@ -1,0 +1,84 @@
+---
+id: update-removals-for-asset-audit-policy-overview
+title: "Update removal records for audit policy overview"
+description: "Updates asset removal records for audit policy overview details for a specific site. This operation processes asset audit policy data to identify and update records where assets have been removed from the system or excluded from policies, ensuring that overview dashboards and compliance reports accurately reflect current asset scope. The operation reconciles audit schedules, period statuses, and compliance metrics by marking removed assets appropriately, which prevents orphaned compliance records and ensures accurate reporting. This endpoint is typically used during data maintenance operations or after bulk asset changes."
+sidebar_label: "Update removal records for audit policy overview"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/audits/audits-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update removal records for audit policy overview"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/audits/policy-compliance-scan/update-removals-for-overview-details/{SiteId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Updates asset removal records for audit policy overview details for a specific site. This operation processes asset audit policy data to identify and update records where assets have been removed from the system or excluded from policies, ensuring that overview dashboards and compliance reports accurately reflect current asset scope. The operation reconciles audit schedules, period statuses, and compliance metrics by marking removed assets appropriately, which prevents orphaned compliance records and ensures accurate reporting. This endpoint is typically used during data maintenance operations or after bulk asset changes.
+
+**Prerequisites:**
+- Site ID must be obtained from [GET /api/v1.0/sites/\{siteUrl\}](/docs/api/sites/get-site-by-url)
+- **Requires appropriate authorization** (Bearer token or app authorization)
+
+**Workflow Example:**
+1. Identify the target site using site management endpoints
+2. Extract the site's `SiteId` from the response
+3. Execute this endpoint to update removal records for the site
+4. Review the success message confirming the update operation
+
+**Response:**
+Returns an action response confirming that the site's removal records for audit policy overview details have been successfully updated.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"SiteId","in":"path","required":true,"schema":{"type":"string","format":"uuid"},"description":"The unique identifier of the site to update removal records for"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Site removal records updated successfully","content":{"application/json":{"schema":{"type":"object","description":"Generic response for actions that do not return a specific entity. Extends BaseResponse with no additional properties. Used for operations like enabling, disabling, or triggering workflows.","properties":{"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Message":{"type":"string","nullable":true,"description":"Optional informational or error message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors that did not prevent the operation"}},"required":["StatusCode"],"title":"ActionResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

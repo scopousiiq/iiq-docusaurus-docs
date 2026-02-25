@@ -1,0 +1,84 @@
+---
+id: get-next-audit-check-date
+title: "Calculate next audit check date"
+description: "Calculates the next scheduled audit check date for a specific audit policy schedule based on a given starting date. This endpoint evaluates the schedule's recurrence rules (frequency, interval, day-of-week/month settings) and returns the next date when an audit verification would be due. This is useful for displaying upcoming audit dates in calendars or dashboards, and for understanding when the next verification will be required."
+sidebar_label: "Calculate next audit check date"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/audits/audits-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Calculate next audit check date"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/audits/policy-compliance-scan/next-check-date/{AssetAuditPolicyScheduleId}/{FromDate}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Calculates the next scheduled audit check date for a specific audit policy schedule based on a given starting date. This endpoint evaluates the schedule's recurrence rules (frequency, interval, day-of-week/month settings) and returns the next date when an audit verification would be due. This is useful for displaying upcoming audit dates in calendars or dashboards, and for understanding when the next verification will be required.
+
+**Prerequisites:**
+- Asset Audit Policy Schedule ID must be obtained from [GET /api/v1.0/audits/policies/schedules/for-asset/\{AssetId\}](/docs/api/audits/get-asset-audit-policy-schedules-for-asset) or schedule endpoints
+
+**Workflow Example:**
+1. Get a schedule instance to identify the target schedule
+2. Extract the schedule's `AssetAuditPolicyScheduleId`
+3. Determine your reference date (typically today or the last check date)
+4. Call this endpoint with the schedule ID and reference date
+5. The response provides the next scheduled audit date
+
+**Response:**
+Returns a DateTime value representing the next scheduled audit check date based on the policy's recurrence rules.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"AssetAuditPolicyScheduleId","in":"path","required":true,"schema":{"type":"string","format":"uuid"},"description":"The unique identifier of the asset audit policy schedule"},{"name":"FromDate","in":"path","required":true,"schema":{"type":"string","format":"date"},"description":"The reference date from which to calculate the next check date (format: YYYY-MM-DD or ISO 8601 date string)"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Next audit check date calculated successfully","content":{"application/json":{"schema":{"allOf":[{"type":"object","description":"Standard response envelope for single-item GET operations. The `Item` property contains the requested entity.","properties":{"Item":{"description":"The requested entity. Structure varies by endpoint."},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful GET)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Item","StatusCode"],"title":"ItemGetResponse"}],"type":"object","description":"Response wrapper for a single DateTime value","properties":{"Item":{"type":"string","format":"date-time","description":"The DateTime value returned by the operation"}},"title":"ItemGetResponse_DateTime"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

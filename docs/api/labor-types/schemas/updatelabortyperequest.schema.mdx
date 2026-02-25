@@ -1,0 +1,33 @@
+---
+id: updatelabortyperequest
+title: "UpdateLaborTypeRequest"
+description: "Request body for creating or updating a labor type. Inherits all properties from LaborType. Used by both the create and update endpoints."
+sidebar_label: "UpdateLaborTypeRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"LaborTypeId":"11111111-1111-4111-8111-111111111111","Name":"Overtime Labor","IsOvertime":true,"OTMultiplier":2,"Scope":"Global","Icon":"clock"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UpdateLaborTypeRequest"}
+>
+</Heading>
+
+
+
+Request body for creating or updating a labor type. Inherits all properties from LaborType. Used by both the create and update endpoints.
+
+<Schema
+  schema={{"type":"object","description":"Request body for creating or updating a labor type. Inherits all properties from LaborType. Used by both the create and update endpoints.","allOf":[{"type":"object","description":"Represents a labor type used to categorize time entries on work orders. Labor types define whether hours are standard or overtime and specify a multiplier for overtime calculations.","properties":{"LaborTypeId":{"type":"string","format":"uuid","description":"The unique identifier of the labor type.","x-obtained-from":{"endpoint":"GET /api/v1.0/labor/types","field":"Items[].LaborTypeId"}},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"The site identifier when the labor type is scoped to a specific site.","x-obtained-from":{"endpoint":"GET /api/v1.0/sites","field":"Items[].SiteId"}},"ProductId":{"type":"string","format":"uuid","nullable":true,"description":"The product module identifier associated with this labor type. Obtain from [GET /api/v1.0/sites/my/settings](/docs/api/sites/get-my-site-settings) via `Item.Products[].ProductId`.","x-obtained-from":{"operationId":"getMySiteSettings","endpoint":"GET /api/v1.0/sites/my/settings","field":"Item.Products[].ProductId"}},"Scope":{"allOf":[{"type":"string","description":"Visibility scope for entities within the system.","enum":["System","Global","Site","Product"],"example":"Global","title":"Scopes"}],"description":"The visibility scope of the labor type (System, Global, Site, or Product)."},"Name":{"type":"string","description":"The display name of the labor type (e.g., Standard, Overtime, Emergency)."},"Icon":{"type":"string","nullable":true,"description":"The icon identifier associated with this labor type."},"IsOvertime":{"type":"boolean","description":"Indicates whether this labor type represents overtime hours."},"OTMultiplier":{"type":"integer","description":"The overtime multiplier applied to the base rate when this labor type is used for overtime calculations."}},"example":{"LaborTypeId":"11111111-1111-4111-8111-111111111111","SiteId":null,"ProductId":"22222222-2222-4222-8222-222222222222","Scope":"Global","Name":"Standard Labor","Icon":"wrench","IsOvertime":false,"OTMultiplier":1},"title":"LaborType"}],"example":{"LaborTypeId":"11111111-1111-4111-8111-111111111111","Name":"Overtime Labor","IsOvertime":true,"OTMultiplier":2,"Scope":"Global","Icon":"clock"},"title":"UpdateLaborTypeRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

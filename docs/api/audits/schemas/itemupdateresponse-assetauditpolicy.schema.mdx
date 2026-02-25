@@ -1,0 +1,33 @@
+---
+id: itemupdateresponse-assetauditpolicy
+title: "ItemUpdateResponse_AssetAuditPolicy"
+description: "Response wrapper for an updated asset audit policy"
+sidebar_label: "ItemUpdateResponse_AssetAuditPolicy"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Item":{"AssetAuditPolicyId":"7c9e6679-7425-40de-944b-e07fc1f90ae7","AssetAuditPolicyTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"Quarterly Laptop Audit","Description":"Quarterly verification of all laptop assets in the district","IsActive":true,"SiteId":"8fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"9fa85f64-5717-4562-b3fc-2c963f66afa6","IsTemplate":false,"Created":"2025-01-15T10:30:00Z","CreatedById":"1fa85f64-5717-4562-b3fc-2c963f66afa6","Modified":"2025-03-01T14:20:00Z","ModifiedById":"1fa85f64-5717-4562-b3fc-2c963f66afa6"},"Id":0,"Uid":"3fa85f64-5717-4562-b3fc-2c963f66afa6","UserToken":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RequestDate":"2024-07-29T15:51:28.071Z","ExecutionTime":0,"StatusCode":200,"Message":"string","ErrorKey":"string","ServerName":"string","ProcessId":0,"OperationId":"string","Properties":{}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ItemUpdateResponse_AssetAuditPolicy"}
+>
+</Heading>
+
+
+
+Response wrapper for an updated asset audit policy
+
+<Schema
+  schema={{"allOf":[{"type":"object","description":"Response envelope returned after successfully updating a resource. Based on C# `ItemUpdateResponse<T>` from `Spark.Shared.Models.Responses`.","properties":{"Id":{"type":"integer","description":"Legacy numeric identifier (if applicable)","example":0},"Uid":{"type":"string","format":"uuid","description":"UUID of the updated resource"},"Item":{"type":"object","description":"The updated entity","nullable":true,"additionalProperties":true},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful update)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"}},"required":["StatusCode"],"title":"ItemUpdateResponse"}],"type":"object","description":"Response wrapper for an updated asset audit policy","properties":{"Item":{"type":"object","description":"Defines rules and schedules for verifying asset locations, conditions, and compliance","properties":{"AssetAuditPolicyId":{"type":"string","format":"uuid","description":"The unique identifier of the asset audit policy","x-obtained-from":{"endpoint":"GET /api/v1.0/audits/policies","field":"Items[].AssetAuditPolicyId"}},"AssetAuditPolicyTypeId":{"type":"string","format":"uuid","description":"The unique identifier of the policy type that categorizes this audit policy","x-obtained-from":{"endpoint":"GET /api/v1.0/audits/policies/types","field":"Items[].AssetAuditPolicyTypeId"}},"Name":{"type":"string","description":"The name of the audit policy"},"Description":{"type":"string","nullable":true,"description":"A detailed description of the audit policy's purpose and scope"},"IsActive":{"type":"boolean","description":"Indicates whether this audit policy is currently active and generating schedules"},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"The unique identifier of the site this policy applies to","x-obtained-from":{"endpoint":"GET /api/v1.0/sites","field":"Items[].SiteId"}},"ProductId":{"type":"string","format":"uuid","nullable":true,"description":"The unique identifier of the product this policy applies to","x-obtained-from":{"endpoint":"GET /api/v1.0/products","field":"Items[].ProductId"}},"IsTemplate":{"type":"boolean","description":"Indicates whether this is a global template policy that can be used to create new policies"},"Created":{"type":"string","format":"date-time","description":"The timestamp when the policy was created"},"CreatedById":{"type":"string","format":"uuid","nullable":true,"description":"The unique identifier of the user who created the policy","x-obtained-from":{"endpoint":"POST /api/v1.0/users/search","field":"Items[].UserId"}},"Modified":{"type":"string","format":"date-time","description":"The timestamp when the policy was last modified"},"ModifiedById":{"type":"string","format":"uuid","nullable":true,"description":"The unique identifier of the user who last modified the policy","x-obtained-from":{"endpoint":"POST /api/v1.0/users/search","field":"Items[].UserId"}}},"example":{"AssetAuditPolicyId":"7c9e6679-7425-40de-944b-e07fc1f90ae7","AssetAuditPolicyTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"Quarterly Laptop Audit","Description":"Quarterly verification of all laptop assets in the district","IsActive":true,"SiteId":"8fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"9fa85f64-5717-4562-b3fc-2c963f66afa6","IsTemplate":false,"Created":"2025-01-15T10:30:00Z","CreatedById":"1fa85f64-5717-4562-b3fc-2c963f66afa6","Modified":"2025-03-01T14:20:00Z","ModifiedById":"1fa85f64-5717-4562-b3fc-2c963f66afa6"},"title":"AssetAuditPolicy"}},"title":"ItemUpdateResponse_AssetAuditPolicy"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -614,6 +614,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/events/schemas/locationroomtype",
+          label: "LocationRoomType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/events/schemas/locationstatustype",
           label: "LocationStatusType",
           className: "schema",

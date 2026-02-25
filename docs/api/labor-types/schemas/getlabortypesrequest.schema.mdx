@@ -1,0 +1,33 @@
+---
+id: getlabortypesrequest
+title: "GetLaborTypesRequest"
+description: "Request parameters for querying labor types. Extends the standard request options with a ProductId filter."
+sidebar_label: "GetLaborTypesRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ProductId":"00000000-0000-0000-0000-000000000001"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GetLaborTypesRequest"}
+>
+</Heading>
+
+
+
+Request parameters for querying labor types. Extends the standard request options with a ProductId filter.
+
+<Schema
+  schema={{"type":"object","description":"Request parameters for querying labor types. Extends the standard request options with a ProductId filter.","properties":{"ProductId":{"type":"string","format":"uuid","nullable":true,"description":"Filter labor types by product module identifier. Obtain from [GET /api/v1.0/sites/my/settings](/docs/api/sites/get-my-site-settings) via `Item.Products[].ProductId`.","x-obtained-from":{"operationId":"getMySiteSettings","endpoint":"GET /api/v1.0/sites/my/settings","field":"Item.Products[].ProductId"}}},"example":{"ProductId":"00000000-0000-0000-0000-000000000001"},"title":"GetLaborTypesRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

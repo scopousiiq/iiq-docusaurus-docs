@@ -292,6 +292,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/issues/schemas/issuesearchrequest",
+          label: "IssueSearchRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/issues/schemas/issuesearchresponse",
+          label: "IssueSearchResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/issues/schemas/issuetype",
           label: "IssueType",
           className: "schema",

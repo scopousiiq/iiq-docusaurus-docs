@@ -1,0 +1,33 @@
+---
+id: analyticsauditpolicystatusdatapoint
+title: "AnalyticsAuditPolicyStatusDataPoint"
+description: "Represents the number of assets that currently sit in a specific audit policy status for the selected policy."
+sidebar_label: "AnalyticsAuditPolicyStatusDataPoint"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Name":"Verified","Value":412,"Id":"77777790-7ac2-44d9-895a-1d1e01000001","Date":null}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AnalyticsAuditPolicyStatusDataPoint"}
+>
+</Heading>
+
+
+
+Represents the number of assets that currently sit in a specific audit policy status for the selected policy.
+
+<Schema
+  schema={{"type":"object","description":"Represents the number of assets that currently sit in a specific audit policy status for the selected policy.","properties":{"Name":{"type":"string","description":"Display name of the audit status bucket (Verified, Pending, At Risk, Failed).","example":"Verified"},"Value":{"type":"number","description":"Count of assets that currently resolve to this audit policy status for the policy.","example":412},"Id":{"type":"string","format":"uuid","description":"Identifier of the audit policy status type as defined in `AssetAuditPolicyStatusTypes` constants so you can map colors or thresholds consistently.","example":"77777790-7ac2-44d9-895a-1d1e01000001"},"Date":{"type":"string","format":"date-time","nullable":true,"description":"Timestamp of the measurement when the aggregate includes a time dimension. Not populated for this summary.","example":null}},"required":["Name","Value","Id"],"example":{"Name":"Verified","Value":412,"Id":"77777790-7ac2-44d9-895a-1d1e01000001","Date":null},"title":"AnalyticsAuditPolicyStatusDataPoint"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

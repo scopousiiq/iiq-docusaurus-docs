@@ -8,10 +8,10 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Suppliers",
+      label: "Searching",
       link: {
         type: "doc",
-        id: "api/suppliers/suppliers-suppliers",
+        id: "api/suppliers/suppliers-searching",
       },
       items: [
         {
@@ -26,12 +26,16 @@ const sidebar: SidebarsConfig = {
           label: "Get supplier by ID (POST)",
           className: "api-method post",
         },
-        {
-          type: "doc",
-          id: "api/suppliers/delete-supplier",
-          label: "Delete supplier",
-          className: "api-method delete",
-        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Managing",
+      link: {
+        type: "doc",
+        id: "api/suppliers/suppliers-managing",
+      },
+      items: [
         {
           type: "doc",
           id: "api/suppliers/create-supplier",
@@ -40,9 +44,31 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/suppliers/create-suppliers-batch",
+          label: "Create suppliers (batch)",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
           id: "api/suppliers/update-supplier",
           label: "Update supplier",
           className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Deleting",
+      link: {
+        type: "doc",
+        id: "api/suppliers/suppliers-deleting",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/suppliers/delete-supplier",
+          label: "Delete supplier",
+          className: "api-method delete",
         },
       ],
     },
@@ -60,6 +86,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/suppliers/schemas/itemdeleteresponse",
           label: "ItemDeleteResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/suppliers/schemas/listcreateresponse",
+          label: "ListCreateResponse",
           className: "schema",
         },
         {
@@ -84,6 +116,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/suppliers/schemas/supplieritemupdateresponse",
           label: "SupplierItemUpdateResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/suppliers/schemas/supplierlistcreateresponse",
+          label: "SupplierListCreateResponse",
           className: "schema",
         },
         {

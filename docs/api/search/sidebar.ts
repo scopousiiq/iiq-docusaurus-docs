@@ -290,6 +290,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/search/schemas/locationroomtype",
+          label: "LocationRoomType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/search/schemas/locationstatustype",
           label: "LocationStatusType",
           className: "schema",
@@ -454,6 +460,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/search/schemas/user",
           label: "User",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/userpermissions",
+          label: "UserPermissions",
           className: "schema",
         },
         {

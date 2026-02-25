@@ -1,0 +1,82 @@
+---
+id: get-asset-audit-policy-schedule
+title: "Get audit policy schedule details"
+description: "Retrieves complete details for a specific asset audit policy schedule by ID. Returns the schedule configuration including the associated policy, scheduled date/time, recurrence settings, assigned auditor, affected assets, completion status, and verification results. This endpoint provides all information needed to track and manage a specific scheduled audit instance."
+sidebar_label: "Get audit policy schedule details"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/audits/audits-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get audit policy schedule details"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/audits/policies/schedules/{AssetAuditPolicyScheduleId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves complete details for a specific asset audit policy schedule by ID. Returns the schedule configuration including the associated policy, scheduled date/time, recurrence settings, assigned auditor, affected assets, completion status, and verification results. This endpoint provides all information needed to track and manage a specific scheduled audit instance.
+
+**Prerequisites:**
+- Asset Audit Policy Schedule ID must be obtained from [GET /api/v1.0/audits/policies/schedules/for-asset/\{AssetId\}](/docs/api/audits/get-asset-audit-policy-schedules-for-asset) or from audit policy details
+
+**Workflow Example:**
+1. Get asset's schedules: [GET /api/v1.0/audits/policies/schedules/for-asset/\{AssetId\}](/docs/api/audits/get-asset-audit-policy-schedules-for-asset)
+2. Extract the desired schedule's `AssetAuditPolicyScheduleId` from `Items[].AssetAuditPolicyScheduleId`
+3. Get schedule details using this endpoint
+
+**Response Fields:**
+The response includes complete schedule information with policy reference, timing, assignments, and completion status.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"AssetAuditPolicyScheduleId","in":"path","required":true,"schema":{"type":"string","format":"uuid"},"description":"The unique identifier of the asset audit policy schedule"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Asset audit policy schedule details retrieved successfully","content":{"application/json":{"schema":{"allOf":[{"type":"object","description":"Standard response envelope for single-item GET operations. The `Item` property contains the requested entity.","properties":{"Item":{"description":"The requested entity. Structure varies by endpoint."},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful GET)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Item","StatusCode"],"title":"ItemGetResponse"}],"type":"object","description":"Response wrapper for a single asset audit policy schedule","properties":{"Item":{"type":"object","description":"Represents a specific scheduled audit instance generated by an audit policy, including timing, assignments, and completion status","properties":{"AssetAuditPolicyScheduleId":{"type":"string","format":"uuid","description":"The unique identifier of the audit policy schedule","x-obtained-from":{"endpoint":"GET /api/v1.0/audits/policies/schedules/for-asset/{AssetId}","field":"Items[].AssetAuditPolicyScheduleId"}},"AssetAuditPolicyId":{"type":"string","format":"uuid","description":"The unique identifier of the audit policy that generated this schedule","x-obtained-from":{"endpoint":"GET /api/v1.0/audits/policies","field":"Items[].AssetAuditPolicyId"}},"AssetId":{"type":"string","format":"uuid","description":"The unique identifier of the asset being audited in this schedule","x-obtained-from":{"endpoint":"POST /api/v1.0/assets","field":"Items[].AssetId"}},"ScheduledDate":{"type":"string","format":"date-time","description":"The date and time when this audit is scheduled to occur"},"DueDate":{"type":"string","format":"date-time","nullable":true,"description":"The date and time by which this audit must be completed"},"CompletedDate":{"type":"string","format":"date-time","nullable":true,"description":"The date and time when this audit was completed (null if not yet completed)"},"AssignedToUserId":{"type":"string","format":"uuid","nullable":true,"description":"The unique identifier of the user assigned to perform this audit","x-obtained-from":{"endpoint":"POST /api/v1.0/users/search","field":"Items[].UserId"}},"AssignedToTeamId":{"type":"string","format":"uuid","nullable":true,"description":"The unique identifier of the team assigned to perform this audit","x-obtained-from":{"endpoint":"GET /api/v1.0/teams","field":"Items[].TeamId"}},"Status":{"type":"string","description":"The current status of the audit schedule (e.g., pending, in_progress, completed, overdue)"},"VerificationResult":{"type":"string","nullable":true,"description":"The result of the verification (e.g., verified, not_found, discrepancy)"},"Notes":{"type":"string","nullable":true,"description":"Notes or comments recorded during the audit"},"Created":{"type":"string","format":"date-time","description":"The timestamp when this schedule was created"},"Modified":{"type":"string","format":"date-time","description":"The timestamp when this schedule was last modified"}},"example":{"AssetAuditPolicyScheduleId":"6fa85f64-5717-4562-b3fc-2c963f66afa6","AssetAuditPolicyId":"7c9e6679-7425-40de-944b-e07fc1f90ae7","AssetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ScheduledDate":"2025-04-01T09:00:00Z","DueDate":"2025-04-07T17:00:00Z","CompletedDate":"2025-04-03T14:30:00Z","AssignedToUserId":"1fa85f64-5717-4562-b3fc-2c963f66afa6","AssignedToTeamId":null,"Status":"completed","VerificationResult":"verified","Notes":"Asset location and condition verified - no issues","Created":"2025-03-15T10:00:00Z","Modified":"2025-04-03T14:30:00Z"},"title":"AssetAuditPolicySchedule"}},"title":"ItemGetResponse_AssetAuditPolicySchedule"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

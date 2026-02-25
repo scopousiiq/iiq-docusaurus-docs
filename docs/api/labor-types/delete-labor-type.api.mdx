@@ -1,0 +1,81 @@
+---
+id: delete-labor-type
+title: "Delete Labor Type"
+description: "Permanently deletes a labor type identified by LaborTypeId. Once deleted, the labor type can no longer be assigned to new labor entries. Existing labor entries that reference this type are not affected."
+sidebar_label: "Delete Labor Type"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk1v20YQ/SuDOSUCRdnJjacGsdAKcBs3ltuDLCArcihuTO7Su0PLgsD/HsyStijJSZOit8YX28udeW++3uwObU1OsbZmlmGCGZXEdKlW1s23NWGEGfnU6VpuYIJX5CplyHC5he6uBwWl3Afe1gQ6I8M615TBagvPjmZZDB9MSr1RFgEXNLRLlQFjobRmTQ5WBMp7vTaUAVswtOnvkmGnyccwfdSetVkfngMXisFRTo4EjQvtO//KERjLoPKcUqYsvjW3ZjS6cuTovtFeM/nR6NacxzAaDWiPRjCGG0+w+HU6h4mq9eThPD6bBNiJuPbLV5PMpj58C8fjcDwptefx4OC1hGJXrLQJ0Q9QIHe2gk8zpsovlvHgy6ee6N/W3eWl3cD0UVV1ST3XS+15kEaf/Bc841vzJoZZV8ntcaXYgqPKPtC3Sb+N4SLUOoHFxfRyOp++zGqyGxi2X+PYtc2A5es+L+9VI605GiUwl2I/tzNoD9o5eiDn9aqkGP4i9xTOMPUryq0j8M2q0iwtFWOErNYekwWGizAPqa2UUWtt1riM8HGs9f1YqGKyQ09pPx/PdyK0LiOHyduzNsJaOVURkxOnOzSqIkxwwAIj1GJfKy4wwtCTjjJM2DV0PITzgqAx+r4ZjJsDm79QqS5vEpFPC6qUsJVvmKBn1xHNrasUY4JNozNs26Xg+9oaTyG6N2dn8uuQw3WTpuQ9Rphaw2RYrqi6LnUa0j/57OXe7hTXrj5TyifK8rGHBEfcOBl8lTM58B1Q3pRPkiNTr8CRt41LKYb31shM+RD+7OIpEb3SgGaqJAG1k95g3QUlavdPqTimeHNz6v2JBrYR3nhyc3tH5sddv2u4kEqmSpx68j608HN1xf1Hum/I84Vi+iZAppjGrKtT9Z7rijyrqoZNQZ0IvbuaQe2spFi0tpD8BxhBnD5SGsZLDAeYpqlW5A4wbbMqTwGvyT2QG3udEdCTMxBuoA1Uuiy1p9SazAvcNStu/HubDbG0YVoHsEPXv83nV+CDBaRi0kb4O3mv1i9mxzRlqYTiixP1IfyhStCmC6n7r+r9CbcQyR+qetH7UTH3YwDGZtRtpa9m+ar7cNCRX4t6ZpicUOu9DQUgtw4yrdbGetZpyOiH4XL/0aTMnUrpGKC0a0itc1QGv9i2Q7VaYJCyQSGXEbJmgUBZFN1KeJp1bOUnQnpkMtLxnTze0RaTocRG+KDKhr5DakW8KuLC7h8zMvqiqgl+x/4RoQyV7pg0rsQEC+baJ5NJRpWNtUm7lNzHqa1QAKVpQnr7QAdLQ+ZL6MsSCqzP47P47KSsl3vRDmFRRYZhDBnl2hAok/XnvbyLTKxtePFIUTbW3Y1DErrZYqfSuy41os4qDercb51ZH8DsT7igBypFFeG6qWvrRJUPQ/Zs61KvCz6OO0KqlJarqtZj35n/cpycCEudklR6j3/lbO00sXLbE7jNZnMENGFylQ9tVlvPlTIDV103wT7fx4nd7bfTz6frz6fr/+Pp2ok80yNP6lJpI2MYxmzXC+FCZlZU6TxIUWDWG4rWJsN36TLCwnoWo91upTzduLJt5fi+IbfFZLEUdXa62yOLHWbay98ZJrkq/fFWGU7kq4/94ngN/+pJ+2Kk/aEy2/3aQIz6pTIMrV22ERakwu54Xjvv0pRqHtiePGoPdkzXH9i2XwBAUVx8
+sidebar_class_name: "delete api-method"
+info_path: docs/api/labor-types/labor-types-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Labor Type"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1.0/labor/types/{LaborTypeId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Permanently deletes a labor type identified by LaborTypeId. Once deleted, the labor type can no longer be assigned to new labor entries. Existing labor entries that reference this type are not affected.
+
+**Prerequisites**
+1. **LaborTypeId** - Use [GET /api/v1.0/labor/types](/docs/api/labor-types/list-labor-types) to obtain the LaborTypeId from `Items[].LaborTypeId`.
+
+**Workflow Example**
+1. List labor types: [GET /api/v1.0/labor/types](/docs/api/labor-types/list-labor-types).
+2. Identify the labor type to remove from `Items[].LaborTypeId`.
+3. Delete: [DELETE /api/v1.0/labor/types/\{LaborTypeId\}](/docs/api/labor-types/delete-labor-type).
+
+**Caution**: This operation is irreversible. Verify the LaborTypeId before submitting.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"LaborTypeId","in":"path","required":true,"description":"The unique identifier of the labor type to delete.","schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","description":"Response returned after successfully deleting a resource. Contains the ID of the deleted item.","properties":{"Id":{"type":"string","format":"uuid","description":"UUID of the deleted resource"},"UserToken":{"type":"string","format":"uuid","description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code"},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"}},"required":["Id","StatusCode"],"title":"ItemDeleteResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,33 @@
+---
+id: bulkchangelaborraterequest
+title: "BulkChangeLaborRateRequest"
+description: "Request payload for bulk-setting labor rates across multiple users. Specify either individual UserIds or use IsSelectAll with a UsersRequest filter to target users."
+sidebar_label: "BulkChangeLaborRateRequest"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"UserIds":["b2c3d4e5-f6a7-8901-bcde-f12345678901","c3d4e5f6-a7b8-9012-cdef-123456789012"],"HourlyRate":85,"IsSelectAll":false}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"BulkChangeLaborRateRequest"}
+>
+</Heading>
+
+
+
+Request payload for bulk-setting labor rates across multiple users. Specify either individual UserIds or use IsSelectAll with a UsersRequest filter to target users.
+
+<Schema
+  schema={{"type":"object","description":"Request payload for bulk-setting labor rates across multiple users. Specify either individual UserIds or use IsSelectAll with a UsersRequest filter to target users.","required":["HourlyRate"],"properties":{"UserIds":{"type":"array","description":"List of user identifiers to apply the labor rate change to.","items":{"type":"string","format":"uuid","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}}},"HourlyRate":{"type":"number","format":"decimal","description":"The hourly rate to set for all targeted users."},"LaborRates":{"type":"array","description":"Optional list of individual labor rate overrides per user.","nullable":true,"items":{"type":"object","description":"Request payload for creating or updating a user labor rate. Extends the LaborRate model with an optional ProductId to scope the rate to a specific product module.","properties":{"UserLaborRateId":{"type":"string","format":"uuid","description":"Unique identifier for the labor rate record. Required when updating; omit or use a zero GUID when creating.","x-obtained-from":{"operationId":"createLaborRate","endpoint":"POST /api/v1.0/labor/rates/new","responseField":"Item.UserLaborRateId"}},"UserId":{"type":"string","format":"uuid","description":"The user to whom this labor rate applies.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}},"ByUserId":{"type":"string","format":"uuid","description":"The user who is creating or modifying this labor rate.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}},"HourlyRate":{"type":"number","format":"decimal","description":"Hourly billing rate in the tenant's configured currency."},"LaborTypeId":{"type":"string","format":"uuid","description":"Identifier of the labor type category (e.g., standard, overtime).","x-obtained-from":{"operationId":"getUserLaborRates","endpoint":"GET /api/v1.0/labor/rates/user/{UserId}","responseField":"Items[].LaborTypeId"}},"ProductId":{"type":"string","format":"uuid","nullable":true,"description":"Optional product module identifier to scope this rate. Obtain from site settings.","x-obtained-from":{"operationId":"getMySiteSettings","endpoint":"GET /api/v1.0/sites/my/settings","responseField":"Item.Products[].ProductId"}},"IsDeleted":{"type":"boolean","description":"Whether this labor rate record has been soft-deleted."},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when this labor rate was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when this labor rate was last modified."}},"example":{"UserId":"b2c3d4e5-f6a7-8901-bcde-f12345678901","HourlyRate":75,"LaborTypeId":"d4e5f6a7-b8c9-0123-defa-234567890123","ProductId":"e5f6a7b8-c9d0-1234-efab-345678901234"},"title":"UpdateLaborRateRequest"}},"IsSelectAll":{"type":"boolean","description":"When true, applies the rate change to all users matching the UsersRequest filter instead of the explicit UserIds list."},"UsersRequest":{"type":"object","nullable":true,"description":"Optional user query filter used when IsSelectAll is true. Follows the standard user search request format.","additionalProperties":true}},"example":{"UserIds":["b2c3d4e5-f6a7-8901-bcde-f12345678901","c3d4e5f6-a7b8-9012-cdef-123456789012"],"HourlyRate":85,"IsSelectAll":false},"title":"BulkChangeLaborRateRequest"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

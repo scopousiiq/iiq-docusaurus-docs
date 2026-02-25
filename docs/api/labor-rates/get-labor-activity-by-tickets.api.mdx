@@ -1,0 +1,81 @@
+---
+id: get-labor-activity-by-tickets
+title: "Get labor rate activity by ticket IDs"
+description: "Retrieves labor rate activity records for a list of tickets. Accepts an array of ticket GUIDs and returns LaborRateActivity records showing labor effort and cost breakdowns per user and labor type. Supports server-side paging and filtering via query parameters."
+sidebar_label: "Get labor rate activity by ticket IDs"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/labor-rates/labor-rates-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get labor rate activity by ticket IDs"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/labor/rates/tickets"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves labor rate activity records for a list of tickets. Accepts an array of ticket GUIDs and returns LaborRateActivity records showing labor effort and cost breakdowns per user and labor type. Supports server-side paging and filtering via query parameters.
+
+**Prerequisites**
+1. **TicketIds** — Obtain via [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets). Extract `Items[].TicketId` from the response.
+
+**Workflow Example**
+1. Search for target tickets: [POST /api/v1.0/tickets](/docs/api/tickets/search-tickets).
+2. Collect `TicketId` values from the response.
+3. Retrieve labor activity: `POST /api/v1.0/labor/rates/tickets` with the array of TicketIds.
+
+**Minimal Required Fields**: Array of ticket UUID strings in the request body.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"description":"Array of ticket identifiers to retrieve labor activity for.","content":{"application/json":{"schema":{"type":"array","items":{"type":"string","format":"uuid"}},"example":["f6a7b8c9-d0e1-2345-fabc-456789012345","a7b8c9d0-e1f2-3456-abcd-567890123456"]}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Labor rate activity records retrieved successfully. Each item in `Items` is a [LaborRateActivity](/docs/api/labor-rates/schemas/laborrateactivity) object.","content":{"application/json":{"schema":{"type":"object","properties":{"Items":{"type":"array","items":{"type":"object","description":"Represents a labor rate activity record associated with a ticket, including user details, labor type, effort, and cost information.","properties":{"TicketId":{"type":"string","format":"uuid","description":"The ticket this labor activity is associated with.","x-obtained-from":{"operationId":"searchTickets","endpoint":"POST /api/v1.0/tickets","responseField":"Items[].TicketId"}},"UserId":{"type":"string","format":"uuid","description":"The user who performed the labor.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}},"SiteId":{"type":"string","format":"uuid","description":"The site context for this labor activity.","x-obtained-from":{"operationId":"getMySiteSettings","endpoint":"GET /api/v1.0/sites/my/settings","responseField":"Item.SiteId"}},"FullName":{"type":"string","description":"Display name of the user who performed the labor."},"LaborTypeId":{"type":"string","format":"uuid","description":"Identifier of the labor type category.","x-obtained-from":{"operationId":"getUserLaborRates","endpoint":"GET /api/v1.0/labor/rates/user/{UserId}","responseField":"Items[].LaborTypeId"}},"LaborTypeName":{"type":"string","description":"Display name of the labor type (e.g., 'Standard', 'Overtime')."},"LaborEffort":{"type":"number","format":"decimal","description":"Total labor effort recorded."},"LaborCost":{"type":"number","format":"decimal","description":"Total labor cost calculated from effort and hourly rate."}},"example":{"TicketId":"f6a7b8c9-d0e1-2345-fabc-456789012345","UserId":"b2c3d4e5-f6a7-8901-bcde-f12345678901","SiteId":"a7b8c9d0-e1f2-3456-abcd-567890123456","FullName":"iiQ User","LaborTypeId":"d4e5f6a7-b8c9-0123-defa-234567890123","LaborTypeName":"Standard","LaborEffort":2.5,"LaborCost":187.5},"title":"LaborRateActivity"}},"Total":{"type":"integer"},"StatusCode":{"type":"integer"}}},"example":{"Items":[{"TicketId":"f6a7b8c9-d0e1-2345-fabc-456789012345","UserId":"b2c3d4e5-f6a7-8901-bcde-f12345678901","SiteId":"a7b8c9d0-e1f2-3456-abcd-567890123456","FullName":"iiQ User","LaborTypeId":"d4e5f6a7-b8c9-0123-defa-234567890123","LaborTypeName":"Standard","LaborEffort":2.5,"LaborCost":187.5}],"Total":1,"StatusCode":200}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

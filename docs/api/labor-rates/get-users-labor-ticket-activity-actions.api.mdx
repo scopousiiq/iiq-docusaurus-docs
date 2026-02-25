@@ -1,0 +1,81 @@
+---
+id: get-users-labor-ticket-activity-actions
+title: "Get labor ticket activity actions by user IDs"
+description: "Retrieves labor-related ticket activity actions for a list of users. Accepts an array of user GUIDs and returns TicketActivityAction records representing labor entries logged against tickets. Supports server-side paging and filtering via query parameters."
+sidebar_label: "Get labor ticket activity actions by user IDs"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/api/labor-rates/labor-rates-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get labor ticket activity actions by user IDs"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1.0/labor/rates"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves labor-related ticket activity actions for a list of users. Accepts an array of user GUIDs and returns TicketActivityAction records representing labor entries logged against tickets. Supports server-side paging and filtering via query parameters.
+
+**Prerequisites**
+1. **UserIds** — Obtain via [POST /api/v1.0/users](/docs/api/users/search-users). Extract `Items[].UserId` from the response.
+
+**Workflow Example**
+1. Search for target users: [POST /api/v1.0/users](/docs/api/users/search-users).
+2. Collect `UserId` values from the response.
+3. Retrieve labor activity actions: `POST /api/v1.0/labor/rates` with the array of UserIds.
+
+**Minimal Required Fields**: Array of user UUID strings in the request body.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"description":"Array of user identifiers to retrieve labor activity actions for.","content":{"application/json":{"schema":{"type":"array","items":{"type":"string","format":"uuid"}},"example":["b2c3d4e5-f6a7-8901-bcde-f12345678901","c3d4e5f6-a7b8-9012-cdef-123456789012"]}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Labor ticket activity actions retrieved successfully.","content":{"application/json":{"schema":{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"},"example":{"Items":[{"TicketActivityActionId":"e5f6a7b8-c9d0-1234-efab-345678901234","TicketActivityId":"f6a7b8c9-d0e1-2345-fabc-456789012345","ByUserId":"b2c3d4e5-f6a7-8901-bcde-f12345678901","ActivityDate":"2024-01-15T14:30:00Z","Effort":60,"HourlyRate":75,"LaborCost":75,"Notes":"Troubleshooting network issue","IsPublic":false}],"Total":1,"StatusCode":200}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
