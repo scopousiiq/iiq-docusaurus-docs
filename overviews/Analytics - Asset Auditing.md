@@ -1,34 +1,3 @@
----
-id: analytics-asset-auditing-api
-title: "Analytics - Asset Auditing API"
-description: "The Analytics - Asset Auditing API provides reporting and metrics for asset audit policies. Use these endpoints to retrieve aggregated statistics on audit coverage, verification activity, and schedule compliance across your organization."
-sidebar_label: Introduction
-sidebar_position: 0
-hide_title: true
-custom_edit_url: null
----
-
-import ApiLogo from "@theme/ApiLogo";
-import Heading from "@theme/Heading";
-import SchemaTabs from "@theme/SchemaTabs";
-import TabItem from "@theme/TabItem";
-import Export from "@theme/ApiExplorer/Export";
-
-<span
-  className={"theme-doc-version-badge badge badge--secondary"}
-  children={"Version: 1.0.0"}
->
-</span>
-
-<Heading
-  as={"h1"}
-  className={"openapi__heading"}
-  children={"Analytics - Asset Auditing API"}
->
-</Heading>
-
-
-
 The Analytics - Asset Auditing API provides reporting and metrics for asset audit policies. Use these endpoints to retrieve aggregated statistics on audit coverage, verification activity, and schedule compliance across your organization.
 
 ## Overview
@@ -75,34 +44,6 @@ curl -X GET "https://your-site.incidentiq.com/api/v1.0/asset-audit-analytics/cov
 
 ## Related APIs
 
-- [Audits](/docs/api/audits/audits-api) - Manage audit policies, schedules, and compliance scans
-- [Assets](/docs/api/assets/assets-api) - Look up asset details referenced in audit data
-- [Analytics](/docs/api/analytics/analytics-api) - General asset and user analytics
-
-
-<div
-  style={{"display":"flex","flexDirection":"column","marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
->
-  <h3
-    style={{"marginBottom":"0.25rem"}}
-  >
-    Contact
-  </h3><span>
-    IncidentIQ Developer Support: [api-support@incidentiq.com](mailto:api-support@incidentiq.com)
-  </span><span>
-    URL: [https://stoplight.incidentiq.com](https://stoplight.incidentiq.com)
-  </span>
-</div><div
-  style={{"marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
->
-  <h3
-    style={{"marginBottom":"0.25rem"}}
-  >
-    License
-  </h3><a
-    href={"https://www.incidentiq.com/terms"}
-  >
-    Proprietary
-  </a>
-</div>
-      
+- [Audits](#/Audits) - Manage audit policies, schedules, and compliance scans
+- [Assets](#/Assets) - Look up asset details referenced in audit data
+- [Analytics](#/Analytics) - General asset and user analytics

@@ -1,34 +1,3 @@
----
-id: audits-api
-title: "Audits API"
-description: "The Audits API provides full management of asset audit policies in IncidentIQ. Define audit rules, configure schedules, execute compliance scans, and track verification workflows to ensure assets are regularly accounted for."
-sidebar_label: Introduction
-sidebar_position: 0
-hide_title: true
-custom_edit_url: null
----
-
-import ApiLogo from "@theme/ApiLogo";
-import Heading from "@theme/Heading";
-import SchemaTabs from "@theme/SchemaTabs";
-import TabItem from "@theme/TabItem";
-import Export from "@theme/ApiExplorer/Export";
-
-<span
-  className={"theme-doc-version-badge badge badge--secondary"}
-  children={"Version: 1.0.0"}
->
-</span>
-
-<Heading
-  as={"h1"}
-  className={"openapi__heading"}
-  children={"Audits API"}
->
-</Heading>
-
-
-
 The Audits API provides full management of asset audit policies in IncidentIQ. Define audit rules, configure schedules, execute compliance scans, and track verification workflows to ensure assets are regularly accounted for.
 
 ## Overview
@@ -100,35 +69,7 @@ curl -X POST "https://your-site.incidentiq.com/api/v1.0/asset-audit-policies/{po
 
 ## Related APIs
 
-- [Analytics - Asset Auditing](/docs/api/analytics---asset-auditing/analytics---asset-auditing-api) - Reporting and metrics for audit policy performance
-- [Assets](/docs/api/assets/assets-api) - Look up and manage the assets covered by audit policies
-- [Locations](/docs/api/locations/locations-api) - Reference location data used in audit scope
-- [Teams](/docs/api/teams/teams-api) - Assign teams to audit policies
-
-
-<div
-  style={{"display":"flex","flexDirection":"column","marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
->
-  <h3
-    style={{"marginBottom":"0.25rem"}}
-  >
-    Contact
-  </h3><span>
-    IncidentIQ Developer Support: [api-support@incidentiq.com](mailto:api-support@incidentiq.com)
-  </span><span>
-    URL: [https://stoplight.incidentiq.com](https://stoplight.incidentiq.com)
-  </span>
-</div><div
-  style={{"marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
->
-  <h3
-    style={{"marginBottom":"0.25rem"}}
-  >
-    License
-  </h3><a
-    href={"https://www.incidentiq.com/terms"}
-  >
-    Proprietary
-  </a>
-</div>
-      
+- [Analytics - Asset Auditing](#/Analytics%20-%20Asset%20Auditing) - Reporting and metrics for audit policy performance
+- [Assets](#/Assets) - Look up and manage the assets covered by audit policies
+- [Locations](#/Locations) - Reference location data used in audit scope
+- [Teams](#/Teams) - Assign teams to audit policies

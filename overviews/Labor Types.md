@@ -1,34 +1,3 @@
----
-id: labor-types-api
-title: "Labor Types API"
-description: "The Labor Types API manages labor type definitions used to categorize time entries on work orders. Define types such as standard, overtime, or emergency labor, each with configurable rate multipliers."
-sidebar_label: Introduction
-sidebar_position: 0
-hide_title: true
-custom_edit_url: null
----
-
-import ApiLogo from "@theme/ApiLogo";
-import Heading from "@theme/Heading";
-import SchemaTabs from "@theme/SchemaTabs";
-import TabItem from "@theme/TabItem";
-import Export from "@theme/ApiExplorer/Export";
-
-<span
-  className={"theme-doc-version-badge badge badge--secondary"}
-  children={"Version: 1.0.0"}
->
-</span>
-
-<Heading
-  as={"h1"}
-  className={"openapi__heading"}
-  children={"Labor Types API"}
->
-</Heading>
-
-
-
 The Labor Types API manages labor type definitions used to categorize time entries on work orders. Define types such as standard, overtime, or emergency labor, each with configurable rate multipliers.
 
 ## Overview
@@ -94,33 +63,5 @@ curl -X POST "https://your-site.incidentiq.com/api/v1.0/labor-types" \
 
 ## Related APIs
 
-- [Labor Rates](/docs/api/labor-rates/labor-rates-api) - Assign hourly rates to users for each labor type
-- [Tickets](/docs/api/tickets/tickets-api) - Track labor time entries on tickets
-
-
-<div
-  style={{"display":"flex","flexDirection":"column","marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
->
-  <h3
-    style={{"marginBottom":"0.25rem"}}
-  >
-    Contact
-  </h3><span>
-    IncidentIQ Developer Support: [api-support@incidentiq.com](mailto:api-support@incidentiq.com)
-  </span><span>
-    URL: [https://stoplight.incidentiq.com](https://stoplight.incidentiq.com)
-  </span>
-</div><div
-  style={{"marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
->
-  <h3
-    style={{"marginBottom":"0.25rem"}}
-  >
-    License
-  </h3><a
-    href={"https://www.incidentiq.com/terms"}
-  >
-    Proprietary
-  </a>
-</div>
-      
+- [Labor Rates](#/Labor%20Rates) - Assign hourly rates to users for each labor type
+- [Tickets](#/Tickets) - Track labor time entries on tickets

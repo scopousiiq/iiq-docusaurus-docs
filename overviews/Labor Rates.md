@@ -1,34 +1,3 @@
----
-id: labor-rates-api
-title: "Labor Rates API"
-description: "The Labor Rates API manages hourly billing rates assigned to users in IncidentIQ. Create, update, and query labor rates, set rates in bulk, and retrieve labor activity data associated with tickets."
-sidebar_label: Introduction
-sidebar_position: 0
-hide_title: true
-custom_edit_url: null
----
-
-import ApiLogo from "@theme/ApiLogo";
-import Heading from "@theme/Heading";
-import SchemaTabs from "@theme/SchemaTabs";
-import TabItem from "@theme/TabItem";
-import Export from "@theme/ApiExplorer/Export";
-
-<span
-  className={"theme-doc-version-badge badge badge--secondary"}
-  children={"Version: 1.0.0"}
->
-</span>
-
-<Heading
-  as={"h1"}
-  className={"openapi__heading"}
-  children={"Labor Rates API"}
->
-</Heading>
-
-
-
 The Labor Rates API manages hourly billing rates assigned to users in IncidentIQ. Create, update, and query labor rates, set rates in bulk, and retrieve labor activity data associated with tickets.
 
 ## Overview
@@ -96,34 +65,6 @@ curl -X POST "https://your-site.incidentiq.com/api/v1.0/labor-rates" \
 
 ## Related APIs
 
-- [Labor Types](/docs/api/labor-types/labor-types-api) - Define the labor type categories that rates are associated with
-- [Tickets](/docs/api/tickets/tickets-api) - View tickets where labor activity is tracked
-- [Users](/docs/api/users/users-api) - Look up users when assigning labor rates
-
-
-<div
-  style={{"display":"flex","flexDirection":"column","marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
->
-  <h3
-    style={{"marginBottom":"0.25rem"}}
-  >
-    Contact
-  </h3><span>
-    IncidentIQ Developer Support: [api-support@incidentiq.com](mailto:api-support@incidentiq.com)
-  </span><span>
-    URL: [https://stoplight.incidentiq.com](https://stoplight.incidentiq.com)
-  </span>
-</div><div
-  style={{"marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
->
-  <h3
-    style={{"marginBottom":"0.25rem"}}
-  >
-    License
-  </h3><a
-    href={"https://www.incidentiq.com/terms"}
-  >
-    Proprietary
-  </a>
-</div>
-      
+- [Labor Types](#/Labor%20Types) - Define the labor type categories that rates are associated with
+- [Tickets](#/Tickets) - View tickets where labor activity is tracked
+- [Users](#/Users) - Look up users when assigning labor rates
