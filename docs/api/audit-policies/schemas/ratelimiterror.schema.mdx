@@ -1,0 +1,33 @@
+---
+id: ratelimiterror
+title: "RateLimitError"
+description: "Error response when rate limit is exceeded"
+sidebar_label: "RateLimitError"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"StatusCode":429,"Message":"Rate limit exceeded. Please try again later.","RetryAfter":60}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"RateLimitError"}
+>
+</Heading>
+
+
+
+Error response when rate limit is exceeded
+
+<Schema
+  schema={{"type":"object","description":"Error response when rate limit is exceeded","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (429)","example":429},"Message":{"type":"string","description":"Human-readable description of the rate limit error","example":"Rate limit exceeded. Please try again later."},"RetryAfter":{"type":"integer","description":"Number of seconds to wait before retrying","example":60}},"required":["StatusCode","Message"],"title":"RateLimitError"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

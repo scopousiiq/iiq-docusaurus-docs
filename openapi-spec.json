@@ -43978,196 +43978,6 @@
         }
       }
     },
-    "/api/v1.0/analytics/assets/by-verification-location": {
-      "get": {
-        "summary": "Get verified asset counts by location",
-        "operationId": "getAssetVerificationCountsByLocation",
-        "tags": [
-          "Analytics"
-        ],
-        "x-iiq-docs": {
-          "section": "assets",
-          "order": 20
-        },
-        "description": "Returns a list of locations with the number of assets whose most recent verification entry occurred at that location. The controller limits the dataset to the caller's site, discards deleted assets/verifications, and only counts each asset once by using its latest verification record.\n\n**Prerequisites**\n1. **locationId** – Use [GET /api/v2.0/locations/all](#/Locations/getAllSiteLocationsV2) to enumerate the locations that appear in your dashboard and capture `Items[].LocationId` so you can link a row from this response back to your directory data.\n\n**Workflow Example**\n1. List locations: [GET /api/v2.0/locations/all](#/Locations/getAllSiteLocationsV2) with `$s=500` to capture the full location directory and cache `LocationId`/`Name` pairs in the UI.\n2. Call [GET /api/v1.0/analytics/assets/by-verification-location](#/Analytics/getAssetVerificationCountsByLocation) to obtain the current verification counts grouped by each location.\n3. Merge the response with the cached directory data so users can click through to a location detail page or filter other queries using the same `LocationId`.\n\n**Minimal Required Fields**: None; the endpoint uses the authenticated user's site and permissions.",
-        "responses": {
-          "200": {
-            "description": "Asset verification counts grouped by location",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AnalyticsVerificationLocationListResponse"
-                },
-                "example": {
-                  "ItemCount": 2,
-                  "Items": [
-                    {
-                      "Name": "IncidentIQ Demo High School",
-                      "Value": 186,
-                      "Id": "9e5d33da-bc45-11ee-b662-0a58ac120002",
-                      "Date": null
-                    },
-                    {
-                      "Name": "IncidentIQ Demo Middle School",
-                      "Value": 142,
-                      "Id": "c1f4a26a-bc45-11ee-b662-0a58ac120002",
-                      "Date": null
-                    }
-                  ],
-                  "Paging": {},
-                  "UserToken": "3e17f735-b79f-f011-b484-002248538047",
-                  "RequestDate": "2025-11-04T13:18:54.124Z",
-                  "ExecutionTime": 12.8,
-                  "StatusCode": 200,
-                  "ServerName": "spark-analytics-7d7c5f5d9b-gb5nq",
-                  "ProcessId": 24,
-                  "OperationId": "asset-verification-locations",
-                  "Properties": {}
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized - Authentication required or authentication credentials are invalid",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UnauthorizedError"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden - Insufficient permissions to perform this operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ForbiddenError"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Too Many Requests - Rate limit exceeded",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RateLimitError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error - An unexpected error occurred on the server",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InternalServerError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v1.0/analytics/assets/by-verification-type": {
-      "get": {
-        "summary": "Get verified asset counts by verification type",
-        "operationId": "getAssetVerificationCountsByType",
-        "tags": [
-          "Analytics"
-        ],
-        "x-iiq-docs": {
-          "section": "audits",
-          "order": 10
-        },
-        "description": "Returns asset counts grouped by the verification method used for each asset's most recent verification record (for example Web Manual, Mobile Scan, Remote App). The analytics query filters out deleted assets and verifications and only counts each asset once by selecting its latest verification entry, making this ideal for compliance dashboards and process trend reporting.\n\n**Prerequisites**: None; the endpoint runs against the authenticated user's site context.\n\n**Workflow Example**\n1. Call [GET /api/v1.0/analytics/assets/by-verification-type](#/Analytics/getAssetVerificationCountsByType) to retrieve the grouped counts.\n2. Plot `Items[].Name` against `Items[].Value` in a bar or donut chart.\n3. Compare counts week-over-week by caching the response and refreshing on a schedule.\n\n**Minimal Required Fields**: None.",
-        "responses": {
-          "200": {
-            "description": "Asset verification counts grouped by verification type",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AnalyticsVerificationTypeListResponse"
-                },
-                "example": {
-                  "ItemCount": 3,
-                  "Items": [
-                    {
-                      "Name": "Web Manual",
-                      "Value": 214,
-                      "Id": null,
-                      "Date": null
-                    },
-                    {
-                      "Name": "Mobile Scan",
-                      "Value": 87,
-                      "Id": null,
-                      "Date": null
-                    },
-                    {
-                      "Name": "Remote App",
-                      "Value": 44,
-                      "Id": null,
-                      "Date": null
-                    }
-                  ],
-                  "Paging": {},
-                  "UserToken": "951dd408-2ca7-4ebf-a052-12e7a255046b",
-                  "RequestDate": "2025-04-18T15:22:01.882Z",
-                  "ExecutionTime": 11.63,
-                  "StatusCode": 200,
-                  "ServerName": "spark-analytics-7f5576b7bc-g92nq",
-                  "ProcessId": 18640,
-                  "OperationId": "asset-verification-types",
-                  "Properties": {}
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized - Authentication required or authentication credentials are invalid",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UnauthorizedError"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden - Insufficient permissions to perform this operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ForbiddenError"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Too Many Requests - Rate limit exceeded",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RateLimitError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error - An unexpected error occurred on the server",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InternalServerError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/v1.0/analytics/requestor/{UserId}/summary-stats": {
       "get": {
         "summary": "Get requestor summary statistics",
@@ -44255,250 +44065,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/NotFoundError"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Too Many Requests - Rate limit exceeded",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RateLimitError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error - An unexpected error occurred on the server",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InternalServerError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v1.0/analytics/assets/by-audit-policy-schedule-status/{AssetAuditPolicyScheduleId}": {
-      "get": {
-        "summary": "Get asset counts by audit policy schedule status",
-        "operationId": "getAssetCountsByAuditPolicyScheduleStatus",
-        "tags": [
-          "Analytics"
-        ],
-        "x-iiq-docs": {
-          "section": "audits",
-          "order": 30
-        },
-        "description": "Returns asset counts grouped by audit policy status (Verified, Pending, At Risk, Failed) for a single audit policy schedule. This endpoint narrows the analytics query to assets currently assigned to the schedule so you can track compliance for a specific audit run cadence.\n\n**Prerequisites**\n1. **AssetAuditPolicyScheduleId** – Use [POST /api/v1.0/assets](#/Assets/searchAssets) to locate an asset governed by the target schedule, then load [GET /api/v1.0/assets/{assetId}](#/Assets/getAssetById) and read `Item.AssetAuditPolicyScheduleId` from the response.\n\n**Workflow Example**\n1. Search assets: [POST /api/v1.0/assets](#/Assets/searchAssets) and select an asset assigned to the desired audit schedule.\n2. Load the asset: [GET /api/v1.0/assets/{assetId}](#/Assets/getAssetById) to capture `Item.AssetAuditPolicyScheduleId`.\n3. Call [GET /api/v1.0/analytics/assets/by-audit-policy-schedule-status/{AssetAuditPolicyScheduleId}](#/Analytics/getAssetCountsByAuditPolicyScheduleStatus) to retrieve the compliance distribution.\n4. Use the counts to populate schedule-level compliance reporting or escalation alerts.\n\n**Minimal Required Fields**: `AssetAuditPolicyScheduleId` (path).",
-        "parameters": [
-          {
-            "name": "AssetAuditPolicyScheduleId",
-            "in": "path",
-            "required": true,
-            "description": "Unique identifier of the audit policy schedule to summarize.",
-            "x-obtained-from": {
-              "operationId": "getAssetById",
-              "endpoint": "GET /api/v1.0/assets/{assetId}",
-              "responseField": "Item.AssetAuditPolicyScheduleId"
-            },
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "example": "74bf3a5c-5f2b-49b8-9cdd-7a58b23f6b2d"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Asset counts grouped by audit policy schedule status",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AnalyticsAuditPolicyScheduleStatusListResponse"
-                },
-                "example": {
-                  "ItemCount": 4,
-                  "Items": [
-                    {
-                      "Name": "Verified",
-                      "Value": 312,
-                      "Id": "77777790-7ac2-44d9-895a-1d1e01000001",
-                      "Date": null
-                    },
-                    {
-                      "Name": "Pending",
-                      "Value": 58,
-                      "Id": "77777790-7ac2-44d9-895a-1d1e01000002",
-                      "Date": null
-                    },
-                    {
-                      "Name": "At Risk",
-                      "Value": 9,
-                      "Id": "77777790-7ac2-44d9-895a-1d1e01000003",
-                      "Date": null
-                    },
-                    {
-                      "Name": "Failed",
-                      "Value": 4,
-                      "Id": "77777790-7ac2-44d9-895a-1d1e01000004",
-                      "Date": null
-                    }
-                  ],
-                  "Paging": {},
-                  "UserToken": "3e17f735-b79f-f011-b484-002248538047",
-                  "RequestDate": "2025-11-04T13:18:54.124Z",
-                  "ExecutionTime": 18.4,
-                  "StatusCode": 200,
-                  "ServerName": "spark-analytics-7d7c5f5d9b-gb5nq",
-                  "ProcessId": 42,
-                  "OperationId": "asset-audit-policy-schedule-status",
-                  "Properties": {}
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized - Authentication required or authentication credentials are invalid",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UnauthorizedError"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden - Insufficient permissions to perform this operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ForbiddenError"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Too Many Requests - Rate limit exceeded",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RateLimitError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error - An unexpected error occurred on the server",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InternalServerError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v1.0/analytics/assets/by-audit-policy-status/{AssetAuditPolicyId}": {
-      "get": {
-        "summary": "Get asset counts by audit policy status",
-        "operationId": "getAssetCountsByAuditPolicyStatus",
-        "tags": [
-          "Analytics"
-        ],
-        "x-iiq-docs": {
-          "section": "audits",
-          "order": 20
-        },
-        "description": "Returns asset counts grouped by audit policy status (Verified, Pending, At Risk, Failed) for a single audit policy. The analytics manager evaluates the policy's compliance rules against current asset verification history and summarizes the live compliance posture for that policy.\n\n**Prerequisites**\n1. **AssetAuditPolicyId** – Use [POST /api/v1.0/assets](#/Assets/searchAssets) to locate an asset that participates in the policy, then load [GET /api/v1.0/assets/{assetId}](#/Assets/getAssetById) and read `Item.AssetAuditPolicyId` from the response.\n\n**Workflow Example**\n1. Search assets: [POST /api/v1.0/assets](#/Assets/searchAssets) and select an asset that is governed by the audit policy you want to analyze.\n2. Load the asset: [GET /api/v1.0/assets/{assetId}](#/Assets/getAssetById) to capture `Item.AssetAuditPolicyId`.\n3. Call [GET /api/v1.0/analytics/assets/by-audit-policy-status/{AssetAuditPolicyId}](#/Analytics/getAssetCountsByAuditPolicyStatus) to obtain the compliance distribution.\n4. Display the counts in a stacked bar or KPI tile set for the selected policy.\n\n**Minimal Required Fields**: `AssetAuditPolicyId` (path).",
-        "parameters": [
-          {
-            "name": "AssetAuditPolicyId",
-            "in": "path",
-            "required": true,
-            "description": "Unique identifier of the audit policy to summarize.",
-            "x-obtained-from": {
-              "operationId": "getAssetById",
-              "endpoint": "GET /api/v1.0/assets/{assetId}",
-              "responseField": "Item.AssetAuditPolicyId"
-            },
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "example": "92a1f5b5-0b9b-4f1f-9c4b-1d4d5f6e7a80"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Asset counts grouped by audit policy status",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AnalyticsAuditPolicyStatusListResponse"
-                },
-                "example": {
-                  "ItemCount": 4,
-                  "Items": [
-                    {
-                      "Name": "Verified",
-                      "Value": 412,
-                      "Id": "77777790-7ac2-44d9-895a-1d1e01000001",
-                      "Date": null
-                    },
-                    {
-                      "Name": "Pending",
-                      "Value": 36,
-                      "Id": "77777790-7ac2-44d9-895a-1d1e01000002",
-                      "Date": null
-                    },
-                    {
-                      "Name": "At Risk",
-                      "Value": 11,
-                      "Id": "77777790-7ac2-44d9-895a-1d1e01000003",
-                      "Date": null
-                    },
-                    {
-                      "Name": "Failed",
-                      "Value": 5,
-                      "Id": "77777790-7ac2-44d9-895a-1d1e01000004",
-                      "Date": null
-                    }
-                  ],
-                  "Paging": {},
-                  "UserToken": "3e17f735-b79f-f011-b484-002248538047",
-                  "RequestDate": "2025-11-04T13:18:54.124Z",
-                  "ExecutionTime": 17.1,
-                  "StatusCode": 200,
-                  "ServerName": "spark-analytics-7d7c5f5d9b-gb5nq",
-                  "ProcessId": 42,
-                  "OperationId": "asset-audit-policy-status",
-                  "Properties": {}
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized - Authentication required or authentication credentials are invalid",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UnauthorizedError"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden - Insufficient permissions to perform this operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ForbiddenError"
                 }
               }
             }
@@ -56944,7 +56510,7 @@
         "summary": "Get asset counts by audit policy coverage",
         "operationId": "getAssetCountsByAuditPolicyCoverage",
         "tags": [
-          "Analytics - Asset Auditing"
+          "Audit Policies"
         ],
         "security": [
           {
@@ -57000,7 +56566,7 @@
         "summary": "Get asset counts by audit status",
         "operationId": "getAssetCountsByAuditStatus",
         "tags": [
-          "Analytics - Asset Auditing"
+          "Audit Policies"
         ],
         "security": [
           {
@@ -57047,6 +56613,196 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1.0/analytics/assets/by-verification-location": {
+      "get": {
+        "summary": "Get verified asset counts by location",
+        "operationId": "getAssetVerificationCountsByLocation",
+        "tags": [
+          "Audit Policies"
+        ],
+        "x-iiq-docs": {
+          "section": "verification",
+          "order": 30
+        },
+        "description": "Returns a list of locations with the number of assets whose most recent verification entry occurred at that location. The controller limits the dataset to the caller's site, discards deleted assets/verifications, and only counts each asset once by using its latest verification record.\n\n**Prerequisites**\n1. **locationId** – Use [GET /api/v2.0/locations/all](#/Locations/getAllSiteLocationsV2) to enumerate the locations that appear in your dashboard and capture `Items[].LocationId` so you can link a row from this response back to your directory data.\n\n**Workflow Example**\n1. List locations: [GET /api/v2.0/locations/all](#/Locations/getAllSiteLocationsV2) with `$s=500` to capture the full location directory and cache `LocationId`/`Name` pairs in the UI.\n2. Call [GET /api/v1.0/analytics/assets/by-verification-location](#/Audit Policies/getAssetVerificationCountsByLocation) to obtain the current verification counts grouped by each location.\n3. Merge the response with the cached directory data so users can click through to a location detail page or filter other queries using the same `LocationId`.\n\n**Minimal Required Fields**: None; the endpoint uses the authenticated user's site and permissions.",
+        "responses": {
+          "200": {
+            "description": "Asset verification counts grouped by location",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyticsVerificationLocationListResponse"
+                },
+                "example": {
+                  "ItemCount": 2,
+                  "Items": [
+                    {
+                      "Name": "IncidentIQ Demo High School",
+                      "Value": 186,
+                      "Id": "9e5d33da-bc45-11ee-b662-0a58ac120002",
+                      "Date": null
+                    },
+                    {
+                      "Name": "IncidentIQ Demo Middle School",
+                      "Value": 142,
+                      "Id": "c1f4a26a-bc45-11ee-b662-0a58ac120002",
+                      "Date": null
+                    }
+                  ],
+                  "Paging": {},
+                  "UserToken": "3e17f735-b79f-f011-b484-002248538047",
+                  "RequestDate": "2025-11-04T13:18:54.124Z",
+                  "ExecutionTime": 12.8,
+                  "StatusCode": 200,
+                  "ServerName": "spark-analytics-7d7c5f5d9b-gb5nq",
+                  "ProcessId": 24,
+                  "OperationId": "asset-verification-locations",
+                  "Properties": {}
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or authentication credentials are invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Insufficient permissions to perform this operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred on the server",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.0/analytics/assets/by-verification-type": {
+      "get": {
+        "summary": "Get verified asset counts by verification type",
+        "operationId": "getAssetVerificationCountsByType",
+        "tags": [
+          "Audit Policies"
+        ],
+        "x-iiq-docs": {
+          "section": "verification",
+          "order": 40
+        },
+        "description": "Returns asset counts grouped by the verification method used for each asset's most recent verification record (for example Web Manual, Mobile Scan, Remote App). The analytics query filters out deleted assets and verifications and only counts each asset once by selecting its latest verification entry, making this ideal for compliance dashboards and process trend reporting.\n\n**Prerequisites**: None; the endpoint runs against the authenticated user's site context.\n\n**Workflow Example**\n1. Call [GET /api/v1.0/analytics/assets/by-verification-type](#/Audit Policies/getAssetVerificationCountsByType) to retrieve the grouped counts.\n2. Plot `Items[].Name` against `Items[].Value` in a bar or donut chart.\n3. Compare counts week-over-week by caching the response and refreshing on a schedule.\n\n**Minimal Required Fields**: None.",
+        "responses": {
+          "200": {
+            "description": "Asset verification counts grouped by verification type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyticsVerificationTypeListResponse"
+                },
+                "example": {
+                  "ItemCount": 3,
+                  "Items": [
+                    {
+                      "Name": "Web Manual",
+                      "Value": 214,
+                      "Id": null,
+                      "Date": null
+                    },
+                    {
+                      "Name": "Mobile Scan",
+                      "Value": 87,
+                      "Id": null,
+                      "Date": null
+                    },
+                    {
+                      "Name": "Remote App",
+                      "Value": 44,
+                      "Id": null,
+                      "Date": null
+                    }
+                  ],
+                  "Paging": {},
+                  "UserToken": "951dd408-2ca7-4ebf-a052-12e7a255046b",
+                  "RequestDate": "2025-04-18T15:22:01.882Z",
+                  "ExecutionTime": 11.63,
+                  "StatusCode": 200,
+                  "ServerName": "spark-analytics-7f5576b7bc-g92nq",
+                  "ProcessId": 18640,
+                  "OperationId": "asset-verification-types",
+                  "Properties": {}
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or authentication credentials are invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Insufficient permissions to perform this operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred on the server",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerError"
+                }
+              }
+            }
           }
         }
       }
@@ -59975,12 +59731,256 @@
         }
       }
     },
+    "/api/v1.0/analytics/assets/by-audit-policy-schedule-status/{AssetAuditPolicyScheduleId}": {
+      "get": {
+        "summary": "Get asset counts by audit policy schedule status",
+        "operationId": "getAssetCountsByAuditPolicyScheduleStatus",
+        "tags": [
+          "Audit Policies"
+        ],
+        "x-iiq-docs": {
+          "section": "compliance",
+          "order": 20
+        },
+        "description": "Returns asset counts grouped by audit policy status (Verified, Pending, At Risk, Failed) for a single audit policy schedule. This endpoint narrows the analytics query to assets currently assigned to the schedule so you can track compliance for a specific audit run cadence.\n\n**Prerequisites**\n1. **AssetAuditPolicyScheduleId** – Use [POST /api/v1.0/assets](#/Assets/searchAssets) to locate an asset governed by the target schedule, then load [GET /api/v1.0/assets/{assetId}](#/Assets/getAssetById) and read `Item.AssetAuditPolicyScheduleId` from the response.\n\n**Workflow Example**\n1. Search assets: [POST /api/v1.0/assets](#/Assets/searchAssets) and select an asset assigned to the desired audit schedule.\n2. Load the asset: [GET /api/v1.0/assets/{assetId}](#/Assets/getAssetById) to capture `Item.AssetAuditPolicyScheduleId`.\n3. Call [GET /api/v1.0/analytics/assets/by-audit-policy-schedule-status/{AssetAuditPolicyScheduleId}](#/Audit Policies/getAssetCountsByAuditPolicyScheduleStatus) to retrieve the compliance distribution.\n4. Use the counts to populate schedule-level compliance reporting or escalation alerts.\n\n**Minimal Required Fields**: `AssetAuditPolicyScheduleId` (path).",
+        "parameters": [
+          {
+            "name": "AssetAuditPolicyScheduleId",
+            "in": "path",
+            "required": true,
+            "description": "Unique identifier of the audit policy schedule to summarize.",
+            "x-obtained-from": {
+              "operationId": "getAssetById",
+              "endpoint": "GET /api/v1.0/assets/{assetId}",
+              "responseField": "Item.AssetAuditPolicyScheduleId"
+            },
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "74bf3a5c-5f2b-49b8-9cdd-7a58b23f6b2d"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Asset counts grouped by audit policy schedule status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyticsAuditPolicyScheduleStatusListResponse"
+                },
+                "example": {
+                  "ItemCount": 4,
+                  "Items": [
+                    {
+                      "Name": "Verified",
+                      "Value": 312,
+                      "Id": "77777790-7ac2-44d9-895a-1d1e01000001",
+                      "Date": null
+                    },
+                    {
+                      "Name": "Pending",
+                      "Value": 58,
+                      "Id": "77777790-7ac2-44d9-895a-1d1e01000002",
+                      "Date": null
+                    },
+                    {
+                      "Name": "At Risk",
+                      "Value": 9,
+                      "Id": "77777790-7ac2-44d9-895a-1d1e01000003",
+                      "Date": null
+                    },
+                    {
+                      "Name": "Failed",
+                      "Value": 4,
+                      "Id": "77777790-7ac2-44d9-895a-1d1e01000004",
+                      "Date": null
+                    }
+                  ],
+                  "Paging": {},
+                  "UserToken": "3e17f735-b79f-f011-b484-002248538047",
+                  "RequestDate": "2025-11-04T13:18:54.124Z",
+                  "ExecutionTime": 18.4,
+                  "StatusCode": 200,
+                  "ServerName": "spark-analytics-7d7c5f5d9b-gb5nq",
+                  "ProcessId": 42,
+                  "OperationId": "asset-audit-policy-schedule-status",
+                  "Properties": {}
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or authentication credentials are invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Insufficient permissions to perform this operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred on the server",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1.0/analytics/assets/by-audit-policy-status/{AssetAuditPolicyId}": {
+      "get": {
+        "summary": "Get asset counts by audit policy status",
+        "operationId": "getAssetCountsByAuditPolicyStatus",
+        "tags": [
+          "Audit Policies"
+        ],
+        "x-iiq-docs": {
+          "section": "compliance",
+          "order": 10
+        },
+        "description": "Returns asset counts grouped by audit policy status (Verified, Pending, At Risk, Failed) for a single audit policy. The analytics manager evaluates the policy's compliance rules against current asset verification history and summarizes the live compliance posture for that policy.\n\n**Prerequisites**\n1. **AssetAuditPolicyId** – Use [POST /api/v1.0/assets](#/Assets/searchAssets) to locate an asset that participates in the policy, then load [GET /api/v1.0/assets/{assetId}](#/Assets/getAssetById) and read `Item.AssetAuditPolicyId` from the response.\n\n**Workflow Example**\n1. Search assets: [POST /api/v1.0/assets](#/Assets/searchAssets) and select an asset that is governed by the audit policy you want to analyze.\n2. Load the asset: [GET /api/v1.0/assets/{assetId}](#/Assets/getAssetById) to capture `Item.AssetAuditPolicyId`.\n3. Call [GET /api/v1.0/analytics/assets/by-audit-policy-status/{AssetAuditPolicyId}](#/Audit Policies/getAssetCountsByAuditPolicyStatus) to obtain the compliance distribution.\n4. Display the counts in a stacked bar or KPI tile set for the selected policy.\n\n**Minimal Required Fields**: `AssetAuditPolicyId` (path).",
+        "parameters": [
+          {
+            "name": "AssetAuditPolicyId",
+            "in": "path",
+            "required": true,
+            "description": "Unique identifier of the audit policy to summarize.",
+            "x-obtained-from": {
+              "operationId": "getAssetById",
+              "endpoint": "GET /api/v1.0/assets/{assetId}",
+              "responseField": "Item.AssetAuditPolicyId"
+            },
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "92a1f5b5-0b9b-4f1f-9c4b-1d4d5f6e7a80"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Asset counts grouped by audit policy status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyticsAuditPolicyStatusListResponse"
+                },
+                "example": {
+                  "ItemCount": 4,
+                  "Items": [
+                    {
+                      "Name": "Verified",
+                      "Value": 412,
+                      "Id": "77777790-7ac2-44d9-895a-1d1e01000001",
+                      "Date": null
+                    },
+                    {
+                      "Name": "Pending",
+                      "Value": 36,
+                      "Id": "77777790-7ac2-44d9-895a-1d1e01000002",
+                      "Date": null
+                    },
+                    {
+                      "Name": "At Risk",
+                      "Value": 11,
+                      "Id": "77777790-7ac2-44d9-895a-1d1e01000003",
+                      "Date": null
+                    },
+                    {
+                      "Name": "Failed",
+                      "Value": 5,
+                      "Id": "77777790-7ac2-44d9-895a-1d1e01000004",
+                      "Date": null
+                    }
+                  ],
+                  "Paging": {},
+                  "UserToken": "3e17f735-b79f-f011-b484-002248538047",
+                  "RequestDate": "2025-11-04T13:18:54.124Z",
+                  "ExecutionTime": 17.1,
+                  "StatusCode": 200,
+                  "ServerName": "spark-analytics-7d7c5f5d9b-gb5nq",
+                  "ProcessId": 42,
+                  "OperationId": "asset-audit-policy-status",
+                  "Properties": {}
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required or authentication credentials are invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Insufficient permissions to perform this operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred on the server",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1.0/analytics/assets/by-audit-policy-verification-location/{AssetAuditPolicyId}": {
       "get": {
         "summary": "Get asset counts by audit verification location for a policy",
         "operationId": "getAssetCountsByAuditPolicyVerificationLocation",
         "tags": [
-          "Analytics - Asset Auditing"
+          "Audit Policies"
         ],
         "security": [
           {
@@ -60055,7 +60055,7 @@
         "summary": "Get asset counts by audit verification type for a policy",
         "operationId": "getAssetCountsByAuditPolicyVerificationType",
         "tags": [
-          "Analytics - Asset Auditing"
+          "Audit Policies"
         ],
         "security": [
           {
@@ -60130,7 +60130,7 @@
         "summary": "Get audit policy period counts by status for a schedule",
         "operationId": "getAssetAuditPolicyPeriodsByStatus",
         "tags": [
-          "Analytics - Asset Auditing"
+          "Audit Policies"
         ],
         "security": [
           {
@@ -60205,7 +60205,7 @@
         "summary": "Get audit policy period counts by status for a schedule and specific asset",
         "operationId": "getAssetAuditPolicyPeriodsByStatusForAsset",
         "tags": [
-          "Analytics - Asset Auditing"
+          "Audit Policies"
         ],
         "security": [
           {
@@ -111821,10 +111821,6 @@
       "x-iiq-docs": {
         "sections": [
           {
-            "id": "audits",
-            "title": "Audit Analytics"
-          },
-          {
             "id": "assets",
             "title": "Asset Analytics"
           },
@@ -111855,26 +111851,6 @@
           {
             "id": "statistics",
             "title": "Statistics"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Analytics - Asset Auditing",
-      "description": "Asset audit policy analytics - coverage, verification status, and schedule tracking",
-      "x-iiq-docs": {
-        "sections": [
-          {
-            "id": "coverage",
-            "title": "Audit Coverage & Status"
-          },
-          {
-            "id": "verification",
-            "title": "Verification Analytics"
-          },
-          {
-            "id": "schedules",
-            "title": "Schedule Period Analytics"
           }
         ]
       }
@@ -112051,6 +112027,30 @@
           {
             "id": "bulk",
             "title": "Bulk Operations"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Audit Policies",
+      "description": "Asset audit policy compliance — verification policies districts define and audit their assets against to check for policy compliance, including coverage status, verification breakdown, and schedule tracking",
+      "x-iiq-docs": {
+        "sections": [
+          {
+            "id": "coverage",
+            "title": "Audit Coverage & Status"
+          },
+          {
+            "id": "compliance",
+            "title": "Policy Compliance"
+          },
+          {
+            "id": "verification",
+            "title": "Verification Breakdown"
+          },
+          {
+            "id": "schedules",
+            "title": "Schedule Periods"
           }
         ]
       }
@@ -112364,6 +112364,22 @@
       }
     },
     {
+      "name": "Entity Extensions",
+      "description": "Entity extension record management — custom field value storage for entity instances linked to entity extension types",
+      "x-iiq-docs": {
+        "sections": [
+          {
+            "id": "retrieval",
+            "title": "Searching & Viewing"
+          },
+          {
+            "id": "management",
+            "title": "Creating, Updating & Deleting"
+          }
+        ]
+      }
+    },
+    {
       "name": "Events",
       "description": "Event and calendar event management (deprecated API)",
       "x-iiq-docs": {
@@ -112399,6 +112415,10 @@
           {
             "id": "types",
             "title": "Event Types"
+          },
+          {
+            "id": "status-types",
+            "title": "Event Status Types"
           }
         ]
       }
@@ -113280,6 +113300,30 @@
       }
     },
     {
+      "name": "RateTypes",
+      "description": "Rate type management — define and manage calculation methods (Hourly, Daily, Flat) used by fee schedules to determine how event charges are computed",
+      "x-iiq-docs": {
+        "sections": [
+          {
+            "id": "retrieving",
+            "title": "Retrieving"
+          },
+          {
+            "id": "managing",
+            "title": "Creating & Updating"
+          },
+          {
+            "id": "bulk",
+            "title": "Bulk Operations"
+          },
+          {
+            "id": "deleting",
+            "title": "Deleting"
+          }
+        ]
+      }
+    },
+    {
       "name": "Recurring Schedules",
       "description": "Manage recurring schedule definitions that drive automated ticket creation and other time-based automation",
       "x-iiq-docs": {
@@ -113711,10 +113755,10 @@
   "x-merge-metadata": {
     "profileId": "stoplight",
     "profileName": "Stoplight Documentation",
-    "generatedAt": "2026-02-25T14:58:36Z",
-    "removedPathsCount": 971,
+    "generatedAt": "2026-02-27T16:33:23Z",
+    "removedPathsCount": 1022,
     "keptPathsCount": 803,
-    "schemasPruned": 538,
+    "schemasPruned": 567,
     "orderingApplied": true,
     "profileDescription": "Locked specification for Stoplight partner documentation. Uses manifest-based allowlist - new endpoints must be explicitly added.",
     "removedPathsSample": [

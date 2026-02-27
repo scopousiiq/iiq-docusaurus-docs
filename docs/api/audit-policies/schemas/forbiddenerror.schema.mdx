@@ -1,0 +1,33 @@
+---
+id: forbiddenerror
+title: "ForbiddenError"
+description: "Error response for authorization/permission failures"
+sidebar_label: "ForbiddenError"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"StatusCode":403,"Message":"You do not have permission to perform this action"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ForbiddenError"}
+>
+</Heading>
+
+
+
+Error response for authorization/permission failures
+
+<Schema
+  schema={{"type":"object","description":"Error response for authorization/permission failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (403)","example":403},"Message":{"type":"string","description":"Human-readable description of the authorization error","example":"You do not have permission to perform this action"}},"required":["StatusCode","Message"],"title":"ForbiddenError"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

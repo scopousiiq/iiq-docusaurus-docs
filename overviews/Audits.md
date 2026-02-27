@@ -69,7 +69,6 @@ curl -X POST "https://your-site.incidentiq.com/api/v1.0/asset-audit-policies/{po
 
 ## Related APIs
 
-- [Analytics - Asset Auditing](#/Analytics%20-%20Asset%20Auditing) - Reporting and metrics for audit policy performance
 - [Assets](#/Assets) - Look up and manage the assets covered by audit policies
 - [Locations](#/Locations) - Reference location data used in audit scope
 - [Teams](#/Teams) - Assign teams to audit policies

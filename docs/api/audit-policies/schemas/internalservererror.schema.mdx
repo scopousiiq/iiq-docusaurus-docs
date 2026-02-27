@@ -1,0 +1,33 @@
+---
+id: internalservererror
+title: "InternalServerError"
+description: "Error response for internal server errors"
+sidebar_label: "InternalServerError"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"StatusCode":500,"Message":"An internal server error occurred. Please try again later.","RequestId":"req_1234567890abcdef"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"InternalServerError"}
+>
+</Heading>
+
+
+
+Error response for internal server errors
+
+<Schema
+  schema={{"type":"object","description":"Error response for internal server errors","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (500)","example":500},"Message":{"type":"string","description":"Human-readable description of the server error","example":"An internal server error occurred. Please try again later."},"RequestId":{"type":"string","description":"Unique request identifier for troubleshooting","example":"req_1234567890abcdef"}},"required":["StatusCode","Message"],"title":"InternalServerError"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

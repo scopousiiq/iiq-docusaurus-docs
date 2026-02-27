@@ -1,0 +1,33 @@
+---
+id: unauthorizederror
+title: "UnauthorizedError"
+description: "Error response for authentication failures"
+sidebar_label: "UnauthorizedError"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"StatusCode":401,"Message":"Authentication required. Please provide valid credentials."}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UnauthorizedError"}
+>
+</Heading>
+
+
+
+Error response for authentication failures
+
+<Schema
+  schema={{"type":"object","description":"Error response for authentication failures","properties":{"StatusCode":{"type":"integer","description":"HTTP status code (401)","example":401},"Message":{"type":"string","description":"Human-readable description of the authentication error","example":"Authentication required. Please provide valid credentials."}},"required":["StatusCode","Message"],"title":"UnauthorizedError"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            
