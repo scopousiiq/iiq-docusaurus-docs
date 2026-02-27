@@ -43,6 +43,10 @@ const config: Config = {
           docItemComponent: '@theme/ApiItem',
         },
         blog: false, // Disable blog
+        gtag: {
+          trackingID: 'G-0FQ68LPETC',
+          anonymizeIP: true,
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
