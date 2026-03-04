@@ -512,6 +512,12 @@ const sidebar: SidebarsConfig = {
           label: "Set current user as away",
           className: "api-method post",
         },
+        {
+          type: "doc",
+          id: "api/users/is-user-online-legacy",
+          label: "Check if user is online (legacy)",
+          className: "api-method get",
+        },
       ],
     },
     {
@@ -762,6 +768,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/users/schemas/authorizedusergetresponse",
           label: "AuthorizedUserGetResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/booleangetresponse",
+          label: "BooleanGetResponse",
           className: "schema",
         },
         {

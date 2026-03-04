@@ -1,0 +1,75 @@
+---
+id: get-suppliers-by-query-legacy
+title: "Query suppliers (legacy GET)"
+description: "Retrieves suppliers using the legacy GET variant of the query endpoint. The controller marks this route as obsolete and recommends the POST version for modern integrations, because POST supports richer request-option payload patterns."
+sidebar_label: "Query suppliers (legacy GET)"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/api/suppliers/suppliers-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query suppliers (legacy GET)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1.0/suppliers/query"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves suppliers using the legacy GET variant of the query endpoint. The controller marks this route as obsolete and recommends the POST version for modern integrations, because POST supports richer request-option payload patterns.
+
+**Prerequisites**
+1. None. Use this when a client must use GET semantics.
+
+**Workflow Example**
+1. Start with [GET /api/v1.0/suppliers/query](/docs/api/suppliers/get-suppliers-by-query-legacy) for basic retrieval.
+2. When you need richer filter payloads, switch to [POST /api/v1.0/suppliers/query](/docs/api/suppliers/get-suppliers-by-query).
+3. Use returned `Items[].SupplierId` values with [GET /api/v1.0/suppliers/\{supplierId\}](/docs/api/suppliers/get-supplier-by-id) or update/delete workflows.
+
+**Minimal Required Fields**: None.
+
+**Deprecated Behavior**: The source marks this GET route as obsolete in favor of POST.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Suppliers retrieved successfully.","content":{"application/json":{"schema":{"allOf":[{"type":"object","description":"Standard response envelope for paginated list operations. Contains an array of items plus pagination metadata.","properties":{"Items":{"type":"array","description":"Array of entities returned by the query. Structure varies by endpoint.","items":{}},"ItemCount":{"type":"integer","description":"Number of items in the current response (length of Items array)","example":25},"Paging":{"allOf":[{"type":"object","description":"Pagination details returned with paged user search results.","properties":{"TotalRows":{"type":"integer","description":"Total number of rows available across all pages.","example":54343},"PageCount":{"type":"integer","description":"Total number of pages available for the current query.","example":10869},"PageSize":{"type":"integer","description":"Number of records returned per page.","example":5},"PageIndex":{"type":"integer","description":"Zero-based index of the current page returned in the response.","example":0}},"title":"PagingMetadata"}],"nullable":true,"type":"object","description":"Pagination details including total rows, page count, and current page"},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful list)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ErrorKey":{"type":"string","nullable":true,"description":"Machine-readable error key for client-side error handling"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"},"Properties":{"type":"object","additionalProperties":true,"nullable":true,"description":"Additional metadata properties"},"Metadata":{"type":"object","additionalProperties":{"type":"string"},"nullable":true,"description":"Key-value metadata pairs"},"Errors":{"type":"array","nullable":true,"items":{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"},"description":"List of soft validation errors"}},"required":["Items","StatusCode"],"title":"ListGetResponse"},{"type":"object","properties":{"Items":{"type":"array","description":"Supplier records matching the query.","items":{"type":"object","description":"Represents a supplier/vendor in the inventory module. This is a deprecated API.","properties":{"SupplierId":{"type":"string","format":"uuid","description":"Unique identifier for the supplier."},"SiteId":{"type":"string","format":"uuid","description":"Site this supplier belongs to."},"ProductId":{"type":"string","format":"uuid","description":"Product/module identifier."},"CreatedDate":{"type":"string","format":"date-time","description":"When the supplier record was created."},"ModifiedDate":{"type":"string","format":"date-time","description":"When the supplier record was last modified."},"IsDeleted":{"type":"boolean","description":"Whether the supplier has been soft-deleted."},"SupplierTypeId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the supplier type category."},"SupplierType":{"allOf":[{"type":"object","description":"Supplier type category reference data.","properties":{"SupplierTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the supplier type."},"Name":{"type":"string","description":"Display name of the supplier type."}},"title":"SupplierType"}],"description":"Expanded supplier type details.","nullable":true,"type":"object"},"AddressId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the supplier's address."},"Address":{"allOf":[{"type":"object","description":"Physical mailing address","properties":{"AddressId":{"type":"string","format":"uuid","description":"Unique identifier for the address"},"SiteId":{"type":"string","format":"uuid","description":"Site this address belongs to"},"Street1":{"type":"string","nullable":true,"description":"Primary street address line"},"Street2":{"type":"string","nullable":true,"description":"Secondary address line (suite, building, etc.)"},"City":{"type":"string","nullable":true,"description":"City name"},"State":{"type":"string","nullable":true,"description":"State or province code"},"Zip":{"type":"string","nullable":true,"description":"Postal/ZIP code"},"Country":{"type":"string","nullable":true,"description":"Country name or code"},"Latitude":{"type":"number","format":"double","nullable":true,"description":"Geographic latitude coordinate"},"Longitude":{"type":"number","format":"double","nullable":true,"description":"Geographic longitude coordinate"},"IsDeleted":{"type":"boolean","description":"Whether the address has been soft-deleted"},"CreatedDate":{"type":"string","format":"date-time","description":"Timestamp when the address was created"},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp when the address was last modified"}},"required":["AddressId"],"title":"Address"}],"description":"Expanded address details.","nullable":true,"type":"object"},"Name":{"type":"string","description":"Display name of the supplier."},"Phone":{"type":"string","nullable":true,"description":"Primary phone number."},"SupplierNumber":{"type":"string","nullable":true,"description":"Internal supplier/vendor number."},"SupplierUrl":{"type":"string","nullable":true,"description":"Supplier website URL."},"ContactName":{"type":"string","nullable":true,"description":"Primary contact person name."},"ContactEmail":{"type":"string","nullable":true,"description":"Primary contact email address."},"AdditionalContactName":{"type":"string","nullable":true,"description":"Secondary contact person name."},"AdditionalContactEmail":{"type":"string","nullable":true,"description":"Secondary contact email address."},"Description":{"type":"string","nullable":true,"description":"Description or notes about the supplier."}},"title":"SupplierFull"}}}}],"description":"Typed list response wrapper for supplier query endpoints.","title":"SupplierListGetResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

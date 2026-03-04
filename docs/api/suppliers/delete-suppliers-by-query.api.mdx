@@ -1,0 +1,81 @@
+---
+id: delete-suppliers-by-query
+title: "Delete suppliers by query"
+description: "Deletes supplier records that match the query options provided in `RequestOptions`. This is a bulk destructive operation; the service enforces business constraints and may reject suppliers that are still referenced by purchase orders."
+sidebar_label: "Delete suppliers by query"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "delete api-method"
+info_path: docs/api/suppliers/suppliers-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete suppliers by query"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1.0/suppliers/query"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes supplier records that match the query options provided in `RequestOptions`. This is a bulk destructive operation; the service enforces business constraints and may reject suppliers that are still referenced by purchase orders.
+
+**Prerequisites**
+1. Preview the target set via [POST /api/v1.0/suppliers/query](/docs/api/suppliers/get-suppliers-by-query) and confirm the suppliers you intend to remove.
+
+**Workflow Example**
+1. Build and test filters with [POST /api/v1.0/suppliers/query](/docs/api/suppliers/get-suppliers-by-query).
+2. Submit [DELETE /api/v1.0/suppliers/query](/docs/api/suppliers/delete-suppliers-by-query) with the same `RequestOptions` to delete matching suppliers.
+3. Re-run the query to verify the records are removed and handle any validation failures for suppliers still in use.
+
+**Minimal Required Fields**: None. `RequestOptions.Filters` is strongly recommended to avoid broad deletions.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"description":"Optional query options that select which suppliers to delete.","content":{"application/json":{"schema":{"type":"object","description":"Request options payload for querying or deleting suppliers. Maps to C# `GetSuppliersRequest`, which inherits `RequestOptionParameter` and accepts the shared `RequestOptions` envelope.","properties":{"RequestOptions":{"allOf":[{"type":"object","description":"Standard request options for list/search operations including field selection, pagination, and filtering. Based on C# `RequestOptions` from `Spark.Shared.Models.DataFramework`.","properties":{"Fields":{"type":"array","nullable":true,"items":{"type":"string"},"description":"List of field names to include in the response (sparse fieldsets). If null/empty, all fields are returned."},"Paging":{"allOf":[{"type":"object","description":"Pagination and sorting options for list requests","properties":{"PageSize":{"type":"integer","description":"Number of records per page. Use -1 for unlimited (not recommended for large datasets).","default":-1,"example":50},"PageIndex":{"type":"integer","description":"Zero-based page index","default":0,"minimum":0,"example":0},"SortField":{"type":"string","nullable":true,"description":"Field name to sort results by. Available fields depend on the entity type.","example":"Name"},"SortDirection":{"type":"string","enum":["Ascending","Descending"],"description":"Sort direction for the primary sort field","default":"Ascending"},"SecondarySortOptions":{"type":"array","nullable":true,"items":{"type":"object","description":"Sort configuration for a single field","properties":{"SortField":{"type":"string","description":"Field name to sort by"},"SortDirection":{"type":"string","enum":["Ascending","Descending"],"description":"Sort direction","default":"Ascending"}},"required":["SortField"],"title":"SortOptions"},"description":"Additional sort criteria applied after the primary sort"}},"title":"PagingOptions"}],"nullable":true,"type":"object","description":"Pagination and sorting options"},"Filters":{"type":"array","nullable":true,"items":{"type":"object","description":"Filter condition for search/list operations. Based on C# `DataFilter` from `Spark.Shared.Models.DataFramework`. Supports both simple filters and nested filter groups.","properties":{"Facet":{"type":"string","description":"Field name or facet to filter on (e.g., 'Status', 'LocationId', 'CreatedDate')"},"Ids":{"type":"array","nullable":true,"items":{"type":"string","format":"uuid"},"description":"Array of UUIDs to filter by (for ID-based facets)"},"Values":{"type":"array","nullable":true,"items":{"type":"string"},"description":"Array of string values to filter by"},"Op":{"allOf":[{"type":"string","description":"Filter operations for DataFilter queries. Based on C# `DataFilterOperations` enum from `Spark.Shared.Enums`.","enum":["None","Equal","Greater","Less","GreaterOrEqual","LessOrEqual","StartsWith","EndsWith","Contains","NotEqual","NotGreater","NotLess","NotGreaterOrEqual","NotLessOrEqual"],"x-enum-descriptions":{"None":"No operation specified","Equal":"Equals (eq)","Greater":"Greater than (gt)","Less":"Less than (lt)","GreaterOrEqual":"Greater than or equal (ge)","LessOrEqual":"Less than or equal (le)","StartsWith":"String starts with","EndsWith":"String ends with","Contains":"String contains","NotEqual":"Not equal (ne)","NotGreater":"Not greater than (ng)","NotLess":"Not less than (nl)","NotGreaterOrEqual":"Not greater than or equal (nge)","NotLessOrEqual":"Not less than or equal (nle)"},"title":"DataFilterOperations"}],"description":"Filter operation to apply"},"CustomFieldTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Custom field type ID (when filtering on custom fields)"},"ComplexEditorPath":{"type":"string","nullable":true,"description":"JSON path for filtering within complex editor values"},"Items":{"type":"array","nullable":true,"items":"circular(DataFilter)","description":"Nested filter conditions for complex AND/OR queries"}},"required":["Facet"],"title":"DataFilter"},"description":"Array of filter conditions to apply to the query"},"Collation":{"type":"string","nullable":true,"description":"Database collation for string comparisons (locale-specific sorting)"}},"title":"RequestOptions"}],"nullable":true,"type":"object","description":"Optional filtering, paging, sorting, and projection settings."}},"title":"GetSuppliersRequest"},"example":{"RequestOptions":{"Filters":[{"Facet":"keyword","Values":["IncidentIQ Demo"]}]}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Suppliers deleted successfully.","content":{"application/json":{"schema":{"type":"object","description":"Response envelope returned after successfully deleting multiple resources in bulk. Based on C# `ListDeleteResponse` from `Spark.Shared.Models.Responses`.","properties":{"Ids":{"type":"array","description":"Array of UUIDs for the deleted resources","items":{"type":"string","format":"uuid"}},"UserToken":{"type":"string","format":"uuid","nullable":true,"description":"Authenticated session identifier"},"RequestDate":{"type":"string","format":"date-time","description":"Timestamp when the API processed the request"},"ExecutionTime":{"type":"number","format":"double","description":"Server-side execution time in milliseconds"},"StatusCode":{"type":"integer","description":"HTTP status code (typically 200 for successful delete)","example":200},"Message":{"type":"string","nullable":true,"description":"Optional informational message"},"ServerName":{"type":"string","description":"Application node that processed the request"},"ProcessId":{"type":"integer","description":"Internal process identifier for diagnostics"},"OperationId":{"type":"string","nullable":true,"description":"Trace identifier for log correlation"}},"required":["StatusCode"],"title":"ListDeleteResponse"},"example":{"Ids":["a1b2c3d4-e5f6-7890-abcd-ef1234567890"],"StatusCode":200}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

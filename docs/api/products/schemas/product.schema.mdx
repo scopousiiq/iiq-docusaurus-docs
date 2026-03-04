@@ -1,0 +1,33 @@
+---
+id: product
+title: "Product"
+description: "Represents a licensed product module in IncidentIQ (e.g., Technology, Facilities, HR). Products define the functional modules available to a site."
+sidebar_label: "Product"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ProductId":"00000000-0000-0000-0000-000000000001","ProductName":"Technology","ProductKey":"technology","Icon":"laptop","DisplayOrder":1}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Product"}
+>
+</Heading>
+
+
+
+Represents a licensed product module in IncidentIQ (e.g., Technology, Facilities, HR). Products define the functional modules available to a site.
+
+<Schema
+  schema={{"type":"object","description":"Represents a licensed product module in IncidentIQ (e.g., Technology, Facilities, HR). Products define the functional modules available to a site.","properties":{"ProductId":{"type":"string","format":"uuid","description":"Unique identifier for the product","example":"00000000-0000-0000-0000-000000000001"},"ProductName":{"type":"string","description":"Display name of the product","example":"Technology"},"ProductKey":{"type":"string","description":"Internal key identifier for the product","example":"technology"},"Icon":{"type":"string","nullable":true,"description":"Icon identifier or URL for the product","example":"laptop"},"DisplayOrder":{"type":"integer","description":"Sort order for displaying products in lists","example":1}},"title":"Product"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

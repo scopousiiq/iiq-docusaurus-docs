@@ -41,6 +41,8 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Use the OpenAPI theme component for API docs
           docItemComponent: '@theme/ApiItem',
+          // Exclude section index pages - subcategories expand/collapse instead
+          exclude: ['**/*.tag.mdx'],
         },
         blog: false, // Disable blog
         gtag: {

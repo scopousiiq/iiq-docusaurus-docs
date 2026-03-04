@@ -72,6 +72,28 @@ async function main() {
     console.log(`  Found: ${pathsByTag.size} tags with endpoints`);
     console.log();
 
+    // Clean stale docs/api/ directories for removed tags
+    const docsApiDir = path.resolve(__dirname, '../docs/api');
+    if (fs.existsSync(docsApiDir)) {
+        const currentDirNames = new Set(
+            Array.from(pathsByTag.keys()).map(tag => getFileName(tag))
+        );
+        const existingDirs = fs.readdirSync(docsApiDir, { withFileTypes: true })
+            .filter(entry => entry.isDirectory())
+            .map(entry => entry.name);
+        const staleDirs = existingDirs.filter(dir => !currentDirNames.has(dir));
+
+        if (staleDirs.length > 0) {
+            console.log(`Cleaning ${staleDirs.length} stale API category directories:`);
+            for (const dir of staleDirs) {
+                const fullPath = path.join(docsApiDir, dir);
+                fs.rmSync(fullPath, { recursive: true, force: true });
+                console.log(`  Removed: docs/api/${dir}/`);
+            }
+            console.log();
+        }
+    }
+
     // Build operation lookup for link transformation
     console.log('Building operation lookup for link transformation...');
     const operationLookup = buildOperationLookup(sourceSpec);

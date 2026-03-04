@@ -48,6 +48,22 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Listing",
+      link: {
+        type: "doc",
+        id: "api/sites/sites-listing",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/sites/list-sites",
+          label: "List all sites",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Details",
       link: {
         type: "doc",
@@ -220,6 +236,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/sites/schemas/site",
+          label: "Site",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/sites/schemas/siteapphook",
           label: "SiteAppHook",
           className: "schema",
@@ -258,6 +280,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/sites/schemas/sitelicensedproduct",
           label: "SiteLicensedProduct",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/sites/schemas/sitelistresponse",
+          label: "SiteListResponse",
           className: "schema",
         },
         {

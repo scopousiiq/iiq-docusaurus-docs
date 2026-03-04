@@ -26,6 +26,18 @@ const sidebar: SidebarsConfig = {
           label: "Get supplier by ID (POST)",
           className: "api-method post",
         },
+        {
+          type: "doc",
+          id: "api/suppliers/get-suppliers-by-query-legacy",
+          label: "Query suppliers (legacy GET)",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/suppliers/get-suppliers-by-query",
+          label: "Query suppliers",
+          className: "api-method post",
+        },
       ],
     },
     {
@@ -70,6 +82,12 @@ const sidebar: SidebarsConfig = {
           label: "Delete supplier",
           className: "api-method delete",
         },
+        {
+          type: "doc",
+          id: "api/suppliers/delete-suppliers-by-query",
+          label: "Delete suppliers by query",
+          className: "api-method delete",
+        },
       ],
     },
     {
@@ -84,6 +102,24 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/suppliers/schemas/datafilter",
+          label: "DataFilter",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/suppliers/schemas/datafilteroperations",
+          label: "DataFilterOperations",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/suppliers/schemas/getsuppliersrequest",
+          label: "GetSuppliersRequest",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/suppliers/schemas/itemdeleteresponse",
           label: "ItemDeleteResponse",
           className: "schema",
@@ -92,6 +128,48 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/suppliers/schemas/listcreateresponse",
           label: "ListCreateResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/suppliers/schemas/listdeleteresponse",
+          label: "ListDeleteResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/suppliers/schemas/listgetresponse",
+          label: "ListGetResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/suppliers/schemas/pagingmetadata",
+          label: "PagingMetadata",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/suppliers/schemas/pagingoptions",
+          label: "PagingOptions",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/suppliers/schemas/requestoptions",
+          label: "RequestOptions",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/suppliers/schemas/softvalidationerror",
+          label: "SoftValidationError",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/suppliers/schemas/sortoptions",
+          label: "SortOptions",
           className: "schema",
         },
         {
@@ -122,6 +200,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/suppliers/schemas/supplierlistcreateresponse",
           label: "SupplierListCreateResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/suppliers/schemas/supplierlistgetresponse",
+          label: "SupplierListGetResponse",
           className: "schema",
         },
         {

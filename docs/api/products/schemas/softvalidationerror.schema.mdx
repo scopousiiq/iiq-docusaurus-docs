@@ -1,0 +1,33 @@
+---
+id: softvalidationerror
+title: "SoftValidationError"
+description: "A non-fatal validation error that did not prevent the operation from completing"
+sidebar_label: "SoftValidationError"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Field":"string","Message":"string","Code":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SoftValidationError"}
+>
+</Heading>
+
+
+
+A non-fatal validation error that did not prevent the operation from completing
+
+<Schema
+  schema={{"type":"object","description":"A non-fatal validation error that did not prevent the operation from completing","properties":{"Field":{"type":"string","nullable":true,"description":"Name of the field with the validation issue"},"Message":{"type":"string","description":"Human-readable description of the validation issue"},"Code":{"type":"string","nullable":true,"description":"Machine-readable error code"}},"required":["Message"],"title":"SoftValidationError"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

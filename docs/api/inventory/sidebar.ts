@@ -392,6 +392,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/inventory/schemas/fundingsourcestatustype",
+          label: "FundingSourceStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/inventory/schemas/fundingsourcetype",
+          label: "FundingSourceType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/inventory/schemas/getinventoriesrequest",
           label: "GetInventoriesRequest",
           className: "schema",
@@ -758,6 +770,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/inventory/schemas/purchaseordersupplier",
+          label: "PurchaseOrderSupplier",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/inventory/schemas/purchaseordertype",
           label: "PurchaseOrderType",
           className: "schema",
@@ -790,12 +808,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/inventory/schemas/sortoptions",
           label: "SortOptions",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/inventory/schemas/supplier",
-          label: "Supplier",
           className: "schema",
         },
         {

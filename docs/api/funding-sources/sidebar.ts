@@ -152,6 +152,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/funding-sources/schemas/fundingsourcestatustype",
+          label: "FundingSourceStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/funding-sources/schemas/fundingsourcetype",
+          label: "FundingSourceType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/funding-sources/schemas/itemcreateresponse",
           label: "ItemCreateResponse",
           className: "schema",
