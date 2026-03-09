@@ -5783,7 +5783,7 @@
                 },
                 {
                   "type": "string",
-                  "pattern": "^(TicketNumber|TicketNumberSort|TicketCreatedDate|TicketModifiedDate|TicketStartedDate|TicketClosedDate|TicketDueDate|TicketSubject|TicketPriority|TicketIsUrgent|TicketStatusName|WorkflowStepName|IssueCategoryName|IssueTypeName|LocationName|AssignedTeamName|ForName|OverallSurveyRating)(\\s+(asc|ascending|desc|descending))$"
+                  "pattern": "^(TicketNumber|TicketNumberSort|TicketId|TicketCreatedDate|TicketModifiedDate|TicketClosedDate|TicketDueDate|TicketSubject|TicketPriority|TicketStatusName|WorkflowStepName|IssueCategoryId|IssueTypeId|LocationName|LocationRoomName|AssignedUserFirstName|AssignedTeamName|ForName|ForFirstName|ForLocationName|OwnerRole|IsClosed|SiteId|OverallSurveyRating)(\\s+(asc|ascending|desc|descending))?$"
                 }
               ]
             },
@@ -9419,7 +9419,7 @@
                 },
                 {
                   "type": "string",
-                  "pattern": "^(TicketNumber|TicketNumberSort|TicketCreatedDate|TicketModifiedDate|TicketStartedDate|TicketClosedDate|TicketDueDate|TicketSubject|TicketPriority|TicketIsUrgent|TicketStatusName|WorkflowStepName|IssueCategoryName|IssueTypeName|LocationName|AssignedTeamName|ForName|OverallSurveyRating)(\\s+(asc|ascending|desc|descending))$"
+                  "pattern": "^(TicketNumber|TicketNumberSort|TicketId|TicketCreatedDate|TicketModifiedDate|TicketClosedDate|TicketDueDate|TicketSubject|TicketPriority|TicketStatusName|WorkflowStepName|IssueCategoryId|IssueTypeId|LocationName|LocationRoomName|AssignedUserFirstName|AssignedTeamName|ForName|ForFirstName|ForLocationName|OwnerRole|IsClosed|SiteId|OverallSurveyRating)(\\s+(asc|ascending|desc|descending))?$"
                 }
               ]
             },
@@ -13602,7 +13602,7 @@
                 },
                 {
                   "type": "string",
-                  "pattern": "^(AssetTag|AssetName|SerialNumber|ModelName|ManufacturerName|CategoryName|LocationName|AssetTypeName|AssetStatusTypeName|OwnerLastName|AssetCreatedDate|AssetModifiedDate|ModifiedDate|PurchasedDate|DeployedDate|RetiredDate|PurchasePrice|WarrantyExpirationDate|LastInventoryDate)(\\s+(asc|ascending|desc|descending))?$"
+                  "pattern": "^(AssetTag|SerialNumber|ModelName|ManufacturerName|ManufacturerModelName|CategoryName|LocationName|LocationRoomName|AssetTypeName|AssetStatusTypeName|AssetId|ParentAssetId|OwnerGrade|OwnerHomeroom|OwnerRoleId|AssetCreatedDate|AssetModifiedDate|ModifiedDate|PurchasedDate|DeployedDate|RetiredDate|WarrantyExpirationDate|LastInventoryDate|LastVerificationDateTime|AssetAuditPolicyStatusName|HasOpenTickets|FundingSourceTypeName|StorageUnitNumber|StorageSlotNumber|DueDate|TotalCost\\.TotalTimeOfLabor|TotalCost\\.TotalCostOfLabor|TotalCost\\.TotalCostOfParts|TotalCost\\.TotalCostToDate)(\\s+(asc|ascending|desc|descending))?$"
                 }
               ]
             },
@@ -14791,7 +14791,7 @@
                 },
                 {
                   "type": "string",
-                  "pattern": "^(AssetTag|AssetName|SerialNumber|ModelName|ManufacturerName|CategoryName|LocationName|AssetTypeName|AssetStatusTypeName|OwnerLastName|AssetCreatedDate|AssetModifiedDate|ModifiedDate|PurchasedDate|DeployedDate|RetiredDate|PurchasePrice|WarrantyExpirationDate|LastInventoryDate)(\\s+(asc|ascending|desc|descending))?$"
+                  "pattern": "^(AssetTag|SerialNumber|ModelName|ManufacturerName|ManufacturerModelName|CategoryName|LocationName|LocationRoomName|AssetTypeName|AssetStatusTypeName|AssetId|ParentAssetId|OwnerGrade|OwnerHomeroom|OwnerRoleId|AssetCreatedDate|AssetModifiedDate|ModifiedDate|PurchasedDate|DeployedDate|RetiredDate|WarrantyExpirationDate|LastInventoryDate|LastVerificationDateTime|AssetAuditPolicyStatusName|HasOpenTickets|FundingSourceTypeName|StorageUnitNumber|StorageSlotNumber|DueDate|TotalCost\\.TotalTimeOfLabor|TotalCost\\.TotalCostOfLabor|TotalCost\\.TotalCostOfParts|TotalCost\\.TotalCostToDate)(\\s+(asc|ascending|desc|descending))?$"
                 }
               ]
             },
@@ -16822,7 +16822,7 @@
                 },
                 {
                   "type": "string",
-                  "pattern": "^(AssetTag|AssetName|SerialNumber|ModelName|ManufacturerName|CategoryName|LocationName|AssetTypeName|AssetStatusTypeName|OwnerLastName|AssetCreatedDate|AssetModifiedDate|ModifiedDate|PurchasedDate|DeployedDate|RetiredDate|PurchasePrice|WarrantyExpirationDate|LastInventoryDate)(\\s+(asc|ascending|desc|descending))?$"
+                  "pattern": "^(AssetTag|SerialNumber|ModelName|ManufacturerName|ManufacturerModelName|CategoryName|LocationName|LocationRoomName|AssetTypeName|AssetStatusTypeName|AssetId|ParentAssetId|OwnerGrade|OwnerHomeroom|OwnerRoleId|AssetCreatedDate|AssetModifiedDate|ModifiedDate|PurchasedDate|DeployedDate|RetiredDate|WarrantyExpirationDate|LastInventoryDate|LastVerificationDateTime|AssetAuditPolicyStatusName|HasOpenTickets|FundingSourceTypeName|StorageUnitNumber|StorageSlotNumber|DueDate|TotalCost\\.TotalTimeOfLabor|TotalCost\\.TotalCostOfLabor|TotalCost\\.TotalCostOfParts|TotalCost\\.TotalCostToDate)(\\s+(asc|ascending|desc|descending))?$"
                 }
               ]
             },
@@ -17309,7 +17309,7 @@
                 },
                 {
                   "type": "string",
-                  "pattern": "^(AssetTag|AssetName|SerialNumber|ModelName|ManufacturerName|CategoryName|LocationName|AssetTypeName|AssetStatusTypeName|OwnerLastName|AssetCreatedDate|AssetModifiedDate|ModifiedDate|PurchasedDate|DeployedDate|RetiredDate|PurchasePrice|WarrantyExpirationDate|LastInventoryDate)(\\s+(asc|ascending|desc|descending))?$"
+                  "pattern": "^(AssetTag|SerialNumber|ModelName|ManufacturerName|ManufacturerModelName|CategoryName|LocationName|LocationRoomName|AssetTypeName|AssetStatusTypeName|AssetId|ParentAssetId|OwnerGrade|OwnerHomeroom|OwnerRoleId|AssetCreatedDate|AssetModifiedDate|ModifiedDate|PurchasedDate|DeployedDate|RetiredDate|WarrantyExpirationDate|LastInventoryDate|LastVerificationDateTime|AssetAuditPolicyStatusName|HasOpenTickets|FundingSourceTypeName|StorageUnitNumber|StorageSlotNumber|DueDate|TotalCost\\.TotalTimeOfLabor|TotalCost\\.TotalCostOfLabor|TotalCost\\.TotalCostOfParts|TotalCost\\.TotalCostToDate)(\\s+(asc|ascending|desc|descending))?$"
                 }
               ]
             },
@@ -19315,7 +19315,7 @@
                 },
                 {
                   "type": "string",
-                  "pattern": "^(AssetTag|AssetName|SerialNumber|ModelName|ManufacturerName|CategoryName|LocationName|AssetTypeName|AssetStatusTypeName|OwnerLastName|AssetCreatedDate|AssetModifiedDate|ModifiedDate|PurchasedDate|DeployedDate|RetiredDate|PurchasePrice|WarrantyExpirationDate|LastInventoryDate)(\\s+(asc|ascending|desc|descending))?$"
+                  "pattern": "^(AssetTag|SerialNumber|ModelName|ManufacturerName|ManufacturerModelName|CategoryName|LocationName|LocationRoomName|AssetTypeName|AssetStatusTypeName|AssetId|ParentAssetId|OwnerGrade|OwnerHomeroom|OwnerRoleId|AssetCreatedDate|AssetModifiedDate|ModifiedDate|PurchasedDate|DeployedDate|RetiredDate|WarrantyExpirationDate|LastInventoryDate|LastVerificationDateTime|AssetAuditPolicyStatusName|HasOpenTickets|FundingSourceTypeName|StorageUnitNumber|StorageSlotNumber|DueDate|TotalCost\\.TotalTimeOfLabor|TotalCost\\.TotalCostOfLabor|TotalCost\\.TotalCostOfParts|TotalCost\\.TotalCostToDate)(\\s+(asc|ascending|desc|descending))?$"
                 }
               ]
             },
@@ -21623,6 +21623,24 @@
             "example": 1000
           },
           {
+            "name": "$o",
+            "in": "query",
+            "required": false,
+            "description": "Sort expression: field name followed by optional direction (e.g., `FullName desc`). Direction can be `asc`, `ascending`, `desc`, or `descending`. Default direction is ascending. Default sort is `FullName asc`. See [UserSortField](#/components/schemas/UserSortField) for valid field names.",
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/UserSortField"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^(FullName|FullNameReversed|FirstName|LastName|Grade|LocationName|ModifiedDate|CreatedDate|UserId|RoleName|Homeroom)(\\s+(asc|ascending|desc|descending))?$"
+                }
+              ]
+            },
+            "example": "FullName asc"
+          },
+          {
             "name": "SiteId",
             "in": "header",
             "required": false,
@@ -21878,6 +21896,24 @@
               "minimum": 1
             },
             "example": 20
+          },
+          {
+            "name": "$o",
+            "in": "query",
+            "required": false,
+            "description": "Sort expression: field name followed by optional direction (e.g., `FullName desc`). Direction can be `asc`, `ascending`, `desc`, or `descending`. Default direction is ascending. Default sort is `FullName asc`. See [UserSortField](#/components/schemas/UserSortField) for valid field names.",
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/UserSortField"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^(FullName|FullNameReversed|FirstName|LastName|Grade|LocationName|ModifiedDate|CreatedDate|UserId|RoleName|Homeroom)(\\s+(asc|ascending|desc|descending))?$"
+                }
+              ]
+            },
+            "example": "FullName asc"
           },
           {
             "name": "SiteId",
@@ -68974,45 +69010,75 @@
         "description": "Valid field names for sorting asset search results. These correspond to columns in the AssetDetails view. Use with the `$o` query parameter in the format `FieldName direction` (e.g., `AssetTag desc`).",
         "enum": [
           "AssetTag",
-          "AssetName",
           "SerialNumber",
           "ModelName",
           "ManufacturerName",
+          "ManufacturerModelName",
           "CategoryName",
           "LocationName",
+          "LocationRoomName",
           "AssetTypeName",
           "AssetStatusTypeName",
-          "OwnerLastName",
+          "AssetId",
+          "ParentAssetId",
+          "OwnerGrade",
+          "OwnerHomeroom",
+          "OwnerRoleId",
           "AssetCreatedDate",
           "AssetModifiedDate",
           "ModifiedDate",
           "PurchasedDate",
           "DeployedDate",
           "RetiredDate",
-          "PurchasePrice",
           "WarrantyExpirationDate",
-          "LastInventoryDate"
+          "LastInventoryDate",
+          "LastVerificationDateTime",
+          "AssetAuditPolicyStatusName",
+          "HasOpenTickets",
+          "FundingSourceTypeName",
+          "StorageUnitNumber",
+          "StorageSlotNumber",
+          "DueDate",
+          "TotalCost.TotalTimeOfLabor",
+          "TotalCost.TotalCostOfLabor",
+          "TotalCost.TotalCostOfParts",
+          "TotalCost.TotalCostToDate"
         ],
         "x-enum-descriptions": {
           "AssetTag": "Asset tag identifier",
-          "AssetName": "Asset display name",
           "SerialNumber": "Device serial number",
-          "ModelName": "Model name",
+          "ModelName": "Model name (default sort field)",
           "ManufacturerName": "Manufacturer name",
+          "ManufacturerModelName": "Combined manufacturer and model name",
           "CategoryName": "Asset category name",
           "LocationName": "Assigned location name",
+          "LocationRoomName": "Location room name",
           "AssetTypeName": "Asset type classification",
           "AssetStatusTypeName": "Current status name",
-          "OwnerLastName": "Owner last name (alphabetical)",
+          "AssetId": "Asset unique identifier",
+          "ParentAssetId": "Parent asset identifier",
+          "OwnerGrade": "Owner grade level",
+          "OwnerHomeroom": "Owner homeroom",
+          "OwnerRoleId": "Owner role (sorts by role name)",
           "AssetCreatedDate": "Date/time asset record was created",
           "AssetModifiedDate": "Date/time asset was last modified",
-          "ModifiedDate": "Alias for AssetModifiedDate",
+          "ModifiedDate": "General modification date",
           "PurchasedDate": "Purchase date",
           "DeployedDate": "Deployment date",
           "RetiredDate": "Retirement date",
-          "PurchasePrice": "Purchase price amount",
           "WarrantyExpirationDate": "Warranty expiration date",
-          "LastInventoryDate": "Last inventory scan date"
+          "LastInventoryDate": "Last inventory scan date",
+          "LastVerificationDateTime": "Last verification date/time",
+          "AssetAuditPolicyStatusName": "Audit policy status name",
+          "HasOpenTickets": "Whether the asset has open tickets",
+          "FundingSourceTypeName": "Funding source type name",
+          "StorageUnitNumber": "Storage unit number",
+          "StorageSlotNumber": "Storage slot number",
+          "DueDate": "Checkout due date",
+          "TotalCost.TotalTimeOfLabor": "Total labor time",
+          "TotalCost.TotalCostOfLabor": "Total labor cost",
+          "TotalCost.TotalCostOfParts": "Total parts cost",
+          "TotalCost.TotalCostToDate": "Total cost to date"
         }
       },
       "AssetStatusType": {
@@ -95363,41 +95429,53 @@
         "enum": [
           "TicketNumber",
           "TicketNumberSort",
+          "TicketId",
           "TicketCreatedDate",
           "TicketModifiedDate",
-          "TicketStartedDate",
           "TicketClosedDate",
           "TicketDueDate",
           "TicketSubject",
           "TicketPriority",
-          "TicketIsUrgent",
           "TicketStatusName",
           "WorkflowStepName",
-          "IssueCategoryName",
-          "IssueTypeName",
+          "IssueCategoryId",
+          "IssueTypeId",
           "LocationName",
+          "LocationRoomName",
+          "AssignedUserFirstName",
           "AssignedTeamName",
           "ForName",
+          "ForFirstName",
+          "ForLocationName",
+          "OwnerRole",
+          "IsClosed",
+          "SiteId",
           "OverallSurveyRating"
         ],
         "x-enum-descriptions": {
           "TicketNumber": "Human-readable ticket number (string sort)",
           "TicketNumberSort": "Numeric ticket number for proper ordering",
+          "TicketId": "Ticket unique identifier",
           "TicketCreatedDate": "Date/time ticket was created",
           "TicketModifiedDate": "Date/time ticket was last modified",
-          "TicketStartedDate": "Date/time work began on ticket",
           "TicketClosedDate": "Date/time ticket was closed",
           "TicketDueDate": "Target completion date",
           "TicketSubject": "Ticket subject line (alphabetical)",
           "TicketPriority": "Numeric priority weight",
-          "TicketIsUrgent": "Urgent flag status",
           "TicketStatusName": "Current workflow status name",
           "WorkflowStepName": "Current workflow step name",
-          "IssueCategoryName": "Issue category name",
-          "IssueTypeName": "Issue type name",
+          "IssueCategoryId": "Issue category identifier",
+          "IssueTypeId": "Issue type identifier",
           "LocationName": "Ticket location name",
+          "LocationRoomName": "Location room name",
+          "AssignedUserFirstName": "Assigned agent (sorts by first name, then last name)",
           "AssignedTeamName": "Assigned team name",
-          "ForName": "Requester name",
+          "ForName": "Requester full name",
+          "ForFirstName": "Requester first name",
+          "ForLocationName": "Requester location name",
+          "OwnerRole": "Requester role name",
+          "IsClosed": "Closed/open status",
+          "SiteId": "Site identifier",
           "OverallSurveyRating": "Survey satisfaction rating"
         }
       },
@@ -107622,6 +107700,36 @@
           }
         }
       },
+      "UserSortField": {
+        "type": "string",
+        "description": "Valid field names for sorting user search results. These correspond to columns in the UserDetails view. Use with the `$o` query parameter in the format `FieldName direction` (e.g., `FullName desc`).",
+        "enum": [
+          "FullName",
+          "FullNameReversed",
+          "FirstName",
+          "LastName",
+          "Grade",
+          "LocationName",
+          "ModifiedDate",
+          "CreatedDate",
+          "UserId",
+          "RoleName",
+          "Homeroom"
+        ],
+        "x-enum-descriptions": {
+          "FullName": "Full name (first last) - default sort field",
+          "FullNameReversed": "Full name reversed (last, first)",
+          "FirstName": "First name only",
+          "LastName": "Last name only",
+          "Grade": "Grade level",
+          "LocationName": "Primary location name",
+          "ModifiedDate": "Date/time user was last modified",
+          "CreatedDate": "Date/time user record was created",
+          "UserId": "User unique identifier",
+          "RoleName": "User role name",
+          "Homeroom": "Homeroom assignment"
+        }
+      },
       "Vendor": {
         "type": "object",
         "description": "A vendor in the invoicing system. Vendors represent external suppliers or service providers that can be associated with utility invoices.",
@@ -112563,7 +112671,7 @@
   "x-merge-metadata": {
     "profileId": "stoplight",
     "profileName": "Stoplight Documentation",
-    "generatedAt": "2026-03-04T17:38:12Z",
+    "generatedAt": "2026-03-09T17:58:54Z",
     "removedPathsCount": 1034,
     "keptPathsCount": 792,
     "schemasPruned": 566,

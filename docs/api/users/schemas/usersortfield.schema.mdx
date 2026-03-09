@@ -1,0 +1,33 @@
+---
+id: usersortfield
+title: "UserSortField"
+description: "Valid field names for sorting user search results. These correspond to columns in the UserDetails view. Use with the `$o` query parameter in the format `FieldName direction` (e.g., `FullName desc`)."
+sidebar_label: "UserSortField"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: "FullName"
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UserSortField"}
+>
+</Heading>
+
+
+
+Valid field names for sorting user search results. These correspond to columns in the UserDetails view. Use with the `$o` query parameter in the format `FieldName direction` (e.g., `FullName desc`).
+
+<Schema
+  schema={{"type":"string","description":"Valid field names for sorting user search results. These correspond to columns in the UserDetails view. Use with the `$o` query parameter in the format `FieldName direction` (e.g., `FullName desc`).","enum":["FullName","FullNameReversed","FirstName","LastName","Grade","LocationName","ModifiedDate","CreatedDate","UserId","RoleName","Homeroom"],"x-enum-descriptions":{"FullName":"Full name (first last) - default sort field","FullNameReversed":"Full name reversed (last, first)","FirstName":"First name only","LastName":"Last name only","Grade":"Grade level","LocationName":"Primary location name","ModifiedDate":"Date/time user was last modified","CreatedDate":"Date/time user record was created","UserId":"User unique identifier","RoleName":"User role name","Homeroom":"Homeroom assignment"},"title":"UserSortField"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1516,6 +1516,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/users/schemas/usersortfield",
+          label: "UserSortField",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/users/schemas/userupdaterequest",
           label: "UserUpdateRequest",
           className: "schema",

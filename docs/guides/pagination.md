@@ -213,21 +213,27 @@ The following ticket endpoints support the `$o` parameter with `TicketSortField`
 |-------|-------------|
 | `TicketNumber` | Ticket number (string sort) |
 | `TicketNumberSort` | Ticket number (numeric sort) |
+| `TicketId` | Ticket unique identifier |
 | `TicketCreatedDate` | Date ticket was created |
 | `TicketModifiedDate` | Date ticket was last modified |
-| `TicketStartedDate` | Date work started on ticket |
 | `TicketClosedDate` | Date ticket was closed |
 | `TicketDueDate` | Ticket due date |
 | `TicketSubject` | Ticket subject line |
 | `TicketPriority` | Priority level |
-| `TicketIsUrgent` | Urgent flag |
 | `TicketStatusName` | Status name |
 | `WorkflowStepName` | Current workflow step |
-| `IssueCategoryName` | Issue category |
-| `IssueTypeName` | Issue type |
+| `IssueCategoryId` | Issue category identifier |
+| `IssueTypeId` | Issue type identifier |
 | `LocationName` | Location name |
+| `LocationRoomName` | Location room name |
+| `AssignedUserFirstName` | Assigned agent (first name, then last) |
 | `AssignedTeamName` | Assigned team |
-| `ForName` | Requestor name |
+| `ForName` | Requestor full name |
+| `ForFirstName` | Requestor first name |
+| `ForLocationName` | Requestor location name |
+| `OwnerRole` | Requestor role name |
+| `IsClosed` | Closed/open status |
+| `SiteId` | Site identifier |
 | `OverallSurveyRating` | Survey rating |
 
 ### Asset Endpoints
@@ -245,24 +251,62 @@ The following asset endpoints support the `$o` parameter with `AssetSortField` v
 | Field | Description |
 |-------|-------------|
 | `AssetTag` | Asset tag identifier |
-| `AssetName` | Asset name |
 | `SerialNumber` | Serial number |
-| `ModelName` | Model name |
+| `ModelName` | Model name (default) |
 | `ManufacturerName` | Manufacturer name |
+| `ManufacturerModelName` | Combined manufacturer and model name |
 | `CategoryName` | Category name |
 | `LocationName` | Location name |
+| `LocationRoomName` | Location room name |
 | `AssetTypeName` | Asset type |
 | `AssetStatusTypeName` | Status type |
-| `OwnerLastName` | Owner's last name |
+| `AssetId` | Asset unique identifier |
+| `ParentAssetId` | Parent asset identifier |
+| `OwnerGrade` | Owner grade level |
+| `OwnerHomeroom` | Owner homeroom |
+| `OwnerRoleId` | Owner role (sorts by role name) |
 | `AssetCreatedDate` | Date asset was created |
 | `AssetModifiedDate` | Date asset was last modified |
-| `ModifiedDate` | Alias for AssetModifiedDate |
+| `ModifiedDate` | General modification date |
 | `PurchasedDate` | Purchase date |
 | `DeployedDate` | Deployment date |
 | `RetiredDate` | Retirement date |
-| `PurchasePrice` | Purchase price |
 | `WarrantyExpirationDate` | Warranty expiration |
 | `LastInventoryDate` | Last inventory date |
+| `LastVerificationDateTime` | Last verification date/time |
+| `AssetAuditPolicyStatusName` | Audit policy status name |
+| `HasOpenTickets` | Whether the asset has open tickets |
+| `FundingSourceTypeName` | Funding source type name |
+| `StorageUnitNumber` | Storage unit number |
+| `StorageSlotNumber` | Storage slot number |
+| `DueDate` | Checkout due date |
+| `TotalCost.TotalTimeOfLabor` | Total labor time |
+| `TotalCost.TotalCostOfLabor` | Total labor cost |
+| `TotalCost.TotalCostOfParts` | Total parts cost |
+| `TotalCost.TotalCostToDate` | Total cost to date |
+
+### User Endpoints
+
+The following user endpoints support the `$o` parameter with `UserSortField` values:
+
+- `POST /api/v1.0/users` - Search users
+- `GET /api/v1.0/users` - Search users (legacy GET)
+
+**Valid UserSortField Values:**
+
+| Field | Description |
+|-------|-------------|
+| `FullName` | Full name (first last) - default sort |
+| `FullNameReversed` | Full name reversed (last, first) |
+| `FirstName` | First name only |
+| `LastName` | Last name only |
+| `Grade` | Grade level |
+| `LocationName` | Primary location name |
+| `ModifiedDate` | Date user was last modified |
+| `CreatedDate` | Date user record was created |
+| `UserId` | User unique identifier |
+| `RoleName` | User role name |
+| `Homeroom` | Homeroom assignment |
 
 ### Survey Endpoints
 
