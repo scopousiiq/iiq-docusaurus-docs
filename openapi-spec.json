@@ -55422,7 +55422,7 @@
       "post": {
         "operationId": "getEventsByQueryPost",
         "summary": "Query events (POST)",
-        "description": "Queries events using a request-body filter list. Use this POST endpoint to apply complex criteria, such as event type, time window, location, or ownership filters, and to build reusable search workflows.\n\n**Prerequisites**\n- If filtering by **EventTypeId**, use [POST /api/v1.0/events/types/query](#/Events/getEventTypesByQueryPost) to retrieve `Items[].EventTypeId`.\n\n**Workflow Example**\n1. (Optional) Lookup event types: [POST /api/v1.0/events/types/query](#/Events/getEventTypesByQueryPost) -> extract `Items[].EventTypeId`.\n2. Build filters in `GetEventsRequest.Filters`.\n3. Submit query: [POST /api/v1.0/events/query](#/Events/getEventsByQueryPost).\n\n**Minimal Required Fields**: None. Filters are optional.",
+        "description": "Queries events using structured filters, paging, and sorting. This is the primary endpoint for searching and listing events in the IncidentIQ Events module. It supports advanced filtering by date, location, room, event type, status, organization, and custom fields.\n\n**IMPORTANT: RequestOptions Wrapper**\n\nThis endpoint uses the `RequestOptionParameter` pattern — all filters, paging, and sorting MUST be nested inside a `RequestOptions` object in the request body. Placing them at the root level will be silently ignored.\n\n**Filter Facet System**\n\nThis endpoint supports event-specific facets via the `RequestOptions.Filters` array. Each filter entry specifies a `Facet` key plus either `Ids` (for UUID-based facets) or `Values` (for expression-based facets):\n\n- **Scheduling**: `EventDate`, `EventDayOfWeek`, `EventTimeOfDay`, `DaysBeforeEvent`, `DaysAfterEvent`, `Upcoming`, `CreatedDate`\n- **Classification**: `EventType`, `EventStatus`, `Event`, `EventsInSeries`\n- **Location**: `EventLocation`, `EventRoom`, `EventRoomType`\n- **People**: `EventOwner`, `EventOrganization`, `EventOrganizationType`, `EventOrganizationStatus`, `ContactEmail`\n- **Insurance**: `InsuranceExpired`, `OrgInsuranceExpirationDate`\n- **Financial**: `FeeType`, `RateType`, `NumberOfAttendees`\n- **Custom Fields**: `EventCustomField` (append subtype: `text`, `number`, `datetime`, `users`, etc.)\n\nSee the `EventSearchFilter` schema for the complete `x-facet-definitions` reference documenting all facets with their required fields and value formats.\n\n**Filter Expression Syntax**\n- **Date facets** (`EventDate`, `CreatedDate`): Supports relative ranges (`range:year`, `range:today`, `range:tomorrow`) and explicit ranges (`daterange:MM/dd/yyyy-MM/dd/yyyy`). See `EventSearchFilter` for full syntax.\n- **Time facets** (`EventTimeOfDay`): Use `timerange:HH:mm-HH:mm` in 24-hour format (e.g., `timerange:06:00-12:00`).\n- **Numeric facets** (`NumberOfAttendees`, `DaysBeforeEvent`, `DaysAfterEvent`): Use `numoperator:<operator>:<value>` where operator is `equals`, `lessthan`, `lessthanequal`, `greaterthan`, or `greaterthanequal`.\n- **Boolean facets** (`InsuranceExpired`): Use `yes` or `no` as the value.\n- **Parameterless facets** (`Upcoming`): Just include the facet with no `Ids` or `Values` — returns future events excluding Canceled/Denied.\n\n**Prerequisites**\n- To filter by **EventType**, retrieve type IDs from [POST /api/v1.0/events/types/query](#/Events/getEventTypesByQueryPost) → extract `Items[].EventTypeId`.\n- To filter by **EventStatus**, retrieve status IDs from [POST /api/v1.0/events/status-types/query](#/Events/getEventStatusTypesByQueryPost) → extract `Items[].EventStatusTypeId`.\n- To filter by **EventLocation**, retrieve location IDs from [GET /api/v2.0/locations/view](#/Locations/getMyLocationsViewV2) → extract `Items[].LocationId`.\n- To filter by **EventOwner**, retrieve user IDs from [POST /api/v1.0/users](#/Users/searchUsersByQuery) → extract `Items[].UserId`.\n\n**Pagination and Sorting**\n\nUse `RequestOptions.Paging` to control pagination and sorting:\n\n| Field | Description | Example |\n|-------|-------------|---------|\n| `PageSize` | Records per page (default 20) | `50` |\n| `PageIndex` | Zero-based page index | `0` |\n| `SortField` | Field to sort by | `StartDatetime` |\n| `SortDirection` | `Ascending` or `Descending` | `Descending` |\n\nThe response `Paging` object provides `PageIndex`, `PageSize`, `PageCount`, and `TotalRows` for navigation.\n\n**Available Sort Fields**: `StartDatetime`, `EndDatetime`, `CreatedDate`, `ModifiedDate`, `Title`, `EventTag`\n\n**Workflow Examples**\n\n*Find all approved events this year:*\n```json\n{\n  \"RequestOptions\": {\n    \"Paging\": { \"PageSize\": 50 },\n    \"Filters\": [\n      { \"Facet\": \"EventDate\", \"Values\": [\"range:year\"] },\n      { \"Facet\": \"EventStatus\", \"Ids\": [\"<ApprovedStatusId>\"] }\n    ]\n  }\n}\n```\n\n*Find upcoming events at a specific location:*\n```json\n{\n  \"RequestOptions\": {\n    \"Paging\": { \"PageSize\": 25, \"SortField\": \"StartDatetime\", \"SortDirection\": \"Ascending\" },\n    \"Filters\": [\n      { \"Facet\": \"Upcoming\" },\n      { \"Facet\": \"EventLocation\", \"Ids\": [\"<LocationId>\"] }\n    ]\n  }\n}\n```\n\n*Find events with 50+ attendees in the next 7 days:*\n```json\n{\n  \"RequestOptions\": {\n    \"Filters\": [\n      { \"Facet\": \"DaysBeforeEvent\", \"Values\": [\"numoperator:lessthanequal:7\"] },\n      { \"Facet\": \"NumberOfAttendees\", \"Values\": [\"numoperator:greaterthanequal:50\"] }\n    ]\n  }\n}\n```\n\n**Performance Considerations**\n- Begin with narrow filter combinations (date range + status) to avoid scanning the entire event corpus.\n- Cache supporting metadata (event types, status types, locations) rather than issuing lookups per request.\n- Use moderate page sizes (25–50) for optimal response times.\n\n**Related endpoints**\n- [POST /api/v1.0/events/types/query](#/Events/getEventTypesByQueryPost) — retrieve event type IDs for `EventType` facet.\n- [POST /api/v1.0/events/status-types/query](#/Events/getEventStatusTypesByQueryPost) — retrieve status type IDs for `EventStatus` facet.\n- [POST /api/v1.0/events/query/withdeleted](#/Events/getEventsByQueryWithDeletedPost) — same query interface including soft-deleted events.\n- [POST /api/v1.0/events/for/{UserId}](#/Events/getUserEventsPost) — query events for a specific user.",
         "tags": [
           "Events"
         ],
@@ -82634,16 +82634,333 @@
           }
         }
       },
+      "EventSearchFilter": {
+        "type": "object",
+        "description": "Filter definition for event search queries. This schema is the event-specific implementation of the universal `FilterMatch` pattern used across all Incident IQ search endpoints. Events use the `RequestOptions` wrapper — filters go inside `RequestOptions.Filters`, not at the request root. See `EventSearchFacetKey` for the supported event facets.",
+        "properties": {
+          "Facet": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EventSearchFacetKey"
+              }
+            ],
+            "description": "Facet key to filter on. See `EventSearchFacetKey` enum for all supported values."
+          },
+          "Ids": {
+            "type": "array",
+            "description": "Array of UUIDs for entity-based facets (e.g., EventType, EventStatus, EventLocation, EventRoom, EventOwner, EventOrganization).",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": [
+              "a7f05aef-30c8-4b1d-8120-a9d9295efa58"
+            ]
+          },
+          "Values": {
+            "type": "array",
+            "description": "Array of string values for expression-based facets. Syntax varies by facet type:\n\n- **Date facets** (`EventDate`, `CreatedDate`, `OrgInsuranceExpirationDate`): `range:year`, `range:today`, `daterange:MM/dd/yyyy-MM/dd/yyyy`, `range:nextdays:60`\n- **Time facets** (`EventTimeOfDay`): `timerange:HH:mm-HH:mm`\n- **Numeric facets** (`NumberOfAttendees`, `DaysBeforeEvent`, `DaysAfterEvent`): `numoperator:<op>:<value>` where op is `equals`, `lessthan`, `lessthanequal`, `greaterthan`, `greaterthanequal`\n- **Boolean facets** (`InsuranceExpired`): `yes` or `no`\n- **Day of week** (`EventDayOfWeek`): Day name, e.g., `Monday`",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "daterange:03/27/2026-12/31/2026"
+            ]
+          },
+          "Op": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DataFilterOperations"
+              }
+            ],
+            "description": "Filter operation. Use `Equal` (default) to include matches, `NotEqual` to exclude them."
+          },
+          "CustomFieldTypeId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Custom field type ID when the facet targets a custom field (e.g., `EventCustomField`).",
+            "nullable": true,
+            "x-obtained-from": {
+              "operationId": "getCustomFieldTypeById",
+              "endpoint": "GET /api/v1.0/custom-fields/types/{customFieldTypeId}",
+              "responseField": "CustomFieldTypeId"
+            }
+          },
+          "ComplexEditorPath": {
+            "type": "string",
+            "description": "JSON path for filtering within complex custom field editor values."
+          }
+        },
+        "required": [
+          "Facet"
+        ],
+        "example": {
+          "Facet": "EventDate",
+          "Values": [
+            "daterange:03/27/2026-12/31/2026"
+          ],
+          "Op": "Equal"
+        },
+        "x-facet-definitions": {
+          "_comment": "Event-specific facet definitions organized by category. See EventSearchFacetKey enum for complete list.",
+          "Event": {
+            "fields": {
+              "Ids": "EventId"
+            },
+            "description": "Filters for a specific event by ID."
+          },
+          "EventStatus": {
+            "fields": {
+              "Ids": "EventStatusTypeId"
+            },
+            "description": "Filters by event approval status (Approved, Pending Approval, Conflict Pending, Denied, Canceled).",
+            "sourceEndpoint": "POST /api/v1.0/events/status-types/query"
+          },
+          "EventType": {
+            "fields": {
+              "Ids": "EventTypeId"
+            },
+            "description": "Filters by event category (Assembly, Athletic Event, Book Fair, Conference, etc.). Use Guid.Empty to match events with no type assigned.",
+            "sourceEndpoint": "POST /api/v1.0/events/types/query"
+          },
+          "EventsInSeries": {
+            "fields": {},
+            "description": "Filters to events that belong to a recurring series."
+          },
+          "EventDate": {
+            "fields": {
+              "Values": "DateExpression"
+            },
+            "description": "Filters by event date using date expressions. Supports relative ranges and explicit date ranges.",
+            "examples": [
+              "range:year",
+              "range:today",
+              "range:tomorrow",
+              "range:yesterday",
+              "daterange:01/01/2026-12/31/2026",
+              "daterange:03/27/2026-12/31/2099"
+            ]
+          },
+          "EventDayOfWeek": {
+            "fields": {
+              "Values": "DayOfWeek"
+            },
+            "description": "Filters by the day of week the event falls on.",
+            "examples": [
+              "Monday",
+              "Wednesday",
+              "Friday"
+            ]
+          },
+          "EventTimeOfDay": {
+            "fields": {
+              "Values": "TimeRange"
+            },
+            "description": "Filters by time of day range using 24-hour format.",
+            "examples": [
+              "timerange:06:00-12:00",
+              "timerange:12:00-18:00",
+              "timerange:18:00-23:59"
+            ]
+          },
+          "DaysBeforeEvent": {
+            "fields": {
+              "Values": "NumericExpression"
+            },
+            "description": "Filters by number of days until the event starts (relative to today).",
+            "examples": [
+              "numoperator:lessthan:7",
+              "numoperator:equals:0",
+              "numoperator:greaterthanequal:30"
+            ]
+          },
+          "DaysAfterEvent": {
+            "fields": {
+              "Values": "NumericExpression"
+            },
+            "description": "Filters by number of days since the event ended (relative to today).",
+            "examples": [
+              "numoperator:lessthan:7",
+              "numoperator:greaterthan:30"
+            ]
+          },
+          "Upcoming": {
+            "fields": {},
+            "description": "Parameterless filter that returns only future events excluding Canceled and Denied statuses. No Values or Ids needed — just include the facet."
+          },
+          "CreatedDate": {
+            "fields": {
+              "Values": "DateExpression"
+            },
+            "description": "Filters by the date the event record was created.",
+            "examples": [
+              "range:thisweek",
+              "range:lastdays:30"
+            ]
+          },
+          "EventLocation": {
+            "fields": {
+              "Ids": "LocationId"
+            },
+            "description": "Filters by event location/building.",
+            "sourceEndpoint": "GET /api/v2.0/locations/view"
+          },
+          "EventRoom": {
+            "fields": {
+              "Ids": "LocationRoomId"
+            },
+            "description": "Filters by specific room within a location."
+          },
+          "EventRoomType": {
+            "fields": {
+              "Ids": "LocationRoomTypeId"
+            },
+            "description": "Filters by room type/category (e.g., gymnasium, auditorium, classroom)."
+          },
+          "EventOwner": {
+            "fields": {
+              "Ids": "UserId"
+            },
+            "description": "Filters by the event owner/requestor.",
+            "sourceEndpoint": "POST /api/v1.0/users"
+          },
+          "EventOrganization": {
+            "fields": {
+              "Ids": "OrganizationId"
+            },
+            "description": "Filters by the organization associated with the event."
+          },
+          "EventOrganizationType": {
+            "fields": {
+              "Ids": "OrganizationTypeId"
+            },
+            "description": "Filters by organization type."
+          },
+          "EventOrganizationStatus": {
+            "fields": {
+              "Ids": "OrganizationStatusTypeId"
+            },
+            "description": "Filters by organization approval status."
+          },
+          "ContactEmail": {
+            "fields": {
+              "Values": "Email"
+            },
+            "description": "Filters by the organization contact email address."
+          },
+          "InsuranceExpired": {
+            "fields": {
+              "Values": "Boolean"
+            },
+            "description": "Filters events by whether the associated organization's insurance has expired.",
+            "examples": [
+              "yes",
+              "no"
+            ]
+          },
+          "OrgInsuranceExpirationDate": {
+            "fields": {
+              "Values": "DateExpression"
+            },
+            "description": "Filters by the organization's insurance expiration date.",
+            "examples": [
+              "daterange:20260101-20261231",
+              "range:nextdays:60"
+            ]
+          },
+          "NumberOfAttendees": {
+            "fields": {
+              "Values": "NumericExpression"
+            },
+            "description": "Filters by expected number of attendees.",
+            "examples": [
+              "numoperator:greaterthan:50",
+              "numoperator:equals:100"
+            ]
+          },
+          "FeeType": {
+            "fields": {
+              "Ids": "FeeTypeId"
+            },
+            "description": "Filters by fee type."
+          },
+          "RateType": {
+            "fields": {
+              "Ids": "RateTypeId"
+            },
+            "description": "Filters by rate type."
+          },
+          "EventField": {
+            "fields": {
+              "Values": "FieldValue"
+            },
+            "description": "Filters by event field values."
+          },
+          "EventCustomField": {
+            "fields": {
+              "Values": "Varies",
+              "CustomFieldTypeId": "CustomFieldTypeId"
+            },
+            "description": "Filters by custom field values. Append the field subtype to the facet name (e.g., `EventCustomFieldtext`, `EventCustomFieldnumber`, `EventCustomFielddatetime`, `EventCustomFieldusers`). Requires `CustomFieldTypeId` to identify the specific custom field."
+          }
+        }
+      },
       "GetEventsRequest": {
         "type": "object",
-        "description": "Query parameters for retrieving events.",
+        "description": "Request body for querying events via [POST /api/v1.0/events/query](#/Events/getEventsByQueryPost). This model extends `RequestOptionParameter` — filters, paging, and sorting are nested inside the `RequestOptions` wrapper, NOT at the request root.\n\n**Correct structure**:\n```json\n{\n  \"RequestOptions\": {\n    \"Paging\": { \"PageSize\": 50, \"PageIndex\": 0, \"SortField\": \"StartDatetime\", \"SortDirection\": \"Ascending\" },\n    \"Filters\": [{ \"Facet\": \"EventDate\", \"Values\": [\"range:year\"] }]\n  },\n  \"Strategy\": \"Default\"\n}\n```\n\n**Common mistake**: Placing `Filters` or `Paging` at the root level will be silently ignored — always nest them inside `RequestOptions`.\n\nSee `EventSearchFilter` for the complete list of supported event facets with value formats and examples. See `RequestOptions` for paging and sorting documentation.",
         "properties": {
+          "RequestOptions": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RequestOptions"
+              }
+            ],
+            "type": "object",
+            "nullable": true,
+            "description": "Standard request options including paging, sorting, and filters. Use `Filters` to apply event-specific facets (see `EventSearchFilter` and `EventSearchFacetKey` for available facets). Use `Paging` to control page size, page index, and sort order."
+          },
+          "Strategy": {
+            "type": "string",
+            "enum": [
+              "Default",
+              "CreateTicket",
+              "PublicCalendar"
+            ],
+            "default": "Default",
+            "description": "Query strategy controlling result scope. `Default` returns standard results. `CreateTicket` filters events relevant to ticket creation workflows. `PublicCalendar` returns only publicly visible calendar events (used by the public event widget)."
+          },
           "Filters": {
             "type": "array",
+            "description": "Event-specific filters to include in `RequestOptions.Filters`. Each filter entry follows the `EventSearchFilter` structure — specify a `Facet` key plus `Ids` (for UUID-based facets) or `Values` (for expression-based facets). See `EventSearchFacetKey` for all supported facet names.",
             "items": {
-              "$ref": "#/components/schemas/DataFilter"
+              "$ref": "#/components/schemas/EventSearchFilter"
             }
           }
+        },
+        "example": {
+          "RequestOptions": {
+            "Paging": {
+              "PageSize": 25,
+              "PageIndex": 0,
+              "SortField": "StartDatetime",
+              "SortDirection": "Descending"
+            },
+            "Filters": [
+              {
+                "Facet": "EventDate",
+                "Values": [
+                  "daterange:03/27/2026-12/31/2026"
+                ]
+              },
+              {
+                "Facet": "EventStatus",
+                "Ids": [
+                  "7beff483-d1e4-46b2-a590-7e0e16a8fe26"
+                ]
+              }
+            ]
+          },
+          "Strategy": "Default"
         }
       },
       "BulkJobEventRequest": {
@@ -85052,6 +85369,38 @@
         "required": [
           "ItemId",
           "Item"
+        ]
+      },
+      "EventSearchFacetKey": {
+        "type": "string",
+        "description": "Facet keys for event search. The supported facets are organized by category:\n\n## Event Identity & Status\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `Event` | Specific event by ID | UUID |\n| `EventStatus` | Event approval status | UUID |\n| `EventType` | Event category/type | UUID |\n| `EventsInSeries` | Events belonging to a series | Boolean |\n\n## Scheduling & Dates\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `EventDate` | Event date range | DateExpression (`range:year`, `range:today`, `daterange:MM/dd/yyyy-MM/dd/yyyy`) |\n| `EventDayOfWeek` | Day of week filter | DayOfWeek name (`Monday`, `Wednesday`, etc.) |\n| `EventTimeOfDay` | Time of day range | TimeRange (`timerange:HH:mm-HH:mm`) |\n| `DaysBeforeEvent` | Days until event starts | NumericExpression (`numoperator:lessthan:5`) |\n| `DaysAfterEvent` | Days since event ended | NumericExpression |\n| `Upcoming` | Future non-cancelled events | Parameterless |\n| `CreatedDate` | Record creation date | DateExpression |\n\n## Location & Rooms\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `EventLocation` | Event location/building | UUID |\n| `EventRoom` | Specific room | UUID |\n| `EventRoomType` | Room type/category | UUID |\n\n## People & Organizations\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `EventOwner` | Event owner/requestor | UUID |\n| `EventOrganization` | Associated organization | UUID |\n| `EventOrganizationType` | Organization type | UUID |\n| `EventOrganizationStatus` | Organization status | UUID |\n| `ContactEmail` | Organization contact email | String |\n\n## Insurance & Compliance\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `InsuranceExpired` | Organization insurance expired | Boolean (`yes`/`no`) |\n| `OrgInsuranceExpirationDate` | Insurance expiration date | DateExpression |\n\n## Financial\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `FeeType` | Fee type | UUID |\n| `RateType` | Rate type | UUID |\n| `NumberOfAttendees` | Expected attendee count | NumericExpression |\n\n## Custom & Extended\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `EventField` | Event field values | String |\n| `EventCustomField` | Custom field values (append subtype: `text`, `number`, `datetime`, `users`, `assets`, `locations`, `multiselect`, `phone`, `complex`) | Varies |\n\nCall `/api/v1.0/filters/for/entitytype/{entityTypeId}` to retrieve the latest supported keys.",
+        "enum": [
+          "ContactEmail",
+          "CreatedDate",
+          "DaysAfterEvent",
+          "DaysBeforeEvent",
+          "Event",
+          "EventCustomField",
+          "EventDate",
+          "EventDayOfWeek",
+          "EventField",
+          "EventLocation",
+          "EventOrganization",
+          "EventOrganizationStatus",
+          "EventOrganizationType",
+          "EventOwner",
+          "EventRoom",
+          "EventRoomType",
+          "EventsInSeries",
+          "EventStatus",
+          "EventTimeOfDay",
+          "EventType",
+          "FeeType",
+          "InsuranceExpired",
+          "NumberOfAttendees",
+          "OrgInsuranceExpirationDate",
+          "RateType",
+          "Upcoming"
         ]
       },
       "FundingSource": {
@@ -93814,8 +94163,8 @@
             "format": "uuid",
             "description": "Unique identifier for the supplier. Required when updating by IDs to identify which supplier to update.",
             "x-obtained-from": {
-              "operationId": "getSuppliersByQuery",
-              "endpoint": "POST /api/v1.0/suppliers",
+              "operationId": "listPartSuppliers",
+              "endpoint": "GET /api/v1.0/parts/suppliers",
               "responseField": "Items[].SupplierId"
             }
           },
@@ -98917,11 +99266,11 @@
           "LocationRoomId": {
             "type": "string",
             "format": "uuid",
-            "description": "UUID of the specific room within the location. Obtain via [POST /api/v2.0/locations/rooms/query](#/Locations/queryLocationRooms) and read `Items[].LocationRoomId` from the response.",
+            "description": "UUID of the specific room within the location. Obtain via [POST /api/v2.0/locations/rooms/query](#/Locations/searchLocationRooms) and read `Items[].LocationRoomId` from the response.",
             "nullable": true,
             "example": "f5186c41-7e78-e611-80f1-000c29ab80b0",
             "x-obtained-from": {
-              "operationId": "queryLocationRooms",
+              "operationId": "searchLocationRooms",
               "endpoint": "POST /api/v2.0/locations/rooms/query",
               "responseField": "Items[].LocationRoomId"
             }
@@ -111056,6 +111405,42 @@
       }
     },
     {
+      "name": "Bulk",
+      "description": "Bulk background job operations for managing multiple records in a single asynchronous operation",
+      "x-iiq-docs": {
+        "sections": [
+          {
+            "id": "asset-types",
+            "title": "Asset Type Operations"
+          },
+          {
+            "id": "flow-procedures",
+            "title": "Flow Procedure Operations"
+          },
+          {
+            "id": "inventory-items",
+            "title": "Inventory Item Operations"
+          },
+          {
+            "id": "location-rooms",
+            "title": "Location Room Operations"
+          },
+          {
+            "id": "entity",
+            "title": "Entity Operations"
+          },
+          {
+            "id": "assets-categories",
+            "title": "Asset Category Operations"
+          },
+          {
+            "id": "permission-policies",
+            "title": "Permission Policy Operations"
+          }
+        ]
+      }
+    },
+    {
       "name": "Calendar Events",
       "description": "Calendar event management - create, update, delete, and query scheduling events linked to calendars, tickets, and users",
       "x-iiq-docs": {
@@ -111671,6 +112056,14 @@
           {
             "id": "timeline",
             "title": "Action Timeline"
+          },
+          {
+            "id": "purchase-order-status-types",
+            "title": "Purchase Order Status Types"
+          },
+          {
+            "id": "purchase-order-types",
+            "title": "Purchase Order Types"
           }
         ]
       }
@@ -111852,6 +112245,26 @@
       }
     },
     {
+      "name": "Location Types",
+      "description": "Location type configuration — create, update, delete, and query the type classifications (e.g., School, Warehouse, Office) used to categorize locations",
+      "x-iiq-docs": {
+        "sections": [
+          {
+            "id": "listing",
+            "title": "Searching & Listing"
+          },
+          {
+            "id": "details",
+            "title": "Location Type Details"
+          },
+          {
+            "id": "managing",
+            "title": "Creating, Updating & Deleting"
+          }
+        ]
+      }
+    },
+    {
       "name": "Locations",
       "description": "Location hierarchy - districts, schools, buildings, rooms",
       "x-iiq-docs": {
@@ -111883,6 +112296,10 @@
           {
             "id": "rooms-availability",
             "title": "Room Availability"
+          },
+          {
+            "id": "room-types",
+            "title": "Room Types"
           }
         ]
       }
@@ -112116,6 +112533,34 @@
       }
     },
     {
+      "name": "PermissionPolicies",
+      "description": "Permission policy management for the next-generation permissions system",
+      "x-iiq-docs": {
+        "sections": [
+          {
+            "id": "listing",
+            "title": "Listing & Querying"
+          },
+          {
+            "id": "management",
+            "title": "Policy Management"
+          },
+          {
+            "id": "status",
+            "title": "Status Management"
+          },
+          {
+            "id": "bulk",
+            "title": "Bulk Operations"
+          },
+          {
+            "id": "admin",
+            "title": "Administration"
+          }
+        ]
+      }
+    },
+    {
       "name": "Permissions",
       "description": "Permission and access control management",
       "x-iiq-docs": {
@@ -112143,6 +112588,30 @@
           {
             "id": "revisions",
             "title": "Policy & User Revisions"
+          },
+          {
+            "id": "policies",
+            "title": "Policy Management"
+          },
+          {
+            "id": "available-rights",
+            "title": "Available Permission Rights"
+          },
+          {
+            "id": "modules",
+            "title": "Permission Modules"
+          },
+          {
+            "id": "effective-rights",
+            "title": "Effective Rights"
+          },
+          {
+            "id": "check",
+            "title": "Permission Checking"
+          },
+          {
+            "id": "filters",
+            "title": "Permission Filters"
           }
         ]
       }
@@ -112327,6 +112796,18 @@
           {
             "id": "retrieving",
             "title": "Retrieving Settings"
+          },
+          {
+            "id": "managing",
+            "title": "Managing Settings"
+          },
+          {
+            "id": "mappings",
+            "title": "Data Mappings"
+          },
+          {
+            "id": "cache",
+            "title": "Cache Management"
           }
         ]
       }
@@ -112671,10 +113152,10 @@
   "x-merge-metadata": {
     "profileId": "stoplight",
     "profileName": "Stoplight Documentation",
-    "generatedAt": "2026-03-09T17:58:54Z",
-    "removedPathsCount": 1034,
+    "generatedAt": "2026-03-27T16:28:04Z",
+    "removedPathsCount": 1128,
     "keptPathsCount": 792,
-    "schemasPruned": 566,
+    "schemasPruned": 620,
     "orderingApplied": true,
     "profileDescription": "Locked specification for Stoplight partner documentation. Uses manifest-based allowlist - new endpoints must be explicitly added.",
     "removedPathsSample": [

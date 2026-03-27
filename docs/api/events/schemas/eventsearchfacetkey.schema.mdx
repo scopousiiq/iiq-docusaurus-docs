@@ -1,0 +1,89 @@
+---
+id: eventsearchfacetkey
+title: "EventSearchFacetKey"
+description: "Facet keys for event search. The supported facets are organized by category:"
+sidebar_label: "EventSearchFacetKey"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: "ContactEmail"
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"EventSearchFacetKey"}
+>
+</Heading>
+
+
+
+Facet keys for event search. The supported facets are organized by category:
+
+## Event Identity & Status
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `Event` | Specific event by ID | UUID |
+| `EventStatus` | Event approval status | UUID |
+| `EventType` | Event category/type | UUID |
+| `EventsInSeries` | Events belonging to a series | Boolean |
+
+## Scheduling & Dates
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `EventDate` | Event date range | DateExpression (`range:year`, `range:today`, `daterange:MM/dd/yyyy-MM/dd/yyyy`) |
+| `EventDayOfWeek` | Day of week filter | DayOfWeek name (`Monday`, `Wednesday`, etc.) |
+| `EventTimeOfDay` | Time of day range | TimeRange (`timerange:HH:mm-HH:mm`) |
+| `DaysBeforeEvent` | Days until event starts | NumericExpression (`numoperator:lessthan:5`) |
+| `DaysAfterEvent` | Days since event ended | NumericExpression |
+| `Upcoming` | Future non-cancelled events | Parameterless |
+| `CreatedDate` | Record creation date | DateExpression |
+
+## Location & Rooms
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `EventLocation` | Event location/building | UUID |
+| `EventRoom` | Specific room | UUID |
+| `EventRoomType` | Room type/category | UUID |
+
+## People & Organizations
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `EventOwner` | Event owner/requestor | UUID |
+| `EventOrganization` | Associated organization | UUID |
+| `EventOrganizationType` | Organization type | UUID |
+| `EventOrganizationStatus` | Organization status | UUID |
+| `ContactEmail` | Organization contact email | String |
+
+## Insurance & Compliance
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `InsuranceExpired` | Organization insurance expired | Boolean (`yes`/`no`) |
+| `OrgInsuranceExpirationDate` | Insurance expiration date | DateExpression |
+
+## Financial
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `FeeType` | Fee type | UUID |
+| `RateType` | Rate type | UUID |
+| `NumberOfAttendees` | Expected attendee count | NumericExpression |
+
+## Custom & Extended
+| Facet | Description | Value Type |
+|-------|-------------|------------|
+| `EventField` | Event field values | String |
+| `EventCustomField` | Custom field values (append subtype: `text`, `number`, `datetime`, `users`, `assets`, `locations`, `multiselect`, `phone`, `complex`) | Varies |
+
+Call `/api/v1.0/filters/for/entitytype/{entityTypeId}` to retrieve the latest supported keys.
+
+<Schema
+  schema={{"type":"string","description":"Facet keys for event search. The supported facets are organized by category:\n\n## Event Identity & Status\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `Event` | Specific event by ID | UUID |\n| `EventStatus` | Event approval status | UUID |\n| `EventType` | Event category/type | UUID |\n| `EventsInSeries` | Events belonging to a series | Boolean |\n\n## Scheduling & Dates\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `EventDate` | Event date range | DateExpression (`range:year`, `range:today`, `daterange:MM/dd/yyyy-MM/dd/yyyy`) |\n| `EventDayOfWeek` | Day of week filter | DayOfWeek name (`Monday`, `Wednesday`, etc.) |\n| `EventTimeOfDay` | Time of day range | TimeRange (`timerange:HH:mm-HH:mm`) |\n| `DaysBeforeEvent` | Days until event starts | NumericExpression (`numoperator:lessthan:5`) |\n| `DaysAfterEvent` | Days since event ended | NumericExpression |\n| `Upcoming` | Future non-cancelled events | Parameterless |\n| `CreatedDate` | Record creation date | DateExpression |\n\n## Location & Rooms\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `EventLocation` | Event location/building | UUID |\n| `EventRoom` | Specific room | UUID |\n| `EventRoomType` | Room type/category | UUID |\n\n## People & Organizations\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `EventOwner` | Event owner/requestor | UUID |\n| `EventOrganization` | Associated organization | UUID |\n| `EventOrganizationType` | Organization type | UUID |\n| `EventOrganizationStatus` | Organization status | UUID |\n| `ContactEmail` | Organization contact email | String |\n\n## Insurance & Compliance\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `InsuranceExpired` | Organization insurance expired | Boolean (`yes`/`no`) |\n| `OrgInsuranceExpirationDate` | Insurance expiration date | DateExpression |\n\n## Financial\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `FeeType` | Fee type | UUID |\n| `RateType` | Rate type | UUID |\n| `NumberOfAttendees` | Expected attendee count | NumericExpression |\n\n## Custom & Extended\n| Facet | Description | Value Type |\n|-------|-------------|------------|\n| `EventField` | Event field values | String |\n| `EventCustomField` | Custom field values (append subtype: `text`, `number`, `datetime`, `users`, `assets`, `locations`, `multiselect`, `phone`, `complex`) | Varies |\n\nCall `/api/v1.0/filters/for/entitytype/{entityTypeId}` to retrieve the latest supported keys.","enum":["ContactEmail","CreatedDate","DaysAfterEvent","DaysBeforeEvent","Event","EventCustomField","EventDate","EventDayOfWeek","EventField","EventLocation","EventOrganization","EventOrganizationStatus","EventOrganizationType","EventOwner","EventRoom","EventRoomType","EventsInSeries","EventStatus","EventTimeOfDay","EventType","FeeType","InsuranceExpired","NumberOfAttendees","OrgInsuranceExpirationDate","RateType","Upcoming"],"title":"EventSearchFacetKey"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

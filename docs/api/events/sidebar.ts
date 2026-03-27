@@ -488,6 +488,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/events/schemas/eventsearchfacetkey",
+          label: "EventSearchFacetKey",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/events/schemas/eventsearchfilter",
+          label: "EventSearchFilter",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/events/schemas/eventseriesdata",
           label: "EventSeriesData",
           className: "schema",
@@ -662,6 +674,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/events/schemas/pagingoptions",
+          label: "PagingOptions",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/events/schemas/requestoptions",
+          label: "RequestOptions",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/events/schemas/schedulevalidationlistresponse",
           label: "ScheduleValidationListResponse",
           className: "schema",
@@ -694,6 +718,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/events/schemas/softvalidationerror",
           label: "SoftValidationError",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/events/schemas/sortoptions",
+          label: "SortOptions",
           className: "schema",
         },
         {

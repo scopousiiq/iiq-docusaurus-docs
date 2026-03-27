@@ -1,0 +1,33 @@
+---
+id: pagingoptions
+title: "PagingOptions"
+description: "Pagination and sorting options for list requests"
+sidebar_label: "PagingOptions"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"PageSize":50,"PageIndex":0,"SortField":"Name","SortDirection":"Ascending","SecondarySortOptions":[{"SortField":"string","SortDirection":"Ascending"}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"PagingOptions"}
+>
+</Heading>
+
+
+
+Pagination and sorting options for list requests
+
+<Schema
+  schema={{"type":"object","description":"Pagination and sorting options for list requests","properties":{"PageSize":{"type":"integer","description":"Number of records per page. Use -1 for unlimited (not recommended for large datasets).","default":-1,"example":50},"PageIndex":{"type":"integer","description":"Zero-based page index","default":0,"minimum":0,"example":0},"SortField":{"type":"string","nullable":true,"description":"Field name to sort results by. Available fields depend on the entity type.","example":"Name"},"SortDirection":{"type":"string","enum":["Ascending","Descending"],"description":"Sort direction for the primary sort field","default":"Ascending"},"SecondarySortOptions":{"type":"array","nullable":true,"items":{"type":"object","description":"Sort configuration for a single field","properties":{"SortField":{"type":"string","description":"Field name to sort by"},"SortDirection":{"type":"string","enum":["Ascending","Descending"],"description":"Sort direction","default":"Ascending"}},"required":["SortField"],"title":"SortOptions"},"description":"Additional sort criteria applied after the primary sort"}},"title":"PagingOptions"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

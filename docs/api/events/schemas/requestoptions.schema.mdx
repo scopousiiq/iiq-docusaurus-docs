@@ -1,0 +1,33 @@
+---
+id: requestoptions
+title: "RequestOptions"
+description: "Standard request options for list/search operations including field selection, pagination, and filtering. Based on C# `RequestOptions` from `Spark.Shared.Models.DataFramework`."
+sidebar_label: "RequestOptions"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Fields":["string"],"Paging":{"PageSize":50,"PageIndex":0,"SortField":"Name","SortDirection":"Ascending","SecondarySortOptions":[{"SortField":"string","SortDirection":"Ascending"}]},"Filters":[{"Facet":"string","Ids":["3fa85f64-5717-4562-b3fc-2c963f66afa6"],"Values":["string"],"Op":"None","CustomFieldTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ComplexEditorPath":"string","Items":[null]}],"Collation":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"RequestOptions"}
+>
+</Heading>
+
+
+
+Standard request options for list/search operations including field selection, pagination, and filtering. Based on C# `RequestOptions` from `Spark.Shared.Models.DataFramework`.
+
+<Schema
+  schema={{"type":"object","description":"Standard request options for list/search operations including field selection, pagination, and filtering. Based on C# `RequestOptions` from `Spark.Shared.Models.DataFramework`.","properties":{"Fields":{"type":"array","nullable":true,"items":{"type":"string"},"description":"List of field names to include in the response (sparse fieldsets). If null/empty, all fields are returned."},"Paging":{"allOf":[{"type":"object","description":"Pagination and sorting options for list requests","properties":{"PageSize":{"type":"integer","description":"Number of records per page. Use -1 for unlimited (not recommended for large datasets).","default":-1,"example":50},"PageIndex":{"type":"integer","description":"Zero-based page index","default":0,"minimum":0,"example":0},"SortField":{"type":"string","nullable":true,"description":"Field name to sort results by. Available fields depend on the entity type.","example":"Name"},"SortDirection":{"type":"string","enum":["Ascending","Descending"],"description":"Sort direction for the primary sort field","default":"Ascending"},"SecondarySortOptions":{"type":"array","nullable":true,"items":{"type":"object","description":"Sort configuration for a single field","properties":{"SortField":{"type":"string","description":"Field name to sort by"},"SortDirection":{"type":"string","enum":["Ascending","Descending"],"description":"Sort direction","default":"Ascending"}},"required":["SortField"],"title":"SortOptions"},"description":"Additional sort criteria applied after the primary sort"}},"title":"PagingOptions"}],"nullable":true,"type":"object","description":"Pagination and sorting options"},"Filters":{"type":"array","nullable":true,"items":{"type":"object","description":"Filter condition for search/list operations. Based on C# `DataFilter` from `Spark.Shared.Models.DataFramework`. Supports both simple filters and nested filter groups.","properties":{"Facet":{"type":"string","description":"Field name or facet to filter on (e.g., 'Status', 'LocationId', 'CreatedDate')"},"Ids":{"type":"array","nullable":true,"items":{"type":"string","format":"uuid"},"description":"Array of UUIDs to filter by (for ID-based facets)"},"Values":{"type":"array","nullable":true,"items":{"type":"string"},"description":"Array of string values to filter by"},"Op":{"allOf":[{"type":"string","description":"Filter operations for DataFilter queries. Based on C# `DataFilterOperations` enum from `Spark.Shared.Enums`.","enum":["None","Equal","Greater","Less","GreaterOrEqual","LessOrEqual","StartsWith","EndsWith","Contains","NotEqual","NotGreater","NotLess","NotGreaterOrEqual","NotLessOrEqual"],"x-enum-descriptions":{"None":"No operation specified","Equal":"Equals (eq)","Greater":"Greater than (gt)","Less":"Less than (lt)","GreaterOrEqual":"Greater than or equal (ge)","LessOrEqual":"Less than or equal (le)","StartsWith":"String starts with","EndsWith":"String ends with","Contains":"String contains","NotEqual":"Not equal (ne)","NotGreater":"Not greater than (ng)","NotLess":"Not less than (nl)","NotGreaterOrEqual":"Not greater than or equal (nge)","NotLessOrEqual":"Not less than or equal (nle)"},"title":"DataFilterOperations"}],"description":"Filter operation to apply"},"CustomFieldTypeId":{"type":"string","format":"uuid","nullable":true,"description":"Custom field type ID (when filtering on custom fields)"},"ComplexEditorPath":{"type":"string","nullable":true,"description":"JSON path for filtering within complex editor values"},"Items":{"type":"array","nullable":true,"items":"circular(DataFilter)","description":"Nested filter conditions for complex AND/OR queries"}},"required":["Facet"],"title":"DataFilter"},"description":"Array of filter conditions to apply to the query"},"Collation":{"type":"string","nullable":true,"description":"Database collation for string comparisons (locale-specific sorting)"}},"title":"RequestOptions"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            
