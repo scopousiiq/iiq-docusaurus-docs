@@ -1,0 +1,33 @@
+---
+id: assetstatustype
+title: "AssetStatusType"
+description: "Full definition for an asset status type entry returned by GET /api/v1.0/assets/status/types."
+sidebar_label: "AssetStatusType"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AssetStatusTypeId":"deadbeef-1111-4111-8111-aaaaaaaaaaaa","SiteId":"44444444-4444-4444-8444-444444444444","Scope":"Site","Name":"Ready to Deploy","IsRetired":false,"SupportsNSAs":true}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetStatusType"}
+>
+</Heading>
+
+
+
+Full definition for an asset status type entry returned by GET /api/v1.0/assets/status/types.
+
+<Schema
+  schema={{"type":"object","description":"Full definition for an asset status type entry returned by GET /api/v1.0/assets/status/types.","properties":{"AssetStatusTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the status definition."},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site identifier when the status is scoped to a single location. `null` indicates a global status."},"Scope":{"type":"string","description":"Scope enum that determines where the status is visible (values such as `Global`, `Site`, or `System`)."},"Name":{"type":"string","description":"Display label for the status that appears in pickers and reports."},"IsRetired":{"type":"boolean","description":"True if applying this status should retire the asset."},"SupportsNSAs":{"type":"boolean","description":"Indicates whether the status is eligible for Non-Stock Assignment (NSA) workflows such as advanced deployments."}},"required":["AssetStatusTypeId","Scope","Name","IsRetired","SupportsNSAs"],"example":{"AssetStatusTypeId":"deadbeef-1111-4111-8111-aaaaaaaaaaaa","SiteId":"44444444-4444-4444-8444-444444444444","Scope":"Site","Name":"Ready to Deploy","IsRetired":false,"SupportsNSAs":true},"title":"AssetStatusType"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

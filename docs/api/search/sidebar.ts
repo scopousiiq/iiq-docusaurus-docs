@@ -16,6 +16,12 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
+          id: "api/search/global-search-v-2",
+          label: "Global multi-entity search (v2)",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
           id: "api/search/global-search",
           label: "Global multi-entity search",
           className: "api-method post",
@@ -24,12 +30,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/search/search-scan",
           label: "Quick search for tickets, assets, and users",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/search/search-v-2-s",
-          label: "Search Locations",
           className: "api-method post",
         },
       ],
@@ -58,6 +58,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/search/schemas/address",
           label: "Address",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/app",
+          label: "App",
           className: "schema",
         },
         {
@@ -104,6 +110,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/search/schemas/assetfundingtype",
+          label: "AssetFundingType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/assetinventorytype",
+          label: "AssetInventoryType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/search/schemas/assetmanufacturersummary",
           label: "AssetManufacturerSummary",
           className: "schema",
@@ -128,8 +146,20 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/search/schemas/assetstatustype",
+          label: "AssetStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/search/schemas/assettotalcost",
           label: "AssetTotalCost",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/assettype",
+          label: "AssetType",
           className: "schema",
         },
         {
@@ -158,6 +188,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/search/schemas/closereasontype",
+          label: "CloseReasonType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/search/schemas/complexeditorvalues",
           label: "ComplexEditorValues",
           className: "schema",
@@ -182,8 +218,32 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/search/schemas/department",
+          label: "Department",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/employmentstatus",
+          label: "EmploymentStatus",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/search/schemas/file",
           label: "File",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/filemetadata",
+          label: "FileMetaData",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/filemetadataazurevideo",
+          label: "FileMetaDataAzureVideo",
           className: "schema",
         },
         {
@@ -196,12 +256,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/search/schemas/forbiddenerror",
           label: "ForbiddenError",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/search/schemas/genericobject",
-          label: "GenericObject",
           className: "schema",
         },
         {
@@ -236,6 +290,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/search/schemas/helpfulnessstat",
+          label: "HelpfulnessStat",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/search/schemas/internalservererror",
           label: "InternalServerError",
           className: "schema",
@@ -250,6 +310,18 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/search/schemas/kbarticle",
           label: "KbArticle",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/kbarticlecustomfieldvalue",
+          label: "KbArticleCustomFieldValue",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/laborrateactivity",
+          label: "LaborRateActivity",
           className: "schema",
         },
         {
@@ -344,8 +416,14 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/search/schemas/ratelimiterror",
-          label: "RateLimitError",
+          id: "api/search/schemas/producttier",
+          label: "ProductTier",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/purchaseorderstatustype",
+          label: "PurchaseOrderStatusType",
           className: "schema",
         },
         {
@@ -368,8 +446,68 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/search/schemas/searchlistresponse",
+          label: "SearchListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/searchresult",
+          label: "SearchResult",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/simpleuser",
+          label: "SimpleUser",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/search/schemas/site",
           label: "Site",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/siteapphook",
+          label: "SiteAppHook",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/siteappsconfiguration",
+          label: "SiteAppsConfiguration",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/siteconfigurationsetting",
+          label: "SiteConfigurationSetting",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/sitekpi",
+          label: "SiteKpi",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/sitesettings",
+          label: "SiteSettings",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/sitestatus",
+          label: "SiteStatus",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/sitestatustype",
+          label: "SiteStatusType",
           className: "schema",
         },
         {
@@ -382,6 +520,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/search/schemas/softvalidationerror",
           label: "SoftValidationError",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/source",
+          label: "Source",
           className: "schema",
         },
         {
@@ -400,6 +544,18 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/search/schemas/ticket",
           label: "Ticket",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/ticketactivity",
+          label: "TicketActivity",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/ticketadditionaldetails",
+          label: "TicketAdditionalDetails",
           className: "schema",
         },
         {
@@ -440,6 +596,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/search/schemas/ticketsubtask",
+          label: "TicketSubtask",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/search/schemas/ticketusersummary",
           label: "TicketUserSummary",
           className: "schema",
@@ -464,6 +626,48 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/search/schemas/usercustomfieldvalue",
+          label: "UserCustomFieldValue",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/userdatamappinglookup",
+          label: "UserDataMappingLookup",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/userdatamappingsource",
+          label: "UserDataMappingSource",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/userdatamappings",
+          label: "UserDataMappings",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/usernotificationsettings",
+          label: "UserNotificationSettings",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/useroptions",
+          label: "UserOptions",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/useroptionslocations",
+          label: "UserOptionsLocations",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/search/schemas/userpermissions",
           label: "UserPermissions",
           className: "schema",
@@ -478,6 +682,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/search/schemas/validationerror",
           label: "ValidationError",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/search/schemas/view",
+          label: "View",
           className: "schema",
         },
       ],

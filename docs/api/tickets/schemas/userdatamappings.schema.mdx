@@ -1,0 +1,33 @@
+---
+id: userdatamappings
+title: "UserDataMappings"
+description: ""
+sidebar_label: "UserDataMappings"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"Username":{"AppId":"string"},"Role":{"AppId":"string"},"Grade":{"AppId":"string"},"Lookups":[{"Key":"string","AppId":"string","Value":"string"}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UserDataMappings"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"Username":{"type":"object","properties":{"AppId":{"type":"string"}},"required":["AppId"],"title":"UserDataMappingSource"},"Role":{"type":"object","properties":{"AppId":{"type":"string"}},"required":["AppId"],"title":"UserDataMappingSource"},"Grade":{"type":"object","properties":{"AppId":{"type":"string"}},"required":["AppId"],"title":"UserDataMappingSource"},"Lookups":{"type":"array","items":{"type":"object","properties":{"Key":{"type":"string"},"AppId":{"type":"string"},"Value":{"type":"string"}},"required":["Key","AppId","Value"],"title":"UserDataMappingLookup"}}},"additionalProperties":true,"title":"UserDataMappings"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

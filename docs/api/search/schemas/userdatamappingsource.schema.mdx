@@ -1,12 +1,12 @@
 ---
-id: genericobject
-title: "GenericObject"
+id: userdatamappingsource
+title: "UserDataMappingSource"
 description: ""
-sidebar_label: "GenericObject"
+sidebar_label: "UserDataMappingSource"
 hide_title: true
 hide_table_of_contents: true
 schema: true
-sample: {}
+sample: {"AppId":"string"}
 custom_edit_url: null
 ---
 
@@ -16,7 +16,7 @@ import Heading from "@theme/Heading";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"GenericObject"}
+  children={"UserDataMappingSource"}
 >
 </Heading>
 
@@ -25,7 +25,7 @@ import Heading from "@theme/Heading";
 
 
 <Schema
-  schema={{"type":"object","title":"GenericObject"}}
+  schema={{"type":"object","properties":{"AppId":{"type":"string"}},"required":["AppId"],"title":"UserDataMappingSource"}}
   schemaType={"response"}
 >
   

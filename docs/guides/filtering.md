@@ -51,7 +51,7 @@ All search endpoints accept a `Filters` array containing filter objects:
 | `Value` | string | Expression value. Used for keyword, date, and numeric facets. |
 | `Name` | string | Display label. Required for boolean facets (`"yes"` or `"no"`). |
 | `Negative` | boolean | When `true`, excludes matching records instead of including them. |
-| `GroupIndex` | integer | Groups filters for OR logic. Same index = OR, different index = AND. |
+| `GroupIndex` | integer | Groups filters. Within a group: same facet = OR, different facets = AND. Different groups are OR'd together. |
 
 ### Field Usage by Facet Type
 
@@ -175,21 +175,25 @@ Numeric facets use the format: `numoperator:<operator>:<value>`
 
 ## Advanced Filter Patterns
 
-### OR Logic with GroupIndex
+### Combining AND/OR with GroupIndex
 
-Use `GroupIndex` to create OR groups:
+`GroupIndex` controls how filters combine:
+
+- **Same GroupIndex, same facet** → OR (e.g., `status=Open` OR `status=InProgress`)
+- **Same GroupIndex, different facets** → AND (e.g., `status=Open` AND `location=HQ`)
+- **Different GroupIndex values** → the resulting groups are OR'd together
 
 ```json
 {
   "Filters": [
-    { "Facet": "status", "Id": "submitted-id", "GroupIndex": 1 },
-    { "Facet": "status", "Id": "assigned-id", "GroupIndex": 1 },
-    { "Facet": "agent", "Id": "agent-id", "GroupIndex": 0 }
+    { "Facet": "status", "Id": "submitted-id", "GroupIndex": 0 },
+    { "Facet": "status", "Id": "assigned-id",  "GroupIndex": 0 },
+    { "Facet": "agent",  "Id": "agent-id",     "GroupIndex": 0 }
   ]
 }
 ```
 
-Result: Tickets that are (Submitted **OR** Assigned) **AND** assigned to agent.
+Result: Tickets that are (Submitted **OR** Assigned) **AND** assigned to agent. The two `status` filters share a group and facet, so they OR together; the `agent` filter shares the group but has a different facet, so it ANDs with the status group.
 
 ### Exclusion with Negative
 

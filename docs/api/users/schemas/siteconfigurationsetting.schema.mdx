@@ -1,0 +1,33 @@
+---
+id: siteconfigurationsetting
+title: "SiteConfigurationSetting"
+description: "Individual configurable setting applied to the site."
+sidebar_label: "SiteConfigurationSetting"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SettingId":"38552db0-8944-480e-a4a2-c40a72dfa581","SettingTypeId":"2DMaps.Enabled","Label":"Enable Maps","Description":"string","Value":"string","Options":"string","AppliesTo":"Site","Scopes":["Global","Site"],"CategoryId":"5bdcadb3-7b1c-e911-9f2a-2818784a7157","CategoryName":"Beta Features","EditorTypeId":8,"EditorTypeName":"OnOff","ModifiedDate":"0001-01-01T00:00:00"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SiteConfigurationSetting"}
+>
+</Heading>
+
+
+
+Individual configurable setting applied to the site.
+
+<Schema
+  schema={{"type":"object","description":"Individual configurable setting applied to the site.","properties":{"SettingId":{"type":"string","format":"uuid","description":"Unique identifier for the setting entry.","example":"38552db0-8944-480e-a4a2-c40a72dfa581"},"SettingTypeId":{"type":"string","description":"Programmatic identifier for the setting.","example":"2DMaps.Enabled"},"Label":{"type":"string","description":"Display name presented in the UI.","example":"Enable Maps"},"Description":{"type":"string","description":"Long-form description of the setting's purpose."},"Value":{"type":"string","description":"Configured value for the setting.","nullable":true},"Options":{"type":"string","description":"Serialized options payload for select-style editors when applicable.","nullable":true},"AppliesTo":{"type":"string","description":"Scope that the setting applies to (for example, Site or Global).","example":"Site"},"Scopes":{"type":"array","description":"Scopes where the setting is available.","items":{"type":"string"},"example":["Global","Site"]},"CategoryId":{"type":"string","format":"uuid","description":"Identifier of the setting category.","example":"5bdcadb3-7b1c-e911-9f2a-2818784a7157"},"CategoryName":{"type":"string","description":"Name of the category containing the setting.","example":"Beta Features"},"EditorTypeId":{"type":"integer","description":"Numeric identifier of the editor type presented in the UI.","example":8},"EditorTypeName":{"type":"string","description":"Label for the editor type.","example":"OnOff"},"ModifiedDate":{"type":"string","format":"date-time","description":"Timestamp of the last modification to the setting.","example":"0001-01-01T00:00:00"}},"required":["SettingId","SettingTypeId","Label"],"title":"SiteConfigurationSetting"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -1,12 +1,12 @@
 ---
 id: usersummary
 title: "UserSummary"
-description: "Lightweight user representation for embedded references in other entities (e.g., CreatedBy, ModifiedBy, Owner)."
+description: "Minimal user summary embedded in response objects for CreatedBy/ModifiedBy fields."
 sidebar_label: "UserSummary"
 hide_title: true
 hide_table_of_contents: true
 schema: true
-sample: {"UserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"iiQ User","FirstName":"iiQ","LastName":"User","Email":"demo@incidentiq.com","Username":"demo@incidentiq.com","PhotoId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","RoleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","LocationName":"string"}
+sample: {"UserId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","Name":"iiQ User","FirstName":"iiQ","LastName":"User","Email":"demo@incidentiq.com"}
 custom_edit_url: null
 ---
 
@@ -22,10 +22,10 @@ import Heading from "@theme/Heading";
 
 
 
-Lightweight user representation for embedded references in other entities (e.g., CreatedBy, ModifiedBy, Owner).
+Minimal user summary embedded in response objects for CreatedBy/ModifiedBy fields.
 
 <Schema
-  schema={{"type":"object","description":"Lightweight user representation for embedded references in other entities (e.g., CreatedBy, ModifiedBy, Owner).","properties":{"UserId":{"type":"string","format":"uuid","description":"Unique identifier for the user","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}},"Name":{"type":"string","description":"Full display name of the user","example":"iiQ User"},"FirstName":{"type":"string","nullable":true,"description":"User's first name","example":"iiQ"},"LastName":{"type":"string","nullable":true,"description":"User's last name","example":"User"},"Email":{"type":"string","nullable":true,"description":"User's email address","example":"demo@incidentiq.com"},"Username":{"type":"string","nullable":true,"description":"User's login username","example":"demo@incidentiq.com"},"PhotoId":{"type":"string","format":"uuid","nullable":true,"description":"Reference to the user's profile photo"},"RoleId":{"type":"string","format":"uuid","nullable":true,"description":"Reference to the user's role"},"LocationId":{"type":"string","format":"uuid","nullable":true,"description":"UUID of the location. Obtain via [GET /api/v2.0/locations](/docs/api/locations/get-my-locations-v-2), extract `Items[].LocationId`.","x-obtained-from":{"operationId":"getMyLocationsV2","endpoint":"GET /api/v2.0/locations","responseField":"Items[].LocationId"}},"LocationName":{"type":"string","nullable":true,"description":"Display name of the user's primary location"}},"required":["UserId","Name"],"title":"UserSummary"}}
+  schema={{"type":"object","description":"Minimal user summary embedded in response objects for CreatedBy/ModifiedBy fields.","properties":{"UserId":{"type":"string","format":"uuid","description":"Unique identifier for the user.","x-obtained-from":{"operationId":"searchUsers","endpoint":"POST /api/v1.0/users","responseField":"Items[].UserId"}},"Name":{"type":"string","description":"Full display name of the user."},"FirstName":{"type":"string","description":"First name of the user."},"LastName":{"type":"string","description":"Last name of the user."},"Email":{"type":"string","format":"email","description":"Email address of the user."}},"example":{"UserId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","Name":"iiQ User","FirstName":"iiQ","LastName":"User","Email":"demo@incidentiq.com"},"title":"UserSummary"}}
   schemaType={"response"}
 >
   

@@ -1,0 +1,33 @@
+---
+id: filemetadata
+title: "FileMetaData"
+description: "Additional metadata envelope for file-specific enrichments."
+sidebar_label: "FileMetaData"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AzureVideo":{"Urls":["string"]}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"FileMetaData"}
+>
+</Heading>
+
+
+
+Additional metadata envelope for file-specific enrichments.
+
+<Schema
+  schema={{"type":"object","description":"Additional metadata envelope for file-specific enrichments.","properties":{"AzureVideo":{"description":"Azure video metadata for encoded media files.","nullable":true,"allOf":[{"type":"object","description":"Azure video metadata that contains available stream URLs.","properties":{"Urls":{"type":"array","description":"List of stream URLs generated for the video asset.","items":{"type":"string"}}},"title":"FileMetaDataAzureVideo"}],"type":"object"}},"title":"FileMetaData"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

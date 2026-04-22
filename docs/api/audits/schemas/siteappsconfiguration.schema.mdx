@@ -1,0 +1,33 @@
+---
+id: siteappsconfiguration
+title: "SiteAppsConfiguration"
+description: "Aggregated configuration data for installed applications."
+sidebar_label: "SiteAppsConfiguration"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ClientHooks":[{"AppId":"googleSso","Event":"web.bootstrap","Mode":"Async","Method":"Include","Url":"/apps/googleSso/web/min/web.js","Delay":"00:00:00"}],"AppBasePaths":{"googleSso":null,"workspaceOne":null},"AppEngineDependencies":{"forms":["formsForIT","formsForFacilities"]},"AppTokens":{"googleSso":"fcddd631-c2fb-4339-9658-a48ca0838233"},"AppVersions":{"googleSso":"3.2.0"},"AppWidgets":[{"AppWidgetId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","AppId":"string","ContainerName":"string"}]}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SiteAppsConfiguration"}
+>
+</Heading>
+
+
+
+Aggregated configuration data for installed applications.
+
+<Schema
+  schema={{"type":"object","description":"Aggregated configuration data for installed applications.","properties":{"ClientHooks":{"type":"array","description":"Client lifecycle hooks declared by installed applications.","items":{"type":"object","description":"Definition for a client hook that loads app resources into the UI.","properties":{"AppId":{"type":"string","description":"Identifier of the app providing the hook.","example":"googleSso"},"Event":{"type":"string","description":"UI lifecycle event where the hook executes.","example":"web.bootstrap"},"Mode":{"type":"string","description":"Execution mode such as `Async`.","example":"Async"},"Method":{"type":"string","description":"Loading strategy for the provided URL.","example":"Include"},"Url":{"type":"string","description":"Path to the resource injected by the hook.","example":"/apps/googleSso/web/min/web.js"},"Delay":{"type":"string","description":"Optional delay before the hook executes, formatted as `HH:mm:ss`.","example":"00:00:00"}},"required":["AppId","Event","Mode","Method","Url"],"title":"SiteAppHook"}},"AppBasePaths":{"type":"object","description":"Mapping of app identifiers to their configured base paths.","additionalProperties":{"type":"string","nullable":true},"example":{"googleSso":null,"workspaceOne":null}},"AppEngineDependencies":{"type":"object","description":"Mapping of app identifiers to arrays of dependent app IDs.","additionalProperties":{"type":"array","items":{"type":"string"}},"example":{"forms":["formsForIT","formsForFacilities"]}},"AppTokens":{"type":"object","description":"Mapping of app identifiers to authentication tokens.","additionalProperties":{"type":"string","format":"uuid"},"example":{"googleSso":"fcddd631-c2fb-4339-9658-a48ca0838233"}},"AppVersions":{"type":"object","description":"Mapping of app identifiers to semantic version numbers.","additionalProperties":{"type":"string"},"example":{"googleSso":"3.2.0"}},"AppWidgets":{"type":"array","description":"Widgets contributed by installed apps.","items":{"type":"object","properties":{"AppWidgetId":{"type":"string","format":"uuid","description":"Unique identifier for the widget."},"AppId":{"type":"string","description":"App identifier that provides the widget."},"ContainerName":{"type":"string","description":"Target UI container where the widget renders."}},"required":["AppWidgetId","AppId","ContainerName"]}}},"additionalProperties":true,"title":"SiteAppsConfiguration"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

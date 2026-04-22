@@ -1,0 +1,33 @@
+---
+id: role
+title: "Role"
+description: ""
+sidebar_label: "Role"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"RoleId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Portal":0,"Visibility":0,"CategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Users":0,"Scope":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Role"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  schema={{"type":"object","properties":{"RoleId":{"type":"string","format":"uuid"},"Name":{"type":"string","description":"Role name"},"Portal":{"type":"integer","description":"Portal access level"},"Visibility":{"type":"integer","description":"Visibility level"},"CategoryId":{"type":"string","format":"uuid"},"Users":{"type":"integer","description":"Number of users with this role"},"Scope":{"type":"string","description":"Role scope"}},"required":["RoleId","Portal","Visibility","CategoryId","Users","Scope"],"title":"Role"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

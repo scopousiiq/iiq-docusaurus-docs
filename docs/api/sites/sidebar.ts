@@ -158,6 +158,48 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/sites/schemas/address",
+          label: "Address",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/sites/schemas/app",
+          label: "App",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/sites/schemas/assetfundingtype",
+          label: "AssetFundingType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/sites/schemas/assetinventorytype",
+          label: "AssetInventoryType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/sites/schemas/assetstatustype",
+          label: "AssetStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/sites/schemas/assettype",
+          label: "AssetType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/sites/schemas/closereasontype",
+          label: "CloseReasonType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/sites/schemas/datafilter",
           label: "DataFilter",
           className: "schema",
@@ -224,6 +266,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/sites/schemas/producttier",
+          label: "ProductTier",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/sites/schemas/purchaseorderstatustype",
+          label: "PurchaseOrderStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/sites/schemas/ratelimiterror",
           label: "RateLimitError",
           className: "schema",
@@ -232,6 +286,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/sites/schemas/requestoptions",
           label: "RequestOptions",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/sites/schemas/role",
+          label: "Role",
           className: "schema",
         },
         {
@@ -278,6 +338,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/sites/schemas/sitekpi",
+          label: "SiteKpi",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/sites/schemas/sitelicensedproduct",
           label: "SiteLicensedProduct",
           className: "schema",
@@ -302,6 +368,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/sites/schemas/sitestatustype",
+          label: "SiteStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/sites/schemas/softvalidationerror",
           label: "SoftValidationError",
           className: "schema",
@@ -310,6 +382,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/sites/schemas/sortoptions",
           label: "SortOptions",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/sites/schemas/tag",
+          label: "Tag",
           className: "schema",
         },
         {

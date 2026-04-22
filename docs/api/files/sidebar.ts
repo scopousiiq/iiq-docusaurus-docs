@@ -196,6 +196,24 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/files/schemas/category",
+          label: "Category",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/files/schemas/customfieldeditortypeid",
+          label: "CustomFieldEditorTypeId",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/files/schemas/customfieldtypedetail",
+          label: "CustomFieldTypeDetail",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/files/schemas/downloadfilefilesbyfileidresponse-200-applicationoctetstream",
           label: "DownloadFileFilesByFileIdResponse200ApplicationOctetStream",
           className: "schema",
@@ -286,6 +304,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/files/schemas/filemetadata",
+          label: "FileMetaData",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/files/schemas/filemetadataazurevideo",
+          label: "FileMetaDataAzureVideo",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/files/schemas/filetype",
           label: "FileType",
           className: "schema",
@@ -330,6 +360,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/files/schemas/pagingmetadata",
           label: "PagingMetadata",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/files/schemas/simpleuser",
+          label: "SimpleUser",
           className: "schema",
         },
         {

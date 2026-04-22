@@ -41,6 +41,14 @@
           "section": "viewing",
           "order": 130
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "appAuthorization": []
+          }
+        ],
         "parameters": [
           {
             "name": "ticketId",
@@ -1522,6 +1530,14 @@
           "section": "metadata",
           "order": 100
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "appAuthorization": []
+          }
+        ],
         "description": "Retrieves metadata about all available ticket fields, including built-in and custom fields. Useful for building dynamic forms, validating field inputs, or understanding the ticket data model.\n\n**Workflow Example**\n1. Get field definitions: [GET /api/v1.0/tickets/fields](#/Tickets/getTicketFields)\n2. Build UI: Use field metadata to construct dynamic ticket creation/edit forms\n3. Create ticket: [POST /api/v1.0/tickets/new](#/Tickets/createTicket) with validated field values\n4. Update fields: [PUT /api/v1.0/tickets/{ticketId}](#/Tickets/updateTicket) for modifications\n\n**Response Fields**: Each field includes `FieldId`, `FieldName`, `DataType`, `IsRequired`, `IsReadOnly`, `DisplayOrder`, and validation constraints.\n\n**Use Cases**: Building custom ticket submission forms, implementing field validation logic, discovering available custom fields, generating API documentation for ticket payloads.\n\n**Note**: For custom field values on specific tickets, use [GET /api/v1.0/tickets/{ticketId}](#/Tickets/getTicket) and inspect `CustomFieldValues`.\n\n**Related Endpoints**\n- [POST /api/v1.0/tickets/new](#/Tickets/createTicket) – Create ticket using field definitions\n- [GET /api/v1.0/customfields](#/Custom Fields/searchCustomFields) – Custom field management",
         "responses": {
           "200": {
@@ -1551,6 +1567,14 @@
           "section": "metadata",
           "order": 90
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "appAuthorization": []
+          }
+        ],
         "description": "Retrieves all available ticket source types configured for the site. Sources indicate how tickets were created (e.g., web portal, email, phone, API, mobile app) and are useful for analytics, routing rules, and reporting on ticket origin channels.\n\n**Workflow Example**\n1. List sources: [GET /api/v1.0/tickets/sources](#/Tickets/getTicketSources) → retrieve available source types\n2. Use for filtering: Include `SourceId` in [POST /api/v1.0/tickets](#/Tickets/searchTickets) to filter by origin\n3. Use for reporting: Group ticket metrics by source to analyze channel performance\n\n**Response Fields**: Each source includes `SourceId`, `Name`, `Description`, and whether it's the default source.\n\n**Use Cases**: Building source dropdowns for ticket creation, analyzing ticket volume by channel, configuring routing rules based on ticket origin.\n\n**Related Endpoints**\n- [POST /api/v1.0/tickets](#/Tickets/searchTickets) – Filter tickets by SourceId\n- [POST /api/v1.0/tickets/new](#/Tickets/createTicket) – Create ticket with specific source\n- [GET /api/v1.0/tickets/{ticketId}](#/Tickets/getTicket) – View ticket's source",
         "parameters": [
           {
@@ -3459,10 +3483,10 @@
         "description": "Retrieves all assets currently linked to a given ticket. Each asset record includes model metadata, serial number, and asset tag for display in ticket detail views.\n\n**Prerequisites**\n1. **ticketId** – Use [POST /api/v1.0/tickets](#/Tickets/searchTickets) to search for tickets and read `Items[].TicketId`.\n\n**Field References**\n- **TicketAssetId** is the join record identifier; use it when updating links via [POST /api/v1.0/tickets/{ticketId}/assets](#/Tickets/updateTicketAssets).\n- **AssetId** references the device record; fetch full details with [GET /api/v1.0/assets/{assetId}](#/Assets/getAssetById).\n- **ModelId** and **CategoryId** identify the asset's model and category; lookup metadata via [POST /api/v1.0/issues/for/models](#/Model Issues/getIssuesForModels).\n\n**Workflow Example**\n1. Search for the ticket: [POST /api/v1.0/tickets](#/Tickets/searchTickets) with filters → extract `Items[0].TicketId`.\n2. Fetch linked assets: [GET /api/v1.0/tickets/{ticketId}/assets](#/Tickets/getTicketAssets) → iterate `Items[]` to display asset tags and models.\n3. (Optional) Load full asset details: for each `AssetId`, call [GET /api/v1.0/assets/{assetId}](#/Assets/getAssetById) to retrieve owner, location, and custom fields.\n\n**Minimal Required Fields**: ticketId (path parameter)",
         "security": [
           {
-            "BearerAuth": [],
-            "SiteId": [],
-            "ProductId": [],
-            "Client": []
+            "BearerAuth": []
+          },
+          {
+            "appAuthorization": []
           }
         ],
         "parameters": [
@@ -5486,7 +5510,20 @@
               }
             }
           }
-        }
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "anonymous-default",
+          "default-product": "TECHNOLOGY"
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "appAuthorization": []
+          }
+        ]
       }
     },
     "/api/v1.0/tickets/simple/new": {
@@ -5538,7 +5575,15 @@
           "404": {
             "description": "Not found – user, asset, or issue type could not be resolved"
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "appAuthorization": []
+          }
+        ]
       }
     },
     "/api/v1.0/tickets/views/new": {
@@ -5953,7 +5998,15 @@
             }
           }
         },
-        "description": "Searches and filters ticket records based on specified criteria. This endpoint powers the agent portal's ticket queues and supports advanced querying capabilities for IT service requests and incident tracking. It returns a paginated list of matching tickets with their complete details.\n\n**Filter Facet System**\n\nThis endpoint uses the universal `FilterMatch` pattern shared across Tickets, Assets, and Users search endpoints. Tickets support **103 filter facets** organized into categories:\n\n- **Assignment**: `agent`, `team`, `unassigned`, `assignedtome`, `assignedtoothers`\n- **Status/Workflow**: `status`, `workflow`, `workflowstage`, `workflowstep`, `ticketstate`, `previousstatus`\n- **Dates**: `createddate`, `modifieddate`, `closeddate`, `duedate`, `activitydate`, `scheduleddate` (use `DateExpressionSyntax`)\n- **Users**: `user`, `for`, `onbehalfof`, `agent` (use UUID in `Id` field)\n- **Assets**: `asset`, `assettype`, `assetstatus`, `model`, `modelcategory`\n- **SLA**: `sla`, `slaresponsetime`, `slaresolutiontime`\n- **Custom Fields**: `ticketcustomfield`, `ticketattribute`\n\nSee the `TicketSearchFilter` schema for the complete `x-facet-definitions` reference documenting all 103 facets with their required fields.\n\n**RequestOptions overview**\n- `TicketSearchRequest` mirrors the RequestOptions payload captured in the agent portal. Include `ProductId`, `Schema` (saved view such as `OpenWithModify` or `All`), `FilterByProduct`, `ShowChildTickets`, and `OnlyShowDeleted` as needed.\n- Populate `Filters[]` with facet entries. Each entry must declare a `Facet` key plus either an `Id` (for entity-based facets such as status, workflow, prioritylevel, tag, user, agent) or a `Value` expression (for keyword/date comparisons). Optional fields such as `Negative`, `Selected`, and `GroupIndex` control exclusion logic and UI grouping.\n- Call [GET /api/v1.0/filters/for/entitytype/{entityTypeId}](#/Filters/listFiltersForEntityType) with entity type `888891ac-91aa-e711-80c2-100dffa00001` to enumerate additional ticket filter keys before constructing the payload.\n\n**Filter Expression Syntax**\n- **Date facets**: Use `DateExpressionSyntax` - supports comparison operators (`date>=MM/DD/YYYY`, `date<=MM/DD/YYYY`), explicit ranges (`daterange:MM/DD/YYYY-MM/DD/YYYY`), and relative ranges (`range:today`, `range:thisweek`, `range:lastdays:30`, `range:nextweek`).\n- **Numeric facets**: Use `NumericExpressionSyntax` - format is `numoperator:<operator>:<value>` where operator is `equals`, `lessthan`, `lessthanequal`, `greaterthan`, or `greaterthanequal`.\n- **Keyword/text**: Simple `Value` field (e.g., `\"Value\": \"charging cart\"`).\n- **Entity references**: Use `Id` field with UUID (status, workflow, priority, tag, user, agent, asset).\n\n**Filters and operators**\n- Status/workflow filters require workflow step IDs; retrieve them via [GET /api/v1.0/workflows/allproducts/site/{siteId}](#/Workflows/listWorkflows).\n- Priority filters use `Facet: \"prioritylevel\"` with IDs from [GET /api/v1.0/tickets/priorities](#/Tickets/listTicketPriorityLevels). Tag filters use IDs from [GET /api/v1.0/tags/query](#/Tags/getTagsByQuery). Custom field facets reuse the `CustomFieldId` as the `Id`.\n- Set `Negative: true` to exclude specific statuses (for example, remove `Resolved` and `Canceled` while keeping all other results) as demonstrated in the integration guide.\n\n**Pagination and Sorting**\n\nUse query string parameters to control pagination and sorting:\n\n| Parameter | Description | Example |\n|-----------|-------------|---------|\n| `$p` | Zero-based page index | `$p=0` |\n| `$s` | Page size (default 20, max 100) | `$s=25` |\n| `$o` | Sort expression: field name followed by direction | `$o=TicketCreatedDate desc` |\n\n**Sort Expression Syntax**: The `$o` parameter accepts a field name followed by an optional direction, separated by a space:\n```\n$o=FieldName direction\n```\n\n**Examples:**\n```\nPOST /api/v1.0/tickets?$p=0&$s=25&$o=TicketCreatedDate desc    (newest first)\nPOST /api/v1.0/tickets?$p=0&$s=25&$o=TicketNumber asc          (lowest ticket numbers first)\nPOST /api/v1.0/tickets?$p=0&$s=25&$o=TicketModifiedDate desc   (recently modified first)\n```\n\n**Direction values**: `asc`, `ascending`, `desc`, or `descending` (default is ascending if omitted).\n\n**Available Sort Fields**:\n- **Dates**: `TicketCreatedDate`, `TicketModifiedDate`, `TicketClosedDate`, `TicketDueDate`\n- **Ticket Properties**: `TicketId`, `TicketNumber`, `TicketNumberSort`, `TicketSubject`, `TicketPriority`, `TicketStatusName`\n- **Assignment**: `AssignedUserFirstName`, `AssignedTeamName`, `WorkflowStepName`\n- **Requester**: `ForFirstName`, `ForName`, `ForLocationName`\n- **Location**: `LocationName`, `LocationRoomName`\n- **Other**: `IssueCategoryId`, `IssueTypeId`, `IsClosed`, `OverallSurveyRating`, `SiteId`\n\nThe response `Paging` object echoes `PageIndex`, `PageSize`, `PageCount`, and `TotalRows` to help you issue subsequent requests.\n\n**Performance considerations**\n- Begin every search with a narrow combination of filters (status + workflow + keyword) to avoid scanning the district-wide ticket corpus.\n- Cache supporting metadata (statuses, workflow steps, priorities, tags, custom field IDs) rather than issuing lookups per request.\n- Disable `ShowChildTickets` unless you specifically need subtickets; excluding them reduces response size.\n- Iterate with moderate page sizes (25–50) instead of requesting very large batches, which can lead to longer response times or gateway throttling. Use the `ItemCount`/`Paging` data to detect when you've reached the end.\n\n**Related endpoints**\n- [GET /api/v1.0/tickets/priorities](#/Tickets/listTicketPriorityLevels) – resolve numeric priority values to display labels before filtering by `prioritylevel`.\n- [GET /api/v1.0/tags/query](#/Tags/getTagsByQuery) – retrieve tag IDs used by the `tag` facet.\n- [GET /api/v1.0/workflows/allproducts/site/{siteId}](#/Workflows/listWorkflows) – enumerate workflow steps and status IDs for `status`/`workflow` filters.\n\n**Common Use Case**: Search operations are often used to find IDs needed for other API calls. Extract the relevant ID from the response `Items[]` array before chaining additional workflows (for example, start/assign/copy ticket actions)."
+        "description": "Searches and filters ticket records based on specified criteria. This endpoint powers the agent portal's ticket queues and supports advanced querying capabilities for IT service requests and incident tracking. It returns a paginated list of matching tickets with their complete details.\n\n**Filter Facet System**\n\nThis endpoint uses the universal `FilterMatch` pattern shared across Tickets, Assets, and Users search endpoints. Tickets support **103 filter facets** organized into categories:\n\n- **Assignment**: `agent`, `team`, `unassigned`, `assignedtome`, `assignedtoothers`\n- **Status/Workflow**: `status`, `workflow`, `workflowstage`, `workflowstep`, `ticketstate`, `previousstatus`\n- **Dates**: `createddate`, `modifieddate`, `closeddate`, `duedate`, `activitydate`, `scheduleddate` (use `DateExpressionSyntax`)\n- **Users**: `user`, `for`, `onbehalfof`, `agent` (use UUID in `Id` field)\n- **Assets**: `asset`, `assettype`, `assetstatus`, `model`, `modelcategory`\n- **SLA**: `sla`, `slaresponsetime`, `slaresolutiontime`\n- **Custom Fields**: `ticketcustomfield`, `ticketattribute`\n\nSee the `TicketSearchFilter` schema for the complete `x-facet-definitions` reference documenting all 103 facets with their required fields.\n\n**RequestOptions overview**\n- `TicketSearchRequest` mirrors the RequestOptions payload captured in the agent portal. Include `ProductId`, `Schema` (saved view such as `OpenWithModify` or `All`), `FilterByProduct`, `ShowChildTickets`, and `OnlyShowDeleted` as needed.\n- Populate `Filters[]` with facet entries. Each entry must declare a `Facet` key plus either an `Id` (for entity-based facets such as status, workflow, prioritylevel, tag, user, agent) or a `Value` expression (for keyword/date comparisons). Optional fields such as `Negative`, `Selected`, and `GroupIndex` control exclusion logic and UI grouping.\n- Call [GET /api/v1.0/filters/for/entitytype/{entityTypeId}](#/Filters/listFiltersForEntityType) with entity type `888891ac-91aa-e711-80c2-100dffa00001` to enumerate additional ticket filter keys before constructing the payload.\n\n**Filter Expression Syntax**\n- **Date facets**: Use `DateExpressionSyntax` - supports comparison operators (`date>=MM/DD/YYYY`, `date<=MM/DD/YYYY`), explicit ranges (`daterange:MM/DD/YYYY-MM/DD/YYYY`), and relative ranges (`range:today`, `range:thisweek`, `range:lastdays:30`, `range:nextweek`).\n- **Numeric facets**: Use `NumericExpressionSyntax` - format is `numoperator:<operator>:<value>` where operator is `equals`, `lessthan`, `lessthanequal`, `greaterthan`, or `greaterthanequal`.\n- **Keyword/text**: Simple `Value` field (e.g., `\"Value\": \"charging cart\"`).\n- **Entity references**: Use `Id` field with UUID (status, workflow, priority, tag, user, agent, asset).\n\n**Filters and operators**\n- Status/workflow filters require workflow step IDs; retrieve them via [GET /api/v1.0/workflows/allproducts/site/{siteId}](#/Workflows/listWorkflows).\n- Priority filters use `Facet: \"prioritylevel\"` with IDs from [GET /api/v1.0/tickets/priorities](#/Tickets/listTicketPriorityLevels). Tag filters use IDs from [GET /api/v1.0/tags/query](#/Tags/getTagsByQuery). Custom field facets reuse the `CustomFieldId` as the `Id`.\n- Set `Negative: true` to exclude specific statuses (for example, remove `Resolved` and `Canceled` while keeping all other results) as demonstrated in the integration guide.\n\n**Pagination and Sorting**\n\nUse query string parameters to control pagination and sorting:\n\n| Parameter | Description | Example |\n|-----------|-------------|---------|\n| `$p` | Zero-based page index | `$p=0` |\n| `$s` | Page size (default 20, max 100) | `$s=25` |\n| `$o` | Sort expression: field name followed by direction | `$o=TicketCreatedDate desc` |\n\n**Sort Expression Syntax**: The `$o` parameter accepts a field name followed by an optional direction, separated by a space:\n```\n$o=FieldName direction\n```\n\n**Examples:**\n```\nPOST /api/v1.0/tickets?$p=0&$s=25&$o=TicketCreatedDate desc    (newest first)\nPOST /api/v1.0/tickets?$p=0&$s=25&$o=TicketNumber asc          (lowest ticket numbers first)\nPOST /api/v1.0/tickets?$p=0&$s=25&$o=TicketModifiedDate desc   (recently modified first)\n```\n\n**Direction values**: `asc`, `ascending`, `desc`, or `descending` (default is ascending if omitted).\n\n**Available Sort Fields**:\n- **Dates**: `TicketCreatedDate`, `TicketModifiedDate`, `TicketClosedDate`, `TicketDueDate`\n- **Ticket Properties**: `TicketId`, `TicketNumber`, `TicketNumberSort`, `TicketSubject`, `TicketPriority`, `TicketStatusName`\n- **Assignment**: `AssignedUserFirstName`, `AssignedTeamName`, `WorkflowStepName`\n- **Requester**: `ForFirstName`, `ForName`, `ForLocationName`\n- **Location**: `LocationName`, `LocationRoomName`\n- **Other**: `IssueCategoryId`, `IssueTypeId`, `IsClosed`, `OverallSurveyRating`, `SiteId`\n\nThe response `Paging` object echoes `PageIndex`, `PageSize`, `PageCount`, and `TotalRows` to help you issue subsequent requests.\n\n**Performance considerations**\n- Begin every search with a narrow combination of filters (status + workflow + keyword) to avoid scanning the district-wide ticket corpus.\n- Cache supporting metadata (statuses, workflow steps, priorities, tags, custom field IDs) rather than issuing lookups per request.\n- Disable `ShowChildTickets` unless you specifically need subtickets; excluding them reduces response size.\n- Iterate with moderate page sizes (25–50) instead of requesting very large batches, which can lead to longer response times or gateway throttling. Use the `ItemCount`/`Paging` data to detect when you've reached the end.\n\n**Related endpoints**\n- [GET /api/v1.0/tickets/priorities](#/Tickets/listTicketPriorityLevels) – resolve numeric priority values to display labels before filtering by `prioritylevel`.\n- [GET /api/v1.0/tags/query](#/Tags/getTagsByQuery) – retrieve tag IDs used by the `tag` facet.\n- [GET /api/v1.0/workflows/allproducts/site/{siteId}](#/Workflows/listWorkflows) – enumerate workflow steps and status IDs for `status`/`workflow` filters.\n\n**Common Use Case**: Search operations are often used to find IDs needed for other API calls. Extract the relevant ID from the response `Items[]` array before chaining additional workflows (for example, start/assign/copy ticket actions).",
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "appAuthorization": []
+          }
+        ]
       }
     },
     "/api/v1.0/tickets/count": {
@@ -5967,6 +6020,14 @@
           "section": "searching",
           "order": 15
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "appAuthorization": []
+          }
+        ],
         "description": "Returns the count of tickets matching the specified filter criteria without returning full ticket records. Use this to power dashboard KPIs, queue badges, or trend reporting while reusing the same search filters as the full ticket search.\n\n**Prerequisites**\n1. **Filters (optional)** - Build filters using the same facet model as [POST /api/v1.0/tickets](#/Tickets/searchTickets) (`TicketSearchRequest.Filters`).\n\n**Workflow Example**\n1. Define your filters (status, workflow, requester, date range).\n2. [POST /api/v1.0/tickets/count](#/Tickets/getTicketCount) with a `TicketSearchRequest` payload.\n3. Use the returned count to drive UI badges or reporting thresholds.\n\n**Minimal Required Fields**: None (request body optional).",
         "requestBody": {
           "required": false,
@@ -6052,6 +6113,14 @@
           "section": "searching",
           "order": 160
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "appAuthorization": []
+          }
+        ],
         "requestBody": {
           "required": true,
           "description": "Search criteria including the reference ticket and matching options.",
@@ -9124,10 +9193,10 @@
         },
         "security": [
           {
-            "BearerAuth": [],
-            "SiteId": [],
-            "ProductId": [],
-            "Client": []
+            "BearerAuth": []
+          },
+          {
+            "appAuthorization": []
           }
         ],
         "requestBody": {
@@ -17137,6 +17206,11 @@
         "x-iiq-docs": {
           "section": "searching",
           "order": 10
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "anonymous-default",
+          "default-product": "TECHNOLOGY"
         }
       }
     },
@@ -21865,6 +21939,11 @@
         "x-iiq-docs": {
           "section": "searching",
           "order": 10
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "anonymous-default",
+          "default-product": "TECHNOLOGY"
         }
       },
       "get": {
@@ -24155,6 +24234,12 @@
         "x-iiq-docs": {
           "section": "presence",
           "order": 260
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -24709,6 +24794,11 @@
         "x-iiq-docs": {
           "section": "searching",
           "order": 28
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "anonymous-default",
+          "default-product": "TECHNOLOGY"
         }
       }
     },
@@ -25274,6 +25364,11 @@
         "x-iiq-docs": {
           "section": "searching",
           "order": 35
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "anonymous-default",
+          "default-product": "TECHNOLOGY"
         }
       }
     },
@@ -25522,6 +25617,11 @@
         "x-iiq-docs": {
           "section": "searching",
           "order": 90
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "anonymous-default",
+          "default-product": "TECHNOLOGY"
         }
       }
     },
@@ -29782,6 +29882,11 @@
           "404": {
             "description": "Room not found"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       },
       "post": {
@@ -29868,6 +29973,11 @@
           "404": {
             "description": "Room not found"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -29931,6 +30041,11 @@
           "404": {
             "description": "Room not found"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       },
       "post": {
@@ -30010,6 +30125,11 @@
           "404": {
             "description": "Room not found"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -30083,6 +30203,11 @@
           "404": {
             "description": "Room not found"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       },
       "post": {
@@ -30162,6 +30287,11 @@
           "404": {
             "description": "Room not found"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -31909,7 +32039,11 @@
               "type": "string",
               "format": "uuid"
             },
-            "description": "The unique identifier of the room"
+            "description": "The unique identifier of the room",
+            "x-obtained-from": {
+              "endpoint": "POST /api/v2.0/locations/rooms/query",
+              "field": "Items[].LocationRoomId"
+            }
           },
           {
             "name": "Authorization",
@@ -31973,6 +32107,11 @@
           "404": {
             "description": "Room not found"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       },
       "post": {
@@ -31995,7 +32134,11 @@
               "type": "string",
               "format": "uuid"
             },
-            "description": "The unique identifier of the room to update"
+            "description": "The unique identifier of the room to update",
+            "x-obtained-from": {
+              "endpoint": "POST /api/v2.0/locations/rooms/query",
+              "field": "Items[].LocationRoomId"
+            }
           },
           {
             "name": "Authorization",
@@ -32052,6 +32195,11 @@
           "404": {
             "description": "Room not found"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       },
       "delete": {
@@ -32074,7 +32222,11 @@
               "type": "string",
               "format": "uuid"
             },
-            "description": "The unique identifier of the room to delete"
+            "description": "The unique identifier of the room to delete",
+            "x-obtained-from": {
+              "endpoint": "POST /api/v2.0/locations/rooms/query",
+              "field": "Items[].LocationRoomId"
+            }
           },
           {
             "name": "Authorization",
@@ -32113,6 +32265,11 @@
           "404": {
             "description": "Room not found"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -32181,6 +32338,11 @@
           "401": {
             "description": "Unauthorized"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -32278,6 +32440,11 @@
           "401": {
             "description": "Unauthorized"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -32349,6 +32516,11 @@
           "404": {
             "description": "Status type not found"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -32410,6 +32582,11 @@
           "401": {
             "description": "Unauthorized"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -32881,6 +33058,11 @@
           "401": {
             "description": "Unauthorized - invalid or missing authentication"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -32956,6 +33138,11 @@
           "401": {
             "description": "Unauthorized"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -33017,6 +33204,11 @@
           "401": {
             "description": "Unauthorized"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -33079,6 +33271,11 @@
           "401": {
             "description": "Unauthorized"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -33139,6 +33336,11 @@
           "401": {
             "description": "Unauthorized"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -33219,6 +33421,11 @@
           "401": {
             "description": "Unauthorized"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -33297,6 +33504,11 @@
           "401": {
             "description": "Unauthorized"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -33360,6 +33572,11 @@
           "404": {
             "description": "Room not found"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -33384,7 +33601,12 @@
               "type": "string",
               "format": "uuid"
             },
-            "description": "The location ID to retrieve rooms for"
+            "description": "The location ID to retrieve rooms for",
+            "x-obtained-from": {
+              "operationId": "getMyLocationsV2",
+              "endpoint": "GET /api/v2.0/locations",
+              "responseField": "Items[].LocationId"
+            }
           },
           {
             "name": "Authorization",
@@ -33433,6 +33655,11 @@
           "404": {
             "description": "Location not found"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -33766,6 +33993,11 @@
           "401": {
             "description": "Unauthorized"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -33937,6 +34169,11 @@
           "401": {
             "description": "Unauthorized"
           }
+        },
+        "x-iiq-module": {
+          "type": "module-owned",
+          "module": "Locations",
+          "requires-license": true
         }
       }
     },
@@ -34249,6 +34486,12 @@
         "x-iiq-docs": {
           "section": "types",
           "order": 10
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       },
       "post": {
@@ -34320,6 +34563,12 @@
         "x-iiq-docs": {
           "section": "types",
           "order": 20
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -34368,6 +34617,12 @@
         "x-iiq-docs": {
           "section": "types",
           "order": 30
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       },
       "post": {
@@ -34554,6 +34809,12 @@
         "x-iiq-docs": {
           "section": "values",
           "order": 40
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -34702,6 +34963,12 @@
         "x-iiq-docs": {
           "section": "values",
           "order": 70
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -34771,6 +35038,12 @@
         "x-iiq-docs": {
           "section": "values",
           "order": 50
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -34840,6 +35113,12 @@
         "x-iiq-docs": {
           "section": "values",
           "order": 60
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -35175,6 +35454,12 @@
         "x-iiq-docs": {
           "section": "utilities",
           "order": 10
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -35704,6 +35989,12 @@
         "x-iiq-docs": {
           "section": "fields",
           "order": 10
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -36257,6 +36548,12 @@
         "x-iiq-docs": {
           "section": "discovering",
           "order": 10
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -36317,6 +36614,12 @@
         "x-iiq-docs": {
           "section": "discovering",
           "order": 90
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -36377,6 +36680,11 @@
         "x-iiq-docs": {
           "section": "discovering",
           "order": 40
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "anonymous-default",
+          "default-product": "EVENT_RESERVATIONS"
         }
       }
     },
@@ -36437,6 +36745,12 @@
         "x-iiq-docs": {
           "section": "discovering",
           "order": 70
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -36497,6 +36811,12 @@
         "x-iiq-docs": {
           "section": "discovering",
           "order": 50
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -36557,6 +36877,12 @@
         "x-iiq-docs": {
           "section": "discovering",
           "order": 60
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -36617,6 +36943,11 @@
         "x-iiq-docs": {
           "section": "discovering",
           "order": 80
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "anonymous-default",
+          "default-product": "EVENT_RESERVATIONS"
         }
       }
     },
@@ -36685,6 +37016,12 @@
         "x-iiq-docs": {
           "section": "discovering",
           "order": 20
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -36753,6 +37090,12 @@
         "x-iiq-docs": {
           "section": "discovering",
           "order": 30
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -38242,6 +38585,12 @@
               }
             }
           }
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       },
       "post": {
@@ -38789,6 +39138,12 @@
               }
             }
           }
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -38889,6 +39244,12 @@
               }
             }
           }
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "header-driven",
+          "default-product": "TECHNOLOGY",
+          "description": "Response filtered by ProductId header. Defaults to Technology."
         }
       }
     },
@@ -39604,95 +39965,78 @@
     },
     "/api/v1.0/search/v2": {
       "post": {
-        "summary": "Search Locations",
+        "operationId": "globalSearchV2",
+        "summary": "Global multi-entity search (v2)",
+        "description": "Performs a text-based search across multiple entity types using the v2 search pipeline. Unlike the legacy [POST /api/v1.0/search](#/Search/globalSearch), this endpoint returns a flat `ListGetResponse` of unified `SearchResult` items rather than typed buckets per entity type.\n\n**Differences from Legacy Search**\n- Returns a flat list of `SearchResult` objects (one per matched entity)\n- Supports the `IncludeMatchedItem` flag to embed full entity records in results\n- Leverages the newer Query Engine pipeline for improved relevance ranking\n\n**Facet Bitmask**\nUse the `Facets` field to filter which entity types to search:\n\n| Entity Type | Bit Value |\n|-------------|----------|\n| Tickets | 1 |\n| KbArticles | 2 |\n| Users | 4 |\n| Assets | 8 |\n| Locations | 16 |\n| Students | 64 |\n\n**Workflow Example**\n1. Call [POST /api/v1.0/search/v2](#/Search/globalSearchV2) with a `Query` string and a `Facets` bitmask to select which entity types to include.\n2. Iterate over the returned `Items` array. Each item includes `EntityId`, `EntityFacet`, `Title`, and `Subtitle`.\n3. Use `EntityId` and `EntityFacet` to navigate to the full entity detail endpoint.\n4. Set `IncludeMatchedItem: true` to receive the full entity record in each result without a second request.\n\n**Minimal Required Fields**: `Query` is recommended; all other fields are optional.",
         "tags": [
           "Search"
         ],
         "x-iiq-docs": {
           "section": "global",
-          "order": 30
+          "order": 5
         },
-        "parameters": [
-          {
-            "name": "Client",
-            "in": "header",
-            "required": false,
-            "example": "WebBrowser",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "ProductId",
-            "in": "header",
-            "required": false,
-            "example": 0,
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": false,
-            "example": "{{BasicAuth}}",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "SiteId",
-            "in": "header",
-            "required": false,
-            "example": "{{SiteId}}",
-            "schema": {
-              "type": "string"
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GlobalSearchRequest"
+              },
+              "examples": {
+                "searchTicketsAndAssets": {
+                  "summary": "Search tickets and assets",
+                  "value": {
+                    "Query": "chromebook",
+                    "Limit": 10,
+                    "Facets": 9
+                  }
+                },
+                "searchWithMatchedItem": {
+                  "summary": "Search and embed full entity",
+                  "value": {
+                    "Query": "screen damaged",
+                    "Limit": 5,
+                    "Facets": 1,
+                    "IncludeMatchedItem": true
+                  }
+                }
+              }
             }
           }
-        ],
+        },
         "responses": {
-          "201": {
-            "description": "Created - Resource successfully created",
+          "200": {
+            "description": "Successful search results. Returns a flat list of matched entities across the requested facets.",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GenericObject"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized - Authentication required or authentication credentials are invalid",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UnauthorizedError"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Too Many Requests - Rate limit exceeded",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RateLimitError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error - An unexpected error occurred on the server",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InternalServerError"
+                  "$ref": "#/components/schemas/SearchListResponse"
+                },
+                "example": {
+                  "Items": [
+                    {
+                      "EntityId": "546f841c-32d8-47e5-bfc1-a4f21754d6d3",
+                      "EntityFacet": 8,
+                      "Title": "HP Chromebook 14",
+                      "Subtitle": "CHR-001234",
+                      "MatchedItem": null
+                    },
+                    {
+                      "EntityId": "622760c9-8ba3-f011-8e61-6045bd85293b",
+                      "EntityFacet": 1,
+                      "Title": "Chromebook screen damaged",
+                      "Subtitle": "#12345",
+                      "MatchedItem": null
+                    }
+                  ],
+                  "ItemCount": 2,
+                  "StatusCode": 200
                 }
               }
             }
           },
           "400": {
-            "description": "Bad Request - Invalid input data or validation errors",
+            "description": "Bad Request - Invalid query or parameters.",
             "content": {
               "application/json": {
                 "schema": {
@@ -39701,19 +40045,27 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden - Insufficient permissions to perform this operation",
+          "401": {
+            "description": "Unauthorized - Authentication required or token expired.",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ForbiddenError"
+                  "$ref": "#/components/schemas/UnauthorizedError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Search engine failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerError"
                 }
               }
             }
           }
-        },
-        "operationId": "searchV2s",
-        "description": "Performs an advanced search using v2 query semantics, returning results based on the filter criteria encoded by the client and contextual headers. Use this endpoint when you need the newer search pipeline (v2) for location or resource discovery and want results scoped by the caller, site, or product context supplied via headers.\n\n**Workflow Example**\n1. Set contextual headers (for example `SiteId`, `ProductId`, and `Client`) to scope the search.\n2. Submit [POST /api/v1.0/search/v2](#/Search/searchV2s) and review the response payload for the matching records returned by the v2 search engine.\n\n**Minimal Required Fields**: none (headers optional, but recommended to scope results)."
+        }
       }
     },
     "/api/v1.0/workflows/{workflowId}": {
@@ -44277,6 +44629,11 @@
               }
             }
           }
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "anonymous-default",
+          "default-product": "TECHNOLOGY"
         }
       },
       "post": {
@@ -45676,6 +46033,11 @@
               }
             }
           }
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "anonymous-default",
+          "default-product": "TECHNOLOGY"
         }
       }
     },
@@ -45756,6 +46118,11 @@
               }
             }
           }
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "anonymous-default",
+          "default-product": "TECHNOLOGY"
         }
       }
     },
@@ -46617,6 +46984,11 @@
               }
             }
           }
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "anonymous-default",
+          "default-product": "TECHNOLOGY"
         }
       }
     },
@@ -49248,6 +49620,11 @@
               }
             }
           }
+        },
+        "x-iiq-module": {
+          "type": "product-conditional",
+          "behavior": "anonymous-default",
+          "default-product": "TECHNOLOGY"
         }
       }
     },
@@ -68462,6 +68839,70 @@
           }
         }
       },
+      "App": {
+        "type": "object",
+        "description": "Represents an application integration registered in the IncidentIQ app registry. Contains configuration for SSO providers, webhooks, and custom app extensions.",
+        "properties": {
+          "AppId": {
+            "type": "string",
+            "description": "Unique string identifier for the app (not a UUID). Used as the app's canonical reference in API calls.",
+            "example": "clever"
+          },
+          "Name": {
+            "type": "string",
+            "description": "Display name of the application.",
+            "example": "Clever SSO"
+          },
+          "Description": {
+            "type": "string",
+            "description": "Description of the app's functionality and integration purpose.",
+            "nullable": true,
+            "example": "Clever single sign-on integration for student authentication"
+          },
+          "IsEnabled": {
+            "type": "boolean",
+            "description": "Indicates whether the app is currently enabled for the site.",
+            "example": true
+          },
+          "Configuration": {
+            "type": "object",
+            "description": "App-specific configuration settings stored as key-value pairs.",
+            "additionalProperties": true,
+            "nullable": true
+          },
+          "CreatedDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "UTC timestamp when the app was registered.",
+            "example": "2025-01-15T10:30:00Z"
+          },
+          "ModifiedDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "UTC timestamp when the app configuration was last modified.",
+            "nullable": true,
+            "example": "2025-02-10T14:20:00Z"
+          }
+        },
+        "required": [
+          "AppId",
+          "Name",
+          "IsEnabled"
+        ],
+        "additionalProperties": true,
+        "example": {
+          "AppId": "clever",
+          "Name": "Clever SSO",
+          "Description": "Clever single sign-on integration for student authentication",
+          "IsEnabled": true,
+          "Configuration": {
+            "clientId": "abc123",
+            "district": "demo-district"
+          },
+          "CreatedDate": "2025-01-15T10:30:00Z",
+          "ModifiedDate": "2025-02-10T14:20:00Z"
+        }
+      },
       "Asset": {
         "type": "object",
         "properties": {
@@ -68537,6 +68978,21 @@
           "IsDeleted": {
             "type": "boolean"
           },
+          "SourceId": {
+            "type": "integer",
+            "description": "Identifier for the data source that created or last synced this asset (e.g., MDM, CSV import).",
+            "nullable": true
+          },
+          "Source": {
+            "description": "Data source metadata when the asset originated from an external sync or import.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Source"
+              }
+            ],
+            "type": "object"
+          },
           "Status": {
             "$ref": "#/components/schemas/AssetStatusSummary"
           },
@@ -68545,8 +69001,11 @@
           },
           "ExternalId": {
             "type": "string",
-            "format": "uuid",
             "description": "External system identifier for the asset"
+          },
+          "AssetName": {
+            "type": "string",
+            "description": "Legacy display name for the asset. Prefer the `Name` property for new integrations."
           },
           "Name": {
             "type": "string"
@@ -68603,6 +69062,32 @@
           },
           "Location": {
             "$ref": "#/components/schemas/Location"
+          },
+          "LocationDetails": {
+            "type": "string",
+            "description": "Free-text location details such as room number or desk assignment.",
+            "nullable": true
+          },
+          "LocationRoomId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifier of the room within the location.",
+            "nullable": true
+          },
+          "LocationRoom": {
+            "description": "Room metadata within the assigned location.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/LocationRoom"
+              }
+            ],
+            "type": "object"
+          },
+          "Notes": {
+            "type": "string",
+            "description": "Free-text notes attached to the asset.",
+            "nullable": true
           },
           "StorageLocationId": {
             "type": "string",
@@ -68663,9 +69148,20 @@
             "description": "Date the asset was deployed",
             "nullable": true
           },
+          "RetiredDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Date the asset was retired from service.",
+            "nullable": true
+          },
           "PurchasePrice": {
             "type": "number",
             "description": "Original purchase price of the asset",
+            "nullable": true
+          },
+          "PurchasePoNumber": {
+            "type": "string",
+            "description": "Purchase order number associated with the asset acquisition.",
             "nullable": true
           },
           "WarrantyExpirationDate": {
@@ -68674,10 +69170,57 @@
             "description": "Warranty expiration date",
             "nullable": true
           },
+          "WarrantyInfo": {
+            "type": "string",
+            "description": "Free-text warranty details or notes.",
+            "nullable": true
+          },
+          "LastInventoryDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp of the last physical inventory check for this asset.",
+            "nullable": true
+          },
+          "InvoiceNumber": {
+            "type": "string",
+            "description": "Invoice number from the asset purchase.",
+            "nullable": true
+          },
+          "Vendor": {
+            "type": "string",
+            "description": "Name of the vendor or supplier from which the asset was purchased.",
+            "nullable": true
+          },
           "InsuranceExpirationDate": {
             "type": "string",
             "format": "date",
             "description": "Insurance expiration date",
+            "nullable": true
+          },
+          "InsuranceInfo": {
+            "type": "string",
+            "description": "Free-text insurance details or policy information.",
+            "nullable": true
+          },
+          "FundingSourceId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifier of the funding source (asset funding type) associated with this asset.",
+            "nullable": true
+          },
+          "FundingSource": {
+            "description": "Funding source metadata when a funding type is assigned to the asset.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AssetFundingType"
+              }
+            ],
+            "type": "object"
+          },
+          "LockedToIds": {
+            "type": "string",
+            "description": "Comma-separated list of identifiers the asset is locked to (used for restricting reassignment).",
             "nullable": true
           },
           "DataMappings": {
@@ -68727,9 +69270,69 @@
             "description": "Sort order used for displaying audit policy status",
             "nullable": true
           },
+          "LastVerificationDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp of the most recent asset verification.",
+            "nullable": true
+          },
+          "LastVerificationUserId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifier of the user who performed the last verification.",
+            "nullable": true
+          },
+          "LastVerificationTypeId": {
+            "type": "string",
+            "description": "Identifier for the type of verification performed.",
+            "nullable": true
+          },
+          "LastVerificationTypeName": {
+            "type": "string",
+            "description": "Display name of the verification type.",
+            "nullable": true
+          },
           "LastVerificationSuccessful": {
             "type": "boolean",
             "description": "Indicates whether the last verification succeeded",
+            "nullable": true
+          },
+          "LastVerificationComments": {
+            "type": "string",
+            "description": "Comments or notes recorded during the last verification.",
+            "nullable": true
+          },
+          "LastVerificationLocationId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Location where the last verification was performed.",
+            "nullable": true
+          },
+          "LastVerificationLocationRoomId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Room where the last verification was performed.",
+            "nullable": true
+          },
+          "LastVerificationLocationName": {
+            "type": "string",
+            "description": "Display name of the location where the last verification was performed.",
+            "nullable": true
+          },
+          "ParentAssetId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifier of the parent asset when this asset is part of a hierarchy.",
+            "nullable": true
+          },
+          "TotalQuantity": {
+            "type": "number",
+            "description": "Total quantity for consumable or quantity-tracked assets.",
+            "nullable": true
+          },
+          "AvailableQuantity": {
+            "type": "number",
+            "description": "Available quantity remaining for consumable or quantity-tracked assets.",
             "nullable": true
           },
           "Valuation": {
@@ -68762,6 +69365,12 @@
             "description": "Identifier for the asset image",
             "nullable": true
           },
+          "DueDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Due date for asset-related actions such as returns or deployments.",
+            "nullable": true
+          },
           "LinkedAssetIds": {
             "type": "array",
             "description": "List of related asset identifiers",
@@ -68769,6 +69378,11 @@
               "type": "string",
               "format": "uuid"
             },
+            "nullable": true
+          },
+          "NSAAveragePrice": {
+            "type": "number",
+            "description": "National School Average price for this asset model, when available from pricing data.",
             "nullable": true
           }
         }
@@ -69720,8 +70334,8 @@
           },
           "GroupIndex": {
             "type": "integer",
-            "description": "Execution grouping index used when the API needs to OR grouped filters together.",
-            "example": 1
+            "description": "Logical group index for filter combination. Filters in the same group are AND'd across different facets; same-facet values in a group are OR'd. Filters in different groups are OR'd at the top level.",
+            "example": 0
           },
           "CustomFieldTypeId": {
             "type": "string",
@@ -72376,7 +72990,7 @@
           },
           "GroupIndex": {
             "type": "integer",
-            "description": "Grouping index for OR logic."
+            "description": "Logical group index. Same-group filters are AND'd across facets; different groups are OR'd together."
           }
         }
       },
@@ -75956,6 +76570,51 @@
           }
         }
       },
+      "ProductTier": {
+        "type": "object",
+        "description": "Product tier information for subscription context.",
+        "properties": {
+          "ProductTierId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the product tier."
+          },
+          "TierName": {
+            "type": "string",
+            "description": "Name of the subscription tier (e.g., 'Professional', 'Enterprise')."
+          },
+          "ProductId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Product identifier."
+          },
+          "ProductName": {
+            "type": "string",
+            "description": "Name of the product (e.g., 'Ticketing', 'Assets')."
+          },
+          "ProductKey": {
+            "type": "string",
+            "description": "Short key for the product (e.g., 'iiqtickets', 'iiqassets')."
+          },
+          "Icon": {
+            "type": "string",
+            "description": "Icon class for the product."
+          },
+          "DisplayOrder": {
+            "type": "integer",
+            "description": "Display order in navigation."
+          }
+        },
+        "example": {
+          "ProductTierId": "9ceaa7b6-02ab-479b-9344-97712f744aec",
+          "TierName": "Professional",
+          "ProductId": "88df910c-91aa-e711-80c2-0004ffa00010",
+          "ProductName": "Ticketing",
+          "ProductKey": "iiqtickets",
+          "Icon": "fa-ticketing",
+          "DisplayOrder": 10
+        }
+      },
       "ModelCategory": {
         "type": "object",
         "description": "Category specific to Asset Models",
@@ -76689,6 +77348,27 @@
             "type": "string",
             "description": "Site name"
           },
+          "Domain": {
+            "type": "string",
+            "description": "Primary domain name for the site."
+          },
+          "VanityDomain": {
+            "type": "string",
+            "nullable": true,
+            "description": "Optional vanity domain configured for the site."
+          },
+          "TimeZone": {
+            "type": "string",
+            "description": "Legacy time zone identifier for the site."
+          },
+          "IanaTimeZone": {
+            "type": "string",
+            "description": "IANA time zone identifier for the site."
+          },
+          "DomainWithProtocol": {
+            "type": "string",
+            "description": "Domain including the URL protocol."
+          },
           "OffsetInMinutesFromUtc": {
             "type": "integer",
             "description": "Timezone offset in minutes"
@@ -76707,6 +77387,27 @@
             "type": "string",
             "format": "uuid"
           },
+          "Status": {
+            "description": "Site status metadata.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SiteStatusType"
+              }
+            ],
+            "type": "object",
+            "nullable": true
+          },
+          "LogoId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Identifier of the site's logo file."
+          },
+          "Notes": {
+            "type": "string",
+            "nullable": true,
+            "description": "Internal notes captured for the site."
+          },
           "WorkHoursStartUtc": {
             "type": "string",
             "format": "time",
@@ -76716,6 +77417,78 @@
             "type": "string",
             "format": "time",
             "description": "End of work hours in UTC"
+          },
+          "Settings": {
+            "description": "Site settings configuration.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SiteSettings"
+              }
+            ],
+            "type": "object",
+            "nullable": true
+          },
+          "Apps": {
+            "description": "Installed app configuration and hooks for the site.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SiteAppsConfiguration"
+              }
+            ],
+            "type": "object",
+            "nullable": true
+          },
+          "Environment": {
+            "type": "string",
+            "description": "Environment label for the site (for example, Production or Sandbox)."
+          },
+          "AnalyticsCode": {
+            "type": "string",
+            "nullable": true,
+            "description": "Analytics tracking code associated with the site."
+          },
+          "DeploymentDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "Deployment date for the site."
+          },
+          "Tags": {
+            "type": "array",
+            "description": "Tags associated with the site.",
+            "items": {
+              "$ref": "#/components/schemas/Tag"
+            }
+          },
+          "AddressId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Identifier of the site's address record."
+          },
+          "SiteAddress": {
+            "description": "Address details for the site.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Address"
+              }
+            ],
+            "type": "object",
+            "nullable": true
+          },
+          "LicensedProducts": {
+            "type": "array",
+            "description": "Licensed product tiers enabled for the site.",
+            "items": {
+              "$ref": "#/components/schemas/ProductTier"
+            }
+          },
+          "InstalledApps": {
+            "type": "array",
+            "description": "Apps installed for the site.",
+            "items": {
+              "$ref": "#/components/schemas/App"
+            }
           },
           "SystemUserId": {
             "type": "string",
@@ -76737,9 +77510,100 @@
             },
             "description": "UUID of the user (AnonymousUserId). Obtain via [POST /api/v1.0/users](#/Users/searchUsers), extract `Items[].UserId`."
           },
+          "OnboardingStartDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "Date when onboarding started for the site."
+          },
+          "OnboardingDaysSinceOnboardingStart": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Days elapsed since onboarding started."
+          },
+          "OnboardingLastActivityDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "Most recent onboarding activity timestamp."
+          },
+          "OnboardingDaysSinceLastActivity": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Days elapsed since the last onboarding activity."
+          },
+          "TargetLaunchDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "Target launch date for the site."
+          },
+          "OnboardingDaysToTargetLaunch": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Days remaining until the target launch date."
+          },
+          "LaunchDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "Actual launch date for the site."
+          },
+          "DaysSinceLaunch": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Days elapsed since the site launched."
+          },
+          "UserAgreementSignedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "Timestamp when the user agreement was signed."
+          },
+          "UserAgreementSignedBy": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Identifier of the user who signed the user agreement."
+          },
+          "NcesId": {
+            "type": "string",
+            "nullable": true,
+            "description": "NCES identifier for the site."
+          },
+          "Kpis": {
+            "type": "array",
+            "description": "Key performance indicator snapshots for the site.",
+            "items": {
+              "$ref": "#/components/schemas/SiteKpi"
+            }
+          },
+          "DateMovedToDeactivated": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "Timestamp when the site was moved to a deactivated status."
+          },
+          "DateMovedToReadyForPermanentDeletion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "Timestamp when the site was marked ready for permanent deletion."
+          },
           "IsSandbox": {
             "type": "boolean",
             "description": "Whether this is a sandbox environment"
+          },
+          "SandboxId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Identifier for the sandbox environment associated with the site."
+          },
+          "SandboxName": {
+            "type": "string",
+            "nullable": true,
+            "description": "Name of the sandbox environment."
           }
         },
         "required": [
@@ -77837,83 +78701,6 @@
         },
         "required": [
           "Message"
-        ]
-      },
-      "UserSummary": {
-        "type": "object",
-        "description": "Lightweight user representation for embedded references in other entities (e.g., CreatedBy, ModifiedBy, Owner).",
-        "properties": {
-          "UserId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for the user",
-            "x-obtained-from": {
-              "operationId": "searchUsers",
-              "endpoint": "POST /api/v1.0/users",
-              "responseField": "Items[].UserId"
-            }
-          },
-          "Name": {
-            "type": "string",
-            "description": "Full display name of the user",
-            "example": "iiQ User"
-          },
-          "FirstName": {
-            "type": "string",
-            "nullable": true,
-            "description": "User's first name",
-            "example": "iiQ"
-          },
-          "LastName": {
-            "type": "string",
-            "nullable": true,
-            "description": "User's last name",
-            "example": "User"
-          },
-          "Email": {
-            "type": "string",
-            "nullable": true,
-            "description": "User's email address",
-            "example": "demo@incidentiq.com"
-          },
-          "Username": {
-            "type": "string",
-            "nullable": true,
-            "description": "User's login username",
-            "example": "demo@incidentiq.com"
-          },
-          "PhotoId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true,
-            "description": "Reference to the user's profile photo"
-          },
-          "RoleId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true,
-            "description": "Reference to the user's role"
-          },
-          "LocationId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true,
-            "description": "UUID of the location. Obtain via [GET /api/v2.0/locations](#/Locations/getMyLocationsV2), extract `Items[].LocationId`.",
-            "x-obtained-from": {
-              "operationId": "getMyLocationsV2",
-              "endpoint": "GET /api/v2.0/locations",
-              "responseField": "Items[].LocationId"
-            }
-          },
-          "LocationName": {
-            "type": "string",
-            "nullable": true,
-            "description": "Display name of the user's primary location"
-          }
-        },
-        "required": [
-          "UserId",
-          "Name"
         ]
       },
       "ItemGetResponse": {
@@ -81115,7 +81902,7 @@
       },
       "FilterMatch": {
         "type": "object",
-        "description": "Universal filter structure used across all search endpoints (Tickets, Assets, Users). Each FilterMatch targets a specific facet and provides criteria through either the `Id` field (for entity references) or the `Value` field (for expressions).\n\n## Supported Entity Types\n\n| Entity | Facet Key Reference | Total Facets |\n|--------|---------------------|-------------|\n| Tickets | `TicketSearchFacetKey` | 103 |\n| Assets | `AssetSearchFacetKey` | 75 |\n| Users | `UserSearchFacetKey` | 41 |\n\n## Field Usage by Facet Type\n\n| Facet Type | Use Field | Example |\n|------------|-----------|--------|\n| Entity reference (status, agent, location) | `Id` | `{\"Facet\": \"status\", \"Id\": \"guid-here\"}` |\n| Date expression | `Value` | `{\"Facet\": \"createddate\", \"Value\": \"range:thisweek\"}` |\n| Numeric expression | `Value` | `{\"Facet\": \"purchasedprice\", \"Value\": \"numoperator:greaterthan:100\"}` |\n| Keyword search | `Value` | `{\"Facet\": \"keyword\", \"Value\": \"laptop\"}` |\n| Boolean facet | `Value` | `{\"Facet\": \"isurgent\", \"Value\": \"true\"}` |\n\n## Filter Combination Logic\n\n- **Default (AND)**: All filters are combined with AND logic\n- **OR within groups**: Filters with the same `GroupIndex` are combined with OR logic\n- **Exclusion**: Set `Negative: true` to exclude matching records\n\n## Expression Syntax Reference\n\nSee `DateExpressionSyntax` and `NumericExpressionSyntax` schemas for detailed syntax documentation.\n\n## Universal Facets\n\nSix facets are shared across all search endpoints: `grade`, `location`, `locationtype`, `role`, `source`, `user`. See `UniversalFacets` schema for detailed cross-entity behavior documentation.",
+        "description": "Universal filter structure used across all search endpoints (Tickets, Assets, Users). Each FilterMatch targets a specific facet and provides criteria through either the `Id` field (for entity references) or the `Value` field (for expressions).\n\n## Supported Entity Types\n\n| Entity | Facet Key Reference | Total Facets |\n|--------|---------------------|-------------|\n| Tickets | `TicketSearchFacetKey` | 103 |\n| Assets | `AssetSearchFacetKey` | 75 |\n| Users | `UserSearchFacetKey` | 41 |\n\n## Field Usage by Facet Type\n\n| Facet Type | Use Field | Example |\n|------------|-----------|--------|\n| Entity reference (status, agent, location) | `Id` | `{\"Facet\": \"status\", \"Id\": \"guid-here\"}` |\n| Date expression | `Value` | `{\"Facet\": \"createddate\", \"Value\": \"range:thisweek\"}` |\n| Numeric expression | `Value` | `{\"Facet\": \"purchasedprice\", \"Value\": \"numoperator:greaterthan:100\"}` |\n| Keyword search | `Value` | `{\"Facet\": \"keyword\", \"Value\": \"laptop\"}` |\n| Boolean facet | `Value` | `{\"Facet\": \"isurgent\", \"Value\": \"true\"}` |\n\n## Filter Combination Logic\n\nFilters are processed in two levels of grouping:\n\n- **Within a `GroupIndex` group (AND logic)**: Filters in the same group that target *different facets* are AND'd together (e.g., `status=Open` AND `location=HQ`). Filters in the same group that target the *same facet* are OR'd (e.g., `status=Open` OR `status=InProgress`).\n- **Across groups (OR logic)**: When multiple distinct `GroupIndex` values are used, each group's combined result is OR'd with the others — enabling complex cross-facet OR conditions.\n- **Default (`GroupIndex: 0`)**: All filters share one group. Different facets are AND'd, same-facet values are OR'd — standard filter behavior.\n- **Exclusion**: Set `Negative: true` to exclude matching records.\n\n### Cross-facet OR example\nTo find tickets that are either *(Open AND assigned to UserA)* OR *(Closed AND at LocationB)*:\n```json\n[\n  {\"Facet\": \"status\", \"Id\": \"<open-id>\", \"GroupIndex\": 1},\n  {\"Facet\": \"agent\", \"Id\": \"<userA-id>\", \"GroupIndex\": 1},\n  {\"Facet\": \"status\", \"Id\": \"<closed-id>\", \"GroupIndex\": 2},\n  {\"Facet\": \"location\", \"Id\": \"<locationB-id>\", \"GroupIndex\": 2}\n]\n```\nGroup 1 matches (Open AND UserA); Group 2 matches (Closed AND LocationB). Results include tickets from either group.\n\n## Expression Syntax Reference\n\nSee `DateExpressionSyntax` and `NumericExpressionSyntax` schemas for detailed syntax documentation.\n\n## Universal Facets\n\nSix facets are shared across all search endpoints: `grade`, `location`, `locationtype`, `role`, `source`, `user`. See `UniversalFacets` schema for detailed cross-entity behavior documentation.",
         "properties": {
           "Facet": {
             "type": "string",
@@ -81155,7 +81942,7 @@
             "type": "integer",
             "minimum": 0,
             "default": 0,
-            "description": "Groups filters for OR logic. Filters with the same `GroupIndex` are combined with OR, then groups are combined with AND. Default value of 0 means all filters use AND logic.",
+            "description": "Logical group index for filter combination. Filters within the **same** `GroupIndex` group that target different facets are AND'd together; same-facet values within a group are OR'd. Filters in **different** `GroupIndex` groups are OR'd at the top level, enabling cross-facet OR conditions. Default `0` places all filters in a single AND group.",
             "example": 0
           },
           "Selected": {
@@ -82201,6 +82988,61 @@
               "responseField": "Items[].UserId"
             },
             "description": "UUID of the user (OverrideUserId). Obtain via [POST /api/v1.0/users](#/Users/searchUsers), extract `Items[].UserId`."
+          },
+          "OverrideUser": {
+            "$ref": "#/components/schemas/SimpleUser"
+          },
+          "CustomFieldValues": {
+            "type": "array",
+            "description": "Custom field values captured for the event.",
+            "items": {
+              "$ref": "#/components/schemas/EventCustomFieldValue"
+            }
+          },
+          "Schedule": {
+            "$ref": "#/components/schemas/RecurringSchedule"
+          },
+          "SeriesInfo": {
+            "$ref": "#/components/schemas/EventSeriesInfo"
+          },
+          "InsuranceMessage": {
+            "type": "string",
+            "nullable": true,
+            "description": "Insurance status message for the event when insurance tracking applies."
+          },
+          "InsuranceExpiring": {
+            "type": "boolean",
+            "description": "Whether insurance coverage tied to the event is expiring soon."
+          },
+          "InsuranceExpired": {
+            "type": "boolean",
+            "description": "Whether insurance coverage tied to the event is expired."
+          }
+        }
+      },
+      "EventSeriesInfo": {
+        "type": "object",
+        "description": "Summary metadata for an event series.",
+        "properties": {
+          "SeriesId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Series identifier for the related event group."
+          },
+          "NumberOfEvents": {
+            "type": "integer",
+            "description": "Number of events currently in the series."
+          },
+          "MinStartDatetime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Earliest start date/time among series events."
+          },
+          "MaxStartDatetime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Latest start date/time among series events."
           }
         }
       },
@@ -83364,10 +84206,26 @@
             "nullable": true,
             "description": "Site/district identifier the file belongs to"
           },
+          "ProductId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Product/module identifier associated with the file."
+          },
+          "Icon": {
+            "type": "string",
+            "nullable": true,
+            "description": "Icon class or token representing the file in the UI."
+          },
           "Name": {
             "type": "string",
             "description": "Display name for the file",
             "example": "screenshot.png"
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true,
+            "description": "Optional description of the file contents."
           },
           "FileName": {
             "type": "string",
@@ -83378,6 +84236,11 @@
             "type": "string",
             "description": "URL path to access or download the file",
             "example": "/api/v1.0/files/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+          },
+          "PdfUrl": {
+            "type": "string",
+            "nullable": true,
+            "description": "Optional URL path to a PDF rendition of the file."
           },
           "FileType": {
             "description": "Classification of the file type",
@@ -83407,6 +84270,47 @@
             "format": "uuid",
             "nullable": true,
             "description": "UUID of the user who uploaded the file"
+          },
+          "CreatedByUser": {
+            "description": "Simple profile of the user who uploaded the file.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SimpleUser"
+              }
+            ],
+            "type": "object"
+          },
+          "IsImage": {
+            "type": "boolean",
+            "description": "Whether the file is recognized as an image.",
+            "default": false
+          },
+          "MetaData": {
+            "description": "Additional metadata associated with the file.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/FileMetaData"
+              }
+            ],
+            "type": "object"
+          },
+          "CategoryId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Category identifier associated with the file."
+          },
+          "Category": {
+            "description": "Category details associated with the file.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Category"
+              }
+            ],
+            "type": "object"
           },
           "IsPrivateInternal": {
             "type": "boolean",
@@ -83452,6 +84356,35 @@
           "CreatedById": "51c89694-ae9f-f011-8e61-6045bd7991ab",
           "IsPrivateInternal": false,
           "IsDeleted": false
+        }
+      },
+      "FileMetaData": {
+        "type": "object",
+        "description": "Additional metadata envelope for file-specific enrichments.",
+        "properties": {
+          "AzureVideo": {
+            "description": "Azure video metadata for encoded media files.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/FileMetaDataAzureVideo"
+              }
+            ],
+            "type": "object"
+          }
+        }
+      },
+      "FileMetaDataAzureVideo": {
+        "type": "object",
+        "description": "Azure video metadata that contains available stream URLs.",
+        "properties": {
+          "Urls": {
+            "type": "array",
+            "description": "List of stream URLs generated for the video asset.",
+            "items": {
+              "type": "string"
+            }
+          }
         }
       },
       "Base64FileUploadRequest": {
@@ -85060,7 +85993,7 @@
           },
           "GroupIndex": {
             "type": "integer",
-            "description": "Grouping index for OR logic within the filter set."
+            "description": "Logical group index. Same-group filters are AND'd across facets; different groups are OR'd together."
           }
         },
         "example": {
@@ -85207,7 +86140,7 @@
           },
           "GroupIndex": {
             "type": "integer",
-            "description": "Grouping index for OR logic."
+            "description": "Logical group index. Same-group filters are AND'd across facets; different groups are OR'd together."
           },
           "Dimension": {
             "type": "string",
@@ -88865,6 +89798,51 @@
           "$ref": "#/components/schemas/ModelIssue"
         }
       },
+      "HelpfulnessStat": {
+        "type": "object",
+        "description": "Helpfulness statistics for a knowledge base article, summarizing user feedback.",
+        "properties": {
+          "ThumbsUp": {
+            "type": "integer",
+            "description": "Number of users who marked the article as helpful."
+          },
+          "ThumbsDown": {
+            "type": "integer",
+            "description": "Number of users who marked the article as not helpful."
+          },
+          "Helpfulness": {
+            "type": "number",
+            "format": "double",
+            "description": "Ratio of helpful votes to total feedback submissions (0.0 to 1.0). Returns 0 if no feedback has been submitted."
+          }
+        },
+        "example": {
+          "ThumbsUp": 89,
+          "ThumbsDown": 11,
+          "Helpfulness": 0.89
+        }
+      },
+      "KbArticleCustomFieldValue": {
+        "type": "object",
+        "description": "A custom field value associated with a KB article.",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CustomFieldValue"
+          }
+        ],
+        "properties": {
+          "KbArticleCustomFieldId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the KB article custom field definition."
+          },
+          "KbArticleId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The KB article this custom field value belongs to."
+          }
+        }
+      },
       "LaborRate": {
         "type": "object",
         "description": "Represents a user's labor rate configuration, specifying their hourly billing rate and associated labor type.",
@@ -92275,6 +93253,218 @@
           }
         }
       },
+      "RecurringSchedule": {
+        "type": "object",
+        "description": "Defines the recurrence pattern and timing for automated scheduled operations such as ticket template auto-creation. Supports daily, weekly, monthly, quarterly, yearly, one-time, and interval-based patterns.",
+        "properties": {
+          "RecurringScheduleId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for this recurring schedule.",
+            "x-obtained-from": {
+              "endpoint": "GET /api/v1.0/schedules/recurring",
+              "field": "Items[].RecurringScheduleId"
+            },
+            "example": "11111111-2222-3333-4444-555555555555"
+          },
+          "SiteId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifier of the site that owns this recurring schedule. Obtain via [GET /api/v1.0/sites/{siteUrl}](#/Sites/getSiteByUrl), extract `Item.SiteId`.",
+            "x-obtained-from": {
+              "operationId": "getSiteByUrl",
+              "endpoint": "GET /api/v1.0/sites/{siteUrl}",
+              "field": "Item.SiteId"
+            },
+            "example": "e5f6a7b8-c9d0-1234-ef12-345678901234"
+          },
+          "CreatedDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when this recurring schedule was created.",
+            "example": "2024-01-15T10:30:00Z"
+          },
+          "ModifiedDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when this recurring schedule was last modified.",
+            "example": "2024-01-15T10:30:00Z"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true,
+            "description": "Human-readable display name for this recurring schedule.",
+            "example": "Weekly Monday/Wednesday Maintenance"
+          },
+          "Pattern": {
+            "type": "string",
+            "description": "Recurrence pattern type. Use GET /api/v1.0/schedules/recurring/patterns to retrieve valid values.",
+            "enum": [
+              "Never",
+              "Once",
+              "Daily",
+              "Weekly",
+              "Monthly",
+              "Quarterly",
+              "Yearly",
+              "Interval",
+              "Days",
+              "Weeks",
+              "Months",
+              "Years",
+              "LogBased"
+            ],
+            "example": "Weekly"
+          },
+          "StartTime": {
+            "type": "string",
+            "description": "Time of day when the schedule fires, in HH:mm:ss format.",
+            "pattern": "^\\d{2}:\\d{2}:\\d{2}$",
+            "example": "08:00:00"
+          },
+          "StopRecurringDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "Optional date after which the schedule stops recurring. Null means no end date.",
+            "example": null
+          },
+          "RunOnceDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "For one-time schedules, the exact timestamp when the schedule will run.",
+            "example": null
+          },
+          "WeeklyDays": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Bitmask representing selected weekdays for weekly recurrences (Sunday=1, Monday=2, Tuesday=4, Wednesday=8, Thursday=16, Friday=32, Saturday=64). Combine with bitwise OR for multiple days.",
+            "example": 10
+          },
+          "MonthlyDay": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Calendar day of the month (1–31) when a monthly schedule fires. Value 0 indicates instance-based logic is used instead.",
+            "minimum": 0,
+            "maximum": 31,
+            "example": 1
+          },
+          "MonthlyDayInstance": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Week instance (1=first, 2=second, 3=third, 4=fourth, 5=last) used for instance-based monthly schedules.",
+            "minimum": 0,
+            "example": 1
+          },
+          "MonthlyDayWeekDay": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Weekday (0=Sunday through 6=Saturday) used with instance-based monthly schedule configurations.",
+            "minimum": 0,
+            "maximum": 6,
+            "example": 1
+          },
+          "YearlyMonth": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Month (1–12) when a yearly schedule fires.",
+            "minimum": 1,
+            "maximum": 12,
+            "example": 9
+          },
+          "YearlyDay": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Day of the month for a yearly schedule. Value 0 indicates instance-based rules are used.",
+            "minimum": 0,
+            "maximum": 31,
+            "example": 1
+          },
+          "QuarterlyStart": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "Start date used to anchor quarterly recurrence calculations.",
+            "example": null
+          },
+          "QuarterlyDay": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Day within the quarter when the schedule fires.",
+            "minimum": 0,
+            "example": null
+          },
+          "IntervalStartDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "Start date for interval-based schedules. Defines when the recurring interval begins.",
+            "example": null
+          },
+          "IntervalEndDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "End date for interval-based schedules. Null means the interval repeats indefinitely.",
+            "example": null
+          },
+          "IntervalAmount": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Number of interval units (days, weeks, months, or years) between occurrences for interval-based schedules.",
+            "minimum": 1,
+            "example": null
+          },
+          "IsSplit": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "When true, the schedule is split into multiple sub-intervals.",
+            "example": false
+          },
+          "SplitAmount": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Number of splits when IsSplit is true.",
+            "minimum": 0,
+            "example": null
+          },
+          "RRule": {
+            "type": "string",
+            "nullable": true,
+            "description": "Raw RRULE expression string for advanced recurrence configurations (RFC 5545).",
+            "example": null
+          },
+          "RRuleJson": {
+            "type": "string",
+            "nullable": true,
+            "description": "JSON-encoded recurrence metadata used by the web application for rendering schedule configuration UI.",
+            "example": null
+          },
+          "IsValidMonthlyPattern": {
+            "type": "boolean",
+            "description": "Computed. Indicates whether the current configuration forms a valid monthly recurrence pattern.",
+            "example": false
+          },
+          "IsValidQuarterlyPattern": {
+            "type": "boolean",
+            "description": "Computed. Indicates whether the current configuration forms a valid quarterly recurrence pattern.",
+            "example": false
+          },
+          "IsMonthlyInstanceBased": {
+            "type": "boolean",
+            "description": "Computed. True when the monthly schedule uses week-instance rules (e.g., 2nd Tuesday of the month).",
+            "example": false
+          },
+          "Meta": {
+            "type": "object",
+            "nullable": true,
+            "additionalProperties": true,
+            "description": "Optional metadata dictionary for extended properties.",
+            "example": null
+          }
+        }
+      },
       "CloseReasonType": {
         "type": "object",
         "description": "Defines a reason type that can be selected when closing a ticket. Close reason types categorize the resolution outcome (e.g., Resolved, Duplicate, Won't Fix).",
@@ -93044,6 +94234,22 @@
               }
             ]
           },
+          "Helpfulness": {
+            "description": "Helpfulness statistics for the article. Read-only.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HelpfulnessStat"
+              }
+            ]
+          },
+          "CustomFieldValues": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/KbArticleCustomFieldValue"
+            },
+            "description": "Custom field values for the article."
+          },
           "Tags": {
             "type": "array",
             "items": {
@@ -93139,6 +94345,73 @@
           }
         ]
       },
+      "SearchResult": {
+        "type": "object",
+        "description": "A single unified search result item from the v2 global search endpoint. Each result represents one matched entity across any supported entity type. When the `IncludeMatchedItem` field is true in the request, the full entity record is included in `MatchedItem`.",
+        "properties": {
+          "EntityId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier of the matched entity.",
+            "x-obtained-from": {
+              "endpoint": "POST /api/v1.0/search/v2",
+              "field": "Items[].EntityId"
+            }
+          },
+          "EntityFacet": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GlobalSearchFacetBitmask"
+              }
+            ],
+            "description": "The facet bitmask value identifying the type of the matched entity (e.g., 1 = Ticket, 8 = Asset, 4 = User)."
+          },
+          "Title": {
+            "type": "string",
+            "nullable": true,
+            "description": "Primary display text for the result (e.g., ticket subject, asset name, user full name)."
+          },
+          "Subtitle": {
+            "type": "string",
+            "nullable": true,
+            "description": "Secondary display text for the result (e.g., ticket number, asset tag, email address)."
+          },
+          "MatchedItem": {
+            "type": "object",
+            "nullable": true,
+            "additionalProperties": true,
+            "description": "The full entity record for the matched result. Only populated when `IncludeMatchedItem` is true in the search request. The shape depends on the entity type (Ticket, Asset, User, etc.)."
+          }
+        },
+        "example": {
+          "EntityId": "546f841c-32d8-47e5-bfc1-a4f21754d6d3",
+          "EntityFacet": 8,
+          "Title": "HP Chromebook 14",
+          "Subtitle": "CHR-001234",
+          "MatchedItem": null
+        }
+      },
+      "SearchListResponse": {
+        "type": "object",
+        "description": "Response envelope for v2 global search results. Returns a paginated flat list of `SearchResult` items across all matched entity types.",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ListGetResponse"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "Items": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SearchResult"
+                },
+                "description": "List of matched search result items."
+              }
+            }
+          }
+        ]
+      },
       "SiteStatus": {
         "type": "object",
         "description": "Operational status metadata for the district site.",
@@ -93175,6 +94448,53 @@
           "Name",
           "IsActive"
         ]
+      },
+      "SiteStatusType": {
+        "type": "object",
+        "description": "Site status type definition. Mirrors `Spark.Shared.Models.SiteStatusType`.",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SiteStatus"
+          }
+        ]
+      },
+      "SiteKpi": {
+        "type": "object",
+        "description": "Key performance indicator snapshot for a site.",
+        "properties": {
+          "SiteKpiId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Identifier for the KPI record."
+          },
+          "DateId": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Date identifier associated with the KPI value."
+          },
+          "SiteId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Site identifier associated with the KPI value."
+          },
+          "ProductId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Product identifier associated with the KPI value."
+          },
+          "KpiMetricId": {
+            "type": "string",
+            "description": "Metric identifier for the KPI entry."
+          },
+          "Value": {
+            "type": "number",
+            "format": "double",
+            "description": "Numeric KPI value."
+          }
+        }
       },
       "SiteLicensedProduct": {
         "type": "object",
@@ -93492,6 +94812,12 @@
             "description": "Friendly label for the site.",
             "example": "IncidentIQ Demo District"
           },
+          "LogoId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Identifier of the logo file configured for the site."
+          },
           "ManufacturerOther": {
             "type": "string",
             "format": "uuid",
@@ -93634,11 +94960,10 @@
             }
           },
           "Roles": {
-            "type": "object",
-            "description": "Role identifiers available in the tenant.",
-            "additionalProperties": {
-              "type": "string",
-              "format": "uuid"
+            "type": "array",
+            "description": "Role definitions available in the site.",
+            "items": {
+              "$ref": "#/components/schemas/Role"
             }
           },
           "ActivityTypes": {
@@ -93650,11 +94975,17 @@
             }
           },
           "CloseReasonTypes": {
-            "type": "object",
-            "description": "Mapping of ticket close reason names to UUID identifiers.",
-            "additionalProperties": {
-              "type": "string",
-              "format": "uuid"
+            "type": "array",
+            "description": "Ticket close reason types available to the site.",
+            "items": {
+              "$ref": "#/components/schemas/CloseReasonType"
+            }
+          },
+          "SiteStatusTypes": {
+            "type": "array",
+            "description": "Site status types available to the tenant.",
+            "items": {
+              "$ref": "#/components/schemas/SiteStatusType"
             }
           },
           "PriorityLevels": {
@@ -93683,83 +95014,86 @@
             ]
           },
           "InventoryActionTypes": {
-            "type": "object",
-            "description": "Inventory action definitions mapped to UUID identifiers.",
-            "additionalProperties": {
-              "type": "string",
-              "format": "uuid"
+            "type": "array",
+            "description": "Inventory action type definitions available to the site.",
+            "items": {
+              "type": "object",
+              "description": "Inventory action type entry. Dedicated `InventoryActionType` schema is not yet modeled."
             }
           },
           "InventoryStateTypes": {
-            "type": "object",
-            "description": "Inventory state names mapped to UUID identifiers.",
-            "additionalProperties": {
-              "type": "string",
-              "format": "uuid"
+            "type": "array",
+            "description": "Inventory state type definitions available to the site.",
+            "items": {
+              "type": "object",
+              "description": "Inventory state type entry. Dedicated `InventoryStateType` schema is not yet modeled."
             }
           },
           "AssetTypes": {
-            "type": "object",
-            "description": "Asset type names mapped to UUID identifiers.",
-            "additionalProperties": {
-              "type": "string",
-              "format": "uuid"
+            "type": "array",
+            "description": "Asset types available in the site.",
+            "items": {
+              "$ref": "#/components/schemas/AssetType"
             }
           },
           "AssetStatusTypes": {
-            "type": "object",
-            "description": "Asset status names mapped to UUID identifiers.",
-            "additionalProperties": {
-              "type": "string",
-              "format": "uuid"
+            "type": "array",
+            "description": "Asset status types available in the site.",
+            "items": {
+              "$ref": "#/components/schemas/AssetStatusType"
             }
           },
           "AssetFundingTypes": {
-            "type": "object",
-            "description": "Funding type names mapped to UUID identifiers.",
-            "additionalProperties": {
-              "type": "string",
-              "format": "uuid"
+            "type": "array",
+            "description": "Asset funding types available in the site.",
+            "items": {
+              "$ref": "#/components/schemas/AssetFundingType"
             }
           },
           "AssetInventoryTypes": {
-            "type": "object",
-            "description": "Inventory type names mapped to UUID identifiers.",
-            "additionalProperties": {
-              "type": "string",
-              "format": "uuid"
+            "type": "array",
+            "description": "Asset inventory types available in the site.",
+            "items": {
+              "$ref": "#/components/schemas/AssetInventoryType"
             }
           },
           "AssetAuditPolicyEventTypes": {
-            "type": "object",
-            "description": "Asset audit event names mapped to UUID identifiers.",
-            "additionalProperties": {
-              "type": "string",
-              "format": "uuid"
+            "type": "array",
+            "description": "Asset audit policy event types available in the site.",
+            "items": {
+              "type": "object",
+              "description": "Asset audit policy event type entry. Dedicated `AssetAuditPolicyEventType` schema is not yet modeled."
             }
           },
           "AssetAuditPolicyStatusTypes": {
-            "type": "object",
-            "description": "Asset audit status names mapped to UUID identifiers.",
-            "additionalProperties": {
-              "type": "string",
-              "format": "uuid"
+            "type": "array",
+            "description": "Asset audit policy status types available in the site.",
+            "items": {
+              "type": "object",
+              "description": "Asset audit policy status type entry. Dedicated `AssetAuditPolicyStatusType` schema is not yet modeled."
             }
           },
           "TicketTemplatePackageTypes": {
-            "type": "object",
-            "description": "Ticket template package type identifiers.",
-            "additionalProperties": {
-              "type": "string",
-              "format": "uuid"
+            "type": "array",
+            "description": "Ticket template package types available to the site.",
+            "items": {
+              "type": "object",
+              "description": "Ticket template package type entry. Dedicated `TicketTemplatePackageType` schema is not yet modeled."
             }
           },
           "ReportElementTypes": {
-            "type": "object",
-            "description": "Report element type identifiers.",
-            "additionalProperties": {
-              "type": "string",
-              "format": "uuid"
+            "type": "array",
+            "description": "Report element type definitions available to the site.",
+            "items": {
+              "type": "object",
+              "description": "Report element type entry. Dedicated `ReportElementType` schema is not yet modeled."
+            }
+          },
+          "PurchaseOrderStatusTypes": {
+            "type": "array",
+            "description": "Purchase order status types available to the site.",
+            "items": {
+              "$ref": "#/components/schemas/PurchaseOrderStatusType"
             }
           },
           "Keys": {
@@ -95572,6 +96906,18 @@
             "nullable": true,
             "example": "d5d91f20-2269-e611-80f1-000c29ab80b0"
           },
+          "TicketTemplateId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifier for the ticket template used to create the ticket.",
+            "nullable": true
+          },
+          "GuestTicketId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifier for the related guest ticket record when applicable.",
+            "nullable": true
+          },
           "ParentTicketNumber": {
             "type": "string",
             "description": "Parent ticket number when this record is a sub-ticket",
@@ -95603,6 +96949,16 @@
             "items": {
               "$ref": "#/components/schemas/TicketAsset"
             }
+          },
+          "AdditionalDetails": {
+            "description": "Additional structured details captured alongside the ticket.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TicketAdditionalDetails"
+              }
+            ],
+            "type": "object"
           },
           "CustomFieldValues": {
             "type": "array",
@@ -95640,6 +96996,27 @@
             },
             "example": []
           },
+          "Activities": {
+            "type": "array",
+            "description": "Ticket activity entries associated with the ticket.",
+            "items": {
+              "$ref": "#/components/schemas/TicketActivity"
+            }
+          },
+          "LaborUsage": {
+            "type": "array",
+            "description": "Labor activity records associated with the ticket.",
+            "items": {
+              "$ref": "#/components/schemas/LaborRateActivity"
+            }
+          },
+          "LaborUsageByUser": {
+            "type": "array",
+            "description": "Labor activity records grouped by user for the ticket.",
+            "items": {
+              "$ref": "#/components/schemas/LaborRateActivity"
+            }
+          },
           "SlaId": {
             "type": "string",
             "format": "uuid",
@@ -95674,6 +97051,136 @@
               "endpoint": "POST /api/v1.0/tickets",
               "responseField": "Items[].TicketId"
             }
+          },
+          "Teams": {
+            "type": "array",
+            "description": "Teams associated with the ticket's routing or collaboration context.",
+            "items": {
+              "$ref": "#/components/schemas/Team"
+            }
+          },
+          "Users": {
+            "type": "array",
+            "description": "Users associated with the ticket outside the primary owner/requester fields.",
+            "items": {
+              "$ref": "#/components/schemas/User"
+            }
+          },
+          "Roles": {
+            "type": "array",
+            "description": "Roles associated with the ticket's permission or workflow context.",
+            "items": {
+              "$ref": "#/components/schemas/Role"
+            }
+          },
+          "Locations": {
+            "type": "array",
+            "description": "Locations associated with the ticket for workflow or filtering context.",
+            "items": {
+              "$ref": "#/components/schemas/Location"
+            }
+          },
+          "LocationTypes": {
+            "type": "array",
+            "description": "Location types associated with the ticket's location context.",
+            "items": {
+              "$ref": "#/components/schemas/LocationType"
+            }
+          },
+          "AssetGroups": {
+            "type": "array",
+            "description": "Asset group views associated with the ticket.",
+            "items": {
+              "$ref": "#/components/schemas/View"
+            }
+          },
+          "SurveyId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifier of the survey associated with the ticket.",
+            "nullable": true
+          },
+          "SurveyResponseId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifier of the survey response associated with the ticket.",
+            "nullable": true
+          },
+          "SurveyUserId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifier of the survey respondent associated with the ticket.",
+            "nullable": true
+          },
+          "OverallSurveyRating": {
+            "type": "integer",
+            "description": "Overall rating captured from the ticket survey.",
+            "nullable": true
+          },
+          "SourceEntityTypeId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Entity type identifier for the source record that created the ticket.",
+            "nullable": true
+          },
+          "SourceEntityId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Source entity identifier for the record that created the ticket.",
+            "nullable": true
+          },
+          "Subtasks": {
+            "type": "array",
+            "description": "Subtasks associated with the ticket.",
+            "items": {
+              "$ref": "#/components/schemas/TicketSubtask"
+            }
+          },
+          "EventId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifier of the event associated with the ticket.",
+            "nullable": true
+          },
+          "EventIds": {
+            "type": "array",
+            "description": "Identifiers of events associated with the ticket.",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "AssetTransferViewId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifier of the asset transfer view associated with the ticket.",
+            "nullable": true
+          },
+          "OriginatingSite": {
+            "description": "Originating site details when the ticket came from another tenant or site context.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Site"
+              }
+            ],
+            "type": "object"
+          },
+          "OriginatingSiteId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifier of the originating site when the ticket came from another site context.",
+            "nullable": true
+          },
+          "OriginatingSiteDomain": {
+            "type": "string",
+            "description": "Domain name of the originating site.",
+            "nullable": true
+          },
+          "OriginatingSiteDomainWithProtocol": {
+            "type": "string",
+            "description": "Originating site domain including the URL protocol.",
+            "nullable": true
           },
           "UserPermissions": {
             "$ref": "#/components/schemas/TicketPermission"
@@ -97493,7 +99000,7 @@
           "GroupIndex": {
             "type": "integer",
             "minimum": 0,
-            "description": "Zero-based index representing the group of related filters in multi-selection scenarios. Mirrors UI group ordering.",
+            "description": "Logical group index for filter combination. Filters in the same group are AND'd across different facets; same-facet values in a group are OR'd. Filters in different groups are OR'd at the top level.",
             "example": 0
           }
         },
@@ -105063,9 +106570,50 @@
             "type": "string",
             "description": "Name of user's location"
           },
+          "SiteId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Site identifier for the user."
+          },
+          "Site": {
+            "$ref": "#/components/schemas/Site"
+          },
+          "ProductId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Primary product identifier for the user."
+          },
+          "CreatedDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when the user record was created."
+          },
+          "ModifiedDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when the user record was last modified."
+          },
+          "HomeAddress": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Address"
+              }
+            ],
+            "nullable": true,
+            "type": "object",
+            "description": "Home mailing address for the user."
+          },
+          "Location": {
+            "$ref": "#/components/schemas/Location"
+          },
+          "IsActive": {
+            "type": "boolean",
+            "description": "Whether the user is active."
+          },
           "PhotoId": {
             "type": "string",
             "format": "uuid",
+            "nullable": true,
             "description": "User's profile photo ID"
           },
           "RoleId": {
@@ -105083,11 +106631,191 @@
           "Phone": {
             "type": "string",
             "description": "User's phone number"
+          },
+          "Password": {
+            "type": "string",
+            "description": "Password value when returned by the API."
+          },
+          "Grade": {
+            "type": "string",
+            "description": "Grade level for student users."
+          },
+          "Homeroom": {
+            "type": "string",
+            "description": "Homeroom assignment for student users."
+          },
+          "ExternalId": {
+            "type": "string",
+            "description": "External identity provider identifier for the user."
+          },
+          "InternalComments": {
+            "type": "string",
+            "description": "Internal comments stored on the user record."
+          },
+          "DepartmentId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Department identifier for the user."
+          },
+          "Department": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Department"
+              }
+            ],
+            "nullable": true,
+            "type": "object",
+            "description": "Department details for the user."
+          },
+          "EmploymentStatusId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Employment status identifier for the user."
+          },
+          "EmploymentStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EmploymentStatus"
+              }
+            ],
+            "nullable": true,
+            "type": "object",
+            "description": "Employment status details for the user."
+          },
+          "DefaultProductId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Default product identifier used for the user."
+          },
+          "AddressId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Home address identifier for the user."
+          },
+          "JobTitle": {
+            "type": "string",
+            "description": "Job title for the user."
+          },
+          "HomePhone": {
+            "type": "string",
+            "description": "Home phone number for the user."
+          },
+          "PersonalEmail": {
+            "type": "string",
+            "description": "Personal email address for the user."
+          },
+          "Supervisor": {
+            "type": "string",
+            "description": "Supervisor name or identifier for the user."
+          },
+          "Pronouns": {
+            "type": "string",
+            "description": "Pronouns configured for the user."
+          },
+          "SourceId": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Source identifier describing how the user was created."
+          },
+          "Source": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Source"
+              }
+            ],
+            "nullable": true,
+            "type": "object",
+            "description": "Source details for the user."
+          },
+          "AuthenticatedBy": {
+            "type": "string",
+            "description": "Authentication provider used for the user session."
+          },
+          "AccountSetupProgress": {
+            "type": "integer",
+            "description": "Progress indicator for account setup completion."
+          },
+          "IsEmailVerified": {
+            "type": "boolean",
+            "description": "Whether the user's email address has been verified."
+          },
+          "IsWelcomeEmailSent": {
+            "type": "boolean",
+            "description": "Whether a welcome email has been sent to the user."
+          },
+          "PreventProviderUpdates": {
+            "type": "boolean",
+            "description": "Whether external identity provider updates are blocked."
+          },
+          "IsOutOfOffice": {
+            "type": "boolean",
+            "description": "Whether the user is currently marked out of office."
+          },
+          "Portal": {
+            "type": "integer",
+            "enum": [
+              1,
+              2,
+              3
+            ],
+            "description": "Portal experience assigned to the user: 1 Requestor, 2 Agent, 3 iiQAdmin."
+          },
+          "Options": {
+            "$ref": "#/components/schemas/UserOptions"
+          },
+          "DataMappings": {
+            "$ref": "#/components/schemas/UserDataMappings"
+          },
+          "HourlyRate": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "description": "Hourly rate associated with the user."
+          },
+          "PasswordExpirationDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "description": "Date when the user's password expires."
+          },
+          "CustomFieldValues": {
+            "type": "array",
+            "description": "Custom field values stored for the user.",
+            "items": {
+              "$ref": "#/components/schemas/UserCustomFieldValue"
+            }
+          },
+          "Assets": {
+            "type": "array",
+            "description": "Assets assigned to the user.",
+            "items": {
+              "$ref": "#/components/schemas/Asset"
+            }
+          },
+          "UserStatusId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "User status identifier for the user."
+          },
+          "IsDeleted": {
+            "type": "boolean",
+            "description": "Whether the user record is deleted."
+          },
+          "IsOnlineLastUpdated": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when online status was last updated."
           }
         },
         "required": [
           "UserId",
           "Relationship",
+          "SiteId",
           "Name",
           "FirstName",
           "LastName",
@@ -105095,7 +106823,19 @@
           "LocationId",
           "RoleId",
           "Role",
-          "IsOnline"
+          "IsOnline",
+          "IsActive",
+          "ProductId",
+          "CreatedDate",
+          "ModifiedDate",
+          "IsDeleted",
+          "IsEmailVerified",
+          "IsWelcomeEmailSent",
+          "PreventProviderUpdates",
+          "IsOutOfOffice",
+          "AccountSetupProgress",
+          "Portal",
+          "IsOnlineLastUpdated"
         ]
       },
       "UserPermissions": {
@@ -107567,6 +109307,52 @@
             "nullable": true,
             "description": "Optional informational or error message."
           },
+          "ErrorKey": {
+            "type": "string",
+            "nullable": true,
+            "description": "Machine-readable error key for client-side error handling."
+          },
+          "OperationId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Trace identifier for correlating logs and diagnostics."
+          },
+          "Properties": {
+            "type": "object",
+            "nullable": true,
+            "description": "Additional response properties keyed by `ResponseProperties` enum name.",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "example": {
+              "RedirectUrl": "https://demo.incidentiq.com/verify",
+              "ToasterMessage": "Verification email sent"
+            }
+          },
+          "Metadata": {
+            "type": "object",
+            "nullable": true,
+            "description": "Additional response metadata.",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "Logs": {
+            "type": "array",
+            "nullable": true,
+            "description": "Diagnostic log entries emitted during request processing.",
+            "items": {
+              "$ref": "#/components/schemas/ResponseLog"
+            }
+          },
+          "Errors": {
+            "type": "array",
+            "nullable": true,
+            "description": "Soft validation errors that did not prevent request completion.",
+            "items": {
+              "$ref": "#/components/schemas/SoftValidationError"
+            }
+          },
           "UserId": {
             "type": "string",
             "format": "uuid",
@@ -108079,6 +109865,46 @@
           "Homeroom": "Homeroom assignment"
         }
       },
+      "UserSummary": {
+        "type": "object",
+        "description": "Minimal user summary embedded in response objects for CreatedBy/ModifiedBy fields.",
+        "properties": {
+          "UserId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the user.",
+            "x-obtained-from": {
+              "operationId": "searchUsers",
+              "endpoint": "POST /api/v1.0/users",
+              "responseField": "Items[].UserId"
+            }
+          },
+          "Name": {
+            "type": "string",
+            "description": "Full display name of the user."
+          },
+          "FirstName": {
+            "type": "string",
+            "description": "First name of the user."
+          },
+          "LastName": {
+            "type": "string",
+            "description": "Last name of the user."
+          },
+          "Email": {
+            "type": "string",
+            "format": "email",
+            "description": "Email address of the user."
+          }
+        },
+        "example": {
+          "UserId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+          "Name": "iiQ User",
+          "FirstName": "iiQ",
+          "LastName": "User",
+          "Email": "demo@incidentiq.com"
+        }
+      },
       "Vendor": {
         "type": "object",
         "description": "A vendor in the invoicing system. Vendors represent external suppliers or service providers that can be associated with utility invoices.",
@@ -108478,7 +110304,7 @@
           },
           "GroupIndex": {
             "type": "integer",
-            "description": "Index describing which grouped clause the filter belongs to.",
+            "description": "Logical group index. Same-group filters are AND'd across facets; different groups are OR'd together.",
             "example": 0
           }
         },
@@ -111436,6 +113262,18 @@
           {
             "id": "permission-policies",
             "title": "Permission Policy Operations"
+          },
+          {
+            "id": "assets",
+            "title": "Asset Operations"
+          },
+          {
+            "id": "tickets",
+            "title": "Ticket Operations"
+          },
+          {
+            "id": "visibility",
+            "title": "Entity Visibility Operations"
           }
         ]
       }
@@ -112533,6 +114371,26 @@
       }
     },
     {
+      "name": "Parts",
+      "description": "Spare parts and consumables inventory management, including part suppliers",
+      "x-iiq-docs": {
+        "sections": [
+          {
+            "id": "searching",
+            "title": "Searching & Viewing"
+          },
+          {
+            "id": "managing",
+            "title": "Creating & Managing"
+          },
+          {
+            "id": "suppliers",
+            "title": "Suppliers"
+          }
+        ]
+      }
+    },
+    {
       "name": "PermissionPolicies",
       "description": "Permission policy management for the next-generation permissions system",
       "x-iiq-docs": {
@@ -112784,6 +114642,22 @@
           {
             "id": "utilities",
             "title": "Search Utilities"
+          },
+          {
+            "id": "ticket-search",
+            "title": "Ticket Search"
+          },
+          {
+            "id": "user-search",
+            "title": "User Search"
+          },
+          {
+            "id": "asset-search",
+            "title": "Asset Search"
+          },
+          {
+            "id": "kb-search",
+            "title": "KB Article Search"
           }
         ]
       }
@@ -113152,10 +115026,10 @@
   "x-merge-metadata": {
     "profileId": "stoplight",
     "profileName": "Stoplight Documentation",
-    "generatedAt": "2026-03-27T16:28:04Z",
-    "removedPathsCount": 1128,
+    "generatedAt": "2026-04-22T16:54:09Z",
+    "removedPathsCount": 1216,
     "keptPathsCount": 792,
-    "schemasPruned": 620,
+    "schemasPruned": 679,
     "orderingApplied": true,
     "profileDescription": "Locked specification for Stoplight partner documentation. Uses manifest-based allowlist - new endpoints must be explicitly added.",
     "removedPathsSample": [

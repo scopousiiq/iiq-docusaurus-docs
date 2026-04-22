@@ -1665,32 +1665,63 @@ div[class*="col--3"] {
   overflow: hidden !important;
 }
 
-/* Code blocks in API explorer - horizontal scroll within container */
+/* Code blocks in API explorer - scrollable but with hidden scrollbars.
+   overflow: auto (not hidden) so mouse wheel and middle-click autoscroll work. */
 .openapi-explorer__code-block,
 [class*="openapi-explorer__code-block"],
 [class*="codeBlockContainer"],
 [class*="codeBlock"] {
   max-width: 100% !important;
-  overflow: hidden !important;
+  overflow: auto !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.openapi-explorer__code-block::-webkit-scrollbar,
+[class*="openapi-explorer__code-block"]::-webkit-scrollbar,
+[class*="codeBlockContainer"]::-webkit-scrollbar,
+[class*="codeBlock"]::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 .openapi-explorer__code-block-lines,
 .openapi-explorer__code-block-lines-numbering,
 [class*="codeBlockLines"] {
   max-width: 100% !important;
-  overflow-x: hidden !important;
+  overflow-x: auto !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
-/* The actual code content container */
+.openapi-explorer__code-block-lines::-webkit-scrollbar,
+.openapi-explorer__code-block-lines-numbering::-webkit-scrollbar,
+[class*="codeBlockLines"]::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* The actual code content container - scroll both axes when maximized */
 .openapi-explorer__code-block pre,
 [class*="openapi-explorer"] pre,
 [class*="openapi-tabs"] pre {
   max-width: 100% !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
+  overflow: auto !important;
   word-wrap: normal !important;
   white-space: pre !important;
   font-size: 0.8125rem !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.openapi-explorer__code-block pre::-webkit-scrollbar,
+[class*="openapi-explorer"] pre::-webkit-scrollbar,
+[class*="openapi-tabs"] pre::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 /* Token lines - individual code lines should NOT scroll */
@@ -1764,15 +1795,23 @@ div[class*="col--3"] {
   overflow: hidden !important;
 }
 
-/* Pre and code elements - always scrollable horizontally */
+/* Pre and code elements - always scrollable, hidden scrollbars */
 pre,
 code {
   max-width: 100%;
 }
 
 pre {
-  overflow-x: auto !important;
+  overflow: auto !important;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+pre::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 /* Token lines in code - don't force width */

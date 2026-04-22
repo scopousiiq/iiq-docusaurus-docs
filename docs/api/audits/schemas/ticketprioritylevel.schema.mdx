@@ -1,0 +1,33 @@
+---
+id: ticketprioritylevel
+title: "TicketPriorityLevel"
+description: "Priority weight band that maps numeric priority scores to human-friendly labels. Values are site-specific ranges used when calculating ticket urgency."
+sidebar_label: "TicketPriorityLevel"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SiteId":"bb6cece8-e4f4-e511-a789-005056bb000e","PriorityLevelId":"c3d0574a-2243-e611-a93b-a45e60e682da","Min":-99999,"Max":50,"Name":"Low","Color":"#bcd649"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketPriorityLevel"}
+>
+</Heading>
+
+
+
+Priority weight band that maps numeric priority scores to human-friendly labels. Values are site-specific ranges used when calculating ticket urgency.
+
+<Schema
+  schema={{"type":"object","description":"Priority weight band that maps numeric priority scores to human-friendly labels. Values are site-specific ranges used when calculating ticket urgency.","properties":{"SiteId":{"type":"string","format":"uuid","description":"Identifier for the site that owns this priority level.","example":"bb6cece8-e4f4-e511-a789-005056bb000e"},"PriorityLevelId":{"type":"string","format":"uuid","description":"Unique identifier for the priority level that is referenced by tickets and workflow rules.","example":"c3d0574a-2243-e611-a93b-a45e60e682da"},"Min":{"type":"integer","description":"Inclusive minimum numeric score mapped to this priority level.","example":-99999},"Max":{"type":"integer","description":"Inclusive maximum numeric score mapped to this priority level.","example":50},"Name":{"type":"string","description":"Display name shown in the UI.","example":"Low"},"Color":{"type":"string","description":"Hex color associated with the priority level badge.","example":"#bcd649"}},"required":["SiteId","PriorityLevelId","Min","Max","Name","Color"],"title":"TicketPriorityLevel"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

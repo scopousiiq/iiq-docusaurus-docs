@@ -1,0 +1,33 @@
+---
+id: closereasontype
+title: "CloseReasonType"
+description: "Defines a reason type that can be selected when closing a ticket. Close reason types categorize the resolution outcome (e.g., Resolved, Duplicate, Won't Fix)."
+sidebar_label: "CloseReasonType"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"CloseReasonTypeId":"11111111-1111-1111-1111-111111111111","Name":"Resolved"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"CloseReasonType"}
+>
+</Heading>
+
+
+
+Defines a reason type that can be selected when closing a ticket. Close reason types categorize the resolution outcome (e.g., Resolved, Duplicate, Won't Fix).
+
+<Schema
+  schema={{"type":"object","description":"Defines a reason type that can be selected when closing a ticket. Close reason types categorize the resolution outcome (e.g., Resolved, Duplicate, Won't Fix).","properties":{"CloseReasonTypeId":{"type":"string","format":"uuid","description":"Unique identifier for the close reason type."},"Name":{"type":"string","description":"Display name of the close reason type shown when closing tickets."}},"example":{"CloseReasonTypeId":"11111111-1111-1111-1111-111111111111","Name":"Resolved"},"title":"CloseReasonType"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

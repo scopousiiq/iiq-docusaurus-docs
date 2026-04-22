@@ -1,0 +1,33 @@
+---
+id: helpfulnessstat
+title: "HelpfulnessStat"
+description: "Helpfulness statistics for a knowledge base article, summarizing user feedback."
+sidebar_label: "HelpfulnessStat"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"ThumbsUp":89,"ThumbsDown":11,"Helpfulness":0.89}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"HelpfulnessStat"}
+>
+</Heading>
+
+
+
+Helpfulness statistics for a knowledge base article, summarizing user feedback.
+
+<Schema
+  schema={{"type":"object","description":"Helpfulness statistics for a knowledge base article, summarizing user feedback.","properties":{"ThumbsUp":{"type":"integer","description":"Number of users who marked the article as helpful."},"ThumbsDown":{"type":"integer","description":"Number of users who marked the article as not helpful."},"Helpfulness":{"type":"number","format":"double","description":"Ratio of helpful votes to total feedback submissions (0.0 to 1.0). Returns 0 if no feedback has been submitted."}},"example":{"ThumbsUp":89,"ThumbsDown":11,"Helpfulness":0.89},"title":"HelpfulnessStat"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

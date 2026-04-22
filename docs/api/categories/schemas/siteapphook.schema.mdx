@@ -1,0 +1,33 @@
+---
+id: siteapphook
+title: "SiteAppHook"
+description: "Definition for a client hook that loads app resources into the UI."
+sidebar_label: "SiteAppHook"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"AppId":"googleSso","Event":"web.bootstrap","Mode":"Async","Method":"Include","Url":"/apps/googleSso/web/min/web.js","Delay":"00:00:00"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SiteAppHook"}
+>
+</Heading>
+
+
+
+Definition for a client hook that loads app resources into the UI.
+
+<Schema
+  schema={{"type":"object","description":"Definition for a client hook that loads app resources into the UI.","properties":{"AppId":{"type":"string","description":"Identifier of the app providing the hook.","example":"googleSso"},"Event":{"type":"string","description":"UI lifecycle event where the hook executes.","example":"web.bootstrap"},"Mode":{"type":"string","description":"Execution mode such as `Async`.","example":"Async"},"Method":{"type":"string","description":"Loading strategy for the provided URL.","example":"Include"},"Url":{"type":"string","description":"Path to the resource injected by the hook.","example":"/apps/googleSso/web/min/web.js"},"Delay":{"type":"string","description":"Optional delay before the hook executes, formatted as `HH:mm:ss`.","example":"00:00:00"}},"required":["AppId","Event","Mode","Method","Url"],"title":"SiteAppHook"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

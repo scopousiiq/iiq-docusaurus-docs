@@ -1,0 +1,33 @@
+---
+id: ticketadditionaldetails
+title: "TicketAdditionalDetails"
+description: "Optional email metadata captured when tickets originate from forwarded or ingested emails."
+sidebar_label: "TicketAdditionalDetails"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"EmailFrom":"teacher@example.org","EmailSender":"Teacher, Sample","EmailTo":"support@district.edu","EmailSubject":"Chromebook keyboard sticking","EmailSignature":"string","EmailForward":"string"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"TicketAdditionalDetails"}
+>
+</Heading>
+
+
+
+Optional email metadata captured when tickets originate from forwarded or ingested emails.
+
+<Schema
+  schema={{"type":"object","description":"Optional email metadata captured when tickets originate from forwarded or ingested emails.","properties":{"EmailFrom":{"type":"string","description":"Original sender email address.","example":"teacher@example.org"},"EmailSender":{"type":"string","description":"Display name associated with the sender address.","example":"Teacher, Sample"},"EmailTo":{"type":"string","description":"Recipient address the email was delivered to.","example":"support@district.edu"},"EmailSubject":{"type":"string","description":"Subject line from the ingested email.","example":"Chromebook keyboard sticking"},"EmailSignature":{"type":"string","description":"Captured email signature block, if available.","nullable":true},"EmailForward":{"type":"string","description":"Forwarding context applied by upstream systems.","nullable":true}},"title":"TicketAdditionalDetails"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

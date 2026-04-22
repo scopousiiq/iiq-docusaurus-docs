@@ -292,6 +292,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/categories/schemas/app",
+          label: "App",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/categories/schemas/appcategorylink",
           label: "AppCategoryLink",
           className: "schema",
@@ -334,6 +340,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/categories/schemas/assetfundingtype",
+          label: "AssetFundingType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/assetinventorytype",
+          label: "AssetInventoryType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/categories/schemas/assetmanufacturersummary",
           label: "AssetManufacturerSummary",
           className: "schema",
@@ -358,8 +376,20 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/categories/schemas/assetstatustype",
+          label: "AssetStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/categories/schemas/assettotalcost",
           label: "AssetTotalCost",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/assettype",
+          label: "AssetType",
           className: "schema",
         },
         {
@@ -438,6 +468,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/categories/schemas/categorytypeentitytypelink",
           label: "CategoryTypeEntityTypeLink",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/closereasontype",
+          label: "CloseReasonType",
           className: "schema",
         },
         {
@@ -598,6 +634,30 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/categories/schemas/locationroom",
+          label: "LocationRoom",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/locationroomavailabletime",
+          label: "LocationRoomAvailableTime",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/locationroomcustomfieldvalue",
+          label: "LocationRoomCustomFieldValue",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/locationroomtype",
+          label: "LocationRoomType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/categories/schemas/locationstatustype",
           label: "LocationStatusType",
           className: "schema",
@@ -640,14 +700,74 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/categories/schemas/producttier",
+          label: "ProductTier",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/purchaseorderstatustype",
+          label: "PurchaseOrderStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/categories/schemas/requestoptions",
           label: "RequestOptions",
           className: "schema",
         },
         {
           type: "doc",
+          id: "api/categories/schemas/role",
+          label: "Role",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/categories/schemas/site",
           label: "Site",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/siteapphook",
+          label: "SiteAppHook",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/siteappsconfiguration",
+          label: "SiteAppsConfiguration",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/siteconfigurationsetting",
+          label: "SiteConfigurationSetting",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/sitekpi",
+          label: "SiteKpi",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/sitesettings",
+          label: "SiteSettings",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/sitestatus",
+          label: "SiteStatus",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/sitestatustype",
+          label: "SiteStatusType",
           className: "schema",
         },
         {
@@ -660,6 +780,24 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/categories/schemas/sortoptions",
           label: "SortOptions",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/source",
+          label: "Source",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/tag",
+          label: "Tag",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/categories/schemas/ticketprioritylevel",
+          label: "TicketPriorityLevel",
           className: "schema",
         },
         {

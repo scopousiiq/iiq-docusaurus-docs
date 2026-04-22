@@ -12,9 +12,9 @@ This section contains the complete API reference for IncidentIQ, organized by fu
 
 | Category | Description | Endpoints |
 |----------|-------------|-----------|
-| [Tickets](/docs/api/tickets/tickets-api) | Ticket management, status tracking, assignments | 149 |
+| [Tickets](/docs/api/tickets/tickets-api) | Ticket management, status tracking, assignments | 154 |
 | [Assets](/docs/api/assets/assets-api) | Asset management, checkout, inventory tracking | 121 |
-| [Users](/docs/api/users/users-api) | User management and profiles | 88 |
+| [Users](/docs/api/users/users-api) | User management and profiles | 89 |
 
 ### Organization
 
@@ -32,12 +32,11 @@ This section contains the complete API reference for IncidentIQ, organized by fu
 | [Custom Fields](/docs/api/custom-fields/custom-fields-api) | Custom data attributes | 52 |
 | [Workflows](/docs/api/workflows/workflows-api) | Automation and approval workflows | 22 |
 
-### Inventory & Parts
+### Inventory
 
 | Category | Description | Endpoints |
 |----------|-------------|-----------|
 | [Inventory](/docs/api/inventory/inventory-api) | Inventory operations | 46 |
-| [Parts](/docs/api/parts/parts-api) | Parts management | 19 |
 | [Manufacturers](/docs/api/manufacturers/manufacturers-api) | Manufacturer data | 11 |
 
 ## Authentication

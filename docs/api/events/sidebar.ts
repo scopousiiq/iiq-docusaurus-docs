@@ -422,6 +422,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/events/schemas/customfieldeditortypeid",
+          label: "CustomFieldEditorTypeId",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/events/schemas/datafilter",
           label: "DataFilter",
           className: "schema",
@@ -470,6 +476,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/events/schemas/eventcustomfieldvalue",
+          label: "EventCustomFieldValue",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/events/schemas/eventitemresponse",
           label: "EventItemResponse",
           className: "schema",
@@ -502,6 +514,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/events/schemas/eventseriesdata",
           label: "EventSeriesData",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/events/schemas/eventseriesinfo",
+          label: "EventSeriesInfo",
           className: "schema",
         },
         {
@@ -676,6 +694,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/events/schemas/pagingoptions",
           label: "PagingOptions",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/events/schemas/recurringschedule",
+          label: "RecurringSchedule",
           className: "schema",
         },
         {

@@ -682,6 +682,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/users/schemas/app",
+          label: "App",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/users/schemas/asset",
           label: "Asset",
           className: "schema",
@@ -718,6 +724,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/users/schemas/assetfundingtype",
+          label: "AssetFundingType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/assetinventorytype",
+          label: "AssetInventoryType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/users/schemas/assetmanufacturersummary",
           label: "AssetManufacturerSummary",
           className: "schema",
@@ -742,8 +760,20 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/users/schemas/assetstatustype",
+          label: "AssetStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/users/schemas/assettotalcost",
           label: "AssetTotalCost",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/assettype",
+          label: "AssetType",
           className: "schema",
         },
         {
@@ -832,6 +862,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/users/schemas/category",
+          label: "Category",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/closereasontype",
+          label: "CloseReasonType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/users/schemas/completeexternaluserregistrationrequest",
           label: "CompleteExternalUserRegistrationRequest",
           className: "schema",
@@ -852,6 +894,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/users/schemas/customfieldeditortypeid",
           label: "CustomFieldEditorTypeId",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/customfieldtypedetail",
+          label: "CustomFieldTypeDetail",
           className: "schema",
         },
         {
@@ -888,6 +936,18 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/users/schemas/file",
           label: "File",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/filemetadata",
+          label: "FileMetaData",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/filemetadataazurevideo",
+          label: "FileMetaDataAzureVideo",
           className: "schema",
         },
         {
@@ -1150,6 +1210,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/users/schemas/producttier",
+          label: "ProductTier",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/purchaseorderstatustype",
+          label: "PurchaseOrderStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/users/schemas/ratelimiterror",
           label: "RateLimitError",
           className: "schema",
@@ -1312,6 +1384,48 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/users/schemas/siteapphook",
+          label: "SiteAppHook",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/siteappsconfiguration",
+          label: "SiteAppsConfiguration",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/siteconfigurationsetting",
+          label: "SiteConfigurationSetting",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/sitekpi",
+          label: "SiteKpi",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/sitesettings",
+          label: "SiteSettings",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/sitestatus",
+          label: "SiteStatus",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/sitestatustype",
+          label: "SiteStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/users/schemas/softvalidationerror",
           label: "SoftValidationError",
           className: "schema",
@@ -1332,6 +1446,18 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/users/schemas/stringkeyvaluepair",
           label: "StringKeyValuePair",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/tag",
+          label: "Tag",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/users/schemas/ticketprioritylevel",
+          label: "TicketPriorityLevel",
           className: "schema",
         },
         {

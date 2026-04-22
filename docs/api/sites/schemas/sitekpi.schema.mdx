@@ -1,0 +1,33 @@
+---
+id: sitekpi
+title: "SiteKpi"
+description: "Key performance indicator snapshot for a site."
+sidebar_label: "SiteKpi"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"SiteKpiId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","DateId":0,"SiteId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","ProductId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","KpiMetricId":"string","Value":0}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SiteKpi"}
+>
+</Heading>
+
+
+
+Key performance indicator snapshot for a site.
+
+<Schema
+  schema={{"type":"object","description":"Key performance indicator snapshot for a site.","properties":{"SiteKpiId":{"type":"string","format":"uuid","nullable":true,"description":"Identifier for the KPI record."},"DateId":{"type":"integer","nullable":true,"description":"Date identifier associated with the KPI value."},"SiteId":{"type":"string","format":"uuid","nullable":true,"description":"Site identifier associated with the KPI value."},"ProductId":{"type":"string","format":"uuid","nullable":true,"description":"Product identifier associated with the KPI value."},"KpiMetricId":{"type":"string","description":"Metric identifier for the KPI entry."},"Value":{"type":"number","format":"double","description":"Numeric KPI value."}},"title":"SiteKpi"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

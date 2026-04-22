@@ -1048,8 +1048,116 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/tickets/schemas/app",
+          label: "App",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/tickets/schemas/appmodelissue",
           label: "AppModelIssue",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/asset",
+          label: "Asset",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/assetcategorysummary",
+          label: "AssetCategorySummary",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/assetcustomfieldvalue",
+          label: "AssetCustomFieldValue",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/assetdatamappinglookup",
+          label: "AssetDataMappingLookup",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/assetdatamappingsource",
+          label: "AssetDataMappingSource",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/assetdatamappings",
+          label: "AssetDataMappings",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/assetfundingtype",
+          label: "AssetFundingType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/assetinventorytype",
+          label: "AssetInventoryType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/assetmanufacturersummary",
+          label: "AssetManufacturerSummary",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/assetmodelsummary",
+          label: "AssetModelSummary",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/assetownersummary",
+          label: "AssetOwnerSummary",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/assetstatussummary",
+          label: "AssetStatusSummary",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/assetstatustype",
+          label: "AssetStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/assettotalcost",
+          label: "AssetTotalCost",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/assettype",
+          label: "AssetType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/assetvaluation",
+          label: "AssetValuation",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/assetvaluationperiod",
+          label: "AssetValuationPeriod",
           className: "schema",
         },
         {
@@ -1162,6 +1270,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/tickets/schemas/category",
+          label: "Category",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/tickets/schemas/closereason",
           label: "CloseReason",
           className: "schema",
@@ -1192,14 +1306,38 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/tickets/schemas/customfieldeditortypeid",
+          label: "CustomFieldEditorTypeId",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/customfieldtypedetail",
+          label: "CustomFieldTypeDetail",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/tickets/schemas/customfieldvalue",
           label: "CustomFieldValue",
           className: "schema",
         },
         {
           type: "doc",
+          id: "api/tickets/schemas/department",
+          label: "Department",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/tickets/schemas/duedatepackage",
           label: "DueDatePackage",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/employmentstatus",
+          label: "EmploymentStatus",
           className: "schema",
         },
         {
@@ -1212,6 +1350,18 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/tickets/schemas/file",
           label: "File",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/filemetadata",
+          label: "FileMetaData",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/filemetadataazurevideo",
+          label: "FileMetaDataAzureVideo",
           className: "schema",
         },
         {
@@ -1264,6 +1414,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/tickets/schemas/helpfulnessstat",
+          label: "HelpfulnessStat",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/tickets/schemas/idsforfiltersetsresponse",
           label: "IdsForFilterSetsResponse",
           className: "schema",
@@ -1302,6 +1458,18 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/tickets/schemas/kbarticle",
           label: "KbArticle",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/kbarticlecustomfieldvalue",
+          label: "KbArticleCustomFieldValue",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/laborrateactivity",
+          label: "LaborRateActivity",
           className: "schema",
         },
         {
@@ -1392,6 +1560,18 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/tickets/schemas/pagingoptions",
           label: "PagingOptions",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/producttier",
+          label: "ProductTier",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/purchaseorderstatustype",
+          label: "PurchaseOrderStatusType",
           className: "schema",
         },
         {
@@ -1492,8 +1672,56 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/tickets/schemas/simpleuser",
+          label: "SimpleUser",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/tickets/schemas/site",
           label: "Site",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/siteapphook",
+          label: "SiteAppHook",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/siteappsconfiguration",
+          label: "SiteAppsConfiguration",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/siteconfigurationsetting",
+          label: "SiteConfigurationSetting",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/sitekpi",
+          label: "SiteKpi",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/sitesettings",
+          label: "SiteSettings",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/sitestatus",
+          label: "SiteStatus",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/sitestatustype",
+          label: "SiteStatusType",
           className: "schema",
         },
         {
@@ -1518,6 +1746,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/tickets/schemas/sortoptions",
           label: "SortOptions",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/source",
+          label: "Source",
           className: "schema",
         },
         {
@@ -2272,8 +2506,50 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/tickets/schemas/usercustomfieldvalue",
+          label: "UserCustomFieldValue",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/userdatamappinglookup",
+          label: "UserDataMappingLookup",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/userdatamappingsource",
+          label: "UserDataMappingSource",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/userdatamappings",
+          label: "UserDataMappings",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/tickets/schemas/userlistresponse",
           label: "UserListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/usernotificationsettings",
+          label: "UserNotificationSettings",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/useroptions",
+          label: "UserOptions",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/useroptionslocations",
+          label: "UserOptionsLocations",
           className: "schema",
         },
         {
@@ -2286,6 +2562,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/tickets/schemas/usersummary",
           label: "UserSummary",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/tickets/schemas/view",
+          label: "View",
           className: "schema",
         },
         {

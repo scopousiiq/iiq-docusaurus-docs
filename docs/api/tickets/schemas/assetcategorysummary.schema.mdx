@@ -1,0 +1,33 @@
+---
+id: assetcategorysummary
+title: "AssetCategorySummary"
+description: "Category information for the asset model"
+sidebar_label: "AssetCategorySummary"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"CategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Scope":"string","Level":0,"SortOrder":0,"CategoryTypeId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","Name":"string","Icon":"string","ParentCategoryId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"AssetCategorySummary"}
+>
+</Heading>
+
+
+
+Category information for the asset model
+
+<Schema
+  schema={{"type":"object","description":"Category information for the asset model","properties":{"CategoryId":{"type":"string","format":"uuid"},"Scope":{"type":"string","nullable":true},"Level":{"type":"integer","nullable":true},"SortOrder":{"type":"integer","nullable":true},"CategoryTypeId":{"type":"string","format":"uuid","nullable":true},"Name":{"type":"string"},"Icon":{"type":"string","nullable":true},"ParentCategoryId":{"type":"string","format":"uuid","nullable":true}},"title":"AssetCategorySummary"}}
+  schemaType={"response"}
+>
+  
+</Schema>
+            

@@ -886,6 +886,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/assets/schemas/app",
+          label: "App",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/assets/schemas/asset",
           label: "Asset",
           className: "schema",
@@ -1480,6 +1486,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/assets/schemas/category",
+          label: "Category",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/assets/schemas/categoryroles",
           label: "CategoryRoles",
           className: "schema",
@@ -1488,6 +1500,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/schemas/categoryroleslistresponse",
           label: "CategoryRolesListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/closereasontype",
+          label: "CloseReasonType",
           className: "schema",
         },
         {
@@ -1506,6 +1524,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/schemas/customfieldeditortypeid",
           label: "CustomFieldEditorTypeId",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/customfieldtypedetail",
+          label: "CustomFieldTypeDetail",
           className: "schema",
         },
         {
@@ -1552,6 +1576,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/assets/schemas/eventcustomfieldvalue",
+          label: "EventCustomFieldValue",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/eventseriesinfo",
+          label: "EventSeriesInfo",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/assets/schemas/eventstatustype",
           label: "EventStatusType",
           className: "schema",
@@ -1572,6 +1608,18 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/schemas/filelistresponse",
           label: "FileListResponse",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/filemetadata",
+          label: "FileMetaData",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/filemetadataazurevideo",
+          label: "FileMetaDataAzureVideo",
           className: "schema",
         },
         {
@@ -1870,8 +1918,26 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/assets/schemas/producttier",
+          label: "ProductTier",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/purchaseorderstatustype",
+          label: "PurchaseOrderStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/assets/schemas/ratelimiterror",
           label: "RateLimitError",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/recurringschedule",
+          label: "RecurringSchedule",
           className: "schema",
         },
         {
@@ -1936,6 +2002,48 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/assets/schemas/siteapphook",
+          label: "SiteAppHook",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/siteappsconfiguration",
+          label: "SiteAppsConfiguration",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/siteconfigurationsetting",
+          label: "SiteConfigurationSetting",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/sitekpi",
+          label: "SiteKpi",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/sitesettings",
+          label: "SiteSettings",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/sitestatus",
+          label: "SiteStatus",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/sitestatustype",
+          label: "SiteStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/assets/schemas/softvalidationerror",
           label: "SoftValidationError",
           className: "schema",
@@ -1974,6 +2082,18 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/schemas/sparepoolassetsummary",
           label: "SparePoolAssetSummary",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/tag",
+          label: "Tag",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/assets/schemas/ticketprioritylevel",
+          label: "TicketPriorityLevel",
           className: "schema",
         },
         {

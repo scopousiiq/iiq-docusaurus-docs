@@ -262,6 +262,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/audits/schemas/app",
+          label: "App",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/audits/schemas/asset",
           label: "Asset",
           className: "schema",
@@ -328,6 +334,18 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/audits/schemas/assetfundingtype",
+          label: "AssetFundingType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/assetinventorytype",
+          label: "AssetInventoryType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/audits/schemas/assetmanufacturersummary",
           label: "AssetManufacturerSummary",
           className: "schema",
@@ -352,8 +370,20 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/audits/schemas/assetstatustype",
+          label: "AssetStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/audits/schemas/assettotalcost",
           label: "AssetTotalCost",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/assettype",
+          label: "AssetType",
           className: "schema",
         },
         {
@@ -366,6 +396,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/audits/schemas/assetvaluationperiod",
           label: "AssetValuationPeriod",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/closereasontype",
+          label: "CloseReasonType",
           className: "schema",
         },
         {
@@ -508,6 +544,30 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/audits/schemas/locationroom",
+          label: "LocationRoom",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/locationroomavailabletime",
+          label: "LocationRoomAvailableTime",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/locationroomcustomfieldvalue",
+          label: "LocationRoomCustomFieldValue",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/locationroomtype",
+          label: "LocationRoomType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/audits/schemas/locationstatustype",
           label: "LocationStatusType",
           className: "schema",
@@ -532,6 +592,24 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/audits/schemas/producttier",
+          label: "ProductTier",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/purchaseorderstatustype",
+          label: "PurchaseOrderStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/role",
+          label: "Role",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/audits/schemas/scheduleperiodassetcompliance",
           label: "SchedulePeriodAssetCompliance",
           className: "schema",
@@ -544,8 +622,68 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/audits/schemas/siteapphook",
+          label: "SiteAppHook",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/siteappsconfiguration",
+          label: "SiteAppsConfiguration",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/siteconfigurationsetting",
+          label: "SiteConfigurationSetting",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/sitekpi",
+          label: "SiteKpi",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/sitesettings",
+          label: "SiteSettings",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/sitestatus",
+          label: "SiteStatus",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/sitestatustype",
+          label: "SiteStatusType",
+          className: "schema",
+        },
+        {
+          type: "doc",
           id: "api/audits/schemas/softvalidationerror",
           label: "SoftValidationError",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/source",
+          label: "Source",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/tag",
+          label: "Tag",
+          className: "schema",
+        },
+        {
+          type: "doc",
+          id: "api/audits/schemas/ticketprioritylevel",
+          label: "TicketPriorityLevel",
           className: "schema",
         },
         {
