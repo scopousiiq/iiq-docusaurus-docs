@@ -8,28 +8,6 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Bulk",
-      link: {
-        type: "doc",
-        id: "api/categories/categories-bulk",
-      },
-      items: [
-        {
-          type: "doc",
-          id: "api/categories/bulk-set-category-popularity",
-          label: "Bulk set category popularity",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/categories/bulk-delete-categories",
-          label: "Bulk delete categories",
-          className: "api-method post",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Listing",
       link: {
         type: "doc",
@@ -406,36 +384,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/categories/schemas/bulkcategorypopularityrequest",
-          label: "BulkCategoryPopularityRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/categories/schemas/bulkdeletecategoriesresponse",
-          label: "BulkDeleteCategoriesResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/categories/schemas/bulkdeletecategoryrequest",
-          label: "BulkDeleteCategoryRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/categories/schemas/bulkdeletecategoryrequestwrapper",
-          label: "BulkDeleteCategoryRequestWrapper",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/categories/schemas/bulksetcategorypopularityresponse",
-          label: "BulkSetCategoryPopularityResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/categories/schemas/category",
           label: "Category",
           className: "schema",
@@ -444,12 +392,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/categories/schemas/categorycreaterequest",
           label: "CategoryCreateRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/categories/schemas/categoryfilter",
-          label: "CategoryFilter",
           className: "schema",
         },
         {
@@ -546,12 +488,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/categories/schemas/getcategoryentitytypelinksresponse",
           label: "GetCategoryEntityTypeLinksResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/categories/schemas/getentityrequest",
-          label: "GetEntityRequest",
           className: "schema",
         },
         {

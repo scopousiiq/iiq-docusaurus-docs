@@ -54,12 +54,6 @@ const sidebar: SidebarsConfig = {
           label: "Update model to match category issues",
           className: "api-method post",
         },
-        {
-          type: "doc",
-          id: "api/model-issues/bulk-update-model-issues-to-match-category",
-          label: "Bulk update models to match category issues",
-          className: "api-method post",
-        },
       ],
     },
     {

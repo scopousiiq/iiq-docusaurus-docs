@@ -180,12 +180,6 @@ const sidebar: SidebarsConfig = {
           label: "Update inventory items by IDs",
           className: "api-method post",
         },
-        {
-          type: "doc",
-          id: "api/inventory/bulk-delete-inventory-items",
-          label: "Bulk delete inventory items",
-          className: "api-method post",
-        },
       ],
     },
     {
@@ -368,18 +362,6 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "api/inventory/schemas/bulkdeleteinventoryitemrequest",
-          label: "BulkDeleteInventoryItemRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/inventory/schemas/bulkinventoryitemsdeleterequest",
-          label: "BulkInventoryItemsDeleteRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/inventory/schemas/filtermatch",
           label: "FilterMatch",
           className: "schema",
@@ -550,12 +532,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/inventory/schemas/inventoryitembatchupdateresponse",
           label: "InventoryItemBatchUpdateResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/inventory/schemas/inventoryitembulkdeleteresponse",
-          label: "InventoryItemBulkDeleteResponse",
           className: "schema",
         },
         {

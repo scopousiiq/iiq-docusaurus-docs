@@ -138,12 +138,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/filters/get-bulk-filter-values-for-views",
-          label: "Get filter values for views in bulk",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
           id: "api/filters/create-filter-set",
           label: "Create a new filter set",
           className: "api-method post",
@@ -164,30 +158,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/filters/schemas/actionresponse",
           label: "ActionResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/filters/schemas/assetsearchfacetkey",
-          label: "AssetSearchFacetKey",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/filters/schemas/assetsearchfilter",
-          label: "AssetSearchFilter",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/filters/schemas/assetsearchrequest",
-          label: "AssetSearchRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/filters/schemas/bulkentityidrequest",
-          label: "BulkEntityIdRequest",
           className: "schema",
         },
         {
@@ -300,18 +270,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/filters/schemas/getticketsrequest",
-          label: "GetTicketsRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/filters/schemas/getusersrequestv-1",
-          label: "GetUsersRequestV1",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/filters/schemas/internalservererror",
           label: "InternalServerError",
           className: "schema",
@@ -386,24 +344,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/filters/schemas/softvalidationerror",
           label: "SoftValidationError",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/filters/schemas/ticketsearchfacetkey",
-          label: "TicketSearchFacetKey",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/filters/schemas/ticketsearchfilter",
-          label: "TicketSearchFilter",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/filters/schemas/ticketsearchrequest",
-          label: "TicketSearchRequest",
           className: "schema",
         },
         {

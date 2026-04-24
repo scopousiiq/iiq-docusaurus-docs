@@ -80,12 +80,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/users/search-users-via-module",
-          label: "Search users via modular service",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
           id: "api/users/list-users-simple",
           label: "List users (simplified records)",
           className: "api-method post",
@@ -522,34 +516,6 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Authentication",
-      link: {
-        type: "doc",
-        id: "api/users/users-authentication",
-      },
-      items: [
-        {
-          type: "doc",
-          id: "api/users/get-auth-token-by-user-id",
-          label: "Get authentication token by user ID",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/users/get-auth-token-by-username",
-          label: "Get authentication token by username",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/users/get-auth-token-for-user-with-role",
-          label: "Get authentication token with role",
-          className: "api-method post",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Utilities",
       link: {
         type: "doc",
@@ -579,64 +545,6 @@ const sidebar: SidebarsConfig = {
           id: "api/users/get-users-per-grade",
           label: "Get user count by grade level",
           className: "api-method get",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Bulk",
-      link: {
-        type: "doc",
-        id: "api/users/users-bulk",
-      },
-      items: [
-        {
-          type: "doc",
-          id: "api/users/bulk-set-user-custom-fields",
-          label: "Bulk set user custom fields",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/users/bulk-set-user-location",
-          label: "Bulk set user location",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/users/bulk-set-user-team",
-          label: "Bulk set team for multiple users",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/users/bulk-unset-user-team",
-          label: "Bulk remove team from multiple users",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/users/bulk-set-user-view",
-          label: "Bulk set view for multiple users",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/users/bulk-set-user-initial-product",
-          label: "Bulk set initial product for users",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/users/bulk-set-user-info",
-          label: "Bulk set user info for multiple users",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/users/bulk-update-authentication-source",
-          label: "Bulk update authentication source",
-          className: "api-method post",
         },
       ],
     },
@@ -808,56 +716,8 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/users/schemas/bulkjobidgetresponse",
-          label: "BulkJobIdGetResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/bulksetuserinforequest",
-          label: "BulkSetUserInfoRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/bulksetuserinitialproductrequest",
-          label: "BulkSetUserInitialProductRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/bulksetuserlocationrequest",
-          label: "BulkSetUserLocationRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/users/schemas/bulksetuserroomsusersroomssetrequest",
           label: "BulkSetUserRoomsUsersRoomsSetRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/bulksetuserteamrequest",
-          label: "BulkSetUserTeamRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/bulksetuserviewrequest",
-          label: "BulkSetUserViewRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/bulkupdateauthenticationsourcerequest",
-          label: "BulkUpdateAuthenticationSourceRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/bulkusersetcustomfieldsrequest",
-          label: "BulkUserSetCustomFieldsRequest",
           className: "schema",
         },
         {
@@ -928,12 +788,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/users/schemas/errorresponse",
-          label: "ErrorResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/users/schemas/file",
           label: "File",
           className: "schema",
@@ -966,12 +820,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/users/schemas/forbiddenerror",
           label: "ForbiddenError",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/getauthtokenbyusernameuserstokenbysiteidbyusernamerequest",
-          label: "GetAuthTokenByUsernameUsersTokenBySiteIdByUsernameRequest",
           className: "schema",
         },
         {
@@ -1020,12 +868,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/users/schemas/guidgetresponse",
           label: "GuidGetResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/guidlistgetresponse",
-          label: "GuidListGetResponse",
           className: "schema",
         },
         {
@@ -1246,12 +1088,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/users/schemas/responseenvelope",
-          label: "ResponseEnvelope",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/users/schemas/responselog",
           label: "ResponseLog",
           className: "schema",
@@ -1272,18 +1108,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/users/schemas/setuserawayrequest",
           label: "SetUserAwayRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/setusercustomfieldsrequest",
-          label: "SetUserCustomFieldsRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/setuserinforequest",
-          label: "SetUserInfoRequest",
           className: "schema",
         },
         {
@@ -1314,12 +1138,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/users/schemas/setuserrolerequest",
           label: "SetUserRoleRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/setuserteamrequest",
-          label: "SetUserTeamRequest",
           className: "schema",
         },
         {
@@ -1440,12 +1258,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/users/schemas/source",
           label: "Source",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/stringkeyvaluepair",
-          label: "StringKeyValuePair",
           className: "schema",
         },
         {
@@ -1618,30 +1430,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/users/schemas/usersearchfacetkey",
-          label: "UserSearchFacetKey",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/usersearchfilter",
-          label: "UserSearchFilter",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/usersearchrequest",
-          label: "UserSearchRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/usersearchresponse",
-          label: "UserSearchResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/users/schemas/usersortfield",
           label: "UserSortField",
           className: "schema",
@@ -1698,12 +1486,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/users/schemas/validationerror",
           label: "ValidationError",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/users/schemas/view",
-          label: "View",
           className: "schema",
         },
         {

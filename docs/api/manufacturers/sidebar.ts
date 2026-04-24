@@ -8,22 +8,6 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Bulk",
-      link: {
-        type: "doc",
-        id: "api/manufacturers/manufacturers-bulk",
-      },
-      items: [
-        {
-          type: "doc",
-          id: "api/manufacturers/bulk-delete-manufacturers",
-          label: "Bulk delete manufacturers",
-          className: "api-method post",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Details",
       link: {
         type: "doc",
@@ -130,12 +114,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/manufacturers/schemas/actionresponse",
           label: "ActionResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/manufacturers/schemas/bulkdeletemanufacturersrequest",
-          label: "BulkDeleteManufacturersRequest",
           className: "schema",
         },
         {

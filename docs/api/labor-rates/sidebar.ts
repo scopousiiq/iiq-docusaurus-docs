@@ -36,22 +36,6 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Bulk",
-      link: {
-        type: "doc",
-        id: "api/labor-rates/labor-rates-bulk",
-      },
-      items: [
-        {
-          type: "doc",
-          id: "api/labor-rates/bulk-set-labor-rates",
-          label: "Bulk set labor rates for multiple users",
-          className: "api-method post",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Managing",
       link: {
         type: "doc",
@@ -106,12 +90,6 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "api/labor-rates/schemas/bulkchangelaborraterequest",
-          label: "BulkChangeLaborRateRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/labor-rates/schemas/itemcreateresponse",
           label: "ItemCreateResponse",
           className: "schema",
@@ -120,12 +98,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/labor-rates/schemas/itemdeleteresponse",
           label: "ItemDeleteResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/labor-rates/schemas/itemgetresponse",
-          label: "ItemGetResponse",
           className: "schema",
         },
         {

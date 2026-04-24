@@ -8,46 +8,6 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Configuration",
-      link: {
-        type: "doc",
-        id: "api/sites/sites-configuration",
-      },
-      items: [
-        {
-          type: "doc",
-          id: "api/sites/list-site-status-types",
-          label: "Types",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/sites/get-site-status-type-by-id",
-          label: "Get site status type by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/sites/list-file-types",
-          label: "List file types",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/sites/list-deployments",
-          label: "List deployment history",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/sites/health-check",
-          label: "Health check",
-          className: "api-method get",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Listing",
       link: {
         type: "doc",
@@ -88,12 +48,6 @@ const sidebar: SidebarsConfig = {
           label: "Get site settings by ID",
           className: "api-method get",
         },
-        {
-          type: "doc",
-          id: "api/sites/get-site-theme",
-          label: "Get site theme CSS",
-          className: "api-method get",
-        },
       ],
     },
     {
@@ -132,30 +86,8 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Utilities",
-      link: {
-        type: "doc",
-        id: "api/sites/sites-utilities",
-      },
-      items: [
-        {
-          type: "doc",
-          id: "api/sites/health-check-head",
-          label: "Health check (HEAD)",
-          className: "api-method head",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Schemas",
       items: [
-        {
-          type: "doc",
-          id: "api/sites/schemas/actionresponse",
-          label: "ActionResponse",
-          className: "schema",
-        },
         {
           type: "doc",
           id: "api/sites/schemas/address",
@@ -214,18 +146,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/sites/schemas/errorresponse",
           label: "ErrorResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/sites/schemas/genericobject",
-          label: "GenericObject",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/sites/schemas/getsitethemesitesthemeresponse-200-textcss",
-          label: "GetSiteThemeSitesThemeResponse200TextCss",
           className: "schema",
         },
         {

@@ -46,74 +46,6 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Listing",
-      link: {
-        type: "doc",
-        id: "api/views/views-listing",
-      },
-      items: [
-        {
-          type: "doc",
-          id: "api/views/list-site-views",
-          label: "List site views",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/views/get-view-definition",
-          label: "Get saved view definition",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/views/get-site-view",
-          label: "Get site view",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/views/list-views-all-products",
-          label: "List views across all products",
-          className: "api-method get",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Managing",
-      link: {
-        type: "doc",
-        id: "api/views/views-managing",
-      },
-      items: [
-        {
-          type: "doc",
-          id: "api/views/update-site-view",
-          label: "Update site view",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/views/delete-site-view",
-          label: "Delete site view",
-          className: "api-method delete",
-        },
-        {
-          type: "doc",
-          id: "api/views/create-site-view",
-          label: "Create site view",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/views/create-view",
-          label: "Create view",
-          className: "api-method post",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Schedules",
       link: {
         type: "doc",
@@ -212,18 +144,34 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Listing",
+      link: {
+        type: "doc",
+        id: "api/views/views-listing",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/views/get-view-definition",
+          label: "Get saved view definition",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/views/list-views-all-products",
+          label: "List views across all products",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Sorting",
       link: {
         type: "doc",
         id: "api/views/views-sorting",
       },
       items: [
-        {
-          type: "doc",
-          id: "api/views/update-site-view-sort",
-          label: "Update site view sort",
-          className: "api-method post",
-        },
         {
           type: "doc",
           id: "api/views/update-view-sort",
@@ -234,17 +182,17 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Utilities",
+      label: "Managing",
       link: {
         type: "doc",
-        id: "api/views/views-utilities",
+        id: "api/views/views-managing",
       },
       items: [
         {
           type: "doc",
-          id: "api/views/update-view-counts",
-          label: "Update view counts",
-          className: "api-method get",
+          id: "api/views/create-view",
+          label: "Create view",
+          className: "api-method post",
         },
       ],
     },
@@ -388,18 +336,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/views/schemas/viewitemcreateresponse",
           label: "ViewItemCreateResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/views/schemas/viewitemgetresponse",
-          label: "ViewItemGetResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/views/schemas/viewitemupdateresponse",
-          label: "ViewItemUpdateResponse",
           className: "schema",
         },
         {

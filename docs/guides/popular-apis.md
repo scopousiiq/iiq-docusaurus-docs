@@ -14,7 +14,7 @@ In addition to the API, please also recall the Incident IQ platform can leverage
 |-----------|--------|----------|-------------|
 | [Create Ticket](/docs/api/tickets/create-ticket) | POST | `/api/v1.0/tickets/new` | Submit a new help desk ticket |
 | [Query Tickets](/docs/api/tickets/search-tickets) | POST | `/api/v1.0/tickets` | Search and filter tickets with pagination |
-| [Update Ticket Status](/docs/api/tickets/bulk-set-ticket-status) | POST | `/api/v1.0/tickets/bulk/set-status` | Change status on one or more tickets |
+| [Update Ticket Status](/docs/api/tickets/set-ticket-status) | POST | `/api/v1.0/tickets/{ticketId}/status/{statusId}` | Transition a ticket to a new workflow status |
 | [Assign Ticket](/docs/api/tickets/assign-ticket) | POST | `/api/v1.0/tickets/{ticketId}/assign` | Route ticket to agent or team |
 
 ## Asset Operations
@@ -22,7 +22,7 @@ In addition to the API, please also recall the Incident IQ platform can leverage
 | Operation | Method | Endpoint | Description |
 |-----------|--------|----------|-------------|
 | [Query Assets](/docs/api/assets/search-assets) | POST | `/api/v1.0/assets` | Search and filter asset inventory |
-| [Set Asset Owner](/docs/api/assets/bulk-set-asset-owner) | POST | `/api/v1.0/assets/owner/bulk` | Assign or transfer asset ownership |
+| [Set Asset Owner](/docs/api/assets/set-asset-owner) | POST | `/api/v1.0/assets/{assetId}/owner` | Assign or transfer asset ownership |
 | [Checkout/Transfer Asset](/docs/api/assets/checkout-or-transfer-asset) | POST | `/api/v1.0/assets/checkouts/checkout-or-transfer` | Check out or transfer a single asset |
 
 ## User Operations

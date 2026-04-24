@@ -62,12 +62,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/workflows/list-site-product-workflows",
-          label: "List site workflows across all products",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
           id: "api/workflows/list-workflows-by-site-and-product",
           label: "List workflows by site and product",
           className: "api-method get",
@@ -94,12 +88,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/workflows/create-workflow",
           label: "Create workflow",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/workflows/copy-workflow",
-          label: "Copy workflow",
           className: "api-method post",
         },
       ],
@@ -216,18 +204,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/workflows/schemas/pagingmetadata",
           label: "PagingMetadata",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/workflows/schemas/siteproductworkflowsummary",
-          label: "SiteProductWorkflowSummary",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/workflows/schemas/siteproductworkflowsresponse",
-          label: "SiteProductWorkflowsResponse",
           className: "schema",
         },
         {

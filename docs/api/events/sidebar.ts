@@ -60,12 +60,6 @@ const sidebar: SidebarsConfig = {
           label: "Delete events by query",
           className: "api-method delete",
         },
-        {
-          type: "doc",
-          id: "api/events/bulk-delete-events",
-          label: "Bulk delete events",
-          className: "api-method post",
-        },
       ],
     },
     {
@@ -196,24 +190,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/events/calculate-event-fees",
           label: "Calculate event fees",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/events/process-queued-events",
-          label: "Process queued events",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/events/bulk-calculate-event-fees",
-          label: "Bulk calculate event fees",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/events/bulk-set-event-info",
-          label: "Bulk set event info",
           className: "api-method post",
         },
       ],
@@ -400,12 +376,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/events/schemas/bulkdataoperationitemresponse",
           label: "BulkDataOperationItemResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/events/schemas/bulkjobeventrequest",
-          label: "BulkJobEventRequest",
           className: "schema",
         },
         {
@@ -598,18 +568,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/events/schemas/geteventsrequest",
           label: "GetEventsRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/events/schemas/guiditemresponse",
-          label: "GuidItemResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/events/schemas/guidlistresponse",
-          label: "GuidListResponse",
           className: "schema",
         },
         {

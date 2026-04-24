@@ -40,18 +40,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/assets/get-changed-assets",
-          label: "Get changed assets",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/assets/get-changed-assets-count",
-          label: "Get count of changed assets",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
           id: "api/assets/create-asset-verification",
           label: "Verify asset",
           className: "api-method post",
@@ -76,24 +64,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/assets/get-asset-verification-by-id",
-          label: "Get verification by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/assets/update-asset-verification",
-          label: "Update verification",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/delete-asset-verification",
-          label: "Delete verification",
-          className: "api-method delete",
-        },
-        {
-          type: "doc",
           id: "api/assets/bulk-delete-asset-verifications",
           label: "Bulk delete verifications",
           className: "api-method delete",
@@ -108,100 +78,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/update-my-classes-asset-verification",
           label: "Update My Classes verification",
-          className: "api-method post",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Bulk",
-      link: {
-        type: "doc",
-        id: "api/assets/assets-bulk",
-      },
-      items: [
-        {
-          type: "doc",
-          id: "api/assets/bulk-set-asset-owner",
-          label: "Bulk set asset owners",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/bulk-set-asset-location",
-          label: "Bulk set asset location",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/bulk-set-locked-to-id",
-          label: "Bulk set locked-to-id",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/bulk-set-asset-status",
-          label: "Bulk set asset status",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/bulk-unlink-assets",
-          label: "Bulk unlink assets",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/bulk-verify-assets",
-          label: "Bulk verify assets",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/bulk-set-asset-info",
-          label: "Bulk set asset info",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/bulk-delete-assets",
-          label: "Bulk delete assets",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/bulk-submit-tickets-from-templates",
-          label: "Bulk submit tickets from templates",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/bulk-update-assets",
-          label: "Bulk update assets",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/bulk-add-to-ticket-template",
-          label: "Bulk add assets to ticket template",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/bulk-generate-from-template",
-          label: "Bulk generate assets from template",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/bulk-asset-copy",
-          label: "Bulk copy assets",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/bulk-delete-asset-types",
-          label: "Bulk Delete Asset Types",
           className: "api-method post",
         },
       ],
@@ -398,12 +274,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/get-asset-by-id",
           label: "Get asset by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/assets/get-asset-by-tag",
-          label: "Get asset by asset tag",
           className: "api-method get",
         },
         {
@@ -624,12 +494,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/assets/search-assets-by-asset-tag",
-          label: "Search assets by asset tag",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
           id: "api/assets/search-assets-by-serial",
           label: "Search assets by serial",
           className: "api-method get",
@@ -656,12 +520,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/list-assets-by-storage-unit",
           label: "List assets by storage unit",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/assets/list-assets-by-status-type",
-          label: "List assets by status type",
           className: "api-method get",
         },
         {
@@ -802,18 +660,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/assets/add-category-to-site",
-          label: "Add category to site",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/assets/remove-category-from-site",
-          label: "Remove category from site",
-          className: "api-method delete",
-        },
-        {
-          type: "doc",
           id: "api/assets/list-asset-funding-types",
           label: "Get Asset Funding Types",
           className: "api-method get",
@@ -922,24 +768,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/assets/schemas/assetbulksetinforequest",
-          label: "AssetBulkSetInfoRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/assetbulksetinfovalue",
-          label: "AssetBulkSetInfoValue",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/assetcategorysiteoptionsrequest",
-          label: "AssetCategorySiteOptionsRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/assets/schemas/assetcategorysummary",
           label: "AssetCategorySummary",
           className: "schema",
@@ -960,12 +788,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/schemas/assetchangelistresponse",
           label: "AssetChangeListResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/assetchangedcountresponse",
-          label: "AssetChangedCountResponse",
           className: "schema",
         },
         {
@@ -1080,18 +902,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/schemas/assetexchangetransactionresponse",
           label: "AssetExchangeTransactionResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/assetexchangetransactionwrapper",
-          label: "AssetExchangeTransactionWrapper",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/assetexchangetransactionwrapperresponse",
-          label: "AssetExchangeTransactionWrapperResponse",
           className: "schema",
         },
         {
@@ -1276,12 +1086,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/assets/schemas/assettypebulkdeleteresponse",
-          label: "AssetTypeBulkDeleteResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/assets/schemas/assettypecreateresponse",
           label: "AssetTypeCreateResponse",
           className: "schema",
@@ -1378,110 +1182,8 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/assets/schemas/bulkaddtotickettemplaterequest",
-          label: "BulkAddToTicketTemplateRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/assets/schemas/bulkassetcheckoutupdateresponse",
           label: "BulkAssetCheckoutUpdateResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/bulkassetoperationitem",
-          label: "BulkAssetOperationItem",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/bulkassetoperationrequest",
-          label: "BulkAssetOperationRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/bulkassettypedeleterequest",
-          label: "BulkAssetTypeDeleteRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/bulkcopyassetrequest",
-          label: "BulkCopyAssetRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/bulkdataoperationitemresponse",
-          label: "BulkDataOperationItemResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/bulkdataoperationresponse",
-          label: "BulkDataOperationResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/bulkdeleteassettyperequest",
-          label: "BulkDeleteAssetTypeRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/bulkdeleteassetsrequest",
-          label: "BulkDeleteAssetsRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/bulksetassetlocationrequest",
-          label: "BulkSetAssetLocationRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/bulksetassetownerrequest",
-          label: "BulkSetAssetOwnerRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/bulksetassetownerresponse",
-          label: "BulkSetAssetOwnerResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/bulksetassetstatusrequest",
-          label: "BulkSetAssetStatusRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/bulksubmitticketsfromtemplatesrequest",
-          label: "BulkSubmitTicketsFromTemplatesRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/bulkunlinkassetsrequest",
-          label: "BulkUnlinkAssetsRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/bulkunlinkassetsresponse",
-          label: "BulkUnlinkAssetsResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/bulkverifyassetsrequest",
-          label: "BulkVerifyAssetsRequest",
           className: "schema",
         },
         {
@@ -1512,12 +1214,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/schemas/complexeditorvalues",
           label: "ComplexEditorValues",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/createcloneentityrequest",
-          label: "CreateCloneEntityRequest",
           className: "schema",
         },
         {
@@ -1558,44 +1254,8 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/assets/schemas/entitysiteoption",
-          label: "EntitySiteOption",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/assets/schemas/errorresponse",
           label: "ErrorResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/event",
-          label: "Event",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/eventcustomfieldvalue",
-          label: "EventCustomFieldValue",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/eventseriesinfo",
-          label: "EventSeriesInfo",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/eventstatustype",
-          label: "EventStatusType",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/eventtype",
-          label: "EventType",
           className: "schema",
         },
         {
@@ -1702,12 +1362,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/assets/schemas/guiditemresponse",
-          label: "GuidItemResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/assets/schemas/idsforfiltersetsresponse",
           label: "IdsForFilterSetsResponse",
           className: "schema",
@@ -1776,12 +1430,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/schemas/listgetresponse",
           label: "ListGetResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/listupdateresponse",
-          label: "ListUpdateResponse",
           className: "schema",
         },
         {
@@ -1876,30 +1524,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/assets/schemas/organization",
-          label: "Organization",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/organizationcustomfieldvalue",
-          label: "OrganizationCustomFieldValue",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/organizationstatustype",
-          label: "OrganizationStatusType",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/organizationtype",
-          label: "OrganizationType",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/assets/schemas/pagingmetadata",
           label: "PagingMetadata",
           className: "schema",
@@ -1932,12 +1556,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/schemas/ratelimiterror",
           label: "RateLimitError",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/recurringschedule",
-          label: "RecurringSchedule",
           className: "schema",
         },
         {
@@ -1980,12 +1598,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/assets/schemas/setassetownerrequest",
           label: "SetAssetOwnerRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/setassetslockedtoidrequest",
-          label: "SetAssetsLockedToIdRequest",
           className: "schema",
         },
         {
@@ -2098,38 +1710,8 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/assets/schemas/tickettemplate",
-          label: "TicketTemplate",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/tickettemplateasset",
-          label: "TicketTemplateAsset",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/tickettemplatebody",
-          label: "TicketTemplateBody",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/tickettemplatecustomfieldvalue",
-          label: "TicketTemplateCustomFieldValue",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/assets/schemas/tickettemplaterecurringschedule",
           label: "TicketTemplateRecurringSchedule",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/assets/schemas/tickettemplateschedule",
-          label: "TicketTemplateSchedule",
           className: "schema",
         },
         {

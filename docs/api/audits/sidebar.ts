@@ -8,124 +8,6 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Compliance",
-      link: {
-        type: "doc",
-        id: "api/audits/audits-compliance",
-      },
-      items: [
-        {
-          type: "doc",
-          id: "api/audits/start-policy-compliance-scan",
-          label: "Start policy compliance scan",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/audits/reconcile-policy-assets",
-          label: "Reconcile policy asset assignments",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/audits/start-asset-compliance-scan",
-          label: "Start asset compliance scan",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/audits/start-full-policy-compliance-scan",
-          label: "Start full system compliance scan",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/audits/start-site-policy-compliance-scan",
-          label: "Start site-level compliance scan",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/audits/start-schedule-policy-compliance-scan",
-          label: "Start compliance scan for specific policy schedule",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/audits/start-asset-date-policy-compliance-scan",
-          label: "Start compliance scan for specific asset on specific date",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/audits/schedule-policy-compliance-scan",
-          label: "Schedule job-based policy compliance scan",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/audits/reset-policy-compliance-scan",
-          label: "Reset compliance scan data for site (Admin)",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/audits/reset-policy-compliance-scan-skip-verifications",
-          label: "Reset compliance scan data without verification reset (Admin)",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/audits/reset-rebuild-all-compliance-scan-data",
-          label: "Reset and rebuild all compliance scan data (Admin)",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/audits/reset-rebuild-site-compliance-scan-data",
-          label: "Reset and rebuild compliance scan data for site (Admin)",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/audits/schedule-all-policy-compliance-scans",
-          label: "Schedule compliance scans for all active policies (Admin)",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/audits/reset-all-policy-compliance-scans",
-          label: "Reset all compliance scan data system-wide (Admin)",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/audits/start-date-range-policy-compliance-scan",
-          label: "Start compliance scan for date range (Admin)",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/audits/start-asset-date-range-policy-compliance-scan",
-          label: "Start compliance scan for asset within date range (Admin)",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/audits/start-all-sites-date-range-policy-compliance-scan",
-          label: "Start compliance scan for all sites within date range",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/audits/update-removals-for-asset-audit-policy-overview",
-          label: "Update removal records for audit policy overview",
-          className: "api-method get",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Policies",
       link: {
         type: "doc",
@@ -140,45 +22,15 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/audits/get-asset-audit-policy-alerts",
-          label: "List audit policy alert notifications",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/audits/get-asset-audit-policy-global-templates",
-          label: "List global audit policy templates",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
           id: "api/audits/get-asset-audit-policy",
           label: "Get audit policy details",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "api/audits/update-asset-audit-policy",
-          label: "Update audit policy",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/audits/delete-asset-audit-policy",
-          label: "Delete audit policy",
-          className: "api-method delete",
-        },
-        {
-          type: "doc",
           id: "api/audits/add-asset-to-audit-policy",
           label: "Add asset to audit policy",
           className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/audits/create-asset-audit-policy",
-          label: "Create new audit policy",
-          className: "api-method post",
         },
         {
           type: "doc",
@@ -210,36 +62,8 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/audits/get-asset-audit-policy-schedule-status-for-assets",
-          label: "Get audit schedule status for multiple assets",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
           id: "api/audits/get-asset-audit-policy-schedule-assets",
           label: "List assets in audit schedule instance",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/audits/get-next-audit-check-date",
-          label: "Calculate next audit check date",
-          className: "api-method get",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Types",
-      link: {
-        type: "doc",
-        id: "api/audits/audits-types",
-      },
-      items: [
-        {
-          type: "doc",
-          id: "api/audits/get-asset-audit-policy-types",
-          label: "List asset audit policy types",
           className: "api-method get",
         },
       ],
@@ -280,32 +104,14 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/audits/schemas/assetauditpolicyalertnotification",
-          label: "AssetAuditPolicyAlertNotification",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/audits/schemas/assetauditpolicyschedule",
           label: "AssetAuditPolicySchedule",
           className: "schema",
         },
         {
           type: "doc",
-          id: "api/audits/schemas/assetauditpolicytype",
-          label: "AssetAuditPolicyType",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/audits/schemas/assetcategorysummary",
           label: "AssetCategorySummary",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/audits/schemas/assetcomplianceevent",
-          label: "AssetComplianceEvent",
           className: "schema",
         },
         {
@@ -418,30 +224,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/audits/schemas/itemcreateresponse",
-          label: "ItemCreateResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/audits/schemas/itemcreateresponse-assetauditpolicy",
-          label: "ItemCreateResponse_AssetAuditPolicy",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/audits/schemas/itemcreateresponse-guid",
-          label: "ItemCreateResponse_Guid",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/audits/schemas/itemdeleteresponse",
-          label: "ItemDeleteResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/audits/schemas/itemgetresponse",
           label: "ItemGetResponse",
           className: "schema",
@@ -456,30 +238,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/audits/schemas/itemgetresponse-assetauditpolicyschedule",
           label: "ItemGetResponse_AssetAuditPolicySchedule",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/audits/schemas/itemgetresponse-datetime",
-          label: "ItemGetResponse_DateTime",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/audits/schemas/itemgetresponse-guid",
-          label: "ItemGetResponse_Guid",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/audits/schemas/itemupdateresponse",
-          label: "ItemUpdateResponse",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/audits/schemas/itemupdateresponse-assetauditpolicy",
-          label: "ItemUpdateResponse_AssetAuditPolicy",
           className: "schema",
         },
         {
@@ -502,32 +260,8 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/audits/schemas/listgetresponse-assetauditpolicyalertnotification",
-          label: "ListGetResponse_AssetAuditPolicyAlertNotification",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/audits/schemas/listgetresponse-assetauditpolicyschedule",
           label: "ListGetResponse_AssetAuditPolicySchedule",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/audits/schemas/listgetresponse-assetauditpolicytype",
-          label: "ListGetResponse_AssetAuditPolicyType",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/audits/schemas/listgetresponse-policycompliancescanresults",
-          label: "ListGetResponse_PolicyComplianceScanResults",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/audits/schemas/listgetresponse-scheduleperiodassetcompliance",
-          label: "ListGetResponse_SchedulePeriodAssetCompliance",
           className: "schema",
         },
         {
@@ -586,12 +320,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/audits/schemas/policycompliancescanresults",
-          label: "PolicyComplianceScanResults",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/audits/schemas/producttier",
           label: "ProductTier",
           className: "schema",
@@ -606,12 +334,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/audits/schemas/role",
           label: "Role",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/audits/schemas/scheduleperiodassetcompliance",
-          label: "SchedulePeriodAssetCompliance",
           className: "schema",
         },
         {
@@ -684,12 +406,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/audits/schemas/ticketprioritylevel",
           label: "TicketPriorityLevel",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/audits/schemas/updateassetauditpolicyrequest",
-          label: "UpdateAssetAuditPolicyRequest",
           className: "schema",
         },
       ],

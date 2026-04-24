@@ -232,46 +232,6 @@ const sidebar: SidebarsConfig = {
           label: "Update room available times",
           className: "api-method post",
         },
-        {
-          type: "doc",
-          id: "api/locations/bulk-set-location-room-available-times",
-          label: "Bulk update room available times",
-          className: "api-method post",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Rooms Bulk",
-      link: {
-        type: "doc",
-        id: "api/locations/locations-rooms-bulk",
-      },
-      items: [
-        {
-          type: "doc",
-          id: "api/locations/bulk-delete-location-rooms",
-          label: "Bulk delete rooms",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/locations/bulk-set-location-room-types",
-          label: "Bulk set room types",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/locations/bulk-set-location-room-lead-time",
-          label: "Bulk set room lead time",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/locations/bulk-set-location-room-external-availability",
-          label: "Bulk set external availability",
-          className: "api-method post",
-        },
       ],
     },
     {
@@ -450,48 +410,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/locations/schemas/bulkjoblocationroomdeleterequest",
-          label: "BulkJobLocationRoomDeleteRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/locations/schemas/bulklocationroomavailabletimesrequest",
-          label: "BulkLocationRoomAvailableTimesRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/locations/schemas/bulklocationroomrequest",
-          label: "BulkLocationRoomRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/locations/schemas/bulkroomdeleterequest",
-          label: "BulkRoomDeleteRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/locations/schemas/bulkroomexternalavailabilityrequest",
-          label: "BulkRoomExternalAvailabilityRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/locations/schemas/bulkroomleadtimerequest",
-          label: "BulkRoomLeadTimeRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/locations/schemas/bulkroomtyperequest",
-          label: "BulkRoomTypeRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/locations/schemas/complexeditorvalues",
           label: "ComplexEditorValues",
           className: "schema",
@@ -542,12 +460,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/locations/schemas/getuserlocationsrequest",
           label: "GetUserLocationsRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/locations/schemas/guiditemresponse",
-          label: "GuidItemResponse",
           className: "schema",
         },
         {

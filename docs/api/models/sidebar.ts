@@ -54,22 +54,6 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Bulk",
-      link: {
-        type: "doc",
-        id: "api/models/models-bulk",
-      },
-      items: [
-        {
-          type: "doc",
-          id: "api/models/bulk-delete-models",
-          label: "Bulk delete models",
-          className: "api-method post",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Category Access",
       link: {
         type: "doc",
@@ -276,12 +260,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/models/bulk-add-models-to-site",
-          label: "Bulk add models to site",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
           id: "api/models/get-models-available-to-site",
           label: "Get models available to site",
           className: "api-method post",
@@ -414,12 +392,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/models/schemas/bulkdeletemodelsrequest",
-          label: "BulkDeleteModelsRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
           id: "api/models/schemas/category",
           label: "Category",
           className: "schema",
@@ -452,12 +424,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/models/schemas/getmodelcountrequest",
           label: "GetModelCountRequest",
-          className: "schema",
-        },
-        {
-          type: "doc",
-          id: "api/models/schemas/guiditemresponse",
-          label: "GuidItemResponse",
           className: "schema",
         },
         {

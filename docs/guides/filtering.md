@@ -52,6 +52,7 @@ All search endpoints accept a `Filters` array containing filter objects:
 | `Name` | string | Display label. Required for boolean facets (`"yes"` or `"no"`). |
 | `Negative` | boolean | When `true`, excludes matching records instead of including them. |
 | `GroupIndex` | integer | Groups filters. Within a group: same facet = OR, different facets = AND. Different groups are OR'd together. |
+| `CustomFieldTypeId` | UUID | Required for all `customfield*` facets. Identifies the specific custom field definition to filter on. |
 
 ### Field Usage by Facet Type
 
@@ -317,6 +318,94 @@ These 6 facets are available across **all three entities** (Tickets, Assets, Use
 | `isurgent` | Name (yes/no) | Urgent flag |
 | `hasassetattached` | Name (yes/no) | Has attached asset |
 
+### Custom Field Facets
+
+Ticket custom fields are searchable using typed facets. Every custom field filter requires two things:
+
+- **`Facet`** — the custom field editor type (e.g., `customfieldtext`)
+- **`CustomFieldTypeId`** — the UUID of the specific field definition, obtained from `POST /api/v1.0/custom-fields`
+
+```json
+{
+  "Filters": [
+    {
+      "Facet": "customfieldtext",
+      "CustomFieldTypeId": "YOUR_CUSTOM_FIELD_UUID",
+      "Value": "search text",
+      "Selected": true
+    }
+  ]
+}
+```
+
+#### Text & String Fields
+
+| Facet | Value Field | Format |
+|-------|-------------|--------|
+| `customfieldtext` | `Value` | Plain string |
+| `customfieldmultilinetext` | `Value` | Plain string |
+| `customfieldrichtext` | `Value` | Plain string |
+| `customfieldemailmessage` | `Value` | Plain string |
+| `customfieldphone` | `Value` | Plain string |
+| `customfieldaddress` | `Value` | Plain string |
+| `customfieldipaddress` | `Value` | Plain string |
+| `customfieldprotectedinfo` | `Value` | Plain string |
+
+#### Numeric Fields
+
+| Facet | Value Field | Format |
+|-------|-------------|--------|
+| `customfieldnumber` | `Value` | [Numeric expression](./filtering#numeric-expressions) (e.g., `numoperator:greaterthan:5`) |
+| `customfieldnumberrange` | `Value` | Numeric expression |
+
+#### Date Fields
+
+| Facet | Value Field | Format |
+|-------|-------------|--------|
+| `customfielddate` | `Value` | [Date expression](./filtering#date-expressions) (e.g., `range:thisweek`) |
+| `customfielddaterange` | `Value` | Date expression |
+| `customfielddatetime` | `Value` | Date expression |
+| `customfieldscheduleselector` | `Value` | Date expression |
+
+#### Boolean Fields
+
+| Facet | Value Field | Format |
+|-------|-------------|--------|
+| `customfieldyesno` | `Value` | `"true"` or `"false"` |
+
+#### Select Fields
+
+| Facet | Value Field | Format |
+|-------|-------------|--------|
+| `customfieldselect` | `Value` | Stored option string |
+| `customfieldmultiselect` | `Value` | Stored option string |
+
+#### Entity Reference Fields
+
+| Facet | Id Field | References |
+|-------|----------|------------|
+| `customfieldusers` | `Id` | UserId |
+| `customfieldlocations` | `Id` | LocationId |
+| `customfieldassets` | `Id` | AssetId |
+| `customfieldtickets` | `Id` | TicketId |
+| `customfieldchangerequests` | `Id` | TicketId |
+| `customfieldmodels` | `Id` | ModelId |
+| `customfieldassetfundingsource` | `Id` | FundingSourceId |
+| `customfieldassetstatus` | `Id` | AssetStatusId |
+| `customfieldeventroom` | `Id` | RoomId |
+| `customfieldeventtype` | `Id` | EventTypeId |
+
+#### Non-Searchable Field Types
+
+These editor types appear in the facet enum but do not support meaningful filtering:
+
+| Facet | Reason |
+|-------|--------|
+| `customfieldfileupload` | File content is not filterable |
+| `customfieldinformation` | Display-only label |
+| `customfieldconfirmationmessage` | Display-only message |
+| `customfielddetailssection` | UI section divider |
+
 ---
 
 ## Asset Facets
@@ -381,6 +470,61 @@ These 6 facets are available across **all three entities** (Tickets, Assets, Use
 | `assetduplicateassettag` | Name (yes/no) | Duplicate asset tag |
 | `assetduplicateserialnumber` | Name (yes/no) | Duplicate serial number |
 
+### Custom Field Facets
+
+All `customfield*` facets require `CustomFieldTypeId` set to the UUID of the specific field definition (from `POST /api/v1.0/custom-fields`).
+
+The legacy `assetcustomfield`, `locationcustomfield`, and `usercustomfield` facets are also supported for backwards compatibility, but the typed facets below are preferred.
+
+#### Text & String Fields
+
+| Facet | Value Field | Format |
+|-------|-------------|--------|
+| `customfieldtext` | `Value` | Plain string |
+| `customfieldmultilinetext` | `Value` | Plain string |
+| `customfieldrichtext` | `Value` | Plain string |
+| `customfieldemailmessage` | `Value` | Plain string |
+| `customfieldphone` | `Value` | Plain string |
+| `customfieldaddress` | `Value` | Plain string |
+| `customfieldipaddress` | `Value` | Plain string |
+| `customfieldprotectedinfo` | `Value` | Plain string |
+
+#### Numeric Fields
+
+| Facet | Value Field | Format |
+|-------|-------------|--------|
+| `customfieldnumber` | `Value` | Numeric expression |
+| `customfieldnumberrange` | `Value` | Numeric expression |
+
+#### Date Fields
+
+| Facet | Value Field | Format |
+|-------|-------------|--------|
+| `customfielddate` | `Value` | Date expression |
+| `customfielddaterange` | `Value` | Date expression |
+| `customfielddatetime` | `Value` | Date expression |
+| `customfieldscheduleselector` | `Value` | Date expression |
+
+#### Boolean & Select Fields
+
+| Facet | Value Field | Format |
+|-------|-------------|--------|
+| `customfieldyesno` | `Value` | `"true"` or `"false"` |
+| `customfieldselect` | `Value` | Stored option string |
+| `customfieldmultiselect` | `Value` | Stored option string |
+
+#### Entity Reference Fields
+
+| Facet | Id Field | References |
+|-------|----------|------------|
+| `customfieldusers` | `Id` | UserId |
+| `customfieldlocations` | `Id` | LocationId |
+| `customfieldassets` | `Id` | AssetId |
+| `customfieldtickets` | `Id` | TicketId |
+| `customfieldmodels` | `Id` | ModelId |
+| `customfieldassetfundingsource` | `Id` | FundingSourceId |
+| `customfieldassetstatus` | `Id` | AssetStatusId |
+
 ---
 
 ## User Facets
@@ -425,6 +569,62 @@ These 6 facets are available across **all three entities** (Tickets, Assets, Use
 | `userduplicateany` | Name (yes/no) | Any duplicate conflict |
 | `userduplicateemail` | Name (yes/no) | Duplicate email |
 | `userduplicateusername` | Name (yes/no) | Duplicate username |
+
+### Custom Field Facets
+
+All `customfield*` facets require `CustomFieldTypeId` set to the UUID of the specific field definition (from `POST /api/v1.0/custom-fields`).
+
+The legacy `usercustomfield` facet is also supported for backwards compatibility, but the typed facets below are preferred.
+
+#### Text & String Fields
+
+| Facet | Value Field | Format |
+|-------|-------------|--------|
+| `customfieldtext` | `Value` | Plain string |
+| `customfieldmultilinetext` | `Value` | Plain string |
+| `customfieldrichtext` | `Value` | Plain string |
+| `customfieldemailmessage` | `Value` | Plain string |
+| `customfieldphone` | `Value` | Plain string |
+| `customfieldaddress` | `Value` | Plain string |
+| `customfieldipaddress` | `Value` | Plain string |
+| `customfieldprotectedinfo` | `Value` | Plain string |
+
+#### Numeric Fields
+
+| Facet | Value Field | Format |
+|-------|-------------|--------|
+| `customfieldnumber` | `Value` | Numeric expression |
+| `customfieldnumberrange` | `Value` | Numeric expression |
+
+#### Date Fields
+
+| Facet | Value Field | Format |
+|-------|-------------|--------|
+| `customfielddate` | `Value` | Date expression |
+| `customfielddaterange` | `Value` | Date expression |
+| `customfielddatetime` | `Value` | Date expression |
+| `customfieldscheduleselector` | `Value` | Date expression |
+
+#### Boolean & Select Fields
+
+| Facet | Value Field | Format |
+|-------|-------------|--------|
+| `customfieldyesno` | `Value` | `"true"` or `"false"` |
+| `customfieldselect` | `Value` | Stored option string |
+| `customfieldmultiselect` | `Value` | Stored option string |
+
+#### Entity Reference Fields
+
+| Facet | Id Field | References |
+|-------|----------|------------|
+| `customfieldusers` | `Id` | UserId |
+| `customfieldlocations` | `Id` | LocationId |
+| `customfieldassets` | `Id` | AssetId |
+| `customfieldtickets` | `Id` | TicketId |
+| `customfieldchangerequests` | `Id` | TicketId |
+| `customfieldmodels` | `Id` | ModelId |
+| `customfieldassetfundingsource` | `Id` | FundingSourceId |
+| `customfieldassetstatus` | `Id` | AssetStatusId |
 
 ---
 
@@ -510,6 +710,43 @@ These 6 facets are available across **all three entities** (Tickets, Assets, Use
   ]
 }
 ```
+
+### Find Tickets by a Text Custom Field Value
+
+```json
+{
+  "Filters": [
+    {
+      "Facet": "customfieldtext",
+      "CustomFieldTypeId": "YOUR_CUSTOM_FIELD_UUID",
+      "Value": "search text",
+      "Selected": true
+    }
+  ]
+}
+```
+
+Combine with other filters to narrow results — for example, open tickets where a "Department" text field equals "IT":
+
+```json
+{
+  "Filters": [
+    {
+      "Facet": "customfieldtext",
+      "CustomFieldTypeId": "YOUR_DEPARTMENT_FIELD_UUID",
+      "Value": "IT",
+      "Selected": true
+    },
+    {
+      "Facet": "ticketstate",
+      "Id": "00000000-0000-0000-0000-000000000000",
+      "Selected": true
+    }
+  ]
+}
+```
+
+Get `CustomFieldTypeId` values from `POST /api/v1.0/custom-fields`.
 
 ### Find Students at a Specific School
 
