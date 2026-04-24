@@ -28,6 +28,8 @@ const config: Config = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
+  clientModules: [require.resolve('./src/clientModules/clearSearchHighlights.ts')],
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -67,7 +69,23 @@ const config: Config = {
     ],
   ],
 
-  themes: ['docusaurus-theme-openapi-docs'],
+  themes: [
+    'docusaurus-theme-openapi-docs',
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: false,
+        docsRouteBasePath: '/docs',
+        highlightSearchTermsOnTargetPage: true,
+        searchResultLimits: 10,
+        searchBarShortcut: true,
+        searchBarShortcutHint: true,
+      },
+    ],
+  ],
 
   themeConfig: {
     // Disable dark mode - IncidentIQ is light-themed
@@ -99,11 +117,6 @@ const config: Config = {
           sidebarId: 'apiSidebar',
           position: 'left',
           label: 'API Reference',
-        },
-        {
-          href: 'https://github.com/incidentiq',
-          label: 'GitHub',
-          position: 'right',
         },
       ],
     },
