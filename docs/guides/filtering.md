@@ -395,17 +395,6 @@ Ticket custom fields are searchable using typed facets. Every custom field filte
 | `customfieldeventroom` | `Id` | RoomId |
 | `customfieldeventtype` | `Id` | EventTypeId |
 
-#### Non-Searchable Field Types
-
-These editor types appear in the facet enum but do not support meaningful filtering:
-
-| Facet | Reason |
-|-------|--------|
-| `customfieldfileupload` | File content is not filterable |
-| `customfieldinformation` | Display-only label |
-| `customfieldconfirmationmessage` | Display-only message |
-| `customfielddetailssection` | UI section divider |
-
 ---
 
 ## Asset Facets
@@ -521,9 +510,12 @@ The legacy `assetcustomfield`, `locationcustomfield`, and `usercustomfield` face
 | `customfieldlocations` | `Id` | LocationId |
 | `customfieldassets` | `Id` | AssetId |
 | `customfieldtickets` | `Id` | TicketId |
+| `customfieldchangerequests` | `Id` | TicketId |
 | `customfieldmodels` | `Id` | ModelId |
 | `customfieldassetfundingsource` | `Id` | FundingSourceId |
 | `customfieldassetstatus` | `Id` | AssetStatusId |
+| `customfieldeventroom` | `Id` | RoomId |
+| `customfieldeventtype` | `Id` | EventTypeId |
 
 ---
 
