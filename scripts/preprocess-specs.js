@@ -148,6 +148,7 @@ async function main() {
             tagDef,
             paths: sortedPaths,
             schemas: resolvedSchemas,
+            parameters: sourceSpec.components?.parameters || {},
             overview,
             sourceSpec,
             stats,

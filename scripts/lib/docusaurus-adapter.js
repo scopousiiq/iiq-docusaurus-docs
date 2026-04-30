@@ -22,7 +22,12 @@ const { extractSections, HTTP_METHODS } = require('./tag-splitter');
  * @param {Object} options.stats - Tag statistics
  * @returns {Object} - Docusaurus-compatible OpenAPI spec
  */
-function transformToDocusaurusFormat({ tagName, tagDef, paths, schemas, overview, sourceSpec, stats }) {
+function transformToDocusaurusFormat({ tagName, tagDef, paths, schemas, parameters, overview, sourceSpec, stats }) {
+    const components = { schemas };
+    if (parameters && Object.keys(parameters).length > 0) {
+        components.parameters = parameters;
+    }
+
     const spec = {
         openapi: sourceSpec.openapi || '3.0.0',
         info: {
@@ -37,10 +42,7 @@ function transformToDocusaurusFormat({ tagName, tagDef, paths, schemas, overview
         ],
         tags: buildTagsWithSections(paths, tagName),
         paths: transformPaths(paths, tagName),
-        components: {
-            schemas,
-            // Note: securitySchemes removed - authentication is documented in /docs/guides/authentication
-        },
+        components,
     };
 
     // Add x-tagGroups for sidebar organization if there are sections
@@ -128,6 +130,20 @@ function buildTagGroups(paths, parentTag) {
 }
 
 /**
+ * Convert markdown blockquote warnings to Docusaurus admonitions.
+ * Pattern: > **⚠ Title**\n>\n> Body  →  :::warning Title\n\nBody\n\n:::
+ * @param {string} text - Description markdown
+ * @returns {string}
+ */
+function transformDescriptionAdmonitions(text) {
+    if (!text || typeof text !== 'string') return text;
+    return text.replace(
+        /> \*\*⚠ ([^*\n]+)\*\*\n>\n> ([^\n]+)/g,
+        (_match, title, body) => `:::warning ${title}\n\n${body}\n\n:::`
+    );
+}
+
+/**
  * Transform paths to use section-based tags
  * @param {Object} paths - Paths object
  * @param {string} parentTag - Parent tag name
@@ -158,6 +174,10 @@ function transformPaths(paths, parentTag) {
             if (!pathItem[method]) return;
 
             const op = JSON.parse(JSON.stringify(pathItem[method]));
+
+            if (op.description) {
+                op.description = transformDescriptionAdmonitions(op.description);
+            }
 
             // Transform tags to include section
             const section = op['x-iiq-docs']?.section;
