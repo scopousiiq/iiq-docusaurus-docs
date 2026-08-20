@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Filtering with Facets
 
-The Incident IQ API uses a powerful facet-based filtering system for searching Tickets, Assets, and Users. This guide explains how to construct filter queries to find exactly the records you need.
+The Incident IQ API uses a facet-based filtering system for searching Tickets, Assets, Users, Locations, and Rooms. This guide explains how to construct filter queries to find exactly the records you need.
 
 ## Overview
 
@@ -12,14 +12,23 @@ Filtering is done via the **request body** using a `Filters` array. Each filter 
 
 ### Supported Entities
 
-| Entity | Endpoint | Available Facets |
-|--------|----------|------------------|
-| Tickets | `POST /api/v1.0/tickets` | 103 facets |
-| Assets | `POST /api/v1.0/assets` | 75 facets |
-| Users | `POST /api/v1.0/users` | 41 facets |
+| Entity | Search Endpoint | Filter Shape |
+|--------|-----------------|--------------|
+| Tickets | `POST /api/v1.0/tickets` | `Facet` + `Id`/`Value` |
+| Assets | `POST /api/v1.0/assets` | `Facet` + `Id`/`Value` |
+| Users | `POST /api/v1.0/users` | `Facet` + `Id`/`Value` |
+| Locations | `POST /api/v2.0/locations/all` | `Facet` + `Op` + `Values` |
+| Rooms | `POST /api/v2.0/locations/rooms/query` | `Facet` + `Op` + `Values` |
+
+The v1 entities share one filter format, described in the next section. Locations and Rooms
+use a different filter object and a different request envelope — see
+[Locations and Rooms](#locations-and-rooms).
 
 :::info Shared Infrastructure
-The filter system is shared across all three entities. Six universal facets (`grade`, `location`, `locationtype`, `role`, `source`, `user`) work identically on Tickets, Assets, and Users.
+The v1 filter system is shared across Tickets, Assets, and Users. Six universal facets (`grade`, `location`, `locationtype`, `role`, `source`, `user`) work identically on all three.
+
+The facet tables in this guide cover the commonly used facets, not the complete set. For the
+list available to your tenant, call the [filter catalog endpoint](#filter-catalog-endpoint).
 :::
 
 ---
@@ -64,6 +73,36 @@ All search endpoints accept a `Filters` array containing filter objects:
 | Numeric Expression | No | Yes | No |
 | Boolean (yes/no) | No | Yes | Yes |
 | Custom Field | Yes | Yes | Optional |
+
+### Unrecognized Facets Are Silently Discarded
+
+:::warning A `200` does not confirm that your filter was applied
+Unrecognized facet names and unparseable values are **discarded, not rejected**. The request
+succeeds and the result is computed over the *unfiltered* set.
+
+Confirmed on a 474,222-asset tenant: an unfiltered count and a count carrying
+`{"Facet": "ZZZ_not_a_real_facet", "Value": "xyz"}` both returned 474,222 with a `200`.
+
+To validate a new filter, send a value that must narrow the result and confirm that
+`Paging.TotalRows` moved. If a deliberately invalid value returns the same total as a valid
+one, the filter is not being read.
+:::
+
+Three related cases are worth knowing about:
+
+- **A facet that works on one entity may be discarded on another.** `modifieddate` filters
+  Tickets and Assets, but it is not implemented for Users: it is accepted and dropped, so a
+  user extract filtered on it silently returns every user. Locations and Rooms do support a
+  modified-since filter, through the different shape described in
+  [Locations and Rooms](#locations-and-rooms).
+- **On asset search, a discarded facet can also change the row count.** Rejecting a facet
+  triggers a fallback between query engines, and the two engines do not always report
+  identical totals for the same corpus. Compare `Metadata.QueryEngineSource` between your
+  filtered and unfiltered calls — if it changes, a facet was rejected and the two counts are
+  not comparable.
+- **`Selected` has no effect on filtering.** It is accepted and ignored, so
+  `"Selected": false` does **not** disable a filter. To stop applying a filter, remove the
+  entry.
 
 ---
 
@@ -132,33 +171,56 @@ Date facets accept various expression formats in the `Value` field:
 |--------|-------------|---------|
 | `daterange:MM/DD/YYYY-MM/DD/YYYY` | Between two dates | `daterange:01/01/2025-01/31/2025` |
 
+`daterange:` splits its two dates on a single hyphen, so ISO `YYYY-MM-DD` values cannot be
+used inside it. Use `MM/DD/YYYY` or `YYYYMMDD`. ISO is fine for the single-date comparison
+operators above, which do not split.
+
 #### Relative Ranges
+
+Every relative range is `range:`-prefixed. The current-period tokens are `range:week`,
+`range:month`, and `range:year`.
 
 | Syntax | Description |
 |--------|-------------|
 | `range:today` | Today only |
+| `range:tomorrow` | Tomorrow only |
 | `range:yesterday` | Yesterday only |
-| `range:thisweek` | Current week (Sunday-Saturday) |
+| `range:week` | Current week |
+| `range:month` | Current month |
+| `range:year` | Current year |
 | `range:lastweek` | Previous week |
-| `range:nextweek` | Next week |
-| `range:thismonth` | Current month |
 | `range:lastmonth` | Previous month |
-| `range:nextmonth` | Next month |
-| `range:thisquarter` | Current quarter |
-| `range:lastquarter` | Previous quarter |
-| `range:thisyear` | Current year |
 | `range:lastyear` | Previous year |
-| `range:lastdays:N` | Last N days |
-| `range:nextdays:N` | Next N days |
-| `range:last30days` | Last 30 days |
-| `range:last60days` | Last 60 days |
-| `range:last90days` | Last 90 days |
+| `range:nextweek` | Next week |
+| `range:nextmonth` | Next month |
+| `range:nextyear` | Next year |
+| `range:lastdays:N` | Last N days (e.g. `range:lastdays:30`) |
+| `range:nextdays:N` | Next N days (e.g. `range:nextdays:90`) |
+
+:::warning Tokens are case-sensitive, and an unrecognized token does not error
+Date tokens must be lowercase, spelled exactly as above, with no trailing characters.
+`Range:Today` is not recognized.
+
+In particular, these forms do **not** exist: `range:thisweek`, `range:thismonth`,
+`range:thisyear`, `range:thisquarter`, `range:lastquarter`, `range:last30days`,
+`range:last60days`, and `range:last90days`. There is no quarter concept in the date parser
+at all, and `range:lastdays:30` is the rolling-window equivalent of `range:last30days`.
+
+None of these produce an error. Per
+[Unrecognized Facets Are Silently Discarded](#unrecognized-facets-are-silently-discarded),
+an unrecognized token yields an empty result set or an unfiltered one with a `200`. A
+nightly incremental sync on `modifieddate` with `range:thisweek` would load nothing
+indefinitely and still look healthy.
+:::
 
 #### Days Ago
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
 | `value:N` | Exactly N days ago | `value:7` (7 days ago) |
+
+`value:N` is calculated from UTC rather than your site's local time zone, so close to a day
+boundary it can select the adjacent day.
 
 ### Numeric Expression Syntax
 
@@ -355,14 +417,14 @@ Ticket custom fields are searchable using typed facets. Every custom field filte
 
 | Facet | Value Field | Format |
 |-------|-------------|--------|
-| `customfieldnumber` | `Value` | [Numeric expression](./filtering#numeric-expressions) (e.g., `numoperator:greaterthan:5`) |
+| `customfieldnumber` | `Value` | [Numeric expression](#numeric-expression-syntax) (e.g., `numoperator:greaterthan:5`) |
 | `customfieldnumberrange` | `Value` | Numeric expression |
 
 #### Date Fields
 
 | Facet | Value Field | Format |
 |-------|-------------|--------|
-| `customfielddate` | `Value` | [Date expression](./filtering#date-expressions) (e.g., `range:thisweek`) |
+| `customfielddate` | `Value` | [Date expression](#date-expression-syntax) (e.g., `range:lastdays:7`) |
 | `customfielddaterange` | `Value` | Date expression |
 | `customfielddatetime` | `Value` | Date expression |
 | `customfieldscheduleselector` | `Value` | Date expression |
@@ -620,6 +682,57 @@ The legacy `usercustomfield` facet is also supported for backwards compatibility
 
 ---
 
+## Locations and Rooms
+
+Locations and Rooms are filterable, but the v2 endpoints that serve them take a
+**structurally different filter object** from the v1 Tickets, Assets, and Users searches.
+
+| Endpoint family | Filter shape |
+|-----------------|--------------|
+| v1 Tickets, Assets, Users | `{ "Facet": "modifieddate", "Value": "date>=01/01/2025" }` |
+| v2 Locations, Rooms | `{ "Facet": "ModifiedDate", "Op": "GreaterOrEqual", "Values": ["2025-01-01"] }` |
+
+Two rules are specific to the v2 endpoints:
+
+- **Filters must be nested under `RequestOptions.Filters`.** A top-level `Filters` array is
+  ignored, and the request returns unfiltered results with a `200`.
+- **The v1 expression grammar returns `500`**, not a validation error. Sending
+  `{"Facet": "ModifiedDate", "Value": "date>=01/01/2025"}` to `POST /api/v2.0/locations/all`
+  fails with a server error rather than reporting the bad shape.
+
+### Example: Locations Modified Since a Date
+
+```json
+{
+  "RequestOptions": {
+    "Filters": [
+      {
+        "Facet": "ModifiedDate",
+        "Op": "GreaterOrEqual",
+        "Values": ["2025-01-01"]
+      }
+    ]
+  }
+}
+```
+
+The same body works against `POST /api/v2.0/locations/rooms/query`.
+
+### Additional v2 Facets
+
+Locations accept `Location`, `LocationType`, and `Keyword`. Rooms accept `Location`,
+`RoomType`, `roomarea`, `roomavailability`, `roomseatingcapacity`, `roommaximumoccupancy`,
+`roomisexternallyavailable`, `roompinmapped`, and `roompinunmapped` — all through the same
+`Op`/`Values` shape.
+
+:::note
+On these two endpoints a facet name that is recognized but not implemented returns a `500`
+rather than being discarded. Confirm that each facet actually narrows the result set before
+relying on it.
+:::
+
+---
+
 ## Copy-Paste Examples
 
 ### Find Open Tickets Assigned to a Specific Agent
@@ -784,11 +897,25 @@ Use this endpoint to discover available facets for an entity:
 GET /api/v1.0/filters/for/entitytype/{entityTypeId}
 ```
 
-| Entity | Entity Type ID |
-|--------|----------------|
-| Tickets | `888891ac-91aa-e711-80c2-100dffa00001` |
-| Assets | `888891ac-91aa-e711-80c2-100dffa00002` |
-| Users | `888891ac-91aa-e711-80c2-100dffa00003` |
+| Entity | Entity Type ID | Facets Returned |
+|--------|----------------|-----------------|
+| Tickets | `888891ac-91aa-e711-80c2-100dffa00001` | 138 |
+| Locations | `888891ac-91aa-e711-80c2-100dffa00002` | 16 |
+| Assets | `888891ac-91aa-e711-80c2-100dffa00003` | 104 |
+| Users | `888891ac-91aa-e711-80c2-100dffa00004` | 69 |
+| Rooms | `888891ac-91aa-e711-80c2-100dffa00041` | 9 |
+
+:::warning The numeric tail is not sequential by entity
+`...00002` is **Locations** and `...00003` is **Assets** — the reverse of what guessing
+produces. A wrong-but-well-formed entity type ID returns another entity's facet list, or an
+empty list, with a `200` and never an error. Check that the returned facet keys match the
+entity you asked for.
+:::
+
+The "Facets Returned" counts are from a reference tenant. This endpoint reports what the
+calling token may use — results are filtered by licensing, permissions, and feature flags —
+and it does not enumerate every facet an entity supports, so treat it as a per-tenant
+starting point rather than a complete inventory.
 
 ### Supporting Endpoints for Filter Values
 
@@ -812,6 +939,7 @@ GET /api/v1.0/filters/for/entitytype/{entityTypeId}
 - **Cache metadata**: Store status IDs, role IDs, location IDs locally rather than fetching per request
 - **Use moderate page sizes**: Request 25-50 records per page instead of very large batches
 - **Use keyword last**: Keyword searches are expensive; combine with other filters first
+- **Verify each filter narrows**: an unrecognized facet is discarded rather than rejected, so confirm `Paging.TotalRows` changes when you add a filter
 :::
 
 ## Next Steps
